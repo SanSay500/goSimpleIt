@@ -1,51 +1,70 @@
-import React from "react";
-import { Inertia } from "@inertiajs/inertia";
 import { InertiaLink, useForm } from "@inertiajs/inertia-react";
-
 const Create = () => {
+
     const { data, setData, errors, post } = useForm({
         title: "",
         description: "",
+        user_id:"",
     });
-
     function handleSubmit(e) {
         e.preventDefault();
-        Inertia.post(route('order.store'));
+        let k=document.querySelector('.user_id_input').defaultValue;
+        console.log(k);
+        data.user_id=k;
+        console.log(data);
+        post(route("order.store"));
     }
+    function handleChange(event) {
+        setState({value: event.target.value});
+    }
+    const state = {value: ''};
+
     return (
         <div className="mt-20">
             <div className="container flex flex-col justify-center mx-auto">
                 <div>
                     <h1 className="mb-8 text-3xl font-bold">
-                        <InertiaLink
-                            href={route("index")}
-                            className="text-indigo-600 hover:text-indigo-700"
-                        >
-                            Orders
-                        </InertiaLink>
+                        Orders
                         <span className="font-medium text-indigo-600"> / </span>
                         Create
                     </h1>
                 </div>
-                <div className="max-w-6xl p-8 bg-white rounded shadow">
+                <div className="max-w-6xl p-8 bg-white rounded shadow form-section">
                     <form name="createForm" onSubmit={handleSubmit}>
                         <div className="flex flex-col">
                             <div className="mb-4">
-                                <label className="">Title</label>
-                                <input
-                                    type="text"
-                                    className="w-full px-4 py-2"
-                                    label="Title"
-                                    name="title"
-                                    value={data.title}
-                                    onChange={(e) =>
-                                        setData("title", e.target.value)
-                                    }
-                                />
-                                <span className="text-red-600">
+                                <label className="">Type of Job</label>
+                                <select value={state.value} onChange={handleChange}>
+                                    <option ></option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div className="mb-4">
+                            <label className="">Title</label>
+                            <input
+                                type="text"
+                                className="w-full px-4 py-2"
+                                label="Title"
+                                name="title"
+                                value={data.title}
+                                onChange={(e) =>
+                                    setData("title", e.target.value)
+                                }
+                            />
+
+                            <input hidden
+                                   type="text"
+                                   className="user_id_input"
+                                   label="user_id"
+                                   name="user_id"
+                                   defaultValue="1"
+                            />
+                            <span className="text-red-600">
                                     {errors.title}
                                 </span>
-                            </div>
+
                             <div className="mb-0">
                                 <label className="">Description</label>
                                 <textarea
@@ -76,7 +95,6 @@ const Create = () => {
                 </div>
             </div>
         </div>
-    );
+);
 };
-
 export default Create;

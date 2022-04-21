@@ -8,7 +8,6 @@ use App\Models\Order;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 
-
 class OrderController extends Controller
 {
     /**
@@ -29,7 +28,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return Inertia::render('Order/Create');
+        return Inertia::render('Order/Main');
     }
 
     /**
@@ -40,10 +39,11 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-        dd($request);
+
         Order::create(
             $request->validated()
         );
+
         return Redirect::route('index');
     }
 

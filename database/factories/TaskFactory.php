@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Order>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Task>
  */
-class OrderFactory extends Factory
+class TaskFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,10 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title(),
+            'name' => $this->faker->jobTitle(),
             'description' => $this->faker->text(),
-            'user_id' => $this->faker->numberBetween(1,5),
+            'minimum_price' => $this->faker->numberBetween(5, 2000),
+            'minimum_time_in_hours' => $this->faker->numberBetween(1,24),
         ];
     }
 }
