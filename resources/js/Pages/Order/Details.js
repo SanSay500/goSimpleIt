@@ -1,11 +1,11 @@
 
 const Details = () => {
-    return (
+  return (
         <div>
             <p>Company Details</p>
 
         </div>
-    );
+  )
 }
 
-export default Details;
+export default Details

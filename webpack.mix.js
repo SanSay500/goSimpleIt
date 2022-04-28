@@ -22,6 +22,7 @@ mix.js('resources/js/app.js', 'public/js')
         '@': 'resources/js',
     });
 
+
 if (mix.inProduction()) {
     mix.version();
 }

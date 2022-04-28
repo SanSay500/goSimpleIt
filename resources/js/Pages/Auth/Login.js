@@ -1,36 +1,37 @@
-import React, { useEffect } from 'react';
-import Button from '@/Components/Button';
-import Checkbox from '@/Components/Checkbox';
-import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import Label from '@/Components/Label';
-import ValidationErrors from '@/Components/ValidationErrors';
-import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
-export default function Login({ status, canResetPassword }) {
-    const { data, setData, post, processing, errors, reset } = useForm({
-        email: '',
-        password: '',
-        remember: '',
-    });
+import React, { useEffect } from 'react'
+import Button from '@/Components/Button'
+import Checkbox from '@/Components/Checkbox'
+import Guest from '@/Layouts/Guest'
+import Input from '@/Components/Input'
+import Label from '@/Components/Label'
+import ValidationErrors from '@/Components/ValidationErrors'
+import { Head, Link, useForm } from '@inertiajs/inertia-react'
 
-    useEffect(() => {
-        return () => {
-            reset('password');
-        };
-    }, []);
+export default function Login ({ status, canResetPassword }) {
+  const { data, setData, post, processing, errors, reset } = useForm({
+    email: '',
+    password: '',
+    remember: ''
+  })
 
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value);
-    };
+  useEffect(() => {
+    return () => {
+      reset('password')
+    }
+  }, [])
 
-    const submit = (e) => {
-        e.preventDefault();
+  const onHandleChange = (event) => {
+    setData(event.target.name, event.target.type === 'checkbox' ? event.target.checked : event.target.value)
+  }
 
-        post(route('login'));
-    };
+  const submit = (e) => {
+    e.preventDefault()
 
-    return (
+    post(route('login'))
+  }
+
+  return (
         <Guest>
             <Head title="Log in" />
 
@@ -74,14 +75,23 @@ export default function Login({ status, canResetPassword }) {
                     </label>
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+
+                <div style={{ justifyContent: "space-between"}} className="flex items-center justify-end mt-4">
+                    <div>
+                        <Link href={route('register')} className="ml-4 text-sm text-gray-700 underline">
+                        Register
+                    </Link>
+                    </div>
+
                     {canResetPassword && (
+                        <div>
                         <Link
                             href={route('password.request')}
                             className="underline text-sm text-gray-600 hover:text-gray-900"
                         >
                             Forgot your password?
                         </Link>
+                    </div>
                     )}
 
                     <Button className="ml-4" processing={processing}>
@@ -90,5 +100,5 @@ export default function Login({ status, canResetPassword }) {
                 </div>
             </form>
         </Guest>
-    );
+  )
 }

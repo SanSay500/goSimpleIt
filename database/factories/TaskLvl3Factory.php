@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Task>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\TaskLvl3>
  */
-class TaskFactory extends Factory
+class TaskLvl3Factory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,8 +17,10 @@ class TaskFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->jobTitle(),
+            'type' => $this->faker->randomElement(['Feedback form', 'Admin Panel', 'E-mail marketing', 'CRM Integration', 'Pay system Integration', 'Blog', 'Forum']),
+            'category' => $this->faker->randomElement(['']),
             'description' => $this->faker->text(),
+            'task2_id' => $this->faker->numberBetween(1,5),
             'minimum_price' => $this->faker->numberBetween(5, 2000),
             'minimum_time_in_hours' => $this->faker->numberBetween(1,24),
         ];

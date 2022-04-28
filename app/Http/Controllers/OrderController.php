@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Engine;
 use App\Models\Order;
+use App\Models\TaskLvl1;
+use App\Models\TaskLvl2;
+use App\Models\TaskLvl3;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 
@@ -18,7 +22,8 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::latest()->get();
-        return Inertia::render('Order/Index', ['orders' => $orders]);
+        return Inertia::render('Order/Index', ['orders' => $orders, 'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register')]);
     }
 
     /**
@@ -26,9 +31,16 @@ class OrderController extends Controller
      *
      * @return \Inertia\Response
      */
-    public function create()
+    public function main()
     {
-        return Inertia::render('Order/Main');
+        //$tasks1_ids = TaskLvl1::all('id');
+        //dd($tasks1_ids);
+        //$tasks1_types = TaskLvl1::all('type');
+        $tasks1 = TaskLvl1::all();
+        $tasks2 = TaskLvl2::all();
+        $tasks3 = TaskLvl3::all();
+        $engines = Engine::all();
+        return Inertia::render('Order/Main', ['tasks1'=>$tasks1,  'tasks2'=>$tasks2, 'tasks3'=>$tasks3, 'engines'=>$engines]);
     }
 
     /**
@@ -39,12 +51,13 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-
+       //dd($request);
         Order::create(
+
             $request->validated()
         );
 
-        return Redirect::route('index');
+        //return Redirect::route('index');
     }
 
     /**

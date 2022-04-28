@@ -11,7 +11,9 @@
         "inertiajs/inertia-laravel": "^0.5.4",
         "laravel/framework": "^9.2",
         "laravel/sanctum": "^2.8",
+        "laravel/telescope": "^4.9",
         "laravel/tinker": "^2.7",
+        "rappasoft/laravel-livewire-tables": "^2.1",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

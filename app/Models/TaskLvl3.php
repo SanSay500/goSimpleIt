@@ -4,14 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Order;
 
-class Task extends Model
+class TaskLvl3 extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name',
+        'type',
+        'category',
         'description',
         'minimum_time_in_hours',
         'minimum_price',
     ];
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

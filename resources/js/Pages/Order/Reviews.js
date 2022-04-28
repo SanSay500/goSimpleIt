@@ -1,6 +1,5 @@
-const Reviews = ({reviews}) => {
-
-    return (
+const Reviews = ({ reviews }) => {
+  return (
         <><h3 className="reviews-title title">Reviews</h3>
         <ul className="reviews-list">
             {reviews.map((element, index) => (
@@ -21,7 +20,7 @@ const Reviews = ({reviews}) => {
             ))}
         </ul>
         </>
-    );
-};
+  )
+}
 
-export default Reviews;
+export default Reviews

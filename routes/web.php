@@ -26,7 +26,7 @@ Route::get('/index', function () {
 })->name('index');
 
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
-Route::get('/', [\App\Http\Controllers\OrderController::class, 'create'])->name('order.create');
+Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

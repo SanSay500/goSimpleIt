@@ -1,26 +1,27 @@
-import React from 'react';
-import Button from '@/Components/Button';
-import Guest from '@/Layouts/Guest';
-import Input from '@/Components/Input';
-import ValidationErrors from '@/Components/ValidationErrors';
-import { Head, useForm } from '@inertiajs/inertia-react';
 
-export default function ForgotPassword({ status }) {
-    const { data, setData, post, processing, errors } = useForm({
-        email: '',
-    });
+import React from 'react'
+import Button from '@/Components/Button'
+import Guest from '@/Layouts/Guest'
+import Input from '@/Components/Input'
+import ValidationErrors from '@/Components/ValidationErrors'
+import { Head, useForm } from '@inertiajs/inertia-react'
 
-    const onHandleChange = (event) => {
-        setData(event.target.name, event.target.value);
-    };
+export default function ForgotPassword ({ status }) {
+  const { data, setData, post, processing, errors } = useForm({
+    email: ''
+  })
 
-    const submit = (e) => {
-        e.preventDefault();
+  const onHandleChange = (event) => {
+    setData(event.target.name, event.target.value)
+  }
 
-        post(route('password.email'));
-    };
+  const submit = (e) => {
+    e.preventDefault()
 
-    return (
+    post(route('password.email'))
+  }
+
+  return (
         <Guest>
             <Head title="Forgot Password" />
 
@@ -50,5 +51,5 @@ export default function ForgotPassword({ status }) {
                 </div>
             </form>
         </Guest>
-    );
+  )
 }

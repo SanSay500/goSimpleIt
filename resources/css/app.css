@@ -1,3 +1,225 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.title{
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .reviews-wrapper{
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .reviews-list{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .review{
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    overflow: hidden;
+    padding: 25px;
+    box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);
+    margin-bottom: 15px;
+  }
+  .review:not(:nth-child(3n)){
+    margin-right: 10px ;
+  }
+  .user{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+  .user__img{
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  .user__name{
+    text-align: center;
+    padding-top: 8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 18px;
+  }
+  .coment{
+    display: flex;
+    flex-direction: column;
+  }
+  .coment-text{
+    padding-right: 15px;
+    padding-left: 15px;
+    text-align: center;
+    max-height: 150px;
+    overflow-y: auto;
+    margin-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(175, 170, 240) transparent;
+  }
+  .card-text::-webkit-scrollbar, .coment-text::-webkit-scrollbar{
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  
+  .card-text::-webkit-scrollbar-track, .coment-text::-webkit-scrollbar-track{
+    background: transparent;        /* color of the tracking area */
+  }
+  
+  .card-text::-webkit-scrollbar-thumb, .coment-text::-webkit-scrollbar-thumb {
+    background-color: rgb(175, 170, 240);    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */
+  }
+  
+  .coment-date{
+    text-align: right;
+    color:rgb(175, 170, 240)
+  }
+  .review__button{
+    font-weight: 700;
+    padding: 8px 15px;
+    border: 1px solid rgb(34 197 94);
+    color:#fff;
+    background-color: rgb(34 197 94);
+    border-radius: 25px;
+  }
+  .review__button:hover{
+    color:rgb(34 197 94);
+    background-color: #fff;
+  }
+  .form-section{
+    margin: 0 auto;
+    width: 75%;
+  }
+  .flip-card{
+    background-color: transparent;
+    width: 32%;
+    height: 450px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; 
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);
+  }
+  .flip-card:not(:last-child){
+      margin-right: 10px;
+  }
+  .flip-card-inner {
+position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+
+}
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+.card {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card.front{
+    background-color: #2d2d2d;
+    color: #fff;
+}
+.card.back{
+    padding: 35px 25px;
+    transform: rotateY(180deg);
+    background-color: #fff;
+    color: #2d2d2d;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.portfolio__img{
+    width: 100%;
+    height: 100%;
+object-fit: cover;
+object-position: top;
+}
+.portfolio-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-text{
+    font-size: 15px;
+    font-style: italic;
+    max-height: 175px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(175, 170, 240) transparent;
+}
+.card-name{
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 22px;
+}
+.card-dev__title{
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: left;
+}
+.card-dev-list{
+    list-style: circle;
+    list-style-position: inside;
+    text-align: left;
+}
+.btn-container{
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-container button:first-child{
+    margin-right: 15px;
+}
+  @media(max-width:1024px){
+    .review, .flip-card{
+      width: 45%;
+      margin-right: 0px ;
+    }
+    .reviews-list, .portfolio-list{
+      justify-content: space-between;
+    }
+  }
+  @media(max-width:767px){
+    .review{
+      width: 48%;
+      padding: 15px;
+    }
+    .coment-text {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .form-section{
+      width: 100%;
+    }
+  }
+  @media(max-width:576px){
+    .review,.flip-card{
+      width: 75%;
+      margin: 0 auto;
+    }
+    .review:not(:last-child){
+      margin-bottom: 15px !important;
+    }
+    .review:not(:nth-child(3n)) {
+        margin-right: auto;
+    }
+
+  }
+  @media(max-width:456px){
+    .review,.flip-card{
+      width: 90%;
+    }
+  }

@@ -1,37 +1,41 @@
-import React from "react";
-import { useState } from "react";
-import Reviews from "./Reviews";
-import Create from "@/Pages/Order/Create";
-import { COUNT_REVIEWS_LOADED } from "../../types.js";
-import { myJson } from "../../mocks/review-data.js";
+import React from 'react'
+import Create from '@/Pages/Order/Create'
+import { myJson } from '../../mocks/review-data.js'
+import ReviewContainer from './review-container'
+import PortfolioContainer from './portfolio-container'
+import Test from './Test'
+import {Link} from "@inertiajs/inertia-react";
 
-const Main = () => {
-    const [step, setStep] = useState(COUNT_REVIEWS_LOADED);
+const Main = (props) => {
 
-return (
+  return (
          <div className="mt-20">
+             <div className="fixed top-0 right-0 px-6 py-4 sm:block">
+                 {props.auth.user
+                     ? (
+                         <Link href={route('dashboard')} className="text-sm text-gray-700 underline">
+                             Dashboard
+                         </Link>
+                     )
+                     : (
+                         <>
+                             <Link href={route('login')} className="text-sm text-gray-700 underline">
+                                 Log in
+                             </Link>
 
-               < Create />
+                             <Link href={route('register')} className="ml-4 text-sm text-gray-700 underline">
+                                 Register
+                             </Link>
+                         </>
+                     )}
+             </div>
+           <div className="container flex flex-col justify-center mx-auto">
+           <Create />
 
-                <div className="reviews-wrapper">
-
-                    <Reviews reviews={myJson.reviews.slice(0, step)} />
-
-                    {myJson.reviews.length > step ? (
-                        <div className="review__more">
-                        <button
-                          className="review__button"
-                          type="button"
-                          onClick={() => setStep(step + COUNT_REVIEWS_LOADED)}
-                        >
-                          Show more
-                        </button>
-                      </div>
-                    ) : (
-                        ""
-                    )}
-                </div>
+              <PortfolioContainer portfolioList={myJson.portfolio}/>
+              <ReviewContainer reviewsList={myJson.reviews}/>
+            </div>
     </div>
-    );
-};
-export default Main;
+  )
+}
+export default Main

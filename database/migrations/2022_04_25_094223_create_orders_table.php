@@ -15,9 +15,15 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('Title');
-            $table->string('Description');
+            $table->string('title');
+            $table->string('description');
+            $table->string('file')->nullable();
+            $table->float('money')->nullable();
+            $table->integer('hours')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('task1_id')->constrained('task_lvl1s', 'id')->onDelete('cascade');
+            $table->foreignId('task2_id')->constrained('task_lvl2s', 'id')->onDelete('cascade');
+            $table->foreignId('engine_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -16,8 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeeder::class,
+            EngineSeeder::class,
+            TaskLvl1Seeder::class,
+            TaskLvl2Seeder::class,
+            TaskLvl3Seeder::class,
             OrderSeeder::class,
-            TaskSeeder::class,
         ]);
     }
 }

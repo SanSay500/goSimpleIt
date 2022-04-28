@@ -26,6 +26,12 @@ class StoreOrderRequest extends FormRequest
         return [
             'title' => 'required',
             'description' => 'required',
+            'file'=>'',
+            'money'=>'',
+            'hours'=>'',
+            'task1_id' => '',
+            'task2_id' => '',
+            'engine_id' => '',
             'user_id' => ''
         ];
     }

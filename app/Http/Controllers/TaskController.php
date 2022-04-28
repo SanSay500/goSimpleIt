@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
-use App\Models\Task;
+use App\Models\TaskLvl1;
 
 class TaskController extends Controller
 {
@@ -42,10 +42,10 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\TaskLvl1  $task
      * @return \Illuminate\Http\Response
      */
-    public function show(Task $task)
+    public function show(TaskLvl1 $task)
     {
         //
     }
@@ -53,10 +53,10 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\TaskLvl1  $task
      * @return \Illuminate\Http\Response
      */
-    public function edit(Task $task)
+    public function edit(TaskLvl1 $task)
     {
         //
     }
@@ -65,10 +65,10 @@ class TaskController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdateTaskRequest  $request
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\TaskLvl1  $task
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request, TaskLvl1 $task)
     {
         //
     }
@@ -76,10 +76,10 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Task  $task
+     * @param  \App\Models\TaskLvl1  $task
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Task $task)
+    public function destroy(TaskLvl1 $task)
     {
         //
     }
