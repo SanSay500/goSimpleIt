@@ -34,8 +34,10 @@
     "dependencies": {
         "@emotion/react": "^11.9.0",
         "@emotion/styled": "^11.8.1",
+        "@material/menu": "^14.0.0",
         "@mui/material": "^5.6.3",
         "rc-cascader": "^3.5.0",
+        "react-hook-form": "^7.30.0",
         "react-select": "^5.3.0"
     }
 }

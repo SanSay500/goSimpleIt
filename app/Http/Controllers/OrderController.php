@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Engine;
+use App\Models\Job;
 use App\Models\Order;
 use App\Models\TaskLvl1;
 use App\Models\TaskLvl2;
@@ -40,7 +41,8 @@ class OrderController extends Controller
         $tasks2 = TaskLvl2::all();
         $tasks3 = TaskLvl3::all();
         $engines = Engine::all();
-        return Inertia::render('Order/Main', ['tasks1'=>$tasks1,  'tasks2'=>$tasks2, 'tasks3'=>$tasks3, 'engines'=>$engines]);
+        $jobs = Job::all();
+        return Inertia::render('Order/Main', ['tasks1'=>$tasks1,  'tasks2'=>$tasks2, 'tasks3'=>$tasks3, 'engines'=>$engines, 'jobs'=>$jobs]);
     }
 
     /**

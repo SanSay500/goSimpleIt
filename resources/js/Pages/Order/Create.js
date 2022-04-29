@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { InertiaLink, useForm, usePage } from '@inertiajs/inertia-react'
+import { InertiaLink, usePage } from '@inertiajs/inertia-react'
 import SelectInput from '../Shared/SelectInput';
 import FileInput from '../Shared/FileInput';
-import { Inertia } from '@inertiajs/inertia'
+import { useForm } from "react-hook-form";
 
 
 const Create = () => {
@@ -156,7 +156,7 @@ const Create = () => {
                                       setData('title', e.target.value)
                                     }
                                 />
-                                <input
+                                <input hidden
                                     name = "money"
                                     value={moneyTotal}
                                     onChange={(e) =>

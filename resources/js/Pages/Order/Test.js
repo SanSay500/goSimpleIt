@@ -1,6 +1,11 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { InertiaLink, useForm, usePage } from '@inertiajs/inertia-react'
 import SelectInput from '../Shared/SelectInput';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Stack from '@mui/material/Stack';
+import Autocomplete from '@mui/material/Autocomplete';
+
 
 const Test = () => {
     const { data, setData, errors, post } = useForm({
@@ -9,7 +14,9 @@ const Test = () => {
         user_id: ''
     })
 
-    const { tasks1_ids, task1_types, tasks2_ids, task2_types, tasks3, engines } = usePage().props;
+    const [moneyTotal, setMoneyTotal] = useState(0);
+    const [hoursTotal, setHoursTotal] = useState(0);
+    const { jobs, tasks1, tasks2, tasks3, engines } = usePage().props;
     const [task1,setTask1] = useState();
     const [task2, setTask2] = useState();
     const [engine, setEngine] = useState();
@@ -47,42 +54,38 @@ const Test = () => {
         //console.log(tasks2[value-1].minimum_price);
         //console.log(tasks3[value-1].minimum_price);
     }
+    const changeSearch = ({ target: {value} }) =>{
+      setMoneyTotal(value);
+    }
+
+    useEffect(() => {
+
+    });
 
     return (
-        <div className="container flex flex-col justify-center mx-auto">
-            <p>Selected: {task1} {task2} {engine} </p>
-                <p>Dollars: {money}</p>
-                <p>Hours: {hours}</p>
 
-            <SelectInput onChange={changeTask1}>
-                {/*{!tasks1.type && <option/>}*/}
-                {tasks1_ids.map((c, i) => (
-                    <option value={c.id} key={i}>
+        <Stack spacing={2} sx={{ width: 300 }}>
+            <p>Cost: from {moneyTotal} $</p>
+            <p>Time: from {hoursTotal} hours</p>
+            <Autocomplete
+                freeSolo
+                id="free-solo-2-demo"
+                disableClearable
+                options={jobs.map((option) => option.name)}
+                renderInput={(params) => (
+                    <TextField
+                        onChange={changeSearch}
+                        {...params}
+                        label="Search job type"
+                        InputProps={{
+                            ...params.InputProps,
+                            type: 'search',
+                        }}
+                    />
+                )}
+            />
+        </Stack>
 
-                        {c.id}
-                    </option>
-                ))}
-            </SelectInput>
-
-            <SelectInput style={{display: task1 ? "block" : "none"}} onChange={changeTask2}>
-                {!tasks2.type && <option/>}
-                {tasks2.filter(c =>
-                    (c.task1_id == task1))
-                    .map((c, i) => (
-                        <option value={c.id} key={i}>
-                            {c.type}
-                        </option>
-                    ))}
-            </SelectInput>
-            <SelectInput style={{display: task1  ? "block" : "none"}} onChange={changeEngine}>
-                {!engines.name && <option/>}
-                {engines.map((c, i) => (
-                    <option value={c.name} key={i}>
-                        {c.name}
-                    </option>
-                ))}
-            </SelectInput>
-        </div>
     )
 }
 export default Test

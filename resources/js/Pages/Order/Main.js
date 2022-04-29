@@ -30,7 +30,7 @@ const Main = (props) => {
                      )}
              </div>
            <div className="container flex flex-col justify-center mx-auto">
-           <Create />
+           <Test />
 
               <PortfolioContainer portfolioList={myJson.portfolio}/>
               <ReviewContainer reviewsList={myJson.reviews}/>
