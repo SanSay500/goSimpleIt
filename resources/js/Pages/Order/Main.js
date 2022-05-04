@@ -3,8 +3,7 @@ import Create from '@/Pages/Order/Create'
 import { myJson } from '../../mocks/review-data.js'
 import ReviewContainer from './review-container'
 import PortfolioContainer from './portfolio-container'
-import Test from './Test'
-import {Link} from "@inertiajs/inertia-react";
+import {InertiaLink, Link} from "@inertiajs/inertia-react";
 
 const Main = (props) => {
 
@@ -30,7 +29,21 @@ const Main = (props) => {
                      )}
              </div>
            <div className="container flex flex-col justify-center mx-auto">
-           <Test />
+               <div>
+                   <h1 className="mb-8 text-3xl font-bold">
+                       <InertiaLink
+                           href={route('index')}
+                           className="text-indigo-600 hover:text-indigo-700"
+                       >
+                           Orders
+                       </InertiaLink>
+                       <span className="font-medium text-indigo-600"> / </span>
+                       Create
+                   </h1>
+               </div>
+
+               <Create/>
+
 
               <PortfolioContainer portfolioList={myJson.portfolio}/>
               <ReviewContainer reviewsList={myJson.reviews}/>

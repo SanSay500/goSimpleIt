@@ -36,6 +36,10 @@ class JobSeeder extends Seeder
             ['Fix site down', 20,2],
             ['Fix site errors', 20,2],
             ['Fix bugs', 20,2],
+            ['Wordpress add plugin', 20,2],
+            ['Add payment module', 20,2],
+            ['Speed up site', 100,8],
+            ['Estimate issue 1500', 1500,8],
         ];
         foreach ($jobs as $job) {
             DB::table('jobs')->insert(values: [
