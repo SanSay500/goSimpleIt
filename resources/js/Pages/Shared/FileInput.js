@@ -21,14 +21,15 @@ export default ({ className, name, label, accept, errors = [], onChange }) => {
 
     function remove() {
         setFile(null);
-        onChange(null);
+        //onChange(null);
         fileInput.current.value = null;
     }
 
     function handleFileChange(e) {
         const file = e.target.files[0];
         setFile(file);
-        onChange(file);
+        //onChange(file);
+
     }
 
     return (

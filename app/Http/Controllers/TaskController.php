@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTaskRequest;
-use App\Http\Requests\UpdateTaskRequest;
-use App\Models\TaskLvl1;
+use App\Http\Requests\StoreJobRequest;
+use App\Http\Requests\UpdateJobRequest;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
@@ -31,10 +31,10 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreTaskRequest  $request
+     * @param  \App\Http\Requests\StoreJobRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreTaskRequest $request)
+    public function store(StoreJobRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class TaskController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\TaskLvl1  $task
+     * @param  \App\Models\Task  $job
      * @return \Illuminate\Http\Response
      */
-    public function show(TaskLvl1 $task)
+    public function show(Task $job)
     {
         //
     }
@@ -53,10 +53,10 @@ class TaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\TaskLvl1  $task
+     * @param  \App\Models\Task  $job
      * @return \Illuminate\Http\Response
      */
-    public function edit(TaskLvl1 $task)
+    public function edit(Task $job)
     {
         //
     }
@@ -64,11 +64,11 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateTaskRequest  $request
-     * @param  \App\Models\TaskLvl1  $task
+     * @param  \App\Http\Requests\UpdateJobRequest  $request
+     * @param  \App\Models\Task  $job
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTaskRequest $request, TaskLvl1 $task)
+    public function update(UpdateJobRequest $request, Task $job)
     {
         //
     }
@@ -76,10 +76,10 @@ class TaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\TaskLvl1  $task
+     * @param  \App\Models\Task  $job
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TaskLvl1 $task)
+    public function destroy(Task $job)
     {
         //
     }

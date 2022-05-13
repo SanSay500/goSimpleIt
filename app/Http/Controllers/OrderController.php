@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Engine;
-use App\Models\Job;
+use App\Models\Task;
 use App\Models\Order;
 use App\Models\TaskLvl1;
 use App\Models\TaskLvl2;
 use App\Models\TaskLvl3;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
@@ -34,15 +35,8 @@ class OrderController extends Controller
      */
     public function main()
     {
-        //$tasks1_ids = TaskLvl1::all('id');
-        //dd($tasks1_ids);
-        //$tasks1_types = TaskLvl1::all('type');
-        $tasks1 = TaskLvl1::all();
-        $tasks2 = TaskLvl2::all();
-        $tasks3 = TaskLvl3::all();
-        $engines = Engine::all();
-        $jobs = Job::all();
-        return Inertia::render('Order/Main', ['tasks1'=>$tasks1,  'tasks2'=>$tasks2, 'tasks3'=>$tasks3, 'engines'=>$engines, 'jobs'=>$jobs]);
+        $tasks = Task::all();
+        return Inertia::render('Order/Main', ['tasks'=>$tasks]);
     }
 
     /**
@@ -55,9 +49,9 @@ class OrderController extends Controller
     {
        //dd($request);
         Order::create(
-
             $request->validated()
         );
+        Storage::putFile('tasks', $request->file('file'));
 
         //return Redirect::route('index');
     }

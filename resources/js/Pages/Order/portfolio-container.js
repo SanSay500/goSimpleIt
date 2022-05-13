@@ -21,12 +21,12 @@ const PortfolioContainer=({portfolioList})=>{
     } else {
         count_project=1;
     }
-        
+
     }
         setStepPrev(0);
         setStepNext(count_project);
     };
-  
+
     useEffect(() => {
       window.addEventListener("resize", resizeHandler);
       resizeHandler();
@@ -34,7 +34,10 @@ const PortfolioContainer=({portfolioList})=>{
         window.removeEventListener("resize", resizeHandler);
       };
     }, []);
-    return(<div className='portfolio-wrapper'>
+    return(
+      <section className="portfolio">
+      <div className="container">
+        <div className='portfolio-wrapper'>
     <Portfolio projects={portfolioList.slice(stepPrev, stepNext)}/>
     <div className='btn-container'>
     {stepPrev > 0
@@ -50,7 +53,7 @@ const PortfolioContainer=({portfolioList})=>{
             } else {
                 setStepPrev(stepPrev - count_project)
             }
-            
+
         }}
         >
           Prev page
@@ -78,8 +81,10 @@ const PortfolioContainer=({portfolioList})=>{
       : (
           ''
         )}
-        
+
     </div>
-</div>)
+</div>
+</div>
+    </section>)
 }
 export default PortfolioContainer

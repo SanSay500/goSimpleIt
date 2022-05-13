@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             TaskLvl2Seeder::class,
             TaskLvl3Seeder::class,
             OrderSeeder::class,
+            TaskSeeder::class,
         ]);
     }
 }

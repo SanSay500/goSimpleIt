@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
     protected $fillable = [
         'title',
@@ -17,6 +18,7 @@ class Order extends Model
         'task2_id',
         'engine_id',
         'money',
+        'file',
         'hours',
         'user_id',
         ];

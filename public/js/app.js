@@ -31702,6 +31702,262 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
+/* harmony import */ var _mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Autocomplete */ "./node_modules/@mui/material/Autocomplete/Autocomplete.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    title: "",
+    description: "",
+    money: "",
+    hours: "",
+    file: "",
+    user_id: "1"
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post;
+
+  var moneyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var hoursRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      selectedFile = _useState2[0],
+      setSelectedFile = _useState2[1];
+
+  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      moneyTotalSearch = _useState4[0],
+      setMoneyTotalSearch = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      hoursTotalSearch = _useState6[0],
+      setHoursTotalSearch = _useState6[1];
+
+  function handleSubmit(e) {
+    data.money = moneyRef.current;
+    data.hours = hoursRef.current;
+    post(route("order.store", data, {
+      forceFormData: true,
+      _method: "put"
+    }));
+  }
+
+  var changeSearch = function changeSearch(_ref) {
+    var value = _ref.target.value;
+    setMoneyTotalSearch(0);
+    setHoursTotalSearch(0);
+    var job_found = tasks.find(function (e) {
+      return e.name == value;
+    });
+
+    if (job_found) {
+      setMoneyTotalSearch(tasks.find(function (e) {
+        return e.name == value;
+      }).money);
+      setHoursTotalSearch(tasks.find(function (e) {
+        return e.name == value;
+      }).time);
+    }
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    moneyRef.current = moneyTotalSearch;
+    hoursRef.current = hoursTotalSearch;
+    console.log(data);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+    className: "form-block",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "form-wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+          name: "createForm",
+          onSubmit: handleSubmit,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "form-section",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-item form-search",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "form-label",
+                children: [" ", "Search by tasks", " "]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_3__["default"], {
+                freeSolo: true,
+                id: "search-job auto",
+                disableClearable: true,
+                options: tasks.map(function (option) {
+                  return option.name;
+                }),
+                renderInput: function renderInput(params) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_4__["default"], _objectSpread(_objectSpread({}, params), {}, {
+                    onSelect: changeSearch,
+                    label: "Start typing job...",
+                    InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
+                      type: "search"
+                    })
+                  }));
+                }
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-item form-title",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                className: "form-label",
+                children: "Title"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                type: "text",
+                className: "form-input",
+                label: "Title",
+                name: "title",
+                value: data.title,
+                onChange: function onChange(e) {
+                  return setData("title", e.target.value);
+                },
+                placeholder: "Enter"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-item form-description",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                className: "form-label",
+                children: "Description"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("textarea", {
+                type: "text",
+                className: "form-input",
+                label: "description",
+                name: "description",
+                errors: errors.description,
+                value: data.description,
+                onChange: function onChange(e) {
+                  return setData("description", e.target.value);
+                },
+                placeholder: "Enter"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "text-red-600",
+                children: errors.description
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-info",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "form-price",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                  className: "form-label",
+                  children: "Price"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "text",
+                  className: "form-input form-input--second",
+                  label: "cost",
+                  name: "cost",
+                  value: moneyTotalSearch,
+                  readOnly: true
+                }), "$"]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "form-period",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                  className: "form-label",
+                  children: "Period"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "text",
+                  className: "form-input form-input--second",
+                  label: "time",
+                  name: "time",
+                  value: hoursTotalSearch,
+                  readOnly: true
+                }), " ", "hours"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "form-file",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+                className: "form-label",
+                children: "Add file with job description"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "file-info",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "file-upload",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                      type: "file",
+                      name: "file",
+                      onChange: function onChange(e) {
+                        if (e.target.files[0]) {
+                          setSelectedFile(e.target.files[0].name);
+                        } else {
+                          setSelectedFile('');
+                        }
+
+                        setData("file", e.target.files[0]);
+                      },
+                      id: "uploaded-file"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      children: "Choose a file"
+                    })]
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "file-name",
+                  children: selectedFile
+                })]
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "btn-container",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              type: "submit",
+              className: "btn-submit",
+              children: "Publish and find a specialist"
+            })
+          })]
+        })
+      })
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Create);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Order/Create2.js":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Order/Create2.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Shared_SelectInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/SelectInput */ "./resources/js/Pages/Shared/SelectInput.js");
 /* harmony import */ var _Shared_FileInput__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Shared/FileInput */ "./resources/js/Pages/Shared/FileInput.js");
 /* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
@@ -31740,11 +31996,9 @@ var Create = function Create() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     title: '',
     description: '',
-    task1_id: '',
-    task2_id: '',
-    engine_id: '',
     money: '',
     hours: '',
+    file: '',
     user_id: '1'
   }),
       data = _useForm.data,
@@ -31754,158 +32008,55 @@ var Create = function Create() {
 
   var moneyRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var hoursRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
-      jobs = _usePage$props.jobs,
-      tasks1 = _usePage$props.tasks1,
-      tasks2 = _usePage$props.tasks2,
-      tasks3 = _usePage$props.tasks3,
-      engines = _usePage$props.engines;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
       _useState2 = _slicedToArray(_useState, 2),
-      task1 = _useState2[0],
-      setTask1 = _useState2[1];
+      selectedFile = _useState2[0],
+      setSelectedFile = _useState2[1];
+
+  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
-      task2 = _useState4[0],
-      setTask2 = _useState4[1];
+      moneyTotalSearch = _useState4[0],
+      setMoneyTotalSearch = _useState4[1];
 
   var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
-      engine = _useState6[0],
-      setEngine = _useState6[1];
-
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState8 = _slicedToArray(_useState7, 2),
-      moneyTotal = _useState8[0],
-      setMoneyTotal = _useState8[1];
-
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState10 = _slicedToArray(_useState9, 2),
-      moneyTotalSearch = _useState10[0],
-      setMoneyTotalSearch = _useState10[1];
-
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState12 = _slicedToArray(_useState11, 2),
-      money1 = _useState12[0],
-      setMoney1 = _useState12[1];
-
-  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState14 = _slicedToArray(_useState13, 2),
-      money2 = _useState14[0],
-      setMoney2 = _useState14[1];
-
-  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState16 = _slicedToArray(_useState15, 2),
-      money3 = _useState16[0],
-      setMoney3 = _useState16[1];
-
-  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState18 = _slicedToArray(_useState17, 2),
-      hoursTotal = _useState18[0],
-      setHoursTotal = _useState18[1];
-
-  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState20 = _slicedToArray(_useState19, 2),
-      hoursTotalSearch = _useState20[0],
-      setHoursTotalSearch = _useState20[1];
-
-  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState22 = _slicedToArray(_useState21, 2),
-      hours1 = _useState22[0],
-      setHours1 = _useState22[1];
-
-  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState24 = _slicedToArray(_useState23, 2),
-      hours2 = _useState24[0],
-      setHours2 = _useState24[1];
-
-  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState26 = _slicedToArray(_useState25, 2),
-      hours3 = _useState26[0],
-      setHours3 = _useState26[1];
-
-  var changeTask1 = function changeTask1(_ref) {
-    var value = _ref.target.value;
-    setTask1(value);
-    setData('task1_id', value);
-    setTask2('');
-    setMoney1(0);
-    setHours1(0);
-    setMoney1(tasks1[value - 1].minimum_price);
-    setHours1(tasks1[value - 1].minimum_time_in_hours);
-  };
-
-  var changeTask2 = function changeTask2(_ref2) {
-    var value = _ref2.target.value;
-    setTask2(value);
-    setData('task2_id', value);
-    setEngine(1);
-    setMoney2(0);
-    setHours2(0);
-    setMoney2(tasks2[value - 1].minimum_price);
-    setHours2(tasks2[value - 1].minimum_time_in_hours);
-  };
-
-  var changeEngine = function changeEngine(_ref3) {
-    var value = _ref3.target.value;
-    setEngine(value);
-    setData('engine_id', value);
-    setHours3(0);
-    setMoney3(0);
-    setMoney3(engines[value - 1].minimum_price);
-    setHours3(engines[value - 1].minimum_time_in_hours);
-  };
+      hoursTotalSearch = _useState6[0],
+      setHoursTotalSearch = _useState6[1];
 
   function handleSubmit(e) {
     data.money = moneyRef.current;
     data.hours = hoursRef.current;
-    post(route('order.store'));
+    post(route('order.store', data, {
+      forceFormData: true,
+      _method: 'put'
+    }));
   }
 
-  var changeSearch = function changeSearch(_ref4) {
-    var value = _ref4.target.value;
+  var changeSearch = function changeSearch(_ref) {
+    var value = _ref.target.value;
     setMoneyTotalSearch(0);
     setHoursTotalSearch(0);
-    var job_found = jobs.find(function (e) {
+    var job_found = tasks.find(function (e) {
       return e.name == value;
     });
 
     if (job_found) {
-      setMoneyTotalSearch(jobs.find(function (e) {
+      setMoneyTotalSearch(tasks.find(function (e) {
         return e.name == value;
       }).money);
-      setHoursTotalSearch(jobs.find(function (e) {
+      setHoursTotalSearch(tasks.find(function (e) {
         return e.name == value;
       }).time);
     }
   };
 
-  var hideChooseByCategory = function hideChooseByCategory() {};
-
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (task2 == 0) {
-      setMoney2(0);
-      setHours2(0);
-    }
-
-    if (task1 == 0) {
-      setMoneyTotal(0);
-      setHoursTotal(0);
-    }
-
-    if (task1 || task2) {
-      setMoneyTotal(money1 + money2 + money3);
-      setHoursTotal(hours1 + hours2 + hours3);
-    }
-
-    if (!task1) {
-      setEngine(null);
-    }
-
-    moneyRef.current = moneyTotal;
-    hoursRef.current = hoursTotal;
+    moneyRef.current = moneyTotalSearch;
+    hoursRef.current = hoursTotalSearch;
+    console.log(data);
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "container flex flex-col justify-center mx-auto",
@@ -31916,9 +32067,9 @@ var Create = function Create() {
         onSubmit: handleSubmit,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "d-flex justify-content-between",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "d-flex justify-content-between",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Stack__WEBPACK_IMPORTED_MODULE_5__["default"], {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Stack__WEBPACK_IMPORTED_MODULE_5__["default"], {
               spacing: 2,
               sx: {
                 width: 300
@@ -31933,12 +32084,11 @@ var Create = function Create() {
                 freeSolo: true,
                 id: "search-job auto",
                 disableClearable: true,
-                options: jobs.map(function (option) {
+                options: tasks.map(function (option) {
                   return option.name;
                 }),
                 renderInput: function renderInput(params) {
                   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, params), {}, {
-                    onFocus: hideChooseByCategory,
                     onSelect: changeSearch,
                     label: "Start typing job...",
                     InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
@@ -31947,65 +32097,7 @@ var Create = function Create() {
                   }));
                 }
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "... or Choose by Category "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                name: "task1_id",
-                errors: errors.task1_id,
-                onChange: changeTask1,
-                value: data.task1_id,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {}), tasks1.map(function (c, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-                    value: c.id,
-                    children: c.type
-                  }, i);
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                style: {
-                  display: task1 && tasks2.find(function (c) {
-                    return c.task1_id == task1;
-                  }) ? "block" : "none"
-                },
-                children: "Choose job category "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                name: "task2_id",
-                style: {
-                  display: task1 && tasks2.find(function (c) {
-                    return c.task1_id == task1;
-                  }) ? "block" : "none"
-                },
-                onChange: changeTask2,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {}), tasks2.filter(function (c) {
-                  return c.task1_id == task1;
-                }).map(function (c, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-                    value: c.id,
-                    children: c.type
-                  }, i);
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                style: {
-                  display: engine || task1 && !task2 ? "block" : "none"
-                },
-                children: "Choose job engine "
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_2__["default"], {
-                name: "engine_id",
-                style: {
-                  display: engine || task1 && !task2 ? "block" : "none"
-                },
-                onChange: changeEngine,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {}), engines.map(function (c, i) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("option", {
-                    value: c.id,
-                    children: c.name
-                  }, i);
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                className: "text-red-600",
-                children: errors.title
-              })]
-            })]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
             className: "mb-0",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
@@ -32040,11 +32132,13 @@ var Create = function Create() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
             className: "",
             children: "Add file with job description"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Shared_FileInput__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-          children: ["Cost: from ", moneyTotal, " $"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-          children: ["Time: from ", hoursTotal, " hours"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            type: "file",
+            onChange: function onChange(e) {
+              //setSelectedFile(e.target.files[0]);
+              setData('file', e.target.files[0]);
+            }
+          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "mt-4",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
@@ -32351,8 +32445,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mocks_review_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../mocks/review-data.js */ "./resources/js/mocks/review-data.js");
 /* harmony import */ var _review_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./review-container */ "./resources/js/Pages/Order/review-container.js");
 /* harmony import */ var _portfolio_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./portfolio-container */ "./resources/js/Pages/Order/portfolio-container.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _about_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about-container */ "./resources/js/Pages/Order/about-container.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -32364,44 +32460,127 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Main = function Main(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-    className: "mt-20",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "fixed top-0 right-0 px-6 py-4 sm:block",
-      children: props.auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
-        href: route('dashboard'),
-        className: "text-sm text-gray-700 underline",
-        children: "Dashboard"
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
-          href: route('login'),
-          className: "text-sm text-gray-700 underline",
-          children: "Log in"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
-          href: route('register'),
-          className: "ml-4 text-sm text-gray-700 underline",
-          children: "Register"
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-      className: "container flex flex-col justify-center mx-auto",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("h1", {
-          className: "mb-8 text-3xl font-bold",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.InertiaLink, {
-            href: route('index'),
-            className: "text-indigo-600 hover:text-indigo-700",
-            children: "Orders"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-            className: "font-medium text-indigo-600",
-            children: " / "
-          }), "Create"]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("header", {
+      className: "header",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "header-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "header-logo",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+              src: "/images/logo-upwork.svg",
+              alt: "Logo"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "header-block"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "header-auth",
+            children: props.auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+              href: route("dashboard"),
+              className: "auth-link",
+              children: "Dashboard"
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+                href: route("login"),
+                className: "auth-link link",
+                children: "Log in"
+              })
+            })
+          })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Pages_Order_Create__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_portfolio_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        portfolioList: _mocks_review_data_js__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_review_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        reviewsList: _mocks_review_data_js__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
-      })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("section", {
+      className: "hero",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "container mx-auto",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "hero-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h2", {
+            className: "hero-title",
+            children: "Find the perfect freelance services for your business"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "hero-cont",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+              className: "hero-link link",
+              children: "Place an order"
+            })
+          })]
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_portfolio_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      portfolioList: _mocks_review_data_js__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_review_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      reviewsList: _mocks_review_data_js__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_about_container__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Pages_Order_Create__WEBPACK_IMPORTED_MODULE_1__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("footer", {
+      className: "footer",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "container",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "footer-wrapper",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "footer-logo",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+              src: "/images/logo-upwork.svg",
+              alt: "Logo"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("ul", {
+            className: "contacts-networks",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              className: "network-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "#",
+                className: "network-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "/images/whatsapp.svg",
+                  alt: "Whatsapp"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              className: "network-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "#",
+                className: "network-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "/images/telegram.svg",
+                  alt: "Telegram"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              className: "network-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "#",
+                className: "network-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "/images/vk.svg",
+                  alt: "Vk"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              className: "network-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "#",
+                className: "network-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "/images/youtube.svg",
+                  alt: "Youtube"
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("li", {
+              className: "network-item",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("a", {
+                href: "#",
+                className: "network-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                  src: "/images/instagram.svg",
+                  alt: "Instagram"
+                })
+              })
+            })]
+          })]
+        })
+      })
     })]
   });
 };
@@ -32433,7 +32612,7 @@ var Portfolio = function Portfolio(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
       className: "portfolio-title title",
-      children: "Portfolio"
+      children: "Our works"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
       className: "portfolio-list",
       children: projects.map(function (element, index) {
@@ -32478,23 +32657,23 @@ var Reviews = function Reviews(_ref) {
           className: "reviews-list__item review",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "user-block user",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-              className: "user__img",
-              src: element.user.avatar,
-              alt: element.user.name
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+              className: "user-img",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
+                className: "user__img",
+                src: element.user.avatar,
+                alt: element.user.name
+              })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
               className: "user__name",
               children: element.user.name
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
             className: "coments-block coment",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
               className: "coment-text",
               children: element.commets
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-              className: "coment-date",
-              children: element.date
-            })]
+            })
           })]
         }, index);
       })
@@ -32630,6 +32809,436 @@ var SearchJob = function SearchJob() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SearchJob);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Order/SelectTasks.js":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Order/SelectTasks.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Shared_SelectInput__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Shared/SelectInput */ "./resources/js/Pages/Shared/SelectInput.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+var Create = function Create() {
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      tasks1 = _usePage$props.tasks1,
+      tasks2 = _usePage$props.tasks2,
+      tasks3 = _usePage$props.tasks3,
+      engines = _usePage$props.engines;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      hoursTotal = _useState2[0],
+      setHoursTotal = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      moneyTotal = _useState4[0],
+      setMoneyTotal = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState6 = _slicedToArray(_useState5, 2),
+      hours1 = _useState6[0],
+      setHours1 = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState8 = _slicedToArray(_useState7, 2),
+      hours2 = _useState8[0],
+      setHours2 = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState10 = _slicedToArray(_useState9, 2),
+      hours3 = _useState10[0],
+      setHours3 = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      money1 = _useState12[0],
+      setMoney1 = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      money2 = _useState14[0],
+      setMoney2 = _useState14[1];
+
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState16 = _slicedToArray(_useState15, 2),
+      money3 = _useState16[0],
+      setMoney3 = _useState16[1];
+
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState18 = _slicedToArray(_useState17, 2),
+      task1 = _useState18[0],
+      setTask1 = _useState18[1];
+
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState20 = _slicedToArray(_useState19, 2),
+      task2 = _useState20[0],
+      setTask2 = _useState20[1];
+
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(0),
+      _useState22 = _slicedToArray(_useState21, 2),
+      engine = _useState22[0],
+      setEngine = _useState22[1];
+
+  var changeTask1 = function changeTask1(_ref) {
+    var value = _ref.target.value;
+    setTask1(value);
+    setData('task1_id', value);
+    setTask2('');
+    setMoney1(0);
+    setHours1(0);
+    setMoney1(tasks1[value - 1].minimum_price);
+    setHours1(tasks1[value - 1].minimum_time_in_hours);
+  };
+
+  var changeTask2 = function changeTask2(_ref2) {
+    var value = _ref2.target.value;
+    setTask2(value);
+    setData('task2_id', value);
+    setEngine(1);
+    setMoney2(0);
+    setHours2(0);
+    setMoney2(tasks2[value - 1].minimum_price);
+    setHours2(tasks2[value - 1].minimum_time_in_hours);
+  };
+
+  var changeEngine = function changeEngine(_ref3) {
+    var value = _ref3.target.value;
+    setEngine(value);
+    setData('engine_id', value);
+    setHours3(0);
+    setMoney3(0);
+    setMoney3(engines[value - 1].minimum_price);
+    setHours3(engines[value - 1].minimum_time_in_hours);
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+    if (task2 == 0) {
+      setMoney2(0);
+      setHours2(0);
+    }
+
+    if (task1 == 0) {
+      setMoneyTotal(0);
+      setHoursTotal(0);
+    }
+
+    if (task1 || task2) {
+      setMoneyTotal(money1 + money2 + money3);
+      setHoursTotal(hours1 + hours2 + hours3);
+    }
+
+    if (!task1) {
+      setEngine(null);
+    }
+
+    moneyRef.current = moneyTotalSearch;
+    hoursRef.current = hoursTotalSearch;
+    console.log(data);
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      children: ["Cost: from ", moneyTotal, " $"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      children: ["Time: from ", hoursTotal, " hours"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+      children: "... or Choose by Category "
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      name: "task1_id",
+      errors: errors.task1_id,
+      onChange: changeTask1,
+      value: data.task1_id,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {}), tasks1.map(function (c, i) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: c.id,
+          children: c.type
+        }, i);
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+      style: {
+        display: task1 && tasks2.find(function (c) {
+          return c.task1_id == task1;
+        }) ? "block" : "none"
+      },
+      children: "Choose job category "
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      name: "task2_id",
+      style: {
+        display: task1 && tasks2.find(function (c) {
+          return c.task1_id == task1;
+        }) ? "block" : "none"
+      },
+      onChange: changeTask2,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {}), tasks2.filter(function (c) {
+        return c.task1_id == task1;
+      }).map(function (c, i) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: c.id,
+          children: c.type
+        }, i);
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("label", {
+      style: {
+        display: engine || task1 && !task2 ? "block" : "none"
+      },
+      children: "Choose job engine "
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_Shared_SelectInput__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      name: "engine_id",
+      style: {
+        display: engine || task1 && !task2 ? "block" : "none"
+      },
+      onChange: changeEngine,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {}), engines.map(function (c, i) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("option", {
+          value: c.id,
+          children: c.name
+        }, i);
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+      className: "text-red-600",
+      children: errors.title
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SelectTasks);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Order/Test.js":
+/*!******************************************!*\
+  !*** ./resources/js/Pages/Order/Test.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _Shared_SelectInput__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Shared/SelectInput */ "./resources/js/Pages/Shared/SelectInput.js");
+/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
+/* harmony import */ var _mui_material_Stack__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Stack */ "./node_modules/@mui/material/Stack/Stack.js");
+/* harmony import */ var _mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Autocomplete */ "./node_modules/@mui/material/Autocomplete/Autocomplete.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+
+
+
+
+
+var Test = function Test() {
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    title: '',
+    description: '',
+    user_id: ''
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      moneyTotal = _useState2[0],
+      setMoneyTotal = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      hoursTotal = _useState4[0],
+      setHoursTotal = _useState4[1];
+
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      jobs = _usePage$props.jobs,
+      tasks1 = _usePage$props.tasks1,
+      tasks2 = _usePage$props.tasks2,
+      tasks3 = _usePage$props.tasks3,
+      engines = _usePage$props.engines;
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      task1 = _useState6[0],
+      setTask1 = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState8 = _slicedToArray(_useState7, 2),
+      task2 = _useState8[0],
+      setTask2 = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState10 = _slicedToArray(_useState9, 2),
+      engine = _useState10[0],
+      setEngine = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState12 = _slicedToArray(_useState11, 2),
+      money = _useState12[0],
+      setMoney = _useState12[1];
+
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState14 = _slicedToArray(_useState13, 2),
+      hours = _useState14[0],
+      setHours = _useState14[1];
+
+  var changeTask1 = function changeTask1(_ref) {
+    var value = _ref.target.value;
+    setTask1(value);
+    setTask2(''); //setMoney(0);
+    //setTask2(0);
+    //setHours(tasks1[value-1].minimum_time_in_hours);
+    //setMoney(tasks1[value-1].minimum_price);
+  };
+
+  var changeTask2 = function changeTask2(_ref2) {
+    var value = _ref2.target.value;
+    setTask2(value);
+    setEngine(''); //setMoney(0);
+    //setHours(0);
+    //setMoney(tasks2[value-1].minimum_price);
+    //setHours(tasks2[value-1].minimum_time_in_hours);
+  };
+
+  var changeEngine = function changeEngine(_ref3) {
+    var value = _ref3.target.value;
+    setEngine(value); //setMoney(0);
+    //setHours(0);
+
+    setMoney(engines[value - 1].minimum_price);
+    setHours(engines[value - 1].minimum_time_in_hours);
+  };
+
+  var countMoney = function countMoney(_ref4) {
+    var value = _ref4.value;
+    console.log(tasks1[value - 1].minimum_price); //console.log(tasks2[value-1].minimum_price);
+    //console.log(tasks3[value-1].minimum_price);
+  };
+
+  var changeSearch = function changeSearch(_ref5) {
+    var value = _ref5.target.value;
+    setMoneyTotal(value);
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {});
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Stack__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    spacing: 2,
+    sx: {
+      width: 300
+    },
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      children: ["Cost: from ", moneyTotal, " $"]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+      children: ["Time: from ", hoursTotal, " hours"]
+    }), "Search by jobs", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      freeSolo: true,
+      id: "free-solo-2-demo",
+      disableClearable: true,
+      options: jobs.map(function (option) {
+        return option.name;
+      }),
+      renderInput: function renderInput(params) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_6__["default"], _objectSpread(_objectSpread({
+          onChange: changeSearch
+        }, params), {}, {
+          label: "Search job type",
+          InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
+            type: 'search'
+          })
+        }));
+      }
+    })]
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Test);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Order/about-container.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/Pages/Order/about-container.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+var AboutContainer = function AboutContainer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("section", {
+    className: "about",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+      className: "container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
+        className: "about-title title",
+        children: "About us"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+        className: "about-wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+          className: "about-text",
+          children: ["Here you can find the best freelance specialists among 1 million performers registered on the site. Programmers, designers, artists, copywriters, lawyers, accountants, engineers, photographers - thousands of remote employees in any freelance specialization.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "It is enough for you to publish an order, a competition or a vacancy - and interested freelancers will offer their services themselves, help you form a task, determine the budget and deadlines for completing the work. It remains only to choose the best performer from among the freelance specialists who responded and start cooperation with him. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "If there is no time for orders at all, you can quickly find remote specialists in the catalog by evaluating their portfolio with the submitted works - and offer an order in 2 clicks. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), "For the security of freelance cooperation! Use our \"Secure Transaction\" service with the reservation of the amount on the website for cooperation with freelancers - and we guarantee you a refund if the work is done poorly and/and"]
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AboutContainer);
 
 /***/ }),
 
@@ -32864,41 +33473,47 @@ var PortfolioContainer = function PortfolioContainer(_ref) {
       window.removeEventListener("resize", resizeHandler);
     };
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "portfolio-wrapper",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Portfolio__WEBPACK_IMPORTED_MODULE_0__["default"], {
-      projects: portfolioList.slice(stepPrev, stepNext)
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "btn-container",
-      children: [stepPrev > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "review__more",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          className: "review__button",
-          type: "button",
-          onClick: function onClick() {
-            setStepNext(stepPrev);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+    className: "portfolio",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "portfolio-wrapper",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Portfolio__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          projects: portfolioList.slice(stepPrev, stepNext)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "btn-container",
+          children: [stepPrev > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "review__more",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "review__button",
+              type: "button",
+              onClick: function onClick() {
+                setStepNext(stepPrev);
 
-            if (stepPrev - count_project < 0) {
-              setStepPrev(0);
-            } else {
-              setStepPrev(stepPrev - count_project);
-            }
-          },
-          children: "Prev page"
-        })
-      }) : '', portfolioList.length > stepNext ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "review__more",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-          className: "review__button",
-          type: "button",
-          onClick: function onClick() {
-            setStepPrev(stepNext);
-            setStepNext(stepNext + count_project);
-          },
-          children: "Next page"
-        })
-      }) : '']
-    })]
+                if (stepPrev - count_project < 0) {
+                  setStepPrev(0);
+                } else {
+                  setStepPrev(stepPrev - count_project);
+                }
+              },
+              children: "Prev page"
+            })
+          }) : '', portfolioList.length > stepNext ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "review__more",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "review__button",
+              type: "button",
+              onClick: function onClick() {
+                setStepPrev(stepNext);
+                setStepNext(stepNext + count_project);
+              },
+              children: "Next page"
+            })
+          }) : '']
+        })]
+      })
+    })
   });
 };
 
@@ -32917,10 +33532,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _types_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../types.js */ "./resources/js/types.js");
-/* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Reviews */ "./resources/js/Pages/Order/Reviews.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _Reviews__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Reviews */ "./resources/js/Pages/Order/Reviews.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -32938,33 +33552,50 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var ReviewContainer = function ReviewContainer(_ref) {
   var reviewsList = _ref.reviewsList;
+  var count_review = 0;
+  var width = window.innerWidth;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)(_types_js__WEBPACK_IMPORTED_MODULE_0__.COUNT_REVIEWS_LOADED),
+  if (width > 1024) {
+    count_review = 3;
+  } else {
+    if (width > 576) {
+      count_review = 2;
+    } else {
+      count_review = 1;
+    }
+  }
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(count_review),
       _useState2 = _slicedToArray(_useState, 2),
       step = _useState2[0],
       setStep = _useState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "reviews-wrapper",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Reviews__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      reviews: reviewsList.slice(0, step)
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-      className: "btn-container",
-      children: reviewsList.length > step ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "review__more",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-          className: "review__button",
-          type: "button",
-          onClick: function onClick() {
-            return setStep(step + _types_js__WEBPACK_IMPORTED_MODULE_0__.COUNT_REVIEWS_LOADED);
-          },
-          children: "Show more"
-        })
-      }) : ''
-    })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+    className: "reviews-block",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "reviews-wrapper",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Reviews__WEBPACK_IMPORTED_MODULE_0__["default"], {
+          reviews: reviewsList.slice(0, step)
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "btn-container",
+          children: reviewsList.length > step ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+            className: "review__more",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+              className: "review__button",
+              type: "button",
+              onClick: function onClick() {
+                return setStep(step + count_review);
+              },
+              children: "Show more"
+            })
+          }) : ''
+        })]
+      })
+    })
   });
 };
 
@@ -33049,15 +33680,14 @@ var Button = function Button(_ref) {
   }
 
   function remove() {
-    setFile(null);
-    onChange(null);
+    setFile(null); //onChange(null);
+
     fileInput.current.value = null;
   }
 
   function handleFileChange(e) {
     var file = e.target.files[0];
-    setFile(file);
-    onChange(file);
+    setFile(file); //onChange(file);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -33158,6 +33788,16 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
     })]
   });
 });
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Test.js":
+/*!************************************!*\
+  !*** ./resources/js/Pages/Test.js ***!
+  \************************************/
+/***/ (() => {
+
+
 
 /***/ }),
 
@@ -33582,7 +34222,7 @@ var myJson = {
     name_project: 'Fish and Rice',
     photo: '/images/fishandrice.jpg',
     description: "\u0415\u0441\u043B\u0438 \u0435\u0441\u0442\u044C \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0434\u043D\u0435\u0439 (\u043A \u043F\u0440\u0438\u043C\u0435\u0440\u0443 \u043E\u0442 5 \u0434\u043E 10 \u0434\u043D\u0435\u0439) \u0438\u0441\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u0437\u0430\u043A\u0430\u0437\u0430 \u0435\u0449\u0451 \u043B\u0443\u0447\u0448\u0435.\n    \u0417\u0430\u043A\u0430\u0437\u0447\u0438\u043A \u043E\u0441\u0442\u0430\u0432\u043B\u044F\u0435\u0442 \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0443\u044E \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u0435\u0431\u0435:\n    \u0418\u043C\u044F, \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u044B\u0439 \u0442\u0435\u043B\u0435\u0444\u043E\u043D \u0438 \u0430\u0434\u0440\u0435\u0441 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0439 \u043F\u043E\u0447\u0442\u044B. \u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0443\u043A\u0430\u0437\u0430\u0442\u044C 2 \u043D\u043E\u043C\u0435\u0440\u0430 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430 \u0438\u043B\u0438 \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0430\u0434\u0440\u0435\u0441 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0439 \u043F\u043E\u0447\u0442\u044B.\n    \u041E\u043F\u0446\u0438\u043E\u043D\u0430\u043B\u044C\u043D\u043E \u043E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0443\u0434\u043E\u0431\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F \u0434\u043B\u044F \u0441\u0432\u044F\u0437\u0438 \u043F\u043E \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E - \u0435\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u043A\u043E\u043C\u0443 \u0432\u0440\u0435\u043C\u0435\u043D\u0438.\n    \u041F\u043E\u0441\u043B\u0435 \u044D\u0442\u043E\u0433\u043E \u0437\u0430\u044F\u0432\u043A\u0430 \u043E\u0442\u043F\u0440\u0430\u0432\u043B\u044F\u0435\u0442\u0441\u044F \u043A\u0430\u043A \u043C\u0438\u043D\u0438\u043C\u0443\u043C \u043D\u0430 2 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u044B\u0445 \u0430\u0434\u0440\u0435\u0441\u0430 \u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u0440\u0435\u0434\u0432\u0430\u0440\u0438\u0442\u0435\u043B\u044C\u043D\u043E \u043F\u0440\u043E\u0432\u0435\u0440\u044F\u044E\u0442\u0441\u044F \u043D\u0430 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435 \u043F\u0438\u0441\u0435\u043C \u0441 \u0434\u0430\u043D\u043D\u043E\u0433\u043E \u0434\u043E\u043C\u0435\u043D\u0430.\n    \u0412\u0441\u0435 \u0437\u0430\u044F\u0432\u043A\u0438 \u0441 \u0441\u0430\u0439\u0442\u0430 \u0441\u043E\u0445\u0440\u0430\u043D\u044F\u044E\u0442\u0441\u044F \u0432 \u0430\u0434\u043C\u0438\u043D\u043A\u0435 \u0438 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B \u0432 \u0441\u043B\u0443\u0447\u0430\u0435 \u043F\u0440\u043E\u0431\u043B\u0435\u043C\u044B \u0441 \u043F\u043E\u0447\u0442\u043E\u0432\u044B\u043C \u0441\u0435\u0440\u0432\u0435\u0440\u043E\u043C.",
-    development_stack: ['Tilda'],
+    development_stack: ['Tilda', 'laravel', 'livewire', 'laravel', 'livewire'],
     url_project: 'https://fishandrice.spb.ru/'
   }, {
     name_project: 'Chef Baity',
@@ -33616,21 +34256,6 @@ var myJson = {
     url_project: 'https://tablez.ussl.co.il/'
   }]
 };
-
-/***/ }),
-
-/***/ "./resources/js/types.js":
-/*!*******************************!*\
-  !*** ./resources/js/types.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "COUNT_REVIEWS_LOADED": () => (/* binding */ COUNT_REVIEWS_LOADED)
-/* harmony export */ });
-var COUNT_REVIEWS_LOADED = 3;
 
 /***/ }),
 
@@ -87790,6 +88415,8 @@ var map = {
 	"./Dashboard.js": "./resources/js/Pages/Dashboard.js",
 	"./Order/Create": "./resources/js/Pages/Order/Create.js",
 	"./Order/Create.js": "./resources/js/Pages/Order/Create.js",
+	"./Order/Create2": "./resources/js/Pages/Order/Create2.js",
+	"./Order/Create2.js": "./resources/js/Pages/Order/Create2.js",
 	"./Order/Details": "./resources/js/Pages/Order/Details.js",
 	"./Order/Details.js": "./resources/js/Pages/Order/Details.js",
 	"./Order/Edit": "./resources/js/Pages/Order/Edit.js",
@@ -87804,6 +88431,12 @@ var map = {
 	"./Order/Reviews.js": "./resources/js/Pages/Order/Reviews.js",
 	"./Order/SearchJob": "./resources/js/Pages/Order/SearchJob.js",
 	"./Order/SearchJob.js": "./resources/js/Pages/Order/SearchJob.js",
+	"./Order/SelectTasks": "./resources/js/Pages/Order/SelectTasks.js",
+	"./Order/SelectTasks.js": "./resources/js/Pages/Order/SelectTasks.js",
+	"./Order/Test": "./resources/js/Pages/Order/Test.js",
+	"./Order/Test.js": "./resources/js/Pages/Order/Test.js",
+	"./Order/about-container": "./resources/js/Pages/Order/about-container.js",
+	"./Order/about-container.js": "./resources/js/Pages/Order/about-container.js",
 	"./Order/contact-container": "./resources/js/Pages/Order/contact-container.js",
 	"./Order/contact-container.js": "./resources/js/Pages/Order/contact-container.js",
 	"./Order/form-container": "./resources/js/Pages/Order/form-container.js",
@@ -87818,6 +88451,8 @@ var map = {
 	"./Shared/FileInput.js": "./resources/js/Pages/Shared/FileInput.js",
 	"./Shared/SelectInput": "./resources/js/Pages/Shared/SelectInput.js",
 	"./Shared/SelectInput.js": "./resources/js/Pages/Shared/SelectInput.js",
+	"./Test": "./resources/js/Pages/Test.js",
+	"./Test.js": "./resources/js/Pages/Test.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };
