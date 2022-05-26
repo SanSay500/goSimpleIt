@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\ExportController;
 // --------------------------
 // Custom Backpack Routes
 // --------------------------
@@ -16,7 +16,10 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+    Route::get('export',[\App\Http\Controllers\Admin\ExportController::class, 'index'])->name('export.page');
+    Route::get('/orders',[\App\Http\Controllers\Admin\ExportController::class, 'export'])->name('export.orders');
     Route::crud('user', 'UserCrudController');
     Route::crud('order', 'OrderCrudController');
     Route::crud('job', 'JobCrudController');
-}); // this should be the absolute last line of this file
+    Route::crud('task', 'TaskCrudController');
+}); // this should be the absolute last line

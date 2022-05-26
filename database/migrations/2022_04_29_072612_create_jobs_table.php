@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('task_lvl1s', function (Blueprint $table) {
+        Schema::create('jobs', function (Blueprint $table) {
             $table->id();
-            $table->string('type');
-            $table->string('category')->nullable();
-            $table->string('description')->nullable;
-            $table->integer('minimum_time_in_hours')->nullable();
-            $table->float('minimum_price')->nullable();
+            $table->string('name')->index();
+            $table->integer('money');
+            $table->integer('time');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_lvl1s');
+        Schema::dropIfExists('jobs');
     }
 };

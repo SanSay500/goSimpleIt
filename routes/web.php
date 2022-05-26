@@ -4,6 +4,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\OrderController;
+use App\Models\Order;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +32,9 @@ Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    return Inertia::render('Dashboard', ['orders'=>Order::where('user_id', Auth::user()->id)->get()]);
+})->middleware(['auth'])->name('dashboard');
 
 Route::resource('orders', OrderController::class);
 require __DIR__.'/auth.php';
+

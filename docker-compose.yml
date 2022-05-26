@@ -23,6 +23,7 @@ services:
             - sail
         depends_on:
             - mysql
+            - selenium
         restart: unless-stopped
     mysql:
         image: 'mysql/mysql-server:8.0'
@@ -52,6 +53,12 @@ services:
         networks:
             - sail
         restart: unless-stopped
+    selenium:
+        image: 'selenium/standalone-chrome'
+        volumes:
+            - '/dev/shm:/dev/shm'
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge

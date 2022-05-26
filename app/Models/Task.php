@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Task extends Model
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
+
     use HasFactory;
 
     protected $fillable = [
@@ -15,4 +16,8 @@ class Task extends Model
         'money',
         'hours',
     ];
+
+    public function order(){
+        return $this->hasOne(Order::class);
+    }
 }

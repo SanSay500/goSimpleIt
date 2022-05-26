@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreOrderRequest extends FormRequest
 {
@@ -23,16 +24,6 @@ class StoreOrderRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required',
-            'description' => 'required',
-            'file'=>'',
-            'money'=>'',
-            'hours'=>'',
-            'task1_id' => '',
-            'task2_id' => '',
-            'engine_id' => '',
-            'user_id' => ''
-        ];
+        return [];
     }
 }

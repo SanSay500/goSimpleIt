@@ -1,59 +1,29 @@
-import React from "react";
+import React, {useRef} from "react";
 import Create from "@/Pages/Order/Create";
 import { myJson } from "../../mocks/review-data.js";
 import ReviewContainer from "./review-container";
 import PortfolioContainer from "./portfolio-container";
 import AboutContainer from "./about-container";
+import HeaderContainer from "@/Components/header.js";
+import Footer from "@/Components/footer.js";
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
 
 const Main = (props) => {
+    const myRef = useRef(null);
+
+    const executeScroll = () => myRef.current.scrollIntoView() ;
     return (
         <>
-            <header className="header">
-                <div className="container">
-                    <div className="header-wrapper">
-                        <div className="header-logo">
-                            <img src="/images/logo-upwork.svg" alt="Logo"></img>
-                        </div>
-                        <div className="header-block"></div>
-                        <div className="header-auth">
-                            {props.auth.user ? (
-                                <Link
-                                    href={route("dashboard")}
-                                    className="auth-link"
-                                >
-                                    Dashboard
-                                </Link>
-                            ) : (
-                                <>
-                                    <Link
-                                        href={route("login")}
-                                        className="auth-link link"
-                                    >
-                                        Log in
-                                    </Link>
-                                    {/*
-                                    <Link
-                                        href={route("register")}
-                                        className="ml-4 text-sm text-gray-700 underline"
-                                    >
-                                        Register
-                                    </Link> */}
-                                </>
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <HeaderContainer user={props.auth.user}/>
             <section className="hero">
                 <div className="container mx-auto">
                     <div className="hero-wrapper">
                         <h2 className="hero-title">
-                            Find the perfect freelance services for your
+                            Find the perfect freelance
                             business
                         </h2>
                         <div className="hero-cont">
-                            <a className="hero-link link">Place an order</a>
+                            <button onClick={executeScroll} className="hero-link link" >Place an order</button>
                         </div>
                     </div>
                 </div>
@@ -75,55 +45,9 @@ const Main = (props) => {
                     </h1>
                 </div> */}
 
-            <Create />
-            <footer className="footer">
-                <div className="container">
-                    <div className="footer-wrapper">
-                        <div className="footer-logo">
-                            <img src="/images/logo-upwork.svg" alt="Logo"></img>
-                        </div>
-                            <ul className="contacts-networks">
-                                <li className="network-item">
-                                    <a href="#" className="network-link">
-                                        <img
-                                            src="/images/whatsapp.svg"
-                                            alt="Whatsapp"
-                                        />
-                                    </a>
-                                </li>
-                                <li className="network-item">
-                                    <a href="#" className="network-link">
-                                        <img
-                                            src="/images/telegram.svg"
-                                            alt="Telegram"
-                                        />
-                                    </a>
-                                </li>
-                                <li className="network-item">
-                                    <a href="#" className="network-link">
-                                        <img src="/images/vk.svg" alt="Vk" />
-                                    </a>
-                                </li>
-                                <li className="network-item">
-                                    <a href="#" className="network-link">
-                                        <img
-                                            src="/images/youtube.svg"
-                                            alt="Youtube"
-                                        />
-                                    </a>
-                                </li>
-                                <li className="network-item">
-                                    <a href="#" className="network-link">
-                                        <img
-                                            src="/images/instagram.svg"
-                                            alt="Instagram"
-                                        />
-                                    </a>
-                                </li>
-                            </ul>
-                    </div>
-                </div>
-            </footer>
+            <Create user={props.auth.user} ref={myRef}/>
+            <Footer/>
+
 
             {/*
             </div> */}

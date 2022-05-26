@@ -3,14 +3,17 @@ import { InertiaLink, usePage, useForm } from "@inertiajs/inertia-react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 
-const Create = () => {
+
+const Create = (props) => {
     const { data, setData, errors, post } = useForm({
         title: "",
         description: "",
         money: "",
         hours: "",
         file: "",
-        user_id: "1",
+        email: props.user ? props.user.email : '',
+        phone: "",
+        user_id: props.user ? props.user.id : '1',
     });
 
     const moneyRef = useRef();
@@ -21,14 +24,19 @@ const Create = () => {
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
 
     function handleSubmit(e) {
-        data.money = moneyRef.current;
-        data.hours = hoursRef.current;
+        e.preventDefault();
+
+          data.money = moneyRef.current;
+          data.hours = hoursRef.current;
         post(
             route("order.store", data, {
                 forceFormData: true,
                 _method: "put",
+                preserveScroll: true,
+                preserveState: true,
             })
-        );
+         );
+
     }
     const changeSearch = ({ target: { value } }) => {
         setMoneyTotalSearch(0);
@@ -47,9 +55,10 @@ const Create = () => {
     });
 
     return (
+
         <section className="form-block">
             <div className="container">
-
+                {console.log(props)}
                 <div className="form-wrapper">
                     <form name="createForm" onSubmit={handleSubmit}>
                         <div className="form-section">
@@ -168,14 +177,46 @@ const Create = () => {
                                             <span>Choose a file</span>
                                         </label>
                                     </div>
+
                                     <div className="file-name">
                                         {selectedFile}
                                     </div>
+
                                 </div>
 
                             </div>
 
+                            {!props.user ? (
+                                <div className="form-item form-title">
+                                    <label className="form-label">E-mail</label>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        label="Email"
+                                        name="email"
+                                        value={data.email}
+                                        onChange={(e) =>
+                                            setData("email", e.target.value)
+                                        }
+                                        placeholder="Enter"
+                                    />
+
+                                    <label className="form-label">Phone</label>
+                                    <input
+                                        type="text"
+                                        className="form-input"
+                                        label="Phone"
+                                        name="phone"
+                                        value={data.phone}
+                                        onChange={(e) =>
+                                            setData("phone", e.target.value)
+                                        }
+                                        placeholder="Enter"
+                                    />
+                                </div>)
+                                : ''}
                         </div>
+                        {errors.file && <div>{errors.file}</div>}
                         <div className="btn-container">
                             <button type="submit" className="btn-submit">
                                 Publish and find a specialist

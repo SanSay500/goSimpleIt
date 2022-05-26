@@ -8,6 +8,8 @@
         "php": "^8.0.2",
         "backpack/crud": "^5.0",
         "barryvdh/laravel-debugbar": "^3.6",
+        "bmatovu/laravel-xml": "^3.1",
+        "flowgistics/laravel-xml": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.5.4",
         "laravel/framework": "^9.2",

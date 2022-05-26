@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
-use App\Models\Engine;
 use App\Models\Task;
 use App\Models\Order;
-use App\Models\TaskLvl1;
-use App\Models\TaskLvl2;
-use App\Models\TaskLvl3;
+use App\Mail\NewOrder;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
+use App\Mail\NewOrderWithReg;
+
 
 class OrderController extends Controller
 {
@@ -23,8 +25,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::latest()->get();
-        return Inertia::render('Order/Index', ['orders' => $orders, 'canLogin' => Route::has('login'),
+        return Inertia::render('Order/Index', ['canLogin' => Route::has('login'),
         'canRegister' => Route::has('register')]);
     }
 
@@ -47,13 +48,40 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
-       //dd($request);
-        Order::create(
-            $request->validated()
-        );
-        Storage::putFile('tasks', $request->file('file'));
+        if (isset($request->file)) {
+            $fileName  = time() .'-'. $request->file->getClientOriginalName();
+            $request->validate([
+                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:10048'
+            ]);
+            Storage::putFileAs('/', $request->file('file'), $fileName);
+        }
+        if (!Auth::user()) {
+            $user = User::create([
+                'name' => 'Neo',
+                'email' => $request->email,
+                'phone' => $request->phone,
+                'password' => bcrypt('entrity567'),
+            ]);
+            Auth::login($user);
+        }
+        Order::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'file' => $fileName,
+            'money' => $request->money,
+            'hours' => $request->hours,
+            'user_id' => Auth::user()->id,
+            'status' => 'Pending',
+        ]);
+        $order = Order::get()->last();
 
-        //return Redirect::route('index');
+        if (isset($user)) {
+            Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+        } else {
+            Mail::to(Auth::user())->send(new NewOrder($order));
+        }
+        //Mail::to(Auth::user()->email)->send(new NewReservationClient($order));
+        return Redirect::route('dashboard')->with('success', 'Order created.');
     }
 
     /**
