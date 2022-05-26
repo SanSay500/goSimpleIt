@@ -7,6 +7,7 @@ import AboutContainer from "./about-container";
 import HeaderContainer from "@/Components/header.js";
 import Footer from "@/Components/footer.js";
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
+import ActiveOrders from "@/Pages/ActiveOrders";
 
 const Main = (props) => {
     const myRef = useRef(null);
@@ -28,9 +29,10 @@ const Main = (props) => {
                     </div>
                 </div>
             </section>
-            <PortfolioContainer portfolioList={myJson.portfolio} />
-            <ReviewContainer reviewsList={myJson.reviews} />
-            <AboutContainer />
+            <ActiveOrders/>
+            {/*<PortfolioContainer portfolioList={myJson.portfolio} />*/}
+            {/*<ReviewContainer reviewsList={myJson.reviews} />*/}
+            {/*<AboutContainer />*/}
             {/* <div className="container flex flex-col justify-center mx-auto">
                 <div>
                     <h1 className="mb-8 text-3xl font-bold">

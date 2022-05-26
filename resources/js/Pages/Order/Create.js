@@ -58,7 +58,6 @@ const Create = (props) => {
 
         <section className="form-block">
             <div className="container">
-                {console.log(props)}
                 <div className="form-wrapper">
                     <form name="createForm" onSubmit={handleSubmit}>
                         <div className="form-section">

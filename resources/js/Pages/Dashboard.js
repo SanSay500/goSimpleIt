@@ -2,6 +2,8 @@ import React from 'react';
 import Authenticated from '@/Layouts/Authenticated';
 import {Head, usePage} from '@inertiajs/inertia-react';
 import FlashMessages from "@/Pages/Shared/FlashMessages";
+import HeaderContainer from "@/Components/header.js";
+import Footer from "@/Components/footer.js";
 
 
 export default function Dashboard(props) {
@@ -13,7 +15,6 @@ export default function Dashboard(props) {
             errors={props.errors}
             header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard - My Orders </h2>}
         >
-            <Head title="Dashboard - My Orders"/>
             <FlashMessages/>
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">

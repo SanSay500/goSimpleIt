@@ -37,7 +37,8 @@ class OrderController extends Controller
     public function main()
     {
         $tasks = Task::all();
-        return Inertia::render('Order/Main', ['tasks'=>$tasks]);
+        $orders = Order::all();
+        return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders]);
     }
 
     /**
