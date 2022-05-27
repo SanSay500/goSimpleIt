@@ -64,7 +64,7 @@ const Create = () => {
         }
         moneyRef.current = moneyTotalSearch;
         hoursRef.current = hoursTotalSearch;
-        console.log(data);
+
 
     });
     return (

@@ -5,9 +5,9 @@ const HeaderLoginContainer = () => {
                     <div className="container">
                         <div className="header-wrapper">
                             <div className="header-logo">
-                            <a href="/">
+                            <Link href="/">
                                 <img src="/images/logo-upwork.svg" alt="Logo"></img>
-                            </a>
+                            </Link>
                             </div>
                             <div className="header-block"></div>
                         </div>

@@ -17,7 +17,7 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->title(),
+            'title' => $this->faker->jobTitle(),
             'file' => $this->faker->filePath(),
             'description' => $this->faker->text(),
             'status' => $this->faker->randomElement(['Pending', 'In Work', 'Cancelled']),

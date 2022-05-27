@@ -51,7 +51,7 @@ const Create = (props) => {
     useEffect(() => {
         moneyRef.current = moneyTotalSearch;
         hoursRef.current = hoursTotalSearch;
-        console.log(data);
+
     });
 
     return (

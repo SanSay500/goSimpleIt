@@ -41,6 +41,12 @@ class OrderController extends Controller
         return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders]);
     }
 
+    public function details()
+    {
+        return Inertia::render('Order/OrderDetails');
+    }
+
+
     /**
      * Store a newly created resource in storage.
      *

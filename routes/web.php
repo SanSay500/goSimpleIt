@@ -30,6 +30,7 @@ Route::get('/index', function () {
 
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
+Route::get('/order/{id}', [\App\Http\Controllers\OrderController::class, 'details'])->name('order.details');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', ['orders'=>Order::where('user_id', Auth::user()->id)->get()]);

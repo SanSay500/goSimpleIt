@@ -16,19 +16,19 @@ const Main = (props) => {
     return (
         <>
             <HeaderContainer user={props.auth.user}/>
-            <section className="hero">
-                <div className="container mx-auto">
-                    <div className="hero-wrapper">
-                        <h2 className="hero-title">
-                            Find the perfect freelance
-                            business
-                        </h2>
-                        <div className="hero-cont">
-                            <button onClick={executeScroll} className="hero-link link" >Place an order</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            {/*<section className="hero">*/}
+            {/*    <div className="container mx-auto">*/}
+            {/*        <div className="hero-wrapper">*/}
+            {/*            <h2 className="hero-title">*/}
+            {/*                Find the perfect freelance*/}
+            {/*                business*/}
+            {/*            </h2>*/}
+            {/*            <div className="hero-cont">*/}
+            {/*                <button onClick={executeScroll} className="hero-link link" >Place an order</button>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*</section>*/}
             <ActiveOrders/>
             {/*<PortfolioContainer portfolioList={myJson.portfolio} />*/}
             {/*<ReviewContainer reviewsList={myJson.reviews} />*/}
