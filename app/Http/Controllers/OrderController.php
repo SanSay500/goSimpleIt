@@ -41,9 +41,9 @@ class OrderController extends Controller
         return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders]);
     }
 
-    public function details()
+    public function details(Order $order)
     {
-        return Inertia::render('Order/OrderDetails');
+        return Inertia::render('Order/OrderDetails', ['order'=>$order]);
     }
 
 
@@ -71,12 +71,14 @@ class OrderController extends Controller
             ]);
             Auth::login($user);
         }
+        $task_type=Task::where('id', $request->task_id)->get()->first();
         Order::create([
             'title' => $request->title,
             'description' => $request->description,
-            'file' => $fileName,
-            'money' => $request->money,
-            'hours' => $request->hours,
+            'file' => $fileName ?? '',
+            'money' => $request->cost,
+            'task_id' => $task_type->id,
+            'hours' => $request->time,
             'user_id' => Auth::user()->id,
             'status' => 'Pending',
         ]);

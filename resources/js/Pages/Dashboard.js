@@ -1,6 +1,6 @@
 import React from 'react';
 import Authenticated from '@/Layouts/Authenticated';
-import {Head, usePage} from '@inertiajs/inertia-react';
+import {Head, Link, usePage} from '@inertiajs/inertia-react';
 import FlashMessages from "@/Pages/Shared/FlashMessages";
 import HeaderContainer from "@/Components/header.js";
 import Footer from "@/Components/footer.js";
@@ -29,7 +29,7 @@ export default function Dashboard(props) {
                                 }
                             )}
                             <br/>
-                            <a href={route('main.page')}>Make another order</a>
+                            <Link href={route('main.page')}>Make another order </Link>
                         </div>
                     </div>
                 </div>

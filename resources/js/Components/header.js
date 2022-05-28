@@ -1,6 +1,5 @@
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
 const HeaderContainer = (props) => {
-    console.log(props.user);
 return(
     <header className="header">
                 <div className="container">
@@ -16,17 +15,17 @@ return(
                             {props.user ? (
                                 <Link
                                     href={route("dashboard")}
-                                    className="auth-link"
+                                    // className="auth-link"
                                 >
-                                    Dashboard
+                                    <img src="/images/myaccount-icon-6.jpg" alt="Logo"></img>
                                 </Link>
                             ) : (
                                 <>
                                     <Link
                                         href={route("login")}
-                                        className="auth-link link"
+                                        // className="auth-link link"
                                     >
-                                        Log in
+                                        <img src="/images/myaccount-icon-6.jpg" alt="Logo"></img>
                                     </Link>
                                     {/*
                                     <Link

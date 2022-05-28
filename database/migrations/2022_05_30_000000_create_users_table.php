@@ -23,6 +23,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('is_admin')->nullable();
+            $table->enum('role',['Freelancer', 'Employer']);
             $table->rememberToken();
             $table->timestamps();
         });

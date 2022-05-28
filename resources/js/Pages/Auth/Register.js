@@ -6,12 +6,15 @@ import Input from '@/Components/Input'
 import Label from '@/Components/Label'
 import ValidationErrors from '@/Components/ValidationErrors'
 import { Head, Link, useForm } from '@inertiajs/inertia-react'
+import {Select} from "@mui/material";
+import SelectInput from "@/Pages/Shared/SelectInput";
 
 export default function Register () {
   const { data, setData, post, processing, errors, reset } = useForm({
     name: '',
     email: '',
     password: '',
+    role: '',
     password_confirmation: ''
   })
 
@@ -92,6 +95,19 @@ export default function Register () {
                         handleChange={onHandleChange}
                         required
                     />
+                    <div className="mt-4">
+                        <Label forInput="role" value="Choose your role" />
+
+                        <SelectInput
+                        name="role"
+                        handleChange={onHandleChange}
+                        required
+                        >
+                            <option value={data.role}>Freelancer</option>
+                            <option value={data.role}>Employer</option>
+                        </SelectInput>
+                    </div>
+
                 </div>
 
                 <div className="flex items-center justify-end mt-4">

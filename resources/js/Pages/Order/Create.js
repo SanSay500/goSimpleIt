@@ -7,27 +7,30 @@ import Autocomplete from "@mui/material/Autocomplete";
 const Create = (props) => {
     const { data, setData, errors, post } = useForm({
         title: "",
+        task_id: "",
         description: "",
-        money: "",
-        hours: "",
+        cost: "",
+        time: "",
         file: "",
         email: props.user ? props.user.email : '',
         phone: "",
         user_id: props.user ? props.user.id : '1',
     });
 
-    const moneyRef = useRef();
-    const hoursRef = useRef();
+//    const moneyRef = useRef();
+//    const hoursRef = useRef();
+    const taskIdRef = useRef();
     const [selectedFile, setSelectedFile] = useState("");
     const { tasks } = usePage().props;
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
+    const [taskId, setTaskId] = useState(0);
 
     function handleSubmit(e) {
         e.preventDefault();
-
-          data.money = moneyRef.current;
-          data.hours = hoursRef.current;
+          //data.money = moneyRef.current;
+          //data.hours = hoursRef.current;
+          data.task_id = taskIdRef.current;
         post(
             route("order.store", data, {
                 forceFormData: true,
@@ -41,16 +44,19 @@ const Create = (props) => {
     const changeSearch = ({ target: { value } }) => {
         setMoneyTotalSearch(0);
         setHoursTotalSearch(0);
+
         let job_found = tasks.find((e) => e.name == value);
         if (job_found) {
+            setTaskId(tasks.find((e) => e.name == value).id);
             setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
             setHoursTotalSearch(tasks.find((e) => e.name == value).time);
         }
     };
 
     useEffect(() => {
-        moneyRef.current = moneyTotalSearch;
-        hoursRef.current = hoursTotalSearch;
+        //moneyRef.current = moneyTotalSearch;
+       // hoursRef.current = hoursTotalSearch;
+        taskIdRef.current = taskId;
 
     });
 
@@ -75,8 +81,9 @@ const Create = (props) => {
                                     renderInput={(params) => (
                                         <TextField
                                             {...params}
+                                            name="task_type"
                                             onSelect={changeSearch}
-                                            label="Start typing job..."
+                                            label="Start typing task..."
                                             InputProps={{
                                                 ...params.InputProps,
                                                 type: "search",
@@ -84,6 +91,7 @@ const Create = (props) => {
                                         />
                                     )}
                                 />
+                                approx cost $: {moneyTotalSearch} approx term hours: {hoursTotalSearch}
                             </div>
                             <div className="form-item form-title">
                                 <label className="form-label">Title</label>
@@ -128,20 +136,26 @@ const Create = (props) => {
                                         className="form-input form-input--second"
                                         label="cost"
                                         name="cost"
-                                        value={moneyTotalSearch}
-                                        readOnly
+                                        // value={moneyTotalSearch}
+                                        // readOnly
+                                        onChange={(e) =>
+                                            setData("cost", e.target.value)
+                                        }
                                     />
                                     $
                                 </div>
                                 <div className="form-period">
-                                    <label className="form-label">Period</label>
+                                    <label className="form-label">Term</label>
                                     <input
                                         type="text"
                                         className="form-input form-input--second"
                                         label="time"
                                         name="time"
-                                        value={hoursTotalSearch}
-                                        readOnly
+                                        // value={hoursTotalSearch}
+                                        // readOnly
+                                        onChange={(e) =>
+                                            setData("time", e.target.value)
+                                        }
                                     />{" "}
                                     hours
                                 </div>

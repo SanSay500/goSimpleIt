@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreJobRequest;
-use App\Http\Requests\UpdateJobRequest;
-use App\Models\Job;
+use App\Http\Requests\StoreReviewRequest;
+use App\Http\Requests\UpdateReviewRequest;
+use App\Models\Review;
 
-class JobController extends Controller
+class ReviewController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreJobRequest  $request
+     * @param  \App\Http\Requests\StoreReviewRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreJobRequest $request)
+    public function store(StoreReviewRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function show(Job $job)
+    public function show(Review $review)
     {
         //
     }
@@ -53,10 +53,10 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function edit(Job $job)
+    public function edit(Review $review)
     {
         //
     }
@@ -64,11 +64,11 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateJobRequest  $request
-     * @param  \App\Models\Job  $job
+     * @param  \App\Http\Requests\UpdateReviewRequest  $request
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateJobRequest $request, Job $job)
+    public function update(UpdateReviewRequest $request, Review $review)
     {
         //
     }
@@ -76,10 +76,10 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Job  $job
+     * @param  \App\Models\Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Job $job)
+    public function destroy(Review $review)
     {
         //
     }

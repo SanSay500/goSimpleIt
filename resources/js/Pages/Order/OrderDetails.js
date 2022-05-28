@@ -3,11 +3,12 @@ import HeaderContainer from "@/Components/header.js";
 import Footer from "@/Components/footer.js";
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
 
-const OrderDetails = () =>{
+const OrderDetails = (props) =>{
 return (
     <>
-        <HeaderContainer/>
-
+    <HeaderContainer/>
+        {console.log(props)}
+        {props.props}
     <Footer/>
     </>
 );

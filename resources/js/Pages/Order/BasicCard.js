@@ -32,7 +32,8 @@ export default function BasicCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Link href="/order" data = { props.props['id']}>Learn more</Link>
+                {/*{console.log(props.props)}*/}
+                <Link href={route('order.details', props.props['id'])}>Learn more</Link>
             </CardActions>
         </Card>
     );
