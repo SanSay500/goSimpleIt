@@ -26,7 +26,7 @@ return (
             {showOrdersNum.map(
                 (order) => {
                     return (
-                        <BasicCard props={order}/>
+                        <BasicCard key={order.id} props={order}/>
                     )
                 }
             )}

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\User;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,6 +28,9 @@ class Order extends Model
     }
     public function task(){
         return $this->belongsTo(Task::class);
+    }
+    public function proposals(){
+        return $this->hasMany(Proposal::class);
     }
 
 

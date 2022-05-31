@@ -6,6 +6,7 @@ use Inertia\Inertia;
 use App\Http\Controllers\OrderController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Proposal;
 
 
 /*
@@ -31,10 +32,10 @@ Route::get('/index', function () {
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 Route::get('/order/{id}', [\App\Http\Controllers\OrderController::class, 'details'])->name('order.details');
+Route::get('/order/{id}/proposal', [\App\Http\Controllers\OrderController::class, 'new_proposal'])->name('order.proposal')->middleware('auth');
+Route::get('/order/{order_id}/{proposal_id}/confirm_proposal', [\App\Http\Controllers\OrderController::class, 'proposal_confirm'])->name('confirm.proposal')->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard', ['orders'=>Order::where('user_id', Auth::user()->id)->get()]);
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::resource('orders', OrderController::class);
 require __DIR__.'/auth.php';

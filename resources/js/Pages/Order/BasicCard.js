@@ -11,7 +11,6 @@ export default function BasicCard(props) {
 
     return (
         <Card sx={{ minWidth: 275 }}>
-
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {props.props['title']}
@@ -32,8 +31,9 @@ export default function BasicCard(props) {
                 </Typography>
             </CardContent>
             <CardActions>
-                {/*{console.log(props.props)}*/}
-                <Link href={route('order.details', props.props['id'])}>Learn more</Link>
+                <Link href={route('order.details', [props.props['id']])}
+                      className="bg-sky-500 text-bg font-medium text-gray-900 bg-blue"
+                >Learn more</Link>
             </CardActions>
         </Card>
     );

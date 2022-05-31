@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Order;
 
-class TaskLvl1 extends Model
+class Proposal extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'order_id',
+        'user_id',
+        'status',
+    ];
     public function orders(){
-        return $this->hasMany(Order::class);
+        return $this->belongsTo(Order::class);
     }
 }

@@ -21,9 +21,9 @@ class UserFactory extends Factory
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'phone' => $this->faker->phoneNumber(),
-            'another_phone' => $this->faker->phoneNumber(),
-            'another_email' => $this->faker->safeEmail(),
-            //'role' => $this->faker->randomElements(['Freelancer', 'Empoyer']),
+            'description' => $this->faker->realText(),
+            'avatar' => $this->faker->image(),
+            'role' => $this->faker->randomElement(['Freelancer', 'Employer']),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),

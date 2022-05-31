@@ -2,17 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
+use App\Models\User;
+use App\Models\Task;
+use App\Models\Proposal;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
-use App\Models\Task;
-use App\Models\Order;
 use App\Mail\NewOrder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
-use App\Models\User;
 use App\Mail\NewOrderWithReg;
 
 
@@ -41,8 +42,30 @@ class OrderController extends Controller
         return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders]);
     }
 
-    public function details(Order $order)
+    public function proposal_confirm($order_id, $proposal_id)
     {
+      //$get_order_id=Proposal::where('id',$proposal_id)->get();
+      Order::where('id',$order_id)->update(['status'=>'In Work']);
+      Proposal::where('id',$proposal_id)->update(['status'=>'Confirmed']);
+      return Redirect::route('dashboard')->with('success', 'You confirmed performer. You will be contacted soon for details');
+
+    }
+
+    public function new_proposal($order_id)
+    {
+        Proposal::create([
+            'user_id'=> Auth::user()->id,
+            'order_id' => $order_id,
+            'status' => 'Sent',
+        ]);
+        return Redirect::route('dashboard')->with('success', 'You sent proposal for task number '.$order_id);
+    }
+
+    public function details($order_id)
+    {
+
+        $order=Order::where('id', $order_id)->first()->toArray();
+//        dd($order);
         return Inertia::render('Order/OrderDetails', ['order'=>$order]);
     }
 

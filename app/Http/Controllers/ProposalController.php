@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEngineRequest;
-use App\Http\Requests\UpdateEngineRequest;
-use App\Models\Engine;
+use App\Http\Requests\StoreProposalRequest;
+use App\Http\Requests\UpdateProposalRequest;
+use App\Models\Proposal;
 
-class EngineController extends Controller
+class ProposalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EngineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEngineRequest  $request
+     * @param  \App\Http\Requests\StoreProposalRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEngineRequest $request)
+    public function store(StoreProposalRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EngineController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Engine  $engine
+     * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function show(Engine $engine)
+    public function show(Proposal $proposal)
     {
         //
     }
@@ -53,10 +53,10 @@ class EngineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Engine  $engine
+     * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function edit(Engine $engine)
+    public function edit(Proposal $proposal)
     {
         //
     }
@@ -64,11 +64,11 @@ class EngineController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEngineRequest  $request
-     * @param  \App\Models\Engine  $engine
+     * @param  \App\Http\Requests\UpdateProposalRequest  $request
+     * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEngineRequest $request, Engine $engine)
+    public function update(UpdateProposalRequest $request, Proposal $proposal)
     {
         //
     }
@@ -76,11 +76,13 @@ class EngineController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Engine  $engine
+     * @param  \App\Models\Proposal  $proposal
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Engine $engine)
+    public function destroy(Proposal $proposal)
     {
         //
     }
+
+
 }

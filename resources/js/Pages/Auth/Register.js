@@ -13,8 +13,9 @@ export default function Register () {
   const { data, setData, post, processing, errors, reset } = useForm({
     name: '',
     email: '',
+    description: '',
     password: '',
-    role: '',
+    role: 'Freelancer',
     password_confirmation: ''
   })
 
@@ -72,7 +73,6 @@ export default function Register () {
 
                 <div className="mt-4">
                     <Label forInput="password" value="Password" />
-
                     <Input
                         type="password"
                         name="password"
@@ -86,7 +86,6 @@ export default function Register () {
 
                 <div className="mt-4">
                     <Label forInput="password_confirmation" value="Confirm Password" />
-
                     <Input
                         type="password"
                         name="password_confirmation"
@@ -95,20 +94,37 @@ export default function Register () {
                         handleChange={onHandleChange}
                         required
                     />
+                </div>
+
+                <div className="mt-4">
+                    <Label forInput="description" value="Tell about your skills" />
+                    <textarea
+                        name="description"
+                        value={data.description}
+                        className="mt-1 block w-full"
+                        onChange={(e) =>
+                            setData("description", e.target.value)
+                        }
+                        required
+                    />
+                </div>
+
                     <div className="mt-4">
                         <Label forInput="role" value="Choose your role" />
 
                         <SelectInput
                         name="role"
-                        handleChange={onHandleChange}
+                        value={data.role}
+                        onChange={(e) =>
+                            setData("role", e.target.value)
+                        }
                         required
                         >
-                            <option value={data.role}>Freelancer</option>
-                            <option value={data.role}>Employer</option>
+                            <option key= '1' value='Freelancer'>Freelancer</option>
+                            <option key= '2' value='Employer'>Employer</option>
                         </SelectInput>
-                    </div>
 
-                </div>
+                    </div>
 
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
