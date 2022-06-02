@@ -116,7 +116,7 @@ export default function Register () {
                         name="role"
                         value={data.role}
                         onChange={(e) =>
-                            setData("role", e.target.value)
+                            setData('role', e.target.value)
                         }
                         required
                         >
@@ -125,7 +125,7 @@ export default function Register () {
                         </SelectInput>
 
                     </div>
-
+                {console.log(data)}
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
                         Already registered?

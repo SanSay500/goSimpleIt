@@ -85,15 +85,15 @@ class OrderController extends Controller
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
-        if (!Auth::user()) {
-            $user = User::create([
-                'name' => 'Neo',
-                'email' => $request->email,
-                'phone' => $request->phone,
-                'password' => bcrypt('entrity567'),
-            ]);
-            Auth::login($user);
-        }
+//        if (!Auth::user()) {
+//            $user = User::create([
+//                'name' => 'Neo',
+//                'email' => $request->email,
+//                'phone' => $request->phone,
+//                'password' => bcrypt('entrity567'),
+//            ]);
+//            Auth::login($user);
+//        }
         $task_type=Task::where('id', $request->task_id)->get()->first();
         Order::create([
             'title' => $request->title,

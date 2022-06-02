@@ -24,7 +24,7 @@ class OrderFactory extends Factory
             'money' => $this->faker->numberBetween(5,5000),
             'hours' => $this->faker->numberBetween(1,48),
             'user_id' => $this->faker->numberBetween(1,5),
-            'task_id' => $this->faker->numberBetween(1,5),
+            'task_id' => $this->faker->numberBetween(1,10),
         ];
     }
 }

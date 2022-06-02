@@ -29,7 +29,7 @@ Route::get('/index', function () {
     ]);
 })->name('index');
 
-Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
+Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store')->middleware('auth');
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 Route::get('/order/{id}', [\App\Http\Controllers\OrderController::class, 'details'])->name('order.details');
 Route::get('/order/{id}/proposal', [\App\Http\Controllers\OrderController::class, 'new_proposal'])->name('order.proposal')->middleware('auth');

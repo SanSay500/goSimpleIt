@@ -32574,9 +32574,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
+/* harmony import */ var _mui_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material */ "./node_modules/@mui/material/Grid/Grid.js");
 /* harmony import */ var _Pages_Order_BasicCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Pages/Order/BasicCard */ "./resources/js/Pages/Order/BasicCard.js");
+/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
+/* harmony import */ var _mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Autocomplete */ "./node_modules/@mui/material/Autocomplete/Autocomplete.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -32598,16 +32606,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
-
 var ActiveOrders = function ActiveOrders(props) {
-  var orders = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.orders;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      orders = _usePage$props.orders,
+      tasks = _usePage$props.tasks;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
       _useState2 = _slicedToArray(_useState, 2),
       showOrders = _useState2[0],
       setShowOrders = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(orders),
+      _useState4 = _slicedToArray(_useState3, 2),
+      ordersToShow = _useState4[0],
+      setOrdersToShow = _useState4[1];
 
   function loadOrders(e) {
     e.preventDefault();
@@ -32615,14 +32627,54 @@ var ActiveOrders = function ActiveOrders(props) {
   }
 
   var showOrdersNum = orders.slice(0, showOrders);
+
+  var changeSearch = function changeSearch(_ref) {
+    var value = _ref.target.value;
+
+    if (value) {
+      var job_found = tasks.find(function (e) {
+        return e.name === value;
+      }).id;
+
+      if (job_found) {
+        filterJobs(job_found);
+      }
+    }
+  };
+
+  function filterJobs(task_id) {
+    var newOrdersToShow = orders.filter(function (el) {
+      return el.task_id === task_id;
+    });
+    setOrdersToShow(newOrdersToShow);
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "form-wrapper",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "p-6 bg-white border-b border-gray-200",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        freeSolo: true,
+        id: "search-job auto",
+        disableClearable: true,
+        options: tasks.map(function (option) {
+          return option.name;
+        }),
+        renderInput: function renderInput(params) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, params), {}, {
+            name: "search_task",
+            onSelect: changeSearch // onDrop={console.log('kuku')}
+            ,
+            label: "Search by task...",
+            InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
+              type: "search"
+            })
+          }));
+        }
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material__WEBPACK_IMPORTED_MODULE_6__["default"], {
         container: true,
         spacing: 2,
-        children: ["`", showOrdersNum.map(function (order) {
+        children: ["`", ordersToShow.map(function (order) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Pages_Order_BasicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
             props: order
           }, order.id);
@@ -33097,7 +33149,7 @@ function Register() {
           name: "role",
           value: data.role,
           onChange: function onChange(e) {
-            return setData("role", e.target.value);
+            return setData('role', e.target.value);
           },
           required: true,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
@@ -33108,7 +33160,7 @@ function Register() {
             children: "Employer"
           }, '2')]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      }), console.log(data), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
         className: "flex items-center justify-end mt-4",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
           href: route('login'),
@@ -33356,7 +33408,7 @@ function Dashboard(props) {
           className: "bg-white overflow-hidden shadow-sm sm:rounded-lg",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
             className: "p-6 bg-white border-b border-gray-200",
-            children: [proposals && proposals.map(function (proposal) {
+            children: [console.log(props), proposals && proposals.map(function (proposal) {
               return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("p", {
                 children: [" ", proposal.id, " >> ", proposal.status]
               }, proposal.id);
@@ -33717,36 +33769,7 @@ var Create = function Create(props) {
                   children: selectedFile
                 })]
               })]
-            }), !props.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "form-item form-title",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-                className: "form-label",
-                children: "E-mail"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-                type: "text",
-                className: "form-input",
-                label: "Email",
-                name: "email",
-                value: data.email,
-                onChange: function onChange(e) {
-                  return setData("email", e.target.value);
-                },
-                placeholder: "Enter"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-                className: "form-label",
-                children: "Phone"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-                type: "text",
-                className: "form-input",
-                label: "Phone",
-                name: "phone",
-                value: data.phone,
-                onChange: function onChange(e) {
-                  return setData("phone", e.target.value);
-                },
-                placeholder: "Enter"
-              })]
-            }) : '']
+            })]
           }), errors.file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             children: errors.file
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {

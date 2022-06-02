@@ -15,7 +15,9 @@ return (
         <Link href={route('order.proposal', [order.id]) }
               className="bg-sky-500 text-bg font-medium text-gray-900 bg-blue"
         > Make Proposal </Link>
+
     <Footer/>
+
     </>
 );
 

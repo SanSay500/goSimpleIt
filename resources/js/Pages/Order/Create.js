@@ -199,35 +199,35 @@ const Create = (props) => {
 
                             </div>
 
-                            {!props.user ? (
-                                <div className="form-item form-title">
-                                    <label className="form-label">E-mail</label>
-                                    <input
-                                        type="text"
-                                        className="form-input"
-                                        label="Email"
-                                        name="email"
-                                        value={data.email}
-                                        onChange={(e) =>
-                                            setData("email", e.target.value)
-                                        }
-                                        placeholder="Enter"
-                                    />
+                            {/*{!props.user ? (*/}
+                            {/*    <div className="form-item form-title">*/}
+                            {/*        <label className="form-label">E-mail</label>*/}
+                            {/*        <input*/}
+                            {/*            type="text"*/}
+                            {/*            className="form-input"*/}
+                            {/*            label="Email"*/}
+                            {/*            name="email"*/}
+                            {/*            value={data.email}*/}
+                            {/*            onChange={(e) =>*/}
+                            {/*                setData("email", e.target.value)*/}
+                            {/*            }*/}
+                            {/*            placeholder="Enter"*/}
+                            {/*        />*/}
 
-                                    <label className="form-label">Phone</label>
-                                    <input
-                                        type="text"
-                                        className="form-input"
-                                        label="Phone"
-                                        name="phone"
-                                        value={data.phone}
-                                        onChange={(e) =>
-                                            setData("phone", e.target.value)
-                                        }
-                                        placeholder="Enter"
-                                    />
-                                </div>)
-                                : ''}
+                            {/*        <label className="form-label">Phone</label>*/}
+                            {/*        <input*/}
+                            {/*            type="text"*/}
+                            {/*            className="form-input"*/}
+                            {/*            label="Phone"*/}
+                            {/*            name="phone"*/}
+                            {/*            value={data.phone}*/}
+                            {/*            onChange={(e) =>*/}
+                            {/*                setData("phone", e.target.value)*/}
+                            {/*            }*/}
+                            {/*            placeholder="Enter"*/}
+                            {/*        />*/}
+                            {/*    </div>)*/}
+                            {/*    : ''}*/}
                         </div>
                         {errors.file && <div>{errors.file}</div>}
                         <div className="btn-container">
