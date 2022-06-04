@@ -9,7 +9,12 @@ import Footer from "@/Components/footer.js";
 export default function Dashboard(props) {
     const {orders, proposals, haveProposal} = usePage().props;
 
-
+    function showOrder(order)
+    {
+        if (order.order_id){
+            return true;
+        }
+    }
     return (
         <Authenticated
             auth={props.auth}
@@ -21,7 +26,6 @@ export default function Dashboard(props) {
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 bg-white border-b border-gray-200">
-                            {console.log(props)}
                             {proposals &&
                                 proposals.map(
                                     (proposal) => {
@@ -35,16 +39,25 @@ export default function Dashboard(props) {
                             {orders && <b> Order Number  >>>  Order title   >>> Order status</b>}
                             {orders &&
                                 orders.map(
-                                (order) => {
+                                (order, index, array) => {
                                     return (
                                         <div>
+                                            { index-1 >= 0 ?
+                                                 (order.order_id != array[index-1].order_id) &&
                                           <p key={order.order_id}> { order.order_id } >> {order.title} >> <b>{order.order_status}</b></p>
+                                            :
+                                                <p key={order.order_id}> { order.order_id } >> {order.title} >> <b>{order.order_status}</b></p>
 
-                                            {order.proposal_id && order.order_status != 'In Work' && order.order_status != 'Cancelled' &&
+                                            }
+                                            {order.proposal_id &&
+                                                 order.order_status === 'Pending' &&
                                                 <p>You have proposal from freelancer on this task ->
                                                 <Link href={route('confirm.proposal', [order.order_id, order.proposal_id])}
                                                 className="bg-sky-500 text-bg font-medium text-gray-900 bg-blue"
-                                                >Confirm</Link></p>
+                                                >Confirm</Link> >> {console.log()}
+                                                <Link href={route('start_chat', order.user_proposal_id)}
+                                                className="bg-sky-500 text-bg font-medium text-gray-900 bg-blue"
+                                                >Chat</Link></p>
                                             }
 
 

@@ -95,9 +95,25 @@ export default function Register () {
                         required
                     />
                 </div>
+                <div className="mt-4">
+                    <Label forInput="role" value="Choose your role" />
+
+                    <SelectInput
+                        name="role"
+                        value={data.role}
+                        onChange={(e) =>
+                            setData('role', e.target.value)
+                        }
+                        required
+                    >
+                        <option key= '1' value='Freelancer'>Freelancer</option>
+                        <option key= '2' value='Employer'>Employer</option>
+                    </SelectInput>
+
+                </div>
 
                 <div className="mt-4">
-                    <Label forInput="description" value="Tell about your skills" />
+                    <Label forInput="description" value={data.role === "Freelancer" ? "Tell about your skills" : "Tell about yourself"} />
                     <textarea
                         name="description"
                         value={data.description}
@@ -109,23 +125,6 @@ export default function Register () {
                     />
                 </div>
 
-                    <div className="mt-4">
-                        <Label forInput="role" value="Choose your role" />
-
-                        <SelectInput
-                        name="role"
-                        value={data.role}
-                        onChange={(e) =>
-                            setData('role', e.target.value)
-                        }
-                        required
-                        >
-                            <option key= '1' value='Freelancer'>Freelancer</option>
-                            <option key= '2' value='Employer'>Employer</option>
-                        </SelectInput>
-
-                    </div>
-                {console.log(data)}
                 <div className="flex items-center justify-end mt-4">
                     <Link href={route('login')} className="underline text-sm text-gray-600 hover:text-gray-900">
                         Already registered?

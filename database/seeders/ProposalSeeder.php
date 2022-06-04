@@ -14,6 +14,6 @@ class ProposalSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\Proposal::factory(20)->create();
     }
 }

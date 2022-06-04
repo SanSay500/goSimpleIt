@@ -13,6 +13,7 @@ class Proposal extends Model
         'order_id',
         'user_id',
         'status',
+        'description',
     ];
     public function orders(){
         return $this->belongsTo(Order::class);

@@ -14,7 +14,7 @@ class Task extends Model
     protected $fillable = [
         'name',
         'money',
-        'hours',
+        'time',
     ];
 
     public function order(){

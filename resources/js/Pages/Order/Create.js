@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { InertiaLink, usePage, useForm } from "@inertiajs/inertia-react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import ValidationErrors from "@/Components/ValidationErrors";
 
 
 const Create = (props) => {
-    const { data, setData, errors, post } = useForm({
+    const { data, setData, errors, post, processing, reset } = useForm({
         title: "",
         task_id: "",
         description: "",
@@ -70,7 +71,7 @@ const Create = (props) => {
                             <div className="form-item form-search">
                                 <label className="form-label">
                                     {" "}
-                                    Search by tasks{" "}
+                                    Make Order{" "}
                                 </label>
 
                                 <Autocomplete
@@ -157,7 +158,7 @@ const Create = (props) => {
                                             setData("time", e.target.value)
                                         }
                                     />{" "}
-                                    hours
+                                    day(s)
                                 </div>
                             </div>
                             <div className="form-file">
@@ -230,7 +231,10 @@ const Create = (props) => {
                             {/*    : ''}*/}
                         </div>
                         {errors.file && <div>{errors.file}</div>}
+                        <ValidationErrors errors={errors} />
+
                         <div className="btn-container">
+
                             <button type="submit" className="btn-submit">
                                 Publish and find a specialist
                             </button>

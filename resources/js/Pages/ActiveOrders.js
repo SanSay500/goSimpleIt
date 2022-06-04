@@ -31,6 +31,7 @@ const ActiveOrders = (props) => {
     {
      let newOrdersToShow = orders.filter( el => (el.task_id === task_id) );
             setOrdersToShow(newOrdersToShow);
+            setShowOrders(5);
     }
 
 return (
@@ -47,7 +48,6 @@ return (
                         {...params}
                         name="search_task"
                         onSelect={changeSearch}
-                        // onDrop={console.log('kuku')}
                         label="Search by task..."
                         InputProps={{
                             ...params.InputProps,
@@ -57,7 +57,7 @@ return (
                 )}
             />
             <Grid container spacing={2}>`
-            {ordersToShow.map(
+            {ordersToShow.slice(0,showOrders).map(
                 (order) => {
                     return (
                         <BasicCard key={order.id} props={order}/>

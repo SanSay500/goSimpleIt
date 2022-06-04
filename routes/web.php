@@ -32,8 +32,9 @@ Route::get('/index', function () {
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store')->middleware('auth');
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 Route::get('/order/{id}', [\App\Http\Controllers\OrderController::class, 'details'])->name('order.details');
-Route::get('/order/{id}/proposal', [\App\Http\Controllers\OrderController::class, 'new_proposal'])->name('order.proposal')->middleware('auth');
+Route::post('/order/proposal', [\App\Http\Controllers\OrderController::class, 'new_proposal'])->name('order.proposal.store')->middleware('auth');
 Route::get('/order/{order_id}/{proposal_id}/confirm_proposal', [\App\Http\Controllers\OrderController::class, 'proposal_confirm'])->name('confirm.proposal')->middleware('auth');
+Route::get('/chatify/{user_id}', [\App\Http\Controllers\DashboardController::class, 'start_chat'])->name('start_chat')->middleware('auth');
 
 Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
 

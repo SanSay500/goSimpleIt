@@ -15,6 +15,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\NewOrderWithReg;
+use Illuminate\Http\Request;
 
 
 class OrderController extends Controller
@@ -51,14 +52,15 @@ class OrderController extends Controller
 
     }
 
-    public function new_proposal($order_id)
+    public function new_proposal(Request $request)
     {
         Proposal::create([
             'user_id'=> Auth::user()->id,
-            'order_id' => $order_id,
+            'order_id' => $request->order_id,
+            'description' => $request->description,
             'status' => 'Sent',
         ]);
-        return Redirect::route('dashboard')->with('success', 'You sent proposal for task number '.$order_id);
+        return Redirect::route('dashboard')->with('success', 'You sent proposal for task number '.$request->order_id);
     }
 
     public function details($order_id)
@@ -78,6 +80,13 @@ class OrderController extends Controller
      */
     public function store(StoreOrderRequest $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'cost' => 'required|numeric',
+            'task_id' => 'required|numeric',
+            'time' => 'required|numeric',
+        ]);
         if (isset($request->file)) {
             $fileName  = time() .'-'. $request->file->getClientOriginalName();
             $request->validate([

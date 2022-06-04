@@ -19,6 +19,7 @@ class ProposalFactory extends Factory
         return [
             'user_id'=>$this->faker->numberBetween(1,10),
             'order_id'=>$this->faker->numberBetween(1,20),
+            'description'=>$this->faker->realText(250),
             'status' =>$this->faker->randomElement(['Sent', 'Seen', 'Approved']),
         ];
     }
