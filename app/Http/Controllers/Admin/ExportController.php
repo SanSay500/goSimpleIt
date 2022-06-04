@@ -24,8 +24,9 @@ class ExportController extends Controller
         try {
             $fileName = 'orders-'.date('d.m.y').'.xml';
             $xml = new XMLWriter();
-            $xml->openURI('../storage/app/'.$fileName);
+            $xml->openURI(Storage::path($fileName));
             $xml->startDocument('1.0');
+            $xml->setIndent(1);
             $xml->startElement('orders');
             foreach ($orders as $order) {
                 $xml->startElement('order');
