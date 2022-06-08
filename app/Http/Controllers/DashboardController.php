@@ -16,14 +16,19 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user()->toArray();
-        $orders = Order::leftjoin('proposals', 'orders.id', '=', 'proposals.order_id')
-            ->where('orders.user_id', $user['id'])->get(['orders.id as order_id', 'orders.title', 'orders.status as order_status', 'proposals.id as proposal_id', 'proposals.user_id as user_proposal_id', 'proposals.status as proposal_status']);
+        $orders = Order::where('orders.user_id', $user['id'])->get();
+
+        foreach ($orders->toArray() as $order)
+            $ordersIDs[] = $order['id'];
+
+        $proposalsForOrder = Proposal::wherein('order_id', $ordersIDs)->get();
+
         $proposals = Proposal::where('user_id', $user['id'])->get();
         if ($user['role'] === 'Freelancer') {
             return Inertia::render('Dashboard', ['proposals' => $proposals]);
         }
         if ($user['role'] === 'Employer') {
-            return Inertia::render('Dashboard', ['orders' => $orders]);
+            return Inertia::render('Dashboard', ['orders' => $orders, 'proposalsForOrder' => $proposalsForOrder]);
         }
     }
 

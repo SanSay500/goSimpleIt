@@ -20,7 +20,7 @@ class OrderFactory extends Factory
             'title' => $this->faker->jobTitle(),
             'file' => $this->faker->filePath(),
             'description' => $this->faker->text(),
-            'status' => $this->faker->randomElement(['Pending', 'In Work', 'Cancelled']),
+            'status' => $this->faker->randomElement(['Pending', 'In Work', 'Cancelled', 'Done']),
             'money' => $this->faker->numberBetween(5,5000),
             'hours' => $this->faker->numberBetween(1,48),
             'user_id' => $this->faker->numberBetween(1,5),

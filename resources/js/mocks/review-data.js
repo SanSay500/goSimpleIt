@@ -5,27 +5,13 @@ export const myJson = {
       avatar: '/images/user.png'
     },
     commets: 'Good job',
-    date: '20/04/2022'
+
   }, {
     user: {
       name: 'Jacob',
       avatar: '/images/user.png'
     },
-    commets: `Если есть возможность добавить количество дней (к примеру от 5 до 10 дней) исполнения заказа ещё лучше.
-  Заказчик оставляет следующую информацию о себе:
-  Имя, контактный телефон и адрес электронной почты. Возможность указать 2 номера телефона или дополнительный адрес электронной почты.
-  Опционально оставить удобное время для связи по центрально - европейскому времени.
-  После этого заявка отправляется как минимум на 2 электронных адреса которые предварительно проверяются на получение писем с данного домена.
-  Все заявки с сайта сохраняются в админке и доступны в случае проблемы с почтовым сервером.`,
-    date: '03/01/2012'
-  }, {
-
-    user: {
-      name: 'Alex',
-      avatar: '/images/user.png'
-    },
-    commets: 'Perfect',
-    date: '12/04/2015'
+    commets: `I had one issue by estimate 1500 USD and found here well done job!`,
 
   }, {
 
@@ -34,80 +20,83 @@ export const myJson = {
       avatar: '/images/user.png'
     },
     commets: 'Perfect',
-    date: '12/04/2015'
+
 
   }, {
 
     user: {
-      name: 'Alex',
+      name: 'Gregory',
       avatar: '/images/user.png'
     },
-    commets: 'Perfect',
-    date: '12/04/2015'
+    commets: 'Found job fast and with no risk here',
+
 
   }, {
 
     user: {
-      name: 'Alex',
+      name: 'George',
       avatar: '/images/user.png'
     },
-    commets: 'Perfect',
-    date: '12/04/2015'
+    commets: 'I had wordpress site down, in couple of hours found here spec to rise it up',
+
 
   }, {
 
     user: {
-      name: 'Alex',
+      name: 'Denis',
       avatar: '/images/user.png'
     },
-    commets: 'Perfect',
-    date: '12/04/2015'
+    commets: 'A lot of freelancers here',
+
+
+  }, {
+
+    user: {
+      name: 'Arty',
+      avatar: '/images/user.png'
+    },
+    commets: 'I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified',
 
   }],
   portfolio:[{
     name_project:'Fish and Rice',
     photo:'/images/fishandrice.jpg',
-    description:`Если есть возможность добавить количество дней (к примеру от 5 до 10 дней) исполнения заказа ещё лучше.
-    Заказчик оставляет следующую информацию о себе:
-    Имя, контактный телефон и адрес электронной почты. Возможность указать 2 номера телефона или дополнительный адрес электронной почты.
-    Опционально оставить удобное время для связи по центрально - европейскому времени.
-    После этого заявка отправляется как минимум на 2 электронных адреса которые предварительно проверяются на получение писем с данного домена.
-    Все заявки с сайта сохраняются в админке и доступны в случае проблемы с почтовым сервером.`,
-    development_stack:['Tilda','laravel','livewire','laravel','livewire'],
+    description:`Food delivery company found freelancer for full-cycle job of marketing and selling site`,
+    development_stack:['Tilda'],
     url_project:'https://fishandrice.spb.ru/',
   },
   {
     name_project:'Chef Baity',
     photo:'/images/chefBaity.jpg',
-    description:'Admin panel for hotel booking website',
+    description:'Food buisness site was made by goSimple freelancers',
     development_stack:['Tilda'],
     url_project:'https://chefbaity.ru/',
   },
   {
     name_project:'Kinetic',
     photo:'/images/kinetic.jpg',
-    description:'Admin panel for hotel booking website',
-    development_stack:['laravel','livewire'],
+    description:'Crypto-currencies project was done  with help of developers from goSimple',
+    development_stack:['Laravel','livewire'],
     url_project:'https://kineticcoin.tech/',
   },
   {
     name_project:'Green Digital software',
     photo:'/images/greendigital.jpg',
-    description:'Admin panel for hotel booking website',
+    description:'Beautiful site by designers and developers from goSimple',
     development_stack:['Wordpress'],
     url_project:'https://greendigitalsoftware.com/',
   },
   {
     name_project:'Miflasim',
     photo:'/images/miflasim.jpg',
-    description:'Admin panel for hotel booking website',
+    description:'Insurance company got new site from freelancers of goSimple',
     development_stack:['Wordpress','Elementor'],
     url_project:'https://miflasim.ussl.co.il/',
   },
   {
     name_project:'Tablez',
     photo:'/images/Tablez.jpg',
-    description:'Admin panel for hotel booking website',
+    description:'E-commerce site was made fast and easy with big sign of talent by goSimple freelancers',
     development_stack:['Wordpress','Elementor'],
     url_project:'https://tablez.ussl.co.il/',
   },]

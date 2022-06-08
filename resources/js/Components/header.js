@@ -16,7 +16,7 @@ return(
                                     <Link
                                         href={route("dashboard")}
                                     >
-                                        <img src="/images/myaccount-icon-6.jpg" alt="Logo"></img>
+                                        <img src="/images/myaccount-icon-6.png" alt="Logo"></img>
                                     </Link>
                         </div>
                     </div>

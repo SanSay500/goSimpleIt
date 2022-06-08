@@ -1,6 +1,6 @@
-const Footer=()=>{
+    const Footer=()=>{
     return(
-        <footer className="footer" >
+        <footer className="footer">
                 <div className="container">
                     <div className="footer-wrapper">
                         <div className="footer-logo">

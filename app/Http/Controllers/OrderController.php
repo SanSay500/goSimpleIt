@@ -39,17 +39,36 @@ class OrderController extends Controller
     public function main()
     {
         $tasks = Task::all();
-        $orders = Order::all();
-        return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders]);
+        $orders = Order::where('status','Pending')->get();
+
+        foreach ($orders->toArray() as $order)
+            $tasksIDsInOrders[] = $order['task_id'];
+
+        $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
+
+        return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
+    }
+
+    public function proposal_confirm_form($order_id, $proposal_id)
+    {
+        $order = Order::where('id', $order_id)->first();
+        $proposal = Proposal::where('id', $proposal_id)->first();
+        $user = User::where('id', $proposal->user_id)->first();
+        return Inertia::render('ProposalConfirm', ['user'=>$user, 'order'=>$order, 'proposal'=>$proposal] );
     }
 
     public function proposal_confirm($order_id, $proposal_id)
     {
-      //$get_order_id=Proposal::where('id',$proposal_id)->get();
-      Order::where('id',$order_id)->update(['status'=>'In Work']);
-      Proposal::where('id',$proposal_id)->update(['status'=>'Confirmed']);
-      return Redirect::route('dashboard')->with('success', 'You confirmed performer. You will be contacted soon for details');
+        Order::where('id',$order_id)->update(['status'=>'In Work']);
+        Proposal::where('id',$proposal_id)->update(['status'=>'Confirmed']);
+        return Redirect::route('dashboard')->with('success', 'You confirmed performer. You will be contacted soon for details');
+    }
 
+    public function finish_order($order_id, $proposal_id)
+    {
+        Order::where('id',$order_id)->update(['status'=>'Done']);
+        Proposal::where('id',$proposal_id)->update(['status'=>'Done']);
+        return Redirect::route('dashboard')->with('success', 'Your order has been done! You can leave review about this.');
     }
 
     public function new_proposal(Request $request)
@@ -65,7 +84,6 @@ class OrderController extends Controller
 
     public function details($order_id)
     {
-
         $order=Order::where('id', $order_id)->first()->toArray();
 //        dd($order);
         return Inertia::render('Order/OrderDetails', ['order'=>$order]);

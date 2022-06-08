@@ -4,9 +4,10 @@ import {Grid} from "@mui/material";
 import BasicCard from "@/Pages/Order/BasicCard";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import Container from "@mui/material/Container";
 
 const ActiveOrders = (props) => {
-    const {orders, tasks} = usePage().props;
+    const {orders, tasksWithOrders} = usePage().props;
     const [showOrders, setShowOrders] = useState(5);
     const [ordersToShow, setOrdersToShow] = useState(orders);
 
@@ -20,7 +21,7 @@ const ActiveOrders = (props) => {
 
     const changeSearch = ({ target: { value } }) => {
         if (value) {
-            let job_found = tasks.find(e => (e.name === value) ).id;
+            let job_found = tasksWithOrders.find(e => (e.name === value) ).id;
             if (job_found) {
                 filterJobs(job_found);
             }
@@ -37,12 +38,13 @@ const ActiveOrders = (props) => {
 return (
 
     <div className="form-wrapper">
-        <div className="p-6 bg-white border-b border-gray-200">
+        <div className="p-6 bg-white border-b border-gray-200 width">
+            <h3 className="portfolio-title title">Active Tasks</h3>
             <Autocomplete
                 freeSolo
                 id="search-job auto"
                 disableClearable
-                options={tasks.map((option) => option.name)}
+                options={tasksWithOrders.map((option) => option.name)}
                 renderInput={(params) => (
                     <TextField
                         {...params}
@@ -56,7 +58,8 @@ return (
                     />
                 )}
             />
-            <Grid container spacing={2}>`
+            <br/>
+            <Container>
             {ordersToShow.slice(0,showOrders).map(
                 (order) => {
                     return (
@@ -64,9 +67,10 @@ return (
                     )
                 }
             )}
-            </Grid>
-            <button onClick={loadOrders}>Show more</button>
-
+                {ordersToShow.length > 5 &&
+                    <button className="review__button" onClick={loadOrders}>Show more</button>
+                }
+            </Container>
         </div>
     </div>
             );

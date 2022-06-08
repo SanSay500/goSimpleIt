@@ -25,8 +25,7 @@ const AboutContainer = () => {
                         For the security of freelance cooperation! Use our
                         "Secure Transaction" service with the reservation of the
                         amount on the website for cooperation with freelancers -
-                        and we guarantee you a refund if the work is done poorly
-                        and/and
+                        and we guarantee you a refund if the work is done poorly.
                     </p></div>
 
                 </div>
