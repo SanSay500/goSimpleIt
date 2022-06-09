@@ -46,7 +46,7 @@ class OrderController extends Controller
 
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
 
-        return Inertia::render('Order/Main', ['tasks'=>$tasks, 'orders'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
+        return Inertia::render('Main/Main', ['tasks'=>$tasks, 'ordersActive'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
     }
 
     public function proposal_confirm_form($order_id, $proposal_id)
@@ -61,14 +61,14 @@ class OrderController extends Controller
     {
         Order::where('id',$order_id)->update(['status'=>'In Work']);
         Proposal::where('id',$proposal_id)->update(['status'=>'Confirmed']);
-        return Redirect::route('dashboard')->with('success', 'You confirmed performer. You will be contacted soon for details');
+        return Redirect::route('employer_dashboard_index')->with('success', 'You confirmed performer. You will be contacted soon for details');
     }
 
     public function finish_order($order_id, $proposal_id)
     {
         Order::where('id',$order_id)->update(['status'=>'Done']);
         Proposal::where('id',$proposal_id)->update(['status'=>'Done']);
-        return Redirect::route('dashboard')->with('success', 'Your order has been done! You can leave review about this.');
+        return Redirect::route('employer_dashboard_index')->with('success', 'Your order has been done! You can leave review about this.');
     }
 
     public function new_proposal(Request $request)
@@ -79,7 +79,7 @@ class OrderController extends Controller
             'description' => $request->description,
             'status' => 'Sent',
         ]);
-        return Redirect::route('dashboard')->with('success', 'You sent proposal for task number '.$request->order_id);
+        return Redirect::route('freelancer_dashboard_index')->with('success', 'You sent proposal for task number '.$request->order_id);
     }
 
     public function details($order_id)
@@ -112,15 +112,6 @@ class OrderController extends Controller
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
-//        if (!Auth::user()) {
-//            $user = User::create([
-//                'name' => 'Neo',
-//                'email' => $request->email,
-//                'phone' => $request->phone,
-//                'password' => bcrypt('entrity567'),
-//            ]);
-//            Auth::login($user);
-//        }
         $task_type=Task::where('id', $request->task_id)->get()->first();
         Order::create([
             'title' => $request->title,
@@ -140,7 +131,7 @@ class OrderController extends Controller
             Mail::to(Auth::user())->send(new NewOrder($order));
         }
         //Mail::to(Auth::user()->email)->send(new NewReservationClient($order));
-        return Redirect::route('dashboard')->with('success', 'Order created.');
+        return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }
 
     /**

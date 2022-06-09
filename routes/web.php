@@ -44,7 +44,8 @@ Route::resource('orders', OrderController::class);
 
 //DASHBOARD
 Route::get('/chatify/{user_id}', [\App\Http\Controllers\DashboardController::class, 'start_chat'])->name('start_chat')->middleware('auth');
-Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard/frl', [\App\Http\Controllers\DashboardController::class, 'freelancer_dashboard_index'])->middleware(['auth'])->name('freelancer_dashboard_index');
+Route::get('/dashboard/emp', [\App\Http\Controllers\DashboardController::class, 'employer_dashboard_index'])->middleware(['auth'])->name('employer_dashboard_index');
 
 //PAYMENT STRIPE
 Route::get('/payment', function (){

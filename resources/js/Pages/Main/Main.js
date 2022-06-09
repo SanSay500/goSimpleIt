@@ -12,12 +12,12 @@ import ActiveOrders from "@/Pages/ActiveOrders";
 const Main = (props) => {
     return (
         <>
-            <HeaderContainer user={props.auth.user}/>
+            <HeaderContainer user={props.auth.user ?? '' }/>
 
             <PortfolioContainer portfolioList={myJson.portfolio} />
 
-            {/*{props.auth.user && props.auth.user.role === 'Employer' &&*/}
-                <Create user={props.auth.user}/>
+            {props.auth.user && props.auth.user.role === 'Employer' &&
+                <Create user={props.auth.user}/>}
 
             <ActiveOrders/>
 

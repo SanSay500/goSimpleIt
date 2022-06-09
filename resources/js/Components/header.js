@@ -1,6 +1,6 @@
 import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
 
-const HeaderContainer = (props) => {
+const HeaderContainer = (role) => {
 
 return(
     <header className="header">
@@ -13,12 +13,20 @@ return(
                         </div>
                         <div className="header-block"></div>
                         <div className="header-auth">
-                                    <Link
-                                        href={route("dashboard")}
-                                    >
-                                        <img src="/images/myaccount-icon-6.png" alt="Logo"></img>
-                                    </Link>
-                        </div>
+                            {role === "Freelancer" ?
+                                <Link
+                                    href={route("freelancer_dashboard_index")}
+                                >
+                                    <img src="/images/myaccount-icon-6.png" alt="Logo"></img>
+                                </Link>
+                                :
+                                <Link
+                                    href={route("employer_dashboard_index")}
+                                >
+                                    <img src="/images/myaccount-icon-6.png" alt="Logo"></img>
+                                </Link>
+                            }
+                                </div>
                     </div>
                 </div>
             </header>

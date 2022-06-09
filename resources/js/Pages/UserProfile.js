@@ -14,9 +14,10 @@ export default function UserProfile(title) {
     <br/>
     <Container maxWidth="sm">
         <FlashMessages/>
-        {props.auth.user.name}
-        {props.auth.user.role}
-        {props.auth.user.description}
+        {props.auth.user.name}<br/>
+        {props.auth.user.role}<br/>
+        {props.auth.user.description}<br/>
+        Under construction...
 
     </Container>
     <Footer/>

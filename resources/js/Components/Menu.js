@@ -20,7 +20,7 @@ const handleLogout=() => {
     Inertia.post('/logout');
 };
 const handleDashboard=() => {
-    Inertia.get('/dashboard');
+    props.auth.user.role ==="Freelancer" ?  Inertia.get('/dashboard/frl') : Inertia.get('/dashboard/emp')
 };
 const handleProfile = (e) => {
     e.preventDefault();

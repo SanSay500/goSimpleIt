@@ -66,10 +66,10 @@ const Create = (props) => {
                                     {" "}
                                     Make Order{" "}
                                 </label>
-
                                 <Autocomplete
                                     freeSolo
                                     id="search-job auto"
+                                    className="search_input"
                                     disableClearable
                                     options={tasks.map((option) => option.name)}
                                     renderInput={(params) => (

@@ -34,8 +34,9 @@ export default function Order(order, props) {
                 <Typography variant="body2">
                     Status: {order.status}
                 </Typography>
-
-            <OrderProposal {...order}/>
+                {order.status != 'Done' && order.status != 'Cancelled' &&
+                    <OrderProposal {...order}/>
+                }
 
             </CardContent>
 

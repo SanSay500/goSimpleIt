@@ -23,7 +23,8 @@ const OrderDetails = (props) => {
 
     return (
         <>
-            <HeaderLoginContainer/>
+            {console.log(props)}
+            <HeaderLoginContainer role={props.auth.user.role}/>
             <Container maxWidth="sm">
                 <br/>
                 <Card variant="outlined">

@@ -6,18 +6,19 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Container from "@mui/material/Container";
 
+
 const ActiveOrders = (props) => {
-    const {orders, tasksWithOrders} = usePage().props;
-    const [showOrders, setShowOrders] = useState(5);
-    const [ordersToShow, setOrdersToShow] = useState(orders);
+    const {ordersActive, tasksWithOrders} = usePage().props;
+    const [showOrdersQty, setShowOrdersQty] = useState(5);
+    const [ordersToShow, setOrdersToShow] = useState(ordersActive);
 
     function loadOrders(e)
     {
         e.preventDefault();
-        setShowOrders(showOrders+5);
+        setShowOrdersQty(showOrdersQty+5);
     }
 
-    var showOrdersNum=orders.slice(0,showOrders);
+    var showOrdersNum=ordersActive.slice(0,showOrdersQty);
 
     const changeSearch = ({ target: { value } }) => {
         if (value) {
@@ -30,19 +31,18 @@ const ActiveOrders = (props) => {
 
     function filterJobs(task_id)
     {
-     let newOrdersToShow = orders.filter( el => (el.task_id === task_id) );
+     let newOrdersToShow = ordersActive.filter( el => (el.task_id === task_id) );
             setOrdersToShow(newOrdersToShow);
-            setShowOrders(5);
+            setShowOrdersQty(5);
     }
-
 return (
-
     <div className="form-wrapper">
-        <div className="p-6 bg-white border-b border-gray-200 width">
-            <h3 className="portfolio-title title">Active Tasks</h3>
+        <p className="font-bold text-4xl text-center text-green-500">Active Tasks</p>
+        <Container>
             <Autocomplete
                 freeSolo
-                id="search-job auto"
+                className="search_input"
+                id="search-job555 auto"
                 disableClearable
                 options={tasksWithOrders.map((option) => option.name)}
                 renderInput={(params) => (
@@ -59,8 +59,8 @@ return (
                 )}
             />
             <br/>
-            <Container>
-            {ordersToShow.slice(0,showOrders).map(
+
+            {ordersToShow.slice(0,showOrdersQty).map(
                 (order) => {
                     return (
                         <BasicCard key={order.id} props={order}/>
@@ -71,7 +71,7 @@ return (
                     <button className="review__button" onClick={loadOrders}>Show more</button>
                 }
             </Container>
-        </div>
+
     </div>
             );
 
