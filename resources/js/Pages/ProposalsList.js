@@ -15,7 +15,7 @@ export default function ProposalsList(props) {
                 proposals.map(
                     (proposal) => {
                         return (
-                            <div className="border-b-2">
+                            <div key={proposal.id} className="border-b-2">
                             <div>
                                 <b>Proposal ID:</b> {proposal.id} <b>Proposal status:</b> {proposal.status} <b>Order ID:</b> {proposal.order_id}
                             </div>

@@ -13,7 +13,8 @@ return(
                         </div>
                         <div className="header-block"></div>
                         <div className="header-auth">
-                            {role === "Freelancer" ?
+
+                            {role.role === 'Freelancer' ?
                                 <Link
                                     href={route("freelancer_dashboard_index")}
                                 >

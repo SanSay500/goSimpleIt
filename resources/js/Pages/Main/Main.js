@@ -8,20 +8,38 @@ import HeaderContainer from "@/Components/header.js";
 import Footer from "@/Components/footer.js";
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
 import ActiveOrders from "@/Pages/ActiveOrders";
+import GoToOrder from "@/Pages/Order/GoToOrder";
 
 const Main = (props) => {
+    const myRef = useRef(null);
+    const executeScroll = () => myRef.current.scrollIntoView();
+
     return (
         <>
-            <HeaderContainer user={props.auth.user ?? '' }/>
+            <HeaderContainer role={props.auth.user && props.auth.user.role}/>
+
+            <section className="hero">
+                <div className="container mx-auto">
+                    <div className="hero-wrapper">
+                        <h2 className="hero-title">
+                            Find the perfect freelance
+                            business
+                        </h2>
+                        <div className="hero-cont">
+                            <button onClick={executeScroll} className="hero-link link" >Place an order</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <PortfolioContainer portfolioList={myJson.portfolio} />
 
-            {props.auth.user && props.auth.user.role === 'Employer' &&
-                <Create user={props.auth.user}/>}
+            <div ref={myRef}/>
+            <Create user={props.auth.user}/>
 
             <ActiveOrders/>
 
-            <ReviewContainer reviewsList={myJson.reviews} />
+             <ReviewContainer reviewsList={myJson.reviews} />
 
             <AboutContainer />
 

@@ -23,8 +23,8 @@ const OrderDetails = (props) => {
 
     return (
         <>
-            {console.log(props)}
-            <HeaderLoginContainer role={props.auth.user.role}/>
+
+            <HeaderLoginContainer role={props.auth.user && props.auth.user.role}/>
             <Container maxWidth="sm">
                 <br/>
                 <Card variant="outlined">
@@ -35,13 +35,14 @@ const OrderDetails = (props) => {
                         <b>Order cost:</b> {order.money}$<br/>
                         <b>Order term:</b> {order.hours} days<br/>
 
-                        {!hideButton &&
+                        {props.auth.user && props.auth.user.role === 'Freelancer' &&
+                            !hideButton &&
                             <button onClick={(e) => {
-                                setShowProposalForm(true);
-                                setHideButton(true);
-                            }
-                            }
-                                    className="content-center p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
+                            setShowProposalForm(true);
+                            setHideButton(true);
+                        }
+                        }
+                            className="content-center p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
                             >Make Proposal</button>
                         }
 
@@ -55,6 +56,7 @@ const OrderDetails = (props) => {
                                           }>
                 </textarea>
                                 <br/>
+
                                 <button type="submit"
                                         className="p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full">
                                     Send proposal

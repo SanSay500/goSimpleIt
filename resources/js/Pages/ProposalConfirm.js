@@ -41,12 +41,11 @@ export default function ProposalConfirm(props) {
                                     <Link href={route('start_chat', user.id)}
                                           className="p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
                                     >Chat</Link>
-
-
                                     <br/>
-                                    <Link
-                                        className="p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
-                                        href={route('dashboard')}>Back</Link>
+                                        <Link
+                                            className="p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
+                                            href={route('employer_dashboard_index')}>Back</Link>
+
                                 </div>
                             </Container>
                         </div>

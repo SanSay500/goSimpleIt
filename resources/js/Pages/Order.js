@@ -14,8 +14,8 @@ export default function Order(order, props) {
     const {proposalsForOrder} = usePage().props;
     return (
         <Container>
-            <Card variant="outlined">
-            <CardContent>
+            <Card variant="outlined" key={order.id}>
+            <CardContent >
                 <Typography sx={{ fontSize: 22 }} color="text.primary">
                     Order # {order.id}
                 </Typography>

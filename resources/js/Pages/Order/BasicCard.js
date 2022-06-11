@@ -10,7 +10,7 @@ import {usePage, Link} from "@inertiajs/inertia-react";
 export default function BasicCard(props) {
 
     return (
-        <Card variant="outlined">
+        <Card variant="outlined" key={props.props['id']}>
             <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                     {props.props['title']}

@@ -10,7 +10,7 @@ export default function OrderProposal(order) {
             {proposalsForOrder.filter(proposal => proposal.order_id === order.id).map(filteredProposal => {
                 return (
                     <div>
-                        <div>Proposal from freelancers on this job:{' '}
+                        <div key={filteredProposal.id}> Proposal from freelancers on this job:{' '}
 
                             {filteredProposal.status === 'Confirmed' && <Chip label="Working on this order now"/>}
 

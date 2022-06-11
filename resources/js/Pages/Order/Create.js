@@ -62,7 +62,7 @@ const Create = (props) => {
                     <form name="createForm" onSubmit={handleSubmit}>
                         <div className="form-section">
                             <div className="form-item form-search">
-                                <label ref={props.ref} className="form-label">
+                                <label className="form-label">
                                     {" "}
                                     Make Order{" "}
                                 </label>
