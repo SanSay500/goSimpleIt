@@ -8,5 +8,6 @@ Installation:
 Instructions:
 
 1. Frontend is in folder resources/js
-2. Main component is Pages/Main/Main.js
-
+2. Main css file in resources/css
+3. Main component is Pages/Main/Main.js
+4. To begin run in terminal "npm run watch"
