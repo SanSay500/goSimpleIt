@@ -5,7 +5,8 @@ Installation:
 4. Run in terminal "./vendor/bin/sail artisan migrate --seed" then "./vendor/bin/sail composer install" then "npm run install"
 5. App is ready for work.
  
-Instructions
-Frontend is in folder resources/js
-Main component is Pages/Main/Main.js
+Instructions:
+
+1. Frontend is in folder resources/js
+2. Main component is Pages/Main/Main.js
 
