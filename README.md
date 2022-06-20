@@ -5,13 +5,13 @@ Installation:
 4. Run "./vendor/bin/sail composer install"
 5. Run "./vendor/bin/sail npm install"
 6. Run in terminal "./vendor/bin/sail artisan migrate --seed"
-7. App is ready for work.
+7. Run in terminal "npm run watch"
+8. Open in browser localhost:90
  
 Instructions:
 
 1. Frontend is in folder resources/js
 2. Main css file in resources/css
 3. Main component is Pages/Main/Main.js
-4. To begin run in terminal "npm run watch"
-5. You may use tailwind.css
+4. You may use tailwind.css
 
