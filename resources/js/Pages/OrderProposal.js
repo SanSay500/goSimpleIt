@@ -1,6 +1,7 @@
 import {Link, usePage} from "@inertiajs/inertia-react";
 import React from "react";
 import {Chip} from "@mui/material";
+import { v4 as uuidv4 } from 'uuid';
 
 export default function OrderProposal(order) {
     const {proposalsForOrder} = usePage().props;
@@ -9,7 +10,7 @@ export default function OrderProposal(order) {
         <>
             {proposalsForOrder.filter(proposal => proposal.order_id === order.id).map(filteredProposal => {
                 return (
-                    <div>
+                    <div key={uuidv4()}>
                         <div key={filteredProposal.id}> Proposal from freelancers on this job:{' '}
 
                             {filteredProposal.status === 'Confirmed' && <Chip label="Working on this order now"/>}
