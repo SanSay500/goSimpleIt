@@ -3,11 +3,9 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class ExampleTest extends TestCase
+class MakeOrderTest extends TestCase
 {
-    use RefreshDatabase;
     /**
      * A basic test example.
      *
@@ -15,7 +13,7 @@ class ExampleTest extends TestCase
      */
     public function test_make_order_screen_can_be_rendered()
     {
-        $response = $this->get('/order');
+        $response = $this->get('/order/1');
 
         $response->assertStatus(200);
     }

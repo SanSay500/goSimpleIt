@@ -140,17 +140,24 @@
     scrollbar-color: rgb(43, 183, 57) transparent;
 }
 
-.card-text::-webkit-scrollbar, .coment-text::-webkit-scrollbar {
-    width: 5px; /* width of the entire scrollbar */
+.card-text::-webkit-scrollbar,
+.coment-text::-webkit-scrollbar {
+    width: 5px;
+    /* width of the entire scrollbar */
 }
 
-.card-text::-webkit-scrollbar-track, .coment-text::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+.card-text::-webkit-scrollbar-track,
+.coment-text::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
 }
 
-.card-text::-webkit-scrollbar-thumb, .coment-text::-webkit-scrollbar-thumb {
-    background-color: rgb(43, 183, 57); /* color of the scroll thumb */
-    border-radius: 25px; /* roundness of the scroll thumb */
+.card-text::-webkit-scrollbar-thumb,
+.coment-text::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 183, 57);
+    /* color of the scroll thumb */
+    border-radius: 25px;
+    /* roundness of the scroll thumb */
 }
 
 .review__button {
@@ -376,7 +383,8 @@
     width: 10px;
 }
 
-.btn-container, .btn-container-2 {
+.btn-container,
+.btn-container-2 {
     margin-top: 25px;
     display: flex;
     align-items: center;
@@ -405,7 +413,8 @@
     height: 48px;
 }
 
-.header-auth, .header-logo {
+.header-auth,
+.header-logo {
     width: 15%;
 }
 
@@ -518,7 +527,8 @@
     z-index: 5555;
 }
 
-.portfolio, .reviews-block {
+.portfolio,
+.reviews-block {
     padding-bottom: 100px;
 }
 
@@ -607,7 +617,8 @@
     flex-wrap: wrap;
 }
 
-.form-price, .form-period {
+.form-price,
+.form-period {
     width: 45%;
     display: flex;
     align-items: center;
@@ -629,7 +640,8 @@
     border-radius: 40px;
 }
 
-.btn-submit:hover, .file-upload:hover {
+.btn-submit:hover,
+.file-upload:hover {
     box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);
 }
 
@@ -655,11 +667,11 @@
     padding: 0 !important;
 }
 
-.MuiAutocomplete-root{
+.MuiAutocomplete-root {
     width: 100% !important;
 }
 
-.search_input .MuiOutlinedInput-input{
+.search_input .MuiOutlinedInput-input {
     width: 100% !important;
     margin-top: 30px !important;
     background-color: #fff !important;
@@ -671,7 +683,7 @@
     color: #2B2B2B !important;
 }
 
-.search_input .MuiInputLabel-formControl{
+.search_input .MuiInputLabel-formControl {
     top: 29% !important;
     left: 25px !important;
     font-family: 'Ubuntu' !important;
@@ -684,7 +696,8 @@
     border-color: #2B2B2B !important;
 }
 
-.search_input .MuiInputLabel-formControl.Mui-focused, .css-1in441m {
+.search_input .MuiInputLabel-formControl.Mui-focused,
+.css-1in441m {
     font-family: 'Ubuntu' !important;
     font-size: 34px !important;
     line-height: 48px !important;
@@ -733,6 +746,102 @@
     width: 55%;
 }
 
+.basic-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    /* justify-content: space-between; */
+
+    /* flex-direction: row; */
+}
+
+.basic-card__bottom-line {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.basic-card__bottom-line * {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    color: #2B2B2B;
+}
+
+.basic-card {
+    flex: 0 30%;
+    height: 100px;
+    margin-bottom: 2%;
+    /* (100-32*3)/2 */
+    max-width: 362px;
+    /* width: 30vw; */
+    /*grow | shrink | basis */
+    /* width: 33%; */
+    flex-grow: 1;
+    height: 362px;
+    background: #FFFFFF;
+    border: 2px dashed #2BB739;
+    box-shadow: inset 7px 7px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 21px;
+}
+
+/* .basic-card:not(:last-child) {
+    margin-right: 51px;
+} */
+
+.basic-card+.basic-card {
+    margin-left: 4%;
+}
+
+.basic-card-wrapper .basic-card:nth-child(4) {
+    margin-left: 0;
+}
+
+.basic-card__title {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 24px;
+
+    color: #2B2B2B;
+}
+
+.basic-card__description {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #2B2B2B;
+    margin-top: 20px;
+}
+
+.basic-card__money {}
+
+
+.basic-card__file * {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #2B2B2B;
+    margin-top: 20px;
+}
+
+.text-green {
+    color: #2BB739;
+
+}
+
 @media (max-width: 1440px) {
     .about-wrapper::before {
         width: 107%;
@@ -761,7 +870,9 @@
 }
 
 @media (max-width: 1200px) {
-    .form-price, .form-period {
+
+    .form-price,
+    .form-period {
         width: 100%;
     }
 
@@ -781,12 +892,15 @@
 }
 
 @media (max-width: 1024px) {
-    .review, .flip-card {
+
+    .review,
+    .flip-card {
         width: 45%;
         margin-right: 0px;
     }
 
-    .reviews-list, .portfolio-list {
+    .reviews-list,
+    .portfolio-list {
         justify-content: space-between;
     }
 
@@ -811,7 +925,8 @@
         line-height: 60px;
     }
 
-    .form-price, .form-period {
+    .form-price,
+    .form-period {
         width: 100%;
     }
 
@@ -899,11 +1014,13 @@
         overflow: hidden;
     }
 
-    .form-price, .form-period {
+    .form-price,
+    .form-period {
         flex-wrap: wrap;
     }
 
-    .form-price label, .form-period label {
+    .form-price label,
+    .form-period label {
         width: 100%;
         text-align: center;
     }
@@ -911,6 +1028,10 @@
     .form-input--second {
         width: 70% !important;
         margin-left: 0px;
+    }
+
+    .basic-card {
+        width: 40vw;
     }
 }
 
@@ -974,7 +1095,8 @@
         width: 50%;
     }
 
-    .review, .flip-card {
+    .review,
+    .flip-card {
         width: 75%;
         margin: 0 auto;
     }
@@ -1050,7 +1172,8 @@
         transform: matrix(0.18, 0.98, -1, 0.12, 0, 0);
     }
 
-    .portfolio, .reviews-block {
+    .portfolio,
+    .reviews-block {
         padding-bottom: 60px;
     }
 
@@ -1088,7 +1211,9 @@
 }
 
 @media (max-width: 470px) {
-    .review, .flip-card {
+
+    .review,
+    .flip-card {
         width: 90%;
     }
 
@@ -1110,7 +1235,9 @@
         height: 43px;
     }
 
-    .form-item, .form-info, .form-priceFlabel {
+    .form-item,
+    .form-info,
+    .form-priceFlabel {
         margin-bottom: 20px;
     }
 
@@ -1118,7 +1245,8 @@
         margin-bottom: 20px;
     }
 
-    .portfolio, .reviews-block {
+    .portfolio,
+    .reviews-block {
         padding-bottom: 40px;
     }
 }
