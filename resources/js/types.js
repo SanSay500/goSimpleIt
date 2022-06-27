@@ -1,1 +1,0 @@
-export const COUNT_REVIEWS_LOADED=3;
