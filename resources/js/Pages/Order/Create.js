@@ -90,8 +90,8 @@ const Create = (props) => {
                                 <span
                                     className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
           <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-file-dollar" width="24"
-               height="16" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round"
-               strokeLinejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path
+               height="16" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+               stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"/> <path
               d="M14 3v4a1 1 0 0 0 1 1h4"/> <path
               d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"/> <path
               d="M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"/> <path d="M12 17v1m0 -8v1"/> </svg>
@@ -100,9 +100,9 @@ const Create = (props) => {
                                     <span
                                     className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
           <svg className="mr-1 w-3 h-3" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path
-              fillRule="evenodd"
+              fill-rule="evenodd"
               d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-              clipRule="evenodd"></path></svg>
+              clip-rule="evenodd"></path></svg>
           Average time task takes: {hoursTotalSearch} day(s)
         </span>
                                 </div>
