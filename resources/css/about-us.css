@@ -1,0 +1,216 @@
+.about {
+    padding-bottom: 50px;
+    padding-right:5%;
+    width: 40%;
+}
+
+.about > div {
+    padding: 0;
+}
+
+.about-wrapper {
+    position: relative;
+    /* overflow: hidden; */
+    /* padding: 0 25px; */
+    /* max-width: 570px; */
+    margin: 0 auto;
+}
+
+/* .about-wrapper::before {
+    content: '';
+    width: 107%;
+    height: 830px;
+    top: 39px;
+    left: -26px;
+    background: #2B2B2B;
+    border-radius: 30px;
+    transform: rotate(357deg);
+    z-index: -5;
+    position: absolute;
+} */
+
+/* .about-wrapper::after {
+    content: '';
+    width: 27%;
+    height: 836px;
+    top: 8px;
+    right: -75px;
+    background: #2BB739;
+    border-radius: 30px;
+    transform: rotate(357deg);
+    z-index: -3;
+    position: absolute;
+    max-width: 400px;
+} */
+
+/* .about-wrapper::after{
+  content: url('/images/rectangle-21.svg');
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -5;
+
+} */
+
+.about-title {
+    margin-bottom: 26px;
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    text-align: center;
+}
+
+.about-text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 27px;
+    text-align: left;
+    color: #2B2B2B;
+    z-index: 36;
+    padding-bottom: 200px;
+    /* padding-top: 85px; */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 1440px) {
+    .about-wrapper::before {
+        width: 107%;
+        height: 89%;
+        top: 39px;
+        left: -26px;
+    }
+
+    .about-wrapper::after {
+        content: '';
+        width: 27%;
+        height: 90.5%;
+        top: 8px;
+        right: -56px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-wrapper::after {
+        height: 89.5%;
+        top: 17px;
+        right: -48px;
+    }
+}
+
+@media (max-width: 860px) {
+    .about {
+        width: 100%;
+    }
+
+    .about-text {
+        font-size: 28px;
+        line-height: 30px;
+        padding-bottom: 120px;
+    }
+
+    .about-wrapper::after {
+        top: 21px;
+    }
+}
+
+@media (max-width: 860px) {
+    .about-text {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .about {
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 660px) {
+    .about-wrapper::before {
+        width: 107%;
+        height: 60%;
+        top: 39px;
+        left: -22px;
+    }
+
+    .about-wrapper::after {
+        width: 108%;
+        height: 38%;
+        top: 54%;
+        right: -41px;
+        max-width: 1000%;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-wrapper::before {
+        width: 158%;
+        height: 100%;
+        top: -17%;
+        left: -22px;
+        transform: matrix(0.18, 0.98, -1, 0.12, 0, 0);
+    }
+
+    .about-wrapper::after {
+        width: 98%;
+        height: 100%;
+        top: 21%;
+        right: -41px;
+        transform: matrix(0.18, 0.98, -1, 0.12, 0, 0);
+    }
+}
+
+@media (max-width: 510px) {
+    .about-text {
+        font-size: 26px;
+        line-height: 29px;
+    }
+}
+
+@media (max-width: 470px) {
+    .about-title {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 445px) {
+    /* .about-text {
+        padding-top: 23%;
+    } */
+
+    .about-wrapper::before {
+        width: 900px;
+        top: -13%;
+    }
+
+    .about-wrapper::after {
+        width: 350px;
+        top: 30%;
+    }
+}
+
+@media (max-width: 370px) {
+    .about-text {
+        line-height: 27px;
+    }
+
+    .about-wrapper::before {
+        top: -16%;
+    }
+}
+
+@media (max-width: 340px) {
+
+    .about-wrapper::before {
+        top: -17%;
+        width: 960px;
+    }
+
+    .about-wrapper::after {
+        width: 400px;
+    }
+}
