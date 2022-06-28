@@ -6,6 +6,7 @@ import Input from "@/components/shared/input/input";
 import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import style from "./login.module.css";
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({

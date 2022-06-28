@@ -1,61 +1,29 @@
-import React, { useRef } from "react";
+import React from "react";
 import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
 import TalksContainer from "./talksContainer/talksContainer";
-import PortfolioContainer from "./portfolioContainer/portfolioContainer";
+import ProjectsContainer from "./projectsContainer/projectsContainer";
 import AboutContainer from "./aboutUs/aboutUs";
-import HeaderContainer from "./mainHeader/mainHeader";
+import MainHeader from "./mainHeader/mainHeader";
 import Footer from "@/components/shared/footer/footer";
-import ActiveOrders from "@/components/shared/activeTasks/activeTasks";
-import FreelancersContainer from "@/components/pages/mainPage/freelancersContainer/freelancersContainer";
-import "@/../css/main1.css";
+import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
+import FreelancersContainer from "./freelancersContainer/freelancersContainer";
+import MainStart from "./mainStart/mainStart";
+// import "@/../css/main1.css";
+import style from "./main.module.css";
 
 const Main = (props) => {
-    const myRef = useRef(null);
-    const executeScroll = () => myRef.current.scrollIntoView();
-
     return (
         <>
-            <section className="hero">
-                <HeaderContainer
-                    role={props.auth.user && props.auth.user.role}
-                />
+            <section className={`${style.mainHeaderContainer} `}>
+                <MainHeader role={props.auth.user && props.auth.user.role} />
 
-                <div className="container mx-auto">
-                    <div className="hero-wrapper">
-                        <h2 className="hero-title">
-                            Find the perfect freelance business
-                        </h2>
-                        <div className="hero-budjet">
-                            <button
-                                onClick={executeScroll}
-                                className="hero-budjlink link"
-                            >
-                                <img src="/images/budjet.png" alt="Logo"></img>
-                            </button>
-                        </div>
-                        <div className="hero-wrapper">
-                            <div className="hero-cont">
-                                <button
-                                    onClick={executeScroll}
-                                    className="hero-link link"
-                                >
-                                    <img
-                                        src="/images/getstarted.png"
-                                        alt="Logo"
-                                    ></img>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <MainStart />
             </section>
 
-            <PortfolioContainer portfolioList={myJson.portfolio} />
+            <ActiveTasks />
 
-            <div ref={myRef} />
-
-            <ActiveOrders />
+            <ProjectsContainer portfolioList={myJson.portfolio} />
 
             <FreelancersContainer reviewsList={myJson.reviews} />
             <TalksContainer reviewsList={myJson.reviews} />

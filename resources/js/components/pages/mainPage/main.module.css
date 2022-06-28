@@ -1,0 +1,7 @@
+.mainHeaderContainer {
+    background-image: url("/images/background.svg");
+    background-repeat: no-repeat;
+    background-size: 66% auto;
+    background-position: 105% 4%;
+    z-index: -9999;
+}

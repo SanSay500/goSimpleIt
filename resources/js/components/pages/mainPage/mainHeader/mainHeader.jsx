@@ -1,9 +1,8 @@
-import { InertiaLink, Link, usePage } from "@inertiajs/inertia-react";
-import '@/../css/header.css'
+import { Link } from "@inertiajs/inertia-react";
+import "@/../css/header.css";
 
-const HeaderContainer = (role) => {
-
-    return(
+const MainHeader = (role) => {
+    return (
         <header className="header">
             <div className="container">
                 <div className="header-wrapper">
@@ -14,24 +13,25 @@ const HeaderContainer = (role) => {
                     </div>
                     <div className="header-block"></div>
                     <div className="header-auth">
-
-                        {role.role === 'Freelancer' ?
-                            <Link
-                                href={route("freelancer_dashboard_index")}
-                            >
-                                <img src="/images/myprofile-icon-6.png" alt="Logo"></img>
+                        {role.role === "Freelancer" ? (
+                            <Link href={route("freelancer_dashboard_index")}>
+                                <img
+                                    src="/images/myprofile-icon-6.png"
+                                    alt="Logo"
+                                ></img>
                             </Link>
-                            :
-                            <Link
-                                href={route("employer_dashboard_index")}
-                            >
-                                <img src="/images/myprofile-icon-6.png" alt="Logo"></img>
+                        ) : (
+                            <Link href={route("employer_dashboard_index")}>
+                                <img
+                                    src="/images/myprofile-icon-6.png"
+                                    alt="Logo"
+                                ></img>
                             </Link>
-                        }
+                        )}
                     </div>
                 </div>
             </div>
         </header>
-    )
-}
-export default HeaderContainer;
+    );
+};
+export default MainHeader;

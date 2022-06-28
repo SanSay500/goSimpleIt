@@ -9,31 +9,22 @@
     padding: 6px 17px;
 }
 
-.hero {
-    background-image: url('/images/background.svg');
-    background-repeat: no-repeat;
-    background-size:66% auto;
-    background-position: 105% 4%;
-    z-index: -9999;
-}
-
 .hero-title {
     position: relative;
     width: 38%;
     line-height: 44px;
     left: 6%;
     top: 4vw;
-    font-family: 'Ubuntu';
+    font-family: "Ubuntu";
     font-style: normal;
     font-weight: 500;
     font-size: 40px;
-    color:#2B2B2B
+    color: #2b2b2b;
 }
 
 .link {
-    width: 100%
+    width: 100%;
 }
-
 
 .hero-cont {
     position: relative;
@@ -42,11 +33,11 @@
     z-index: 1;
 }
 
-.hero-cont img{
+.hero-cont img {
     margin-left: auto;
     margin-right: auto;
 }
-.hero-budjet {
+.hero-budget {
     position: absolute;
     max-width: 221px;
     left: 8.5vw;
@@ -84,13 +75,12 @@
     }
 }
 @media (max-width: 1440px) {
-
     .hero-title {
         font-size: 35px;
         line-height: 38px;
     }
 
-    .hero-budjet {
+    .hero-budget {
         left: 8vw;
     }
 }
@@ -107,7 +97,7 @@
     }
 
     .link {
-        width: 90%
+        width: 90%;
     }
 }
 
@@ -121,9 +111,9 @@
     }
 
     .link {
-        width: 85%
+        width: 85%;
     }
-    .hero-budjet {
+    .hero-budget {
         left: 7.5vw;
     }
 }
@@ -136,9 +126,9 @@
     }
 
     .link {
-        width: 80%
+        width: 80%;
     }
-    .hero-budjet {
+    .hero-budget {
         left: 6.5vw;
     }
 }
@@ -155,10 +145,8 @@
     } */
 
     .link {
-        width: 75%
+        width: 75%;
     }
-
-    
 }
 
 @media (max-width: 767px) {
@@ -169,7 +157,7 @@
         width: 40%;
     }
 
-    .hero-budjet {
+    .hero-budget {
         left: 7.5vw;
     }
 
@@ -178,11 +166,11 @@
     }
 
     .link {
-        width: 65%
+        width: 65%;
     }
 }
 
-@media (max-width: 660px) {  
+@media (max-width: 660px) {
     .hero-title {
         font-size: 17px;
         line-height: 22px;
@@ -191,11 +179,9 @@
     }
 
     .link {
-        width: 60%
+        width: 60%;
     }
-
 }
-
 
 @media (max-width: 576px) {
     .hero {
@@ -206,41 +192,36 @@
     .hero-title {
         font-size: 28px;
         line-height: 34px;
-        margin:8% auto;
+        margin: 8% auto;
         width: 90%;
-        text-align:center;
+        text-align: center;
     }
 
     .hero-cont {
         margin: 0% auto 0px;
     }
 
-    .hero-budjet {
+    .hero-budget {
         max-width: 221px;
         top: 60vw;
         left: 30vw;
-        }    
-
+    }
 }
 
 @media (max-width: 470px) {
-
-
     .hero-cont {
         width: 100%;
     }
 
-    .hero-budjet {
+    .hero-budget {
         top: 65vw;
         left: 30vw;
-        }    
-
+    }
 }
 
 @media (max-width: 340px) {
-    .hero-budjet {
+    .hero-budget {
         top: 70vw;
         left: 30vw;
-        }   
-
+    }
 }

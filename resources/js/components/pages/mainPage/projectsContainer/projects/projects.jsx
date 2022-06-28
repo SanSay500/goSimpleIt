@@ -1,6 +1,6 @@
 import FlipCard from "./flipCard/flipCard";
 
-const Portfolio = ({ projects }) => {
+const Projects = ({ projects }) => {
     return (
         <>
             <h3 className="portfolio-title title">Our works</h3>
@@ -13,4 +13,4 @@ const Portfolio = ({ projects }) => {
     );
 };
 
-export default Portfolio;
+export default Projects;
