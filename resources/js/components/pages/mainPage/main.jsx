@@ -1,15 +1,13 @@
 import React, { useRef } from "react";
 import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
-import ReviewContainer from "./reviewContainer/reviewContainer";
+import TalksContainer from "./talksContainer/talksContainer";
 import PortfolioContainer from "./portfolioContainer/portfolioContainer";
 import AboutContainer from "./aboutUs/aboutUs";
 import HeaderContainer from "./mainHeader/mainHeader";
 import Footer from "@/components/shared/footer/footer";
-import { InertiaLink, Link } from "@inertiajs/inertia-react";
 import ActiveOrders from "@/components/shared/activeTasks/activeTasks";
-// import GoToOrder from "@/Pages/Order/GoToOrder";
-import FreelancersContainer from "@/../js/from Janik/freelancers-container";
+import FreelancersContainer from "@/components/pages/mainPage/freelancersContainer/freelancersContainer";
 import "@/../css/main1.css";
 
 const Main = (props) => {
@@ -60,7 +58,7 @@ const Main = (props) => {
             <ActiveOrders />
 
             <FreelancersContainer reviewsList={myJson.reviews} />
-            <ReviewContainer reviewsList={myJson.reviews} />
+            <TalksContainer reviewsList={myJson.reviews} />
 
             <div className="about-form">
                 <AboutContainer />

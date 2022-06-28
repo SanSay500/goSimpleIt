@@ -1,10 +1,10 @@
-import Reviews from "./reviews/reviews";
+import Freelancers from "./freelancers/freelancers";
 import { useState } from "react";
+import "@/../css/freelancers.css";
 
-const ReviewContainer = ({ reviewsList }) => {
+const FreelancersContainer = ({ reviewsList }) => {
     let count_review = 0;
     let width = window.innerWidth;
-
     if (width > 1024) {
         count_review = 3;
     } else {
@@ -20,8 +20,7 @@ const ReviewContainer = ({ reviewsList }) => {
         <section className="reviews-block">
             <div className="container">
                 <div className="reviews-wrapper">
-                    <Reviews reviews={reviewsList.slice(0, step)} />
-
+                    <Freelancers reviews={reviewsList.slice(0, step)} />
                     <div className="btn-container">
                         {reviewsList.length > step ? (
                             <div className="review__more">
@@ -42,4 +41,4 @@ const ReviewContainer = ({ reviewsList }) => {
         </section>
     );
 };
-export default ReviewContainer;
+export default FreelancersContainer;

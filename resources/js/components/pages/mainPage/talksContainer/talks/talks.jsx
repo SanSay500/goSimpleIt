@@ -1,6 +1,7 @@
-const Reviews = ({ reviews }) => {
+const Talks = ({ reviews }) => {
     return (
-        <>{/*<h3 className="reviews-title title">Reviews</h3>*/}
+        <>
+            {/*<h3 className="reviews-title title">Reviews</h3>*/}
             <div className="talks">
                 <span>Talks about us</span>
             </div>
@@ -12,7 +13,8 @@ const Reviews = ({ reviews }) => {
                                 <img
                                     className="user__img"
                                     src={element.user.avatar}
-                                    alt={element.user.name} />
+                                    alt={element.user.name}
+                                />
                             </div>
 
                             {/*<h4 className="user__name">{element.user.name}</h4>*/}
@@ -25,7 +27,7 @@ const Reviews = ({ reviews }) => {
                 ))}
             </ul>
         </>
-    )
-}
+    );
+};
 
-export default Reviews
+export default Talks;
