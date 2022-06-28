@@ -1,22 +1,21 @@
 import React from "react";
+import style from "./mainStart.module.css";
 
 const MainStart = (props) => {
     return (
-        <div className="container mx-auto">
-            <div className="hero-wrapper">
-                <h2 className="hero-title">
-                    Find the perfect freelance business
+        <div className={`container mx-auto ${style.container}`}>
+            <div className={`${style.leftBlock}`}>
+                <h2 className={`${style.title}`}>
+                    Find the perfect freelance services for your business
                 </h2>
-                <div className="hero-budget">
-                    <button>
-                        <img src="/images/budget.png" alt="Logo"></img>
-                    </button>
-                </div>
-
-                <button>
-                    <img src="/images/getstarted.png" alt="Logo"></img>
+                <button className={`${style.budgetBtn}`}>
+                    <img src="/images/budget.png" alt="Logo"></img>
                 </button>
             </div>
+
+            <button className={`${style.getStartedBtn}`}>
+                <img src="/images/getStarted.png" alt="Logo"></img>
+            </button>
         </div>
     );
 };

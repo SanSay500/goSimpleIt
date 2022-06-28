@@ -9,19 +9,6 @@
     padding: 6px 17px;
 }
 
-.hero-title {
-    position: relative;
-    width: 38%;
-    line-height: 44px;
-    left: 6%;
-    top: 4vw;
-    font-family: "Ubuntu";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 40px;
-    color: #2b2b2b;
-}
-
 .link {
     width: 100%;
 }
