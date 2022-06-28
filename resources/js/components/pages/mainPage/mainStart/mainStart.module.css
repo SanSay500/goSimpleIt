@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.leftBlock {
+    max-width: 461px;
+}
+
+.title {
+    margin: 0 0 56px 0;
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 44px;
+    color: #2b2b2b;
+}
+
+.budgetBtn {
+    margin: 0 0 20px 0;
+}
+
+.getStartedBtn {
+    align-self: center;
+}

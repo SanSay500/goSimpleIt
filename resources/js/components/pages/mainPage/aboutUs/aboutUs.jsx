@@ -1,10 +1,12 @@
+import style from './aboutUs.module.css'
+
 const AboutUs = () => {
     return (
-        <section className="about">
+        <section className={style.about}>
             <div className="container">
-                <h3 className="about-title title">About us</h3>
-                <div className="about-wrapper">
-                    <p className="about-text">
+                <h3 className={`${style.aboutTitle} title`}>About us</h3>
+                <div className={style.aboutWrapper}>
+                    <p className={style.aboutText}>
                         Here you can find the best freelance specialists among 1
                         million performers registered on the site. Programmers,
                         designers, artists, copywriters, lawyers, accountants,

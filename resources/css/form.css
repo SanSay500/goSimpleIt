@@ -36,7 +36,7 @@
     right: 0;
     width: 33%;
     height: 100%;
-    background-image: url(../../public/images/form-lines.svg);
+    /* background-image: url(../../public/images/form-lines.svg); */
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
@@ -194,6 +194,17 @@
 
 .MuiAutocomplete-root{
     width: 100% !important;
+    margin-top: 30px !important;
+    background-color: #fff !important;
+    border-radius: 8px !important;
+    border: 1px dashed #2BB739 !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    /* padding: 10px 37px !important; */
+    color: #2B2B2B !important;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
 }
 
 .search_input .MuiOutlinedInput-input{
@@ -247,6 +258,14 @@
     color: #2B2B2B !important;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    font-family: 'Ubuntu' !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    color: #2B2B2B !important;
 }
 
 .form-price {

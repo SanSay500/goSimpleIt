@@ -1,9 +1,10 @@
 import { Link } from "@inertiajs/inertia-react";
-import "@/../css/header.css";
+// import "@/../css/header.css";
+import style from "./mainHeader.module.css";
 
 const MainHeader = (role) => {
     return (
-        <header className="header">
+        <header className={`${style.header} header`}>
             <div className="container">
                 <div className="header-wrapper">
                     <div className="header-logo">

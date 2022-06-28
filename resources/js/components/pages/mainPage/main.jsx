@@ -15,7 +15,7 @@ import style from "./main.module.css";
 const Main = (props) => {
     return (
         <>
-            <section className={`${style.mainHeaderContainer} `}>
+            <section className={`${style.container}`}>
                 <MainHeader role={props.auth.user && props.auth.user.role} />
 
                 <MainStart />
