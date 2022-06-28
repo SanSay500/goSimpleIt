@@ -1,4 +1,4 @@
-.form-section {
+.formSection {
     background: transparent;
     /* border-radius: 20px; */
     /* padding: 12px 78px 48px 78px; */
@@ -6,13 +6,13 @@
     display: flex;
     flex-direction: column;
     /* border: 5px dashed #2BB739; */
-    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25), 
+    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
         -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     margin-bottom: 60px;
 }
 
-.form-section::after {
+.formSection::after {
     position: relative;
     width: 634px;
     height: 82px;
@@ -23,26 +23,26 @@
     border-radius: 8px;
 }
 
-.form-block {
+.formBlock {
     padding-bottom: 100px;
     width: 55%;
     z-index: 1;
 }
 
-.form-block::after {
+.formBlock::after {
     position: absolute;
     content: "";
     top: -1%;
     right: 0;
     width: 33%;
     height: 100%;
-    /* background-image: url(../../public/images/form-lines.svg); */
+    background-image: url(/images/form-lines.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     z-index: -1;
 }
 
-.form-block > div {
+.formBlock>div {
     padding: 0;
 }
 
@@ -54,11 +54,11 @@
     color: #2BB739;
 }
 
-.file-upload input[type="file"] {
+.fileUpload input[type="file"] {
     display: none;
 }
 
-.file-upload {
+.fileUpload {
 
     position: relative;
 
@@ -84,14 +84,14 @@
     /* margin-left: 10px; */
 }
 
-.file-name {
+.fileName {
     color: #2B2B2B;
     font-weight: 300;
     font-size: 34px;
     line-height: 48px;
 }
 
-.form-file {
+.formFile {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -99,14 +99,14 @@
     margin-bottom: 40px;
 }
 
-.file-info {
+.fileInfo {
     align-items: center;
     display: flex;
     flex-direction: row;
     padding-right: 40%;
 }
 
-.file-upload label {
+.fileUpload label {
 
     display: block;
 
@@ -126,7 +126,7 @@
 
 /* стиль текста на кнопке*/
 
-.file-upload span {
+.fileUpload span {
 
     /* font-weight: 300;
     font-size: 34px;
@@ -167,10 +167,22 @@
     color: #2B2B2B;
 }
 
-[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, 
-[type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, 
-[type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
-    outline: none!important;
+[type='text']:focus,
+[type='email']:focus,
+[type='url']:focus,
+[type='password']:focus,
+[type='number']:focus,
+[type='date']:focus,
+[type='datetime-local']:focus,
+[type='month']:focus,
+[type='search']:focus,
+[type='tel']:focus,
+[type='time']:focus,
+[type='week']:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
     box-shadow: none;
     border-color: #2BB739;
 }
@@ -188,26 +200,15 @@
     background: transparent;
 }
 
-.search_input .MuiOutlinedInput-root {
+/* .search-input .MuiOutlinedInput-root {
     padding: 0 !important;
 }
 
-.MuiAutocomplete-root{
+.MuiAutocomplete-root {
     width: 100% !important;
-    margin-top: 30px !important;
-    background-color: #fff !important;
-    border-radius: 8px !important;
-    border: 1px dashed #2BB739 !important;
-    font-weight: 400 !important;
-    font-size: 18px !important;
-    line-height: 21px !important;
-    /* padding: 10px 37px !important; */
-    color: #2B2B2B !important;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
 }
 
-.search_input .MuiOutlinedInput-input{
+.search-input .MuiOutlinedInput-input {
     width: 100% !important;
     margin-top: 30px !important;
     background-color: #fff !important;
@@ -219,7 +220,7 @@
     color: #2B2B2B !important;
 }
 
-.search_input .MuiInputLabel-formControl{
+.search-input .MuiInputLabel-formControl {
     top: 35% !important;
     left: 5px !important;
     font-family: 'Ubuntu' !important;
@@ -229,11 +230,12 @@
     color: #2B2B2B !important;
 }
 
-.search_input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {
+.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {
     border-color: #2B2B2B !important;
 }
 
-.search_input .MuiInputLabel-formControl.Mui-focused, .css-1in441m {
+.search-input .MuiInputLabel-formControl.Mui-focused,
+.css-1in441m {
     font-family: 'Ubuntu' !important;
     font-weight: 400 !important;
     font-size: 18px !important;
@@ -245,7 +247,7 @@
     border: none !important;
 }
 
-.search_input .MuiOutlinedInput-input{
+.search-input .MuiOutlinedInput-input {
     width: 100% !important;
     margin-top: 30px !important;
     background-color: #fff !important;
@@ -258,38 +260,32 @@
     color: #2B2B2B !important;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-}
+} */
 
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-    font-family: 'Ubuntu' !important;
-    font-weight: 400 !important;
-    font-size: 18px !important;
-    line-height: 21px !important;
-    color: #2B2B2B !important;
-}
-
-.form-price {
+.formPrice {
     display: flex;
     max-width: 150px;
     margin-right: 10%;
 }
 
-.form-period {
+.formPeriod {
     display: flex;
     justify-content: flex-end;
     max-width: 150px;
     margin-right: 10%;
 }
 
-.form-item, .form-info, .form-priceFlabel {
+.form-item,
+.formInfo,
+.formPrice {
     margin-bottom: 20px;
 }
 
-.form-info {
+.formInfo {
     display: flex;
 }
 
-.form-info label {
+.formInfo label {
     font-family: "Ubuntu";
     font-weight: 400;
     font-size: 18px;
@@ -297,7 +293,7 @@
     color: #2B2B2B;
 }
 
-.form-info span {
+.formInfo span {
     font-family: "Ubuntu";
     font-weight: 400;
     font-size: 18px;
@@ -305,7 +301,7 @@
     color: #2B2B2B;
 }
 
-.btn-submit {
+.btnSubmit {
     color: #FFFFFF;
     background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;
     font-weight: 500;
@@ -317,20 +313,22 @@
     align-self: flex-end;
 }
 
-.btn-submit:hover, .file-upload:hover {
+.btnSubmit:hover,
+.fileUpload:hover {
     box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);
 }
 
 @media (max-width: 1200px) {
-    .form-info {
+    .formInfo {
         flex-direction: column;
     }
 
-    .form-price, .form-period {
+    .formPrice,
+    .formPeriod {
         width: 100%;
     }
 
-    .form-period {
+    .formPeriod {
         justify-content: flex-start;
         margin-top: 20px;
     }
@@ -339,55 +337,58 @@
         justify-content: center;
     } */
 
-    .file-info {
+    .fileInfo {
         margin-top: 20px;
     }
 
 }
 
 @media (max-width: 1024px) {
-    .form-price, .form-period {
+
+    .formPrice,
+    .formPeriod {
         width: 100%;
     }
 
-    .form-price label {
+    .formPrice label {
         text-align: left;
     }
 
-    /* .form-price {
+    /* .formPrice {
         margin-bottom: 41px;
     } */
 }
 
 @media (max-width: 860px) {
-    .form-block {
+    .formBLock {
         width: 100%;
     }
 
-    .form-block::after {
+    .formBLock::after {
         top: 54%;
         width: 50%;
     }
 
-    .form-section {
+    .formSection {
         box-shadow: none;
     }
 }
 
 @media (max-width: 767px) {
-    .form-section {
+    .formSection {
         width: 100%;
     }
 
-    .form-block::after {
+    .formBLock::after {
         top: 60%;
     }
-    
-    /* .form-price, .form-period {
+
+    /* .formPrice, .formPeriod {
         flex-wrap: wrap;
     } */
 
-    .form-price label, .form-period label {
+    .formPrice label,
+    .formPeriod label {
         width: 100%;
         text-align: center;
     }
@@ -399,46 +400,46 @@
 }
 
 @media (max-width: 660px) {
-    .form-section {
+    .formSection {
         padding: 12px 30px 28px 30px;
     }
 }
 
 @media (max-width: 576px) {
-    .form-section {
+    .formSection {
         padding: 12px 0px 28px;
     }
 
-    .form-block::after {
+    .formBLock::after {
         display: none;
     }
 
-    .form-item {
+    .form-input {
         margin-bottom: 30px;
     }
 
-    .form-info {
+    .formInfo {
         flex-direction: row;
         justify-content: space-between;
     }
 
-    .form-period {
+    .formPeriod {
         margin: 0;
     }
 
-    .btn-submit {
+    .btnSubmit {
         padding: 13px;
     }
 }
 
 @media (max-width: 510px) {
-    .file-upload {
+    .fileUpload {
         margin-left: 0;
     }
 }
 
 @media (max-width: 445px) {
-    .file-upload {
+    .fileUpload {
         width: 300px;
     }
 }

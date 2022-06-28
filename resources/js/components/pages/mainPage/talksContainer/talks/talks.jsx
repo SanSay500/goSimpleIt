@@ -1,8 +1,10 @@
+import style from "../talks.module.css"
+
 const Talks = ({ reviews }) => {
     return (
         <>
             {/*<h3 className="reviews-title title">Reviews</h3>*/}
-            <div className="talks">
+            <div className={style.talks}>
                 <span>Talks about us</span>
             </div>
             <ul className="reviews-list">

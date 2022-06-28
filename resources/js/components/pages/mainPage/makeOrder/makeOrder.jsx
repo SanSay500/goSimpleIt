@@ -5,6 +5,7 @@ import Autocomplete from "@mui/material/Autocomplete";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import Typography from "@mui/material/Typography";
 import '@/../css/form.css'
+import style from './makeOrder.module.css'
 
 const MakeOrder = (props) => {
     const {data, setData, errors, post, processing, reset} = useForm({
@@ -56,11 +57,11 @@ const MakeOrder = (props) => {
 
     return (
 
-        <section className="form-block">
+        <section className={style.formBlock}>
             <div className="container">
                 <div className="form-wrapper">
                     <form name="createForm" onSubmit={handleSubmit}>
-                        <div className="form-section">
+                        <div className={style.formSection}>
                             <div className="form-item form-search">
                                 <label className="form-label">
                                     {" "}
@@ -69,7 +70,7 @@ const MakeOrder = (props) => {
                                 <Autocomplete
                                     freeSolo
                                     id="search-job auto"
-                                    className="search_input "
+                                    className={style.searchInput}
                                     disableClearable
                                     options={tasks.map((option) => option.name)}
                                     renderInput={(params) => (
@@ -143,8 +144,8 @@ const MakeOrder = (props) => {
                                     {errors.description}
                                 </span>
                             </div>
-                            <div className="form-info">
-                                <div className="form-price">
+                            <div className={style.formInfo}>
+                                <div className={style.formPrice}>
                                     <label className="form-label">Price</label>
                                     <input
                                         type="text"
@@ -157,7 +158,7 @@ const MakeOrder = (props) => {
                                     />
                                     <span>$</span>
                                 </div>
-                                <div className="form-period">
+                                <div className={style.formPeriod}>
                                     <label className="form-label">Term</label>
                                     <input
                                         type="text"
@@ -168,15 +169,15 @@ const MakeOrder = (props) => {
                                             setData("time", e.target.value)
                                         }
                                     />{" "}
-                                    <span>day(s)</span>
+                                    <span>days</span>
                                 </div>
                             </div>
-                            <div className="form-file">
+                            <div className={style.formFile}>
                                 {/*<label className="form-label">
                                     Add file with job description
                                     </label>*/}
-                                <div className="file-info">
-                                    <div className="file-upload">
+                                <div className={style.fileInfo}>
+                                    <div className={style.fileUpload}>
                                         <label>
                                             <input
                                                 type="file"
@@ -202,7 +203,7 @@ const MakeOrder = (props) => {
                                         </label>
                                     </div>
 
-                                    <div className="file-name">
+                                    <div className={style.fileName}>
                                         {selectedFile}
                                     </div>
 
@@ -219,7 +220,7 @@ const MakeOrder = (props) => {
 
 
 
-                            <button type="submit" className="btn-submit">
+                            <button type="submit" className={style.btnSubmit}>
                                 Publish and find a specialist
                             </button>
 
