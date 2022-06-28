@@ -1,7 +1,7 @@
-import Portfolio from "./portfolio/portfolio";
+import Projects from "./projects/projects";
 import { useState, useEffect } from "react";
 
-const PortfolioContainer = ({ portfolioList }) => {
+const ProjectsContainer = ({ portfolioList }) => {
     let count_project = 0;
     let width = window.innerWidth;
 
@@ -43,11 +43,12 @@ const PortfolioContainer = ({ portfolioList }) => {
             window.removeEventListener("resize", resizeHandler);
         };
     }, []);
+
     return (
         <section className="portfolio">
             <div className="container">
                 <div className="portfolio-wrapper">
-                    <Portfolio
+                    <Projects
                         projects={portfolioList.slice(stepPrev, stepNext)}
                     />
 
@@ -96,4 +97,4 @@ const PortfolioContainer = ({ portfolioList }) => {
         </section>
     );
 };
-export default PortfolioContainer;
+export default ProjectsContainer;

@@ -1,0 +1,19 @@
+.container {
+    margin: 0 0 37px 0;
+    position: relative;
+}
+
+.container::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 101%;
+    height: 950px;
+    top: 17px;
+    right: 0;
+    background-image: url("/images/background.svg");
+    background-repeat: no-repeat;
+    background-size: 66% auto;
+    background-position: 105% 4%;
+    z-index: -1;
+}
