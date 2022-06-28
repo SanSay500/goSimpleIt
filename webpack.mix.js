@@ -14,12 +14,8 @@ const mix = require("laravel-mix");
 mix.js("resources/js/app.js", "public/js")
     .react()
     .browserSync({
-    proxy: "http://localhost:8001", //Your host
-    files: [ //Files for watching
-        "./public/css/*.css",
-        "./public/js/*.js",
-    ],
-})
+        proxy: "laravel.test",
+    })
     .postCss("resources/css/app.css", "public/css", [
         require("postcss-import"),
         require("tailwindcss"),
