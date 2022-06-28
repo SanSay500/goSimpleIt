@@ -4,7 +4,7 @@ import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Head, useForm } from "@inertiajs/inertia-react";
-
+import style from "./forgotPassword.module.css";
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
         email: "",
@@ -43,13 +43,17 @@ export default function ForgotPassword({ status }) {
                     type="text"
                     name="email"
                     value={data.email}
-                    className="mt-1 block w-full"
+                    className={`${style.loginInput} `}
+                    placeholder="E-mail"
                     isFocused={true}
                     handleChange={onHandleChange}
                 />
 
                 <div className="flex items-center justify-end mt-4">
-                    <Button className="ml-4" processing={processing}>
+                    <Button
+                        className={`${style.formBtn} `}
+                        processing={processing}
+                    >
                         Email Password Reset Link
                     </Button>
                 </div>

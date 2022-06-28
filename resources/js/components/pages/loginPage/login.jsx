@@ -50,27 +50,25 @@ export default function Login({ status, canResetPassword }) {
 
             <form onSubmit={submit}>
                 <div>
-                    <Label forInput="email" value="Email" />
-
                     <Input
                         type="text"
                         name="email"
                         value={data.email}
-                        className="mt-1 block w-full"
+                        className={`${style.loginInput} `}
+                        placeholder="E-mail"
                         autoComplete="username"
                         isFocused={true}
                         handleChange={onHandleChange}
                     />
                 </div>
 
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
+                <div className={`${style.loginFormItem} `}>
                     <Input
                         type="password"
-                        name="password"
+                        name="Password"
                         value={data.password}
-                        className="mt-1 block w-full"
+                        placeholder="Password"
+                        className={`${style.loginInput} `}
                         autoComplete="current-password"
                         handleChange={onHandleChange}
                     />
@@ -82,9 +80,10 @@ export default function Login({ status, canResetPassword }) {
                             name="remember"
                             value={data.remember}
                             handleChange={onHandleChange}
+                            className={`${style.formCheckbox} `}
                         />
 
-                        <span className="ml-2 text-sm text-gray-600">
+                        <span className={`${style.formCheckboxLabel} `}>
                             Remember me
                         </span>
                     </label>
@@ -92,12 +91,12 @@ export default function Login({ status, canResetPassword }) {
 
                 <div
                     style={{ justifyContent: "space-between" }}
-                    className="flex items-center justify-end mt-4"
+                    className="flex items-center justify-end"
                 >
                     <div>
                         <Link
                             href={route("register")}
-                            className="ml-4 text-sm text-gray-700 underline"
+                            className={`${style.formLink} `}
                         >
                             Register
                         </Link>
@@ -107,14 +106,17 @@ export default function Login({ status, canResetPassword }) {
                         <div>
                             <Link
                                 href={route("password.request")}
-                                className="underline text-sm text-gray-600 hover:text-gray-900"
+                                className={`${style.formLink} `}
                             >
                                 Forgot your password?
                             </Link>
                         </div>
                     )}
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button
+                        className={`${style.formBtn} `}
+                        processing={processing}
+                    >
                         Log in
                     </Button>
                 </div>
