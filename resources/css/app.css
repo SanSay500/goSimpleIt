@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @font-face {
     font-family: "Ubuntu";
@@ -49,7 +49,7 @@
     font-size: 54px;
     line-height: 62px;
     text-align: center;
-    color: #2BB739;
+    color: #2bb739;
     margin-bottom: 80px;
 }
 
@@ -262,7 +262,7 @@
     background-color: #fff;
     width: 32%;
     height: 365px;
-    border: 8px dashed #2BB739;
+    border: 8px dashed #2bb739;
     border-radius: 20px;
     perspective: 1000px;
     overflow: hidden;
@@ -280,7 +280,6 @@
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-
 }
 
 .flip-card:hover .flip-card-inner {
@@ -298,14 +297,14 @@
 
 .card.front {
     background-color: #fff;
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
 .card.back {
     padding: 20px;
     transform: rotateY(180deg);
     background: #fff;
-    color: #2B2B2B;
+    color: #2b2b2b;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -370,13 +369,14 @@
 
 .card-dev-list li::before {
     content: "\2022";
-    color: #2BB739;
+    color: #2bb739;
     font-weight: bold;
     display: inline-block;
     width: 10px;
 }
 
-.btn-container, .btn-container-2 {
+.btn-container,
+.btn-container-2 {
     margin-top: 25px;
     display: flex;
     align-items: center;
@@ -393,19 +393,20 @@
 
 .header-wrapper {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
 }
 
 .header-block {
     display: none;
-    background: #2B2B2B;
+    background: #2b2b2b;
     border-radius: 5px;
     width: 70%;
     height: 48px;
 }
 
-.header-auth, .header-logo {
+.header-auth,
+.header-logo {
     width: 15%;
 }
 
@@ -425,24 +426,24 @@
 .link {
     display: block;
     text-decoration: none;
-    background-color: #2BB739;
+    background-color: #2bb739;
     color: #fff;
-    border: 4px dashed #2B2B2B;
+    border: 4px dashed #2b2b2b;
     border-radius: 40px;
     text-align: center;
     width: 100%;
 }
 
 .hero-cont:hover::after {
-    color: #2BB739;
+    color: #2bb739;
     background-color: #fff;
-    border-color: #2BB739;
+    border-color: #2bb739;
 }
 
 .hero-cont:hover .link {
-    color: #2BB739;
+    color: #2bb739;
     background-color: #fff;
-    border-color: #2BB739;
+    border-color: #2bb739;
 }
 
 .loginContainer {
@@ -457,7 +458,7 @@
 }
 
 .hero {
-    background-image: url('/images/background-img.jpg');
+    background-image: url("/images/background-img.jpg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -474,7 +475,7 @@
     font-size: 84px;
     line-height: 97px;
     text-align: center;
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
 .hero-link {
@@ -482,8 +483,6 @@
     font-size: 34px;
     line-height: 39px;
     padding: 18px 50px;
-
-
 }
 
 .hero-cont {
@@ -495,7 +494,7 @@
 }
 
 .hero-cont::before {
-    content: url('/images/Vector-o.svg');
+    content: url("/images/Vector-o.svg");
     position: absolute;
     height: 200px;
     width: 195px;
@@ -505,10 +504,10 @@
 }
 
 .hero-cont::after {
-    content: '';
+    content: "";
     position: absolute;
-    background-color: #2BB739;
-    border: 4px dashed #2BB739;
+    background-color: #2bb739;
+    border: 4px dashed #2bb739;
     border-bottom: none !important;
     height: 74px;
     width: 44px;
@@ -713,13 +712,13 @@
 }
 
 .footer::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 60%;
     bottom: 0;
     height: 10px;
     left: 20%;
-    background-image: url('/images/line.svg');
+    background-image: url("/images/line.svg");
     background-repeat: no-repeat;
 }
 
@@ -1026,7 +1025,7 @@
     }
 
     .hero-cont::before {
-        content: url('/images/Vector-o2.svg');
+        content: url("/images/Vector-o2.svg");
         height: 172px;
         width: 165px;
         top: -55%;
@@ -1176,7 +1175,6 @@
 }
 
 @media (max-width: 340px) {
-
     /* .about-wrapper::before {
         top: -17%;
         width: 960px;

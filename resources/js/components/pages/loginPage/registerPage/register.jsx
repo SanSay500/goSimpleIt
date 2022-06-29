@@ -6,6 +6,7 @@ import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
 import SelectInput from "./registerDropdown/registerDropdown";
+import style from "./register.module.css";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -24,11 +25,14 @@ export default function Register() {
     }, []);
 
     const onHandleChange = (event) => {
+        console.log(event.target.value);
         setData(
             event.target.name,
             event.target.type === "checkbox"
                 ? event.target.checked
-                : event.target.value
+                : event.target.value,
+            event.target.type === "radio" ? event.target.checked
+            : event.target.value,
         );
     };
 
@@ -44,73 +48,40 @@ export default function Register() {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
-                <div>
-                    <Label forInput="name" value="Name" />
-
+            <form onSubmit={submit} className={`${style.formPage} `}>
+            <div className={`${style.loginFormRadio} `}>
+                    <div className={`${style.radioContainer} `}>
                     <Input
-                        type="text"
-                        name="name"
-                        value={data.name}
-                        className="mt-1 block w-full"
-                        autoComplete="name"
-                        isFocused={true}
+                        type="radio"
+                        name="role"
+                        value="Freelancer"
+                        id="radio1"
+                        className={`${style.registerRadio} `}
+                        checked
                         handleChange={onHandleChange}
                         required
                     />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="email" value="Email" />
-
+                    <label htmlFor="radio1" className={`${style.radioLabel} `}>Freelancer</label>
+                    </div>
+                    <div className={`${style.radioContainer} `}>
                     <Input
-                        type="email"
-                        name="email"
-                        value={data.email}
-                        className="mt-1 block w-full"
-                        autoComplete="username"
+                        type="radio"
+                        name="role"
+                        value="em"
+                        className={`${style.registerRadio} `}
                         handleChange={onHandleChange}
                         required
+                        id="radio2"
                     />
-                </div>
+                    <label htmlFor="radio2" className={`${style.radioLabel} `}>Employer</label>
+                    </div>
 
-                <div className="mt-4">
-                    <Label forInput="password" value="Password" />
-
-                    <Input
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        className="mt-1 block w-full"
-                        autoComplete="new-password"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label
-                        forInput="password_confirmation"
-                        value="Confirm Password"
-                    />
-
-                    <Input
-                        type="password"
-                        name="password_confirmation"
-                        value={data.password_confirmation}
-                        className="mt-1 block w-full"
-                        handleChange={onHandleChange}
-                        required
-                    />
-                </div>
-
-                <div className="mt-4">
-                    <Label forInput="role" value="Choose your role" />
-
-                    <SelectInput
+                    {/* <SelectInput
                         name="role"
                         value={data.role}
-                        onChange={(e) => setData("role", e.target.value)}
+                        onChange={(e) => {
+                            console.log(e.target.value);
+                            setData("role", e.target.value)}}
                         required
                     >
                         <option key="1" value="Freelancer">
@@ -120,37 +91,90 @@ export default function Register() {
                         <option key="2" value="Employer">
                             Employer
                         </option>
-                    </SelectInput>
+                    </SelectInput> */}
                 </div>
-
-                <div className="mt-4">
-                    <Label
-                        forInput="description"
-                        value={
-                            data.role === "Freelancer"
-                                ? "Tell about your skills"
-                                : "Tell about yourself"
-                        }
-                    />
-
-                    <textarea
-                        name="description"
-                        value={data.description}
-                        className="mt-1 block w-full"
-                        onChange={(e) => setData("description", e.target.value)}
+                <div className={`${style.loginFormItem} `}>
+                    <Input
+                        type="text"
+                        name="name"
+                        value={data.name}
+                        className={`${style.loginInput} `}
+                        placeholder="Name"
+                        autoComplete="name"
+                        isFocused={true}
+                        handleChange={onHandleChange}
                         required
                     />
                 </div>
 
-                <div className="flex items-center justify-end mt-4">
+                <div className={`${style.loginFormItem} `}>
+                    <Input
+                        type="email"
+                        name="email"
+                        value={data.email}
+                        className={`${style.loginInput} `}
+                        placeholder="E-mail"
+                        autoComplete="username"
+                        handleChange={onHandleChange}
+                        required
+                    />
+                </div>
+
+                <div className={`${style.loginFormItem} `}>
+
+                    <Input
+                        type="password"
+                        name="password"
+                        value={data.password}
+                        className={`${style.loginInput} `}
+                        placeholder="Password"
+                        autoComplete="new-password"
+                        handleChange={onHandleChange}
+                        required
+                    />
+                </div>
+
+                <div className={`${style.loginFormItem} `}>
+
+                    <Input
+                        type="password"
+                        name="password_confirmation"
+                        value={data.password_confirmation}
+                        className={`${style.loginInput} `}
+                        placeholder="Confirm password"
+                        handleChange={onHandleChange}
+                        required
+                    />
+                </div>
+
+                
+
+                <div className={`${style.loginFormItem} `}>
+                <div className="flex flex-col items-start">
+                    <textarea
+                        name="description"
+                        value={data.description}
+                        className={`${style.loginInput} `}
+                        placeholder={
+                            data.role === "Freelancer"
+                                ? "Tell about your skills"
+                                : "Tell about yourself"
+                        }
+                        onChange={(e) => setData("description", e.target.value)}
+                        required
+                    />
+                </div>
+                </div>
+
+                <div className={`${style.loginFormCont} `}>
                     <Link
                         href={route("login")}
-                        className="underline text-sm text-gray-600 hover:text-gray-900"
+                        className={`${style.formLink} `}
                     >
                         Already registered?
                     </Link>
 
-                    <Button className="ml-4" processing={processing}>
+                    <Button className={`${style.formBtn} `} processing={processing}>
                         Register
                     </Button>
                 </div>
