@@ -32448,31 +32448,34 @@ function ForgotPassword(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Head, {
       title: "Forgot Password"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "mb-4 text-sm text-gray-500 leading-normal",
-      children: "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."
-    }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-      className: "mb-4 font-medium text-sm text-green-600",
-      children: status
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
-      onSubmit: submit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        type: "text",
-        name: "email",
-        value: data.email,
-        className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
-        placeholder: "E-mail",
-        isFocused: true,
-        handleChange: onHandleChange
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_button_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formBtn, " "),
-          processing: processing,
-          children: "Email Password Reset Link"
-        })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+      className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formPage, " "),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formText, " "),
+        children: "Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one."
+      }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "mb-4 font-medium text-sm text-green-600",
+        children: status
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        errors: errors
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+        onSubmit: submit,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+          type: "text",
+          name: "email",
+          value: data.email,
+          className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
+          placeholder: "E-mail",
+          isFocused: true,
+          handleChange: onHandleChange
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+          className: "flex items-center justify-end mt-4",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_button_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formBtn, " "),
+            processing: processing,
+            children: "Email Password Reset Link"
+          })
+        })]
       })]
     })]
   });
@@ -32551,6 +32554,7 @@ function Login(_ref) {
       errors: errors
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
       onSubmit: submit,
+      className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formPage, " "),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
           type: "text",
@@ -32566,7 +32570,7 @@ function Login(_ref) {
         className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
           type: "password",
-          name: "Password",
+          name: "password",
           value: data.password,
           placeholder: "Password",
           className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
@@ -32635,7 +32639,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _registerDropdown_registerDropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./registerDropdown/registerDropdown */ "./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _register_module_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./register.module.css */ "./resources/js/components/pages/loginPage/registerPage/register.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -32669,7 +32675,8 @@ function Register() {
   }, []);
 
   var onHandleChange = function onHandleChange(event) {
-    setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
+    console.log(event.target.value);
+    setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value, event.target.type === "radio" ? event.target.checked : event.target.value);
   };
 
   var submit = function submit(e) {
@@ -32677,110 +32684,119 @@ function Register() {
     post(route("register"));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Head, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Head, {
       title: "Register"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
       errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
       onSubmit: submit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "name",
-          value: "Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formPage, " "),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormRadio, " "),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioContainer, " "),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            type: "radio",
+            name: "role",
+            value: "Freelancer",
+            id: "radio1",
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].registerRadio, " "),
+            checked: true,
+            handleChange: onHandleChange,
+            required: true
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+            htmlFor: "radio1",
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioLabel, " "),
+            children: "Freelancer"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioContainer, " "),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+            type: "radio",
+            name: "role",
+            value: "em",
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].registerRadio, " "),
+            handleChange: onHandleChange,
+            required: true,
+            id: "radio2"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+            htmlFor: "radio2",
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioLabel, " "),
+            children: "Employer"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "text",
           name: "name",
           value: data.name,
-          className: "mt-1 block w-full",
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          placeholder: "Name",
           autoComplete: "name",
           isFocused: true,
           handleChange: onHandleChange,
           required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "email",
-          value: "Email"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "email",
           name: "email",
           value: data.email,
-          className: "mt-1 block w-full",
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          placeholder: "E-mail",
           autoComplete: "username",
           handleChange: onHandleChange,
           required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "password",
-          value: "Password"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "password",
           name: "password",
           value: data.password,
-          className: "mt-1 block w-full",
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          placeholder: "Password",
           autoComplete: "new-password",
           handleChange: onHandleChange,
           required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "password_confirmation",
-          value: "Confirm Password"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "password",
           name: "password_confirmation",
           value: data.password_confirmation,
-          className: "mt-1 block w-full",
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          placeholder: "Confirm password",
           handleChange: onHandleChange,
           required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "role",
-          value: "Choose your role"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_registerDropdown_registerDropdown__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          name: "role",
-          value: data.role,
-          onChange: function onChange(e) {
-            return setData("role", e.target.value);
-          },
-          required: true,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-            value: "Freelancer",
-            children: "Freelancer"
-          }, "1"), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("option", {
-            value: "Employer",
-            children: "Employer"
-          }, "2")]
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          forInput: "description",
-          value: data.role === "Freelancer" ? "Tell about your skills" : "Tell about yourself"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("textarea", {
-          name: "description",
-          value: data.description,
-          className: "mt-1 block w-full",
-          onChange: function onChange(e) {
-            return setData("description", e.target.value);
-          },
-          required: true
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "flex items-center justify-end mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+          className: "flex flex-col items-start",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+            name: "description",
+            value: data.description,
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+            placeholder: data.role === "Freelancer" ? "Tell about your skills" : "Tell about yourself",
+            onChange: function onChange(e) {
+              return setData("description", e.target.value);
+            },
+            required: true
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormCont, " "),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
           href: route("login"),
-          className: "underline text-sm text-gray-600 hover:text-gray-900",
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formLink, " "),
           children: "Already registered?"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_button_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          className: "ml-4",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_button_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formBtn, " "),
           processing: processing,
           children: "Register"
         })]
@@ -34921,7 +34937,9 @@ function Input(_ref) {
       required = _ref.required,
       isFocused = _ref.isFocused,
       placeholder = _ref.placeholder,
-      handleChange = _ref.handleChange;
+      handleChange = _ref.handleChange,
+      checked = _ref.checked,
+      id = _ref.id;
   var input = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (isFocused) {
@@ -34935,13 +34953,15 @@ function Input(_ref) {
       name: name,
       value: value,
       placeholder: placeholder,
-      className: "border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm " + className,
+      className: className,
       ref: input,
       autoComplete: autoComplete,
       required: required,
       onChange: function onChange(e) {
         return handleChange(e);
-      }
+      },
+      checked: checked,
+      id: id
     })
   });
 }
@@ -35371,11 +35391,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.Zln78cezv8Sk-BkDYibbBw\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.Zln78cezv8Sk-BkDYibbBw\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\={\n    position: relative;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after{\n    position: absolute;\n    display: block;\n    content: '';\n    width: 403px;\n    height: 102%;\n    top: -2px;\n    right: -256px;\n    background-image: url('/images/bg-ellipse.png');\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.wJvUPPHb-tNRywDOBjlZLw\\=\\={\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n    width: 80%;\n    margin-bottom: 16px;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"loginInput": "_1BydIX8WIFcXD+Oyoqf5FA==",
-	"formBtn": "Zln78cezv8Sk-BkDYibbBw=="
+	"formBtn": "Zln78cezv8Sk-BkDYibbBw==",
+	"formPage": "sRalMWgdzRfAX6YGU+lvuw==",
+	"formText": "wJvUPPHb-tNRywDOBjlZLw=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35399,7 +35421,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".iAP96XzGNJXSFC-SXZixfg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.mYp4ZzM8AtVcivMdwH71rg\\=\\= {\n    margin-top: 9px;\n}\n.k23IT3yL\\+tCVDLQL8M4\\+rA\\=\\={\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2BB739;\n    border-radius: 2px;\n}\n.SZB5P6aACu\\+L76vPP4llQA\\=\\={\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n    margin-left: 9px;\n}\n.koNZ3fThtW-sJV6c0j1T5A\\=\\={\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2BB739;\n}\n.qyB62fa7uR5cDXNjHzNitg\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n}\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".iAP96XzGNJXSFC-SXZixfg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.mYp4ZzM8AtVcivMdwH71rg\\=\\= {\n    margin-top: 9px;\n}\n.k23IT3yL\\+tCVDLQL8M4\\+rA\\=\\={\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2BB739;\n    border-radius: 2px;\n}\n.SZB5P6aACu\\+L76vPP4llQA\\=\\={\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n    margin-left: 9px;\n}\n.koNZ3fThtW-sJV6c0j1T5A\\=\\={\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2BB739;\n}\n.qyB62fa7uR5cDXNjHzNitg\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n.aFNKeJ4J33-1k75z6bIyUg\\=\\={\n    position: relative;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.aFNKeJ4J33-1k75z6bIyUg\\=\\=::after{\n    position: absolute;\n    display: block;\n    content: '';\n    width: 403px;\n    height: 237px;\n    top: -2px;\n    right: -256px;\n    background-image: url('/images/bg-ellipse.png');\n    background-repeat: no-repeat;\n    background-size: 100%;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"loginInput": "iAP96XzGNJXSFC-SXZixfg==",
@@ -35407,7 +35429,8 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"formCheckbox": "k23IT3yL+tCVDLQL8M4+rA==",
 	"formCheckboxLabel": "SZB5P6aACu+L76vPP4llQA==",
 	"formLink": "koNZ3fThtW-sJV6c0j1T5A==",
-	"formBtn": "qyB62fa7uR5cDXNjHzNitg=="
+	"formBtn": "qyB62fa7uR5cDXNjHzNitg==",
+	"formPage": "aFNKeJ4J33-1k75z6bIyUg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35431,9 +35454,20 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".\\-7j1E9ojdiJXSdq4CRvopQ\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n[type='radio']:focus,[type='radio']:hover{\n    background-color: #fff;\n}\n[type=\"checkbox\"]:checked:hover, [type=\"checkbox\"]:checked:focus, [type=\"radio\"]:checked:hover, [type=\"radio\"]:checked:focus {\n    border-color: #2BB739;\n    background-color: #fff;\n  }\n  [type=\"radio\"]:checked {\n    border-color: #2BB739;\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n  }\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\={\n    position: relative;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after{\n    position: absolute;\n    display: block;\n    content: '';\n    width: 705px;\n    height: 103%;\n    top: -4px;\n    right: -441px;\n    background-image: url('/images/bg-ellipse.svg');\n    background-repeat: no-repeat;\n    background-size: 100%;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.GlMVyjZ89\\+6awSdYmA91xQ\\=\\= {\n    margin-top: 9px;\n}\n.GfzqFl6aWcNEDoo6kJPVDQ\\=\\={\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2BB739;\n}\n.\\-7j1E9ojdiJXSdq4CRvopQ\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n.qhSDyfmc0BzzaNja3iQyDA\\=\\={\n    display: flex;\n    align-items: center;\n    margin-top: 9px;\n    justify-content: space-between;\n}\n._5OXpGjY7EXZpt8q0xId72g\\=\\={\n    display: flex;\n    align-items: center;\n    z-index: 5;\n}\n._6F0jPJW67mGX6n5PIk7PFw\\=\\={\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\={\n    width: 8px;\n    height: 8px;\n    margin-right: 5px;\n    border: 1px solid #2BB739;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\=:checked{\n    background-color: #fff;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\={\n    display: flex;\n    align-items: center;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= ._5OXpGjY7EXZpt8q0xId72g\\=\\=:first-child{\n    margin-right: 49px;\n}", ""]);
 // Exports
-___CSS_LOADER_EXPORT___.locals = {};
+___CSS_LOADER_EXPORT___.locals = {
+	"formBtn": "-7j1E9ojdiJXSdq4CRvopQ==",
+	"formPage": "qCtlOyzbvI6KZDGHrb+nAg==",
+	"loginInput": "-AV3Yzb9IVxNqT6O3YDjOg==",
+	"loginFormItem": "GlMVyjZ89+6awSdYmA91xQ==",
+	"formLink": "GfzqFl6aWcNEDoo6kJPVDQ==",
+	"loginFormCont": "qhSDyfmc0BzzaNja3iQyDA==",
+	"radioContainer": "_5OXpGjY7EXZpt8q0xId72g==",
+	"radioLabel": "_6F0jPJW67mGX6n5PIk7PFw==",
+	"registerRadio": "_5ZM9csHoydWMn8yak7+6QA==",
+	"loginFormRadio": "lyWC3cr7WoWIq2LH4027Kw=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -35838,7 +35872,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".XJ04FuLW7rBqNJ0ib2wLJg\\=\\= {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  min-height: 80vh;\n  \n}\n.q5pcQM8ukNAjVSjf1oSLsA\\=\\={\n  background: #FFFFFF;\n  box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n  border-radius: 10px;\n  padding: 44px 37px 30px 21px;\n  width: 500px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".XJ04FuLW7rBqNJ0ib2wLJg\\=\\= {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  min-height: 78vh;\n  \n}\n.q5pcQM8ukNAjVSjf1oSLsA\\=\\={\n  width: 500px;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"loginContainer": "XJ04FuLW7rBqNJ0ib2wLJg==",

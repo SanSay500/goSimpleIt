@@ -23,8 +23,8 @@ export default function ForgotPassword({ status }) {
     return (
         <Guest>
             <Head title="Forgot Password" />
-
-            <div className="mb-4 text-sm text-gray-500 leading-normal">
+            <div className={`${style.formPage} `}>
+            <div className={`${style.formText} `}>
                 Forgot your password? No problem. Just let us know your email
                 address and we will email you a password reset link that will
                 allow you to choose a new one.
@@ -58,6 +58,8 @@ export default function ForgotPassword({ status }) {
                     </Button>
                 </div>
             </form>
+            </div>
+
         </Guest>
     );
 }

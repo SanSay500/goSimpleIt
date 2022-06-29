@@ -32,7 +32,6 @@ export default function Login({ status, canResetPassword }) {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route("login"));
     };
 
@@ -48,7 +47,7 @@ export default function Login({ status, canResetPassword }) {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit}>
+            <form onSubmit={submit} className={`${style.formPage} `}>
                 <div>
                     <Input
                         type="text"
@@ -65,7 +64,7 @@ export default function Login({ status, canResetPassword }) {
                 <div className={`${style.loginFormItem} `}>
                     <Input
                         type="password"
-                        name="Password"
+                        name="password"
                         value={data.password}
                         placeholder="Password"
                         className={`${style.loginInput} `}
