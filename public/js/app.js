@@ -33443,7 +33443,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var MakeOrder = function MakeOrder(props) {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     title: "",
@@ -33520,11 +33519,7 @@ var MakeOrder = function MakeOrder(props) {
     taskIdRef.current = taskId;
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
-<<<<<<< HEAD
     className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formBlock,
-=======
-    className: "form-block",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
@@ -33533,21 +33528,12 @@ var MakeOrder = function MakeOrder(props) {
           name: "createForm",
           onSubmit: handleSubmit,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-<<<<<<< HEAD
             className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formSection,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "form-item form-search",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
-                className: "form-label",
-                children: [" ", "Make Order", " "]
-=======
-            className: "form-section",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
               className: "form-item form-search",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
                 className: "form-label",
                 children: "Make Order"
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
                 freeSolo: true,
                 id: "search-job auto",
@@ -33594,11 +33580,7 @@ var MakeOrder = function MakeOrder(props) {
                     }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
                       d: "M12 17v1m0 -8v1"
                     }), " "]
-<<<<<<< HEAD
-                  }), "Average cost of task: ", moneyTotalSearch, " $"]
-=======
                   }), "Average cost of task:", " ", moneyTotalSearch, " $"]
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
                   className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
@@ -33645,15 +33627,9 @@ var MakeOrder = function MakeOrder(props) {
                 children: errors.description
               })]
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-<<<<<<< HEAD
               className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInfo,
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
                 className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPrice,
-=======
-              className: "form-info",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "form-price",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
                   className: "form-label",
                   children: "Price"
@@ -33669,11 +33645,7 @@ var MakeOrder = function MakeOrder(props) {
                   children: "$"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-<<<<<<< HEAD
                 className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPeriod,
-=======
-                className: "form-period",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
                   className: "form-label",
                   children: "Term"
@@ -33686,7 +33658,6 @@ var MakeOrder = function MakeOrder(props) {
                     return setData("time", e.target.value);
                   }
                 }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-<<<<<<< HEAD
                   children: "days"
                 })]
               })]
@@ -33696,17 +33667,6 @@ var MakeOrder = function MakeOrder(props) {
                 className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileInfo,
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
                   className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileUpload,
-=======
-                  children: "day(s)"
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "form-file",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "file-info",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: "file-upload",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
                       type: "file",
@@ -33726,11 +33686,7 @@ var MakeOrder = function MakeOrder(props) {
                     })]
                   })
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-<<<<<<< HEAD
                   className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileName,
-=======
-                  className: "file-name",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
                   children: selectedFile
                 })]
               })
@@ -35699,31 +35655,6 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"budgetBtn": "_2yyQTcRkeD6VY2Lmc+pcFw==",
 	"getStartedBtn": "dhZ0EaaMRSFzUyiAU-2jxA=="
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css":
-/*!*****************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css ***!
-  \*****************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -90380,8 +90311,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./resources/js/components/pages/mainPage/mainHeader/mainHeader.module.css":
 /*!*********************************************************************************!*\
   !*** ./resources/js/components/pages/mainPage/mainHeader/mainHeader.module.css ***!
@@ -90442,7 +90371,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
 /***/ "./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css ***!
@@ -90473,7 +90401,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-<<<<<<< HEAD
 /***/ "./resources/js/components/pages/mainPage/talksContainer/talks.module.css":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/pages/mainPage/talksContainer/talks.module.css ***!
@@ -90504,8 +90431,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-=======
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
 /***/ "./resources/js/components/pages/orderDetailsPage/orderDetails.module.css":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/pages/orderDetailsPage/orderDetails.module.css ***!
@@ -91973,22 +91898,13 @@ var map = {
 	"./pages/mainPage/makeOrder/makeOrder": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.jsx",
 	"./pages/mainPage/makeOrder/makeOrder.jsx": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.jsx",
 	"./pages/mainPage/makeOrder/makeOrder.module.css": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css",
-<<<<<<< HEAD
-	"./pages/mainPage/portfolioContainer/portfolio/flipCard/flipCard": "./resources/js/components/pages/mainPage/portfolioContainer/portfolio/flipCard/flipCard.jsx",
-	"./pages/mainPage/portfolioContainer/portfolio/flipCard/flipCard.jsx": "./resources/js/components/pages/mainPage/portfolioContainer/portfolio/flipCard/flipCard.jsx",
-	"./pages/mainPage/portfolioContainer/portfolio/portfolio": "./resources/js/components/pages/mainPage/portfolioContainer/portfolio/portfolio.jsx",
-	"./pages/mainPage/portfolioContainer/portfolio/portfolio.jsx": "./resources/js/components/pages/mainPage/portfolioContainer/portfolio/portfolio.jsx",
-	"./pages/mainPage/portfolioContainer/portfolioContainer": "./resources/js/components/pages/mainPage/portfolioContainer/portfolioContainer.jsx",
-	"./pages/mainPage/portfolioContainer/portfolioContainer.jsx": "./resources/js/components/pages/mainPage/portfolioContainer/portfolioContainer.jsx",
-	"./pages/mainPage/talksContainer/talks.module.css": "./resources/js/components/pages/mainPage/talksContainer/talks.module.css",
-=======
 	"./pages/mainPage/projectsContainer/projects/flipCard/flipCard": "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx",
 	"./pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx",
 	"./pages/mainPage/projectsContainer/projects/projects": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx",
 	"./pages/mainPage/projectsContainer/projects/projects.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx",
 	"./pages/mainPage/projectsContainer/projectsContainer": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
 	"./pages/mainPage/projectsContainer/projectsContainer.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
->>>>>>> f735b6d7bcf490d6ad2c4b58f5e27661548d993a
+	"./pages/mainPage/talksContainer/talks.module.css": "./resources/js/components/pages/mainPage/talksContainer/talks.module.css",
 	"./pages/mainPage/talksContainer/talks/talks": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
 	"./pages/mainPage/talksContainer/talks/talks.jsx": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
 	"./pages/mainPage/talksContainer/talksContainer": "./resources/js/components/pages/mainPage/talksContainer/talksContainer.jsx",
