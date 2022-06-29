@@ -1,11 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import { InertiaLink, usePage, useForm } from "@inertiajs/inertia-react";
-import { Grid } from "@mui/material";
+import React, { useState } from "react";
+import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
-import Container from "@mui/material/Container";
-import { order } from "tailwindcss/defaultTheme";
+import style from "./activeTasks.module.css";
 
 const ActiveOrders = (props) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
@@ -36,44 +32,20 @@ const ActiveOrders = (props) => {
         setShowOrdersQty(5);
     }
     return (
-        <div className="form-wrapper">
-            <p className="font-bold text-4xl text-center text-green-500">
-                Active Tasks
-            </p>
-            <Container>
-                <Autocomplete
-                    freeSolo
-                    className="search_input"
-                    id="search-job555 auto"
-                    disableClearable
-                    options={tasksWithOrders.map((option) => option.name)}
-                    renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            name="search_task"
-                            onSelect={changeSearch}
-                            label="Search by task..."
-                            InputProps={{
-                                ...params.InputProps,
-                                type: "search",
-                            }}
-                        />
-                    )}
-                />
-                <br />
+        <section className={style.container}>
+            <h2 className={`${style.title}`}>Active Tasks</h2>
+            <div className={`${style.cardsContainer}`}>
+                {ordersToShow.slice(0, showOrdersQty).map((order) => {
+                    return <BasicCard key={order.id} props={order} />;
+                })}
+            </div>
 
-                <div className="basic-card-wrapper">
-                    {ordersToShow.slice(0, showOrdersQty).map((order) => {
-                        return <BasicCard key={order.id} props={order} />;
-                    })}
-                </div>
-                {ordersToShow.length > 5 && (
-                    <button className="review__button" onClick={loadOrders}>
-                        View more
-                    </button>
-                )}
-            </Container>
-        </div>
+            {ordersToShow.length > 6 && (
+                <button className={style.btn} onClick={loadOrders}>
+                    View more
+                </button>
+            )}
+        </section>
     );
 };
 

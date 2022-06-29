@@ -4,6 +4,7 @@
 }
 
 .leftBlock {
+    margin: 0 0 20px 0;
     max-width: 461px;
 }
 
@@ -15,10 +16,6 @@
     font-size: 38px;
     line-height: 44px;
     color: #2b2b2b;
-}
-
-.budgetBtn {
-    margin: 0 0 20px 0;
 }
 
 .getStartedBtn {
