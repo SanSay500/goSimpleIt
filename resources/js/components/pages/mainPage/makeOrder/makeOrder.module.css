@@ -372,6 +372,16 @@ select:focus {
     .formSection {
         box-shadow: none;
     }
+
+    .formInfo {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+    .formPeriod {
+        margin-top: 0;
+    }
 }
 
 @media (max-width: 767px) {

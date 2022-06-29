@@ -54,7 +54,7 @@ const MakeOrder = (props) => {
     });
 
     return (
-        <section className={style.formBlock}>
+        <section className="form-block">
  <div className="container">
                 <div className="form-wrapper">
                     <form name="createForm" onSubmit={handleSubmit}>
@@ -66,7 +66,7 @@ const MakeOrder = (props) => {
                                 <Autocomplete
                                     freeSolo
                                     id="search-job auto"
-                                    className={style.searchInput}
+                                    className="search_input"
                                     disableClearable
                                     options={tasks.map((option) => option.name)}
                                     renderInput={(params) => (
