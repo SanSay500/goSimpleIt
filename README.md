@@ -1,15 +1,21 @@
+Requierments:
+1. PHP 8.1
+2. Composer
+3. Docker
+
 Installation:
-1. Install laravel from laravel.com
-2. Fetch this repo in folder with installed laravel
-3. Remove .env file in laravel root and rename .env.example to .env
-4. Run in terminal "./vendor/bin/sail artisan migrate --seed" then "./vendor/bin/sail composer install" then "npm run install"
-5. App is ready for work.
+1. CLone this projects
+2. Run composer install
+3. Run ./vendor/bin/sail up -d
+4. Run ./vendor/bin/sail artisan migrate --seed
+5. Run ./vendor/bin/sail composer install" then "npm install"
+6. Visit 0.0.0.0:88
  
 Instructions:
 
 1. Frontend is in folder resources/js
 2. Main css file in resources/css
 3. Main component is Pages/Main/Main.js
-4. To begin run in terminal "npm run watch"
-5. You may use tailwind.css
+4. To watch changes on frontend run in terminal "./vendor/bin/sail npm run watch"
+
 
