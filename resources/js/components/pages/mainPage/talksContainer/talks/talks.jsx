@@ -7,11 +7,11 @@ const Talks = ({ reviews }) => {
             <div className={style.talks}>
                 <span>Talks about us</span>
             </div>
-            <ul className="reviews-list">
+            <ul className={style.reviewsList}>
                 {reviews.map((element, index) => (
-                    <li key={index} className="reviews-list__item review">
-                        <div className="user-block user">
-                            <div className="user-img">
+                    <li key={index} className={`reviews-list__item ${style.review}`}>
+                        <div className={`user-block ${style.user}`}>
+                            <div className={style.userImg}>
                                 <img
                                     className="user__img"
                                     src={element.user.avatar}
@@ -21,9 +21,9 @@ const Talks = ({ reviews }) => {
 
                             {/*<h4 className="user__name">{element.user.name}</h4>*/}
                         </div>
-                        <div className="coments-block coment">
-                            <h4 className="user__name">{element.user.name}</h4>
-                            <p className="coment-text">{element.commets}</p>
+                        <div className={`coments-block ${style.coment}`}>
+                            <h4 className={style.userName}>{element.user.name}</h4>
+                            <p className={style.comentText}>{element.commets}</p>
                         </div>
                     </li>
                 ))}

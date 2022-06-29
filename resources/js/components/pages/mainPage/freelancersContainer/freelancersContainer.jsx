@@ -1,6 +1,7 @@
 import Freelancers from "./freelancers/freelancers";
 import { useState } from "react";
 import "@/../css/freelancers.css";
+import style from './freelancersContainer.module.css'
 
 const FreelancersContainer = ({ reviewsList }) => {
     let count_review = 0;
@@ -19,13 +20,13 @@ const FreelancersContainer = ({ reviewsList }) => {
     return (
         <section className="reviews-block">
             <div className="container">
-                <div className="reviews-wrapper">
+                <div className={style.reviewsWrapper}>
                     <Freelancers reviews={reviewsList.slice(0, step)} />
                     <div className="btn-container">
                         {reviewsList.length > step ? (
                             <div className="review__more">
                                 <button
-                                    className="review__button"
+                                    className={style.reviewButton}
                                     type="button"
                                     onClick={() => setStep(step + count_review)}
                                 >
