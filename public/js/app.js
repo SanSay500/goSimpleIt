@@ -32544,7 +32544,7 @@ function Login(_ref) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Head, {
+    children: [console.log(status), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Head, {
       title: "Log in"
     }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       className: "mb-4 font-medium text-sm text-green-600",
@@ -32568,7 +32568,7 @@ function Login(_ref) {
         className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
           type: "password",
-          name: "Password",
+          name: "password",
           value: data.password,
           placeholder: "Password",
           className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),

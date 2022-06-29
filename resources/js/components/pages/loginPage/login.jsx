@@ -32,14 +32,13 @@ export default function Login({ status, canResetPassword }) {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route("login"));
     };
 
     return (
         <Guest>
+            {console.log(status)}
             <Head title="Log in" />
-
             {status && (
                 <div className="mb-4 font-medium text-sm text-green-600">
                     {status}
@@ -65,7 +64,7 @@ export default function Login({ status, canResetPassword }) {
                 <div className={`${style.loginFormItem} `}>
                     <Input
                         type="password"
-                        name="Password"
+                        name="password"
                         value={data.password}
                         placeholder="Password"
                         className={`${style.loginInput} `}
