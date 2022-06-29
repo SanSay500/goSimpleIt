@@ -40,11 +40,12 @@ class OrderController extends Controller
     {
         $tasks = Task::all();
         $orders = Order::where('status','Pending')->get();
+        $tasksIDsInOrders = [];
 
         foreach ($orders->toArray() as $order)
             $tasksIDsInOrders[] = $order['task_id'];
 
-        $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
+            $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
 
         return Inertia::render('pages/mainPage/main', ['tasks'=>$tasks, 'ordersActive'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
     }
