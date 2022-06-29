@@ -13,7 +13,7 @@ const MainStart = (props) => {
                 </button>
             </div>
 
-            <button className={`${style.getStartedBtn}`}>
+            <button className={`${style.getStartedBtn}`} onClick={props.scroll}>
                 <img src="/images/getStarted.png" alt="Logo"></img>
             </button>
         </div>
