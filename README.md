@@ -9,7 +9,7 @@ Requierments:
 5. Docker
 
 Installation:
-1. CLone this projects
+1. Clone this projects
 2. Run composer install
 3. Run ./vendor/bin/sail up -d
 4. Run ./vendor/bin/sail artisan migrate --seed
