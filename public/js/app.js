@@ -33277,13 +33277,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Main = function Main(props) {
+  var makeOrder = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  var scroll = function scroll() {
+    return makeOrder.current.scrollIntoView();
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("section", {
       className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].headerContainer),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainHeader_mainHeader__WEBPACK_IMPORTED_MODULE_6__["default"], {
         role: props.auth.user && props.auth.user.role
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {
+        scroll: scroll
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
       portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_freelancersContainer_freelancersContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -33291,10 +33299,10 @@ var Main = function Main(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_talksContainer_talksContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      ref: makeOrder,
+      user: props.auth.user,
       className: "about-form",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        user: props.auth.user
-      })]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
   });
 };
@@ -33396,6 +33404,7 @@ var MainStart = function MainStart(props) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
       className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].getStartedBtn),
+      onClick: props.scroll,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
         src: "/images/getStarted.png",
         alt: "Logo"
