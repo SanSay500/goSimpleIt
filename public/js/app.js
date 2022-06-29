@@ -34301,7 +34301,7 @@ var ActiveOrders = function ActiveOrders(props) {
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(5),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(6),
       _useState2 = _slicedToArray(_useState, 2),
       showOrdersQty = _useState2[0],
       setShowOrdersQty = _useState2[1];
@@ -34313,7 +34313,7 @@ var ActiveOrders = function ActiveOrders(props) {
 
   function loadOrders(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + 5);
+    setShowOrdersQty(showOrdersQty + 6);
   }
 
   var showOrdersNum = ordersActive.slice(0, showOrdersQty);

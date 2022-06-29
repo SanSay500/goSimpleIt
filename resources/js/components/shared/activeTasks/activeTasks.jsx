@@ -5,12 +5,12 @@ import style from "./activeTasks.module.css";
 
 const ActiveOrders = (props) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
-    const [showOrdersQty, setShowOrdersQty] = useState(5);
+    const [showOrdersQty, setShowOrdersQty] = useState(6);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
 
     function loadOrders(e) {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + 5);
+        setShowOrdersQty(showOrdersQty + 6);
     }
 
     var showOrdersNum = ordersActive.slice(0, showOrdersQty);
