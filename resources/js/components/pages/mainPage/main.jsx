@@ -9,13 +9,12 @@ import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
 import FreelancersContainer from "./freelancersContainer/freelancersContainer";
 import MainStart from "./mainStart/mainStart";
-// import "@/../css/main1.css";
 import style from "./main.module.css";
 
 const Main = (props) => {
     return (
-        <>
-            <section className={`${style.container}`}>
+        <div className="container">
+            <section className={`${style.headerContainer}`}>
                 <MainHeader role={props.auth.user && props.auth.user.role} />
 
                 <MainStart />
@@ -34,7 +33,7 @@ const Main = (props) => {
             </div>
 
             <Footer />
-        </>
+        </div>
     );
 };
 export default Main;

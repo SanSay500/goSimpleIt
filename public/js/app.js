@@ -32544,9 +32544,7 @@ function Login(_ref) {
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Head, {
-      title: "Log in"
-    }), status && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
       className: "mb-4 font-medium text-sm text-green-600",
       children: status
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -33253,17 +33251,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // import "@/../css/main1.css";
-
 
 
 
 
 
 var Main = function Main(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.Fragment, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    className: "container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("section", {
-      className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].container),
+      className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].headerContainer),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainHeader_mainHeader__WEBPACK_IMPORTED_MODULE_6__["default"], {
         role: props.auth.user && props.auth.user.role
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {})]
@@ -33309,38 +33306,33 @@ __webpack_require__.r(__webpack_exports__);
 var MainHeader = function MainHeader(role) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("header", {
     className: "".concat(_mainHeader_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].header, " header"),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "header-wrapper",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "header-logo",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-            href: "/",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-              src: "/images/logo-upwork.svg",
-              alt: "Logo"
-            })
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "header-wrapper",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "header-logo",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: "/",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: "/images/logo-upwork.svg",
+            alt: "Logo"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "header-block"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "header-auth",
-          children: role.role === "Freelancer" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-            href: route("freelancer_dashboard_index"),
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-              src: "/images/myprofile-icon-6.png",
-              alt: "Logo"
-            })
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-            href: route("employer_dashboard_index"),
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-              src: "/images/myprofile-icon-6.png",
-              alt: "Logo"
-            })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "header-auth",
+        children: role.role === "Freelancer" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: route("freelancer_dashboard_index"),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: "/images/myprofile-icon-6.png",
+            alt: "Logo"
           })
-        })]
-      })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+          href: route("employer_dashboard_index"),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+            src: "/images/myprofile-icon-6.png",
+            alt: "Logo"
+          })
+        })
+      })]
     })
   });
 };
@@ -33370,14 +33362,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var MainStart = function MainStart(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "container mx-auto ".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
+    className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
       className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].leftBlock),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
         className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].title),
         children: "Find the perfect freelance services for your business"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].budgetBtn),
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
           src: "/images/budget.png",
           alt: "Logo"
@@ -34264,18 +34255,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./basicCard/basicCard */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx");
-/* harmony import */ var _mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/TextField */ "./node_modules/@mui/material/TextField/TextField.js");
-/* harmony import */ var _mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Autocomplete */ "./node_modules/@mui/material/Autocomplete/Autocomplete.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var tailwindcss_defaultTheme__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! tailwindcss/defaultTheme */ "./node_modules/tailwindcss/defaultTheme.js");
-/* harmony import */ var tailwindcss_defaultTheme__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(tailwindcss_defaultTheme__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./activeTasks.module.css */ "./resources/js/components/shared/activeTasks/activeTasks.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -34287,10 +34268,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
 
 
 
@@ -34343,42 +34320,22 @@ var ActiveOrders = function ActiveOrders(props) {
     setShowOrdersQty(5);
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "form-wrapper",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      className: "font-bold text-4xl text-center text-green-500",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
+    className: _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+      className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
       children: "Active Tasks"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        freeSolo: true,
-        className: "search_input",
-        id: "search-job555 auto",
-        disableClearable: true,
-        options: tasksWithOrders.map(function (option) {
-          return option.name;
-        }),
-        renderInput: function renderInput(params) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, params), {}, {
-            name: "search_task",
-            onSelect: changeSearch,
-            label: "Search by task...",
-            InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
-              type: "search"
-            })
-          }));
-        }
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: "basic-card-wrapper",
-        children: ordersToShow.slice(0, showOrdersQty).map(function (order) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            props: order
-          }, order.id);
-        })
-      }), ordersToShow.length > 5 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: "review__button",
-        onClick: loadOrders,
-        children: "View more"
-      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer),
+      children: ordersToShow.slice(0, showOrdersQty).map(function (order) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          props: order
+        }, order.id);
+      })
+    }), ordersToShow.length > 6 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      className: _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
+      onClick: loadOrders,
+      children: "View more"
     })]
   });
 };
@@ -34399,76 +34356,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ BasicCard)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./basicCard.module.css */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
 
 
 
 
 function BasicCard(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-    className: "basic-card",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "basic-card__title",
+    className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+      className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].title),
       children: props.props["title"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "basic-card__description",
+      className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].description),
       children: props.props["description"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "basic-card__file",
-      children: props.props["file"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          className: "text-green",
+      className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].file),
+      children: props.props["file"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].fileInfo),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
+          className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].fileInfo, " ").concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].green),
           href: props.props["file"],
-          children: "Download"
-        }), " ", "(jpg; 43.10 Kb)"]
+          children: ["Download", " "]
+        }), "(jpg; 43.10 Kb)"]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "basic-card__bottom-line",
+      className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].bottomContainer,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "basic-card__money",
-        children: ["Budget:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-          className: "text-green",
-          children: [props.props["money"], "$"]
+        className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].budget,
+        children: ["Budget:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].green,
+          children: [" ", props.props["money"], "$"]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "basic-card__term",
-        children: ["Term:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-          className: "text-green",
-          children: [props.props["hours"], "h"]
+        children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].green,
+          children: [" ", props.props["hours"], "h"]
         })]
       })]
     })]
-  }) // <Card style variant="outlined" key={props.props['id']}>
-  //     <CardContent>
-  //         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-  //             {props.props['title']}
-  //         </Typography>
-  //         <Typography sx={{ fontSize: 18 }}>
-  //             Description
-  //         <br/>
-  //             {props.props['description']}
-  //         </Typography>
-  //         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-  //             Price: {props.props['money']}
-  //         </Typography>
-  //         <Typography variant="body2">
-  //             File: {props.props['file']}s
-  //         </Typography>
-  //     </CardContent>
-  //     <CardActions>
-  //         <Link href={route('order.details', [props.props['id']])}
-  //               className="p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
-  //         >Learn more</Link>
-  //     </CardActions>
-  // </Card>
-  ;
+  });
 }
 
 /***/ }),
@@ -35607,10 +35536,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Pmp92UPkrtsmQZlhpP884A\\=\\= {\n    margin: 0 0 37px 0;\n    position: relative;\n}\n\n.Pmp92UPkrtsmQZlhpP884A\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    width: 101%;\n    height: 950px;\n    top: 17px;\n    right: 0;\n    background-image: url(\"/images/background.svg\");\n    background-repeat: no-repeat;\n    background-size: 66% auto;\n    background-position: 105% 4%;\n    z-index: -1;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    margin: 0 0 37px 0;\n    position: relative;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    left: 32%;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 100%;\n    height: 64px;\n    top: 294px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 17px;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"container": "Pmp92UPkrtsmQZlhpP884A=="
+	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35661,13 +35590,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n._2yyQTcRkeD6VY2Lmc\\+pcFw\\=\\= {\n    margin: 0 0 20px 0;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "gDtRMDHhOVnQof3zPFEKkw==",
 	"leftBlock": "T877L35uu2g8hXDSWlqDJw==",
 	"title": "-yZfMlbZET5XdbPMc+TEZQ==",
-	"budgetBtn": "_2yyQTcRkeD6VY2Lmc+pcFw==",
 	"getStartedBtn": "dhZ0EaaMRSFzUyiAU-2jxA=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -35800,6 +35728,69 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/activeTasks.module.css":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/activeTasks.module.css ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".ent0QYl\\+G8G4ImfKVnMhEA\\=\\= {\n    margin: 0 0 35px 0;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    position: relative;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after,\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 100%;\n    border-radius: 10px;\n    z-index: -1;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    top: 207px;\n    right: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after {\n    top: 417px;\n    left: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.qfZ1yFFUUWiFo9TZ2YFNsA\\=\\= {\n    margin: 0 0 50px 0;\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2bb739;\n}\n\n.JlQn3NM7XyXwnWVc9KwBYw\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n\n.EcMZnOG\\+CoSgBrqmozzF1Q\\=\\= {\n    font-weight: 300;\n    font-size: 20px;\n    line-height: 23px;\n    color: #2b2b2b;\n    border-bottom: 1px dashed #2bb739;\n    box-sizing: border-box;\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"container": "ent0QYl+G8G4ImfKVnMhEA==",
+	"title": "qfZ1yFFUUWiFo9TZ2YFNsA==",
+	"cardsContainer": "JlQn3NM7XyXwnWVc9KwBYw==",
+	"btn": "EcMZnOG+CoSgBrqmozzF1Q=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".nwyDYWMFE\\+jJ\\+KGzICIqKw\\=\\= {\n    padding: 20px 30px;\n    box-sizing: border-box;\n    border: 2px dashed #2bb739;\n    box-shadow: inset 7px 7px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n}\n\n.h-p9uCgwo6IQUOgRlx6YOQ\\=\\= {\n    margin: 0 0 20px 0;\n    font-weight: 400;\n    font-size: 21px;\n    line-height: 24px;\n    color: #2b2b2b;\n}\n\n.FznUOwxGegsj6YVi6uh8oQ\\=\\= {\n    margin: 0 0 20px 0;\n    font-style: normal;\n    font-weight: 300;\n    font-size: 12px;\n    line-height: 14px;\n    color: #2b2b2b;\n}\n\n._9iSEuJnxlIDItazivJzFJw\\=\\= {\n    margin: 0 0 20px 0;\n}\n.hv-OTCRgn7m57cRlvGHaDQ\\=\\= {\n    font-weight: 400;\n    font-size: 14px;\n    line-height: 16px;\n    color: #2b2b2b;\n}\n._6ERKvecIwREkf4gaGVSwFQ\\=\\= {\n    color: #2bb739;\n}\n\n._2lrKMOr7uqVzkF7dcs81UA\\=\\= {\n    display: flex;\n    justify-content: space-between;\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"container": "nwyDYWMFE+jJ+KGzICIqKw==",
+	"title": "h-p9uCgwo6IQUOgRlx6YOQ==",
+	"description": "FznUOwxGegsj6YVi6uh8oQ==",
+	"file": "_9iSEuJnxlIDItazivJzFJw==",
+	"fileInfo": "hv-OTCRgn7m57cRlvGHaDQ==",
+	"green": "_6ERKvecIwREkf4gaGVSwFQ==",
+	"bottomContainer": "_2lrKMOr7uqVzkF7dcs81UA=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -90534,6 +90525,66 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/components/shared/activeTasks/activeTasks.module.css":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/shared/activeTasks/activeTasks.module.css ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./activeTasks.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/activeTasks.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./basicCard.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_basicCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./resources/js/components/shared/flashMessages/fiashMessages.module.css":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/shared/flashMessages/fiashMessages.module.css ***!
@@ -90873,1038 +90924,6 @@ module.exports = function (list, options) {
 
 /***/ }),
 
-/***/ "./node_modules/tailwindcss/defaultTheme.js":
-/*!**************************************************!*\
-  !*** ./node_modules/tailwindcss/defaultTheme.js ***!
-  \**************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-let defaultTheme = __webpack_require__(/*! ./lib/public/default-theme */ "./node_modules/tailwindcss/lib/public/default-theme.js")
-module.exports = (defaultTheme.__esModule ? defaultTheme : { default: defaultTheme }).default
-
-
-/***/ }),
-
-/***/ "./node_modules/tailwindcss/lib/public/default-theme.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/tailwindcss/lib/public/default-theme.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({
-    value: true
-}));
-exports["default"] = void 0;
-var _cloneDeep = __webpack_require__(/*! ../util/cloneDeep */ "./node_modules/tailwindcss/lib/util/cloneDeep.js");
-var _defaultConfigStub = _interopRequireDefault(__webpack_require__(/*! ../../stubs/defaultConfig.stub */ "./node_modules/tailwindcss/stubs/defaultConfig.stub.js"));
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        default: obj
-    };
-}
-var _default = (0, _cloneDeep).cloneDeep(_defaultConfigStub.default.theme);
-exports["default"] = _default;
-
-
-/***/ }),
-
-/***/ "./node_modules/tailwindcss/lib/util/cloneDeep.js":
-/*!********************************************************!*\
-  !*** ./node_modules/tailwindcss/lib/util/cloneDeep.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, exports) => {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", ({
-    value: true
-}));
-exports.cloneDeep = cloneDeep;
-function cloneDeep(value) {
-    if (Array.isArray(value)) {
-        return value.map((child)=>cloneDeep(child)
-        );
-    }
-    if (typeof value === "object" && value !== null) {
-        return Object.fromEntries(Object.entries(value).map(([k, v])=>[
-                k,
-                cloneDeep(v)
-            ]
-        ));
-    }
-    return value;
-}
-
-
-/***/ }),
-
-/***/ "./node_modules/tailwindcss/stubs/defaultConfig.stub.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/tailwindcss/stubs/defaultConfig.stub.js ***!
-  \**************************************************************/
-/***/ ((module) => {
-
-module.exports = {
-  content: [],
-  presets: [],
-  darkMode: 'media', // or 'class'
-  theme: {
-    screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-      '2xl': '1536px',
-    },
-    colors: ({ colors }) => ({
-      inherit: colors.inherit,
-      current: colors.current,
-      transparent: colors.transparent,
-      black: colors.black,
-      white: colors.white,
-      slate: colors.slate,
-      gray: colors.gray,
-      zinc: colors.zinc,
-      neutral: colors.neutral,
-      stone: colors.stone,
-      red: colors.red,
-      orange: colors.orange,
-      amber: colors.amber,
-      yellow: colors.yellow,
-      lime: colors.lime,
-      green: colors.green,
-      emerald: colors.emerald,
-      teal: colors.teal,
-      cyan: colors.cyan,
-      sky: colors.sky,
-      blue: colors.blue,
-      indigo: colors.indigo,
-      violet: colors.violet,
-      purple: colors.purple,
-      fuchsia: colors.fuchsia,
-      pink: colors.pink,
-      rose: colors.rose,
-    }),
-    columns: {
-      auto: 'auto',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-      8: '8',
-      9: '9',
-      10: '10',
-      11: '11',
-      12: '12',
-      '3xs': '16rem',
-      '2xs': '18rem',
-      xs: '20rem',
-      sm: '24rem',
-      md: '28rem',
-      lg: '32rem',
-      xl: '36rem',
-      '2xl': '42rem',
-      '3xl': '48rem',
-      '4xl': '56rem',
-      '5xl': '64rem',
-      '6xl': '72rem',
-      '7xl': '80rem',
-    },
-    spacing: {
-      px: '1px',
-      0: '0px',
-      0.5: '0.125rem',
-      1: '0.25rem',
-      1.5: '0.375rem',
-      2: '0.5rem',
-      2.5: '0.625rem',
-      3: '0.75rem',
-      3.5: '0.875rem',
-      4: '1rem',
-      5: '1.25rem',
-      6: '1.5rem',
-      7: '1.75rem',
-      8: '2rem',
-      9: '2.25rem',
-      10: '2.5rem',
-      11: '2.75rem',
-      12: '3rem',
-      14: '3.5rem',
-      16: '4rem',
-      20: '5rem',
-      24: '6rem',
-      28: '7rem',
-      32: '8rem',
-      36: '9rem',
-      40: '10rem',
-      44: '11rem',
-      48: '12rem',
-      52: '13rem',
-      56: '14rem',
-      60: '15rem',
-      64: '16rem',
-      72: '18rem',
-      80: '20rem',
-      96: '24rem',
-    },
-    animation: {
-      none: 'none',
-      spin: 'spin 1s linear infinite',
-      ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
-      pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      bounce: 'bounce 1s infinite',
-    },
-    aspectRatio: {
-      auto: 'auto',
-      square: '1 / 1',
-      video: '16 / 9',
-    },
-    backdropBlur: ({ theme }) => theme('blur'),
-    backdropBrightness: ({ theme }) => theme('brightness'),
-    backdropContrast: ({ theme }) => theme('contrast'),
-    backdropGrayscale: ({ theme }) => theme('grayscale'),
-    backdropHueRotate: ({ theme }) => theme('hueRotate'),
-    backdropInvert: ({ theme }) => theme('invert'),
-    backdropOpacity: ({ theme }) => theme('opacity'),
-    backdropSaturate: ({ theme }) => theme('saturate'),
-    backdropSepia: ({ theme }) => theme('sepia'),
-    backgroundColor: ({ theme }) => theme('colors'),
-    backgroundImage: {
-      none: 'none',
-      'gradient-to-t': 'linear-gradient(to top, var(--tw-gradient-stops))',
-      'gradient-to-tr': 'linear-gradient(to top right, var(--tw-gradient-stops))',
-      'gradient-to-r': 'linear-gradient(to right, var(--tw-gradient-stops))',
-      'gradient-to-br': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
-      'gradient-to-b': 'linear-gradient(to bottom, var(--tw-gradient-stops))',
-      'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
-      'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
-      'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
-    },
-    backgroundOpacity: ({ theme }) => theme('opacity'),
-    backgroundPosition: {
-      bottom: 'bottom',
-      center: 'center',
-      left: 'left',
-      'left-bottom': 'left bottom',
-      'left-top': 'left top',
-      right: 'right',
-      'right-bottom': 'right bottom',
-      'right-top': 'right top',
-      top: 'top',
-    },
-    backgroundSize: {
-      auto: 'auto',
-      cover: 'cover',
-      contain: 'contain',
-    },
-    blur: {
-      0: '0',
-      none: '0',
-      sm: '4px',
-      DEFAULT: '8px',
-      md: '12px',
-      lg: '16px',
-      xl: '24px',
-      '2xl': '40px',
-      '3xl': '64px',
-    },
-    brightness: {
-      0: '0',
-      50: '.5',
-      75: '.75',
-      90: '.9',
-      95: '.95',
-      100: '1',
-      105: '1.05',
-      110: '1.1',
-      125: '1.25',
-      150: '1.5',
-      200: '2',
-    },
-    borderColor: ({ theme }) => ({
-      ...theme('colors'),
-      DEFAULT: theme('colors.gray.200', 'currentColor'),
-    }),
-    borderOpacity: ({ theme }) => theme('opacity'),
-    borderRadius: {
-      none: '0px',
-      sm: '0.125rem',
-      DEFAULT: '0.25rem',
-      md: '0.375rem',
-      lg: '0.5rem',
-      xl: '0.75rem',
-      '2xl': '1rem',
-      '3xl': '1.5rem',
-      full: '9999px',
-    },
-    /*
-    borderSpacing: ({ theme }) => ({
-      ...theme('spacing'),
-    }),
-    */
-    borderWidth: {
-      DEFAULT: '1px',
-      0: '0px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    boxShadow: {
-      sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
-      DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
-      md: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
-      lg: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
-      xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
-      '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
-      inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
-      none: 'none',
-    },
-    boxShadowColor: ({ theme }) => theme('colors'),
-    caretColor: ({ theme }) => theme('colors'),
-    accentColor: ({ theme }) => ({
-      ...theme('colors'),
-      auto: 'auto',
-    }),
-    contrast: {
-      0: '0',
-      50: '.5',
-      75: '.75',
-      100: '1',
-      125: '1.25',
-      150: '1.5',
-      200: '2',
-    },
-    container: {},
-    content: {
-      none: 'none',
-    },
-    cursor: {
-      auto: 'auto',
-      default: 'default',
-      pointer: 'pointer',
-      wait: 'wait',
-      text: 'text',
-      move: 'move',
-      help: 'help',
-      'not-allowed': 'not-allowed',
-      none: 'none',
-      'context-menu': 'context-menu',
-      progress: 'progress',
-      cell: 'cell',
-      crosshair: 'crosshair',
-      'vertical-text': 'vertical-text',
-      alias: 'alias',
-      copy: 'copy',
-      'no-drop': 'no-drop',
-      grab: 'grab',
-      grabbing: 'grabbing',
-      'all-scroll': 'all-scroll',
-      'col-resize': 'col-resize',
-      'row-resize': 'row-resize',
-      'n-resize': 'n-resize',
-      'e-resize': 'e-resize',
-      's-resize': 's-resize',
-      'w-resize': 'w-resize',
-      'ne-resize': 'ne-resize',
-      'nw-resize': 'nw-resize',
-      'se-resize': 'se-resize',
-      'sw-resize': 'sw-resize',
-      'ew-resize': 'ew-resize',
-      'ns-resize': 'ns-resize',
-      'nesw-resize': 'nesw-resize',
-      'nwse-resize': 'nwse-resize',
-      'zoom-in': 'zoom-in',
-      'zoom-out': 'zoom-out',
-    },
-    divideColor: ({ theme }) => theme('borderColor'),
-    divideOpacity: ({ theme }) => theme('borderOpacity'),
-    divideWidth: ({ theme }) => theme('borderWidth'),
-    dropShadow: {
-      sm: '0 1px 1px rgb(0 0 0 / 0.05)',
-      DEFAULT: ['0 1px 2px rgb(0 0 0 / 0.1)', '0 1px 1px rgb(0 0 0 / 0.06)'],
-      md: ['0 4px 3px rgb(0 0 0 / 0.07)', '0 2px 2px rgb(0 0 0 / 0.06)'],
-      lg: ['0 10px 8px rgb(0 0 0 / 0.04)', '0 4px 3px rgb(0 0 0 / 0.1)'],
-      xl: ['0 20px 13px rgb(0 0 0 / 0.03)', '0 8px 5px rgb(0 0 0 / 0.08)'],
-      '2xl': '0 25px 25px rgb(0 0 0 / 0.15)',
-      none: '0 0 #0000',
-    },
-    fill: ({ theme }) => theme('colors'),
-    grayscale: {
-      0: '0',
-      DEFAULT: '100%',
-    },
-    hueRotate: {
-      0: '0deg',
-      15: '15deg',
-      30: '30deg',
-      60: '60deg',
-      90: '90deg',
-      180: '180deg',
-    },
-    invert: {
-      0: '0',
-      DEFAULT: '100%',
-    },
-    flex: {
-      1: '1 1 0%',
-      auto: '1 1 auto',
-      initial: '0 1 auto',
-      none: 'none',
-    },
-    flexBasis: ({ theme }) => ({
-      auto: 'auto',
-      ...theme('spacing'),
-      '1/2': '50%',
-      '1/3': '33.333333%',
-      '2/3': '66.666667%',
-      '1/4': '25%',
-      '2/4': '50%',
-      '3/4': '75%',
-      '1/5': '20%',
-      '2/5': '40%',
-      '3/5': '60%',
-      '4/5': '80%',
-      '1/6': '16.666667%',
-      '2/6': '33.333333%',
-      '3/6': '50%',
-      '4/6': '66.666667%',
-      '5/6': '83.333333%',
-      '1/12': '8.333333%',
-      '2/12': '16.666667%',
-      '3/12': '25%',
-      '4/12': '33.333333%',
-      '5/12': '41.666667%',
-      '6/12': '50%',
-      '7/12': '58.333333%',
-      '8/12': '66.666667%',
-      '9/12': '75%',
-      '10/12': '83.333333%',
-      '11/12': '91.666667%',
-      full: '100%',
-    }),
-    flexGrow: {
-      0: '0',
-      DEFAULT: '1',
-    },
-    flexShrink: {
-      0: '0',
-      DEFAULT: '1',
-    },
-    fontFamily: {
-      sans: [
-        'ui-sans-serif',
-        'system-ui',
-        '-apple-system',
-        'BlinkMacSystemFont',
-        '"Segoe UI"',
-        'Roboto',
-        '"Helvetica Neue"',
-        'Arial',
-        '"Noto Sans"',
-        'sans-serif',
-        '"Apple Color Emoji"',
-        '"Segoe UI Emoji"',
-        '"Segoe UI Symbol"',
-        '"Noto Color Emoji"',
-      ],
-      serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
-      mono: [
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Monaco',
-        'Consolas',
-        '"Liberation Mono"',
-        '"Courier New"',
-        'monospace',
-      ],
-    },
-    fontSize: {
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: ['0.875rem', { lineHeight: '1.25rem' }],
-      base: ['1rem', { lineHeight: '1.5rem' }],
-      lg: ['1.125rem', { lineHeight: '1.75rem' }],
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '1' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }],
-    },
-    fontWeight: {
-      thin: '100',
-      extralight: '200',
-      light: '300',
-      normal: '400',
-      medium: '500',
-      semibold: '600',
-      bold: '700',
-      extrabold: '800',
-      black: '900',
-    },
-    gap: ({ theme }) => theme('spacing'),
-    gradientColorStops: ({ theme }) => theme('colors'),
-    gridAutoColumns: {
-      auto: 'auto',
-      min: 'min-content',
-      max: 'max-content',
-      fr: 'minmax(0, 1fr)',
-    },
-    gridAutoRows: {
-      auto: 'auto',
-      min: 'min-content',
-      max: 'max-content',
-      fr: 'minmax(0, 1fr)',
-    },
-    gridColumn: {
-      auto: 'auto',
-      'span-1': 'span 1 / span 1',
-      'span-2': 'span 2 / span 2',
-      'span-3': 'span 3 / span 3',
-      'span-4': 'span 4 / span 4',
-      'span-5': 'span 5 / span 5',
-      'span-6': 'span 6 / span 6',
-      'span-7': 'span 7 / span 7',
-      'span-8': 'span 8 / span 8',
-      'span-9': 'span 9 / span 9',
-      'span-10': 'span 10 / span 10',
-      'span-11': 'span 11 / span 11',
-      'span-12': 'span 12 / span 12',
-      'span-full': '1 / -1',
-    },
-    gridColumnEnd: {
-      auto: 'auto',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-      8: '8',
-      9: '9',
-      10: '10',
-      11: '11',
-      12: '12',
-      13: '13',
-    },
-    gridColumnStart: {
-      auto: 'auto',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-      8: '8',
-      9: '9',
-      10: '10',
-      11: '11',
-      12: '12',
-      13: '13',
-    },
-    gridRow: {
-      auto: 'auto',
-      'span-1': 'span 1 / span 1',
-      'span-2': 'span 2 / span 2',
-      'span-3': 'span 3 / span 3',
-      'span-4': 'span 4 / span 4',
-      'span-5': 'span 5 / span 5',
-      'span-6': 'span 6 / span 6',
-      'span-full': '1 / -1',
-    },
-    gridRowStart: {
-      auto: 'auto',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-    },
-    gridRowEnd: {
-      auto: 'auto',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-    },
-    gridTemplateColumns: {
-      none: 'none',
-      1: 'repeat(1, minmax(0, 1fr))',
-      2: 'repeat(2, minmax(0, 1fr))',
-      3: 'repeat(3, minmax(0, 1fr))',
-      4: 'repeat(4, minmax(0, 1fr))',
-      5: 'repeat(5, minmax(0, 1fr))',
-      6: 'repeat(6, minmax(0, 1fr))',
-      7: 'repeat(7, minmax(0, 1fr))',
-      8: 'repeat(8, minmax(0, 1fr))',
-      9: 'repeat(9, minmax(0, 1fr))',
-      10: 'repeat(10, minmax(0, 1fr))',
-      11: 'repeat(11, minmax(0, 1fr))',
-      12: 'repeat(12, minmax(0, 1fr))',
-    },
-    gridTemplateRows: {
-      none: 'none',
-      1: 'repeat(1, minmax(0, 1fr))',
-      2: 'repeat(2, minmax(0, 1fr))',
-      3: 'repeat(3, minmax(0, 1fr))',
-      4: 'repeat(4, minmax(0, 1fr))',
-      5: 'repeat(5, minmax(0, 1fr))',
-      6: 'repeat(6, minmax(0, 1fr))',
-    },
-    height: ({ theme }) => ({
-      auto: 'auto',
-      ...theme('spacing'),
-      '1/2': '50%',
-      '1/3': '33.333333%',
-      '2/3': '66.666667%',
-      '1/4': '25%',
-      '2/4': '50%',
-      '3/4': '75%',
-      '1/5': '20%',
-      '2/5': '40%',
-      '3/5': '60%',
-      '4/5': '80%',
-      '1/6': '16.666667%',
-      '2/6': '33.333333%',
-      '3/6': '50%',
-      '4/6': '66.666667%',
-      '5/6': '83.333333%',
-      full: '100%',
-      screen: '100vh',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-    }),
-    inset: ({ theme }) => ({
-      auto: 'auto',
-      ...theme('spacing'),
-      '1/2': '50%',
-      '1/3': '33.333333%',
-      '2/3': '66.666667%',
-      '1/4': '25%',
-      '2/4': '50%',
-      '3/4': '75%',
-      full: '100%',
-    }),
-    keyframes: {
-      spin: {
-        to: {
-          transform: 'rotate(360deg)',
-        },
-      },
-      ping: {
-        '75%, 100%': {
-          transform: 'scale(2)',
-          opacity: '0',
-        },
-      },
-      pulse: {
-        '50%': {
-          opacity: '.5',
-        },
-      },
-      bounce: {
-        '0%, 100%': {
-          transform: 'translateY(-25%)',
-          animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
-        },
-        '50%': {
-          transform: 'none',
-          animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
-        },
-      },
-    },
-    letterSpacing: {
-      tighter: '-0.05em',
-      tight: '-0.025em',
-      normal: '0em',
-      wide: '0.025em',
-      wider: '0.05em',
-      widest: '0.1em',
-    },
-    lineHeight: {
-      none: '1',
-      tight: '1.25',
-      snug: '1.375',
-      normal: '1.5',
-      relaxed: '1.625',
-      loose: '2',
-      3: '.75rem',
-      4: '1rem',
-      5: '1.25rem',
-      6: '1.5rem',
-      7: '1.75rem',
-      8: '2rem',
-      9: '2.25rem',
-      10: '2.5rem',
-    },
-    listStyleType: {
-      none: 'none',
-      disc: 'disc',
-      decimal: 'decimal',
-    },
-    margin: ({ theme }) => ({
-      auto: 'auto',
-      ...theme('spacing'),
-    }),
-    maxHeight: ({ theme }) => ({
-      ...theme('spacing'),
-      full: '100%',
-      screen: '100vh',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-    }),
-    maxWidth: ({ theme, breakpoints }) => ({
-      none: 'none',
-      0: '0rem',
-      xs: '20rem',
-      sm: '24rem',
-      md: '28rem',
-      lg: '32rem',
-      xl: '36rem',
-      '2xl': '42rem',
-      '3xl': '48rem',
-      '4xl': '56rem',
-      '5xl': '64rem',
-      '6xl': '72rem',
-      '7xl': '80rem',
-      full: '100%',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-      prose: '65ch',
-      ...breakpoints(theme('screens')),
-    }),
-    minHeight: {
-      0: '0px',
-      full: '100%',
-      screen: '100vh',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-    },
-    minWidth: {
-      0: '0px',
-      full: '100%',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-    },
-    objectPosition: {
-      bottom: 'bottom',
-      center: 'center',
-      left: 'left',
-      'left-bottom': 'left bottom',
-      'left-top': 'left top',
-      right: 'right',
-      'right-bottom': 'right bottom',
-      'right-top': 'right top',
-      top: 'top',
-    },
-    opacity: {
-      0: '0',
-      5: '0.05',
-      10: '0.1',
-      20: '0.2',
-      25: '0.25',
-      30: '0.3',
-      40: '0.4',
-      50: '0.5',
-      60: '0.6',
-      70: '0.7',
-      75: '0.75',
-      80: '0.8',
-      90: '0.9',
-      95: '0.95',
-      100: '1',
-    },
-    order: {
-      first: '-9999',
-      last: '9999',
-      none: '0',
-      1: '1',
-      2: '2',
-      3: '3',
-      4: '4',
-      5: '5',
-      6: '6',
-      7: '7',
-      8: '8',
-      9: '9',
-      10: '10',
-      11: '11',
-      12: '12',
-    },
-    padding: ({ theme }) => theme('spacing'),
-    placeholderColor: ({ theme }) => theme('colors'),
-    placeholderOpacity: ({ theme }) => theme('opacity'),
-    outlineColor: ({ theme }) => theme('colors'),
-    outlineOffset: {
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    outlineWidth: {
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    ringColor: ({ theme }) => ({
-      DEFAULT: theme('colors.blue.500', '#3b82f6'),
-      ...theme('colors'),
-    }),
-    ringOffsetColor: ({ theme }) => theme('colors'),
-    ringOffsetWidth: {
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    ringOpacity: ({ theme }) => ({
-      DEFAULT: '0.5',
-      ...theme('opacity'),
-    }),
-    ringWidth: {
-      DEFAULT: '3px',
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    rotate: {
-      0: '0deg',
-      1: '1deg',
-      2: '2deg',
-      3: '3deg',
-      6: '6deg',
-      12: '12deg',
-      45: '45deg',
-      90: '90deg',
-      180: '180deg',
-    },
-    saturate: {
-      0: '0',
-      50: '.5',
-      100: '1',
-      150: '1.5',
-      200: '2',
-    },
-    scale: {
-      0: '0',
-      50: '.5',
-      75: '.75',
-      90: '.9',
-      95: '.95',
-      100: '1',
-      105: '1.05',
-      110: '1.1',
-      125: '1.25',
-      150: '1.5',
-    },
-    scrollMargin: ({ theme }) => ({
-      ...theme('spacing'),
-    }),
-    scrollPadding: ({ theme }) => theme('spacing'),
-    sepia: {
-      0: '0',
-      DEFAULT: '100%',
-    },
-    skew: {
-      0: '0deg',
-      1: '1deg',
-      2: '2deg',
-      3: '3deg',
-      6: '6deg',
-      12: '12deg',
-    },
-    space: ({ theme }) => ({
-      ...theme('spacing'),
-    }),
-    stroke: ({ theme }) => theme('colors'),
-    strokeWidth: {
-      0: '0',
-      1: '1',
-      2: '2',
-    },
-    textColor: ({ theme }) => theme('colors'),
-    textDecorationColor: ({ theme }) => theme('colors'),
-    textDecorationThickness: {
-      auto: 'auto',
-      'from-font': 'from-font',
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    textUnderlineOffset: {
-      auto: 'auto',
-      0: '0px',
-      1: '1px',
-      2: '2px',
-      4: '4px',
-      8: '8px',
-    },
-    textIndent: ({ theme }) => ({
-      ...theme('spacing'),
-    }),
-    textOpacity: ({ theme }) => theme('opacity'),
-    transformOrigin: {
-      center: 'center',
-      top: 'top',
-      'top-right': 'top right',
-      right: 'right',
-      'bottom-right': 'bottom right',
-      bottom: 'bottom',
-      'bottom-left': 'bottom left',
-      left: 'left',
-      'top-left': 'top left',
-    },
-    transitionDelay: {
-      75: '75ms',
-      100: '100ms',
-      150: '150ms',
-      200: '200ms',
-      300: '300ms',
-      500: '500ms',
-      700: '700ms',
-      1000: '1000ms',
-    },
-    transitionDuration: {
-      DEFAULT: '150ms',
-      75: '75ms',
-      100: '100ms',
-      150: '150ms',
-      200: '200ms',
-      300: '300ms',
-      500: '500ms',
-      700: '700ms',
-      1000: '1000ms',
-    },
-    transitionProperty: {
-      none: 'none',
-      all: 'all',
-      DEFAULT:
-        'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
-      colors: 'color, background-color, border-color, text-decoration-color, fill, stroke',
-      opacity: 'opacity',
-      shadow: 'box-shadow',
-      transform: 'transform',
-    },
-    transitionTimingFunction: {
-      DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',
-      linear: 'linear',
-      in: 'cubic-bezier(0.4, 0, 1, 1)',
-      out: 'cubic-bezier(0, 0, 0.2, 1)',
-      'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
-    },
-    translate: ({ theme }) => ({
-      ...theme('spacing'),
-      '1/2': '50%',
-      '1/3': '33.333333%',
-      '2/3': '66.666667%',
-      '1/4': '25%',
-      '2/4': '50%',
-      '3/4': '75%',
-      full: '100%',
-    }),
-    width: ({ theme }) => ({
-      auto: 'auto',
-      ...theme('spacing'),
-      '1/2': '50%',
-      '1/3': '33.333333%',
-      '2/3': '66.666667%',
-      '1/4': '25%',
-      '2/4': '50%',
-      '3/4': '75%',
-      '1/5': '20%',
-      '2/5': '40%',
-      '3/5': '60%',
-      '4/5': '80%',
-      '1/6': '16.666667%',
-      '2/6': '33.333333%',
-      '3/6': '50%',
-      '4/6': '66.666667%',
-      '5/6': '83.333333%',
-      '1/12': '8.333333%',
-      '2/12': '16.666667%',
-      '3/12': '25%',
-      '4/12': '33.333333%',
-      '5/12': '41.666667%',
-      '6/12': '50%',
-      '7/12': '58.333333%',
-      '8/12': '66.666667%',
-      '9/12': '75%',
-      '10/12': '83.333333%',
-      '11/12': '91.666667%',
-      full: '100%',
-      screen: '100vw',
-      min: 'min-content',
-      max: 'max-content',
-      fit: 'fit-content',
-    }),
-    willChange: {
-      auto: 'auto',
-      scroll: 'scroll-position',
-      contents: 'contents',
-      transform: 'transform',
-    },
-    zIndex: {
-      auto: 'auto',
-      0: '0',
-      10: '10',
-      20: '20',
-      30: '30',
-      40: '40',
-      50: '50',
-    },
-  },
-  variantOrder: [
-    'first',
-    'last',
-    'odd',
-    'even',
-    'visited',
-    'checked',
-    'empty',
-    'read-only',
-    'group-hover',
-    'group-focus',
-    'focus-within',
-    'hover',
-    'focus',
-    'focus-visible',
-    'active',
-    'disabled',
-  ],
-  plugins: [],
-}
-
-
-/***/ }),
-
 /***/ "./resources/js/components sync recursive ^\\.\\/.*$":
 /*!************************************************!*\
   !*** ./resources/js/components/ sync ^\.\/.*$ ***!
@@ -91990,8 +91009,10 @@ var map = {
 	"./pages/userProfilePage/userProfile.module.css": "./resources/js/components/pages/userProfilePage/userProfile.module.css",
 	"./shared/activeTasks/activeTasks": "./resources/js/components/shared/activeTasks/activeTasks.jsx",
 	"./shared/activeTasks/activeTasks.jsx": "./resources/js/components/shared/activeTasks/activeTasks.jsx",
+	"./shared/activeTasks/activeTasks.module.css": "./resources/js/components/shared/activeTasks/activeTasks.module.css",
 	"./shared/activeTasks/basicCard/basicCard": "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx",
 	"./shared/activeTasks/basicCard/basicCard.jsx": "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx",
+	"./shared/activeTasks/basicCard/basicCard.module.css": "./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css",
 	"./shared/button/button": "./resources/js/components/shared/button/button.jsx",
 	"./shared/button/button.jsx": "./resources/js/components/shared/button/button.jsx",
 	"./shared/flashMessages/fiashMessages.module.css": "./resources/js/components/shared/flashMessages/fiashMessages.module.css",

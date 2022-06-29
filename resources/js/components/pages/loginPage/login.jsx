@@ -38,13 +38,13 @@ export default function Login({ status, canResetPassword }) {
 
     return (
         <Guest>
-            <Head title="Log in" />
+            {/* <Head title="Log in" /> */}
 
-            {status && (
-                <div className="mb-4 font-medium text-sm text-green-600">
-                    {status}
-                </div>
-            )}
+            {/* {status && ( */}
+            <div className="mb-4 font-medium text-sm text-green-600">
+                {status}
+            </div>
+            {/* )} */}
 
             <ValidationErrors errors={errors} />
 
