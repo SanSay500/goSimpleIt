@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
+import ButtonViewMore from "../buttonViewMore/buttonViewMore";
 
 const ActiveTasks = ({count, classes}) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
@@ -41,9 +42,11 @@ const ActiveTasks = ({count, classes}) => {
             </div>
 
             {ordersToShow.length > showOrdersQty && (
-                <button className={style.btn} onClick={loadOrders}>
-                    View more
-                </button>
+                <ButtonViewMore
+                    click={(e) => {
+                        loadOrders(e);
+                    }}
+                />
             )}
         </section>
     );

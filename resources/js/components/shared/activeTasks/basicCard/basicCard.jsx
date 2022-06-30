@@ -1,4 +1,5 @@
 import React from "react";
+import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
 export default function BasicCard(props) {
@@ -25,14 +26,14 @@ export default function BasicCard(props) {
             </div>
 
             <div className={style.bottomContainer}>
-                <div className={style.budget}>
+                <div className={style.bottomContainerText}>
                     Budget:
                     <span className={style.green}>
                         {" "}
                         {props.props["money"]}$
                     </span>
                 </div>
-                <div className="basic-card__term">
+                <div className={style.bottomContainerText}>
                     Term:
                     <span className={style.green}>
                         {" "}
@@ -40,6 +41,8 @@ export default function BasicCard(props) {
                     </span>
                 </div>
             </div>
+
+            <ButtonViewMore classes={style.btn} />
         </div>
     );
 }

@@ -1,0 +1,8 @@
+.btn {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: #2b2b2b;
+    border-bottom: 1px dashed #2bb739;
+    box-sizing: border-box;
+}
