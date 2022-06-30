@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class LoginTest extends DuskTestCase
 {
 
-    public function test_order()
+    public function test_login()
     {
         $user=DB::table('users')->find(rand(1,10));
         $this->browse(function ($browser) use ($user) {
@@ -18,7 +18,10 @@ class LoginTest extends DuskTestCase
                 ->type('email', $user->email)
                 ->type('password', 'password')
                 //->clickAndWaitForReload('.inline-flex')
-                ->press('.inline-flex')
+                ->screenshot('check')
+                //->press('Log in')
+                ->click('button[type="submit"]')
+
             ;
             $browser->visit('dashboard/emp')
                 ->assertSee('dashboard')

@@ -21,10 +21,13 @@ class FinishTaskTest extends DuskTestCase
                 ->type('email', $user->email)
                 ->type('password', 'password')
                 //->press('.inline-flex');
-            ->press("Log in"); //несмотря на документацию, метод press не хочет жать на кнопки по их содержимому
+            ->press("Log in")
+                //->assertAuthenticatedAs($user)
+            ;
 
             $browser->visit('/dashboard/emp')
-                ->press('Examine')
+                ->screenshot('check')
+                ->clickLink('Examine')
                 ->screenshot('check')
                 ->press('Confirm')
                 ->press('Examine')
