@@ -32317,7 +32317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ConfirmPassword)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
 /* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
@@ -32384,7 +32384,7 @@ function ConfirmPassword() {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen, {
           className: "ml-4",
           processing: processing,
           children: "Confirm"
@@ -32408,7 +32408,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ForgotPassword)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
 /* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
@@ -32470,8 +32470,8 @@ function ForgotPassword(_ref) {
           handleChange: onHandleChange
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "flex items-center justify-end mt-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
-            className: "".concat(_forgotPassword_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formBtn, " "),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen // className={`${style.formBtn} `}
+          , {
             processing: processing,
             children: "Email Password Reset Link"
           })
@@ -32630,17 +32630,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ Register)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
-/* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
-/* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _registerDropdown_registerDropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./registerDropdown/registerDropdown */ "./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx");
-/* harmony import */ var _register_module_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./register.module.css */ "./resources/js/components/pages/loginPage/registerPage/register.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
+/* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _register_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./register.module.css */ "./resources/js/components/pages/loginPage/registerPage/register.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -32651,7 +32647,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 
 
 function Register() {
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.useForm)({
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.useForm)({
     name: "",
     email: "",
     description: "",
@@ -32682,104 +32678,104 @@ function Register() {
     post(route("register"));
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Head, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Head, {
       title: "Register"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
       errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       onSubmit: submit,
-      className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formPage, " "),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormRadio, " "),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioContainer, " "),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formPage, " "),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormRadio, " "),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].radioContainer, " "),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
             type: "radio",
             name: "role",
             value: "Freelancer",
             id: "radio1",
-            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].registerRadio, " "),
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].registerRadio, " "),
             checked: true,
             handleChange: onHandleChange,
             required: true
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
             htmlFor: "radio1",
-            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioLabel, " "),
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].radioLabel, " "),
             children: "Freelancer"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioContainer, " "),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].radioContainer, " "),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
             type: "radio",
             name: "role",
             value: "em",
-            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].registerRadio, " "),
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].registerRadio, " "),
             handleChange: onHandleChange,
             required: true,
             id: "radio2"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("label", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("label", {
             htmlFor: "radio2",
-            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].radioLabel, " "),
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].radioLabel, " "),
             children: "Employer"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "text",
           name: "name",
           value: data.name,
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
           placeholder: "Name",
           autoComplete: "name",
           isFocused: true,
           handleChange: onHandleChange,
           required: true
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "email",
           name: "email",
           value: data.email,
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
           placeholder: "E-mail",
           autoComplete: "username",
           handleChange: onHandleChange,
           required: true
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "password",
           name: "password",
           value: data.password,
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
           placeholder: "Password",
           autoComplete: "new-password",
           handleChange: onHandleChange,
           required: true
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
           type: "password",
           name: "password_confirmation",
           value: data.password_confirmation,
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
           placeholder: "Confirm password",
           handleChange: onHandleChange,
           required: true
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormItem, " "),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "flex flex-col items-start",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("textarea", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
             name: "description",
             value: data.description,
-            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginInput, " "),
+            className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
             placeholder: data.role === "Freelancer" ? "Tell about your skills" : "Tell about yourself",
             onChange: function onChange(e) {
               return setData("description", e.target.value);
@@ -32787,14 +32783,13 @@ function Register() {
             required: true
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
-        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].loginFormCont, " "),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginFormCont, " "),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.Link, {
           href: route("login"),
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formLink, " "),
+          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formLink, " "),
           children: "Already registered?"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
-          className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_8__["default"].formBtn, " "),
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen, {
           processing: processing,
           children: "Register"
         })]
@@ -32878,7 +32873,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ResetPassword)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
 /* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
@@ -32974,7 +32969,7 @@ function ResetPassword(_ref) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen, {
           className: "ml-4",
           processing: processing,
           children: "Reset Password"
@@ -32998,7 +32993,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ VerifyEmail)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -33033,7 +33028,7 @@ function VerifyEmail(_ref) {
       onSubmit: submit,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "mt-4 flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonGreen, {
           processing: processing,
           children: "Resend Verification Email"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
@@ -33290,7 +33285,9 @@ var Main = function Main(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         scroll: scroll
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      count: 6
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
       portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_freelancersContainer_freelancersContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
@@ -34301,7 +34298,7 @@ var ActiveTasks = function ActiveTasks(props) {
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(6),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.count),
       _useState2 = _slicedToArray(_useState, 2),
       showOrdersQty = _useState2[0],
       setShowOrdersQty = _useState2[1];
@@ -34313,7 +34310,7 @@ var ActiveTasks = function ActiveTasks(props) {
 
   function loadOrders(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + 6);
+    setShowOrdersQty(showOrdersQty + props.count);
   }
 
   var showOrdersNum = ordersActive.slice(0, showOrdersQty);
@@ -34352,7 +34349,7 @@ var ActiveTasks = function ActiveTasks(props) {
           props: order
         }, order.id);
       })
-    }), ordersToShow.length > 6 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+    }), ordersToShow.length > showOrdersQty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
       className: _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
       onClick: loadOrders,
       children: "View more"

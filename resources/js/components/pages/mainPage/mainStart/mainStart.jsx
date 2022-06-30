@@ -9,9 +9,7 @@ const MainStart = (props) => {
                 <h2 className={`${style.title}`}>
                     Find the perfect freelance services for your business
                 </h2>
-                <ButtonGreen>
-                Estimate your budget
-                </ButtonGreen>
+                <ButtonGreen>Estimate your budget</ButtonGreen>
             </div>
 
             <button className={`${style.getStartedBtn}`} onClick={props.scroll}>
