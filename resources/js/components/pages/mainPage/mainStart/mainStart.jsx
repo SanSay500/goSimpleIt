@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./mainStart.module.css";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MainStart = (props) => {
     return (
@@ -8,9 +9,7 @@ const MainStart = (props) => {
                 <h2 className={`${style.title}`}>
                     Find the perfect freelance services for your business
                 </h2>
-                <button>
-                    <img src="/images/budget.png" alt="Logo"></img>
-                </button>
+                <ButtonGreen>Estimate your budget</ButtonGreen>
             </div>
 
             <button className={`${style.getStartedBtn}`} onClick={props.scroll}>
