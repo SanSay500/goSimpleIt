@@ -20,12 +20,14 @@
 .loginFormItem {
     margin-top: 9px;
 }
+
 .formCheckbox{
     width: 14px;
     height: 14px;
     border: 1px dashed #2BB739;
     border-radius: 2px;
 }
+
 .formCheckboxLabel{
     font-weight: 300;
     font-size: 14px;
@@ -33,6 +35,7 @@
     color: #000000;
     margin-left: 9px;
 }
+
 .formLink{
     font-weight: 300;
     font-size: 14px;
@@ -40,17 +43,7 @@
     color: #838383;
     border-bottom: 1px dashed #2BB739;
 }
-.formBtn{
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 18px;
-    text-align: center;
-    color: #FFFFFF;
-    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;
-    border-radius: 40px;
-    padding: 10px 35px;
-    z-index: 5;
-}
+
 [type="text"]:focus,
 [type="email"]:focus,
 [type="url"]:focus,
@@ -72,6 +65,7 @@ select:focus {
     box-shadow: none;
     border-color: #2bb739;
 }
+
 .formPage{
     position: relative;
     background: #FFFFFF;
