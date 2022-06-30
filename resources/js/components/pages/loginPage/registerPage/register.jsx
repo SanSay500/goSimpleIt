@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/buttonGreen/buttonGreen";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
