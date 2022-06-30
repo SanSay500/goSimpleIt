@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/shared/button/button";
+import Button from "@/components/shared/buttonGreen/buttonGreen";
 import Guest from "@/components/shared/guest/guest";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
 
@@ -32,9 +32,9 @@ export default function VerifyEmail({ status }) {
 
             <form onSubmit={submit}>
                 <div className="mt-4 flex items-center justify-between">
-                    <Button processing={processing}>
+                    <ButtonGreen processing={processing}>
                         Resend Verification Email
-                    </Button>
+                    </ButtonGreen>
 
                     <Link
                         href={route("logout")}

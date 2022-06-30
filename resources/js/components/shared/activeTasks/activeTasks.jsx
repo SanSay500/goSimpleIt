@@ -5,12 +5,12 @@ import style from "./activeTasks.module.css";
 
 const ActiveTasks = (props) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
-    const [showOrdersQty, setShowOrdersQty] = useState(6);
+    const [showOrdersQty, setShowOrdersQty] = useState(props.count);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
 
     function loadOrders(e) {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + 6);
+        setShowOrdersQty(showOrdersQty + props.count);
     }
 
     var showOrdersNum = ordersActive.slice(0, showOrdersQty);
@@ -40,7 +40,7 @@ const ActiveTasks = (props) => {
                 })}
             </div>
 
-            {ordersToShow.length > 6 && (
+            {ordersToShow.length > showOrdersQty && (
                 <button className={style.btn} onClick={loadOrders}>
                     View more
                 </button>

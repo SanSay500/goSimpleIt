@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/button/button";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Checkbox from "@/components/pages/loginPage/checkbox/checkbox";
 import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
-import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import { Link, useForm } from "@inertiajs/inertia-react";
 import style from "./login.module.css";
 
 export default function Login({ status, canResetPassword }) {
@@ -34,7 +33,7 @@ export default function Login({ status, canResetPassword }) {
         e.preventDefault();
         post(route("login"));
     };
-
+console.log(processing);
     return (
         <Guest>
             {/* <Head title="Log in" /> */}
@@ -112,12 +111,11 @@ export default function Login({ status, canResetPassword }) {
                         </div>
                     )}
 
-                    <Button
-                        className={`${style.formBtn} `}
+                    <ButtonGreen
                         processing={processing}
                     >
                         Log in
-                    </Button>
+                    </ButtonGreen>
                 </div>
             </form>
         </Guest>
