@@ -26,9 +26,7 @@ class FinishTaskTest extends DuskTestCase
             ;
 
             $browser->visit('/dashboard/emp')
-                ->screenshot('check')
                 ->clickLink('Examine')
-                ->screenshot('check')
                 ->press('Confirm')
                 ->press('Examine')
                 ->press('Finish job')

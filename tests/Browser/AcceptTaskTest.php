@@ -19,11 +19,14 @@ class AcceptTaskTest extends DuskTestCase
             $browser->visit('/login')
                 ->type('email', $user->email)
                 ->type('password', 'password')
-                ->press('.inline-flex');
-
-            $browser->visit('/dashboard/emp');
-            //under construction just like the function this thing tests
-
+                ->press('Log in')
+                ->visit('/dashboard/frl')
+                ->click('View more')
+                ->click('Make proposal')
+                ->type('description', 'Test description')
+                ->click('Send proposal')
+                ->assertSee('Dashboard')
+            ;
         });
     }
 }
