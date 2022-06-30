@@ -16,7 +16,6 @@ const TalksContainer = ({ reviewsList }) => {
         }
     }
     const [step, setStep] = useState(count_review);
-
     return (
         <section className="">
             <Talks reviews={reviewsList.slice(0, step)} />
