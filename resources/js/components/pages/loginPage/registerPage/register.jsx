@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/button/button";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
-import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Head, Link, useForm } from "@inertiajs/inertia-react";
-import SelectInput from "./registerDropdown/registerDropdown";
 import style from "./register.module.css";
 
 export default function Register() {
@@ -174,9 +172,11 @@ export default function Register() {
                         Already registered?
                     </Link>
 
-                    <Button className={`${style.formBtn} `} processing={processing}>
+                    <ButtonGreen
+                        processing={processing}
+                    >
                         Register
-                    </Button>
+                        </ButtonGreen>
                 </div>
             </form>
         </Guest>

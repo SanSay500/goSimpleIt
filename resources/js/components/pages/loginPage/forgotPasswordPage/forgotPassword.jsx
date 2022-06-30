@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "@/components/shared/button/button";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
@@ -50,12 +50,11 @@ export default function ForgotPassword({ status }) {
                 />
 
                 <div className="flex items-center justify-end mt-4">
-                    <Button
-                        className={`${style.formBtn} `}
+                <ButtonGreen
                         processing={processing}
                     >
                         Email Password Reset Link
-                    </Button>
+                        </ButtonGreen>
                 </div>
             </form>
             </div>
