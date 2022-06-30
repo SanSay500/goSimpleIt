@@ -43,15 +43,22 @@
     padding-right: 10%;
     padding-left: 10%;
 }
-
 .title {
+    margin: 0 0 50px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    color: #2bb739;
+}
+/* .title {
     font-weight: 500;
     font-size: 54px;
     line-height: 62px;
     text-align: center;
     color: #2bb739;
     margin-bottom: 80px;
-}
+} */
 
 /* .reviews-wrapper {
     padding-top: 25px;
@@ -315,12 +322,6 @@
     height: 100%;
     object-fit: cover;
     object-position: top left;
-}
-
-.portfolio-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .card-text {

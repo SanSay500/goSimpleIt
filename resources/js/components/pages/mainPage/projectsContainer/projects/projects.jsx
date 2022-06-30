@@ -3,7 +3,7 @@ import FlipCard from "./flipCard/flipCard";
 const Projects = ({ projects }) => {
     return (
         <>
-            <h3 className="portfolio-title title">Our works</h3>
+            <h2 className={`title`}>Complete projects</h2>
             <div className="portfolio-list">
                 {projects.map((element, index) => (
                     <FlipCard key={index} card={element} />

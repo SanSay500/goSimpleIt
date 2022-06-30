@@ -36,27 +36,9 @@
         #2bb739;
 }
 
-.title {
-    margin: 0 0 50px 0;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 28px;
-    line-height: 32px;
-    color: #2bb739;
-}
-
 .cardsContainer {
     margin: 0 0 25px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px 55px;
-}
-
-.btn {
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 23px;
-    color: #2b2b2b;
-    border-bottom: 1px dashed #2bb739;
-    box-sizing: border-box;
 }
