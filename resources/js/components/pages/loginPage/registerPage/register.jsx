@@ -29,8 +29,9 @@ export default function Register() {
             event.target.type === "checkbox"
                 ? event.target.checked
                 : event.target.value,
-            event.target.type === "radio" ? event.target.checked
-            : event.target.value,
+            event.target.type === "radio"
+                ? event.target.checked
+                : event.target.value
         );
     };
 
@@ -47,31 +48,41 @@ export default function Register() {
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit} className={`${style.formPage} `}>
-            <div className={`${style.loginFormRadio} `}>
+                <div className={`${style.loginFormRadio} `}>
                     <div className={`${style.radioContainer} `}>
-                    <Input
-                        type="radio"
-                        name="role"
-                        value="Freelancer"
-                        id="radio1"
-                        className={`${style.registerRadio} `}
-                        checked
-                        handleChange={onHandleChange}
-                        required
-                    />
-                    <label htmlFor="radio1" className={`${style.radioLabel} `}>Freelancer</label>
+                        <Input
+                            type="radio"
+                            name="role"
+                            value="Freelancer"
+                            id="radio1"
+                            className={`${style.registerRadio} `}
+                            checked
+                            handleChange={onHandleChange}
+                            required
+                        />
+                        <label
+                            htmlFor="radio1"
+                            className={`${style.radioLabel} `}
+                        >
+                            Freelancer
+                        </label>
                     </div>
                     <div className={`${style.radioContainer} `}>
-                    <Input
-                        type="radio"
-                        name="role"
-                        value="em"
-                        className={`${style.registerRadio} `}
-                        handleChange={onHandleChange}
-                        required
-                        id="radio2"
-                    />
-                    <label htmlFor="radio2" className={`${style.radioLabel} `}>Employer</label>
+                        <Input
+                            type="radio"
+                            name="role"
+                            value="em"
+                            className={`${style.registerRadio} `}
+                            handleChange={onHandleChange}
+                            required
+                            id="radio2"
+                        />
+                        <label
+                            htmlFor="radio2"
+                            className={`${style.radioLabel} `}
+                        >
+                            Employer
+                        </label>
                     </div>
 
                     {/* <SelectInput
@@ -119,7 +130,6 @@ export default function Register() {
                 </div>
 
                 <div className={`${style.loginFormItem} `}>
-
                     <Input
                         type="password"
                         name="password"
@@ -133,7 +143,6 @@ export default function Register() {
                 </div>
 
                 <div className={`${style.loginFormItem} `}>
-
                     <Input
                         type="password"
                         name="password_confirmation"
@@ -145,23 +154,23 @@ export default function Register() {
                     />
                 </div>
 
-                
-
                 <div className={`${style.loginFormItem} `}>
-                <div className="flex flex-col items-start">
-                    <textarea
-                        name="description"
-                        value={data.description}
-                        className={`${style.loginInput} `}
-                        placeholder={
-                            data.role === "Freelancer"
-                                ? "Tell about your skills"
-                                : "Tell about yourself"
-                        }
-                        onChange={(e) => setData("description", e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="flex flex-col items-start">
+                        <textarea
+                            name="description"
+                            value={data.description}
+                            className={`${style.loginInput} `}
+                            placeholder={
+                                data.role === "Freelancer"
+                                    ? "Tell about your skills"
+                                    : "Tell about yourself"
+                            }
+                            onChange={(e) =>
+                                setData("description", e.target.value)
+                            }
+                            required
+                        />
+                    </div>
                 </div>
 
                 <div className={`${style.loginFormCont} `}>
@@ -172,11 +181,7 @@ export default function Register() {
                         Already registered?
                     </Link>
 
-                    <ButtonGreen
-                        processing={processing}
-                    >
-                        Register
-                        </ButtonGreen>
+                    <ButtonGreen processing={processing}>Register</ButtonGreen>
                 </div>
             </form>
         </Guest>

@@ -32317,7 +32317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ConfirmPassword)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
 /* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
@@ -32384,7 +32384,7 @@ function ConfirmPassword() {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen, {
           className: "ml-4",
           processing: processing,
           children: "Confirm"
@@ -32470,7 +32470,8 @@ function ForgotPassword(_ref) {
           handleChange: onHandleChange
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "flex items-center justify-end mt-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__["default"] // className={`${style.formBtn} `}
+          , {
             processing: processing,
             children: "Email Password Reset Link"
           })
@@ -32872,7 +32873,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ ResetPassword)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
 /* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
@@ -32968,7 +32969,7 @@ function ResetPassword(_ref) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(ButtonGreen, {
           className: "ml-4",
           processing: processing,
           children: "Reset Password"
@@ -32992,7 +32993,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ VerifyEmail)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
 /* harmony import */ var _components_shared_guest_guest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/guest/guest */ "./resources/js/components/shared/guest/guest.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -33027,7 +33028,7 @@ function VerifyEmail(_ref) {
       onSubmit: submit,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "mt-4 flex items-center justify-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Object(function webpackMissingModule() { var e = new Error("Cannot find module '@/components/shared/button/button'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(ButtonGreen, {
           processing: processing,
           children: "Resend Verification Email"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
@@ -33284,7 +33285,9 @@ var Main = function Main(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         scroll: scroll
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
+      count: 6
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
       portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_freelancersContainer_freelancersContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
@@ -34295,7 +34298,7 @@ var ActiveTasks = function ActiveTasks(props) {
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(6),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.count),
       _useState2 = _slicedToArray(_useState, 2),
       showOrdersQty = _useState2[0],
       setShowOrdersQty = _useState2[1];
@@ -34307,7 +34310,7 @@ var ActiveTasks = function ActiveTasks(props) {
 
   function loadOrders(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + 6);
+    setShowOrdersQty(showOrdersQty + props.count);
   }
 
   var showOrdersNum = ordersActive.slice(0, showOrdersQty);
@@ -34346,7 +34349,7 @@ var ActiveTasks = function ActiveTasks(props) {
           props: order
         }, order.id);
       })
-    }), ordersToShow.length > 6 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+    }), ordersToShow.length > showOrdersQty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
       className: _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
       onClick: loadOrders,
       children: "View more"

@@ -24,41 +24,41 @@ export default function ForgotPassword({ status }) {
         <Guest>
             <Head title="Forgot Password" />
             <div className={`${style.formPage} `}>
-            <div className={`${style.formText} `}>
-                Forgot your password? No problem. Just let us know your email
-                address and we will email you a password reset link that will
-                allow you to choose a new one.
-            </div>
-
-            {status && (
-                <div className="mb-4 font-medium text-sm text-green-600">
-                    {status}
+                <div className={`${style.formText} `}>
+                    Forgot your password? No problem. Just let us know your
+                    email address and we will email you a password reset link
+                    that will allow you to choose a new one.
                 </div>
-            )}
 
-            <ValidationErrors errors={errors} />
+                {status && (
+                    <div className="mb-4 font-medium text-sm text-green-600">
+                        {status}
+                    </div>
+                )}
 
-            <form onSubmit={submit}>
-                <Input
-                    type="text"
-                    name="email"
-                    value={data.email}
-                    className={`${style.loginInput} `}
-                    placeholder="E-mail"
-                    isFocused={true}
-                    handleChange={onHandleChange}
-                />
+                <ValidationErrors errors={errors} />
 
-                <div className="flex items-center justify-end mt-4">
-                <ButtonGreen
-                        processing={processing}
-                    >
-                        Email Password Reset Link
+                <form onSubmit={submit}>
+                    <Input
+                        type="text"
+                        name="email"
+                        value={data.email}
+                        className={`${style.loginInput} `}
+                        placeholder="E-mail"
+                        isFocused={true}
+                        handleChange={onHandleChange}
+                    />
+
+                    <div className="flex items-center justify-end mt-4">
+                        <ButtonGreen
+                            // className={`${style.formBtn} `}
+                            processing={processing}
+                        >
+                            Email Password Reset Link
                         </ButtonGreen>
-                </div>
-            </form>
+                    </div>
+                </form>
             </div>
-
         </Guest>
     );
 }
