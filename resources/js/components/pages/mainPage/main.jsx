@@ -23,7 +23,7 @@ const Main = (props) => {
                 <MainStart scroll={scroll} />
             </section>
 
-            <ActiveTasks />
+            <ActiveTasks count={6} />
 
             <ProjectsContainer portfolioList={myJson.portfolio} />
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/button/button";
+import Button from "@/components/shared/buttonGreen/buttonGreen";
 import Guest from "@/components/shared/guest/guest";
 import Input from "@/components/shared/input/input";
 import Label from "@/components/shared/label/label";
@@ -53,9 +53,9 @@ export default function ConfirmPassword() {
                 </div>
 
                 <div className="flex items-center justify-end mt-4">
-                    <Button className="ml-4" processing={processing}>
+                    <ButtonGreen className="ml-4" processing={processing}>
                         Confirm
-                    </Button>
+                    </ButtonGreen>
                 </div>
             </form>
         </Guest>
