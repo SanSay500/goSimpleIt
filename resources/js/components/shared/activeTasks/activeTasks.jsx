@@ -34,7 +34,7 @@ const ActiveTasks = (props) => {
     }
     return (
         <section className={style.container}>
-            <h2 className={`${style.title}`}>Active Tasks</h2>
+            <h2 className={`title`}>Active Tasks</h2>
             <div className={`${style.cardsContainer}`}>
                 {ordersToShow.slice(0, showOrdersQty).map((order) => {
                     return <BasicCard key={order.id} props={order} />;
