@@ -16,16 +16,14 @@ class AcceptTaskTest extends DuskTestCase
         $user=DB::table('users')->where('role', 'Freelancer')->first();
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->press('Log in')
+            $browser->loginAs($user->id)
                 ->visit('/dashboard/frl')
-                ->click('View more')
-                ->click('Make proposal')
+                ->click('div.nwyDYWMFE\+jJ\+KGzICIqKw\=\=:nth-child(1) > a:nth-child(5) > button:nth-child(1)')
+                ->press('Make Proposal')
                 ->type('description', 'Test description')
-                ->click('Send proposal')
-                ->assertSee('Dashboard')
+                ->click('button[type="submit"]')
+                ->pause(300)
+                ->assertPathIs("/dashboard/frl")
             ;
         });
     }

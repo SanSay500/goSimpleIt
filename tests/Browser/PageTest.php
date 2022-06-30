@@ -16,11 +16,7 @@ class PageTest extends DuskTestCase
         $user=DB::table('users')->find(rand(1,10));
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->click('button[type="submit"]')
-                ;
+            $browser->loginAs($user->id);
 
             $browser->visit('/chatify/1')
                 ->assertSourceHas('MessagesController@index');
@@ -32,12 +28,7 @@ class PageTest extends DuskTestCase
         $user=DB::table('users')->where('role', 'Employer')->first();
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->click('button[type="submit"]')
-            ;
-
+            $browser->loginAs($user->id);
             $browser->visit('/dashboard/emp')
                 ->assertSourceHas('DashboardController@employer_dashboard_index');
         });
@@ -49,11 +40,7 @@ class PageTest extends DuskTestCase
         $user=DB::table('users')->where('role', 'Freelancer')->first();
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->click('button[type="submit"]')
-            ;
+            $browser->loginAs($user->id);
 
             $browser->visit('/dashboard/frl')
                 ->assertSourceHas('DashboardController@freelancer_dashboard_index');
@@ -103,12 +90,7 @@ class PageTest extends DuskTestCase
         $user=DB::table('users')->find(rand(1,10));
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->click('button[type="submit"]')
-            ;
-
+            $browser->loginAs($user->id);
             $browser->visit('/user/1')
                 ->assertSourceHas('UserController@index');
         });
