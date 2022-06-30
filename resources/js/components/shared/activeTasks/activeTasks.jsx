@@ -3,7 +3,7 @@ import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 
-const ActiveOrders = (props) => {
+const ActiveTasks = (props) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
     const [showOrdersQty, setShowOrdersQty] = useState(5);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
@@ -49,4 +49,4 @@ const ActiveOrders = (props) => {
     );
 };
 
-export default ActiveOrders;
+export default ActiveTasks;

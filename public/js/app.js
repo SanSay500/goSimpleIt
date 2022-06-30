@@ -33972,7 +33972,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _talks_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../talks.module.css */ "./resources/js/components/pages/mainPage/talksContainer/talks.module.css");
+/* harmony import */ var _talks_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./talks.module.css */ "./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -33982,11 +33982,9 @@ __webpack_require__.r(__webpack_exports__);
 var Talks = function Talks(_ref) {
   var reviews = _ref.reviews;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
       className: _talks_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].talks,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-        children: "Talks about us"
-      })
+      children: "Talks about us"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
       className: _talks_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].reviewsList,
       children: reviews.map(function (element, index) {
@@ -34035,7 +34033,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _talks_talks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./talks/talks */ "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _talksContainer_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./talksContainer.module.css */ "./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -34047,6 +34046,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -34073,30 +34073,24 @@ var TalksContainer = function TalksContainer(_ref) {
       step = _useState2[0],
       setStep = _useState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    className: "reviews-block",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "reviews-wrapper",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_talks_talks__WEBPACK_IMPORTED_MODULE_0__["default"], {
-          reviews: reviewsList.slice(0, step)
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "btn-container",
-          children: reviewsList.length > step ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "review__more",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-              className: "review__button",
-              type: "button",
-              onClick: function onClick() {
-                return setStep(step + count_review);
-              },
-              children: "Show more"
-            })
-          }) : ""
-        })]
-      })
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+    className: "",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_talks_talks__WEBPACK_IMPORTED_MODULE_0__["default"], {
+      reviews: reviewsList.slice(0, step)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "btn-container",
+      children: reviewsList.length > step ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "review__more",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          className: "review__button",
+          type: "button",
+          onClick: function onClick() {
+            return setStep(step + count_review);
+          },
+          children: "Show more"
+        })
+      }) : ""
+    })]
   });
 };
 
@@ -34305,7 +34299,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var ActiveOrders = function ActiveOrders(props) {
+var ActiveTasks = function ActiveTasks(props) {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
@@ -34369,7 +34363,7 @@ var ActiveOrders = function ActiveOrders(props) {
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ActiveOrders);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ActiveTasks);
 
 /***/ }),
 
@@ -35711,10 +35705,46 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks.module.css":
-/*!******************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks.module.css ***!
-  \******************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".RBpQcdLcAelFjR37oEjGJA\\=\\= {\n    margin: 0 0 55px 0;\n    text-align: center;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2bb739;\n    position: relative;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    content: \"\";\n    display: block;\n    height: 69px;\n    width: 70vw;\n    position: absolute;\n    z-index: -1;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before {\n    left: -13%;\n    bottom: -2px;\n\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 0 10px 10px 0;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    top: -15px;\n    right: -13%;\n    height: 64px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n\n.xjxHqUOUFIeyl-B1VildBQ\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.am0-I9V36dARoejQN22gLQ\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    background: linear-gradient(180deg, #f0f0f0 41.52%, #ffffff 100%);\n    border-radius: 20px;\n    height: 139px;\n    color: #2b2b2b;\n    position: relative;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n.R-ntADr1N69fCQ96sLwnWQ\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n/* .user__img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n} */\n\n.SgDXQ9\\+t98iPmry0zW71ZA\\=\\= {\n    text-align: left;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n    color: #2b2b2b;\n}\n\n.xVYYmvv3NYMe2Hak4ZNigQ\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 18px;\n    color: #2b2b2b;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n@media (max-width: 1024px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .wlwTYF1NbyH7LQmkURZtZg\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\= {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .ofe98RwB8-LWbom03bXNHQ\\=\\= {\n        padding: 0;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"talks": "RBpQcdLcAelFjR37oEjGJA==",
+	"reviewsList": "xjxHqUOUFIeyl-B1VildBQ==",
+	"review": "am0-I9V36dARoejQN22gLQ==",
+	"user": "CLKrLhw4sRq-ReOiZrfHgA==",
+	"userImg": "R-ntADr1N69fCQ96sLwnWQ==",
+	"userName": "SgDXQ9+t98iPmry0zW71ZA==",
+	"coment": "xVYYmvv3NYMe2Hak4ZNigQ==",
+	"comentText": "Ca2wBHtTPUIzb3XRRNSLBA==",
+	"reviews-list": "wlwTYF1NbyH7LQmkURZtZg==",
+	"reviews-wrapper": "ofe98RwB8-LWbom03bXNHQ=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css":
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35728,23 +35758,15 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".oz\\+FnhGdJfW7Ny6qNked\\+w\\=\\= {\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n\n.dDHQhheALif70pDjVwY5BA\\=\\= {\n    position: relative;\n    text-align: center;\n    /* margin-top: 58px; */\n    margin-bottom: 60px;\n}\n\n.dDHQhheALif70pDjVwY5BA\\=\\= span {\n    position: relative;\n    font-family: 'Ubuntu';\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2BB739;\n    z-index: 1;\n}\n\n.dDHQhheALif70pDjVwY5BA\\=\\=::before {\n    content: \"\";\n    display: block;\n    position: absolute;\n    left: -13%;\n    bottom: -2px;\n    height: 69px;\n    width: 70vw;\n    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;\n    border-radius: 0 10px 10px 0;\n    z-index: 0;\n}\n\n.dDHQhheALif70pDjVwY5BA\\=\\=::after {\n    content: \"\";\n    display: block;\n    position: absolute;\n    top: -15px;\n    right: -13%;\n    height: 64px;\n    width: 70vw;\n    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2B2B2B;\n    border-radius: 10px 0 0 10px;\n    z-index: 0;\n}\n\n.rZS-UUVfd201EoeJuJ94lA\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.fr8gWQQfnAFPKvZavTaQTA\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    background: linear-gradient(180deg, #F0F0F0 41.52%, #FFFFFF 100%);\n    border-radius: 20px;\n    height: 139px;\n    color: #2B2B2B;\n    position: relative;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n\n.fr8gWQQfnAFPKvZavTaQTA\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n\n/* .reviews-block {\n    padding-bottom: 100px;\n} */\n\n.fr8gWQQfnAFPKvZavTaQTA\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.s0aUCSplk6TFzqzY6ZQ5AA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n\n.s0aUCSplk6TFzqzY6ZQ5AA\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n.I9E2MxVdPB31RkWgd8SqdQ\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n\n.\\+vQ6h9betjATXgQ35edmeA\\=\\= {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n}\n\n.f5gbCttCwTN9MWElXN0i\\+A\\=\\= {\n    text-align: left;\n    /* padding-top: 8px; */\n    /* text-transform: uppercase; */\n    /* font-weight: bold;\n    font-size: 24px;\n    line-height: 31px; */\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n    color: #2B2B2B;\n}\n\n.tgXn-YDsGKCVGfQx2qltNQ\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.Ip6l9ha\\+dGWA6rDEPX4p7Q\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    /* font-weight: 300;\n    font-size: 20px;\n    line-height: 24px; */\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 18px;\n    color: #2B2B2B;\n}\n\n.OvNRyW5W-hyugzLrG3fTuQ\\=\\=::-webkit-scrollbar, .Ip6l9ha\\+dGWA6rDEPX4p7Q\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n\n.OvNRyW5W-hyugzLrG3fTuQ\\=\\=::-webkit-scrollbar-track, .Ip6l9ha\\+dGWA6rDEPX4p7Q\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n\n.OvNRyW5W-hyugzLrG3fTuQ\\=\\=::-webkit-scrollbar-thumb, .Ip6l9ha\\+dGWA6rDEPX4p7Q\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n.cXFSMC0i9fs5pXJZMiFLUA\\=\\= {\n    display: none;\n    font-family: 'Ubuntu';\n    font-weight: 500;\n    padding: 8px 15px;\n    /* border: 4px dashed #2B2B2B; */\n    color: #fff;\n    background-color: #2BB739;\n    border-radius: 40px;\n    font-size: 24px;\n    line-height: 28px;\n}\n\n.cXFSMC0i9fs5pXJZMiFLUA\\=\\=:hover {\n    color: #2BB739;\n    background-color: #fff;\n    border-color: #2BB739;\n}\n\n@media (max-width: 1024px) {\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .Ip6l9ha\\+dGWA6rDEPX4p7Q\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .DlWZs14PfJlIDIhnPA-ZlQ\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .dDHQhheALif70pDjVwY5BA\\=\\=::before, .dDHQhheALif70pDjVwY5BA\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .dDHQhheALif70pDjVwY5BA\\=\\= {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .oz\\+FnhGdJfW7Ny6qNked\\+w\\=\\= {\n        padding: 0;\n    }\n\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .dDHQhheALif70pDjVwY5BA\\=\\=::before, .dDHQhheALif70pDjVwY5BA\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .fr8gWQQfnAFPKvZavTaQTA\\=\\= {\n        width: 90%;\n    }\n\n    .vlBasUT1a\\+sVKnuMawy4dA\\=\\= {\n        padding-bottom: 40px;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".EgUp7aEgStLa62w0uuXe8w\\=\\= {\n    display: none;\n    font-family: \"Ubuntu\";\n    font-weight: 500;\n    padding: 8px 15px;\n    /* border: 4px dashed #2B2B2B; */\n    color: #fff;\n    background-color: #2bb739;\n    border-radius: 40px;\n    font-size: 24px;\n    line-height: 28px;\n}\n\n.EgUp7aEgStLa62w0uuXe8w\\=\\=:hover {\n    color: #2bb739;\n    background-color: #fff;\n    border-color: #2bb739;\n}\n\n@media (max-width: 1024px) {\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .YE-bi6FSZRszNaVDDDm\\+aQ\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .mC6uoYvqph5mkg1\\+uHuCDg\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    ._4rQ-jzNNlN7zAyGmgjaw8Q\\=\\=::before,\n    ._4rQ-jzNNlN7zAyGmgjaw8Q\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    ._4rQ-jzNNlN7zAyGmgjaw8Q\\=\\= {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .Lw45THmrT2zHOVkiCGsX\\+A\\=\\= {\n        padding: 0;\n    }\n\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    ._4rQ-jzNNlN7zAyGmgjaw8Q\\=\\=::before,\n    ._4rQ-jzNNlN7zAyGmgjaw8Q\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .Fs55uFx3vwCPR1NE86aJNg\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"reviews-wrapper": "oz+FnhGdJfW7Ny6qNked+w==",
-	"talks": "dDHQhheALif70pDjVwY5BA==",
-	"reviewsList": "rZS-UUVfd201EoeJuJ94lA==",
-	"review": "fr8gWQQfnAFPKvZavTaQTA==",
-	"user": "s0aUCSplk6TFzqzY6ZQ5AA==",
-	"userImg": "I9E2MxVdPB31RkWgd8SqdQ==",
-	"user__img": "+vQ6h9betjATXgQ35edmeA==",
-	"userName": "f5gbCttCwTN9MWElXN0i+A==",
-	"coment": "tgXn-YDsGKCVGfQx2qltNQ==",
-	"comentText": "Ip6l9ha+dGWA6rDEPX4p7Q==",
-	"card-text": "OvNRyW5W-hyugzLrG3fTuQ==",
-	"review__button": "cXFSMC0i9fs5pXJZMiFLUA==",
-	"reviews-list": "DlWZs14PfJlIDIhnPA-ZlQ==",
-	"reviews-block": "vlBasUT1a+sVKnuMawy4dA=="
+	"review__button": "EgUp7aEgStLa62w0uuXe8w==",
+	"review": "Fs55uFx3vwCPR1NE86aJNg==",
+	"comentText": "YE-bi6FSZRszNaVDDDm+aQ==",
+	"reviews-list": "mC6uoYvqph5mkg1+uHuCDg==",
+	"talks": "_4rQ-jzNNlN7zAyGmgjaw8Q==",
+	"reviews-wrapper": "Lw45THmrT2zHOVkiCGsX+A=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -90562,10 +90584,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/talksContainer/talks.module.css":
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/talksContainer/talks.module.css ***!
-  \********************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css ***!
+  \**************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -90573,9 +90595,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talks_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./talks.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talks_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./talks.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css");
 
             
 
@@ -90589,6 +90611,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talksContainer_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./talksContainer.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talksContainer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_talksContainer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -91123,11 +91175,12 @@ var map = {
 	"./pages/mainPage/projectsContainer/projects/projects.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx",
 	"./pages/mainPage/projectsContainer/projectsContainer": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
 	"./pages/mainPage/projectsContainer/projectsContainer.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
-	"./pages/mainPage/talksContainer/talks.module.css": "./resources/js/components/pages/mainPage/talksContainer/talks.module.css",
 	"./pages/mainPage/talksContainer/talks/talks": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
 	"./pages/mainPage/talksContainer/talks/talks.jsx": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
+	"./pages/mainPage/talksContainer/talks/talks.module.css": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css",
 	"./pages/mainPage/talksContainer/talksContainer": "./resources/js/components/pages/mainPage/talksContainer/talksContainer.jsx",
 	"./pages/mainPage/talksContainer/talksContainer.jsx": "./resources/js/components/pages/mainPage/talksContainer/talksContainer.jsx",
+	"./pages/mainPage/talksContainer/talksContainer.module.css": "./resources/js/components/pages/mainPage/talksContainer/talksContainer.module.css",
 	"./pages/orderDetailsPage/orderDetails": "./resources/js/components/pages/orderDetailsPage/orderDetails.jsx",
 	"./pages/orderDetailsPage/orderDetails.jsx": "./resources/js/components/pages/orderDetailsPage/orderDetails.jsx",
 	"./pages/orderDetailsPage/orderDetails.module.css": "./resources/js/components/pages/orderDetailsPage/orderDetails.module.css",

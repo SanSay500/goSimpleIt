@@ -1,5 +1,6 @@
 import Talks from "./talks/talks";
 import { useState } from "react";
+import style from "./talksContainer.module.css";
 
 const TalksContainer = ({ reviewsList }) => {
     let count_review = 0;
@@ -17,27 +18,23 @@ const TalksContainer = ({ reviewsList }) => {
     const [step, setStep] = useState(count_review);
 
     return (
-        <section className="reviews-block">
-            <div className="container">
-                <div className="reviews-wrapper">
-                    <Talks reviews={reviewsList.slice(0, step)} />
+        <section className="">
+            <Talks reviews={reviewsList.slice(0, step)} />
 
-                    <div className="btn-container">
-                        {reviewsList.length > step ? (
-                            <div className="review__more">
-                                <button
-                                    className="review__button"
-                                    type="button"
-                                    onClick={() => setStep(step + count_review)}
-                                >
-                                    Show more
-                                </button>
-                            </div>
-                        ) : (
-                            ""
-                        )}
+            <div className="btn-container">
+                {reviewsList.length > step ? (
+                    <div className="review__more">
+                        <button
+                            className="review__button"
+                            type="button"
+                            onClick={() => setStep(step + count_review)}
+                        >
+                            Show more
+                        </button>
                     </div>
-                </div>
+                ) : (
+                    ""
+                )}
             </div>
         </section>
     );
