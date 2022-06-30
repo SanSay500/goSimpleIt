@@ -1,0 +1,18 @@
+.proposalCard{
+    background: #FFFFFF;
+    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+}
+.proposalText{
+    font-style: normal;
+font-weight: 500;
+font-size: 28px;
+line-height: 32px;
+text-align: center;
+color: #2BB739;
+padding: 9px 22px 23px 22px;
+}
+.proposalItem{
+    border: 1px dashed #000000;
+    padding-bottom: 15px;
+}

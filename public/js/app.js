@@ -32185,9 +32185,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/footer/footer */ "./resources/js/components/shared/footer/footer.jsx");
 /* harmony import */ var _proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./proposalsList/proposalsList */ "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.jsx");
 /* harmony import */ var _components_shared_headers_headerLogout_headerLogout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/headers/headerLogout/headerLogout */ "./resources/js/components/shared/headers/headerLogout/headerLogout.jsx");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
 /* harmony import */ var _components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/components/shared/activeTasks/activeTasks */ "./resources/js/components/shared/activeTasks/activeTasks.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./dashboardFreelancer.module.css */ "./resources/js/components/pages/dashboardFreelancerPage/dashboardFreelancer.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -32204,19 +32204,19 @@ function DashboardFreelancer(props) {
       proposals = _usePage$props.proposals,
       tasksWithOrders = _usePage$props.tasksWithOrders,
       ordersActive = _usePage$props.ordersActive;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_headers_headerLogout_headerLogout__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_headers_headerLogout_headerLogout__WEBPACK_IMPORTED_MODULE_5__["default"], {
       title: "Dashboard"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_6__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
-        align: "center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-          className: "bg-clip-content p-1 bg-green-400 p-2 rounded-full border-4 border-violet-100 border-dashed",
-          href: route("main.page"),
-          children: "Main"
-        })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+      className: "container",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
+        className: "".concat(_dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].freelancerOrder),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_6__["default"], {
+          count: 4,
+          classes: _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].activeTasks
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_4__["default"], {})]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
   });
 }
 
@@ -32235,9 +32235,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Card */ "./node_modules/@mui/material/Card/Card.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./proposalsList.module.css */ "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -32246,27 +32246,25 @@ __webpack_require__.r(__webpack_exports__);
 
 function ProposalsList(props) {
   var proposals = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposals;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_mui_material_Card__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      variant: "outlined",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-        className: "font-bold text-4xl text-center text-green-500",
-        children: "Sent Proposals"
-      }), proposals ? proposals.map(function (proposal) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "border-b-2",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
-              children: "Proposal ID:"
-            }), " ", proposal.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
-              children: "Proposal status:"
-            }), " ", proposal.status, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
-              children: "Order ID:"
-            }), " ", proposal.order_id]
-          })
-        }, proposal.id);
-      }) : "You sent no proposals yet"]
-    })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+    className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalCard),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+      className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalText),
+      children: "Sent Proposals"
+    }), proposals ? proposals.map(function (proposal) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItem),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+            children: "Proposal ID:"
+          }), " ", proposal.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+            children: "Proposal status:"
+          }), " ", proposal.status, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+            children: "Order ID:"
+          }), " ", proposal.order_id]
+        })
+      }, proposal.id);
+    }) : "You sent no proposals yet"]
   });
 }
 
@@ -34293,12 +34291,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var ActiveTasks = function ActiveTasks(props) {
+var ActiveTasks = function ActiveTasks(_ref) {
+  var count = _ref.count,
+      classes = _ref.classes;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(props.count),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count),
       _useState2 = _slicedToArray(_useState, 2),
       showOrdersQty = _useState2[0],
       setShowOrdersQty = _useState2[1];
@@ -34310,13 +34310,13 @@ var ActiveTasks = function ActiveTasks(props) {
 
   function loadOrders(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + props.count);
+    setShowOrdersQty(showOrdersQty + count);
   }
 
   var showOrdersNum = ordersActive.slice(0, showOrdersQty);
 
-  var changeSearch = function changeSearch(_ref) {
-    var value = _ref.target.value;
+  var changeSearch = function changeSearch(_ref2) {
+    var value = _ref2.target.value;
 
     if (value) {
       var job_found = tasksWithOrders.find(function (e) {
@@ -34343,7 +34343,7 @@ var ActiveTasks = function ActiveTasks(props) {
       className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
       children: "Active Tasks"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer),
+      className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer, " ").concat(classes),
       children: ordersToShow.slice(0, showOrdersQty).map(function (order) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           props: order
@@ -35375,9 +35375,41 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\={\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n}\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}", ""]);
 // Exports
-___CSS_LOADER_EXPORT___.locals = {};
+___CSS_LOADER_EXPORT___.locals = {
+	"freelancerOrder": "T6JrxL1p9LKxheP7bBN+mQ==",
+	"activeTasks": "QNrtobgoy0ipqYIXgeBzxQ=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css":
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".t0Nm6lRENATi0SaZmVPoPQ\\=\\={\n    background: #FFFFFF;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n.VU3CLQsx2CrdsG4SzNe4tQ\\=\\={\n    font-style: normal;\nfont-weight: 500;\nfont-size: 28px;\nline-height: 32px;\ntext-align: center;\ncolor: #2BB739;\npadding: 9px 22px 23px 22px;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    border: 1px dashed #000000;\n    padding-bottom: 15px;\n}", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"proposalCard": "t0Nm6lRENATi0SaZmVPoPQ==",
+	"proposalText": "VU3CLQsx2CrdsG4SzNe4tQ==",
+	"proposalItem": "_34pDPjASIQGn2TWYYSaHfw=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -90305,6 +90337,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css ***!
+  \******************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./proposalsList.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/loginPage/forgotPasswordPage/forgotPassword.module.css":
 /*!**********************************************************************************************!*\
   !*** ./resources/js/components/pages/loginPage/forgotPasswordPage/forgotPassword.module.css ***!
@@ -91180,6 +91242,7 @@ var map = {
 	"./pages/dashboardFreelancerPage/dashboardFreelancer.module.css": "./resources/js/components/pages/dashboardFreelancerPage/dashboardFreelancer.module.css",
 	"./pages/dashboardFreelancerPage/proposalsList/proposalsList": "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.jsx",
 	"./pages/dashboardFreelancerPage/proposalsList/proposalsList.jsx": "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.jsx",
+	"./pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css": "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css",
 	"./pages/loginPage/checkbox/checkbox": "./resources/js/components/pages/loginPage/checkbox/checkbox.jsx",
 	"./pages/loginPage/checkbox/checkbox.jsx": "./resources/js/components/pages/loginPage/checkbox/checkbox.jsx",
 	"./pages/loginPage/confirmPasswordPage/confirmPassword": "./resources/js/components/pages/loginPage/confirmPasswordPage/confirmPassword.jsx",

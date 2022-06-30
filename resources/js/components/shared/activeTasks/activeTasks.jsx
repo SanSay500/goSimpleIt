@@ -3,14 +3,14 @@ import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 
-const ActiveTasks = (props) => {
+const ActiveTasks = ({count, classes}) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
-    const [showOrdersQty, setShowOrdersQty] = useState(props.count);
+    const [showOrdersQty, setShowOrdersQty] = useState(count);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
-
+    
     function loadOrders(e) {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + props.count);
+        setShowOrdersQty(showOrdersQty + count);
     }
 
     var showOrdersNum = ordersActive.slice(0, showOrdersQty);
@@ -34,7 +34,7 @@ const ActiveTasks = (props) => {
     return (
         <section className={style.container}>
             <h2 className={`${style.title}`}>Active Tasks</h2>
-            <div className={`${style.cardsContainer}`}>
+            <div className={`${style.cardsContainer} ${classes}`}>
                 {ordersToShow.slice(0, showOrdersQty).map((order) => {
                     return <BasicCard key={order.id} props={order} />;
                 })}

@@ -1,0 +1,8 @@
+.freelancerOrder{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 100px;
+}
+.activeTasks {
+    grid-template-columns: 1fr 1fr;
+}
