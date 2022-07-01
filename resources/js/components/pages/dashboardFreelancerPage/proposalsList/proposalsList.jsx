@@ -1,7 +1,6 @@
 import React from "react";
 import { usePage } from "@inertiajs/inertia-react";
-import Container from "@mui/material/Container";
-import Card from "@mui/material/Card";
+
 import style from './proposalsList.module.css'
 
 export default function ProposalsList(props) {
@@ -17,11 +16,9 @@ export default function ProposalsList(props) {
                     ? proposals.map((proposal) => {
                           return (
                               <div key={proposal.id} className={`${style.proposalItem}`}>
-                                  <div>
-                                      <b>Proposal ID:</b> {proposal.id}
-                                      <b>Proposal status:</b> {proposal.status}
-                                      <b>Order ID:</b> {proposal.order_id}
-                                  </div>
+                                <div className={`${style.proposalItemText}`}>Proposal ID: {proposal.id}</div>
+                                <div className={`${style.proposalItemText}`}>Proposal status: {proposal.status}</div>
+                                <div className={`${style.proposalItemText}`}>Order ID: {proposal.order_id}</div>
                               </div>
                           );
                       })

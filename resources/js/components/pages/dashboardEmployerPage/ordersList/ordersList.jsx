@@ -8,7 +8,7 @@ export default function OrdersList(props) {
     return (
         <>
             {orders.map((order) => {
-                return <Order {...order} />;
+                return <Order {...order}  key={order.id} />;
             })}
         </>
     );

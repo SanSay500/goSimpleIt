@@ -16,11 +16,7 @@ class OrderTest extends DuskTestCase
         $user=DB::table('users')->where('role', 'Employer')->first();
 
         $this->browse(function ($browser) use ($user) {
-            $browser->visit('/login')
-                ->type('email', $user->email)
-                ->type('password', 'password')
-                ->press('.inline-flex');
-
+            $browser->loginAs($user->id);
             $browser->visit('/')
                 ->type('#search-job\ auto', 'Make site on wordpress')
                 ->type('title', 'ExampleTitle')
@@ -29,7 +25,8 @@ class OrderTest extends DuskTestCase
                 ->type('time', '99')
                 ->attach('file', base_path('public/robots.txt'))
                 ->press('._4CBWQLEnlQGt9RHO9hgHMw\=\=')
-                ->screenshot('testorder');
+                ->pause(300)
+                ->assertPathIs('/dashboard/emp');
         });
     }
 }

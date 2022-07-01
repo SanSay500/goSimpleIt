@@ -71,7 +71,7 @@ export default function Register() {
                         <Input
                             type="radio"
                             name="role"
-                            value="em"
+                            value="Employer"
                             className={`${style.registerRadio} `}
                             handleChange={onHandleChange}
                             required

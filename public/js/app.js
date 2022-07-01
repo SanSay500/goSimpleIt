@@ -10182,295 +10182,6 @@ if (true) {
 
 /***/ }),
 
-/***/ "./node_modules/@mui/material/Card/Card.js":
-/*!*************************************************!*\
-  !*** ./node_modules/@mui/material/Card/Card.js ***!
-  \*************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _mui_utils__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @mui/utils */ "./node_modules/@mui/utils/esm/chainPropTypes.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/composeClasses/composeClasses.js");
-/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../Paper */ "./node_modules/@mui/material/Paper/Paper.js");
-/* harmony import */ var _cardClasses__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cardClasses */ "./node_modules/@mui/material/Card/cardClasses.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["className", "raised"];
-
-
-
-
-
-
-
-
-
-
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes
-  } = ownerState;
-  const slots = {
-    root: ['root']
-  };
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_5__["default"])(slots, _cardClasses__WEBPACK_IMPORTED_MODULE_6__.getCardUtilityClass, classes);
-};
-
-const CardRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_7__["default"])(_Paper__WEBPACK_IMPORTED_MODULE_8__["default"], {
-  name: 'MuiCard',
-  slot: 'Root',
-  overridesResolver: (props, styles) => styles.root
-})(() => {
-  return {
-    overflow: 'hidden'
-  };
-});
-const Card = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function Card(inProps, ref) {
-  const props = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_9__["default"])({
-    props: inProps,
-    name: 'MuiCard'
-  });
-
-  const {
-    className,
-    raised = false
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, _excluded);
-
-  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    raised
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CardRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
-    elevation: raised ? 8 : undefined,
-    ref: ref,
-    ownerState: ownerState
-  }, other));
-});
- true ? Card.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * The content of the component.
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().node),
-
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object),
-
-  /**
-   * @ignore
-   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_10___default().string),
-
-  /**
-   * If `true`, the card will use raised styling.
-   * @default false
-   */
-  raised: (0,_mui_utils__WEBPACK_IMPORTED_MODULE_11__["default"])((prop_types__WEBPACK_IMPORTED_MODULE_10___default().bool), props => {
-    if (props.raised && props.variant === 'outlined') {
-      return new Error('MUI: Combining `raised={true}` with `variant="outlined"` has no effect.');
-    }
-
-    return null;
-  }),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_10___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_10___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_10___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_10___default().object)])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Card);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/Card/cardClasses.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@mui/material/Card/cardClasses.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getCardUtilityClass": () => (/* binding */ getCardUtilityClass)
-/* harmony export */ });
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClass/generateUtilityClass.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClasses/generateUtilityClasses.js");
-
-function getCardUtilityClass(slot) {
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiCard', slot);
-}
-const cardClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiCard', ['root']);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardClasses);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/CardContent/CardContent.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@mui/material/CardContent/CardContent.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/composeClasses/composeClasses.js");
-/* harmony import */ var _styles_styled__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/styled */ "./node_modules/@mui/material/styles/styled.js");
-/* harmony import */ var _styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/useThemeProps */ "./node_modules/@mui/material/styles/useThemeProps.js");
-/* harmony import */ var _cardContentClasses__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cardContentClasses */ "./node_modules/@mui/material/CardContent/cardContentClasses.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-const _excluded = ["className", "component"];
-
-
-
-
-
-
-
-
-
-const useUtilityClasses = ownerState => {
-  const {
-    classes
-  } = ownerState;
-  const slots = {
-    root: ['root']
-  };
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_5__["default"])(slots, _cardContentClasses__WEBPACK_IMPORTED_MODULE_6__.getCardContentUtilityClass, classes);
-};
-
-const CardContentRoot = (0,_styles_styled__WEBPACK_IMPORTED_MODULE_7__["default"])('div', {
-  name: 'MuiCardContent',
-  slot: 'Root',
-  overridesResolver: (props, styles) => styles.root
-})(() => {
-  return {
-    padding: 16,
-    '&:last-child': {
-      paddingBottom: 24
-    }
-  };
-});
-const CardContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function CardContent(inProps, ref) {
-  const props = (0,_styles_useThemeProps__WEBPACK_IMPORTED_MODULE_8__["default"])({
-    props: inProps,
-    name: 'MuiCardContent'
-  });
-
-  const {
-    className,
-    component = 'div'
-  } = props,
-        other = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_1__["default"])(props, _excluded);
-
-  const ownerState = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, props, {
-    component
-  });
-
-  const classes = useUtilityClasses(ownerState);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CardContentRoot, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
-    as: component,
-    className: (0,clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.root, className),
-    ownerState: ownerState,
-    ref: ref
-  }, other));
-});
- true ? CardContent.propTypes
-/* remove-proptypes */
-= {
-  // ----------------------------- Warning --------------------------------
-  // | These PropTypes are generated from the TypeScript type definitions |
-  // |     To update them edit the d.ts file and run "yarn proptypes"     |
-  // ----------------------------------------------------------------------
-
-  /**
-   * The content of the component.
-   */
-  children: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().node),
-
-  /**
-   * Override or extend the styles applied to the component.
-   */
-  classes: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object),
-
-  /**
-   * @ignore
-   */
-  className: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().string),
-
-  /**
-   * The component used for the root node.
-   * Either a string to use a HTML element or a component.
-   */
-  component: (prop_types__WEBPACK_IMPORTED_MODULE_9___default().elementType),
-
-  /**
-   * The system prop that allows defining system overrides as well as additional CSS styles.
-   */
-  sx: prop_types__WEBPACK_IMPORTED_MODULE_9___default().oneOfType([prop_types__WEBPACK_IMPORTED_MODULE_9___default().arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_9___default().oneOfType([(prop_types__WEBPACK_IMPORTED_MODULE_9___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().bool)])), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().func), (prop_types__WEBPACK_IMPORTED_MODULE_9___default().object)])
-} : 0;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CardContent);
-
-/***/ }),
-
-/***/ "./node_modules/@mui/material/CardContent/cardContentClasses.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/@mui/material/CardContent/cardContentClasses.js ***!
-  \**********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "getCardContentUtilityClass": () => (/* binding */ getCardContentUtilityClass)
-/* harmony export */ });
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClass/generateUtilityClass.js");
-/* harmony import */ var _mui_base__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @mui/base */ "./node_modules/@mui/base/generateUtilityClasses/generateUtilityClasses.js");
-
-function getCardContentUtilityClass(slot) {
-  return (0,_mui_base__WEBPACK_IMPORTED_MODULE_0__["default"])('MuiCardContent', slot);
-}
-const cardContentClasses = (0,_mui_base__WEBPACK_IMPORTED_MODULE_1__["default"])('MuiCardContent', ['root']);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cardContentClasses);
-
-/***/ }),
-
 /***/ "./node_modules/@mui/material/Chip/Chip.js":
 /*!*************************************************!*\
   !*** ./node_modules/@mui/material/Chip/Chip.js ***!
@@ -31919,17 +31630,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Card */ "./node_modules/@mui/material/Card/Card.js");
-/* harmony import */ var _mui_material_CardContent__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/CardContent */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var _mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/Typography */ "./node_modules/@mui/material/Typography/Typography.js");
 /* harmony import */ var _orderProposal_orderProposal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./orderProposal/orderProposal */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+/* harmony import */ var _order_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./order.module.css */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css");
+/* harmony import */ var _components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/activeTasks/basicCard/basicCard */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -31942,45 +31646,45 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 function Order(order, props) {
   var proposalsForOrder = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposalsForOrder;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_mui_material_Card__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      variant: "outlined",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_CardContent__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          sx: {
-            fontSize: 22
-          },
-          color: "text.primary",
-          children: ["Order # ", order.id]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          sx: {
-            fontSize: 18
-          },
-          color: "text.primary",
-          children: ["Title: ", order.title]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          sx: {
-            fontSize: 14
-          },
-          color: "text.secondary",
-          gutterBottom: true,
-          children: ["Decription: ", order.description]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          sx: {
-            mb: 1.5
-          },
-          color: "text.secondary",
-          children: ["Money: ", order.money, " $"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          variant: "body2",
-          children: ["Term: ", order.hours, " days"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_mui_material_Typography__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          variant: "body2",
-          children: ["Status: ", order.status]
-        }), order.status != "Done" && order.status != "Cancelled" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_orderProposal_orderProposal__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, order))]
-      })
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardContainer),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      props: order,
+      classes: _order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn
     }, order.id)
-  });
+  })
+  /* { <Container>
+      <Card variant="outlined" key={order.id}>
+          <CardContent>
+              <Typography sx={{ fontSize: 22 }} color="text.primary">
+                  Order # {order.id}
+              </Typography>
+               <Typography sx={{ fontSize: 18 }} color="text.primary">
+                  Title: {order.title}
+              </Typography>
+               <Typography
+                  sx={{ fontSize: 14 }}
+                  color="text.secondary"
+                  gutterBottom
+              >
+                  Decription: {order.description}
+              </Typography>
+               <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  Money: {order.money} $
+              </Typography>
+               <Typography variant="body2">
+                  Term: {order.hours} days
+              </Typography>
+               <Typography variant="body2">
+                  Status: {order.status}
+              </Typography>
+               {order.status != "Done" && order.status != "Cancelled" && (
+                  <OrderProposal {...order} />
+              )}
+          </CardContent>
+      </Card>
+  </Container> }  */
+  ;
 }
 
 /***/ }),
@@ -32055,13 +31759,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 function OrdersList(props) {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       orders = _usePage$props.orders,
       proposalsForOrder = _usePage$props.proposalsForOrder;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: orders.map(function (order) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_order_order__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, order));
+      return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_order_order__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread(_objectSpread({}, order), {}, {
+        key: order.id
+      }));
     })
   });
 }
@@ -32242,8 +31949,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 function ProposalsList(props) {
   var proposals = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposals;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
@@ -32252,17 +31957,18 @@ function ProposalsList(props) {
       className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalText),
       children: "Sent Proposals"
     }), proposals ? proposals.map(function (proposal) {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItem),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-            children: "Proposal ID:"
-          }), " ", proposal.id, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-            children: "Proposal status:"
-          }), " ", proposal.status, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-            children: "Order ID:"
-          }), " ", proposal.order_id]
-        })
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
+          children: ["Proposal ID: ", proposal.id]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
+          children: ["Proposal status: ", proposal.status]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
+          children: ["Order ID: ", proposal.order_id]
+        })]
       }, proposal.id);
     }) : "You sent no proposals yet"]
   });
@@ -32707,7 +32413,7 @@ function Register() {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_3__["default"], {
             type: "radio",
             name: "role",
-            value: "em",
+            value: "Employer",
             className: "".concat(_register_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].registerRadio, " "),
             handleChange: onHandleChange,
             required: true,
@@ -34038,10 +33744,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shared_headers_headerLogin_headerLogin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/headers/headerLogin/headerLogin */ "./resources/js/components/shared/headers/headerLogin/headerLogin.jsx");
 /* harmony import */ var _components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/footer/footer */ "./resources/js/components/shared/footer/footer.jsx");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _mui_material_Container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @mui/material/Container */ "./node_modules/@mui/material/Container/Container.js");
-/* harmony import */ var _mui_material_Card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @mui/material/Card */ "./node_modules/@mui/material/Card/Card.js");
-/* harmony import */ var _mui_material_CardContent__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @mui/material/CardContent */ "./node_modules/@mui/material/CardContent/CardContent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/activeTasks/basicCard/basicCard */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx");
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
+/* harmony import */ var _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./orderDetails.module.css */ "./resources/js/components/pages/orderDetailsPage/orderDetails.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -34092,55 +33798,64 @@ var OrderDetails = function OrderDetails(props) {
     post(route("order.proposal.store", data));
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_headers_headerLogin_headerLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_headers_headerLogin_headerLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {
       role: props.auth.user && props.auth.user.role
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_Container__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      maxWidth: "sm",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_mui_material_Card__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        variant: "outlined",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_mui_material_CardContent__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
-            children: "Order date:"
-          }), " ", order.created_at.split("T")[0], " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
-            children: "Order title:"
-          }), " ", order.title, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
-            children: "Order description:"
-          }), " ", order.description, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
-            children: "Order cost:"
-          }), " ", order.money, "$", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("b", {
-            children: "Order term:"
-          }), " ", order.hours, " days", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), props.auth.user && props.auth.user.role === "Freelancer" && !hideButton && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-            onClick: function onClick(e) {
-              setShowProposalForm(true);
-              setHideButton(true);
-            },
-            className: "content-center p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full",
-            children: "Make Proposal"
-          }), showProposalForm && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-            name: "createForm",
-            onSubmit: handleSubmit,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-              children: [" ", "Describe your proposal for this job"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
-              required: true,
-              name: "description",
-              onChange: function onChange(e) {
-                return setData("description", e.target.value);
-              }
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              type: "submit",
-              className: "p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full",
-              children: "Send proposal"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
-            className: "p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full",
-            href: route("main.page"),
-            children: "Back"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+      className: "container",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+        className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].orderWrapper),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].orderContainer),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+            className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].proposalContainer),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+              className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].buttonBack),
+              href: route("main.page"),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
+                src: "/images/arrowLeft.svg",
+                alt: "",
+                className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].buttonBackImg)
+              }), "Back"]
+            }), props.auth.user && props.auth.user.role === "Freelancer" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
+              name: "createForm",
+              onSubmit: handleSubmit,
+              className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].formProposal, " "),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("textarea", {
+                required: true,
+                name: "description",
+                rows: "4",
+                className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].loginInput, " "),
+                placeholder: "Describe your proposal for this job",
+                onChange: function onChange(e) {
+                  return setData("description", e.target.value);
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_5__["default"], {
+                children: "Send proposal"
+              })]
+            })
+            /*                             !hideButton && (
+                                            <button
+                                                onClick={(e) => {
+                                                    setShowProposalForm(true);
+                                                    setHideButton(true);
+                                                }}
+                                                className="content-center p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
+                                            >
+                                                Make Proposal
+                                            </button>
+                                        ) */
+            ]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
+            className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].cardContainer),
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
+              props: order,
+              classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].btn
+            }, order.id)
           })]
         })
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
   });
 };
 
@@ -34355,7 +34070,7 @@ function BasicCard(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: route("order.details", [props.props["id"]]),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        classes: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn
+        classes: props.classes
       })
     })]
   });
@@ -35309,6 +35024,34 @@ ___CSS_LOADER_EXPORT___.locals = {};
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css":
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".rQZsSgSRWOk8j3OTw\\+8I7w\\=\\={\n    display: none;\n}\n.fRzrzUkCJjwJU135c-\\+6Xg\\=\\={\n    \n}", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"btn": "rQZsSgSRWOk8j3OTw+8I7w==",
+	"cardContainer": "fRzrzUkCJjwJU135c-+6Xg=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css":
 /*!**********************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css ***!
@@ -35351,7 +35094,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\={\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n}\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\={\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n    align-items: start;\n}\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"freelancerOrder": "T6JrxL1p9LKxheP7bBN+mQ==",
@@ -35379,12 +35122,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".t0Nm6lRENATi0SaZmVPoPQ\\=\\={\n    background: #FFFFFF;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n.VU3CLQsx2CrdsG4SzNe4tQ\\=\\={\n    font-style: normal;\nfont-weight: 500;\nfont-size: 28px;\nline-height: 32px;\ntext-align: center;\ncolor: #2BB739;\npadding: 9px 22px 23px 22px;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    border: 1px dashed #000000;\n    padding-bottom: 15px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".t0Nm6lRENATi0SaZmVPoPQ\\=\\={\n    background: #FFFFFF;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n    padding: 9px 22px 23px 22px;\n}\n.VU3CLQsx2CrdsG4SzNe4tQ\\=\\={\n    font-style: normal;\nfont-weight: 500;\nfont-size: 28px;\nline-height: 32px;\ncolor: #2BB739;\nmargin-bottom: 27px;\n\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    display: flex;\n    flex-direction: column;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\=+._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    border-top: 1px dashed #000000;\n    padding-top: 15px;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\={\n    font-weight: 400;\nfont-size: 16px;\nline-height: 18px;\ncolor: #000000;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\=+.BXKtqW-G253XoKjcUEHcQg\\=\\={\n    margin-top: 6px;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"proposalCard": "t0Nm6lRENATi0SaZmVPoPQ==",
 	"proposalText": "VU3CLQsx2CrdsG4SzNe4tQ==",
-	"proposalItem": "_34pDPjASIQGn2TWYYSaHfw=="
+	"proposalItem": "_34pDPjASIQGn2TWYYSaHfw==",
+	"proposalItemText": "BXKtqW-G253XoKjcUEHcQg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35856,9 +35600,19 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".IbavP19HBitjacPFY64JTQ\\=\\={\ndisplay: flex;\nalign-items: flex-start;\njustify-content: space-between;\nwidth: 100%;\n}\n.P3s0vHHDwOeeiRiwlenf1g\\=\\={\n    width: 45%;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n.RAP2eYzu40shh7V4OfHMJg\\=\\={\n    width: 40%;\n    max-width: 362px;\n}\n.JnlnL0Yc1gJ7Dxoq\\+OVbTA\\=\\={\n    display: none;\n}\n._2qhrswuRWde3COob-C17gg\\=\\={\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n    margin-bottom: 25px;\n    margin-top: 40px;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n._9unCwxpOaKxgtyGU736tSg\\=\\={\n    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    /* identical to box height */\n\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #FFFFFF;\n    padding: 6px 16px;\n}\n.qSt9UVocoboLS-yLXjO8Yw\\=\\={\n    min-height: 78vh;\n    display: flex;\n    align-items: center;\n}\n.\\+LN2GXMxSjFayZqRuslyTg\\=\\={\n    width: 12px;\n    height: 12px;\n    margin-right: 8px;\n}", ""]);
 // Exports
-___CSS_LOADER_EXPORT___.locals = {};
+___CSS_LOADER_EXPORT___.locals = {
+	"orderContainer": "IbavP19HBitjacPFY64JTQ==",
+	"proposalContainer": "P3s0vHHDwOeeiRiwlenf1g==",
+	"cardContainer": "RAP2eYzu40shh7V4OfHMJg==",
+	"btn": "JnlnL0Yc1gJ7Dxoq+OVbTA==",
+	"formProposal": "_2qhrswuRWde3COob-C17gg==",
+	"loginInput": "Nj16wr0xLebwLK++7q7+NQ==",
+	"buttonBack": "_9unCwxpOaKxgtyGU736tSg==",
+	"orderWrapper": "qSt9UVocoboLS-yLXjO8Yw==",
+	"buttonBackImg": "+LN2GXMxSjFayZqRuslyTg=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -90344,6 +90098,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
+/***/ "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css ***!
+  \***********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_order_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./order.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_order_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_order_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
 /***/ "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css":
 /*!************************************************************************************************************!*\
   !*** ./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css ***!
@@ -91387,6 +91171,7 @@ var map = {
 	"./pages/dashboardEmployerPage/dashboardEmployer.module.css": "./resources/js/components/pages/dashboardEmployerPage/dashboardEmployer.module.css",
 	"./pages/dashboardEmployerPage/ordersList/order/order": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.jsx",
 	"./pages/dashboardEmployerPage/ordersList/order/order.jsx": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.jsx",
+	"./pages/dashboardEmployerPage/ordersList/order/order.module.css": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.module.css",
 	"./pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx",
 	"./pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx",
 	"./pages/dashboardEmployerPage/ordersList/ordersList": "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.jsx",
