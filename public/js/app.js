@@ -32767,21 +32767,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AboutUs = function AboutUs() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: _aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].about,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-        className: "".concat(_aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].aboutTitle, " title"),
-        children: "About us"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: _aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].aboutWrapper,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-          className: _aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].aboutText,
-          children: ["Here you can find the best freelance specialists among 1 million performers registered on the site. Programmers, designers, artists, copywriters, lawyers, accountants, engineers, photographers - thousands of remote employees in any freelance specialization.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "It is enough for you to publish an order, a competition or a vacancy - and interested freelancers will offer their services themselves, help you form a task, determine the budget and deadlines for completing the work. It remains only to choose the best performer from among the freelance specialists who responded and start cooperation with him. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "If there is no time for orders at all, you can quickly find remote specialists in the catalog by evaluating their portfolio with the submitted works - and offer an order in 2 clicks. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "For the security of freelance cooperation! Use our \"Secure Transaction\" service with the reservation of the amount on the website for cooperation with freelancers - and we guarantee you a refund if the work is done poorly."]
-        })
-      })]
-    })
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+      className: "".concat(_aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].aboutTitle, " title"),
+      children: "About us"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+      className: _aboutUs_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].aboutText,
+      children: ["Here you can find the best freelance specialists among 1 million performers registered on the site. Programmers, designers, artists, copywriters, lawyers, accountants, engineers, photographers - thousands of remote employees in any freelance specialization.", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "It is enough for you to publish an order, a competition or a vacancy - and interested freelancers will offer their services themselves, help you form a task, determine the budget and deadlines for completing the work. It remains only to choose the best performer from among the freelance specialists who responded and start cooperation with him. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "If there is no time for orders at all, you can quickly find remote specialists in the catalog by evaluating their portfolio with the submitted works - and offer an order in 2 clicks. ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("br", {}), "For the security of freelance cooperation! Use our \"Secure Transaction\" service with the reservation of the amount on the website for cooperation with freelancers - and we guarantee you a refund if the work is done poorly."]
+    })]
   });
 };
 
@@ -32993,10 +32987,10 @@ var Main = function Main(props) {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_talksContainer_talksContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("section", {
       ref: makeOrder,
       user: props.auth.user,
-      className: "about-form",
+      className: _main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].aboutOrder,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
   });
@@ -33233,190 +33227,177 @@ var MakeOrder = function MakeOrder(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     taskIdRef.current = taskId;
   });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("section", {
-    className: "form-block",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "form-wrapper",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
-          name: "createForm",
-          onSubmit: handleSubmit,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formSection,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "form-item form-search",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                className: "form-label",
-                children: "Make Order"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
-                freeSolo: true,
-                id: "search-job auto",
-                className: "search_input",
-                disableClearable: true,
-                options: tasks.map(function (option) {
-                  return option.name;
-                }),
-                renderInput: function renderInput(params) {
-                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, params), {}, {
-                    name: "task_type",
-                    onSelect: changeSearch,
-                    label: "Type the task",
-                    InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
-                      type: "search"
-                    })
-                  }));
-                }
-              }), moneyTotalSearch !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: "flex align-content-between",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-                  className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
-                    className: "icon icon-tabler icon-tabler-file-dollar",
-                    width: "24",
-                    height: "16",
-                    viewBox: "0 0 24 24",
-                    "stroke-width": "2",
-                    stroke: "currentColor",
-                    fill: "none",
-                    "stroke-linecap": "round",
-                    "stroke-linejoin": "round",
-                    children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      stroke: "none",
-                      d: "M0 0h24v24H0z",
-                      fill: "none"
-                    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      d: "M14 3v4a1 1 0 0 0 1 1h4"
-                    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      d: "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-                    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      d: "M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"
-                    }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      d: "M12 17v1m0 -8v1"
-                    }), " "]
-                  }), "Average cost of task:", " ", moneyTotalSearch, " $"]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-                  className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
-                    className: "mr-1 w-3 h-3",
-                    fill: "currentColor",
-                    viewBox: "0 0 20 20",
-                    xmlns: "http://www.w3.org/2000/svg",
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-                      "fill-rule": "evenodd",
-                      d: "M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z",
-                      "clip-rule": "evenodd"
-                    })
-                  }), "Average time task takes:", " ", hoursTotalSearch, " day(s)"]
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: "form-item form-title",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                type: "text",
-                className: "form-input",
-                label: "Title",
-                name: "title",
-                value: data.title,
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formWrapper,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      name: "createForm",
+      onSubmit: handleSubmit,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formLabel,
+        children: "Make Order"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        freeSolo: true,
+        id: "search-job auto",
+        className: "search_input",
+        disableClearable: true,
+        options: tasks.map(function (option) {
+          return option.name;
+        }),
+        renderInput: function renderInput(params) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, params), {}, {
+            name: "task_type",
+            onSelect: changeSearch,
+            label: "Type the task",
+            InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
+              type: "search"
+            })
+          }));
+        }
+      }), moneyTotalSearch !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "flex align-content-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+          className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            className: "icon icon-tabler icon-tabler-file-dollar",
+            width: "24",
+            height: "16",
+            viewBox: "0 0 24 24",
+            "stroke-width": "2",
+            stroke: "currentColor",
+            fill: "none",
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round",
+            children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              stroke: "none",
+              d: "M0 0h24v24H0z",
+              fill: "none"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M14 3v4a1 1 0 0 0 1 1h4"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              d: "M12 17v1m0 -8v1"
+            }), " "]
+          }), "Average cost of task:", " ", moneyTotalSearch, " $"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+          className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
+            className: "mr-1 w-3 h-3",
+            fill: "currentColor",
+            viewBox: "0 0 20 20",
+            xmlns: "http://www.w3.org/2000/svg",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
+              "fill-rule": "evenodd",
+              d: "M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z",
+              "clip-rule": "evenodd"
+            })
+          }), "Average time task takes:", " ", hoursTotalSearch, " day(s)"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+        type: "text",
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput,
+        label: "Title",
+        name: "title",
+        value: data.title,
+        onChange: function onChange(e) {
+          return setData("title", e.target.value);
+        },
+        placeholder: "Enter the title"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+          type: "text",
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput,
+          label: "description",
+          name: "description",
+          errors: errors.description,
+          value: data.description,
+          onChange: function onChange(e) {
+            return setData("description", e.target.value);
+          },
+          placeholder: "Enter description"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          className: "text-red-600",
+          children: errors.description
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInfo,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPrice,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formLabel,
+            children: "Price"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "text",
+            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInputSecond),
+            label: "cost",
+            name: "cost",
+            onChange: function onChange(e) {
+              return setData("cost", e.target.value);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            children: "$"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPeriod,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formLabel,
+            children: "Term"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "text",
+            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInputSecond),
+            label: "time",
+            name: "time",
+            onChange: function onChange(e) {
+              return setData("time", e.target.value);
+            }
+          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            children: "days"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formFile,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileInfo,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileUpload,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+                type: "file",
+                name: "file",
                 onChange: function onChange(e) {
-                  return setData("title", e.target.value);
-                },
-                placeholder: "Enter the title"
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: "form-item form-description",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-                type: "text",
-                className: "form-input",
-                label: "description",
-                name: "description",
-                errors: errors.description,
-                value: data.description,
-                onChange: function onChange(e) {
-                  return setData("description", e.target.value);
-                },
-                placeholder: "Enter description"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                className: "text-red-600",
-                children: errors.description
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-              className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInfo,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPrice,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  className: "form-label",
-                  children: "Price"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                  type: "text",
-                  className: "form-input form-input--second",
-                  label: "cost",
-                  name: "cost",
-                  onChange: function onChange(e) {
-                    return setData("cost", e.target.value);
+                  if (e.target.files[0]) {
+                    setSelectedFile(e.target.files[0].name);
+                  } else {
+                    setSelectedFile("");
                   }
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                  children: "$"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formPeriod,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
-                  className: "form-label",
-                  children: "Term"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                  type: "text",
-                  className: "form-input form-input--second",
-                  label: "time",
-                  name: "time",
-                  onChange: function onChange(e) {
-                    return setData("time", e.target.value);
-                  }
-                }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                  children: "days"
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-              className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formFile,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-                className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileInfo,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileUpload,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-                      type: "file",
-                      name: "file",
-                      onChange: function onChange(e) {
-                        if (e.target.files[0]) {
-                          setSelectedFile(e.target.files[0].name);
-                        } else {
-                          setSelectedFile("");
-                        }
 
-                        setData("file", e.target.files[0]);
-                      },
-                      id: "uploaded-file"
-                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-                      children: "+ Add file with job description"
-                    })]
-                  })
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-                  className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileName,
-                  children: selectedFile
-                })]
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
-              type: "submit",
-              className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btnSubmit,
-              children: "Publish and find a specialist"
-            })]
-          }), errors.file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-            children: errors.file
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            errors: errors
+                  setData("file", e.target.files[0]);
+                },
+                id: "uploaded-file"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                children: "+ Add file with job description"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].fileName,
+            children: selectedFile
           })]
         })
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btnContainer,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
+          type: "submit",
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btnSubmit,
+          children: "Publish and find a specialist"
+        })
+      }), errors.file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: errors.file
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        errors: errors
+      })]
     })
   });
 };
@@ -34958,17 +34939,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _public_images_form_lines_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../public/images/form-lines.svg */ "./public/images/form-lines.svg");
 // Imports
 
-
-
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_1___default()(_public_images_form_lines_svg__WEBPACK_IMPORTED_MODULE_2__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".form-section {\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25), \n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    margin-bottom: 60px;\n}\n\n.form-section::after {\n    position: relative;\n    width: 634px;\n    height: 82px;\n    left: 663px;\n    top: 2641px;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n}\n\n.form-block {\n    padding-bottom: 100px;\n    width: 55%;\n    z-index: 1;\n}\n\n.form-block::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: 0;\n    width: 32%;\n    height: 100%;\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n.form-block > div {\n    padding: 0;\n}\n\n.form-label {\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    text-align: center;\n    color: #2BB739;\n}\n\n.file-upload input[type=\"file\"] {\n    display: none;\n}\n\n.file-upload {\n\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(270.76deg, rgba(0, 0, 0, 0) 3.23%, rgba(255, 255, 255, 0.2) 97.53%), #2BB739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.file-name {\n    color: #2B2B2B;\n    font-weight: 300;\n    font-size: 34px;\n    line-height: 48px;\n}\n\n.form-file {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n.file-info {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n.file-upload label {\n\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n\n}\n\n/* стиль текста на кнопке*/\n\n.file-upload span {\n\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n\n}\n\n.form-input {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2BB739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n}\n\n.form-input::-moz-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.form-input:-ms-input-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.form-input::placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, \n[type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, \n[type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: none!important;\n    box-shadow: none;\n    border-color: #2BB739;\n}\n\n.form-input--second {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.search_input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root{\n    width: 100% !important;\n    margin-top: 30px !important;\n    /* background-color: #fff !important; */\n    border-radius: 8px !important;\n    /* border: 1px dashed #2BB739 !important; */\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    /* padding: 10px 37px !important; */\n    color: #2B2B2B !important;\n    /* box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25); */\n    border-radius: 8px;\n}\n\n.search_input .MuiOutlinedInput-input{\n    width: 100% !important;\n    /* margin-top: 30px !important; */\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search_input .MuiInputLabel-formControl{\n    top: -15% !important;\n    left: 0px !important;\n    padding-left: 0 !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search_input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search_input .MuiInputLabel-formControl.Mui-focused, .css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search_input .MuiOutlinedInput-input{\n    width: 100% !important;\n    /* margin-top: 30px !important; */\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n}\n\n.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n/* \"Type the task\" input padding */\n\n.css-16awh2u-MuiAutocomplete-root div {\n    padding: 0 !important;\n    border: none;\n}\n\n/* \"Type the task\" label position */\n\n.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {\n    top: -7px !important;\n}\n\n/* \"Type the task\" input height */\n\n.css-1j5luls-MuiInputBase-input-MuiOutlinedInput-input {\n    height: 1.1rem !important;\n}\n\n.form-price {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.form-period {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.form-item, .form-info, .form-priceFlabel {\n    margin-bottom: 20px;\n}\n\n.form-info {\n    display: flex;\n}\n\n.form-info label {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.form-info span {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.btn-submit {\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n.btn-submit:hover, .file-upload:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (min-width: 1810px) {\n    .form-block::after {\n        width: 24%;\n    }\n}\n\n@media screen and (min-width: 1610px) and (max-width: 1809px) {\n    .form-block::after {\n        width: 26%;\n    }\n}\n\n@media screen and (min-width: 1580px) and (max-width: 1609px) {\n    .form-block::after {\n        width: 28%;\n    }\n}\n\n@media screen and (min-width: 1480px) and (max-width: 1579px) {\n    .form-block::after {\n        width: 30%;\n    }\n}\n\n@media (max-width: 1200px) {\n    .form-info {\n        flex-direction: column;\n    }\n\n    .form-price, .form-period {\n        width: 100%;\n    }\n\n    .form-period {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    .file-info {\n        margin-top: 20px;\n    }\n\n}\n\n@media (max-width: 1024px) {\n    .form-price, .form-period {\n        width: 100%;\n    }\n\n    .form-price label {\n        text-align: left;\n    }\n\n    /* .form-price {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .form-block {\n        width: 100%;\n    }\n\n    .form-block::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .form-section {\n        box-shadow: none;\n    }\n\n    .MuiAutocomplete-root {\n        margin-top: 0 !important;\n    }\n}\n\n@media (max-width: 767px) {\n    .form-section {\n        width: 100%;\n    }\n\n    .form-block::after {\n        top: 60%;\n    }\n    \n    /* .form-price, .form-period {\n        flex-wrap: wrap;\n    } */\n\n    .form-price label, .form-period label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .form-input--second {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 660px) {\n    .form-section {\n        padding: 12px 30px 28px 30px;\n    }\n}\n\n@media (max-width: 576px) {\n    .form-section {\n        padding: 12px 0px 28px;\n    }\n\n    .form-block::after {\n        display: none;\n    }\n\n    .form-item {\n        margin-bottom: 30px;\n    }\n\n    .form-info {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .form-period {\n        margin: 0;\n    }\n\n    .btn-submit {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    .file-upload {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    .file-upload {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .form-input--second {\n        width: 69% !important;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* .form-section {\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25), \n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    margin-bottom: 60px;\n}\n\n.form-section::after {\n    position: relative;\n    width: 634px;\n    height: 82px;\n    left: 663px;\n    top: 2641px;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n/* .form-block {\n    padding-bottom: 100px;\n    width: 55%;\n    z-index: 1;\n}\n\n.form-block::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: 0;\n    width: 32%;\n    height: 100%;\n    background-image: url(../../public/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n.form-block > div {\n    padding: 0;\n} */\n\n.formLabel {\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    text-align: center;\n    color: #2BB739;\n}\n\n.file-upload input[type=\"file\"] {\n    display: none;\n}\n\n.file-upload {\n\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(270.76deg, rgba(0, 0, 0, 0) 3.23%, rgba(255, 255, 255, 0.2) 97.53%), #2BB739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.file-name {\n    color: #2B2B2B;\n    font-weight: 300;\n    font-size: 34px;\n    line-height: 48px;\n}\n\n.form-file {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n.file-info {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n.file-upload label {\n\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n\n}\n\n/* стиль текста на кнопке*/\n\n.file-upload span {\n\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n\n}\n\n.formInput {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2BB739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n}\n\n.formInput::-moz-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.formInput:-ms-input-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.formInput::placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, \n[type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, \n[type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {\n    outline: none!important;\n    box-shadow: none;\n    border-color: #2BB739;\n}\n\n.formInputSecond {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.search_input .MuiOutlinedInput-root {\n    padding: 0 !important;\n    margin: 0 0 9px 0 !important;\n}\n\n.MuiAutocomplete-root{\n    width: 100% !important;\n    margin-top: 30px !important;\n    /* background-color: #fff !important; */\n    border-radius: 8px !important;\n    /* border: 1px dashed #2BB739 !important; */\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    /* padding: 10px 37px !important; */\n    color: #2B2B2B !important;\n    /* box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25); */\n    border-radius: 8px;\n}\n\n.search_input .MuiOutlinedInput-input{\n    width: 100% !important;\n    /* margin-top: 30px !important; */\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search_input .MuiInputLabel-formControl{\n    top: -15% !important;\n    left: 0px !important;\n    padding-left: 0 !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search_input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search_input .MuiInputLabel-formControl.Mui-focused, .css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search_input .MuiOutlinedInput-input{\n    width: 100% !important;\n    /* margin-top: 30px !important; */\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n}\n\n.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n/* \"Type the task\" input padding */\n\n.css-16awh2u-MuiAutocomplete-root div {\n    padding: 0 !important;\n    border: none;\n}\n\n/* \"Type the task\" label position */\n\n.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {\n    top: -7px !important;\n}\n\n/* \"Type the task\" input height */\n\n.css-1j5luls-MuiInputBase-input-MuiOutlinedInput-input {\n    height: 1.1rem !important;\n}\n\n.form-price {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.form-period {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n/* .form-item, .formInfo, .form-priceFlabel {\n    margin-bottom: 20px;\n} */\n\n.formInfo {\n    display: flex;\n}\n\n.formInfo label {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.formInfo span {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.btn-submit {\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n.btn-submit:hover, .file-upload:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (min-width: 1810px) {\n    .form-block::after {\n        width: 24%;\n    }\n}\n\n@media screen and (min-width: 1610px) and (max-width: 1809px) {\n    .form-block::after {\n        width: 26%;\n    }\n}\n\n@media screen and (min-width: 1580px) and (max-width: 1609px) {\n    .form-block::after {\n        width: 28%;\n    }\n}\n\n@media screen and (min-width: 1480px) and (max-width: 1579px) {\n    .form-block::after {\n        width: 30%;\n    }\n}\n\n@media (max-width: 1200px) {\n    .formInfo {\n        flex-direction: column;\n    }\n\n    .form-price, .form-period {\n        width: 100%;\n    }\n\n    .form-period {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    .file-info {\n        margin-top: 20px;\n    }\n\n}\n\n@media (max-width: 1024px) {\n    .form-price, .form-period {\n        width: 100%;\n    }\n\n    .form-price label {\n        text-align: left;\n    }\n\n    /* .form-price {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .form-block {\n        width: 100%;\n    }\n\n    .form-block::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .form-section {\n        box-shadow: none;\n    }\n\n    .MuiAutocomplete-root {\n        margin-top: 0 !important;\n    }\n}\n\n@media (max-width: 767px) {\n    .form-section {\n        width: 100%;\n    }\n\n    .form-block::after {\n        top: 60%;\n    }\n    \n    /* .form-price, .form-period {\n        flex-wrap: wrap;\n    } */\n\n    .form-price label, .form-period label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .formInputSecond {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 660px) {\n    .form-section {\n        padding: 12px 30px 28px 30px;\n    }\n}\n\n@media (max-width: 576px) {\n    .form-section {\n        padding: 12px 0px 28px;\n    }\n\n    .form-block::after {\n        display: none;\n    }\n\n    /* .form-item {\n        margin-bottom: 30px;\n    } */\n\n    .formInfo {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .form-period {\n        margin: 0;\n    }\n\n    .btn-submit {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    .file-upload {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    .file-upload {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .formInputSecond {\n        width: 69% !important;\n    }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35249,11 +35224,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-bottom: 50px;\n    padding-right:5%;\n    width: 40%;\n}\n\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\= {\n    position: relative;\n    /* overflow: hidden; */\n    /* padding: 0 25px; */\n    /* max-width: 570px; */\n    margin: 0 auto;\n}\n\n/* .about-wrapper::before {\n    content: '';\n    width: 107%;\n    height: 830px;\n    top: 39px;\n    left: -26px;\n    background: #2B2B2B;\n    border-radius: 30px;\n    transform: rotate(357deg);\n    z-index: -5;\n    position: absolute;\n} */\n\n/* .about-wrapper::after {\n    content: '';\n    width: 27%;\n    height: 836px;\n    top: 8px;\n    right: -75px;\n    background: #2BB739;\n    border-radius: 30px;\n    transform: rotate(357deg);\n    z-index: -3;\n    position: absolute;\n    max-width: 400px;\n} */\n\n/* .about-wrapper::after{\n  content: url('/images/rectangle-21.svg');\n  position: absolute;\n  top: 0;\n  left: 50%;\n  transform: translateX(-50%);\n  z-index: -5;\n\n} */\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2B2B2B;\n    z-index: 36;\n    padding-bottom: 200px;\n    /* padding-top: 85px; */\n    max-width: 1200px;\n    margin: 0 auto;\n}\n\n@media (max-width: 1440px) {\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        width: 107%;\n        height: 89%;\n        top: 39px;\n        left: -26px;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        content: '';\n        width: 27%;\n        height: 90.5%;\n        top: 8px;\n        right: -56px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        height: 89.5%;\n        top: 17px;\n        right: -48px;\n    }\n}\n\n@media (max-width: 860px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n    }\n\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 28px;\n        line-height: 30px;\n        padding-bottom: 120px;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        top: 21px;\n    }\n}\n\n@media (max-width: 860px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        padding-bottom: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        overflow: hidden;\n    }\n}\n\n@media (max-width: 660px) {\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        width: 107%;\n        height: 60%;\n        top: 39px;\n        left: -22px;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        width: 108%;\n        height: 38%;\n        top: 54%;\n        right: -41px;\n        max-width: 1000%;\n    }\n}\n\n@media (max-width: 576px) {\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        width: 158%;\n        height: 100%;\n        top: -17%;\n        left: -22px;\n        transform: matrix(0.18, 0.98, -1, 0.12, 0, 0);\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        width: 98%;\n        height: 100%;\n        top: 21%;\n        right: -41px;\n        transform: matrix(0.18, 0.98, -1, 0.12, 0, 0);\n    }\n}\n\n@media (max-width: 510px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 26px;\n        line-height: 29px;\n    }\n}\n\n@media (max-width: 470px) {\n    .QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n        margin-bottom: 20px;\n    }\n}\n\n@media (max-width: 445px) {\n    /* .about-text {\n        padding-top: 23%;\n    } */\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        width: 900px;\n        top: -13%;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        width: 350px;\n        top: 30%;\n    }\n}\n\n@media (max-width: 370px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        line-height: 27px;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        top: -16%;\n    }\n}\n\n@media (max-width: 340px) {\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::before {\n        top: -17%;\n        width: 960px;\n    }\n\n    .\\+wL1jesHJ7K-Ov1PCE6ugw\\=\\=::after {\n        width: 400px;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-right:5%;\n    width: 40%;\n}\n\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2B2B2B;\n    z-index: 36;\n    /* padding-top: 85px; */\n    max-width: 1200px;\n    margin: 0 auto;\n}\n\n@media (max-width: 860px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n    }\n\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 28px;\n        line-height: 30px;\n        padding-bottom: 120px;\n    }\n}\n\n@media (max-width: 860px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        padding-bottom: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        overflow: hidden;\n    }\n}\n\n@media (max-width: 510px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 26px;\n        line-height: 29px;\n    }\n}\n\n@media (max-width: 470px) {\n    .QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n        margin-bottom: 20px;\n    }\n}\n\n@media (max-width: 370px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        line-height: 27px;\n    }\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"about": "UT9pmnOrMXnI3OARlU3JUg==",
-	"aboutWrapper": "+wL1jesHJ7K-Ov1PCE6ugw==",
 	"aboutTitle": "QF4SLAmEpw+17d5Taf7zoQ==",
 	"aboutText": "EWQdHq0iPEDEkJFngKWjKg=="
 };
@@ -35343,10 +35317,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    left: 32%;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    /* width: 100%; */\n    height: 64px;\n    top: 294px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 17px;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    left: 32%;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    /* width: 100%; */\n    height: 64px;\n    top: 294px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 17px;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.W2YO22-N6PxwmXnt9Pa02w\\=\\= {\n    display: flex;\n    margin: 0 0 60px 0;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw=="
+	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw==",
+	"aboutOrder": "W2YO22-N6PxwmXnt9Pa02w=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35427,24 +35402,23 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".zL5gYNNpRgtwZkWYWW0sQQ\\=\\= {\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    margin-bottom: 60px;\n}\n\n.zL5gYNNpRgtwZkWYWW0sQQ\\=\\=::after {\n    position: relative;\n    width: 634px;\n    height: 82px;\n    left: 663px;\n    top: 2641px;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n}\n\n.KCDXBiotwaBEn1L9AV4x\\+w\\=\\= {\n    padding-bottom: 100px;\n    width: 55%;\n    z-index: 1;\n}\n\n.KCDXBiotwaBEn1L9AV4x\\+w\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: 0;\n    width: 33%;\n    height: 100%;\n    background-image: url(/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n.KCDXBiotwaBEn1L9AV4x\\+w\\=\\=>div {\n    padding: 0;\n}\n\n._3qWdUXzthh32GoQyuWGRvQ\\=\\= {\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    text-align: center;\n    color: #2BB739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(270.76deg, rgba(0, 0, 0, 0) 3.23%, rgba(255, 255, 255, 0.2) 97.53%), #2BB739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2B2B2B;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n\n}\n\n/* стиль текста на кнопке*/\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n\n}\n\n.zhuALmv7\\+ypBart5-rKBQQ\\=\\= {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2BB739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n}\n\n.zhuALmv7\\+ypBart5-rKBQQ\\=\\=::-moz-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.zhuALmv7\\+ypBart5-rKBQQ\\=\\=:-ms-input-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.zhuALmv7\\+ypBart5-rKBQQ\\=\\=::placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n[type='text']:focus,\n[type='email']:focus,\n[type='url']:focus,\n[type='password']:focus,\n[type='number']:focus,\n[type='date']:focus,\n[type='datetime-local']:focus,\n[type='month']:focus,\n[type='search']:focus,\n[type='tel']:focus,\n[type='time']:focus,\n[type='week']:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2BB739;\n}\n\n.s\\+aYRaCCrlM7PtofmIx8qg\\=\\= {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n/* .search-input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root {\n    width: 100% !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl {\n    top: 35% !important;\n    left: 5px !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl.Mui-focused,\n.css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.tBaW6YIIzdm9DfFXRdamgA\\=\\=,\n.HgRu89NQlTq0wIInziK6AA\\=\\=,\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    margin-bottom: 20px;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= span {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n\n}\n\n@media (max-width: 1024px) {\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n\n    /* .formPrice {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .oUwTqB87yJGXYUllqKmO6w\\=\\= {\n        width: 100%;\n    }\n\n    .oUwTqB87yJGXYUllqKmO6w\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .zL5gYNNpRgtwZkWYWW0sQQ\\=\\= {\n        box-shadow: none;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .zL5gYNNpRgtwZkWYWW0sQQ\\=\\= {\n        width: 100%;\n    }\n\n    .oUwTqB87yJGXYUllqKmO6w\\=\\=::after {\n        top: 60%;\n    }\n\n    /* .formPrice, .formPeriod {\n        flex-wrap: wrap;\n    } */\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .s\\+aYRaCCrlM7PtofmIx8qg\\=\\= {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 660px) {\n    .zL5gYNNpRgtwZkWYWW0sQQ\\=\\= {\n        padding: 12px 30px 28px 30px;\n    }\n}\n\n@media (max-width: 576px) {\n    .zL5gYNNpRgtwZkWYWW0sQQ\\=\\= {\n        padding: 12px 0px 28px;\n    }\n\n    .oUwTqB87yJGXYUllqKmO6w\\=\\=::after {\n        display: none;\n    }\n\n    .zhuALmv7\\+ypBart5-rKBQQ\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .s\\+aYRaCCrlM7PtofmIx8qg\\=\\= {\n        width: 69% !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: -17%;\n    width: 64%;\n    height: 100%;\n    background-image: url(/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    text-align: center;\n    color: #2BB739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(270.76deg, rgba(0, 0, 0, 0) 3.23%, rgba(255, 255, 255, 0.2) 97.53%), #2BB739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2B2B2B;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n\n}\n\n/* стиль текста на кнопке*/\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\= {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2BB739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n[type='text']:focus,\n[type='email']:focus,\n[type='url']:focus,\n[type='password']:focus,\n[type='number']:focus,\n[type='date']:focus,\n[type='datetime-local']:focus,\n[type='month']:focus,\n[type='search']:focus,\n[type='tel']:focus,\n[type='time']:focus,\n[type='week']:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2BB739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n/* .search-input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root {\n    width: 100% !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl {\n    top: 35% !important;\n    left: 5px !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl.Mui-focused,\n.css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n/* .formItem,\n.formInfo,\n.formPrice {\n    margin-bottom: 20px;\n}\n\n.formInfo {\n    display: flex;\n} */\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n\n}\n\n@media (max-width: 1024px) {\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n\n    /* .formPrice {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    /* .formPrice, .formPeriod {\n        flex-wrap: wrap;\n    } */\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69% !important;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"formSection": "zL5gYNNpRgtwZkWYWW0sQQ==",
-	"formBlock": "KCDXBiotwaBEn1L9AV4x+w==",
-	"form-label": "_3qWdUXzthh32GoQyuWGRvQ==",
+	"formWrapper": "btA4j3oHRhStd91D--BFnA==",
+	"formLabel": "_3fIHKYTm0+sSBoZ9ANx3OA==",
 	"fileUpload": "_3QUPbTbky01XT4nzPM0v-g==",
 	"fileName": "oDNOecre9beRWwMdYYwHlA==",
 	"formFile": "qkxbfjJY9pk8BVlhdIt28w==",
 	"fileInfo": "_2hlPGYc4F5Ju1zuL1uUqIw==",
-	"form-input": "zhuALmv7+ypBart5-rKBQQ==",
-	"form-input--second": "s+aYRaCCrlM7PtofmIx8qg==",
+	"formInput": "_1sXYDxluwsME5K9v-C096A==",
+	"formInputSecond": "FcDWYaGFbbDT9md9qfp2ng==",
 	"formPrice": "gvxlgbXJ659JHIyXDBzWmg==",
 	"formPeriod": "GJyUy6ufT1hsAY00uTjwrg==",
-	"form-item": "tBaW6YIIzdm9DfFXRdamgA==",
 	"formInfo": "HgRu89NQlTq0wIInziK6AA==",
+	"btnContainer": "dE1FS5ZzTrmGIjZPdvL9Pg==",
 	"btnSubmit": "_4CBWQLEnlQGt9RHO9hgHMw==",
-	"formBLock": "oUwTqB87yJGXYUllqKmO6w=="
+	"formWrappper": "iSnbQ6sMvldeQwoVvgNoAg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35889,50 +35863,6 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
-/*!********************************************************!*\
-  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
-  \********************************************************/
-/***/ ((module) => {
-
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== "string") {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-
 /***/ "./node_modules/deepmerge/dist/cjs.js":
 /*!********************************************!*\
   !*** ./node_modules/deepmerge/dist/cjs.js ***!
@@ -36074,21 +36004,6 @@ var deepmerge_1 = deepmerge;
 
 module.exports = deepmerge_1;
 
-
-/***/ }),
-
-/***/ "./public/images/form-lines.svg":
-/*!**************************************!*\
-  !*** ./public/images/form-lines.svg ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("/images/form-lines.svg?dc5b1155494afa05eeb5ba70d8791e28");
 
 /***/ }),
 

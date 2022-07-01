@@ -1,11 +1,8 @@
-.form-section {
+/* .form-section {
     background: transparent;
-    /* border-radius: 20px; */
-    /* padding: 12px 78px 48px 78px; */
     padding: 25px 20px;
     display: flex;
     flex-direction: column;
-    /* border: 5px dashed #2BB739; */
     box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25), 
         -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -21,9 +18,9 @@
     background: #FFFFFF;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
-}
+} */
 
-.form-block {
+/* .form-block {
     padding-bottom: 100px;
     width: 55%;
     z-index: 1;
@@ -44,9 +41,9 @@
 
 .form-block > div {
     padding: 0;
-}
+} */
 
-.form-label {
+.formLabel {
     font-weight: 500;
     font-size: 28px;
     line-height: 32.17px;
@@ -140,7 +137,7 @@
 
 }
 
-.form-input {
+.formInput {
     width: 100%;
     /* margin-top: 30px; */
     background-color: #fff;
@@ -158,7 +155,7 @@
     resize: none;
 }
 
-.form-input::placeholder {
+.formInput::placeholder {
     font-family: 'Ubuntu';
     font-style: normal;
     font-weight: 400;
@@ -175,7 +172,7 @@
     border-color: #2BB739;
 }
 
-.form-input--second {
+.formInputSecond {
     margin-top: 0 !important;
     /* width: 20% !important; */
     margin-left: 10px;
@@ -190,6 +187,7 @@
 
 .search_input .MuiOutlinedInput-root {
     padding: 0 !important;
+    margin: 0 0 9px 0 !important;
 }
 
 .MuiAutocomplete-root{
@@ -301,15 +299,15 @@
     margin-right: 10%;
 }
 
-.form-item, .form-info, .form-priceFlabel {
+/* .form-item, .formInfo, .form-priceFlabel {
     margin-bottom: 20px;
-}
+} */
 
-.form-info {
+.formInfo {
     display: flex;
 }
 
-.form-info label {
+.formInfo label {
     font-family: "Ubuntu";
     font-weight: 400;
     font-size: 18px;
@@ -317,7 +315,7 @@
     color: #2B2B2B;
 }
 
-.form-info span {
+.formInfo span {
     font-family: "Ubuntu";
     font-weight: 400;
     font-size: 18px;
@@ -366,7 +364,7 @@
 }
 
 @media (max-width: 1200px) {
-    .form-info {
+    .formInfo {
         flex-direction: column;
     }
 
@@ -440,7 +438,7 @@
         text-align: center;
     }
 
-    .form-input--second {
+    .formInputSecond {
         width: 70% !important;
         margin-left: 0px;
     }
@@ -461,11 +459,11 @@
         display: none;
     }
 
-    .form-item {
+    /* .form-item {
         margin-bottom: 30px;
-    }
+    } */
 
-    .form-info {
+    .formInfo {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -492,7 +490,7 @@
 }
 
 @media (max-width: 340px) {
-    .form-input--second {
+    .formInputSecond {
         width: 69% !important;
     }
 }

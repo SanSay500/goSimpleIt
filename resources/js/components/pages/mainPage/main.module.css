@@ -30,3 +30,8 @@
     background-size: contain;
     background-position: 100%;
 }
+
+.aboutOrder {
+    display: flex;
+    margin: 0 0 60px 0;
+}

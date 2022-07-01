@@ -31,10 +31,10 @@ const Main = (props) => {
 
             <TalksContainer reviewsList={myJson.reviews} />
 
-            <div ref={makeOrder} user={props.auth.user} className="about-form">
+            <section ref={makeOrder} user={props.auth.user} className={style.aboutOrder}>
                 <AboutContainer />
                 <MakeOrder />
-            </div>
+            </section>
 
             <Footer />
         </div>
