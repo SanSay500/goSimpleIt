@@ -14,24 +14,23 @@ const ActiveTasks = ({ count, classes }) => {
         setShowOrdersQty(showOrdersQty + count);
     }
 
-    var showOrdersNum = ordersActive.slice(0, showOrdersQty);
+    // const changeSearch = ({ target: { value } }) => {
+    //     if (value) {
+    //         let job_found = tasksWithOrders.find((e) => e.name === value).id;
+    //         if (job_found) {
+    //             filterJobs(job_found);
+    //         }
+    //     }
+    // };
 
-    const changeSearch = ({ target: { value } }) => {
-        if (value) {
-            let job_found = tasksWithOrders.find((e) => e.name === value).id;
-            if (job_found) {
-                filterJobs(job_found);
-            }
-        }
-    };
+    // function filterJobs(task_id) {
+    //     let newOrdersToShow = ordersActive.filter(
+    //         (el) => el.task_id === task_id
+    //     );
+    //     setOrdersToShow(newOrdersToShow);
+    //     setShowOrdersQty(5);
+    // }
 
-    function filterJobs(task_id) {
-        let newOrdersToShow = ordersActive.filter(
-            (el) => el.task_id === task_id
-        );
-        setOrdersToShow(newOrdersToShow);
-        setShowOrdersQty(5);
-    }
     return (
         <section className={`sectionContainer ${style.container}`}>
             <h2 className={`title`}>Active Tasks</h2>

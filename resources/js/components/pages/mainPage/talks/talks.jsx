@@ -1,9 +1,9 @@
 import { useState } from "react";
-import style from "./freelancers.module.css";
+import style from "./talks.module.css";
 import PeopleCard from "@/components/shared/peopleCard/peopleCard";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 
-const Freelancers = ({ reviewsList, count }) => {
+const Talks = ({ reviewsList, count }) => {
     const [showOrdersQty, setShowOrdersQty] = useState(count);
     const freelancersList = reviewsList.slice(0, showOrdersQty);
 
@@ -18,11 +18,7 @@ const Freelancers = ({ reviewsList, count }) => {
 
             <div className={style.cardsList}>
                 {freelancersList.map((freelancer, i) => (
-                    <PeopleCard
-                        key={i}
-                        freelancer={freelancer}
-                        classes={style.card}
-                    />
+                    <PeopleCard key={i} freelancer={freelancer} />
                 ))}
             </div>
 
@@ -36,4 +32,4 @@ const Freelancers = ({ reviewsList, count }) => {
         </section>
     );
 };
-export default Freelancers;
+export default Talks;

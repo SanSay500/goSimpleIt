@@ -49,7 +49,7 @@ const Projects = ({ portfolioList }) => {
     }, []);
 
     return (
-        <section className={`sectionContainer ${style.container}`}>
+        <section className={`sectionContainer`}>
             <h2 className={`title`}>Complete projects</h2>
 
             <div className={`${style.cardsContainer}`}>

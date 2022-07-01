@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
-import TalksContainer from "./talksContainer/talksContainer";
+import Talks from "./talks/talks";
 import Projects from "./projects/projects";
 import AboutContainer from "./aboutUs/aboutUs";
 import MainHeader from "./mainHeader/mainHeader";
 import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
-import FreelancersContainer from "./freelancers/freelancers";
+import Freelancers from "./freelancers/freelancers";
 import MainStart from "./mainStart/mainStart";
 import style from "./main.module.css";
 
@@ -27,9 +27,9 @@ const Main = (props) => {
 
             <Projects portfolioList={myJson.portfolio} />
 
-            <FreelancersContainer reviewsList={myJson.reviews} />
+            <Freelancers reviewsList={myJson.reviews} count={3} />
 
-            <TalksContainer reviewsList={myJson.reviews} />
+            <Talks reviewsList={myJson.reviews} count={3} />
 
             <div ref={makeOrder} user={props.auth.user} className="about-form">
                 <AboutContainer />

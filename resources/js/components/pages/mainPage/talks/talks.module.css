@@ -1,22 +1,18 @@
-.review__button {
+.container {
+    position: relative;
+}
+
+.cardsList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+.card::after {
     display: none;
-    font-family: "Ubuntu";
-    font-weight: 500;
-    padding: 8px 15px;
-    /* border: 4px dashed #2B2B2B; */
-    color: #fff;
-    background-color: #2bb739;
-    border-radius: 40px;
-    font-size: 24px;
-    line-height: 28px;
 }
 
-.review__button:hover {
-    color: #2bb739;
-    background-color: #fff;
-    border-color: #2bb739;
-}
-
+/* 
 @media (max-width: 1024px) {
     .review {
         width: 45%;
@@ -68,9 +64,9 @@
         margin-right: auto;
     }
 
-    /* .reviews-block {
+     .reviews-block {
         padding-bottom: 60px;
-    } */
+    } 
 
     .talks::before,
     .talks::after {
@@ -83,7 +79,7 @@
         width: 90%;
     }
 
-    /* .reviews-block {
+    .reviews-block {
         padding-bottom: 40px;
-    } */
-}
+    } 
+} */

@@ -5,7 +5,8 @@ export const myJson = {
                 name: "Jason",
                 avatar: "/images/user.png",
             },
-            commets: "Good job",
+            commets:
+                "Good job. I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified. I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified.I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified.",
         },
         {
             user: {
