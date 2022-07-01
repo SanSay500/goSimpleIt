@@ -14,7 +14,7 @@ const Talks = ({ reviewsList, count }) => {
 
     return (
         <section className={`sectionContainer ${style.container}`}>
-            <h3 className={`title`}>Best freelancers</h3>
+            <h3 className={`title`}>Talks about us</h3>
 
             <div className={style.cardsList}>
                 {freelancersList.map((freelancer, i) => (

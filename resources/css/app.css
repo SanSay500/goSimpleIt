@@ -726,11 +726,11 @@
     background-repeat: no-repeat;
 } */
 
-.about-form {
+/* .about-form {
     display: flex;
     position: relative;
     padding: 0 5% 0 8%;
-}
+} */
 
 /* .about-form::after {
     position: absolute;

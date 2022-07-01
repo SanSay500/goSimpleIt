@@ -19,23 +19,10 @@ export default function DashboardEmployer(props) {
         <>
             <HeaderLogout title="Dashboard" />
 
-            <Container>
-                <br />
+            <div className="container">
                 <FlashMessages />
-
                 <OrdersList />
-
-                <br />
-                <div align="center">
-                    <Link
-                        className="bg-clip-content p-1 bg-green-400 p-2 rounded-full border-4 border-violet-100 border-dashed"
-                        href={route("main.page")}
-                    >
-                        Main
-                    </Link>
-                </div>
-            </Container>
-
+            </div>
             <Footer />
         </>
     );

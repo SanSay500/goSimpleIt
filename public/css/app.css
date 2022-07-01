@@ -1070,10 +1070,6 @@ select {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
 .px-2\.5 {
   padding-left: 0.625rem;
   padding-right: 0.625rem;
@@ -1982,11 +1978,11 @@ select {
     background-image: url("/images/line.svg");
     background-repeat: no-repeat;
 } */
-.about-form {
+/* .about-form {
     display: flex;
     position: relative;
     padding: 0 5% 0 8%;
-}
+} */
 /* .about-form::after {
     position: absolute;
     content: "";

@@ -1,6 +1,5 @@
-.cardsContainer {
-    margin: 0 0 25px 0;
-    width: 100%;
+.cardsContainer{
+    margin: 59px 0 25px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px 55px;
