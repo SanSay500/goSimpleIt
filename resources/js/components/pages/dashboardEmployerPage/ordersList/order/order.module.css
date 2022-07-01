@@ -2,5 +2,23 @@
     display: none;
 }
 .cardContainer{
-    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr 20px; 
+    row-gap: 12px;
+}
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.cardHeaderItem{
+    font-weight: 500;
+font-size: 22px;
+line-height: 25px;
+color: #000000;
+}
+.cardSatus{
+    color: #F3CD44;
 }

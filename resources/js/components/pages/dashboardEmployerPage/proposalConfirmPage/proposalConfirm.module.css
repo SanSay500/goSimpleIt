@@ -1,0 +1,79 @@
+.btn{
+    display: none;
+}
+.buttonBack{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #FFFFFF;
+    padding: 6px 16px;
+    margin-bottom: 43px;
+}
+.proposalBtn{
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    padding: 7px 58px;
+}
+.orderWrapper{
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+}
+.orderContainer{
+display: flex;
+align-items: flex-start;
+justify-content: center;
+width: 100%;
+}
+.proposalContainer{
+    width: 30%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-right: 43px;
+}
+.cardContainer{
+    width: 40%;
+    max-width: 362px;
+}
+.proposalItem{
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #000000;
+  width: 100%;
+}
+.proposalItemText{
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 18px;
+  color: #000000;
+}
+.proposalItem+.proposalItem{
+  margin-top: 13PX;
+}
+.proposalBtnContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 23px;
+}
