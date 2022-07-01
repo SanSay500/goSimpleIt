@@ -2,5 +2,22 @@
     display: none;
 }
 .cardContainer{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.cardHeaderItem{
+    font-weight: 500;
+font-size: 22px;
+line-height: 25px;
+color: #000000;
+}
+.cardSatus{
+    color: #F3CD44;
 }

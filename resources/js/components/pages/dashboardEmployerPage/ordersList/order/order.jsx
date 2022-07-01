@@ -11,7 +11,22 @@ export default function Order(order, props) {
     const { proposalsForOrder } = usePage().props;
     return (
         <div className={`${style.cardContainer}`}>
-                    <BasicCard key={order.id} props={order} classes={style.btn}/>
+            <div className={`${style.cardHeader}`}>
+                <div className={`${style.cardHeaderItem}`}>
+                    Order # {order.id}
+                </div>
+                <div className={`${style.cardHeaderItem}`}>
+                    Status:{" "}
+                    <span className={`${style.cardSatus}`}>
+                        {" "}
+                        {order.status}
+                    </span>
+                </div>
+            </div>
+            <BasicCard key={order.id} props={order} classes={style.btn} />
+            {order.status != "Done" && order.status != "Cancelled" && (
+                <OrderProposal {...order} />
+            )}
         </div>
         /* { <Container>
             <Card variant="outlined" key={order.id}>
