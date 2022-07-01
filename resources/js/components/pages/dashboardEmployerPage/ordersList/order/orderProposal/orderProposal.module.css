@@ -6,7 +6,8 @@ line-height: 18px;
 padding-bottom: 1px;
 color: #000000;
 border-bottom: 1px dashed #2BB739;
+display: block;
 }
 .linkConatiner{
-  margin-top: 12px;
+  display: flex;
 }

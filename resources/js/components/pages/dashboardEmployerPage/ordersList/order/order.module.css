@@ -2,15 +2,16 @@
     display: none;
 }
 .cardContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: stretch;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 35px 1fr 20px; 
+    row-gap: 12px;
 }
 .cardHeader{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
 }
 .cardHeaderItem{
     font-weight: 500;

@@ -35046,7 +35046,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".rQZsSgSRWOk8j3OTw\\+8I7w\\=\\={\n    display: none;\n}\n.fRzrzUkCJjwJU135c-\\+6Xg\\=\\={\n    display: flex;\n    flex-direction: column;\n    justify-content: stretch;\n}\n.nePZ\\+a\\+lLIbR\\+r6iTELxrw\\=\\={\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin-bottom: 24px;\n}\n.ByZkO6ThDHoQxRJ4DuMCbA\\=\\={\n    font-weight: 500;\nfont-size: 22px;\nline-height: 25px;\ncolor: #000000;\n}\n.NkCGA9H-RG8OfhQ3KV-mNA\\=\\={\n    color: #F3CD44;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".rQZsSgSRWOk8j3OTw\\+8I7w\\=\\={\n    display: none;\n}\n.fRzrzUkCJjwJU135c-\\+6Xg\\=\\={\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 35px 1fr 20px; \n    row-gap: 12px;\n}\n.nePZ\\+a\\+lLIbR\\+r6iTELxrw\\=\\={\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin-bottom: 10px;\n}\n.ByZkO6ThDHoQxRJ4DuMCbA\\=\\={\n    font-weight: 500;\nfont-size: 22px;\nline-height: 25px;\ncolor: #000000;\n}\n.NkCGA9H-RG8OfhQ3KV-mNA\\=\\={\n    color: #F3CD44;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btn": "rQZsSgSRWOk8j3OTw+8I7w==",
@@ -35077,7 +35077,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".kEwmip7yKTGkMApJduL1iQ\\=\\={\n  font-style: normal;\nfont-weight: 400;\nfont-size: 16px;\nline-height: 18px;\npadding-bottom: 1px;\ncolor: #000000;\nborder-bottom: 1px dashed #2BB739;\n}\n.wAlXba26Uu0iIUTvcjn3Xg\\=\\={\n  margin-top: 12px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".kEwmip7yKTGkMApJduL1iQ\\=\\={\n  font-style: normal;\nfont-weight: 400;\nfont-size: 16px;\nline-height: 18px;\npadding-bottom: 1px;\ncolor: #000000;\nborder-bottom: 1px dashed #2BB739;\ndisplay: block;\n}\n.wAlXba26Uu0iIUTvcjn3Xg\\=\\={\n  display: flex;\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"linkView": "kEwmip7yKTGkMApJduL1iQ==",
