@@ -5,11 +5,15 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import OrderProposal from "./orderProposal/orderProposal";
-
+import style from "./order.module.css";
+import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
 export default function Order(order, props) {
     const { proposalsForOrder } = usePage().props;
     return (
-        <Container>
+        <div className={`${style.cardContainer}`}>
+                    <BasicCard key={order.id} props={order} classes={style.btn}/>
+        </div>
+        /* { <Container>
             <Card variant="outlined" key={order.id}>
                 <CardContent>
                     <Typography sx={{ fontSize: 22 }} color="text.primary">
@@ -45,6 +49,6 @@ export default function Order(order, props) {
                     )}
                 </CardContent>
             </Card>
-        </Container>
+        </Container> }  */
     );
 }

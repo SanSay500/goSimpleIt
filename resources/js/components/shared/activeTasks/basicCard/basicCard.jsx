@@ -41,7 +41,7 @@ export default function BasicCard(props) {
             </div>
 
             <Link href={route("order.details", [props.props["id"]])}>
-                <ButtonViewMore classes={style.btn} />
+                <ButtonViewMore classes={props.classes} />
             </Link>
         </div>
     );

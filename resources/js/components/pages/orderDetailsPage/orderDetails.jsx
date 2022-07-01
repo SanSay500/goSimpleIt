@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import HeaderLogin from "@/components/shared/headers/headerLogin/headerLogin";
 import Footer from "@/components/shared/footer/footer";
 import { usePage, Link, useForm } from "@inertiajs/inertia-react";
-import Container from "@mui/material/Container";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
+import style from "./orderDetails.module.css";
 
 const OrderDetails = (props) => {
     const { order } = usePage().props;
@@ -24,8 +24,64 @@ const OrderDetails = (props) => {
     return (
         <>
             <HeaderLogin role={props.auth.user && props.auth.user.role} />
+            <div className="container">
+                <div className={`${style.orderWrapper}`}>
+                <div className={`${style.orderContainer}`}>
+                    <div className={`${style.proposalContainer}`}>
+                    <Link
+                            className={`${style.buttonBack}`}
+                            href={route("main.page")}
+                        >
+                            <img src="/images/arrowLeft.svg" alt="" className={`${style.buttonBackImg}`} />
+                            Back
+                        </Link>
+                    {props.auth.user &&
+                            props.auth.user.role === "Freelancer" &&
+                            (
+                                <form name="createForm" onSubmit={handleSubmit} className={`${style.formProposal} `}>
+                                    <textarea
+                                        required
+                                        name="description"
+                                        rows="4"
+                                        className={`${style.loginInput} `}
+                                        placeholder="Describe your proposal for this job"
+                                        onChange={(e) =>
+                                            setData("description", e.target.value)
+                                        }
+                                    />
+                                    <ButtonGreen
+                    >
+                        Send proposal
+                    </ButtonGreen>
 
-            <Container maxWidth="sm">
+                                </form>
+                            )
+/*                             !hideButton && (
+                                <button
+                                    onClick={(e) => {
+                                        setShowProposalForm(true);
+                                        setHideButton(true);
+                                    }}
+                                    className="content-center p-2 bg-sky-500 text-bg font-medium text-gray-900 bg-blue rounded-full"
+                                >
+                                    Make Proposal
+                                </button>
+                            ) */
+                        }
+                        {/* {showProposalForm && } */}
+
+                        
+                    </div>
+                    <div className={`${style.cardContainer}`}>
+                    <BasicCard key={order.id} props={order} classes={style.btn}/>
+                    </div>
+                    
+                </div>
+                </div>
+                
+            </div>
+            
+{/*             <Container maxWidth="sm">
                 <br />
 
                 <Card variant="outlined">
@@ -89,7 +145,7 @@ const OrderDetails = (props) => {
                         </Link>
                     </CardContent>
                 </Card>
-            </Container>
+            </Container> */}
             <Footer />
         </>
     );

@@ -1,0 +1,92 @@
+.orderContainer{
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+width: 100%;
+}
+.proposalContainer{
+    width: 45%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.cardContainer{
+    width: 40%;
+    max-width: 362px;
+}
+.btn{
+    display: none;
+}
+.formProposal{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.loginInput {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    border: 1px dashed #2bb739;
+    padding: 8px 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2B2B2B;
+    z-index: 5;
+    margin-bottom: 25px;
+    margin-top: 40px;
+}
+.loginInput::placeholder{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2B2B2B;
+}
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+[type='checkbox']:focus,
+[type='radio']:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: none;
+    border-color: #2bb739;
+}
+.buttonBack{
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #FFFFFF;
+    padding: 6px 16px;
+}
+.orderWrapper{
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+}
+.buttonBackImg{
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+}
