@@ -7,9 +7,11 @@ export default function BasicCard(props) {
     return (
         <div className={`${style.container}`}>
             <h3 className={`${style.title}`}>{props.props["title"]}</h3>
+
             <div className={`${style.description}`}>
                 {props.props["description"]}
             </div>
+
             <div className={`${style.file}`}>
                 {props.props["file"] && (
                     <span className={`${style.fileInfo}`}>
@@ -23,6 +25,7 @@ export default function BasicCard(props) {
                     </span>
                 )}
             </div>
+
             <div className={style.bottomContainer}>
                 <div className={style.bottomContainerText}>
                     Budget:

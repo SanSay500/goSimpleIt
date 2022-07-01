@@ -9,7 +9,7 @@ import Footer from "@/Components/footer.js";
 import { InertiaLink, Link } from "@inertiajs/inertia-react";
 import ActiveOrders from "@/Pages/ActiveOrders";
 import GoToOrder from "@/Pages/Order/GoToOrder";
-import FreelancersContainer from "../components/pages/mainPage/freelancersContainer/freelansersContainer";
+import FreelancersContainer from "../components/pages/mainPage/freelancers/freelansersContainer";
 import "../../../css/main1.css";
 
 const Main = (props) => {

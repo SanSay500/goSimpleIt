@@ -33,7 +33,7 @@ const ActiveTasks = ({ count, classes }) => {
         setShowOrdersQty(5);
     }
     return (
-        <section className={style.container}>
+        <section className={`sectionContainer ${style.container}`}>
             <h2 className={`title`}>Active Tasks</h2>
             <div className={`${style.cardsContainer} ${classes}`}>
                 {ordersToShow.slice(0, showOrdersQty).map((order) => {

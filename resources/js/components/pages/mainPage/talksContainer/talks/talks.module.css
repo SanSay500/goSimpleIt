@@ -12,7 +12,7 @@
     content: "";
     display: block;
     height: 69px;
-    width: 70vw;
+    /* width: 70vw; */
     position: absolute;
     z-index: -1;
 }

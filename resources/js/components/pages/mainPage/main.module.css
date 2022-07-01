@@ -1,5 +1,4 @@
 .headerContainer {
-    margin: 0 0 37px 0;
     position: relative;
 }
 .headerContainer::before,
@@ -11,7 +10,7 @@
     z-index: -1;
 }
 .headerContainer::before {
-    width: 100%;
+    /* width: 100%; */
     height: 64px;
     top: 294px;
     background: linear-gradient(

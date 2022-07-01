@@ -32794,10 +32794,10 @@ var AboutUs = function AboutUs() {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.jsx":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.jsx ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/freelancers/freelancers.jsx":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/freelancers/freelancers.jsx ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32805,70 +32805,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../freelancersContainer.module.css */ "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var Freelancers = function Freelancers(_ref) {
-  var reviews = _ref.reviews;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-      className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].freelancersTitle,
-      children: "Best freelancers"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
-      className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].reviewsList,
-      children: reviews.map(function (element, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("li", {
-          className: "reviews-list__item ".concat(_freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].review),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "user-block user",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-              className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].userImg,
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-                className: "user__img",
-                src: element.user.avatar,
-                alt: element.user.name
-              })
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "coments-block ".concat(_freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].coment),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-              className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].userName,
-              children: element.user.name
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-              className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].comentText,
-              children: element.commets
-            })]
-          })]
-        }, index);
-      })
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Freelancers);
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.jsx":
-/*!**********************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.jsx ***!
-  \**********************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _freelancers_freelancers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./freelancers/freelancers */ "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _css_freelancers_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/../css/freelancers.css */ "./resources/css/freelancers.css");
-/* harmony import */ var _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./freelancersContainer.module.css */ "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _css_freelancers_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/../css/freelancers.css */ "./resources/css/freelancers.css");
+/* harmony import */ var _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./freelancers.module.css */ "./resources/js/components/pages/mainPage/freelancers/freelancers.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -32887,11 +32827,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
 var FreelancersContainer = function FreelancersContainer(_ref) {
   var reviewsList = _ref.reviewsList;
   var count_review = 0;
   var width = window.innerWidth;
+  var freelancersList = reviewsList.slice(0, step);
 
   if (width > 1024) {
     count_review = 3;
@@ -32903,39 +32843,95 @@ var FreelancersContainer = function FreelancersContainer(_ref) {
     }
   }
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(count_review),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count_review),
       _useState2 = _slicedToArray(_useState, 2),
       step = _useState2[0],
       setStep = _useState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
     className: "reviews-block",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].reviewsWrapper,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_freelancers_freelancers__WEBPACK_IMPORTED_MODULE_0__["default"], {
-          reviews: reviewsList.slice(0, step)
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-          className: "btn-container",
-          children: reviewsList.length > step ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: "review__more",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-              className: _freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].reviewButton,
-              type: "button",
-              onClick: function onClick() {
-                return setStep(step + count_review);
-              },
-              children: "Show more"
-            })
-          }) : ""
-        })]
-      })
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].reviewsWrapper,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+        className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].freelancersTitle,
+        children: "Best freelancers"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("ul", {
+        className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].reviewsList,
+        children: freelancersList.map(function (element, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("li", {
+            className: "reviews-list__item ".concat(_freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].review),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+              className: "user-block user",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].userImg,
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                  className: "user__img",
+                  src: element.user.avatar,
+                  alt: element.user.name
+                })
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "coments-block ".concat(_freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].coment),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+                className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].userName,
+                children: element.user.name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].comentText,
+                children: element.commets
+              })]
+            })]
+          }, index);
+        })
+      })]
     })
   });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FreelancersContainer);
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.jsx":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.jsx ***!
+  \*****************************************************************************************/
+/***/ (() => {
+
+// import style from "../freelancersContainer.module.css";
+// const Freelancers = ({ reviews }) => {
+//     return (
+//         <>
+//             <h3 className={style.freelancersTitle}>Best freelancers</h3>
+//             <ul className={style.reviewsList}>
+//                 {reviews.map((element, index) => (
+//                     <li
+//                         key={index}
+//                         className={`reviews-list__item ${style.review}`}
+//                     >
+//                         <div className="user-block user">
+//                             <div className={style.userImg}>
+//                                 <img
+//                                     className="user__img"
+//                                     src={element.user.avatar}
+//                                     alt={element.user.name}
+//                                 />
+//                             </div>
+//                         </div>
+//                         <div className={`coments-block ${style.coment}`}>
+//                             <h4 className={style.userName}>
+//                                 {element.user.name}
+//                             </h4>
+//                             <p className={style.comentText}>
+//                                 {element.commets}
+//                             </p>
+//                         </div>
+//                     </li>
+//                 ))}
+//             </ul>
+//         </>
+//     );
+// };
+// export default Freelancers;
 
 /***/ }),
 
@@ -32954,12 +32950,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./makeOrder/makeOrder */ "./resources/js/components/pages/mainPage/makeOrder/makeOrder.jsx");
 /* harmony import */ var _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../mocks/review-data */ "./resources/js/mocks/review-data.js");
 /* harmony import */ var _talksContainer_talksContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./talksContainer/talksContainer */ "./resources/js/components/pages/mainPage/talksContainer/talksContainer.jsx");
-/* harmony import */ var _projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projectsContainer/projectsContainer */ "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx");
+/* harmony import */ var _projects_projects__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projects/projects */ "./resources/js/components/pages/mainPage/projects/projects.jsx");
 /* harmony import */ var _aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./aboutUs/aboutUs */ "./resources/js/components/pages/mainPage/aboutUs/aboutUs.jsx");
 /* harmony import */ var _mainHeader_mainHeader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./mainHeader/mainHeader */ "./resources/js/components/pages/mainPage/mainHeader/mainHeader.jsx");
 /* harmony import */ var _components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/components/shared/footer/footer */ "./resources/js/components/shared/footer/footer.jsx");
 /* harmony import */ var _components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/components/shared/activeTasks/activeTasks */ "./resources/js/components/shared/activeTasks/activeTasks.jsx");
-/* harmony import */ var _freelancersContainer_freelancersContainer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./freelancersContainer/freelancersContainer */ "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.jsx");
+/* harmony import */ var _freelancers_freelancers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./freelancers/freelancers */ "./resources/js/components/pages/mainPage/freelancers/freelancers.jsx");
 /* harmony import */ var _mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./mainStart/mainStart */ "./resources/js/components/pages/mainPage/mainStart/mainStart.jsx");
 /* harmony import */ var _main_module_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main.module.css */ "./resources/js/components/pages/mainPage/main.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -32988,7 +32984,7 @@ var Main = function Main(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "container",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("section", {
-      className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].headerContainer),
+      className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_11__["default"].headerContainer, " sectionContainer"),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainHeader_mainHeader__WEBPACK_IMPORTED_MODULE_6__["default"], {
         role: props.auth.user && props.auth.user.role
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -32996,9 +32992,9 @@ var Main = function Main(props) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
       count: 6
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projectsContainer_projectsContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_projects_projects__WEBPACK_IMPORTED_MODULE_4__["default"], {
       portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_freelancersContainer_freelancersContainer__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_freelancers_freelancers__WEBPACK_IMPORTED_MODULE_9__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_talksContainer_talksContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
       reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
@@ -33434,10 +33430,10 @@ var MakeOrder = function MakeOrder(props) {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx":
-/*!*************************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx ***!
-  \*************************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx ***!
+  \*******************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33445,44 +33441,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flipCard.module.css */ "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 function FlipCard(_ref) {
   var card = _ref.card;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    className: "flip-card",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-      className: "flip-card-inner",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-        className: "card front",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("img", {
-          className: "portfolio__img",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].container),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].cardInner),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].card, " ").concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].front),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].img),
           src: card.photo,
           alt: card.name_project
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: "card back",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-          className: "card-url",
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].card, " ").concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].back),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
           href: card.url_project,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h3", {
-            className: "card-name",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].name),
             children: card.name_project
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("p", {
-          className: "card-text",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].text),
           children: card.description
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-          className: "card-dev",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("h4", {
-            className: "card-dev__title",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+            className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].devTitle),
             children: "Development stack:"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
-            className: "card-dev-list",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+            className: "".concat(_flipCard_module_css__WEBPACK_IMPORTED_MODULE_0__["default"].devList),
             children: card.development_stack.map(function (element, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("li", {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
                 children: element
               }, index);
             })
@@ -33497,10 +33493,10 @@ function FlipCard(_ref) {
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx ***!
-  \****************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/projects/projects.jsx":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/projects/projects.jsx ***!
+  \**********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -33508,48 +33504,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _flipCard_flipCard__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./flipCard/flipCard */ "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-var Projects = function Projects(_ref) {
-  var projects = _ref.projects;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-      className: "title",
-      children: "Complete projects"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "portfolio-list",
-      children: projects.map(function (element, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_flipCard_flipCard__WEBPACK_IMPORTED_MODULE_0__["default"], {
-          card: element
-        }, index);
-      })
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx ***!
-  \****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _projects_projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./projects/projects */ "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _projects_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects.module.css */ "./resources/js/components/pages/mainPage/projects/projects.module.css");
+/* harmony import */ var _flipCard_flipCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flipCard/flipCard */ "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -33567,7 +33525,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var ProjectsContainer = function ProjectsContainer(_ref) {
+
+var Projects = function Projects(_ref) {
   var portfolioList = _ref.portfolioList;
   var count_project = 0;
   var width = window.innerWidth;
@@ -33582,15 +33541,17 @@ var ProjectsContainer = function ProjectsContainer(_ref) {
     }
   }
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(count_project),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count_project),
       _useState2 = _slicedToArray(_useState, 2),
       stepNext = _useState2[0],
       setStepNext = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(0),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       stepPrev = _useState4[0],
       setStepPrev = _useState4[1];
+
+  var projects = portfolioList.slice(stepPrev, stepNext);
 
   var resizeHandler = function resizeHandler() {
     var clientWidth = window.innerWidth;
@@ -33609,58 +33570,30 @@ var ProjectsContainer = function ProjectsContainer(_ref) {
     setStepNext(count_project);
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
     return function () {
       window.removeEventListener("resize", resizeHandler);
     };
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-    className: "portfolio",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "portfolio-wrapper",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_projects_projects__WEBPACK_IMPORTED_MODULE_0__["default"], {
-          projects: portfolioList.slice(stepPrev, stepNext)
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "btn-container",
-          children: [stepPrev > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "review__more",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-              className: "review__button",
-              type: "button",
-              onClick: function onClick() {
-                setStepNext(stepPrev);
-
-                if (stepPrev - count_project < 0) {
-                  setStepPrev(0);
-                } else {
-                  setStepPrev(stepPrev - count_project);
-                }
-              },
-              children: "Prev page"
-            })
-          }) : "", portfolioList.length > stepNext ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "review__more",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-              className: "review__button",
-              type: "button",
-              onClick: function onClick() {
-                setStepPrev(stepNext);
-                setStepNext(stepNext + count_project);
-              },
-              children: "Next page"
-            })
-          }) : ""]
-        })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+    className: "sectionContainer ".concat(_projects_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+      className: "title",
+      children: "Complete projects"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "".concat(_projects_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].cardsContainer),
+      children: projects.map(function (element, index) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_flipCard_flipCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          card: element
+        }, index);
       })
-    })
+    })]
   });
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ProjectsContainer);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
 
 /***/ }),
 
@@ -34060,7 +33993,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section", {
-    className: _activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container,
+    className: "sectionContainer ".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "title",
       children: "Active Tasks"
@@ -34813,83 +34746,83 @@ __webpack_require__.r(__webpack_exports__);
 var myJson = {
   reviews: [{
     user: {
-      name: 'Jason',
-      avatar: '/images/user.png'
+      name: "Jason",
+      avatar: "/images/user.png"
     },
-    commets: 'Good job'
+    commets: "Good job"
   }, {
     user: {
-      name: 'Jacob',
-      avatar: '/images/user.png'
+      name: "Jacob",
+      avatar: "/images/user.png"
     },
     commets: "I had one issue by estimate 1500 USD and found here well done job!"
   }, {
     user: {
-      name: 'Alex',
-      avatar: '/images/user.png'
+      name: "Alex",
+      avatar: "/images/user.png"
     },
-    commets: 'Perfect'
+    commets: "Perfect"
   }, {
     user: {
-      name: 'Gregory',
-      avatar: '/images/user.png'
+      name: "Gregory",
+      avatar: "/images/user.png"
     },
-    commets: 'Found job fast and with no risk here'
+    commets: "Found job fast and with no risk here"
   }, {
     user: {
-      name: 'George',
-      avatar: '/images/user.png'
+      name: "George",
+      avatar: "/images/user.png"
     },
-    commets: 'I had wordpress site down, in couple of hours found here spec to rise it up'
+    commets: "I had wordpress site down, in couple of hours found here spec to rise it up"
   }, {
     user: {
-      name: 'Denis',
-      avatar: '/images/user.png'
+      name: "Denis",
+      avatar: "/images/user.png"
     },
-    commets: 'A lot of freelancers here'
+    commets: "A lot of freelancers here"
   }, {
     user: {
-      name: 'Arty',
-      avatar: '/images/user.png'
+      name: "Arty",
+      avatar: "/images/user.png"
     },
-    commets: 'I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified'
+    commets: "I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified"
   }],
   portfolio: [{
-    name_project: 'Fish and Rice',
-    photo: '/images/fishandrice.webp',
+    name_project: "Fish and Rice",
+    photo: "/images/fishandrice.webp",
     description: "Food delivery company found freelancer for full-cycle job of marketing and selling site",
-    development_stack: ['Tilda'],
-    url_project: 'https://fishandrice.spb.ru/'
+    development_stack: ["Tilda"],
+    url_project: "https://fishandrice.spb.ru/"
   }, {
-    name_project: 'Chef Baity',
-    photo: '/images/chefBaity.webp',
-    description: 'Food buisness site was made by goSimple freelancers',
-    development_stack: ['Tilda'],
-    url_project: 'https://chefbaity.ru/'
+    name_project: "Chef Baity",
+    photo: "/images/chefBaity.webp",
+    description: "Food buisness site was made by goSimple freelancers",
+    development_stack: ["Tilda"],
+    url_project: "https://chefbaity.ru/"
   }, {
-    name_project: 'Kinetic',
-    photo: '/images/kinetic.webp',
-    description: 'Crypto-currencies project was done  with help of developers from goSimple',
-    development_stack: ['Laravel', 'livewire'],
-    url_project: 'https://kineticcoin.tech/'
+    name_project: "Kinetic",
+    photo: "/images/kinetic.webp",
+    description: "Crypto-currencies project was done  with help of developers from goSimple",
+    development_stack: ["Laravel", "livewire"],
+    url_project: "https://kineticcoin.tech/"
   }, {
-    name_project: 'Green Digital software',
-    photo: '/images/greendigital.webp',
-    description: 'Beautiful site by designers and developers from goSimple',
-    development_stack: ['Wordpress'],
-    url_project: 'https://greendigitalsoftware.com/'
+    name_project: "Green Digital software",
+    photo: "/images/greendigital.webp",
+    description: "Beautiful site by designers and developers from goSimple",
+    development_stack: ["Wordpress"],
+    url_project: "https://greendigitalsoftware.com/"
   }, {
-    name_project: 'Miflasim',
-    photo: '/images/miflasim.webp',
-    description: 'Insurance company got new site from freelancers of goSimple',
-    development_stack: ['Wordpress', 'Elementor'],
-    url_project: 'https://miflasim.ussl.co.il/'
+    name_project: "Miflasim",
+    photo: "/images/miflasim.webp",
+    description: "Insurance company got new site from freelancers of goSimple",
+    development_stack: ["Wordpress", "Elementor"],
+    url_project: "https://miflasim.ussl.co.il/"
   }, {
-    name_project: 'Tablez',
-    photo: '/images/Tablez.webp',
-    description: 'E-commerce site was made fast and easy with big sign of talent by goSimple freelancers',
-    development_stack: ['Wordpress', 'Elementor'],
-    url_project: 'https://tablez.ussl.co.il/'
+    name_project: "Tablez",
+    photo: "/images/Tablez.webp",
+    description: "E-commerce site was made fast and easy with big sign of talent by goSimple freelancers",
+    development_stack: ["Wordpress", "Elementor"],
+    url_project: "https://tablez.ussl.co.il/"
   }]
 };
 
@@ -35403,10 +35336,49 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css":
-/*!******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css ***!
-  \******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers.module.css":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".mUZLjpKQW\\+b89OlFjfiqMQ\\=\\= {\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n\n.\\-0YoOa-jYRhY9RSGKEHfjA\\=\\= {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n    color: #2BB739;\n    padding-bottom: 5%;\n    margin-top: 20px;\n}\n\n.XtaLh1TP-U5ht3nLuzmqdw\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.XKNvgADwbQqvq8sx0SupxQ\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    /* background: linear-gradient(180deg, #F0F0F0 41.52%, #FFFFFF 100%); */\n    border-radius: 20px;\n    height: 139px;\n    color: #2B2B2B;\n    position: relative;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n\n.XKNvgADwbQqvq8sx0SupxQ\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n\n/* .reviews-block {\n    padding-bottom: 100px;\n} */\n\n.XKNvgADwbQqvq8sx0SupxQ\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.F-9k\\+LR4vK4QpDx8iRqpuA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n\n.F-9k\\+LR4vK4QpDx8iRqpuA\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n.spAM0r9amrOy-bO3XWtfww\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n\n.p3sdLMeaoX8d6VwMboGTyw\\=\\= {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n}\n\n._1Irpaz8S1nqdW4BJsQVfsw\\=\\= {\n    text-align: left;\n    /* padding-top: 8px; */\n    /* text-transform: uppercase; */\n    /* font-weight: bold;\n    font-size: 24px;\n    line-height: 31px; */\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 31px;\n    color: #2B2B2B;\n}\n\n.Ze9AhmVQ9lWYHHXqkeGxPA\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.e6nmEMGeT5KmTJ1JRWFpow\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    /* font-weight: 300;\n    font-size: 20px;\n    line-height: 24px; */\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 18px;\n    color: #2B2B2B;\n}\n\n.dKYl7XF4l67yvUbadosNSA\\=\\=::-webkit-scrollbar, .e6nmEMGeT5KmTJ1JRWFpow\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n\n.dKYl7XF4l67yvUbadosNSA\\=\\=::-webkit-scrollbar-track, .e6nmEMGeT5KmTJ1JRWFpow\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n\n.dKYl7XF4l67yvUbadosNSA\\=\\=::-webkit-scrollbar-thumb, .e6nmEMGeT5KmTJ1JRWFpow\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n.g9\\+tFOqH6rlFkAj6F4cmDA\\=\\= {\n    display: none;\n    font-family: 'Ubuntu';\n    font-weight: 500;\n    padding: 8px 15px;\n    /* border: 4px dashed #2B2B2B; */\n    color: #fff;\n    background-color: #2BB739;\n    border-radius: 40px;\n    font-size: 24px;\n    line-height: 28px;\n}\n\n.g9\\+tFOqH6rlFkAj6F4cmDA\\=\\=:hover {\n    color: #2BB739;\n    background-color: #fff;\n    border-color: #2BB739;\n}\n\n@media (max-width: 1024px) {\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .e6nmEMGeT5KmTJ1JRWFpow\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .XtaLh1TP-U5ht3nLuzmqdw\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .UPcev5tNHXbmryR7Io9jnQ\\=\\=::before, .UPcev5tNHXbmryR7Io9jnQ\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .\\-0YoOa-jYRhY9RSGKEHfjA\\=\\= {\n        margin-top: 5%;\n        margin-bottom: 5%;\n        padding: 0;\n    }\n\n    .mUZLjpKQW\\+b89OlFjfiqMQ\\=\\= {\n        padding: 0;\n    }\n\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .UPcev5tNHXbmryR7Io9jnQ\\=\\=::before, .UPcev5tNHXbmryR7Io9jnQ\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .XKNvgADwbQqvq8sx0SupxQ\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"reviewsWrapper": "mUZLjpKQW+b89OlFjfiqMQ==",
+	"freelancersTitle": "-0YoOa-jYRhY9RSGKEHfjA==",
+	"reviewsList": "XtaLh1TP-U5ht3nLuzmqdw==",
+	"review": "XKNvgADwbQqvq8sx0SupxQ==",
+	"user": "F-9k+LR4vK4QpDx8iRqpuA==",
+	"userImg": "spAM0r9amrOy-bO3XWtfww==",
+	"user__img": "p3sdLMeaoX8d6VwMboGTyw==",
+	"userName": "_1Irpaz8S1nqdW4BJsQVfsw==",
+	"coment": "Ze9AhmVQ9lWYHHXqkeGxPA==",
+	"comentText": "e6nmEMGeT5KmTJ1JRWFpow==",
+	"card-text": "dKYl7XF4l67yvUbadosNSA==",
+	"reviewButton": "g9+tFOqH6rlFkAj6F4cmDA==",
+	"talks": "UPcev5tNHXbmryR7Io9jnQ=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35423,45 +35395,6 @@ var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBP
 ___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "._1naSjFOg6PTIXpnLl3ewzA\\=\\= {\n    padding-top: 25px;\n    padding-bottom: 25px;\n}\n\n._3X1bN6U\\+3n8M1AMP2P9VXA\\=\\= {\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n    color: #2BB739;\n    padding-bottom: 5%;\n    margin-top: 20px;\n}\n\n._1pl46Bdp\\+DtsO3M\\+UFc73Q\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.mcijskHl4JicVoVhXD3iQQ\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    /* background: linear-gradient(180deg, #F0F0F0 41.52%, #FFFFFF 100%); */\n    border-radius: 20px;\n    height: 139px;\n    color: #2B2B2B;\n    position: relative;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n\n.mcijskHl4JicVoVhXD3iQQ\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n\n/* .reviews-block {\n    padding-bottom: 100px;\n} */\n\n.mcijskHl4JicVoVhXD3iQQ\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.VcZ79VmxlR5w1F43\\+k4wiw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n\n.VcZ79VmxlR5w1F43\\+k4wiw\\=\\=::after {\n    content: '';\n    position: absolute;\n    background-color: #2BB739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n._1Y0ZMLRMkNKQkFlHebh7TQ\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n\n.MVUC\\+J7Mg2aAYeLCjLt5\\+w\\=\\= {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n}\n\n.Kp66WgPyTU42Xu9RdlK\\+FA\\=\\= {\n    text-align: left;\n    /* padding-top: 8px; */\n    /* text-transform: uppercase; */\n    /* font-weight: bold;\n    font-size: 24px;\n    line-height: 31px; */\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 31px;\n    color: #2B2B2B;\n}\n\n.zu1QnC4lrCWqf3kH6MZ0GA\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.zoZ0FhoDBTF9NM521h1rQQ\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    /* font-weight: 300;\n    font-size: 20px;\n    line-height: 24px; */\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 18px;\n    color: #2B2B2B;\n}\n\n.kMbrvV3t-EXbMZyxXwHRpg\\=\\=::-webkit-scrollbar, .zoZ0FhoDBTF9NM521h1rQQ\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n\n.kMbrvV3t-EXbMZyxXwHRpg\\=\\=::-webkit-scrollbar-track, .zoZ0FhoDBTF9NM521h1rQQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n\n.kMbrvV3t-EXbMZyxXwHRpg\\=\\=::-webkit-scrollbar-thumb, .zoZ0FhoDBTF9NM521h1rQQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n._4KTpym1QBoveUTDAchS6Iw\\=\\= {\n    display: none;\n    font-family: 'Ubuntu';\n    font-weight: 500;\n    padding: 8px 15px;\n    /* border: 4px dashed #2B2B2B; */\n    color: #fff;\n    background-color: #2BB739;\n    border-radius: 40px;\n    font-size: 24px;\n    line-height: 28px;\n}\n\n._4KTpym1QBoveUTDAchS6Iw\\=\\=:hover {\n    color: #2BB739;\n    background-color: #fff;\n    border-color: #2BB739;\n}\n\n@media (max-width: 1024px) {\n    .mcijskHl4JicVoVhXD3iQQ\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .zoZ0FhoDBTF9NM521h1rQQ\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    ._1pl46Bdp\\+DtsO3M\\+UFc73Q\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .mcijskHl4JicVoVhXD3iQQ\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .to65D8pKqBqVcgygLYC\\+WA\\=\\=::before, .to65D8pKqBqVcgygLYC\\+WA\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .mcijskHl4JicVoVhXD3iQQ\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    ._3X1bN6U\\+3n8M1AMP2P9VXA\\=\\= {\n        margin-top: 5%;\n        margin-bottom: 5%;\n        padding: 0;\n    }\n\n    ._1naSjFOg6PTIXpnLl3ewzA\\=\\= {\n        padding: 0;\n    }\n\n    .mcijskHl4JicVoVhXD3iQQ\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .mcijskHl4JicVoVhXD3iQQ\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .to65D8pKqBqVcgygLYC\\+WA\\=\\=::before, .to65D8pKqBqVcgygLYC\\+WA\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .mcijskHl4JicVoVhXD3iQQ\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
-// Exports
-___CSS_LOADER_EXPORT___.locals = {
-	"reviewsWrapper": "_1naSjFOg6PTIXpnLl3ewzA==",
-	"freelancersTitle": "_3X1bN6U+3n8M1AMP2P9VXA==",
-	"reviewsList": "_1pl46Bdp+DtsO3M+UFc73Q==",
-	"review": "mcijskHl4JicVoVhXD3iQQ==",
-	"user": "VcZ79VmxlR5w1F43+k4wiw==",
-	"userImg": "_1Y0ZMLRMkNKQkFlHebh7TQ==",
-	"user__img": "MVUC+J7Mg2aAYeLCjLt5+w==",
-	"userName": "Kp66WgPyTU42Xu9RdlK+FA==",
-	"coment": "zu1QnC4lrCWqf3kH6MZ0GA==",
-	"comentText": "zoZ0FhoDBTF9NM521h1rQQ==",
-	"card-text": "kMbrvV3t-EXbMZyxXwHRpg==",
-	"reviewButton": "_4KTpym1QBoveUTDAchS6Iw==",
-	"talks": "to65D8pKqBqVcgygLYC+WA=="
-};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -35484,7 +35417,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    margin: 0 0 37px 0;\n    position: relative;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    left: 32%;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 100%;\n    height: 64px;\n    top: 294px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 17px;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    left: 32%;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    /* width: 100%; */\n    height: 64px;\n    top: 294px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 17px;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw=="
@@ -35592,10 +35525,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css":
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -35609,10 +35542,47 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gHxB0ar-SfiRLzBuvE71mw\\=\\= {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".SX3nV2JUCiqmL31z8NmtPA\\=\\= {\n    background-color: #fff;\n    height: 365px;\n    border: 3px dashed #2bb739;\n    border-radius: 20px;\n    perspective: 1000px;\n    overflow: hidden;\n    box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);\n}\n\n/* .card:not(:last-child) {\n    margin-right: 10px;\n} */\n\n.YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    transition: transform 0.8s;\n    transform-style: preserve-3d;\n}\n\n.SX3nV2JUCiqmL31z8NmtPA\\=\\=:hover .YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    transform: rotateY(180deg);\n}\n\n.YLdxuq1uCvyG3qTaeKENgQ\\=\\= {\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.bKBQgKKeyMzSbBlXC6yNjw\\=\\= {\n    background-color: #fff;\n    color: #2b2b2b;\n}\n\n.bay113VW8PEnVgBsOoDmDg\\=\\= {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    -o-object-position: top left;\n       object-position: top left;\n}\n\n.SM6n-v-vVqAcmWveJ6WGnA\\=\\= {\n    padding: 20px;\n    transform: rotateY(180deg);\n    background: #fff;\n    color: #2b2b2b;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n._5xMt9DpyBXY3YaN3Un2Siw\\=\\= {\n    text-transform: uppercase;\n    font-weight: 400;\n    font-size: 24px;\n    line-height: 28px;\n    margin-bottom: 20px;\n}\n\n.rUqJv1wGuH5H20FUiuwrEw\\=\\= {\n    font-weight: 300;\n    font-size: 20px;\n    max-height: 175px;\n    min-height: 100px;\n    font-style: italic;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    text-align: left;\n    margin-bottom: 11px;\n}\n\n.HhKqNZQgmolxBybdkw8C-w\\=\\= {\n    font-weight: 400;\n    font-size: 20px;\n    line-height: 31px;\n    margin-bottom: 8px;\n    text-align: left;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= {\n    list-style: none;\n    text-align: left;\n    display: flex;\n    align-items: center;\n    flex-wrap: wrap;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li {\n    width: 45%;\n    font-weight: 300;\n    font-size: 20px;\n    line-height: 23px;\n}\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li::before {\n    content: \"\\2022\";\n    color: #2bb739;\n    font-weight: bold;\n    display: inline-block;\n    width: 10px;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"portfolio-list": "gHxB0ar-SfiRLzBuvE71mw=="
+	"container": "SX3nV2JUCiqmL31z8NmtPA==",
+	"cardInner": "YgKAq3n23dRCCVHJkdfMtw==",
+	"card": "YLdxuq1uCvyG3qTaeKENgQ==",
+	"front": "bKBQgKKeyMzSbBlXC6yNjw==",
+	"img": "bay113VW8PEnVgBsOoDmDg==",
+	"back": "SM6n-v-vVqAcmWveJ6WGnA==",
+	"name": "_5xMt9DpyBXY3YaN3Un2Siw==",
+	"text": "rUqJv1wGuH5H20FUiuwrEw==",
+	"devTitle": "HhKqNZQgmolxBybdkw8C-w==",
+	"devList": "xsiZFuPhsvNa-IZecbwePg=="
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/projects.module.css":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/projects.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".Wk5zYB2QaD2AQmqU6FTuyg\\=\\= {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\n.tXfsS0sZlb-DYb823TiN0A\\=\\= {\n    margin: 0 0 25px 0;\n    width: 100%;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n", ""]);
+// Exports
+___CSS_LOADER_EXPORT___.locals = {
+	"container": "Wk5zYB2QaD2AQmqU6FTuyg==",
+	"cardsContainer": "tXfsS0sZlb-DYb823TiN0A=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35636,7 +35606,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".RBpQcdLcAelFjR37oEjGJA\\=\\= {\n    margin: 0 0 55px 0;\n    text-align: center;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2bb739;\n    position: relative;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    content: \"\";\n    display: block;\n    height: 69px;\n    width: 70vw;\n    position: absolute;\n    z-index: -1;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before {\n    left: -13%;\n    bottom: -2px;\n\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 0 10px 10px 0;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    top: -15px;\n    right: -13%;\n    height: 64px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n\n.xjxHqUOUFIeyl-B1VildBQ\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.am0-I9V36dARoejQN22gLQ\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    background: linear-gradient(180deg, #f0f0f0 41.52%, #ffffff 100%);\n    border-radius: 20px;\n    height: 139px;\n    color: #2b2b2b;\n    position: relative;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n.R-ntADr1N69fCQ96sLwnWQ\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n/* .user__img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n} */\n\n.SgDXQ9\\+t98iPmry0zW71ZA\\=\\= {\n    text-align: left;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n    color: #2b2b2b;\n}\n\n.xVYYmvv3NYMe2Hak4ZNigQ\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 18px;\n    color: #2b2b2b;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n@media (max-width: 1024px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .wlwTYF1NbyH7LQmkURZtZg\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\= {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .ofe98RwB8-LWbom03bXNHQ\\=\\= {\n        padding: 0;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".RBpQcdLcAelFjR37oEjGJA\\=\\= {\n    margin: 0 0 55px 0;\n    text-align: center;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2bb739;\n    position: relative;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    content: \"\";\n    display: block;\n    height: 69px;\n    /* width: 70vw; */\n    position: absolute;\n    z-index: -1;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::before {\n    left: -13%;\n    bottom: -2px;\n\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 0 10px 10px 0;\n}\n.RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n    top: -15px;\n    right: -13%;\n    height: 64px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n\n.xjxHqUOUFIeyl-B1VildBQ\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    flex-wrap: wrap;\n    justify-content: space-between;\n}\n\n.am0-I9V36dARoejQN22gLQ\\=\\= {\n    width: 30%;\n    display: flex;\n    flex-direction: row;\n    padding: 16px;\n    box-shadow: 0px 0px 30px 0px rgba(210, 253, 191, 0.158);\n    margin-bottom: 30px;\n    background: linear-gradient(180deg, #f0f0f0 41.52%, #ffffff 100%);\n    border-radius: 20px;\n    height: 139px;\n    color: #2b2b2b;\n    position: relative;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n}\n.am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n    margin-right: 10px;\n}\n\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n}\n.CLKrLhw4sRq-ReOiZrfHgA\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n}\n\n.R-ntADr1N69fCQ96sLwnWQ\\=\\= {\n    max-width: 103px;\n    max-height: 103px;\n    margin: 0 auto;\n}\n/* .user__img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n} */\n\n.SgDXQ9\\+t98iPmry0zW71ZA\\=\\= {\n    text-align: left;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 31px;\n    color: #2b2b2b;\n}\n\n.xVYYmvv3NYMe2Hak4ZNigQ\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n    padding-right: 15px;\n    text-align: left;\n    max-height: 97px;\n    overflow-y: auto;\n    margin-bottom: 8px;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 300;\n    font-size: 16px;\n    line-height: 18px;\n    color: #2b2b2b;\n}\n\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n.Ca2wBHtTPUIzb3XRRNSLBA\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n@media (max-width: 1024px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .Ca2wBHtTPUIzb3XRRNSLBA\\=\\= {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .wlwTYF1NbyH7LQmkURZtZg\\=\\= {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\= {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .ofe98RwB8-LWbom03bXNHQ\\=\\= {\n        padding: 0;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .am0-I9V36dARoejQN22gLQ\\=\\=:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 60px;\n    } */\n\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::before,\n    .RBpQcdLcAelFjR37oEjGJA\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .am0-I9V36dARoejQN22gLQ\\=\\= {\n        width: 90%;\n    }\n\n    /* .reviews-block {\n        padding-bottom: 40px;\n    } */\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"talks": "RBpQcdLcAelFjR37oEjGJA==",
@@ -35764,7 +35734,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".ent0QYl\\+G8G4ImfKVnMhEA\\=\\= {\n    margin: 0 0 35px 0;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    position: relative;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after,\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 100%;\n    border-radius: 10px;\n    z-index: -1;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    top: 207px;\n    right: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after {\n    top: 417px;\n    left: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.JlQn3NM7XyXwnWVc9KwBYw\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".ent0QYl\\+G8G4ImfKVnMhEA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    position: relative;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after,\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    /* width: 100%; */\n    border-radius: 10px;\n    z-index: -1;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::before {\n    top: 207px;\n    right: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.ent0QYl\\+G8G4ImfKVnMhEA\\=\\=::after {\n    top: 417px;\n    left: 102%;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.JlQn3NM7XyXwnWVc9KwBYw\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "ent0QYl+G8G4ImfKVnMhEA==",
@@ -90502,10 +90472,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css ***!
-  \********************************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/freelancers/freelancers.module.css":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/freelancers/freelancers.module.css ***!
+  \***********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -90513,9 +90483,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./freelancers.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./freelancers.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers.module.css");
 
             
 
@@ -90532,10 +90502,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css ***!
+  \************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -90543,9 +90513,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./freelancersContainer.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./freelancers.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css");
 
             
 
@@ -90554,11 +90524,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancersContainer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -90682,10 +90652,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css":
-/*!***********************************************************************************************!*\
-  !*** ./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css ***!
-  \***********************************************************************************************/
+/***/ "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css ***!
+  \**************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -90695,7 +90665,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_projects_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./projects.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_flipCard_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./flipCard.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_flipCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_flipCard_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/mainPage/projects/projects.module.css":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/pages/mainPage/projects/projects.module.css ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_projects_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./projects.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/mainPage/projects/projects.module.css");
 
             
 
@@ -91343,12 +91343,12 @@ var map = {
 	"./pages/mainPage/aboutUs/aboutUs": "./resources/js/components/pages/mainPage/aboutUs/aboutUs.jsx",
 	"./pages/mainPage/aboutUs/aboutUs.jsx": "./resources/js/components/pages/mainPage/aboutUs/aboutUs.jsx",
 	"./pages/mainPage/aboutUs/aboutUs.module.css": "./resources/js/components/pages/mainPage/aboutUs/aboutUs.module.css",
-	"./pages/mainPage/freelancersContainer/freelancers/freelancers": "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.jsx",
-	"./pages/mainPage/freelancersContainer/freelancers/freelancers.jsx": "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.jsx",
-	"./pages/mainPage/freelancersContainer/freelancers/freelancers.module.css": "./resources/js/components/pages/mainPage/freelancersContainer/freelancers/freelancers.module.css",
-	"./pages/mainPage/freelancersContainer/freelancersContainer": "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.jsx",
-	"./pages/mainPage/freelancersContainer/freelancersContainer.jsx": "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.jsx",
-	"./pages/mainPage/freelancersContainer/freelancersContainer.module.css": "./resources/js/components/pages/mainPage/freelancersContainer/freelancersContainer.module.css",
+	"./pages/mainPage/freelancers/freelancers": "./resources/js/components/pages/mainPage/freelancers/freelancers.jsx",
+	"./pages/mainPage/freelancers/freelancers.jsx": "./resources/js/components/pages/mainPage/freelancers/freelancers.jsx",
+	"./pages/mainPage/freelancers/freelancers.module.css": "./resources/js/components/pages/mainPage/freelancers/freelancers.module.css",
+	"./pages/mainPage/freelancers/freelancers2/freelancers": "./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.jsx",
+	"./pages/mainPage/freelancers/freelancers2/freelancers.jsx": "./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.jsx",
+	"./pages/mainPage/freelancers/freelancers2/freelancers.module.css": "./resources/js/components/pages/mainPage/freelancers/freelancers2/freelancers.module.css",
 	"./pages/mainPage/main": "./resources/js/components/pages/mainPage/main.jsx",
 	"./pages/mainPage/main.jsx": "./resources/js/components/pages/mainPage/main.jsx",
 	"./pages/mainPage/main.module.css": "./resources/js/components/pages/mainPage/main.module.css",
@@ -91361,13 +91361,12 @@ var map = {
 	"./pages/mainPage/makeOrder/makeOrder": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.jsx",
 	"./pages/mainPage/makeOrder/makeOrder.jsx": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.jsx",
 	"./pages/mainPage/makeOrder/makeOrder.module.css": "./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css",
-	"./pages/mainPage/projectsContainer/projects/flipCard/flipCard": "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx",
-	"./pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projects/flipCard/flipCard.jsx",
-	"./pages/mainPage/projectsContainer/projects/projects": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx",
-	"./pages/mainPage/projectsContainer/projects/projects.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.jsx",
-	"./pages/mainPage/projectsContainer/projects/projects.module.css": "./resources/js/components/pages/mainPage/projectsContainer/projects/projects.module.css",
-	"./pages/mainPage/projectsContainer/projectsContainer": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
-	"./pages/mainPage/projectsContainer/projectsContainer.jsx": "./resources/js/components/pages/mainPage/projectsContainer/projectsContainer.jsx",
+	"./pages/mainPage/projects/flipCard/flipCard": "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx",
+	"./pages/mainPage/projects/flipCard/flipCard.jsx": "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx",
+	"./pages/mainPage/projects/flipCard/flipCard.module.css": "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.module.css",
+	"./pages/mainPage/projects/projects": "./resources/js/components/pages/mainPage/projects/projects.jsx",
+	"./pages/mainPage/projects/projects.jsx": "./resources/js/components/pages/mainPage/projects/projects.jsx",
+	"./pages/mainPage/projects/projects.module.css": "./resources/js/components/pages/mainPage/projects/projects.module.css",
 	"./pages/mainPage/talksContainer/talks/talks": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
 	"./pages/mainPage/talksContainer/talks/talks.jsx": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.jsx",
 	"./pages/mainPage/talksContainer/talks/talks.module.css": "./resources/js/components/pages/mainPage/talksContainer/talks/talks.module.css",
