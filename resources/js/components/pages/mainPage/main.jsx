@@ -16,7 +16,7 @@ const Main = (props) => {
     const scroll = () => makeOrder.current.scrollIntoView();
 
     return (
-        <div className="container"> 119
+        <div className="container">
             <section className={`${style.headerContainer} sectionContainer`}>
                 <MainHeader role={props.auth.user && props.auth.user.role} />
 
