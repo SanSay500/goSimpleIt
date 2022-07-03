@@ -17,6 +17,8 @@ const HeaderLogout = (title) => {
                         {title.title}
                     </Typography>
 
+                    <a href={route('chatify')}>Messenger</a>
+
                     <GoMenu />
                 </div>
             </div>
