@@ -33102,8 +33102,7 @@ var MakeOrder = function MakeOrder(props) {
       setData = _useForm.setData,
       errors = _useForm.errors,
       post = _useForm.post,
-      processing = _useForm.processing,
-      reset = _useForm.reset;
+      processing = _useForm.processing;
 
   var taskIdRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
 
@@ -33133,15 +33132,15 @@ var MakeOrder = function MakeOrder(props) {
     e.preventDefault();
     data.task_id = taskIdRef.current;
     post(route("order.store", data, {
-      forceFormData: true,
-      _method: "put",
       preserveScroll: true,
-      preserveState: true
+      forceFormData: true,
+      _method: "put"
     }));
   }
 
   var changeSearch = function changeSearch(_ref) {
     var value = _ref.target.value;
+    console.log(value);
     setMoneyTotalSearch(0);
     setHoursTotalSearch(0);
     var job_found = tasks.find(function (e) {
@@ -33163,6 +33162,7 @@ var MakeOrder = function MakeOrder(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     taskIdRef.current = taskId;
+    console.log(taskId);
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formWrapper,
@@ -33173,7 +33173,6 @@ var MakeOrder = function MakeOrder(props) {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formLabel,
         children: "Make Order"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_Autocomplete__WEBPACK_IMPORTED_MODULE_6__["default"], {
-        freeSolo: true,
         id: "search-job auto",
         className: "search_input",
         disableClearable: true,
@@ -33182,8 +33181,10 @@ var MakeOrder = function MakeOrder(props) {
         }),
         renderInput: function renderInput(params) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_mui_material_TextField__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread(_objectSpread({}, params), {}, {
+            required: true,
             name: "task_type",
             onSelect: changeSearch,
+            value: taskId,
             label: "Type the task",
             InputProps: _objectSpread(_objectSpread({}, params.InputProps), {}, {
               type: "search"
@@ -33200,11 +33201,11 @@ var MakeOrder = function MakeOrder(props) {
             width: "24",
             height: "16",
             viewBox: "0 0 24 24",
-            "stroke-width": "2",
+            strokeWidth: "2",
             stroke: "currentColor",
             fill: "none",
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round",
+            strokeLinecap: "round",
+            strokeLinejoin: "round",
             children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               stroke: "none",
               d: "M0 0h24v24H0z",
@@ -33227,9 +33228,9 @@ var MakeOrder = function MakeOrder(props) {
             viewBox: "0 0 20 20",
             xmlns: "http://www.w3.org/2000/svg",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
-              "fill-rule": "evenodd",
+              fillRule: "evenodd",
               d: "M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z",
-              "clip-rule": "evenodd"
+              clipRule: "evenodd"
             })
           }), "Average time task takes:", " ", hoursTotalSearch, " day(s)"]
         })]
@@ -33238,27 +33239,26 @@ var MakeOrder = function MakeOrder(props) {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput,
         label: "Title",
         name: "title",
+        required: true,
         value: data.title,
         onChange: function onChange(e) {
           return setData("title", e.target.value);
         },
-        placeholder: "Enter the title"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+        placeholder: "Enter the title *"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
           type: "text",
           className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput,
           label: "description",
           name: "description",
+          required: true,
           errors: errors.description,
           value: data.description,
           onChange: function onChange(e) {
             return setData("description", e.target.value);
           },
-          placeholder: "Enter description"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-          className: "text-red-600",
-          children: errors.description
-        })]
+          placeholder: "Enter description *"
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInfo,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -33270,6 +33270,8 @@ var MakeOrder = function MakeOrder(props) {
             type: "text",
             className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInputSecond),
             label: "cost",
+            inputmode: "numeric",
+            required: true,
             name: "cost",
             onChange: function onChange(e) {
               return setData("cost", e.target.value);
@@ -33284,7 +33286,9 @@ var MakeOrder = function MakeOrder(props) {
             children: "Term"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
             type: "text",
+            required: true,
             className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formInputSecond),
+            inputmode: "numeric",
             label: "time",
             name: "time",
             onChange: function onChange(e) {
@@ -33327,6 +33331,7 @@ var MakeOrder = function MakeOrder(props) {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btnContainer,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           type: "submit",
+          disabled: processing,
           className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btnSubmit,
           children: "Publish and find a specialist"
         })

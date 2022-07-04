@@ -32,8 +32,6 @@ const OrderDetails = (props) => {
                 <div className={`${style.orderWrapper}`}>
                 <div className={`${style.orderContainer}`}>
                     <div className={`${style.proposalContainer}`}>
-
-
                     <Link as="button" type="button" onClick={Goback}
                             className={`${style.buttonBack}`}
                         >
