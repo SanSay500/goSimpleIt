@@ -7,7 +7,7 @@ import "@/../css/form.css";
 import style from "./makeOrder.module.css";
 
 const MakeOrder = (props) => {
-    const { data, setData, errors, post, processing, reset } = useForm({
+    const { data, setData, errors, post, processing } = useForm({
         title: "",
         task_id: "",
         description: "",
@@ -28,15 +28,15 @@ const MakeOrder = (props) => {
         data.task_id = taskIdRef.current;
         post(
             route("order.store", data, {
+                preserveScroll: true,
                 forceFormData: true,
                 _method: "put",
-                preserveScroll: true,
-                preserveState: true,
             })
         );
     }
 
     const changeSearch = ({ target: { value } }) => {
+        console.log(value)
         setMoneyTotalSearch(0);
         setHoursTotalSearch(0);
 
@@ -50,6 +50,7 @@ const MakeOrder = (props) => {
 
     useEffect(() => {
         taskIdRef.current = taskId;
+        console.log(taskId);
     });
 
     return (
@@ -57,7 +58,6 @@ const MakeOrder = (props) => {
             <form name="createForm" onSubmit={handleSubmit}>
                 <label className={style.formLabel}>Make Order</label>
                 <Autocomplete
-                    freeSolo
                     id="search-job auto"
                     className="search_input"
                     disableClearable
@@ -65,8 +65,10 @@ const MakeOrder = (props) => {
                     renderInput={(params) => (
                         <TextField
                             {...params}
+                            required
                             name="task_type"
                             onSelect={changeSearch}
+                            value={taskId}
                             label="Type the task"
                             InputProps={{
                                 ...params.InputProps,
@@ -84,11 +86,11 @@ const MakeOrder = (props) => {
                                 width="24"
                                 height="16"
                                 viewBox="0 0 24 24"
-                                stroke-width="2"
+                                strokeWidth="2"
                                 stroke="currentColor"
                                 fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                             >
                                 {" "}
                                 <path
@@ -111,26 +113,28 @@ const MakeOrder = (props) => {
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                                    clip-rule="evenodd"
+                                    clipRule="evenodd"
                                 ></path>
                             </svg>
                             Average time task takes: {hoursTotalSearch} day(s)
                         </span>
                     </div>
                 )}
-                {/*<label className="form-label">Title</label>*/}
-                <input
-                    type="text"
-                    className={style.formInput}
-                    label="Title"
-                    name="title"
-                    value={data.title}
-                    onChange={(e) => setData("title", e.target.value)}
-                    placeholder="Enter the title"
-                />
-
+                    {/*<label className="form-label">Title</label>*/}
+                    <input
+                        type="text"
+                        className={style.formInput}
+                        label="Title"
+                        name="title"
+                        required
+                        value={data.title}
+                        onChange={(e) =>
+                            setData("title", e.target.value)
+                        }
+                        placeholder="Enter the title *"
+                    />
                 <div>
                     {/*<label className="form-label">
                         Description
@@ -140,12 +144,14 @@ const MakeOrder = (props) => {
                         className={style.formInput}
                         label="description"
                         name="description"
+                        required
                         errors={errors.description}
                         value={data.description}
-                        onChange={(e) => setData("description", e.target.value)}
-                        placeholder="Enter description"
+                        onChange={(e) =>
+                            setData("description", e.target.value)
+                        }
+                        placeholder="Enter description *"
                     />
-                    <span className="text-red-600">{errors.description}</span>
                 </div>
                 <div className={style.formInfo}>
                     <div className={style.formPrice}>
@@ -154,6 +160,8 @@ const MakeOrder = (props) => {
                             type="text"
                             className={`${style.formInput} ${style.formInputSecond}`}
                             label="cost"
+                            inputmode="numeric"
+                            required
                             name="cost"
                             onChange={(e) => setData("cost", e.target.value)}
                         />
@@ -163,7 +171,9 @@ const MakeOrder = (props) => {
                         <label className={style.formLabel}>Term</label>
                         <input
                             type="text"
+                            required
                             className={`${style.formInput} ${style.formInputSecond}`}
+                            inputmode="numeric"
                             label="time"
                             name="time"
                             onChange={(e) => setData("time", e.target.value)}
@@ -209,7 +219,7 @@ const MakeOrder = (props) => {
                 </div>
 
                 <div className={style.btnContainer}>
-                    <button type="submit" className={style.btnSubmit}>
+                    <button type="submit" disabled={processing} className={style.btnSubmit}>
                         Publish and find a specialist
                     </button>
                 </div>
