@@ -36,7 +36,7 @@ const MakeOrder = (props) => {
     }
 
     const changeSearch = ({ target: { value } }) => {
-        console.log(value)
+        console.log(value);
         setMoneyTotalSearch(0);
         setHoursTotalSearch(0);
 
@@ -122,19 +122,17 @@ const MakeOrder = (props) => {
                         </span>
                     </div>
                 )}
-                    {/*<label className="form-label">Title</label>*/}
-                    <input
-                        type="text"
-                        className={style.formInput}
-                        label="Title"
-                        name="title"
-                        required
-                        value={data.title}
-                        onChange={(e) =>
-                            setData("title", e.target.value)
-                        }
-                        placeholder="Enter the title *"
-                    />
+                {/*<label className="form-label">Title</label>*/}
+                <input
+                    type="text"
+                    className={style.formInput}
+                    label="Title"
+                    name="title"
+                    required
+                    value={data.title}
+                    onChange={(e) => setData("title", e.target.value)}
+                    placeholder="Enter the title *"
+                />
                 <div>
                     {/*<label className="form-label">
                         Description
@@ -147,9 +145,7 @@ const MakeOrder = (props) => {
                         required
                         errors={errors.description}
                         value={data.description}
-                        onChange={(e) =>
-                            setData("description", e.target.value)
-                        }
+                        onChange={(e) => setData("description", e.target.value)}
                         placeholder="Enter description *"
                     />
                 </div>
@@ -160,7 +156,7 @@ const MakeOrder = (props) => {
                             type="text"
                             className={`${style.formInput} ${style.formInputSecond}`}
                             label="cost"
-                            inputmode="numeric"
+                            inputMode="numeric"
                             required
                             name="cost"
                             onChange={(e) => setData("cost", e.target.value)}
@@ -173,7 +169,7 @@ const MakeOrder = (props) => {
                             type="text"
                             required
                             className={`${style.formInput} ${style.formInputSecond}`}
-                            inputmode="numeric"
+                            inputMode="numeric"
                             label="time"
                             name="time"
                             onChange={(e) => setData("time", e.target.value)}
@@ -219,7 +215,11 @@ const MakeOrder = (props) => {
                 </div>
 
                 <div className={style.btnContainer}>
-                    <button type="submit" disabled={processing} className={style.btnSubmit}>
+                    <button
+                        type="submit"
+                        disabled={processing}
+                        className={style.btnSubmit}
+                    >
                         Publish and find a specialist
                     </button>
                 </div>

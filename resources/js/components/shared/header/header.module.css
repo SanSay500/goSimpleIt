@@ -1,19 +1,10 @@
-.headerWapper {
-    display: grid;
-    grid-template-columns:170px 100px 1fr 140px;
+.header {
+    margin: 0 0 75px 0;
+    display: flex;
     align-items: center;
-    column-gap: 30px;
-}
-.headerLogo img {
-    width: 100%;
-    max-height: 65px;
+    justify-content: space-between;
 }
 
-.headerLink{
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
-    display: block;
-    text-align: center;
+.auth {
+    max-width: 140px;
 }

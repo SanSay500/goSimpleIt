@@ -4,7 +4,7 @@ import { myJson } from "../../../mocks/review-data";
 import Talks from "./talks/talks";
 import Projects from "./projects/projects";
 import AboutUs from "./aboutUs/aboutUs";
-import MainHeader from "./mainHeader/mainHeader";
+import Header from "@/components/shared/header/header";
 import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
 import Freelancers from "./freelancers/freelancers";
@@ -19,9 +19,7 @@ const Main = (props) => {
         <>
             <section className={`sectionContainer ${style.headerContainer}`}>
                 <div className={`container ${style.bgrImg}`}>
-                    <MainHeader
-                        role={props.auth.user && props.auth.user.role}
-                    />
+                    <Header role={props.auth.user && props.auth.user.role} />
 
                     <MainStart scroll={scroll} />
                 </div>

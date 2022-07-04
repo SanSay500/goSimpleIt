@@ -1,17 +1,56 @@
-.auth {
-    padding: 14px 36px !important;
-    background-image: url('/images/borderButton.png');
+.menuContainer {
+    position: relative;
+}
+
+.btnMenu {
+    padding: 14px 36px;
+    background-image: url("/images/borderButton.png");
     background-repeat: no-repeat;
-    font-weight: 400 !important;
-    font-size: 18px !important;
-    line-height: 21px !important;
-    color: #2BB739 !important;
-    width: 100%;
+    background-size: contain;
+    background-position: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2bb739;
+    width: 140px;
     text-align: center;
 }
-.auth:hover{
-    background-color: #fff!important;
+
+.menu {
+    position: absolute;
+    padding: 10px 25px;
+    top: 50px;
+    background: #ffffff;
+    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
 }
-.menuWrapper{
+
+.item {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    cursor: pointer;
+}
+.item + .item {
+    margin: 7px 0 0 0;
+}
+.auth {
+    padding: 14px 36px;
+    background-image: url("/images/borderButton.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2bb739;
+    width: 140px;
+    text-align: center;
+    cursor: pointer;
+}
+.auth:hover {
+    background-color: #fff;
+}
+.menuWrapper {
     grid-column: 4/5;
 }
