@@ -1,19 +1,19 @@
-.container {
+.section {
     position: relative;
 }
-.container::after,
-.container::before {
+.section::after,
+.section::before {
     display: block;
     content: "";
     position: absolute;
     height: 64px;
-    /* width: 100%; */
-    border-radius: 10px;
+    width: 7%;
     z-index: -1;
 }
-.container::before {
+.section::before {
     top: 207px;
-    right: 102%;
+    left: 0;
+    border-radius: 0 10px 10px 0;
     background: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.2) 0%,
@@ -21,9 +21,10 @@
         ),
         #2b2b2b;
 }
-.container::after {
+.section::after {
     top: 417px;
-    left: 102%;
+    right: 0;
+    border-radius: 10px 0 0 10px;
     background: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.2) 0%,

@@ -13,22 +13,24 @@ const Talks = ({ reviewsList, count }) => {
     }
 
     return (
-        <section className={`sectionContainer ${style.container}`}>
-            <h3 className={`title`}>Talks about us</h3>
+        <section className={`sectionContainer ${style.section}`}>
+            <div className={`container`}>
+                <h3 className={`title ${style.title}`}>Talks about us</h3>
 
-            <div className={style.cardsList}>
-                {freelancersList.map((freelancer, i) => (
-                    <PeopleCard key={i} freelancer={freelancer} />
-                ))}
+                <div className={style.cardsList}>
+                    {freelancersList.map((freelancer, i) => (
+                        <PeopleCard key={i} freelancer={freelancer} />
+                    ))}
+                </div>
+
+                {reviewsList.length > showOrdersQty && (
+                    <ButtonViewMore
+                        click={(e) => {
+                            loadOrders(e);
+                        }}
+                    />
+                )}
             </div>
-
-            {reviewsList.length > showOrdersQty && (
-                <ButtonViewMore
-                    click={(e) => {
-                        loadOrders(e);
-                    }}
-                />
-            )}
         </section>
     );
 };

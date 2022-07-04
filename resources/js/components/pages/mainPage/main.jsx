@@ -3,7 +3,7 @@ import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
 import Talks from "./talks/talks";
 import Projects from "./projects/projects";
-import AboutContainer from "./aboutUs/aboutUs";
+import AboutUs from "./aboutUs/aboutUs";
 import MainHeader from "./mainHeader/mainHeader";
 import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
@@ -16,11 +16,15 @@ const Main = (props) => {
     const scroll = () => makeOrder.current.scrollIntoView();
 
     return (
-        <div className="container">
-            <section className={`${style.headerContainer} sectionContainer`}>
-                <MainHeader role={props.auth.user && props.auth.user.role} />
+        <>
+            <section className={`sectionContainer ${style.headerContainer}`}>
+                <div className={`container ${style.bgrImg}`}>
+                    <MainHeader
+                        role={props.auth.user && props.auth.user.role}
+                    />
 
-                <MainStart scroll={scroll} />
+                    <MainStart scroll={scroll} />
+                </div>
             </section>
 
             <ActiveTasks count={6} />
@@ -31,13 +35,17 @@ const Main = (props) => {
 
             <Talks reviewsList={myJson.reviews} count={3} />
 
-            <section ref={makeOrder} user={props.auth.user} className={style.aboutOrder}>
-                <AboutContainer />
+            <div
+                ref={makeOrder}
+                user={props.auth.user}
+                className={`sectionContainer ${style.blockContainer}`}
+            >
+                <AboutUs />
                 <MakeOrder />
-            </section>
+            </div>
 
             <Footer />
-        </div>
+        </>
     );
 };
 export default Main;
