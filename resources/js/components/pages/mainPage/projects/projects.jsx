@@ -49,13 +49,15 @@ const Projects = ({ portfolioList }) => {
     }, []);
 
     return (
-        <section className={`sectionContainer`}>
-            <h2 className={`title`}>Complete projects</h2>
+        <section className={`sectionContainer ${style.section}`}>
+            <div className={`container`}>
+                <h2 className={`title`}>Complete projects</h2>
 
-            <div className={`${style.cardsContainer}`}>
-                {projects.map((element, index) => (
-                    <FlipCard key={index} card={element} />
-                ))}
+                <div className={`${style.cardsContainer}`}>
+                    {projects.map((element, index) => (
+                        <FlipCard key={index} card={element} />
+                    ))}
+                </div>
             </div>
 
             {/* <div className="btn-container">

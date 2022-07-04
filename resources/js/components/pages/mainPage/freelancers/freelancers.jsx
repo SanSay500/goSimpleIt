@@ -13,26 +13,28 @@ const Freelancers = ({ reviewsList, count }) => {
     }
 
     return (
-        <section className={`sectionContainer ${style.container}`}>
-            <h3 className={`title`}>Best freelancers</h3>
+        <section className={`sectionContainer ${style.section}`}>
+            <div className={`container`}>
+                <h3 className={`title`}>Best freelancers</h3>
 
-            <div className={style.cardsList}>
-                {freelancersList.map((freelancer, i) => (
-                    <PeopleCard
-                        key={i}
-                        freelancer={freelancer}
-                        classes={style.card}
+                <div className={style.cardsList}>
+                    {freelancersList.map((freelancer, i) => (
+                        <PeopleCard
+                            key={i}
+                            freelancer={freelancer}
+                            classes={style.card}
+                        />
+                    ))}
+                </div>
+
+                {reviewsList.length > showOrdersQty && (
+                    <ButtonViewMore
+                        click={(e) => {
+                            loadOrders(e);
+                        }}
                     />
-                ))}
+                )}
             </div>
-
-            {reviewsList.length > showOrdersQty && (
-                <ButtonViewMore
-                    click={(e) => {
-                        loadOrders(e);
-                    }}
-                />
-            )}
         </section>
     );
 };

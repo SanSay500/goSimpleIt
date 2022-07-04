@@ -32,21 +32,23 @@ const ActiveTasks = ({ count, classes }) => {
     // }
 
     return (
-        <section className={`sectionContainer ${style.container}`}>
-            <h2 className={`title`}>Active Tasks</h2>
-            <div className={`${style.cardsContainer} ${classes}`}>
-                {ordersToShow.slice(0, showOrdersQty).map((order) => {
-                    return <BasicCard key={order.id} props={order} />;
-                })}
-            </div>
+        <section className={`sectionContainer ${style.section}`}>
+            <div className={`container `}>
+                <h2 className={`title`}>Active Tasks</h2>
+                <div className={`${style.cardsContainer} ${classes}`}>
+                    {ordersToShow.slice(0, showOrdersQty).map((order) => {
+                        return <BasicCard key={order.id} props={order} />;
+                    })}
+                </div>
 
-            {ordersToShow.length > showOrdersQty && (
-                <ButtonViewMore
-                    click={(e) => {
-                        loadOrders(e);
-                    }}
-                />
-            )}
+                {ordersToShow.length > showOrdersQty && (
+                    <ButtonViewMore
+                        click={(e) => {
+                            loadOrders(e);
+                        }}
+                    />
+                )}
+            </div>
         </section>
     );
 };

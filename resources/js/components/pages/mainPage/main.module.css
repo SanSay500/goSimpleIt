@@ -1,38 +1,47 @@
 .headerContainer {
     position: relative;
+    padding: 25px 0 0;
+}
+
+.bgrImg {
+    position: relative;
     align-items: stretch;
 }
 .headerContainer::before,
-.headerContainer::after {
+.bgrImg::after {
     display: block;
     content: "";
     position: absolute;
-    left: 32%;
     z-index: -1;
 }
 .headerContainer::before {
-    /* width: 100%; */
+    width: 62%;
+    min-width: 964px;
     height: 64px;
     top: 294px;
+    right: 0;
     background: linear-gradient(
             180deg,
             rgba(255, 255, 255, 0.2) 0%,
             rgba(0, 0, 0, 0) 100%
         ),
         #2b2b2b;
-    border-radius: 10px;
+    border-radius: 10px 0 0 10px;
 }
-.headerContainer::after {
+.bgrImg::after {
     width: 696px;
     height: 403px;
-    top: 17px;
+    top: 0;
+    left: 34%;
     background-image: url("/images/bgrMainHeaderContainer.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 100%;
 }
 
-.aboutOrder {
+.blockContainer {
+    margin: 0 auto 40px;
     display: flex;
-    margin: 0 0 60px 0;
+    padding: 0 120px;
+    max-width: 1440px;
 }

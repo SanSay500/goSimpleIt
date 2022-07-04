@@ -74,13 +74,20 @@ class OrderController extends Controller
 
     public function new_proposal(Request $request)
     {
+        $user_id = Auth::user()->id;
+        if (Proposal::where('user_id', $user_id)->where('order_id', $request->order_id)->exists())
+        {
+            //return Redirect::route("order.details", ['id' => $request->order_id])->withErrors(array('message' => 'Sorry, but you already have made a proposal for task number '.$request->order_id), 'errors');
+            return Redirect::route('freelancer_dashboard_index')->with('error', 'Sorry, but you already have made a proposal for the task number '.$request->order_id);
+        } else {
         Proposal::create([
-            'user_id'=> Auth::user()->id,
+            'user_id'=> $user_id,
             'order_id' => $request->order_id,
             'description' => $request->description,
             'status' => 'Sent',
         ]);
-        return Redirect::route('freelancer_dashboard_index')->with('success', 'You sent proposal for task number '.$request->order_id);
+        return Redirect::route('freelancer_dashboard_index')->with('success', 'You have sent proposal for the task number '.$request->order_id);
+        }
     }
 
     public function details($order_id)

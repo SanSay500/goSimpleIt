@@ -1334,14 +1334,15 @@ select {
 }
 .container {
     margin: 0 auto;
-    padding: 25px 120px 15px;
+    padding: 0 120px;
     max-width: 1440px;
-}
-.sectionContainer {
-    margin: 0 0 40px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.sectionContainer {
+    margin: 0 0 40px 0;
+    overflow: hidden;
 }
 .title {
     margin: 0 0 50px 0;
