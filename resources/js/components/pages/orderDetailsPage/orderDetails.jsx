@@ -21,6 +21,10 @@ const OrderDetails = (props) => {
         post(route("order.proposal.store", data));
     }
 
+    function Goback(){
+        window.history.back()
+    }
+
     return (
         <>
             <HeaderLogin role={props.auth.user && props.auth.user.role} />
@@ -28,9 +32,10 @@ const OrderDetails = (props) => {
                 <div className={`${style.orderWrapper}`}>
                 <div className={`${style.orderContainer}`}>
                     <div className={`${style.proposalContainer}`}>
-                    <Link
+
+
+                    <Link as="button" type="button" onClick={Goback}
                             className={`${style.buttonBack}`}
-                            href={route("main.page")}
                         >
                             <img src="/images/arrowLeft.svg" alt="" className={`${style.buttonBackImg}`} />
                             Back
@@ -70,17 +75,17 @@ const OrderDetails = (props) => {
                         }
                         {/* {showProposalForm && } */}
 
-                        
+
                     </div>
                     <div className={`${style.cardContainer}`}>
                     <BasicCard key={order.id} props={order} classes={style.btn}/>
                     </div>
-                    
+
                 </div>
                 </div>
-                
+
             </div>
-            
+
 {/*             <Container maxWidth="sm">
                 <br />
 

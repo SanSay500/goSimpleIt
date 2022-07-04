@@ -33654,6 +33654,10 @@ var OrderDetails = function OrderDetails(props) {
     post(route("order.proposal.store", data));
   }
 
+  function Goback() {
+    window.history.back();
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_headers_headerLogin_headerLogin__WEBPACK_IMPORTED_MODULE_1__["default"], {
       role: props.auth.user && props.auth.user.role
@@ -33666,8 +33670,10 @@ var OrderDetails = function OrderDetails(props) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
             className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].proposalContainer),
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+              as: "button",
+              type: "button",
+              onClick: Goback,
               className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_6__["default"].buttonBack),
-              href: route("main.page"),
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("img", {
                 src: "/images/arrowLeft.svg",
                 alt: "",
@@ -34428,6 +34434,9 @@ var HeaderLogout = function HeaderLogout(title) {
             fontSize: 25
           },
           children: title.title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          href: route('chatify'),
+          children: "Messenger"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_goMenu_goMenu__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
       })
     })
