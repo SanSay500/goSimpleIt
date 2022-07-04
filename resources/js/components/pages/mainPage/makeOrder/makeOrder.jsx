@@ -189,7 +189,7 @@ const MakeOrder = (props) => {
                             }
                         />{" "}
                         <span>days</span>
-                    </div>
+                    </div>Nimeric
                 </div>
                 <div className={style.formFile}>
                     {/*<label className="form-label">

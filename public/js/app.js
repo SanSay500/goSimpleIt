@@ -33297,7 +33297,7 @@ var MakeOrder = function MakeOrder(props) {
           }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: "days"
           })]
-        })]
+        }), "Nimeric"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formFile,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
