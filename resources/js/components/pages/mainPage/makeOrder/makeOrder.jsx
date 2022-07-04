@@ -3,9 +3,8 @@ import { usePage, useForm } from "@inertiajs/inertia-react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import '@/../css/form.css'
-import style from './makeOrder.module.css'
-
+import "@/../css/form.css";
+import style from "./makeOrder.module.css";
 
 const MakeOrder = (props) => {
     const { data, setData, errors, post, processing } = useForm({
@@ -57,9 +56,7 @@ const MakeOrder = (props) => {
     return (
         <div className={style.formWrapper}>
             <form name="createForm" onSubmit={handleSubmit}>
-                <label className={style.formLabel}>
-                    Make Order
-                </label>
+                <label className={style.formLabel}>Make Order</label>
                 <Autocomplete
                     id="search-job auto"
                     className="search_input"
@@ -106,8 +103,7 @@ const MakeOrder = (props) => {
                                 <path d="M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5" />{" "}
                                 <path d="M12 17v1m0 -8v1" />{" "}
                             </svg>
-                            Average cost of task:{" "}
-                            {moneyTotalSearch} $
+                            Average cost of task: {moneyTotalSearch} $
                         </span>
                         <span className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
                             <svg
@@ -122,8 +118,7 @@ const MakeOrder = (props) => {
                                     clipRule="evenodd"
                                 ></path>
                             </svg>
-                            Average time task takes:{" "}
-                            {hoursTotalSearch} day(s)
+                            Average time task takes: {hoursTotalSearch} day(s)
                         </span>
                     </div>
                 )}
@@ -140,7 +135,6 @@ const MakeOrder = (props) => {
                         }
                         placeholder="Enter the title *"
                     />
-
                 <div>
                     {/*<label className="form-label">
                         Description
@@ -169,9 +163,7 @@ const MakeOrder = (props) => {
                             inputmode="numeric"
                             required
                             name="cost"
-                            onChange={(e) =>
-                                setData("cost", e.target.value)
-                            }
+                            onChange={(e) => setData("cost", e.target.value)}
                         />
                         <span>$</span>
                     </div>
@@ -184,12 +176,10 @@ const MakeOrder = (props) => {
                             inputmode="numeric"
                             label="time"
                             name="time"
-                            onChange={(e) =>
-                                setData("time", e.target.value)
-                            }
+                            onChange={(e) => setData("time", e.target.value)}
                         />{" "}
                         <span>days</span>
-                    </div>Nimeric
+                    </div>
                 </div>
                 <div className={style.formFile}>
                     {/*<label className="form-label">
@@ -204,28 +194,20 @@ const MakeOrder = (props) => {
                                     onChange={(e) => {
                                         if (e.target.files[0]) {
                                             setSelectedFile(
-                                                e.target.files[0]
-                                                    .name
+                                                e.target.files[0].name
                                             );
                                         } else {
                                             setSelectedFile("");
                                         }
-                                        setData(
-                                            "file",
-                                            e.target.files[0]
-                                        );
+                                        setData("file", e.target.files[0]);
                                     }}
                                     id="uploaded-file"
                                 />
-                                <span>
-                                    + Add file with job description
-                                </span>
+                                <span>+ Add file with job description</span>
                             </label>
                         </div>
 
-                        <div className={style.fileName}>
-                            {selectedFile}
-                        </div>
+                        <div className={style.fileName}>{selectedFile}</div>
 
                         {/*<div className="btn-container">
 
@@ -236,13 +218,13 @@ const MakeOrder = (props) => {
                     </div>
                 </div>
 
-
                 <div className={style.btnContainer}>
                     <button type="submit" disabled={processing} className={style.btnSubmit}>
                         Publish and find a specialist
                     </button>
                 </div>
                 {errors.file && <div>{errors.file}</div>}
+
                 <ValidationErrors errors={errors} />
             </form>
         </div>
