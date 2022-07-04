@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import style from "./projects.module.css";
 import FlipCard from "./flipCard/flipCard";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
 
 const Projects = ({ portfolioList }) => {
     let count_project = 0;
@@ -49,19 +50,18 @@ const Projects = ({ portfolioList }) => {
     }, []);
 
     return (
-        <section className={`sectionContainer ${style.section}`}>
-            <div className={`container`}>
-                <h2 className={`title`}>Complete projects</h2>
+        <SectionContainer classes={`${style.section}`}>
+            <h2 className={`title`}>Complete projects</h2>
 
-                <div className={`${style.cardsContainer}`}>
-                    {projects.map((element, index) => (
-                        <FlipCard key={index} card={element} />
-                    ))}
-                </div>
+            <div className={`${style.cardsContainer}`}>
+                {projects.map((element, index) => (
+                    <FlipCard key={index} card={element} />
+                ))}
             </div>
+        </SectionContainer>
 
-            {/* <div className="btn-container">
-                {stepPrev > 0 ? (
+
+/*                 {stepPrev > 0 ? (
                     <div className="review__more">
                         <button
                             className="review__button"
@@ -97,8 +97,7 @@ const Projects = ({ portfolioList }) => {
                 ) : (
                     ""
                 )}
-            </div> */}
-        </section>
+            </div> } */
     );
 };
 export default Projects;

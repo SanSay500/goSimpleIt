@@ -6,13 +6,14 @@ import Container from "@mui/material/Container";
 import HeaderLogout from "@/components/shared/headers/headerLogout/headerLogout";
 import style from "./proposalConfirm.module.css";
 import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
 export default function ProposalConfirm(props) {
     const { order, proposal, user } = usePage().props;
 
     return (
         <div>
             <HeaderLogout />
-            <div className="container">
+            <SectionContainer>
                 <div className={`${style.orderWrapper}`}>
                     <FlashMessages />
                     <div className={`${style.orderContainer}`}>
@@ -82,7 +83,7 @@ export default function ProposalConfirm(props) {
                         </div>
                     </div>
                 </div>
-            </div>
+            </SectionContainer>
 
             <Footer />
         </div>
