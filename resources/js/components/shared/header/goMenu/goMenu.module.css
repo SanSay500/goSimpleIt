@@ -1,0 +1,17 @@
+.auth {
+    padding: 14px 36px !important;
+    background-image: url('/images/borderButton.png');
+    background-repeat: no-repeat;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    color: #2BB739 !important;
+    width: 100%;
+    text-align: center;
+}
+.auth:hover{
+    background-color: #fff!important;
+}
+.menuWrapper{
+    grid-column: 4/5;
+}

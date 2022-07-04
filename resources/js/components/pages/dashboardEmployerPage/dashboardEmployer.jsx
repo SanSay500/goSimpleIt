@@ -2,7 +2,7 @@ import React from "react";
 import { Link, usePage } from "@inertiajs/inertia-react";
 import FlashMessages from "@/components/shared/flashMessages/flashMessages";
 import Footer from "@/components/shared/footer/footer";
-import HeaderLogout from "@/components/shared/headers/headerLogout/headerLogout";
+import Header from "@/components/shared/header/header";
 import OrdersList from "./ordersList/ordersList";
 import Container from "@mui/material/Container";
 
@@ -17,7 +17,7 @@ export default function DashboardEmployer(props) {
 
     return (
         <>
-            <HeaderLogout title="Dashboard" />
+            <Header title="Dashboard" />
 
             <div className="container">
                 <FlashMessages />

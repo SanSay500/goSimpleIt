@@ -4,14 +4,13 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
-
-
+import style from './goMenu.module.css'
 
 export default function GoMenu() {
     const props = usePage().props;
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
-
+    console.log(props.auth);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -30,15 +29,20 @@ export default function GoMenu() {
         e.preventDefault();
         Inertia.get(route("user_profile", props.auth.user.id));
     };
-
+    const handleChat= (e) => {
+        e.preventDefault();
+        Inertia.get(route('chatify'));
+    };
     return (
-        <div>
-            <Button
+        <div className={`${style.menuWrapper}`}>
+            {props.auth &&(
+                <>                            <Button
                 id="basic-button"
                 aria-controls={open ? "basic-menu" : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? "true" : undefined}
                 onClick={handleClick}
+                className={`${style.auth}`}
             >
                 Menu
             </Button>
@@ -53,11 +57,15 @@ export default function GoMenu() {
                 }}
             >
                 <MenuItem onClick={handleDashboard}>Dashboard</MenuItem>
-
+                <MenuItem onClick={handleChat}>Messenger</MenuItem>
                 <MenuItem onClick={handleProfile}>My profile</MenuItem>
 
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
-            </Menu>
+            </Menu></>
+
+            )
+            }
+
         </div>
     );
 }
