@@ -9,6 +9,7 @@ import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
 import Freelancers from "./freelancers/freelancers";
 import MainStart from "./mainStart/mainStart";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 import style from "./main.module.css";
 
 const Main = (props) => {
@@ -17,13 +18,14 @@ const Main = (props) => {
 
     return (
         <>
-            <section className={`sectionContainer ${style.headerContainer}`}>
-                <div className={`container ${style.bgrImg}`}>
-                    <Header role={props.auth.user && props.auth.user.role} />
+            <SectionContainer
+                classes={`${style.headerContainer}`}
+                classesCont={`${style.bgrImg}`}
+            >
+                <Header role={props.auth.user && props.auth.user.role} />
 
-                    <MainStart scroll={scroll} />
-                </div>
-            </section>
+                <MainStart scroll={scroll} />
+            </SectionContainer>
 
             <ActiveTasks count={6} />
 
@@ -32,15 +34,16 @@ const Main = (props) => {
             <Freelancers reviewsList={myJson.reviews} count={3} />
 
             <Talks reviewsList={myJson.reviews} count={3} />
-
-            <div
-                ref={makeOrder}
-                user={props.auth.user}
-                className={`sectionContainer ${style.blockContainer}`}
-            >
-                <AboutUs />
-                <MakeOrder />
-            </div>
+            <SectionContainer>
+                <div
+                    ref={makeOrder}
+                    user={props.auth.user}
+                    className={`${style.blockContainer}`}
+                >
+                    <AboutUs />
+                    <MakeOrder />
+                </div>
+            </SectionContainer>
 
             <Footer />
         </>

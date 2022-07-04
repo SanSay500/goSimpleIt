@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Http\Resources\Json;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardController extends Controller
 {
@@ -52,4 +53,9 @@ class DashboardController extends Controller
         return route('start_chat');
     }
 
+    public function download_file(Request $request) {
+
+        return Storage::download($request->path());
+
+    }
 }

@@ -138,7 +138,6 @@ class OrderController extends Controller
         } else {
             Mail::to(Auth::user())->send(new NewOrder($order));
         }
-        //Mail::to(Auth::user()->email)->send(new NewReservationClient($order));
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }
 

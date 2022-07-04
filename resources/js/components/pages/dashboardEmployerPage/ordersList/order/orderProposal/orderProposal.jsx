@@ -4,17 +4,17 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import style from "./orderProposal.module.css";
 export default function OrderProposal(order) {
     const { proposalsForOrder } = usePage().props;
-
+    let count=0;
     return (
-        <>
+        <div className={`${style.linkConatiner}`}>
+            <span className={`${style.linkView} ${style.textView}`}>View proposal from freelancers</span>
+            
             {proposalsForOrder
                 .filter((proposal) => proposal.order_id === order.id)
                 .map((filteredProposal) => {
+                    count++;
                     return (
-                        <div
-                            key={filteredProposal.id}
-                            className={`${style.linkConatiner}`}
-                        >
+                        <div key={filteredProposal.id}>
 {/*                             {filteredProposal.status === "Confirmed" && (
                                 <Chip label="Working on this order now" />
                             )} */}
@@ -24,12 +24,13 @@ export default function OrderProposal(order) {
                                     filteredProposal.id,
                                 ])}
                                 className={`${style.linkView}`}
+                                
                             >
-                                View proposal from freelancers:
+                                {count}
                             </Link>
                         </div>
                     );
                 })}
-        </>
+        </div>
     );
 }

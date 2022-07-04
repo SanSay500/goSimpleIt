@@ -4,7 +4,7 @@ import FlashMessages from "@/components/shared/flashMessages/flashMessages";
 import Footer from "@/components/shared/footer/footer";
 import Header from "@/components/shared/header/header";
 import OrdersList from "./ordersList/ordersList";
-import Container from "@mui/material/Container";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
 
 export default function DashboardEmployer(props) {
     const {
@@ -18,11 +18,11 @@ export default function DashboardEmployer(props) {
     return (
         <>
             <Header title="Dashboard" />
-
-            <div className="container">
+            
+            <SectionContainer>
                 <FlashMessages />
                 <OrdersList />
-            </div>
+            </SectionContainer>
             <Footer />
         </>
     );

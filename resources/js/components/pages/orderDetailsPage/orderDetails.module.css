@@ -81,9 +81,10 @@ select:focus {
     padding: 6px 16px;
 }
 .orderWrapper{
-    min-height: 78vh;
+    min-height: 74vh;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 .buttonBackImg{
     width: 12px;
