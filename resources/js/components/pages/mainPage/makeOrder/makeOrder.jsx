@@ -3,7 +3,6 @@ import { usePage, useForm } from "@inertiajs/inertia-react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import "@/../css/form.css";
 import style from "./makeOrder.module.css";
 
 const MakeOrder = (props) => {
@@ -22,6 +21,46 @@ const MakeOrder = (props) => {
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
     const [taskId, setTaskId] = useState(0);
+
+    function setValue (props) {
+        const inputValue = document.getElementById('searchInput');
+        const result = inputValue.childNodes[props];
+        if (result) {
+            inputValue.value = result;
+        }
+    }
+
+    const searchList = (props) => {
+        const options = tasks.map((props) => props.name);
+        const inputList = document.getElementById('inputList');
+        const inputValue = document.getElementById('searchInput');
+        let results = [];
+
+        function findResults() {
+            options.find(element => {
+                if (element.includes(inputValue.value)) {
+                    results.push(element);
+                }
+            })
+        }
+
+        findResults();
+
+        for (let i = 0; i < results.length; i++) {
+            const div = document.createElement('div');
+            div.innerHTML = results[i];
+            div.setAttribute('id', i);
+            div.setAttribute('onClick', setValue(div.id))
+            inputList.appendChild(div);
+        }
+    }
+
+    const clearList = () => {
+        const inputList = document.getElementById('inputList');
+        while (inputList.firstChild) {
+            inputList.removeChild(inputList.lastChild);
+        }
+    }
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -56,7 +95,7 @@ const MakeOrder = (props) => {
         <div className={style.formWrapper}>
             <form name="createForm" onSubmit={handleSubmit}>
                 <label className={style.formLabel}>Make Order</label>
-                <Autocomplete
+                {/* <Autocomplete
                     freeSolo
                     id="search-job auto"
                     className="search_input"
@@ -74,7 +113,18 @@ const MakeOrder = (props) => {
                             }}
                         />
                     )}
-                />
+                /> */}
+                <div className={style.searchJob}>
+                    <input 
+                        type="text" 
+                        id="searchInput"
+                        className={style.searchInput} 
+                        placeholder="Type the task" 
+                        onChange={searchList}
+                        onBlur={clearList} 
+                    />
+                    <div id="inputList" className={style.inputList}></div>
+                </div>
                 {moneyTotalSearch !== 0 && (
                     <div className="flex align-content-between">
                         <span className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
