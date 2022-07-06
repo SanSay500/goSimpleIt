@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { Link, usePage } from "@inertiajs/inertia-react";
-import FlashMessages from "@/components/shared/flashMessages/flashMessages";
-import Footer from "@/components/shared/footer/footer";
+import { usePage } from "@inertiajs/inertia-react";
 import ProposalsList from "./proposalsList/proposalsList";
-import HeaderLogout from "@/components/shared/headers/headerLogout/headerLogout";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
+import Container from "@/components/shared/container/container";
 import style from "./dashboardFreelancer.module.css";
 
 export default function DashboardFreelancer(props) {
@@ -21,13 +18,11 @@ export default function DashboardFreelancer(props) {
     }
     return (
         <>
-            <HeaderLogout title="Dashboard" />
-
-            <SectionContainer>
-                <FlashMessages />
+            <Container styleContainer={style.container}>
                 <div className={`${style.freelancerOrder}`}>
                     <div className={`${style.freelancerOrderWrapper}`}>
                         <h2 className={`title`}>Active Tasks</h2>
+
                         <div className={`${style.activeTasks}`}>
                             {ordersToShow
                                 .slice(0, showOrdersQty)
@@ -52,8 +47,7 @@ export default function DashboardFreelancer(props) {
 
                     <ProposalsList />
                 </div>
-            </SectionContainer>
-            <Footer />
+            </Container>
         </>
     );
 }

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/buttonGreen/buttonGreen";
-import Guest from "@/components/shared/guest/guest";
+import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Head, useForm } from "@inertiajs/inertia-react";
+import { useForm } from "@inertiajs/inertia-react";
 
 export default function ConfirmPassword() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -28,9 +27,7 @@ export default function ConfirmPassword() {
     };
 
     return (
-        <Guest>
-            <Head title="Confirm Password" />
-
+        <Container>
             <div className="mb-4 text-sm text-gray-600">
                 This is a secure area of the application. Please confirm your
                 password before continuing.
@@ -58,6 +55,6 @@ export default function ConfirmPassword() {
                     </ButtonGreen>
                 </div>
             </form>
-        </Guest>
+        </Container>
     );
 }

@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
-import Button from "@/components/shared/buttonGreen/buttonGreen";
-import Guest from "@/components/shared/guest/guest";
+import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Head, useForm } from "@inertiajs/inertia-react";
+import { useForm } from "@inertiajs/inertia-react";
 
 export default function ResetPassword({ token, email }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -31,9 +30,7 @@ export default function ResetPassword({ token, email }) {
     };
 
     return (
-        <Guest>
-            <Head title="Reset Password" />
-
+        <Container>
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit}>
@@ -86,6 +83,6 @@ export default function ResetPassword({ token, email }) {
                     </ButtonGreen>
                 </div>
             </form>
-        </Guest>
+        </Container>
     );
 }

@@ -134,9 +134,9 @@ class OrderController extends Controller
         $order = Order::get()->last();
 
         if (isset($user)) {
-            Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+           // Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
         } else {
-            Mail::to(Auth::user())->send(new NewOrder($order));
+           // Mail::to(Auth::user())->send(new NewOrder($order));
         }
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }

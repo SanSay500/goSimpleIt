@@ -3,8 +3,8 @@ import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
-const ActiveTasks = ({ count, classes }) => {
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
+const ActiveTasks = ({ count }) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
     const [showOrdersQty, setShowOrdersQty] = useState(count);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
@@ -32,24 +32,23 @@ const ActiveTasks = ({ count, classes }) => {
     // }
 
     return (
-        <SectionContainer classes={`${style.section}`}>
-                <h2 className={`title`}>Active Tasks</h2>
-                <div className={`${style.cardsContainer} ${classes}`}>
-                    {ordersToShow.slice(0, showOrdersQty).map((order) => {
-                        return <BasicCard key={order.id} props={order} />;
-                    })}
-                </div>
+        <SectionContainer section={`${style.section}`}>
+            <h2 className={`title`}>Active Tasks</h2>
 
-                {ordersToShow.length > showOrdersQty && (
-                    <ButtonViewMore
-                        click={(e) => {
-                            loadOrders(e);
-                        }}
-                    />
-                )}
+            <div className={`${style.cardsContainer} `}>
+                {ordersToShow.slice(0, showOrdersQty).map((order) => {
+                    return <BasicCard key={order.id} props={order} />;
+                })}
+            </div>
+
+            {ordersToShow.length > showOrdersQty && (
+                <ButtonViewMore
+                    click={(e) => {
+                        loadOrders(e);
+                    }}
+                />
+            )}
         </SectionContainer>
-
-
     );
 };
 

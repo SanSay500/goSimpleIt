@@ -1,10 +1,7 @@
 import React from "react";
-import { Link, usePage } from "@inertiajs/inertia-react";
-import FlashMessages from "@/components/shared/flashMessages/flashMessages";
-import Footer from "@/components/shared/footer/footer";
-import Header from "@/components/shared/header/header";
+import { usePage } from "@inertiajs/inertia-react";
 import OrdersList from "./ordersList/ordersList";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
+import Container from "@/components/shared/container/container";
 
 export default function DashboardEmployer(props) {
     const {
@@ -17,13 +14,9 @@ export default function DashboardEmployer(props) {
 
     return (
         <>
-            <Header title="Dashboard" />
-            
-            <SectionContainer>
-                <FlashMessages />
+            <Container>
                 <OrdersList />
-            </SectionContainer>
-            <Footer />
+            </Container>
         </>
     );
 }
