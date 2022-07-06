@@ -11,3 +11,7 @@ display: block;
 .linkConatiner{
   display: flex;
 }
+.textView{
+  border-color: transparent;
+  margin-right: 4px;
+}

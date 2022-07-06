@@ -49,7 +49,7 @@ class OrderCrudController extends CrudController
             'name'      => 'file', // the db column for the foreign key
             'wrapper'   => [
                 'href' => function ($crud, $column, $entry, $related_key) {
-                    return Storage::url( $entry->file);
+                    return asset( 'storage/' . $entry->file);
                 },
             ],
         ]);

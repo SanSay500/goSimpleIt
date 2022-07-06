@@ -6,7 +6,7 @@ import ValidationErrors from "@/components/shared/validationErrors/validationErr
 import style from "./makeOrder.module.css";
 
 const MakeOrder = (props) => {
-    const { data, setData, errors, post, processing, reset } = useForm({
+    const { data, setData, errors, post, processing } = useForm({
         title: "",
         task_id: "",
         description: "",
@@ -14,52 +14,37 @@ const MakeOrder = (props) => {
         time: "",
         file: "",
     });
-
+    
+    const inputTask = useRef();
     const taskIdRef = useRef();
     const [selectedFile, setSelectedFile] = useState("");
     const { tasks } = usePage().props;
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
     const [taskId, setTaskId] = useState(0);
+    let [inputResults, setInputResults] = useState([]);
 
-    function setValue (props) {
-        const inputValue = document.getElementById('searchInput');
-        const result = inputValue.childNodes[props];
-        if (result) {
-            inputValue.value = result;
-        }
-    }
-
-    const searchList = (props) => {
-        const options = tasks.map((props) => props.name);
-        const inputList = document.getElementById('inputList');
-        const inputValue = document.getElementById('searchInput');
-        let results = [];
-
-        function findResults() {
-            options.find(element => {
-                if (element.includes(inputValue.value)) {
-                    results.push(element);
-                }
-            })
-        }
-
-        findResults();
-
-        for (let i = 0; i < results.length; i++) {
-            const div = document.createElement('div');
-            div.innerHTML = results[i];
-            div.setAttribute('id', i);
-            div.setAttribute('onClick', setValue(div.id))
-            inputList.appendChild(div);
-        }
-    }
-
-    const clearList = () => {
+    function clearList() {
         const inputList = document.getElementById('inputList');
         while (inputList.firstChild) {
             inputList.removeChild(inputList.lastChild);
         }
+    }
+
+    function searchList() {
+
+        setInputResults(() => {
+            inputResults=[]
+            // clearList();
+            const options = tasks.map((props) => props.name);
+
+            options.filter(element => {
+                if (element.toLowerCase().includes(inputTask.current.value.toLowerCase())) {
+                    inputResults.push(element);
+                }
+            })
+            return inputResults;
+        })
     }
 
     function handleSubmit(e) {
@@ -67,15 +52,15 @@ const MakeOrder = (props) => {
         data.task_id = taskIdRef.current;
         post(
             route("order.store", data, {
+                preserveScroll: true,
                 forceFormData: true,
                 _method: "put",
-                preserveScroll: true,
-                preserveState: true,
             })
         );
     }
 
     const changeSearch = ({ target: { value } }) => {
+        console.log(value);
         setMoneyTotalSearch(0);
         setHoursTotalSearch(0);
 
@@ -89,41 +74,29 @@ const MakeOrder = (props) => {
 
     useEffect(() => {
         taskIdRef.current = taskId;
-    });
+    }, [taskId]);
+
+    useEffect(()=>{ 
+        setInputResults(()=>inputResults)
+    }, [inputResults])
 
     return (
         <div className={style.formWrapper}>
             <form name="createForm" onSubmit={handleSubmit}>
                 <label className={style.formLabel}>Make Order</label>
-                {/* <Autocomplete
-                    freeSolo
-                    id="search-job auto"
-                    className="search_input"
-                    disableClearable
-                    options={tasks.map((option) => option.name)}
-                    renderInput={(params) => (
-                        <TextField
-                            {...params}
-                            name="task_type"
-                            onSelect={changeSearch}
-                            label="Type the task"
-                            InputProps={{
-                                ...params.InputProps,
-                                type: "search",
-                            }}
-                        />
-                    )}
-                /> */}
+        
                 <div className={style.searchJob}>
                     <input 
+                        ref={inputTask}
                         type="text" 
                         id="searchInput"
                         className={style.searchInput} 
                         placeholder="Type the task" 
-                        onChange={searchList}
-                        onBlur={clearList} 
+                        onChange={searchList} 
+                        onBlur={()=>{setInputResults(()=>inputResults=[])}}
                     />
-                    <div id="inputList" className={style.inputList}></div>
+                    
+                    <div id="inputList" className={style.inputList}>{inputResults.map((el,i)=>(<div onMouseDown={() => inputTask.current.value = el} key={i}>{el}</div>))}</div>
                 </div>
                 {moneyTotalSearch !== 0 && (
                     <div className="flex align-content-between">
@@ -134,11 +107,11 @@ const MakeOrder = (props) => {
                                 width="24"
                                 height="16"
                                 viewBox="0 0 24 24"
-                                stroke-width="2"
+                                strokeWidth="2"
                                 stroke="currentColor"
                                 fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
                             >
                                 {" "}
                                 <path
@@ -161,9 +134,9 @@ const MakeOrder = (props) => {
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <path
-                                    fill-rule="evenodd"
+                                    fillRule="evenodd"
                                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                                    clip-rule="evenodd"
+                                    clipRule="evenodd"
                                 ></path>
                             </svg>
                             Average time task takes: {hoursTotalSearch} day(s)
@@ -176,11 +149,11 @@ const MakeOrder = (props) => {
                     className={style.formInput}
                     label="Title"
                     name="title"
+                    required
                     value={data.title}
                     onChange={(e) => setData("title", e.target.value)}
-                    placeholder="Enter the title"
+                    placeholder="Enter the title *"
                 />
-
                 <div>
                     {/*<label className="form-label">
                         Description
@@ -190,12 +163,12 @@ const MakeOrder = (props) => {
                         className={style.formInput}
                         label="description"
                         name="description"
+                        required
                         errors={errors.description}
                         value={data.description}
                         onChange={(e) => setData("description", e.target.value)}
-                        placeholder="Enter description"
+                        placeholder="Enter description *"
                     />
-                    <span className="text-red-600">{errors.description}</span>
                 </div>
                 <div className={style.formInfo}>
                     <div className={style.formPrice}>
@@ -204,6 +177,8 @@ const MakeOrder = (props) => {
                             type="text"
                             className={`${style.formInput} ${style.formInputSecond}`}
                             label="cost"
+                            inputMode="numeric"
+                            required
                             name="cost"
                             onChange={(e) => setData("cost", e.target.value)}
                         />
@@ -213,7 +188,9 @@ const MakeOrder = (props) => {
                         <label className={style.formLabel}>Term</label>
                         <input
                             type="text"
+                            required
                             className={`${style.formInput} ${style.formInputSecond}`}
+                            inputMode="numeric"
                             label="time"
                             name="time"
                             onChange={(e) => setData("time", e.target.value)}
@@ -259,7 +236,11 @@ const MakeOrder = (props) => {
                 </div>
 
                 <div className={style.btnContainer}>
-                    <button type="submit" className={style.btnSubmit}>
+                    <button
+                        type="submit"
+                        disabled={processing}
+                        className={style.btnSubmit}
+                    >
                         Publish and find a specialist
                     </button>
                 </div>

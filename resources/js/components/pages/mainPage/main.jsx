@@ -3,12 +3,13 @@ import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
 import Talks from "./talks/talks";
 import Projects from "./projects/projects";
-import AboutContainer from "./aboutUs/aboutUs";
-import MainHeader from "./mainHeader/mainHeader";
+import AboutUs from "./aboutUs/aboutUs";
+import Header from "@/components/shared/header/header";
 import Footer from "@/components/shared/footer/footer";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
 import Freelancers from "./freelancers/freelancers";
 import MainStart from "./mainStart/mainStart";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 import style from "./main.module.css";
 
 const Main = (props) => {
@@ -16,12 +17,15 @@ const Main = (props) => {
     const scroll = () => makeOrder.current.scrollIntoView();
 
     return (
-        <div className="container">
-            <section className={`${style.headerContainer} sectionContainer`}>
-                <MainHeader role={props.auth.user && props.auth.user.role} />
+        <>
+            <SectionContainer
+                classes={`${style.headerContainer}`}
+                classesCont={`${style.bgrImg}`}
+            >
+                <Header role={props.auth.user && props.auth.user.role} />
 
                 <MainStart scroll={scroll} />
-            </section>
+            </SectionContainer>
 
             <ActiveTasks count={6} />
 
@@ -30,14 +34,19 @@ const Main = (props) => {
             <Freelancers reviewsList={myJson.reviews} count={3} />
 
             <Talks reviewsList={myJson.reviews} count={3} />
-
-            <section ref={makeOrder} user={props.auth.user} className={style.aboutOrder}>
-                <AboutContainer />
-                <MakeOrder />
-            </section>
+            <SectionContainer>
+                <div
+                    ref={makeOrder}
+                    user={props.auth.user}
+                    className={`${style.blockContainer}`}
+                >
+                    <AboutUs />
+                    <MakeOrder />
+                </div>
+            </SectionContainer>
 
             <Footer />
-        </div>
+        </>
     );
 };
 export default Main;

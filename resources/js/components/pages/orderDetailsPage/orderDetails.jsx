@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import HeaderLogin from "@/components/shared/headers/headerLogin/headerLogin";
 import Footer from "@/components/shared/footer/footer";
 import { usePage, Link, useForm } from "@inertiajs/inertia-react";
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
 import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import style from "./orderDetails.module.css";
@@ -28,12 +29,9 @@ const OrderDetails = (props) => {
     return (
         <>
             <HeaderLogin role={props.auth.user && props.auth.user.role} />
-            <div className="container">
-                <div className={`${style.orderWrapper}`}>
+            <SectionContainer classes={`${style.orderWrapper}`}>
                 <div className={`${style.orderContainer}`}>
                     <div className={`${style.proposalContainer}`}>
-
-
                     <Link as="button" type="button" onClick={Goback}
                             className={`${style.buttonBack}`}
                         >
@@ -82,10 +80,7 @@ const OrderDetails = (props) => {
                     </div>
 
                 </div>
-                </div>
-
-            </div>
-
+            </SectionContainer>
 {/*             <Container maxWidth="sm">
                 <br />
 

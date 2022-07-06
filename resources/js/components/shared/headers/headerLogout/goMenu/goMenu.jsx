@@ -5,6 +5,8 @@ import MenuItem from "@mui/material/MenuItem";
 import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 
+
+
 export default function GoMenu() {
     const props = usePage().props;
     const [anchorEl, setAnchorEl] = React.useState(null);
