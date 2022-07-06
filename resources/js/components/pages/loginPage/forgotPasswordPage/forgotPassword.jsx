@@ -1,10 +1,11 @@
 import React from "react";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
-import Guest from "@/components/shared/guest/guest";
+import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Head, useForm } from "@inertiajs/inertia-react";
+import { useForm } from "@inertiajs/inertia-react";
 import style from "./forgotPassword.module.css";
+
 export default function ForgotPassword({ status }) {
     const { data, setData, post, processing, errors } = useForm({
         email: "",
@@ -21,8 +22,7 @@ export default function ForgotPassword({ status }) {
     };
 
     return (
-        <Guest>
-            <Head title="Forgot Password" />
+        <Container>
             <div className={`${style.formPage} `}>
                 <div className={`${style.formText} `}>
                     Forgot your password? No problem. Just let us know your
@@ -59,6 +59,6 @@ export default function ForgotPassword({ status }) {
                     </div>
                 </form>
             </div>
-        </Guest>
+        </Container>
     );
 }

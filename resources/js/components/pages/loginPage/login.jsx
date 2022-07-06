@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Checkbox from "@/components/pages/loginPage/checkbox/checkbox";
-import Guest from "@/components/shared/guest/guest";
+import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Link, useForm } from "@inertiajs/inertia-react";
@@ -33,16 +33,12 @@ export default function Login({ status, canResetPassword }) {
         e.preventDefault();
         post(route("login"));
     };
-console.log(processing);
-    return (
-        <Guest>
-            {/* <Head title="Log in" /> */}
 
-            {/* {status && ( */}
-            <div className="mb-4 font-medium text-sm text-green-600">
+    return (
+        <Container styleBtn={style.btn}>
+            {/* <div className="mb-4 font-medium text-sm text-green-600">
                 {status}
-            </div>
-            {/* )} */}
+            </div> */}
 
             <ValidationErrors errors={errors} />
 
@@ -111,13 +107,9 @@ console.log(processing);
                         </div>
                     )}
 
-                    <ButtonGreen
-                        processing={processing}
-                    >
-                        Log in
-                    </ButtonGreen>
+                    <ButtonGreen processing={processing}>Log in</ButtonGreen>
                 </div>
             </form>
-        </Guest>
+        </Container>
     );
 }

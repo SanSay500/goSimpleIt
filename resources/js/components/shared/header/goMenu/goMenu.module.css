@@ -1,7 +1,3 @@
-.menuContainer {
-    position: relative;
-}
-
 .btnMenu {
     padding: 14px 36px;
     background-image: url("/images/borderButton.png");
@@ -19,7 +15,6 @@
 .menu {
     position: absolute;
     padding: 10px 25px;
-    top: 50px;
     background: #ffffff;
     box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);
     border-radius: 4px;

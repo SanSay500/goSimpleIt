@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import style from "./projects.module.css";
 import FlipCard from "./flipCard/flipCard";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
+import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 
 const Projects = ({ portfolioList }) => {
     let count_project = 0;
@@ -50,7 +50,7 @@ const Projects = ({ portfolioList }) => {
     }, []);
 
     return (
-        <SectionContainer classes={`${style.section}`}>
+        <SectionContainer section={`${style.section}`}>
             <h2 className={`title`}>Complete projects</h2>
 
             <div className={`${style.cardsContainer}`}>
@@ -60,8 +60,7 @@ const Projects = ({ portfolioList }) => {
             </div>
         </SectionContainer>
 
-
-/*                 {stepPrev > 0 ? (
+        /*                 {stepPrev > 0 ? (
                     <div className="review__more">
                         <button
                             className="review__button"

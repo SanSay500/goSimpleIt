@@ -1,7 +1,6 @@
 import React from "react";
-import Button from "@/components/shared/buttonGreen/buttonGreen";
-import Guest from "@/components/shared/guest/guest";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import Container from "@/components/shared/container/container";
+import { Link, useForm } from "@inertiajs/inertia-react";
 
 export default function VerifyEmail({ status }) {
     const { post, processing } = useForm();
@@ -13,9 +12,7 @@ export default function VerifyEmail({ status }) {
     };
 
     return (
-        <Guest>
-            <Head title="Email Verification" />
-
+        <Container>
             <div className="mb-4 text-sm text-gray-600">
                 Thanks for signing up! Before getting started, could you verify
                 your email address by clicking on the link we just emailed to
@@ -46,6 +43,6 @@ export default function VerifyEmail({ status }) {
                     </Link>
                 </div>
             </form>
-        </Guest>
+        </Container>
     );
 }

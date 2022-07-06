@@ -2,7 +2,7 @@ import GoMenu from "@/components/shared/header/goMenu/goMenu";
 import { Link } from "@inertiajs/inertia-react";
 import style from "./header.module.css";
 
-const Header = (role) => {
+const Header = ({ styleBtn }) => {
     return (
         <header className={`${style.header}`}>
             <div>
@@ -11,7 +11,7 @@ const Header = (role) => {
                 </Link>
             </div>
 
-            <GoMenu />
+            <GoMenu styleBtn={styleBtn} />
         </header>
     );
 };

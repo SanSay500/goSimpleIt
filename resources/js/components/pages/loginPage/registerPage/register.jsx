@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
-import Guest from "@/components/shared/guest/guest";
+import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Head, Link, useForm } from "@inertiajs/inertia-react";
+import { Link, useForm } from "@inertiajs/inertia-react";
 import style from "./register.module.css";
 
 export default function Register() {
@@ -42,9 +42,7 @@ export default function Register() {
     };
 
     return (
-        <Guest>
-            <Head title="Register" />
-
+        <Container>
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit} className={`${style.formPage} `}>
@@ -184,6 +182,6 @@ export default function Register() {
                     <ButtonGreen processing={processing}>Register</ButtonGreen>
                 </div>
             </form>
-        </Guest>
+        </Container>
     );
 }

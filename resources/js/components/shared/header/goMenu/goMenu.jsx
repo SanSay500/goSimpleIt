@@ -3,9 +3,8 @@ import { Inertia } from "@inertiajs/inertia";
 import { usePage } from "@inertiajs/inertia-react";
 import style from "./goMenu.module.css";
 
-export default function GoMenu() {
+export default function GoMenu({ styleBtn }) {
     const props = usePage().props;
-
     const [isOpen, setIsOpen] = useState(false);
     const toggleMenu = () => setIsOpen((isOpen) => !isOpen);
 
@@ -25,15 +24,15 @@ export default function GoMenu() {
         e.preventDefault();
         Inertia.get(route("chatify"));
     };
-
     const handlerLogin = (e) => {
         e.preventDefault();
         Inertia.get(route("login"));
     };
+
     return (
         <>
             {props.auth.user ? (
-                <div className={`${style.menuContainer}`}>
+                <div>
                     <button className={`${style.btnMenu}`} onClick={toggleMenu}>
                         Menu
                     </button>
@@ -58,7 +57,10 @@ export default function GoMenu() {
                     )}
                 </div>
             ) : (
-                <div className={`${style.auth}`} onClick={handlerLogin}>
+                <div
+                    className={`${style.auth} ${styleBtn}`}
+                    onClick={handlerLogin}
+                >
                     Login
                 </div>
             )}

@@ -19,8 +19,8 @@ const Main = (props) => {
     return (
         <>
             <SectionContainer
-                classes={`${style.headerContainer}`}
-                classesCont={`${style.bgrImg}`}
+                section={`${style.headerContainer}`}
+                container={`${style.bgrImg}`}
             >
                 <Header role={props.auth.user && props.auth.user.role} />
 
