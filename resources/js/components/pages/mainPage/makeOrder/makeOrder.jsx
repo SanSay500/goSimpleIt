@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { usePage, useForm } from "@inertiajs/inertia-react";
-import TextField from "@mui/material/TextField";
-import Autocomplete from "@mui/material/Autocomplete";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import style from "./makeOrder.module.css";
 
@@ -14,7 +12,7 @@ const MakeOrder = (props) => {
         time: "",
         file: "",
     });
-    
+
     const inputTask = useRef();
     const taskIdRef = useRef();
     const [selectedFile, setSelectedFile] = useState("");
@@ -24,27 +22,23 @@ const MakeOrder = (props) => {
     const [taskId, setTaskId] = useState(0);
     let [inputResults, setInputResults] = useState([]);
 
-    function clearList() {
-        const inputList = document.getElementById('inputList');
-        while (inputList.firstChild) {
-            inputList.removeChild(inputList.lastChild);
-        }
-    }
-
     function searchList() {
-
         setInputResults(() => {
-            inputResults=[]
-            // clearList();
+            inputResults = [];
+
             const options = tasks.map((props) => props.name);
 
-            options.filter(element => {
-                if (element.toLowerCase().includes(inputTask.current.value.toLowerCase())) {
+            options.filter((element) => {
+                if (
+                    element
+                        .toLowerCase()
+                        .includes(inputTask.current.value.toLowerCase())
+                ) {
                     inputResults.push(element);
                 }
-            })
+            });
             return inputResults;
-        })
+        });
     }
 
     function handleSubmit(e) {
@@ -59,44 +53,56 @@ const MakeOrder = (props) => {
         );
     }
 
-    const changeSearch = ({ target: { value } }) => {
-        console.log(value);
-        setMoneyTotalSearch(0);
-        setHoursTotalSearch(0);
+    // const changeSearch = ({ target: { value } }) => {
+    //     setMoneyTotalSearch(0);
+    //     setHoursTotalSearch(0);
 
-        let job_found = tasks.find((e) => e.name == value);
-        if (job_found) {
-            setTaskId(tasks.find((e) => e.name == value).id);
-            setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
-            setHoursTotalSearch(tasks.find((e) => e.name == value).time);
-        }
-    };
+    //     let job_found = tasks.find((e) => e.name == value);
+    //     if (job_found) {
+    //         setTaskId(tasks.find((e) => e.name == value).id);
+    //         setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
+    //         setHoursTotalSearch(tasks.find((e) => e.name == value).time);
+    //     }
+    // };
 
     useEffect(() => {
         taskIdRef.current = taskId;
     }, [taskId]);
 
-    useEffect(()=>{ 
-        setInputResults(()=>inputResults)
-    }, [inputResults])
+    useEffect(() => {
+        setInputResults(() => inputResults);
+    }, [inputResults]);
 
     return (
         <div className={style.formWrapper}>
-            <form name="createForm" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <label className={style.formLabel}>Make Order</label>
-        
+
                 <div className={style.searchJob}>
-                    <input 
+                    <input
                         ref={inputTask}
-                        type="text" 
+                        type="text"
                         id="searchInput"
-                        className={style.searchInput} 
-                        placeholder="Type the task" 
-                        onChange={searchList} 
-                        onBlur={()=>{setInputResults(()=>inputResults=[])}}
+                        className={style.searchInput}
+                        placeholder="Type the task"
+                        onChange={searchList}
+                        onBlur={() => {
+                            setInputResults(() => (inputResults = []));
+                        }}
                     />
-                    
-                    <div id="inputList" className={style.inputList}>{inputResults.map((el,i)=>(<div onMouseDown={() => inputTask.current.value = el} key={i}>{el}</div>))}</div>
+
+                    <div id="inputList" className={style.inputList}>
+                        {inputResults.map((el, i) => (
+                            <div
+                                onMouseDown={() =>
+                                    (inputTask.current.value = el)
+                                }
+                                key={i}
+                            >
+                                {el}
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 {moneyTotalSearch !== 0 && (
                     <div className="flex align-content-between">
@@ -143,7 +149,7 @@ const MakeOrder = (props) => {
                         </span>
                     </div>
                 )}
-                {/*<label className="form-label">Title</label>*/}
+
                 <input
                     type="text"
                     className={style.formInput}
@@ -154,25 +160,23 @@ const MakeOrder = (props) => {
                     onChange={(e) => setData("title", e.target.value)}
                     placeholder="Enter the title *"
                 />
-                <div>
-                    {/*<label className="form-label">
-                        Description
-                    </label>*/}
-                    <textarea
-                        type="text"
-                        className={style.formInput}
-                        label="description"
-                        name="description"
-                        required
-                        errors={errors.description}
-                        value={data.description}
-                        onChange={(e) => setData("description", e.target.value)}
-                        placeholder="Enter description *"
-                    />
-                </div>
+
+                <textarea
+                    type="text"
+                    className={style.formInput}
+                    label="description"
+                    name="description"
+                    required
+                    errors={errors.description}
+                    value={data.description}
+                    onChange={(e) => setData("description", e.target.value)}
+                    placeholder="Enter description *"
+                />
+
                 <div className={style.formInfo}>
                     <div className={style.formPrice}>
                         <label className={style.formLabel}>Price</label>
+
                         <input
                             type="text"
                             className={`${style.formInput} ${style.formInputSecond}`}
@@ -182,10 +186,13 @@ const MakeOrder = (props) => {
                             name="cost"
                             onChange={(e) => setData("cost", e.target.value)}
                         />
+
                         <span>$</span>
                     </div>
+
                     <div className={style.formPeriod}>
                         <label className={style.formLabel}>Term</label>
+
                         <input
                             type="text"
                             required
@@ -194,14 +201,13 @@ const MakeOrder = (props) => {
                             label="time"
                             name="time"
                             onChange={(e) => setData("time", e.target.value)}
-                        />{" "}
+                        />
+
                         <span>days</span>
                     </div>
                 </div>
+
                 <div className={style.formFile}>
-                    {/*<label className="form-label">
-                        Add file with job description
-                        </label>*/}
                     <div className={style.fileInfo}>
                         <div className={style.fileUpload}>
                             <label>
@@ -220,18 +226,12 @@ const MakeOrder = (props) => {
                                     }}
                                     id="uploaded-file"
                                 />
+
                                 <span>+ Add file with job description</span>
                             </label>
                         </div>
 
                         <div className={style.fileName}>{selectedFile}</div>
-
-                        {/*<div className="btn-container">
-
-                            <button type="submit" className="btn-submit">
-                                Publish and find a specialist
-                            </button>
-                        </div>*/}
                     </div>
                 </div>
 
@@ -244,6 +244,7 @@ const MakeOrder = (props) => {
                         Publish and find a specialist
                     </button>
                 </div>
+
                 {errors.file && <div>{errors.file}</div>}
 
                 <ValidationErrors errors={errors} />

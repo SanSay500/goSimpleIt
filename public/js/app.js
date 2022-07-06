@@ -19683,8 +19683,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-
 var MakeOrder = function MakeOrder(props) {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     title: "",
@@ -19730,18 +19728,9 @@ var MakeOrder = function MakeOrder(props) {
       inputResults = _useState10[0],
       setInputResults = _useState10[1];
 
-  function clearList() {
-    var inputList = document.getElementById('inputList');
-
-    while (inputList.firstChild) {
-      inputList.removeChild(inputList.lastChild);
-    }
-  }
-
   function searchList() {
     setInputResults(function () {
-      inputResults = []; // clearList();
-
+      inputResults = [];
       var options = tasks.map(function (props) {
         return props.name;
       });
@@ -19762,29 +19751,17 @@ var MakeOrder = function MakeOrder(props) {
       forceFormData: true,
       _method: "put"
     }));
-  }
+  } // const changeSearch = ({ target: { value } }) => {
+  //     setMoneyTotalSearch(0);
+  //     setHoursTotalSearch(0);
+  //     let job_found = tasks.find((e) => e.name == value);
+  //     if (job_found) {
+  //         setTaskId(tasks.find((e) => e.name == value).id);
+  //         setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
+  //         setHoursTotalSearch(tasks.find((e) => e.name == value).time);
+  //     }
+  // };
 
-  var changeSearch = function changeSearch(_ref) {
-    var value = _ref.target.value;
-    console.log(value);
-    setMoneyTotalSearch(0);
-    setHoursTotalSearch(0);
-    var job_found = tasks.find(function (e) {
-      return e.name == value;
-    });
-
-    if (job_found) {
-      setTaskId(tasks.find(function (e) {
-        return e.name == value;
-      }).id);
-      setMoneyTotalSearch(tasks.find(function (e) {
-        return e.name == value;
-      }).money);
-      setHoursTotalSearch(tasks.find(function (e) {
-        return e.name == value;
-      }).time);
-    }
-  };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     taskIdRef.current = taskId;
@@ -19797,7 +19774,6 @@ var MakeOrder = function MakeOrder(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formWrapper,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
-      name: "createForm",
       onSubmit: handleSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
@@ -19882,20 +19858,18 @@ var MakeOrder = function MakeOrder(props) {
           return setData("title", e.target.value);
         },
         placeholder: "Enter the title *"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
-          type: "text",
-          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
-          label: "description",
-          name: "description",
-          required: true,
-          errors: errors.description,
-          value: data.description,
-          onChange: function onChange(e) {
-            return setData("description", e.target.value);
-          },
-          placeholder: "Enter description *"
-        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+        type: "text",
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+        label: "description",
+        name: "description",
+        required: true,
+        errors: errors.description,
+        value: data.description,
+        onChange: function onChange(e) {
+          return setData("description", e.target.value);
+        },
+        placeholder: "Enter description *"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInfo,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -19931,7 +19905,7 @@ var MakeOrder = function MakeOrder(props) {
             onChange: function onChange(e) {
               return setData("time", e.target.value);
             }
-          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
             children: "days"
           })]
         })]
