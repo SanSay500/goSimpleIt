@@ -10,8 +10,10 @@
     display: flex;
     flex-direction: column;
     /* border: 5px dashed #2BB739; */
-    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25), -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
-        -2px 0px 7px -5px rgba(0, 0, 0, 0.25), 0px -5px 1px -5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),
+        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
+        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),
+        0px -5px 1px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 }
 
@@ -35,7 +37,7 @@
     font-weight: 500;
     font-size: 28px;
     line-height: 32.17px;
-    color: #2BB739;
+    color: #2bb739;
 }
 
 .fileUpload input[type="file"] {
@@ -43,7 +45,6 @@
 }
 
 .fileUpload {
-
     position: relative;
 
     overflow: hidden;
@@ -56,7 +57,12 @@
 
     /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */
 
-    background: linear-gradient(270.76deg, rgba(0, 0, 0, 0) 3.23%, rgba(255, 255, 255, 0.2) 97.53%), #2BB739;
+    background: linear-gradient(
+            270.76deg,
+            rgba(0, 0, 0, 0) 3.23%,
+            rgba(255, 255, 255, 0.2) 97.53%
+        ),
+        #2bb739;
     border-radius: 10px;
 
     padding: 20px 30px;
@@ -69,7 +75,7 @@
 }
 
 .fileName {
-    color: #2B2B2B;
+    color: #2b2b2b;
     font-weight: 150;
     font-size: 16px;
     line-height: 48px;
@@ -91,7 +97,6 @@
 }
 
 .fileUpload label {
-
     display: block;
 
     position: absolute;
@@ -105,71 +110,70 @@
     height: 100%;
 
     cursor: pointer;
-
 }
 
 /* стиль текста на кнопке*/
 
 .fileUpload span {
-
     /* font-weight: 300;
     font-size: 34px;
     line-height: 48px; */
 
-    font-family: 'Ubuntu';
+    font-family: "Ubuntu";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 18px;
-
 }
 
-.formInput, .searchInput {
+.formInput,
+.searchInput {
     width: 100%;
     /* margin-top: 30px; */
     background-color: #fff;
     /* border-radius: 2px; */
-    border: 1px dashed #2BB739;
+    border: 1px dashed #2bb739;
     /* font-size: 34px;
     line-height: 48px;
     padding: 10px 37px; */
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B !important;
+    color: #2b2b2b !important;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     resize: none;
     margin: 0 0 9px 0;
 }
 
-.formInput::placeholder, .searchInput::placeholder {
-    font-family: 'Ubuntu';
+.formInput::placeholder,
+.searchInput::placeholder {
+    font-family: "Ubuntu";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
-[type='text']:focus,
-[type='email']:focus,
-[type='url']:focus,
-[type='password']:focus,
-[type='number']:focus,
-[type='date']:focus,
-[type='datetime-local']:focus,
-[type='month']:focus,
-[type='search']:focus,
-[type='tel']:focus,
-[type='time']:focus,
-[type='week']:focus,
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
 [multiple]:focus,
 textarea:focus,
 select:focus {
     outline: none !important;
     box-shadow: none;
-    border-color: #2BB739;
+    border-color: #2bb739;
 }
 
 .formInputSecond {
@@ -196,6 +200,7 @@ select:focus {
 }
 
 .inputList {
+    max-height: 300px;
     position: absolute;
     top: 40px;
     width: 100%;
@@ -203,10 +208,28 @@ select:focus {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B !important;
+    color: #2b2b2b;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     z-index: 2;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(43, 183, 57) transparent;
+}
+
+.inputList::-webkit-scrollbar {
+    width: 5px; /* width of the entire scrollbar */
+}
+
+/* .card-text::-webkit-scrollbar-track, */
+.inputList::-webkit-scrollbar-track {
+    background: transparent; /* color of the tracking area */
+}
+
+/* .card-text::-webkit-scrollbar-thumb, */
+.inputList::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 183, 57); /* color of the scroll thumb */
+    border-radius: 25px; /* roundness of the scroll thumb */
 }
 
 .inputList > div {
@@ -214,12 +237,12 @@ select:focus {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B;
+    color: #2b2b2b;
     border-radius: 8px;
 }
 
 .inputList > div:hover {
-    background-color: #2BB739;
+    background-color: #2bb739;
     cursor: pointer;
     color: #fff;
 }
@@ -316,7 +339,7 @@ select:focus {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
 .formInfo label {
@@ -325,7 +348,7 @@ select:focus {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
-    color: #2B2B2B;
+    color: #2b2b2b;
 }
 
 .btnContainer {
@@ -334,8 +357,13 @@ select:focus {
 }
 
 .btnSubmit {
-    color: #FFFFFF;
-    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;
+    color: #ffffff;
+    background: linear-gradient(
+            335.22deg,
+            rgba(0, 0, 0, 0.2) 15.83%,
+            rgba(255, 255, 255, 0.162) 79.46%
+        ),
+        #2bb739;
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
@@ -372,11 +400,9 @@ select:focus {
     .fileInfo {
         margin-top: 20px;
     }
-
 }
 
 @media (max-width: 1024px) {
-
     .formPrice,
     .formPeriod {
         width: 100%;
@@ -413,7 +439,6 @@ select:focus {
 }
 
 @media (max-width: 767px) {
-
     .formWrappper::after {
         top: 60%;
     }
