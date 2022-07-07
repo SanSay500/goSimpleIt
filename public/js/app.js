@@ -19613,9 +19613,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mainStart.module.css */ "./resources/js/components/pages/mainPage/mainStart/mainStart.module.css");
-/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./mainStart.module.css */ "./resources/js/components/pages/mainPage/mainStart/mainStart.module.css");
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -19623,22 +19637,128 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var MainStart = function MainStart(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-    className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].leftBlock),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-        className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].title),
+  var inputTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var wrpModal = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(tasks),
+      _useState2 = _slicedToArray(_useState, 2),
+      tasksList = _useState2[0],
+      setTasksList = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      open = _useState4[0],
+      setOpen = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(),
+      _useState6 = _slicedToArray(_useState5, 2),
+      price = _useState6[0],
+      setPrice = _useState6[1];
+
+  var searchList = function searchList() {
+    setTasksList(function () {
+      return [];
+    });
+    setTasksList(function () {
+      return tasks.filter(function (el) {
+        return el.name.toLowerCase().includes(inputTask.current.value.toLowerCase());
+      });
+    });
+  };
+
+  var setCloseModal = function setCloseModal() {
+    wrpModal.current.classList.toggle(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].closeModal);
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTasksList(function () {
+      return tasksList;
+    });
+  }, [tasksList]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setPrice(function () {
+      return price;
+    });
+  }, [price]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].container),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].leftBlock),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+        className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].title),
         children: "Find the perfect freelance services for your business"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        click: setCloseModal,
         children: "Estimate your budget"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
-      className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].getStartedBtn),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+      className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].getStartedBtn),
       onClick: props.scroll,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
         src: "/images/getStarted.png",
         alt: "Logo"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      ref: wrpModal,
+      className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].wrp, " ").concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].closeModal),
+      onClick: setCloseModal,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formWrapper,
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        },
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+          className: "title ".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].budgetTitle),
+          children: "Estimate your budget"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].search,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+            ref: inputTask,
+            type: "text",
+            id: "searchInput",
+            className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].searchInput,
+            placeholder: "Type the task",
+            onChange: searchList,
+            onBlur: function onBlur() {
+              setOpen(function () {
+                return !open;
+              });
+            },
+            onClick: function onClick() {
+              setOpen(function () {
+                return true;
+              });
+            }
+          }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            id: "inputList",
+            className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].inputList,
+            children: tasksList.map(function (task) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                onMouseDown: function onMouseDown() {
+                  setPrice(function () {
+                    return task.money;
+                  });
+                  inputTask.current.value = task.name;
+                },
+                children: task.name
+              }, task.id);
+            })
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formInfo,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: _mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formPrice,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+              children: "Recommended prise"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formInput, " ").concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formInputSecond),
+              children: price
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              children: "$"
+            })]
+          })
+        })]
       })
     })]
   });
@@ -19745,20 +19865,7 @@ var MakeOrder = function MakeOrder(props) {
       forceFormData: true,
       _method: "put"
     }));
-  } // const changeSearch = ({ target: { value } }) => {
-  //     setMoneyTotalSearch(0);
-  //     setHoursTotalSearch(0);
-  //     let job_found = tasks.find((e) => e.name == value);
-  //     if (job_found) {
-  //         setTaskId(tasks.find((e) => e.name == value).id);
-  //         setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
-  //         setHoursTotalSearch(tasks.find((e) => e.name == value).time);
-  //     }
-  // };
-  // useEffect(() => {
-  //     taskIdRef.current = taskId;
-  // }, [taskId]);
-
+  }
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTasksList(function () {
@@ -20577,15 +20684,17 @@ __webpack_require__.r(__webpack_exports__);
 
 function ButtonGreen(_ref) {
   var _ref$type = _ref.type,
-      type = _ref$type === void 0 ? 'submit' : _ref$type,
+      type = _ref$type === void 0 ? "submit" : _ref$type,
       _ref$className = _ref.className,
-      className = _ref$className === void 0 ? '' : _ref$className,
+      className = _ref$className === void 0 ? "" : _ref$className,
       processing = _ref.processing,
-      children = _ref.children;
+      children = _ref.children,
+      click = _ref.click;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
     type: type,
     className: "".concat(_buttonGreen_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].formBtn, " "),
     disabled: processing,
+    onClick: click,
     children: children
   });
 }
@@ -22110,13 +22219,24 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n\n.fhDiH9XWowrPapFlYRtnjA\\=\\= {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #2b2b2b54;\n    z-index: 2;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\= {\n    position: relative;\n    width: 100%;\n    max-width: 530px;\n    background: white;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -60%;\n    width: 100%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n.bz0ToHr7Px10yfV3CKPhaw\\=\\= {\n    margin: 0 0 30px 0;\n}\n\n.VnaRefbL8i2OD6rJwi8OnA\\=\\= {\n    margin: 0 0 20px 0;\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\= {\n    width: 100%;\n    max-width: 300px;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    /* margin: 0 0 9px 0; */\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::-moz-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=:-ms-input-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::placeholder,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= {\n    max-height: 65px;\n    max-width: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._87ZzhRuiNTrpldYWGmP9QQ\\=\\= {\n    display: flex;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5w-meDeLMlk0VKjAlYz6jA\\=\\= {\n    margin: 0 10px;\n    display: flex;\n    justify-content: center;\n    max-width: 50px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.meqKyAs5X3D7FesV8Nq9Yg\\=\\= {\n    display: none;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "gDtRMDHhOVnQof3zPFEKkw==",
 	"leftBlock": "T877L35uu2g8hXDSWlqDJw==",
 	"title": "-yZfMlbZET5XdbPMc+TEZQ==",
-	"getStartedBtn": "dhZ0EaaMRSFzUyiAU-2jxA=="
+	"getStartedBtn": "dhZ0EaaMRSFzUyiAU-2jxA==",
+	"wrp": "fhDiH9XWowrPapFlYRtnjA==",
+	"formWrapper": "rYC9cjUdoBDSl+XwFKBr9Q==",
+	"budgetTitle": "bz0ToHr7Px10yfV3CKPhaw==",
+	"search": "VnaRefbL8i2OD6rJwi8OnA==",
+	"formInput": "bD5WlPjyOcph12uCo9OyRA==",
+	"searchInput": "UwUh5Izwjy4UAjI4qvXaSg==",
+	"inputList": "kvlWfq9Rp1oQWJbdrNQssQ==",
+	"formInfo": "ej0MNdiWaSyZiA1n7OW8kQ==",
+	"formPrice": "_87ZzhRuiNTrpldYWGmP9QQ==",
+	"formInputSecond": "_5w-meDeLMlk0VKjAlYz6jA==",
+	"closeModal": "meqKyAs5X3D7FesV8Nq9Yg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22140,7 +22260,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: -17%;\n    width: 64%;\n    height: 100%;\n    background-image: url(/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n}\n\n/* стиль текста на кнопке*/\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2bb739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px; /* width of the entire scrollbar */\n}\n\n/* .card-text::-webkit-scrollbar-track, */\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent; /* color of the tracking area */\n}\n\n/* .card-text::-webkit-scrollbar-thumb, */\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57); /* color of the scroll thumb */\n    border-radius: 25px; /* roundness of the scroll thumb */\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n/* .search-input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root {\n    width: 100% !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl {\n    top: 35% !important;\n    left: 5px !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl.Mui-focused,\n.css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n/* .formItem,\n.formInfo,\n.formPrice {\n    margin-bottom: 20px;\n}\n\n.formInfo {\n    display: flex;\n} */\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n\n    /* .formPrice {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    /* .formPrice, .formPeriod {\n        flex-wrap: wrap;\n    } */\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69% !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: -17%;\n    width: 64%;\n    height: 100%;\n    background-image: url(/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n}\n\n/* стиль текста на кнопке*/\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2bb739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n/* .search-input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root {\n    width: 100% !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl {\n    top: 35% !important;\n    left: 5px !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl.Mui-focused,\n.css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n/* .formItem,\n.formInfo,\n.formPrice {\n    margin-bottom: 20px;\n}\n\n.formInfo {\n    display: flex;\n} */\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n\n    /* .formPrice {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    /* .formPrice, .formPeriod {\n        flex-wrap: wrap;\n    } */\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69% !important;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formWrapper": "btA4j3oHRhStd91D--BFnA==",

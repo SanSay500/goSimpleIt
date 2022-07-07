@@ -216,20 +216,15 @@ select:focus {
     scrollbar-width: thin;
     scrollbar-color: rgb(43, 183, 57) transparent;
 }
-
 .inputList::-webkit-scrollbar {
-    width: 5px; /* width of the entire scrollbar */
+    width: 5px;
 }
-
-/* .card-text::-webkit-scrollbar-track, */
 .inputList::-webkit-scrollbar-track {
-    background: transparent; /* color of the tracking area */
+    background: transparent;
 }
-
-/* .card-text::-webkit-scrollbar-thumb, */
 .inputList::-webkit-scrollbar-thumb {
-    background-color: rgb(43, 183, 57); /* color of the scroll thumb */
-    border-radius: 25px; /* roundness of the scroll thumb */
+    background-color: rgb(43, 183, 57);
+    border-radius: 25px;
 }
 
 .inputList > div {
