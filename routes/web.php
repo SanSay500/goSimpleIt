@@ -41,12 +41,14 @@ Route::get('/order/{order_id}/{proposal_id}/store_proposal_confirmation', [\App\
 Route::get('/order/{order_id}/{proposal_id}/finish_order', [\App\Http\Controllers\OrderController::class, 'finish_order'])->name('finish_order')->middleware('auth');
 Route::resource('orders', OrderController::class);
 
-
 //DASHBOARD
 Route::get('/chatify/{user_id}', [\App\Http\Controllers\DashboardController::class, 'start_chat'])->name('start_chat')->middleware('auth');
 Route::get('/dashboard/frl', [\App\Http\Controllers\DashboardController::class, 'freelancer_dashboard_index'])->middleware('auth')->name('freelancer_dashboard_index');
 Route::get('/dashboard/emp', [\App\Http\Controllers\DashboardController::class, 'employer_dashboard_index'])->middleware('auth')->name('employer_dashboard_index');
 Route::get('/storage/{name}', [\App\Http\Controllers\DashboardController::class, 'download_file'])->name('download_file');
+
+//MAINPAGE CONTROLLERS
+Route::get('/estimate', [\App\Http\Controllers\MainPageController::class, 'estimate_issue'])->name('estimate_issue');
 
 //PAYMENT STRIPE
 Route::get('/payment', function (){
