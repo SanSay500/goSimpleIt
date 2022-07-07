@@ -46,22 +46,6 @@ const MakeOrder = (props) => {
         );
     }
 
-    // const changeSearch = ({ target: { value } }) => {
-    //     setMoneyTotalSearch(0);
-    //     setHoursTotalSearch(0);
-
-    //     let job_found = tasks.find((e) => e.name == value);
-    //     if (job_found) {
-    //         setTaskId(tasks.find((e) => e.name == value).id);
-    //         setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
-    //         setHoursTotalSearch(tasks.find((e) => e.name == value).time);
-    //     }
-    // };
-
-    // useEffect(() => {
-    //     taskIdRef.current = taskId;
-    // }, [taskId]);
-
     useEffect(() => {
         setTasksList(() => tasksList);
     }, [tasksList]);
@@ -239,7 +223,7 @@ const MakeOrder = (props) => {
                     <button
                         type="submit"
                         disabled={processing}
-                        className={style.btnSubmit}
+                        className={stgit statusyle.btnSubmit}
                     >
                         Publish and find a specialist
                     </button>
