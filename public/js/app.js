@@ -18552,7 +18552,7 @@ function DashboardFreelancer(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "".concat(_dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].freelancerOrderWrapper),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            quantityCards: 4,
+            quantityCardsTasks: 4,
             gridStyle: _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].gridStyle
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
@@ -19435,24 +19435,24 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Freelancers = function Freelancers(_ref) {
   var reviewsList = _ref.reviewsList,
-      count = _ref.count;
+      quantityCardsPeople = _ref.quantityCardsPeople;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCardsPeople),
       _useState2 = _slicedToArray(_useState, 2),
-      showOrdersQty = _useState2[0],
-      setShowOrdersQty = _useState2[1];
+      showCards = _useState2[0],
+      setShowCards = _useState2[1];
 
-  var freelancersList = reviewsList.slice(0, showOrdersQty);
+  var freelancersList = reviewsList.slice(0, quantityCardsPeople);
 
-  function loadOrders(e) {
+  var loadMoreTasks = function loadMoreTasks(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + count);
-  }
+    setShowCards(showCards + quantityCardsPeople);
+  };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    section: "".concat(_freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].section),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
       className: "title",
       children: "Best freelancers"
@@ -19464,9 +19464,9 @@ var Freelancers = function Freelancers(_ref) {
           classes: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].card
         }, i);
       })
-    }), reviewsList.length > showOrdersQty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), reviewsList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
       click: function click(e) {
-        loadOrders(e);
+        loadMoreTasks(e);
       }
     })]
   });
@@ -19535,37 +19535,60 @@ var Main = function Main(props) {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(6),
       _useState2 = _slicedToArray(_useState, 2),
-      quantityCards = _useState2[0],
+      quantityCardsTasks = _useState2[0],
       setQuantityCards = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerWidth),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(3),
       _useState4 = _slicedToArray(_useState3, 2),
-      windowWidth = _useState4[0],
-      setWindowWidth = _useState4[1];
+      quantityCardsProjects = _useState4[0],
+      setQuantityCardsProjects = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(3),
+      _useState6 = _slicedToArray(_useState5, 2),
+      quantityCardsPeople = _useState6[0],
+      setQuantityCardsPeople = _useState6[1];
 
   var resizeHandler = function resizeHandler() {
-    // console.log(111);
     var clientWidth = window.innerWidth;
 
-    if (clientWidth < 769) {
+    if (clientWidth < 577) {
+      setQuantityCards(function () {
+        return 1;
+      });
+      setQuantityCardsProjects(1);
+      setQuantityCardsPeople(1);
+      return;
+    }
+
+    if (clientWidth > 1024) {
+      setQuantityCards(function () {
+        return 6;
+      });
+      setQuantityCardsProjects(3);
+      setQuantityCardsPeople(3);
+      return;
+    }
+
+    if (clientWidth < 1025) {
       setQuantityCards(function () {
         return 4;
       });
-      console.log(quantityCards);
+      setQuantityCardsProjects(2);
+      setQuantityCardsPeople(2);
+      return;
     } // setStepPrev(0);
     // setStepNext(count_project);
 
+  };
+
+  var scroll = function scroll() {
+    return makeOrder.current.scrollIntoView();
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
   }, []);
-
-  var scroll = function scroll() {
-    return makeOrder.current.scrollIntoView();
-  };
-
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].headerContainer),
@@ -19578,17 +19601,27 @@ var Main = function Main(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionActive),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        quantityCards: quantityCards,
+        quantityCardsTasks: quantityCardsTasks,
         gridStyle: _main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].gridStyle
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_projects_projects__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_freelancers_freelancers__WEBPACK_IMPORTED_MODULE_9__["default"], {
-      reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews,
-      count: 3
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_talks_talks__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews,
-      count: 3
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionProject),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_projects_projects__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        quantityCardsProjects: quantityCardsProjects,
+        portfolioList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.portfolio
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionFreelancers),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_freelancers_freelancers__WEBPACK_IMPORTED_MODULE_9__["default"], {
+        quantityCardsPeople: quantityCardsPeople,
+        reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionTalks),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_talks_talks__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        quantityCardsPeople: quantityCardsPeople,
+        reviewsList: _mocks_review_data__WEBPACK_IMPORTED_MODULE_2__.myJson.reviews
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         ref: makeOrder,
@@ -20167,46 +20200,22 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Projects = function Projects(_ref) {
-  var portfolioList = _ref.portfolioList;
-  var count_project = 0;
+  var portfolioList = _ref.portfolioList,
+      quantityCardsProjects = _ref.quantityCardsProjects;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count_project),
+  // const projects = portfolioList.slice(stepPrev, stepNext);
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCardsProjects),
       _useState2 = _slicedToArray(_useState, 2),
-      stepNext = _useState2[0],
-      setStepNext = _useState2[1];
+      showCards = _useState2[0],
+      setShowCards = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
-      _useState4 = _slicedToArray(_useState3, 2),
-      stepPrev = _useState4[0],
-      setStepPrev = _useState4[1];
-
-  var projects = portfolioList.slice(stepPrev, stepNext);
-
-  var resizeHandler = function resizeHandler() {
-    console.log(111);
-    var clientWidth = window.innerWidth;
-
-    if (clientWidth > 1024) {
-      count_project = 3;
-    } else {
-      if (clientWidth > 576) {
-        count_project = 2;
-      } else {
-        count_project = 1;
-      }
-    }
-
-    setStepPrev(0);
-    setStepNext(count_project);
-  };
-
+  var projects = portfolioList.slice(0, showCards);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    window.addEventListener("resize", resizeHandler);
-    resizeHandler();
-  }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    section: "".concat(_projects_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].section),
+    setShowCards(quantityCardsProjects);
+  }, [quantityCardsProjects]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
       className: "title",
       children: "Complete projects"
@@ -20262,24 +20271,24 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
 var Talks = function Talks(_ref) {
   var reviewsList = _ref.reviewsList,
-      count = _ref.count;
+      quantityCardsPeople = _ref.quantityCardsPeople;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCardsPeople),
       _useState2 = _slicedToArray(_useState, 2),
-      showOrdersQty = _useState2[0],
-      setShowOrdersQty = _useState2[1];
+      showCards = _useState2[0],
+      setShowCards = _useState2[1];
 
-  var freelancersList = reviewsList.slice(0, showOrdersQty);
+  var freelancersList = reviewsList.slice(0, quantityCardsPeople);
 
-  function loadOrders(e) {
+  var loadMoreTasks = function loadMoreTasks(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + count);
-  }
+    setShowCards(showCards + quantityCardsPeople);
+  };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    section: "".concat(_talks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].section),
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
       className: "title ".concat(_talks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].title),
       children: "Talks about us"
@@ -20290,9 +20299,9 @@ var Talks = function Talks(_ref) {
           freelancer: freelancer
         }, i);
       })
-    }), reviewsList.length > showOrdersQty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), reviewsList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
       click: function click(e) {
-        loadOrders(e);
+        loadMoreTasks(e);
       }
     })]
   });
@@ -20485,26 +20494,21 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var ActiveTasks = function ActiveTasks(_ref) {
-  var quantityCards = _ref.quantityCards,
+  var quantityCardsTasks = _ref.quantityCardsTasks,
       gridStyle = _ref.gridStyle;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCards),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCardsTasks),
       _useState2 = _slicedToArray(_useState, 2),
-      showOrdersQty = _useState2[0],
-      setShowOrdersQty = _useState2[1];
+      showCards = _useState2[0],
+      setShowCards = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ordersActive),
-      _useState4 = _slicedToArray(_useState3, 2),
-      ordersToShow = _useState4[0],
-      setOrdersToShow = _useState4[1];
-
-  function loadOrders(e) {
+  var loadMoreTasks = function loadMoreTasks(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + quantityCards);
-  } // const changeSearch = ({ target: { value } }) => {
+    setShowCards(showCards + quantityCardsTasks);
+  }; // const changeSearch = ({ target: { value } }) => {
   //     if (value) {
   //         let job_found = tasksWithOrders.find((e) => e.name === value).id;
   //         if (job_found) {
@@ -20517,24 +20521,27 @@ var ActiveTasks = function ActiveTasks(_ref) {
   //         (el) => el.task_id === task_id
   //     );
   //     setOrdersToShow(newOrdersToShow);
-  //     setShowOrdersQty(5);
+  //     setShowCards(5);
   // }
 
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setShowCards(quantityCardsTasks);
+  }, [quantityCardsTasks]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
       className: "title",
       children: "Active Tasks"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "".concat(_activeTasks_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer, " ").concat(gridStyle),
-      children: ordersToShow.slice(0, showOrdersQty).map(function (order) {
+      children: ordersActive.slice(0, showCards).map(function (order) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           props: order
         }, order.id);
       })
-    }), ordersToShow.length > showOrdersQty && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), ordersActive.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
       click: function click(e) {
-        loadOrders(e);
+        loadMoreTasks(e);
       }
     })]
   });
@@ -20559,9 +20566,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../buttonViewMore/buttonViewMore */ "./resources/js/components/shared/buttonViewMore/buttonViewMore.jsx");
 /* harmony import */ var _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./basicCard.module.css */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.module.css");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -20569,45 +20574,45 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BasicCard(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
       children: props.props["title"]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].description),
       children: props.props["description"]
-    }), console.log(props.props["file"]), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
-      href: route('download_file', props.props["file"]),
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+      href: route("download_file", props.props["file"]),
       children: "Download"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].file),
-      children: props.props["file"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+      children: props.props["file"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
         className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("a", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
           className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo, " ").concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green),
           href: props.props["file"],
           children: ["Download", " "]
         }), "(jpg; 43.10 Kb)"]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainer,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
-        children: ["Budget:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+        children: ["Budget:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
           children: [" ", props.props["money"], "$"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
-        children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+        children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
           children: [" ", props.props["hours"], "h"]
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: route("order.details", [props.props["id"]]),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
         classes: props.classes
       })
     })]
@@ -22114,7 +22119,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".NMv458KrtTTwIyIkHJ7InQ\\=\\= {\n    position: relative;\n}\n.NMv458KrtTTwIyIkHJ7InQ\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n._17YyT8NV7oUh8xHkovSSkA\\=\\= {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 50px;\n}\n\n.jTNZDPTiC7nZWtldo3KU\\+w\\=\\=::after {\n    display: none;\n}\n\n/* .review::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 88px;\n    width: 45px;\n    bottom: 40%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n} */\n\n/* .reviews-block {\n    padding-bottom: 100px;\n} */\n\n/* .review:not(:nth-child(3n)) {\n    margin-right: 10px;\n} */\n\n/* .user {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 12px;\n    z-index: 555;\n    flex-shrink: 0;\n    margin-right: 10px;\n} */\n/* \n.user::after {\n    content: \"\";\n    position: absolute;\n    background-color: #2bb739;\n    height: 103px;\n    width: 103px;\n    bottom: 16%;\n    left: 11%;\n    transform: translate(-50%, 5px);\n    border-radius: 50%;\n} */\n/* \n.user__img {\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    visibility: hidden;\n} */\n\n/* .card-text::-webkit-scrollbar, */\n\n/* .reviewButton {\n    display: none;\n    font-family: \"Ubuntu\";\n    font-weight: 500;\n    padding: 8px 15px;\n    border: 4px dashed #2B2B2B; \n    color: #fff;\n    background-color: #2bb739;\n    border-radius: 40px;\n    font-size: 24px;\n    line-height: 28px;\n}\n\n.reviewButton:hover {\n    color: #2bb739;\n    background-color: #fff;\n    border-color: #2bb739;\n} \n\n@media (max-width: 1024px) {\n    .review {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .comentText {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .reviewsList {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .review {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .talks::before,\n    .talks::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .review {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .freelancersTitle {\n        margin-top: 5%;\n        margin-bottom: 5%;\n        padding: 0;\n    }\n\n    .reviewsWrapper {\n        padding: 0;\n    }\n\n    .review:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .review:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n    .reviews-block {\n        padding-bottom: 60px;\n    } \n\n    .talks::before,\n    .talks::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .review {\n        width: 90%;\n    }\n\n    .reviews-block {\n        padding-bottom: 40px;\n    } \n}\n*/\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".NMv458KrtTTwIyIkHJ7InQ\\=\\= {\n    position: relative;\n}\n.NMv458KrtTTwIyIkHJ7InQ\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n._17YyT8NV7oUh8xHkovSSkA\\=\\= {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 50px;\n}\n\n.jTNZDPTiC7nZWtldo3KU\\+w\\=\\=::after {\n    display: none;\n}\n\n@media (max-width: 1024px) {\n    ._17YyT8NV7oUh8xHkovSSkA\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n\n@media (max-width: 800px) {\n    ._17YyT8NV7oUh8xHkovSSkA\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"section": "NMv458KrtTTwIyIkHJ7InQ==",
@@ -22143,14 +22148,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n}\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n        position: relative;\n    }\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: block;\n        content: \"\";\n        position: absolute;\n        height: 64px;\n        width: 7%;\n        z-index: -1;\n    }\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        top: 207px;\n        left: 0;\n        border-radius: 0 10px 10px 0;\n        background: linear-gradient(\n                180deg,\n                rgba(255, 255, 255, 0.2) 0%,\n                rgba(0, 0, 0, 0) 100%\n            ),\n            #2b2b2b;\n    }\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n        top: 417px;\n        right: 0;\n        border-radius: 10px 0 0 10px;\n        background: linear-gradient(\n                180deg,\n                rgba(255, 255, 255, 0.2) 0%,\n                rgba(0, 0, 0, 0) 100%\n            ),\n            #2bb739;\n    }\n    \n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n\n@media(max-width:1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n@media(max-width:1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n\n    }\n}\n@media(max-width:1000px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n}\n@media(max-width:800px) {\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n@media(max-width:756px) {\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n@media(max-width:576px) {\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n\n    }\n\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n    align-items: flex-start;\n}\n\n.CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n    position: relative;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 7%;\n    z-index: -1;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    top: 207px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n    top: 417px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\= {\n    position: relative;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\= {\n    position: relative;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 67%;\n    z-index: -1;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after,\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n@media (max-width: 1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n@media (max-width: 1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n    }\n}\n@media (max-width: 1024px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n@media (max-width: 800px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n@media (max-width: 756px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n@media (max-width: 576px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: none;\n    }\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before,\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after {\n        display: none;\n    }\n    .L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n        display: none;\n    }\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n        display: none;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw==",
 	"bgrImg": "ehM-LO7sL14Thwhic4Od0g==",
 	"blockContainer": "hCR9StqrLyuDUqkAIApghg==",
 	"sectionActive": "CXFJZHWnF7qF72ESiaHMhg==",
-	"gridStyle": "XQgbd9v39XQ7zPJJ3VCB2A=="
+	"gridStyle": "XQgbd9v39XQ7zPJJ3VCB2A==",
+	"sectionFreelancers": "L4BrH3KYKvAbsgXMmHmBRA==",
+	"sectionTalks": "OMLdDvkt5T2uNvjFWTrzHA==",
+	"sectionProject": "UWgqZuz1rC5nfCMk8jjZLw=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22215,7 +22223,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    /* border-radius: 20px; */\n    /* padding: 12px 78px 48px 78px; */\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    /* border: 5px dashed #2BB739; */\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: -1%;\n    right: -17%;\n    width: 64%;\n    height: 100%;\n    background-image: url(/images/form-lines.svg);\n    background-size: 100%;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n    position: relative;\n\n    overflow: hidden;\n\n    /* width: 342px;\n    height: 65px; */\n\n    width: 245px;\n    height: 29px;\n\n    /* background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739; */\n\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n\n    padding: 20px 30px;\n    /* border-radius: 40px; */\n\n    color: #fff;\n\n    text-align: center;\n    /* margin-left: 10px; */\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n    display: block;\n\n    position: absolute;\n\n    top: 6px;\n\n    left: 0;\n\n    width: 100%;\n\n    height: 100%;\n\n    cursor: pointer;\n}\n\n/* стиль текста на кнопке*/\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n    /* font-weight: 300;\n    font-size: 34px;\n    line-height: 48px; */\n\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    /* margin-top: 30px; */\n    background-color: #fff;\n    /* border-radius: 2px; */\n    border: 1px dashed #2bb739;\n    /* font-size: 34px;\n    line-height: 48px;\n    padding: 10px 37px; */\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0 !important;\n    /* width: 20% !important; */\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n/* .search-input .MuiOutlinedInput-root {\n    padding: 0 !important;\n}\n\n.MuiAutocomplete-root {\n    width: 100% !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 5px dashed #2BB739 !important;\n    font-size: 34px !important;\n    line-height: 48px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl {\n    top: 35% !important;\n    left: 5px !important;\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.search-input .MuiOutlinedInput-input.Mui-focused .MuiOutlinedInput-notchedOutline {\n    border-color: #2B2B2B !important;\n}\n\n.search-input .MuiInputLabel-formControl.Mui-focused,\n.css-1in441m {\n    font-family: 'Ubuntu' !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    color: #2B2B2B !important;\n}\n\n.MuiOutlinedInput-notchedOutline {\n    border: none !important;\n}\n\n.search-input .MuiOutlinedInput-input {\n    width: 100% !important;\n    margin-top: 30px !important;\n    background-color: #fff !important;\n    border-radius: 8px !important;\n    border: 1px dashed #2BB739 !important;\n    font-weight: 400 !important;\n    font-size: 18px !important;\n    line-height: 21px !important;\n    padding: 10px 37px !important;\n    color: #2B2B2B !important;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n} */\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n/* .formItem,\n.formInfo,\n.formPrice {\n    margin-bottom: 20px;\n}\n\n.formInfo {\n    display: flex;\n} */\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    /* .form-file {\n        justify-content: center;\n    } */\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n\n    /* .formPrice {\n        margin-bottom: 41px;\n    } */\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    /* .formPrice, .formPeriod {\n        flex-wrap: wrap;\n    } */\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70% !important;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69% !important;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -17%;\n    width: 70%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n    position: relative;\n    overflow: hidden;\n    width: 245px;\n    height: 29px;\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    padding: 20px 30px;\n    color: #fff;\n    text-align: center;\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n    display: block;\n    position: absolute;\n    top: 6px;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0;\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70%;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formWrapper": "btA4j3oHRhStd91D--BFnA==",
@@ -22258,7 +22266,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".SX3nV2JUCiqmL31z8NmtPA\\=\\= {\n    background-color: #fff;\n    height: 365px;\n    border: 3px dashed #2bb739;\n    border-radius: 20px;\n    perspective: 1000px;\n    overflow: hidden;\n    box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);\n}\n\n/* .card:not(:last-child) {\n    margin-right: 10px;\n} */\n\n.YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    transition: transform 0.8s;\n    transform-style: preserve-3d;\n}\n\n.SX3nV2JUCiqmL31z8NmtPA\\=\\=:hover .YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    transform: rotateY(180deg);\n}\n\n.YLdxuq1uCvyG3qTaeKENgQ\\=\\= {\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.bKBQgKKeyMzSbBlXC6yNjw\\=\\= {\n    background-color: #fff;\n    color: #2b2b2b;\n}\n\n.bay113VW8PEnVgBsOoDmDg\\=\\= {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    -o-object-position: top left;\n       object-position: top left;\n}\n\n.SM6n-v-vVqAcmWveJ6WGnA\\=\\= {\n    padding: 20px;\n    transform: rotateY(180deg);\n    background: #fff;\n    color: #2b2b2b;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n._5xMt9DpyBXY3YaN3Un2Siw\\=\\= {\n    text-transform: uppercase;\n    font-weight: 400;\n    font-size: 24px;\n    line-height: 28px;\n    margin-bottom: 20px;\n}\n\n.rUqJv1wGuH5H20FUiuwrEw\\=\\= {\n    font-weight: 300;\n    font-size: 20px;\n    max-height: 175px;\n    min-height: 100px;\n    font-style: italic;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    text-align: left;\n    margin-bottom: 11px;\n}\n\n.HhKqNZQgmolxBybdkw8C-w\\=\\= {\n    font-weight: 400;\n    font-size: 20px;\n    line-height: 31px;\n    margin-bottom: 8px;\n    text-align: left;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= {\n    list-style: none;\n    text-align: left;\n    display: flex;\n    align-items: center;\n    flex-wrap: wrap;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li {\n    width: 45%;\n    font-weight: 300;\n    font-size: 20px;\n    line-height: 23px;\n}\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li::before {\n    content: \"\\2022\";\n    color: #2bb739;\n    font-weight: bold;\n    display: inline-block;\n    width: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".SX3nV2JUCiqmL31z8NmtPA\\=\\= {\n    background-color: #fff;\n    height: 365px;\n    border: 3px dashed #2bb739;\n    border-radius: 20px;\n    perspective: 1000px;\n    overflow: hidden;\n    box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);\n}\n\n.YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    text-align: center;\n    transition: transform 0.8s;\n    transform-style: preserve-3d;\n}\n\n.SX3nV2JUCiqmL31z8NmtPA\\=\\=:hover .YgKAq3n23dRCCVHJkdfMtw\\=\\= {\n    transform: rotateY(180deg);\n}\n\n.YLdxuq1uCvyG3qTaeKENgQ\\=\\= {\n    -webkit-backface-visibility: hidden;\n            backface-visibility: hidden;\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n}\n\n.bKBQgKKeyMzSbBlXC6yNjw\\=\\= {\n    background-color: #fff;\n    color: #2b2b2b;\n}\n\n.bay113VW8PEnVgBsOoDmDg\\=\\= {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n    -o-object-position: top left;\n       object-position: top left;\n}\n\n.SM6n-v-vVqAcmWveJ6WGnA\\=\\= {\n    padding: 20px;\n    transform: rotateY(180deg);\n    background: #fff;\n    color: #2b2b2b;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n}\n\n._5xMt9DpyBXY3YaN3Un2Siw\\=\\= {\n    text-transform: uppercase;\n    font-weight: 400;\n    font-size: 24px;\n    line-height: 28px;\n    margin-bottom: 20px;\n}\n\n.rUqJv1wGuH5H20FUiuwrEw\\=\\= {\n    font-weight: 300;\n    font-size: 20px;\n    max-height: 175px;\n    min-height: 100px;\n    font-style: italic;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    text-align: left;\n    margin-bottom: 11px;\n}\n\n.HhKqNZQgmolxBybdkw8C-w\\=\\= {\n    font-weight: 400;\n    font-size: 20px;\n    line-height: 31px;\n    margin-bottom: 8px;\n    text-align: left;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= {\n    list-style: none;\n    text-align: left;\n    display: flex;\n    align-items: center;\n    flex-wrap: wrap;\n}\n\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li {\n    width: 45%;\n    font-weight: 300;\n    font-size: 20px;\n    line-height: 23px;\n}\n.xsiZFuPhsvNa-IZecbwePg\\=\\= li::before {\n    content: \"\\2022\";\n    color: #2bb739;\n    font-weight: bold;\n    display: inline-block;\n    width: 10px;\n}\n\n@media (max-width: 800px) {\n    .SX3nV2JUCiqmL31z8NmtPA\\=\\= {\n        margin: 0 auto;\n        width: 75%;\n    }\n}\n@media (max-width: 600px) {\n    .SX3nV2JUCiqmL31z8NmtPA\\=\\= {\n        margin: 0;\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "SX3nV2JUCiqmL31z8NmtPA==",
@@ -22294,10 +22302,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._8zpx50n\\+O5kreW-IloOl4g\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n._8zpx50n\\+O5kreW-IloOl4g\\=\\=::after,\n._8zpx50n\\+O5kreW-IloOl4g\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n._8zpx50n\\+O5kreW-IloOl4g\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.tXfsS0sZlb-DYb823TiN0A\\=\\= {\n    margin: 0 0 25px 0;\n    width: 100%;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".tXfsS0sZlb-DYb823TiN0A\\=\\= {\n    margin: 0 0 25px 0;\n    width: 100%;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n}\n\n@media (max-width: 1200px) {\n}\n@media (max-width: 1024px) {\n    .tXfsS0sZlb-DYb823TiN0A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n@media (max-width: 800px) {\n    .tXfsS0sZlb-DYb823TiN0A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n@media (max-width: 756px) {\n}\n@media (max-width: 576px) {\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"section": "_8zpx50n+O5kreW-IloOl4g==",
 	"cardsContainer": "tXfsS0sZlb-DYb823TiN0A=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
@@ -22322,10 +22329,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".yqYCFjMYYbyQaiUSVWOC3w\\=\\= {\n    position: relative;\n}\n.yqYCFjMYYbyQaiUSVWOC3w\\=\\=::after,\n.yqYCFjMYYbyQaiUSVWOC3w\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 63%;\n    z-index: -1;\n}\n.yqYCFjMYYbyQaiUSVWOC3w\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.yqYCFjMYYbyQaiUSVWOC3w\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.xBLk1s8K4u4VlvKvntDLmA\\=\\= {\n    padding: 36px 0 0 0;\n}\n\n.UCAcOeTod1hktvSxiPG-gw\\=\\= {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 50px;\n}\n\n.Cjl\\+GoprRpafZmeRrYMVJw\\=\\=::after {\n    display: none;\n}\n\n/* \n@media (max-width: 1024px) {\n    .review {\n        width: 45%;\n        margin-right: 0px;\n    }\n\n    .comentText {\n        padding-right: 10px;\n        padding-left: 10px;\n    }\n\n    .reviews-list {\n        justify-content: space-between;\n    }\n}\n\n@media (max-width: 767px) {\n    .review {\n        width: 48%;\n        padding: 15px;\n    }\n\n    .talks::before,\n    .talks::after {\n        width: 80vw;\n    }\n}\n\n@media (max-width: 576px) {\n    .review {\n        width: 75%;\n        margin: 0 auto;\n    }\n\n    .talks {\n        margin-top: 0;\n        margin-bottom: 5%;\n    }\n\n    .reviews-wrapper {\n        padding: 0;\n    }\n\n    .review:not(:last-child) {\n        margin-bottom: 15px !important;\n    }\n\n    .review:not(:nth-child(3n)) {\n        margin-right: auto;\n    }\n\n     .reviews-block {\n        padding-bottom: 60px;\n    } \n\n    .talks::before,\n    .talks::after {\n        display: none;\n    }\n}\n\n@media (max-width: 410px) {\n    .review {\n        width: 90%;\n    }\n\n    .reviews-block {\n        padding-bottom: 40px;\n    } \n} */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".xBLk1s8K4u4VlvKvntDLmA\\=\\= {\n    padding: 36px 0 0 0;\n    margin-bottom: 50px;\n}\n\n.UCAcOeTod1hktvSxiPG-gw\\=\\= {\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 50px;\n}\n\n.Cjl\\+GoprRpafZmeRrYMVJw\\=\\=::after {\n    display: none;\n}\n@media (max-width: 1024px) {\n    .UCAcOeTod1hktvSxiPG-gw\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n@media (max-width: 800px) {\n    .UCAcOeTod1hktvSxiPG-gw\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"section": "yqYCFjMYYbyQaiUSVWOC3w==",
 	"title": "xBLk1s8K4u4VlvKvntDLmA==",
 	"cardsList": "UCAcOeTod1hktvSxiPG-gw==",
 	"card": "Cjl+GoprRpafZmeRrYMVJw=="
@@ -22701,7 +22707,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".kIoUOQ5eNdd-BSpgkasV6A\\=\\= {\n    display: grid;\n    grid-template-columns: 3fr 7fr;\n    gap: 20px;\n    height: 140px;\n    position: relative;\n}\n.kIoUOQ5eNdd-BSpgkasV6A\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: calc(100% - 10px);\n    height: 100%;\n    top: 0;\n    right: 0;\n    background: linear-gradient(180deg, #f0f0f0 41.52%, #ffffff 100%);\n    border-radius: 20px;\n    z-index: -2;\n}\n\n.eP3cadVsmDAosSJrcfZHMQ\\=\\= {\n    display: flex;\n    align-items: center;\n    position: relative;\n}\n.eP3cadVsmDAosSJrcfZHMQ\\=\\=::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    top: 1px;\n    left: 29px;\n    width: 45px;\n    height: 50px;\n    background-color: #2bb739;\n    z-index: -1;\n}\n\n.sZ4fOVcdHyNy33vpa8\\+Xmg\\=\\= {\n    background-color: #2bb739;\n    border-radius: 50%;\n    box-sizing: border-box;\n}\n\n.xMQTqzg1H9jY4DMSH4GmFA\\=\\= {\n    border-radius: 50%;\n    box-sizing: border-box;\n}\n\n.Bjcj8a9tDfB5m5\\+e374TfA\\=\\= {\n    font-weight: 300;\n    font-size: 16px;\n    color: #2b2b2b;\n}\n\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\= {\n    padding: 0 15px 0 0;\n    max-height: 100px;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 18px;\n    color: #2b2b2b;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".kIoUOQ5eNdd-BSpgkasV6A\\=\\= {\n    display: grid;\n    grid-template-columns: 103px 7fr;\n    gap: 20px;\n    height: 140px;\n    position: relative;\n}\n.kIoUOQ5eNdd-BSpgkasV6A\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: calc(100% - 10px);\n    height: 100%;\n    top: 0;\n    right: 0;\n    background: linear-gradient(180deg, #f0f0f0 41.52%, #ffffff 100%);\n    border-radius: 20px;\n    z-index: -2;\n}\n\n.eP3cadVsmDAosSJrcfZHMQ\\=\\= {\n    display: flex;\n    align-items: center;\n    position: relative;\n}\n.eP3cadVsmDAosSJrcfZHMQ\\=\\=::before {\n    position: absolute;\n    display: block;\n    content: \"\";\n    top: 1px;\n    left: 29px;\n    width: 45px;\n    height: 50px;\n    background-color: #2bb739;\n    z-index: -1;\n}\n\n.sZ4fOVcdHyNy33vpa8\\+Xmg\\=\\= {\n    background-color: #2bb739;\n    border-radius: 50%;\n    box-sizing: border-box;\n}\n\n.xMQTqzg1H9jY4DMSH4GmFA\\=\\= {\n    border-radius: 50%;\n    box-sizing: border-box;\n}\n\n.Bjcj8a9tDfB5m5\\+e374TfA\\=\\= {\n    font-weight: 300;\n    font-size: 16px;\n    color: #2b2b2b;\n}\n\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\= {\n    padding: 0 15px 0 0;\n    max-height: 100px;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n    font-weight: 300;\n    font-size: 13px;\n    line-height: 18px;\n    color: #2b2b2b;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.ljdop1NQE\\+NE9d7uRVMBAg\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n@media (max-width: 800px) {\n    .kIoUOQ5eNdd-BSpgkasV6A\\=\\= {\n        margin: 0 auto;\n        width: 75%;\n    }\n}\n@media (max-width: 450px) {\n    .kIoUOQ5eNdd-BSpgkasV6A\\=\\= {\n        margin: 0;\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"card": "kIoUOQ5eNdd-BSpgkasV6A==",

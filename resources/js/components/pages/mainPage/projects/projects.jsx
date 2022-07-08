@@ -3,38 +3,17 @@ import style from "./projects.module.css";
 import FlipCard from "./flipCard/flipCard";
 import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 
-const Projects = ({ portfolioList }) => {
-    let count_project = 0;
+const Projects = ({ portfolioList, quantityCardsProjects }) => {
+    // const projects = portfolioList.slice(stepPrev, stepNext);
+    const [showCards, setShowCards] = useState(quantityCardsProjects);
 
-    const [stepNext, setStepNext] = useState(count_project);
-    const [stepPrev, setStepPrev] = useState(0);
-    const projects = portfolioList.slice(stepPrev, stepNext);
-
-    const resizeHandler = () => {
-        console.log(111);
-        let clientWidth = window.innerWidth;
-
-        if (clientWidth > 1024) {
-            count_project = 3;
-        } else {
-            if (clientWidth > 576) {
-                count_project = 2;
-            } else {
-                count_project = 1;
-            }
-        }
-
-        setStepPrev(0);
-        setStepNext(count_project);
-    };
+    const projects = portfolioList.slice(0, showCards);
 
     useEffect(() => {
-        window.addEventListener("resize", resizeHandler);
-        resizeHandler();
-    }, []);
-
+        setShowCards(quantityCardsProjects);
+    }, [quantityCardsProjects]);
     return (
-        <SectionContainer section={`${style.section}`}>
+        <>
             <h2 className={`title`}>Complete projects</h2>
 
             <div className={`${style.cardsContainer}`}>
@@ -42,7 +21,7 @@ const Projects = ({ portfolioList }) => {
                     <FlipCard key={index} card={element} />
                 ))}
             </div>
-        </SectionContainer>
+        </>
     );
 };
 export default Projects;

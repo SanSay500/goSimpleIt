@@ -1,6 +1,6 @@
 .card {
     display: grid;
-    grid-template-columns: 3fr 7fr;
+    grid-template-columns: 103px 7fr;
     gap: 20px;
     height: 140px;
     position: relative;
@@ -77,4 +77,16 @@
 .text::-webkit-scrollbar-thumb {
     background-color: rgb(43, 183, 57);
     border-radius: 25px;
+}
+@media (max-width: 800px) {
+    .card {
+        margin: 0 auto;
+        width: 75%;
+    }
+}
+@media (max-width: 450px) {
+    .card {
+        margin: 0;
+        width: 100%;
+    }
 }
