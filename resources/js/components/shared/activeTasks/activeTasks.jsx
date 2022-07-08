@@ -3,14 +3,14 @@ import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
-const ActiveTasks = ({ count,gridStyle }) => {
+const ActiveTasks = ({ quantityCards,gridStyle }) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
-    const [showOrdersQty, setShowOrdersQty] = useState(count);
+    const [showOrdersQty, setShowOrdersQty] = useState(quantityCards);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
 
     function loadOrders(e) {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + count);
+        setShowOrdersQty(showOrdersQty + quantityCards);
     }
 
     // const changeSearch = ({ target: { value } }) => {

@@ -18552,7 +18552,7 @@ function DashboardFreelancer(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "".concat(_dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].freelancerOrderWrapper),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            count: 4,
+            quantityCards: 4,
             gridStyle: _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].gridStyle
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
@@ -19501,6 +19501,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @/components/shared/sectionContainer/sectionContainer */ "./resources/js/components/shared/sectionContainer/sectionContainer.jsx");
 /* harmony import */ var _main_module_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main.module.css */ "./resources/js/components/pages/mainPage/main.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -19521,6 +19533,35 @@ __webpack_require__.r(__webpack_exports__);
 var Main = function Main(props) {
   var makeOrder = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
 
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(6),
+      _useState2 = _slicedToArray(_useState, 2),
+      quantityCards = _useState2[0],
+      setQuantityCards = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerWidth),
+      _useState4 = _slicedToArray(_useState3, 2),
+      windowWidth = _useState4[0],
+      setWindowWidth = _useState4[1];
+
+  var resizeHandler = function resizeHandler() {
+    // console.log(111);
+    var clientWidth = window.innerWidth;
+
+    if (clientWidth < 769) {
+      setQuantityCards(function () {
+        return 4;
+      });
+      console.log(quantityCards);
+    } // setStepPrev(0);
+    // setStepNext(count_project);
+
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+  }, []);
+
   var scroll = function scroll() {
     return makeOrder.current.scrollIntoView();
   };
@@ -19537,7 +19578,7 @@ var Main = function Main(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionActive),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        count: 6,
+        quantityCards: quantityCards,
         gridStyle: _main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].gridStyle
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_projects_projects__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -20129,17 +20170,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var Projects = function Projects(_ref) {
   var portfolioList = _ref.portfolioList;
   var count_project = 0;
-  var width = window.innerWidth;
-
-  if (width > 1024) {
-    count_project = 3;
-  } else {
-    if (width > 576) {
-      count_project = 2;
-    } else {
-      count_project = 1;
-    }
-  }
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count_project),
       _useState2 = _slicedToArray(_useState, 2),
@@ -20154,6 +20184,7 @@ var Projects = function Projects(_ref) {
   var projects = portfolioList.slice(stepPrev, stepNext);
 
   var resizeHandler = function resizeHandler() {
+    console.log(111);
     var clientWidth = window.innerWidth;
 
     if (clientWidth > 1024) {
@@ -20173,9 +20204,6 @@ var Projects = function Projects(_ref) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
-    return function () {
-      window.removeEventListener("resize", resizeHandler);
-    };
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     section: "".concat(_projects_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].section),
@@ -20190,45 +20218,7 @@ var Projects = function Projects(_ref) {
         }, index);
       })
     })]
-  })
-  /*                 {stepPrev > 0 ? (
-              <div className="review__more">
-                  <button
-                      className="review__button"
-                      type="button"
-                      onClick={() => {
-                          setStepNext(stepPrev);
-                          if (stepPrev - count_project < 0) {
-                              setStepPrev(0);
-                          } else {
-                              setStepPrev(stepPrev - count_project);
-                          }
-                      }}
-                  >
-                      Prev page
-                  </button>
-              </div>
-          ) : (
-              ""
-          )}
-          {portfolioList.length > stepNext ? (
-              <div className="review__more">
-                  <button
-                      className="review__button"
-                      type="button"
-                      onClick={() => {
-                          setStepPrev(stepNext);
-                          setStepNext(stepNext + count_project);
-                      }}
-                  >
-                      Next page
-                  </button>
-              </div>
-          ) : (
-              ""
-          )}
-      </div> } */
-  ;
+  });
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Projects);
@@ -20495,13 +20485,13 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var ActiveTasks = function ActiveTasks(_ref) {
-  var count = _ref.count,
+  var quantityCards = _ref.quantityCards,
       gridStyle = _ref.gridStyle;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(count),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCards),
       _useState2 = _slicedToArray(_useState, 2),
       showOrdersQty = _useState2[0],
       setShowOrdersQty = _useState2[1];
@@ -20513,7 +20503,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
 
   function loadOrders(e) {
     e.preventDefault();
-    setShowOrdersQty(showOrdersQty + count);
+    setShowOrdersQty(showOrdersQty + quantityCards);
   } // const changeSearch = ({ target: { value } }) => {
   //     if (value) {
   //         let job_found = tasksWithOrders.find((e) => e.name === value).id;

@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import MakeOrder from "./makeOrder/makeOrder";
 import { myJson } from "../../../mocks/review-data";
 import Talks from "./talks/talks";
@@ -15,7 +14,29 @@ import style from "./main.module.css";
 
 const Main = (props) => {
     const makeOrder = useRef(null);
+    const [quantityCards, setQuantityCards] = useState(6);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    const resizeHandler = () => {
+        // console.log(111);
+        let clientWidth = window.innerWidth;
+
+        if (clientWidth<769){
+            setQuantityCards(()=> 4 )
+            console.log(quantityCards);
+        }
+        
+        // setStepPrev(0);
+        // setStepNext(count_project);
+    };
+
+    useEffect(() => {
+        window.addEventListener("resize", resizeHandler);
+        resizeHandler();
+    }, []);
+
     const scroll = () => makeOrder.current.scrollIntoView();
+
 
     return (
         <>
@@ -29,7 +50,7 @@ const Main = (props) => {
             </SectionContainer>
             
             <SectionContainer section={`${style.sectionActive}`}>
-                <ActiveTasks count={6} gridStyle={style.gridStyle}/>
+                <ActiveTasks quantityCards={quantityCards} gridStyle={style.gridStyle}/>
             </SectionContainer>
             
             <Projects portfolioList={myJson.portfolio} />

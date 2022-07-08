@@ -13,7 +13,7 @@ export default function DashboardFreelancer(props) {
             <Container styleContainer={style.container}>
                 <div className={`${style.freelancerOrder}`}>
                     <div className={`${style.freelancerOrderWrapper}`}>
-                        <ActiveTasks count={4} gridStyle={style.gridStyle}/>
+                        <ActiveTasks quantityCards={4} gridStyle={style.gridStyle}/>
                     </div>
                     
                     <ProposalsList />
