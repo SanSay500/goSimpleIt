@@ -49,3 +49,19 @@
 .menuWrapper {
     grid-column: 4/5;
 }
+@media(max-width:1200px) {
+    .btnMenu, .auth  {
+        width: 120px;
+        padding: 10px 30px;
+    }
+
+}
+@media(max-width:1000px) {
+    .btnMenu, .auth  {
+        width: 100px;
+        padding: 8px 20px;
+        line-height: 18px;
+        font-size: 16px;
+        background-size: 100%;
+    }
+}
