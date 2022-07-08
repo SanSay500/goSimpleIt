@@ -39,3 +39,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px 55px;
 }
+@media(max-width:1000px) {
+    .cardsContainer  {
+        gap: 18px 40px;
+    }
+
+    
+}
