@@ -41,7 +41,6 @@ const Projects = ({ portfolioList }) => {
 
     useEffect(() => {
         window.addEventListener("resize", resizeHandler);
-
         resizeHandler();
 
         return () => {
