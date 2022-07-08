@@ -19,31 +19,24 @@ const MakeOrder = (props) => {
     const { tasks } = usePage().props;
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
-    const [taskId, setTaskId] = useState(0);
-    let [inputResults, setInputResults] = useState([]);
+    let [tasksList, setTasksList] = useState(tasks);
+    let [open, setOpen] = useState(false);
 
     function searchList() {
-        setInputResults(() => {
-            inputResults = [];
+        setTasksList(() => {
+            tasksList = [];
 
-            const options = tasks.map((props) => props.name);
-
-            options.filter((element) => {
-                if (
-                    element
-                        .toLowerCase()
-                        .includes(inputTask.current.value.toLowerCase())
-                ) {
-                    inputResults.push(element);
-                }
-            });
-            return inputResults;
+            tasksList = tasks.filter((el) =>
+                el.name
+                    .toLowerCase()
+                    .includes(inputTask.current.value.toLowerCase())
+            );
+            return tasksList;
         });
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        data.task_id = taskIdRef.current;
         post(
             route("order.store", data, {
                 preserveScroll: true,
@@ -53,25 +46,9 @@ const MakeOrder = (props) => {
         );
     }
 
-    // const changeSearch = ({ target: { value } }) => {
-    //     setMoneyTotalSearch(0);
-    //     setHoursTotalSearch(0);
-
-    //     let job_found = tasks.find((e) => e.name == value);
-    //     if (job_found) {
-    //         setTaskId(tasks.find((e) => e.name == value).id);
-    //         setMoneyTotalSearch(tasks.find((e) => e.name == value).money);
-    //         setHoursTotalSearch(tasks.find((e) => e.name == value).time);
-    //     }
-    // };
-
     useEffect(() => {
-        taskIdRef.current = taskId;
-    }, [taskId]);
-
-    useEffect(() => {
-        setInputResults(() => inputResults);
-    }, [inputResults]);
+        setTasksList(() => tasksList);
+    }, [tasksList]);
 
     return (
         <div className={style.formWrapper}>
@@ -87,23 +64,30 @@ const MakeOrder = (props) => {
                         placeholder="Type the task"
                         onChange={searchList}
                         onBlur={() => {
-                            setInputResults(() => (inputResults = []));
+                            setOpen((open) => !open);
+                        }}
+                        onClick={() => {
+                            setOpen(() => (open = true));
                         }}
                     />
 
-                    <div id="inputList" className={style.inputList}>
-                        {inputResults.map((el, i) => (
-                            <div
-                                onMouseDown={() =>
-                                    (inputTask.current.value = el)
-                                }
-                                key={i}
-                            >
-                                {el}
-                            </div>
-                        ))}
-                    </div>
+                    {open && (
+                        <div id="inputList" className={style.inputList}>
+                            {tasksList.map((task) => (
+                                <div
+                                    onMouseDown={() => {
+                                        inputTask.current.value = task.name;
+                                        setData("task_id", task.id);
+                                    }}
+                                    key={task.id}
+                                >
+                                    {task.name}
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
+
                 {moneyTotalSearch !== 0 && (
                     <div className="flex align-content-between">
                         <span className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
