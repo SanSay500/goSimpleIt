@@ -27,9 +27,11 @@ const Main = (props) => {
 
                 <MainStart scroll={scroll} />
             </SectionContainer>
-
-            <ActiveTasks count={6} />
-
+            
+            <SectionContainer section={`${style.sectionActive}`}>
+                <ActiveTasks count={6} gridStyle={style.gridStyle}/>
+            </SectionContainer>
+            
             <Projects portfolioList={myJson.portfolio} />
 
             <Freelancers reviewsList={myJson.reviews} count={3} />

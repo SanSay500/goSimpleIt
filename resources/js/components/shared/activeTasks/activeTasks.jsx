@@ -3,8 +3,7 @@ import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
-const ActiveTasks = ({ count }) => {
+const ActiveTasks = ({ count,gridStyle }) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
     const [showOrdersQty, setShowOrdersQty] = useState(count);
     const [ordersToShow, setOrdersToShow] = useState(ordersActive);
@@ -32,10 +31,10 @@ const ActiveTasks = ({ count }) => {
     // }
 
     return (
-        <SectionContainer section={`${style.section}`}>
+        <>
             <h2 className={`title`}>Active Tasks</h2>
 
-            <div className={`${style.cardsContainer} `}>
+            <div className={`${style.cardsContainer} ${gridStyle}`}>
                 {ordersToShow.slice(0, showOrdersQty).map((order) => {
                     return <BasicCard key={order.id} props={order} />;
                 })}
@@ -48,7 +47,7 @@ const ActiveTasks = ({ count }) => {
                     }}
                 />
             )}
-        </SectionContainer>
+        </>
     );
 };
 
