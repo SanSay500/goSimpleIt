@@ -64,7 +64,7 @@ export default function ProposalConfirm(props) {
                                     </Link>
                                 ) : (
                                     <Link
-                                        href={route(git  estimate grammas"finish_order", [
+                                        href={route("finish_order", [
                                             order.id,
                                             proposal.id,
                                         ])}
