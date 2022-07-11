@@ -3,17 +3,17 @@ import style from "./talks.module.css";
 import PeopleCard from "@/components/shared/peopleCard/peopleCard";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
-const Talks = ({ reviewsList, count }) => {
-    const [showOrdersQty, setShowOrdersQty] = useState(count);
-    const freelancersList = reviewsList.slice(0, showOrdersQty);
+const Talks = ({ reviewsList, quantityCardsPeople }) => {
+    const [showCards, setShowCards] = useState(quantityCardsPeople);
+    const freelancersList = reviewsList.slice(0, quantityCardsPeople);
 
-    function loadOrders(e) {
+    const loadMoreTasks = (e) => {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + count);
-    }
+        setShowCards(showCards + quantityCardsPeople);
+    };
 
     return (
-        <SectionContainer section={`${style.section}`}>
+        <>
             <h3 className={`title ${style.title}`}>Talks about us</h3>
 
             <div className={style.cardsList}>
@@ -22,14 +22,14 @@ const Talks = ({ reviewsList, count }) => {
                 ))}
             </div>
 
-            {reviewsList.length > showOrdersQty && (
+            {reviewsList.length > showCards && (
                 <ButtonViewMore
                     click={(e) => {
-                        loadOrders(e);
+                        loadMoreTasks(e);
                     }}
                 />
             )}
-        </SectionContainer>
+        </>
     );
 };
 export default Talks;

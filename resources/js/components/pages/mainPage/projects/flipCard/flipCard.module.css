@@ -8,10 +8,6 @@
     box-shadow: 0px 0px 30px 0px rgba(158, 153, 238, 0.2);
 }
 
-/* .card:not(:last-child) {
-    margin-right: 10px;
-} */
-
 .cardInner {
     position: relative;
     width: 100%;
@@ -105,4 +101,17 @@
     font-weight: bold;
     display: inline-block;
     width: 10px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        margin: 0 auto;
+        width: 75%;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        margin: 0;
+        width: 100%;
+    }
 }

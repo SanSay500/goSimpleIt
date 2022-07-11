@@ -1,40 +1,6 @@
-.section {
-    position: relative;
-}
-.section::after,
-.section::before {
-    display: block;
-    content: "";
-    position: absolute;
-    height: 64px;
-    width: 63%;
-    z-index: -1;
-}
-.section::before {
-    top: 0px;
-    left: 0;
-    border-radius: 0 10px 10px 0;
-    background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.2) 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        #2bb739;
-}
-.section::after {
-    top: 20px;
-    right: 0;
-    border-radius: 10px 0 0 10px;
-    background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.2) 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        #2b2b2b;
-}
-
 .title {
     padding: 36px 0 0 0;
+    margin-bottom: 50px;
 }
 
 .cardsList {
@@ -46,75 +12,13 @@
 .card::after {
     display: none;
 }
-
-/* 
 @media (max-width: 1024px) {
-    .review {
-        width: 45%;
-        margin-right: 0px;
-    }
-
-    .comentText {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-
-    .reviews-list {
-        justify-content: space-between;
+    .cardsList {
+        grid-template-columns: 1fr 1fr;
     }
 }
-
-@media (max-width: 767px) {
-    .review {
-        width: 48%;
-        padding: 15px;
-    }
-
-    .talks::before,
-    .talks::after {
-        width: 80vw;
+@media (max-width: 800px) {
+    .cardsList {
+        grid-template-columns: 1fr;
     }
 }
-
-@media (max-width: 576px) {
-    .review {
-        width: 75%;
-        margin: 0 auto;
-    }
-
-    .talks {
-        margin-top: 0;
-        margin-bottom: 5%;
-    }
-
-    .reviews-wrapper {
-        padding: 0;
-    }
-
-    .review:not(:last-child) {
-        margin-bottom: 15px !important;
-    }
-
-    .review:not(:nth-child(3n)) {
-        margin-right: auto;
-    }
-
-     .reviews-block {
-        padding-bottom: 60px;
-    } 
-
-    .talks::before,
-    .talks::after {
-        display: none;
-    }
-}
-
-@media (max-width: 410px) {
-    .review {
-        width: 90%;
-    }
-
-    .reviews-block {
-        padding-bottom: 40px;
-    } 
-} */

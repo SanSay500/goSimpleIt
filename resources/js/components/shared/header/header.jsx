@@ -6,7 +6,7 @@ const Header = ({ styleBtn }) => {
     return (
         <header className={`${style.header}`}>
             <div>
-                <Link href="/">
+                <Link href="/" className={`${style.headerLogo}`}>
                     <img src="/images/logo-upwork.svg" alt="Logo"></img>
                 </Link>
             </div>

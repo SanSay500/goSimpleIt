@@ -1,16 +1,31 @@
 .proposalCard{
+    padding: 9px 22px 23px 22px;
+    max-height: 100%;
     background: #FFFFFF;
     box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
-    padding: 9px 22px 23px 22px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(43, 183, 57) transparent;
 }
+.proposalCard::-webkit-scrollbar {
+    width: 5px;
+}
+.proposalCard::-webkit-scrollbar-track {
+    background: transparent;
+}
+.proposalCard::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 183, 57);
+    border-radius: 25px;
+}
+
 .proposalText{
     font-style: normal;
-font-weight: 500;
-font-size: 28px;
-line-height: 32px;
-color: #2BB739;
-margin-bottom: 27px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32px;
+    color: #2BB739;
+    margin-bottom: 27px;
 
 }
 .proposalItem{
@@ -23,9 +38,9 @@ margin-bottom: 27px;
 }
 .proposalItemText{
     font-weight: 400;
-font-size: 16px;
-line-height: 18px;
-color: #000000;
+    font-size: 16px;
+    line-height: 18px;
+    color: #000000;
 }
 .proposalItemText+.proposalItemText{
     margin-top: 6px;

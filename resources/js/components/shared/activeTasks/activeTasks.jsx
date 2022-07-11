@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
-const ActiveTasks = ({ count }) => {
-    const { ordersActive, tasksWithOrders } = usePage().props;
-    const [showOrdersQty, setShowOrdersQty] = useState(count);
-    const [ordersToShow, setOrdersToShow] = useState(ordersActive);
 
-    function loadOrders(e) {
+const ActiveTasks = ({ quantityCardsTasks, gridStyle }) => {
+    const { ordersActive, tasksWithOrders } = usePage().props;
+    const [showCards, setShowCards] = useState(quantityCardsTasks);
+
+    const loadMoreTasks = (e) => {
         e.preventDefault();
-        setShowOrdersQty(showOrdersQty + count);
-    }
+        setShowCards(showCards + quantityCardsTasks);
+    };
 
     // const changeSearch = ({ target: { value } }) => {
     //     if (value) {
@@ -28,27 +27,31 @@ const ActiveTasks = ({ count }) => {
     //         (el) => el.task_id === task_id
     //     );
     //     setOrdersToShow(newOrdersToShow);
-    //     setShowOrdersQty(5);
+    //     setShowCards(5);
     // }
 
+    useEffect(() => {
+        setShowCards(quantityCardsTasks);
+    }, [quantityCardsTasks]);
+
     return (
-        <SectionContainer section={`${style.section}`}>
+        <>
             <h2 className={`title`}>Active Tasks</h2>
 
-            <div className={`${style.cardsContainer} `}>
-                {ordersToShow.slice(0, showOrdersQty).map((order) => {
+            <div className={`${style.cardsContainer} ${gridStyle}`}>
+                {ordersActive.slice(0, showCards).map((order) => {
                     return <BasicCard key={order.id} props={order} />;
                 })}
             </div>
 
-            {ordersToShow.length > showOrdersQty && (
+            {ordersActive.length > showCards && (
                 <ButtonViewMore
                     click={(e) => {
-                        loadOrders(e);
+                        loadMoreTasks(e);
                     }}
                 />
             )}
-        </SectionContainer>
+        </>
     );
 };
 

@@ -9,3 +9,20 @@
     padding: 10px 35px;
     z-index: 5;
 }
+@media(max-width:1200px) {
+
+}
+@media(max-width:1000px) {
+    .formBtn {
+        font-size: 13px;
+        line-height: 15px;
+        padding: 8px 15px;
+    }
+
+    .leftBlock {
+        max-width: 400px;
+    }
+    .container {
+        margin: 50px 0 0 0;
+    }
+}

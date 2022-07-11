@@ -1,32 +1,24 @@
-.section {
-    padding: 0 40px;
-    position: relative;
-}
-.section::after,
-.section::before {
-    display: block;
-    content: "";
-    position: absolute;
-    height: 64px;
-    width: 8%;
-    z-index: -1;
-}
-.section::before {
-    top: 100px;
-    left: 0;
-    border-radius: 0 10px 10px 0;
-    background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.2) 0%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        #2bb739;
-}
-
 .cardsContainer {
     margin: 0 0 25px 0;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 25px 55px;
+}
+
+@media (max-width: 1200px) {
+}
+@media (max-width: 1024px) {
+    .cardsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 800px) {
+    .cardsContainer {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 756px) {
+}
+@media (max-width: 576px) {
 }

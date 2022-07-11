@@ -7,8 +7,14 @@ import HeaderLogout from "@/components/shared/headers/headerLogout/headerLogout"
 import style from "./proposalConfirm.module.css";
 import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
 import SectionContainer from "@/components/shared/sectionContainer/sectionContainer"
+
 export default function ProposalConfirm(props) {
     const { order, proposal, user } = usePage().props;
+
+    function Goback() {
+        window.history.back();
+    }
+
 
     return (
         <div>
@@ -19,8 +25,10 @@ export default function ProposalConfirm(props) {
                     <div className={`${style.orderContainer}`}>
                         <div className={`${style.proposalContainer}`}>
                             <Link
+                                as="button"
+                                type="button"
+                                onClick={Goback}
                                 className={`${style.buttonBack}`}
-                                href={route("main.page")}
                             >
                                 <img
                                     src="/images/arrowLeft.svg"
@@ -56,7 +64,7 @@ export default function ProposalConfirm(props) {
                                     </Link>
                                 ) : (
                                     <Link
-                                        href={route("finish_order", [
+                                        href={route(git  estimate grammas"finish_order", [
                                             order.id,
                                             proposal.id,
                                         ])}
