@@ -223,7 +223,7 @@ const MakeOrder = (props) => {
                     <button
                         type="submit"
                         disabled={processing}
-                        className={stgit statusyle.btnSubmit}
+                        className={style.btnSubmit}
                     >
                         Publish and find a specialist
                     </button>

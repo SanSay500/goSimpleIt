@@ -39,13 +39,20 @@ class OrderController extends Controller
     public function main()
     {
         $tasks = Task::all();
-        $orders = Order::where('status','Pending')->get();
-        $tasksIDsInOrders = [];
+        $orders = Order::where('status','Pending')->get()->toArray();
+        $tasksIDsInOrders=[];
+        $filesSize = [];
 
-        foreach ($orders->toArray() as $order)
-            $tasksIDsInOrders[] = $order['task_id'];
-
-            $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
+        foreach ($orders as $order => $params) {
+            $tasksIDsInOrders[] = $params['id'];
+            $Orderfile = (Storage::path($params['file']));
+            if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
+                $filesSize['filesize'] = round(Storage::size($params['file']) / 1024, 2) . ' Kb';
+                $params +=$filesSize;
+                $orders[$order] += $params;
+            }
+        }
+        $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
 
         return Inertia::render('pages/mainPage/main', ['tasks'=>$tasks, 'ordersActive'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
     }
