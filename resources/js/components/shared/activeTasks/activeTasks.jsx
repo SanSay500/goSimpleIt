@@ -1,18 +1,17 @@
-import React, {useEffect, useState, useRef} from "react";
-import {usePage} from "@inertiajs/inertia-react";
+import React, { useEffect, useState, useRef } from "react";
+import { usePage } from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
 
-const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
-    const {ordersActive, tasksWithOrders} = usePage().props;
+const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
+    const { ordersActive, tasksWithOrders } = usePage().props;
     const [showCards, setShowCards] = useState(quantityCardsTasks);
     const inputTask = useRef();
-    const {tasks} = usePage().props;
+    const { tasks } = usePage().props;
     const [ordersFiltered, setOrdersFiltered] = useState(ordersActive);
     let [tasksList, setTasksList] = useState(tasks);
     let [open, setOpen] = useState(false);
-
 
     const loadMoreTasks = (e) => {
         e.preventDefault();
@@ -31,19 +30,19 @@ const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
         });
     }
 
+    function filterJobs(task_id) {
+        if (task_id === 0) {
+            setOrdersFiltered(ordersActive);
+        } else {
+            setOrdersFiltered(
+                ordersActive.filter((el) => el.task_id === task_id)
+            );
+        }
+    }
+
     useEffect(() => {
         setTasksList(() => tasksList);
     }, [tasksList]);
-
-    function filterJobs(task_id) {
-        if (task_id === 0) {
-            setOrdersFiltered(ordersActive)
-        } else {
-            setOrdersFiltered(ordersActive.filter(
-                el => el.task_id === task_id
-            ))
-        }
-    }
 
     useEffect(() => {
         setShowCards(quantityCardsTasks);
@@ -54,7 +53,6 @@ const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
             <h2 className={`title`}>Active Tasks</h2>
             <div className={style.searchJob}>
                 <input
-
                     ref={inputTask}
                     type="text"
                     id="searchInput"
@@ -73,16 +71,18 @@ const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
                     <div id="inputList" className={style.inputList}>
                         <div
                             onMouseDown={() => {
-                                inputTask.current.value = 'Show all';
-                                filterJobs(0)
+                                inputTask.current.value = "Show all";
+                                filterJobs(0);
                             }}
-                            key={'show-all-orders'}>Show all
+                            key={"show-all-orders"}
+                        >
+                            Show all
                         </div>
                         {tasksWithOrders.map((task) => (
                             <div
                                 onMouseDown={() => {
                                     inputTask.current.value = task.name;
-                                    filterJobs(task.id)
+                                    filterJobs(task.id);
                                 }}
                                 key={task.id}
                             >
@@ -94,7 +94,9 @@ const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
             </div>
             <div className={`${style.cardsContainer} ${gridStyle}`}>
                 {ordersFiltered.slice(0, showCards).map((order) => {
-                    return <BasicCard key={order.id} props={order}/>;
+                    return (
+                        <BasicCard user={user} key={order.id} props={order} />
+                    );
                 })}
             </div>
 

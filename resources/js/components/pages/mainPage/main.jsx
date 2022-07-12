@@ -51,6 +51,7 @@ const Main = (props) => {
         resizeHandler();
     }, []);
 
+    console.log(props);
     return (
         <>
             <SectionContainer
@@ -64,6 +65,7 @@ const Main = (props) => {
 
             <SectionContainer section={`${style.sectionActive}`}>
                 <ActiveTasks
+                    user={props.auth.user}
                     quantityCardsTasks={quantityCardsTasks}
                     gridStyle={style.gridStyle}
                 />

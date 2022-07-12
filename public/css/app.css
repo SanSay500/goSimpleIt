@@ -999,10 +999,6 @@ select {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.overline {
-  -webkit-text-decoration-line: overline;
-          text-decoration-line: overline;
-}
 .antialiased {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
