@@ -3,7 +3,7 @@ import style from "./buttonGreen.module.css";
 
 export default function ButtonGreen({
     type = "submit",
-    className = "",
+    classes,
     processing,
     children,
     click,
@@ -11,7 +11,7 @@ export default function ButtonGreen({
     return (
         <button
             type={type}
-            className={`${style.formBtn} `}
+            className={`${classes} ${style.formBtn} `}
             disabled={processing}
             onClick={click}
         >

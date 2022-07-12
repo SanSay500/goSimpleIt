@@ -2,29 +2,34 @@
     display: none;
 }
 
-.formPage {
+.form {
     position: relative;
-    background: #ffffff;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    background: transparent;
+    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),
+        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
+        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),
+        0px -5px 1px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 44px 37px 30px 21px;
     width: 100%;
     max-width: 500px;
 }
-.formPage::after {
+.form::after {
     position: absolute;
     display: block;
     content: "";
-    width: 403px;
-    height: 237px;
-    top: -2px;
+    width: 83%;
+    height: 100%;
+    top: 0;
     right: -256px;
     background-image: url("/images/bg-ellipse.png");
     background-repeat: no-repeat;
     background-size: 100%;
+    z-index: -1;
 }
 
-.loginInput {
+.input {
+    margin: 0 0 10px 0;
     width: 100%;
     background: #ffffff;
     box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
@@ -35,33 +40,37 @@
     font-size: 18px;
     line-height: 21px;
     color: #2b2b2b;
-    z-index: 5;
 }
-.loginInput::placeholder {
+.input::placeholder {
     font-weight: 400;
     font-size: 18px;
     line-height: 21px;
     color: #2b2b2b;
 }
-.loginFormItem {
-    margin-top: 9px;
+
+.checkboxLabel {
+    margin: 0 0 10px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
 }
 
-.formCheckbox {
+.checkbox {
+    margin: 0 10px 0 0;
     width: 14px;
     height: 14px;
     border: 1px dashed #2bb739;
     border-radius: 2px;
 }
 
-.formCheckboxLabel {
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 16px;
-    color: #000000;
-    margin-left: 9px;
+.btnsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-
 .formLink {
     font-weight: 300;
     font-size: 14px;
@@ -70,23 +79,19 @@
     border-bottom: 1px dashed #2bb739;
 }
 
-[type="text"]:focus,
-[type="email"]:focus,
-[type="url"]:focus,
-[type="password"]:focus,
-[type="number"]:focus,
-[type="date"]:focus,
-[type="datetime-local"]:focus,
-[type="month"]:focus,
-[type="search"]:focus,
-[type="tel"]:focus,
-[type="time"]:focus,
-[type="week"]:focus,
-[multiple]:focus,
-[type="checkbox"]:focus,
-[type="radio"]:focus textarea:focus,
-select:focus {
-    outline: none !important;
-    box-shadow: none;
-    border-color: #2bb739;
+@media (max-width: 576px) {
+    .form::after {
+        display: none;
+    }
+
+    .btnsContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btnLogin {
+        align-self: flex-end;
+    }
+    .form {
+        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    }
 }

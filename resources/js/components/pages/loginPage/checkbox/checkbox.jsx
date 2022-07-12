@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function Checkbox({ name, value, handleChange, className }) {
     return (
@@ -6,9 +6,7 @@ export default function Checkbox({ name, value, handleChange, className }) {
             type="checkbox"
             name={name}
             value={value}
-            className={
-                `text-indigo-600 shadow-sm ` + className
-            }
+            className={className}
             onChange={(e) => handleChange(e)}
         />
     );

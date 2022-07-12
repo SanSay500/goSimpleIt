@@ -1,7 +1,11 @@
 .wrp {
-    display: grid;
-    grid-template-rows: 90px 1fr 110px;
-    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    max-width: 1440px;
+    position: relative;
 }
 
 .section {
@@ -9,7 +13,7 @@
 }
 
 .container {
-    padding: 25px 120px 0;
+    padding-top: 25px;
     display: block;
 }
 

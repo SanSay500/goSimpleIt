@@ -36,8 +36,11 @@ select:focus {
 }
 .formPage {
     position: relative;
-    background: #ffffff;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    background: transparent;
+    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),
+        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
+        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),
+        0px -5px 1px -5px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 44px 37px 30px 21px;
     width: 100%;
@@ -54,6 +57,7 @@ select:focus {
     background-image: url("/images/bg-ellipse.svg");
     background-repeat: no-repeat;
     background-size: 100%;
+    z-index: -1;
 }
 .loginInput {
     width: 100%;
@@ -133,4 +137,29 @@ select:focus {
 }
 .loginFormRadio .radioContainer:first-child {
     margin-right: 49px;
+}
+@media (max-width: 576px) {
+    .formPage {
+        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    }
+    .formPage::after {
+        display: none;
+    }
+}
+@media (max-width: 350px) {
+    .loginFormRadio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .registerRadio + .registerRadio {
+        margin-top: 10px;
+    }
+    .loginFormCont {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .formLink {
+        align-self: start;
+        margin: 0 0 10px 0;
+    }
 }

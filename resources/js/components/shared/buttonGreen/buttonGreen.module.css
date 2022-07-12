@@ -1,24 +1,23 @@
-.formBtn{
+.formBtn {
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
     text-align: center;
-    color: #FFFFFF;
-    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;
+    color: #ffffff;
+    background: linear-gradient(
+            335.22deg,
+            rgba(0, 0, 0, 0.2) 15.83%,
+            rgba(255, 255, 255, 0.162) 79.46%
+        ),
+        #2bb739;
     border-radius: 40px;
     padding: 10px 35px;
-    z-index: 5;
 }
-@media(max-width:1200px) {
-
+.formBtn:hover {
+    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);
 }
-@media(max-width:1000px) {
-    .formBtn {
-        font-size: 13px;
-        line-height: 15px;
-        padding: 8px 15px;
-    }
 
+@media (max-width: 1024px) {
     .leftBlock {
         max-width: 400px;
     }

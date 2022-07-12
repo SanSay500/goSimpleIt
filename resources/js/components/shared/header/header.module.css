@@ -1,5 +1,4 @@
 .header {
-    /* margin: 0 0 75px 0; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,24 +7,22 @@
 .auth {
     max-width: 140px;
 }
-@media(max-width:1200px) {
-.headerLogo{
-    display: flex;
-    width: 140px;
+@media (max-width: 1200px) {
+    .headerLogo {
+        display: flex;
+        width: 140px;
+    }
+    .headerLogo img {
+        height: 100%;
+    }
 }
-.headerLogo img{
-    height: 100%;
-}
-}
-@media(max-width:1000px) {
-    .headerLogo{
-
+@media (max-width: 1000px) {
+    .headerLogo {
         width: 120px;
     }
 }
-@media(max-width:756px) {
-    .headerLogo{
-
+@media (max-width: 756px) {
+    .headerLogo {
         width: 90px;
     }
 }

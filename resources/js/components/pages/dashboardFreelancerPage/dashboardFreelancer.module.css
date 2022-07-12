@@ -1,24 +1,23 @@
-.freelancerOrder{
+.freelancerOrder {
     padding: 30px;
     height: 100%;
     display: grid;
     grid-template-columns: 9fr 3fr;
     gap: 100px;
-    align-items: start;    
+    align-items: start;
 }
 
 .activeTasks {
     margin: 0 0 25px 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 25px 55px;
 }
 
-.freelancerOrderWrapper{
+.freelancerOrderWrapper {
     padding: 0 20px 0 0;
     height: 100%;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
     align-items: center;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -37,4 +36,20 @@
 
 .gridStyle {
     grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 1024px) {
+    .freelancerOrder {
+        grid-template-columns: 7fr 5fr;
+        gap: 50px;
+    }
+    .gridStyle {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .freelancerOrder {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }

@@ -18430,17 +18430,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/flashMessages/flashMessages */ "./resources/js/components/shared/flashMessages/flashMessages.jsx");
-/* harmony import */ var _components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/footer/footer */ "./resources/js/components/shared/footer/footer.jsx");
-/* harmony import */ var _components_shared_headers_headerLogout_headerLogout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/headers/headerLogout/headerLogout */ "./resources/js/components/shared/headers/headerLogout/headerLogout.jsx");
-/* harmony import */ var _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./proposalConfirm.module.css */ "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css");
-/* harmony import */ var _components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/components/shared/activeTasks/basicCard/basicCard */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx");
-/* harmony import */ var _components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/components/shared/sectionContainer/sectionContainer */ "./resources/js/components/shared/sectionContainer/sectionContainer.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
+/* harmony import */ var _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./proposalConfirm.module.css */ "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css");
+/* harmony import */ var _components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/activeTasks/basicCard/basicCard */ "./resources/js/components/shared/activeTasks/basicCard/basicCard.jsx");
+/* harmony import */ var _components_shared_container_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/container/container */ "./resources/js/components/shared/container/container.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -18453,60 +18446,53 @@ function ProposalConfirm(props) {
       order = _usePage$props.order,
       proposal = _usePage$props.proposal,
       user = _usePage$props.user;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_headers_headerLogout_headerLogout__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_7__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].orderWrapper),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].orderContainer),
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-            className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalContainer),
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-              className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].buttonBack),
-              href: route("main.page"),
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("img", {
-                src: "/images/arrowLeft.svg",
-                alt: "",
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].buttonBackImg)
-              }), "Back"]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalItem),
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("span", {
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalItemText),
-                children: ["Order Freelancer:", " "]
-              }), user.name]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalItem),
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("span", {
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalItemText),
-                children: ["Order proposal description:", " "]
-              }), proposal.description]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-              className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalBtnContainer),
-              children: [order.status !== "In Work" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("proposal.confirmation.store", [order.id, proposal.id]),
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalBtn),
-                children: "Confirm"
-              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("finish_order", [order.id, proposal.id]),
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalBtn),
-                children: "Finish Job"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-                href: route("start_chat", user.id),
-                className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].proposalBtn),
-                children: "Chat"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-            className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].cardContainer),
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
-              props: order,
-              classes: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_5__["default"].btn
-            }, order.id)
-          })]
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    styleContainer: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].container,
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalContainer),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].buttonBack),
+        href: route("main.page"),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+          src: "/images/arrowLeft.svg",
+          alt: "",
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].buttonBackImg)
+        }), "Back"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItem),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
+          children: ["Order Freelancer:", " "]
+        }), user.name]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItem),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
+          children: ["Order proposal description:", " "]
+        }), proposal.description]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalBtnContainer),
+        children: [order.status !== "In Work" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          href: route("proposal.confirmation.store", [order.id, proposal.id]),
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalBtn),
+          children: "Confirm"
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          href: route("finish_order", [order.id, proposal.id]),
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalBtn),
+          children: "Finish Job"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          href: route("start_chat", user.id),
+          className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalBtn),
+          children: "Chat"
         })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].cardContainer),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        props: order,
+        classes: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].btn
+      }, order.id)
+    })]
   });
 }
 
@@ -18530,6 +18516,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./dashboardFreelancer.module.css */ "./resources/js/components/pages/dashboardFreelancerPage/dashboardFreelancer.module.css");
 /* harmony import */ var _components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/activeTasks/activeTasks */ "./resources/js/components/shared/activeTasks/activeTasks.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -18544,6 +18542,41 @@ function DashboardFreelancer(props) {
       proposals = _usePage$props.proposals,
       tasksWithOrders = _usePage$props.tasksWithOrders,
       ordersActive = _usePage$props.ordersActive;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(4),
+      _useState2 = _slicedToArray(_useState, 2),
+      quantityCardsTasks = _useState2[0],
+      setQuantityCards = _useState2[1];
+
+  var resizeHandler = function resizeHandler() {
+    var clientWidth = window.innerWidth;
+
+    if (clientWidth < 577) {
+      setQuantityCards(function () {
+        return 1;
+      });
+      return;
+    }
+
+    if (clientWidth > 1024) {
+      setQuantityCards(function () {
+        return 4;
+      });
+      return;
+    }
+
+    if (clientWidth < 1025) {
+      setQuantityCards(function () {
+        return 2;
+      });
+      return;
+    }
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
       styleContainer: _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container,
@@ -18552,7 +18585,7 @@ function DashboardFreelancer(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "".concat(_dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].freelancerOrderWrapper),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_5__["default"], {
-            quantityCardsTasks: 4,
+            quantityCardsTasks: quantityCardsTasks,
             gridStyle: _dashboardFreelancer_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].gridStyle
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_proposalsList_proposalsList__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
@@ -18634,7 +18667,7 @@ function Checkbox(_ref) {
     type: "checkbox",
     name: name,
     value: value,
-    className: "text-indigo-600 shadow-sm " + className,
+    className: className,
     onChange: function onChange(e) {
       return handleChange(e);
     }
@@ -18882,48 +18915,34 @@ function Login(_ref) {
       errors: errors
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("form", {
       onSubmit: submit,
-      className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].formPage, " "),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          type: "text",
-          name: "email",
-          value: data.email,
-          className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].loginInput, " "),
-          placeholder: "E-mail",
-          autoComplete: "username",
-          isFocused: true,
-          handleChange: onHandleChange
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].loginFormItem, " "),
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          type: "password",
-          name: "password",
-          value: data.password,
-          placeholder: "Password",
-          className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].loginInput, " "),
-          autoComplete: "current-password",
-          handleChange: onHandleChange
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-        className: "block mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
-          className: "flex items-center",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_pages_loginPage_checkbox_checkbox__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            name: "remember",
-            value: data.remember,
-            handleChange: onHandleChange,
-            className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].formCheckbox, " ")
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
-            className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].formCheckboxLabel, " "),
-            children: "Remember me"
-          })]
-        })
+      className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].form, " "),
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        type: "text",
+        name: "email",
+        value: data.email,
+        className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].input, " "),
+        placeholder: "E-mail",
+        autoComplete: "username",
+        isFocused: true,
+        handleChange: onHandleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        type: "password",
+        name: "password",
+        value: data.password,
+        placeholder: "Password",
+        className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].input, " "),
+        autoComplete: "current-password",
+        handleChange: onHandleChange
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("label", {
+        className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].checkboxLabel, " "),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_pages_loginPage_checkbox_checkbox__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          name: "remember",
+          value: data.remember,
+          handleChange: onHandleChange,
+          className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].checkbox, " ")
+        }), "Remember me"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        style: {
-          justifyContent: "space-between"
-        },
-        className: "flex items-center justify-end",
+        className: _login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].btnsContainer,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
             href: route("register"),
@@ -18937,6 +18956,7 @@ function Login(_ref) {
             children: "Forgot your password?"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          classes: _login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].btnLogin,
           processing: processing,
           children: "Log in"
         })]
@@ -19819,7 +19839,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
 /* harmony import */ var _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./makeOrder.module.css */ "./resources/js/components/pages/mainPage/makeOrder/makeOrder.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -19831,6 +19852,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -19903,21 +19925,32 @@ var MakeOrder = function MakeOrder(props) {
     }));
   }
 
+  var addFile = function addFile(e) {
+    if (e.target.files[0]) {
+      setSelectedFile(e.target.files[0].name);
+    } else {
+      setSelectedFile("");
+    }
+
+    setData("file", e.target.files[0]);
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTasksList(function () {
       return tasksList;
     });
   }, [tasksList]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formWrapper,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form,
       onSubmit: handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
+        className: "title ".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
         children: "Make Order"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].searchJob,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
           ref: inputTask,
           type: "text",
           id: "searchInput",
@@ -19931,14 +19964,14 @@ var MakeOrder = function MakeOrder(props) {
           },
           onClick: function onClick() {
             setOpen(function () {
-              return open = true;
+              return true;
             });
           }
-        }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           id: "inputList",
           className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputList,
           children: tasksList.map(function (task) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
               onMouseDown: function onMouseDown() {
                 inputTask.current.value = task.name;
                 setData("task_id", task.id);
@@ -19947,11 +19980,11 @@ var MakeOrder = function MakeOrder(props) {
             }, task.id);
           })
         })]
-      }), moneyTotalSearch !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      }), moneyTotalSearch !== 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "flex align-content-between",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
           className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("svg", {
             xmlns: "http://www.w3.org/2000/svg",
             className: "icon icon-tabler icon-tabler-file-dollar",
             width: "24",
@@ -19962,35 +19995,35 @@ var MakeOrder = function MakeOrder(props) {
             fill: "none",
             strokeLinecap: "round",
             strokeLinejoin: "round",
-            children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               stroke: "none",
               d: "M0 0h24v24H0z",
               fill: "none"
-            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               d: "M14 3v4a1 1 0 0 0 1 1h4"
-            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               d: "M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               d: "M14 11h-2.5a1.5 1.5 0 0 0 0 3h1a1.5 1.5 0 0 1 0 3h-2.5"
-            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               d: "M12 17v1m0 -8v1"
             }), " "]
           }), "Average cost of task: ", moneyTotalSearch, " $"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
           className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("svg", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
             className: "mr-1 w-3 h-3",
             fill: "currentColor",
             viewBox: "0 0 20 20",
             xmlns: "http://www.w3.org/2000/svg",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               fillRule: "evenodd",
               d: "M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z",
               clipRule: "evenodd"
             })
           }), "Average time task takes: ", hoursTotalSearch, " day(s)"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
         type: "text",
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
         label: "Title",
@@ -20001,7 +20034,7 @@ var MakeOrder = function MakeOrder(props) {
           return setData("title", e.target.value);
         },
         placeholder: "Enter the title *"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("textarea", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
         type: "text",
         className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
         label: "description",
@@ -20013,16 +20046,16 @@ var MakeOrder = function MakeOrder(props) {
           return setData("description", e.target.value);
         },
         placeholder: "Enter description *"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInfo,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formPrice,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].info,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].price,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].lable,
             children: "Price"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-            type: "text",
-            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInputSecond),
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "number",
+            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputInfo),
             label: "cost",
             inputMode: "numeric",
             required: true,
@@ -20030,68 +20063,54 @@ var MakeOrder = function MakeOrder(props) {
             onChange: function onChange(e) {
               return setData("cost", e.target.value);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: "$"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formPeriod,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].price, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].period),
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("label", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].lable,
             children: "Term"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-            type: "text",
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "number",
             required: true,
-            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInputSecond),
+            className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputInfo),
             inputMode: "numeric",
             label: "time",
             name: "time",
             onChange: function onChange(e) {
               return setData("time", e.target.value);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: "days"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formFile,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileUpload,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("label", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "file",
-                name: "file",
-                onChange: function onChange(e) {
-                  if (e.target.files[0]) {
-                    setSelectedFile(e.target.files[0].name);
-                  } else {
-                    setSelectedFile("");
-                  }
-
-                  setData("file", e.target.files[0]);
-                },
-                id: "uploaded-file"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-                children: "+ Add file with job description"
-              })]
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileName,
-            children: selectedFile
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileBlock,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileContainer,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInput,
+            id: "uploaded-file",
+            type: "file",
+            name: "file",
+            onChange: function onChange(e) {
+              addFile(e);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+            className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileText,
+            children: "+ Add file with job description"
           })]
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-        className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btnContainer,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          type: "submit",
-          disabled: processing,
-          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btnSubmit,
-          children: "Publish and find a specialist"
-        })
-      }), errors.file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileName,
+          children: selectedFile
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        classes: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btnSubmit,
+        children: "Publish and find a specialist"
+      }), errors.file && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         children: errors.file
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_2__["default"], {
         errors: errors
       })]
     })
@@ -20641,14 +20660,13 @@ __webpack_require__.r(__webpack_exports__);
 function ButtonGreen(_ref) {
   var _ref$type = _ref.type,
       type = _ref$type === void 0 ? "submit" : _ref$type,
-      _ref$className = _ref.className,
-      className = _ref$className === void 0 ? "" : _ref$className,
+      classes = _ref.classes,
       processing = _ref.processing,
       children = _ref.children,
       click = _ref.click;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
     type: type,
-    className: "".concat(_buttonGreen_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].formBtn, " "),
+    className: "".concat(classes, " ").concat(_buttonGreen_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].formBtn, " "),
     disabled: processing,
     onClick: click,
     children: children
@@ -20877,59 +20895,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _footer_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer.module.css */ "./resources/js/components/shared/footer/footer.module.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _footer_module_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer.module.css */ "./resources/js/components/shared/footer/footer.module.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 
 
 var Footer = function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("footer", {
-    className: "container ".concat(_footer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].container),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
-        src: "/images/logo-upwork.svg",
-        alt: "Logo"
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("footer", {
+    className: "container ".concat(_footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].container),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        href: "/",
+        className: "".concat(_footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].logo),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+          src: "/images/logo-upwork.svg",
+          alt: "Logo"
+        })
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
-      className: _footer_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].socialList,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+      className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].socialList,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].link,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/images/whatsapp.svg",
             alt: "Whatsapp"
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].link,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/images/telegram.svg",
             alt: "Telegram"
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].link,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/images/vk.svg",
             alt: "Vk"
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].link,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/images/youtube.svg",
             alt: "Youtube"
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "#",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+          className: _footer_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].link,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
             src: "/images/instagram.svg",
             alt: "Instagram"
           })
@@ -20988,7 +21017,7 @@ function GoMenu(_ref) {
       setIsOpen = _useState2[1];
 
   var toggleMenu = function toggleMenu() {
-    return setIsOpen(function (isOpen) {
+    return setIsOpen(function () {
       return !isOpen;
     });
   };
@@ -21018,6 +21047,7 @@ function GoMenu(_ref) {
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
     children: props.auth.user ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      onBlur: toggleMenu,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
         className: "".concat(_goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btnMenu),
         onClick: toggleMenu,
@@ -21026,19 +21056,19 @@ function GoMenu(_ref) {
         className: _goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].menu,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: _goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].item,
-          onClick: handleProfile,
+          onMouseDown: handleProfile,
           children: "My profile"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: _goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].item,
-          onClick: handleDashboard,
+          onMouseDown: handleDashboard,
           children: "Dashboard"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: _goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].item,
-          onClick: handleChat,
+          onMouseDown: handleChat,
           children: "Messenger"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: _goMenu_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].item,
-          onClick: handleLogout,
+          onMouseDown: handleLogout,
           children: "Logout"
         })]
       })]
@@ -21869,7 +21899,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".r83a1dfD9MJeFvpqC861HQ\\=\\= {\n    margin: 30px 0;\n    padding: 0 20px 0 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n    width: 100%;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.r83a1dfD9MJeFvpqC861HQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.r83a1dfD9MJeFvpqC861HQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.r83a1dfD9MJeFvpqC861HQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".r83a1dfD9MJeFvpqC861HQ\\=\\= {\n    margin: 30px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n    width: 100%;\n}\n\n@media (max-width: 1024px) {\n    .r83a1dfD9MJeFvpqC861HQ\\=\\= {\n        grid-template-columns: 1fr 1fr;\n        /* gap: 50px; */\n    }\n}\n@media (max-width: 768px) {\n    .r83a1dfD9MJeFvpqC861HQ\\=\\= {\n        grid-template-columns: 1fr;\n        max-width: 420px;\n    }\n}\n@media (max-width: 576px) {\n}\n@media (max-width: 400px) {\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"cardsContainer": "r83a1dfD9MJeFvpqC861HQ=="
@@ -21896,19 +21926,18 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".RhofkRN7CNUyq-\\+TZkZMzg\\=\\={\n    display: none;\n}\n._877Owe3tXHIieW0yJMjf1g\\=\\={\n    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    /* identical to box height */\n\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #FFFFFF;\n    padding: 6px 16px;\n    margin-bottom: 43px;\n}\n.rN6RezlbGyUgPFm-Vg71\\+Q\\=\\={\n      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #2BB739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    /* identical to box height */\n\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    color: #FFFFFF;\n    padding: 7px 58px;\n}\n.QIS4QlOSEqQx0kp3e65T3Q\\=\\={\n    min-height: 78vh;\n    display: flex;\n    align-items: center;\n    width: 100%;\n}\n.oqAQBGaziavSqbuPEZsjpQ\\=\\={\ndisplay: flex;\nalign-items: flex-start;\njustify-content: center;\nwidth: 100%;\n}\n.AaVL8g0Drg1sOgguybt0Lg\\=\\={\n    width: 30%;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n    margin-right: 43px;\n}\n.QfAtkGexwbQiCRqYTYYG\\+w\\=\\={\n    width: 40%;\n    max-width: 362px;\n}\n.EPPoENHkElriRZXFWjeoMg\\=\\={\n  font-size: 16px;\n  line-height: 18px;\n  font-weight: 400;\n  color: #000000;\n  width: 100%;\n}\n.PuFvI52TEYBFv6DVm1Uc4Q\\=\\={\n  font-weight: 500;\n  font-size: 16px;\n  line-height: 18px;\n  color: #000000;\n}\n.EPPoENHkElriRZXFWjeoMg\\=\\=+.EPPoENHkElriRZXFWjeoMg\\=\\={\n  margin-top: 13PX;\n}\n.UuLXmeJ0J5kMmuQAxMGV1w\\=\\={\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  width: 100%;\n  margin-top: 23px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n    flex-direction: row;\n}\n\n.AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n    margin-right: 43px;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._877Owe3tXHIieW0yJMjf1g\\=\\= {\n    padding: 6px 16px;\n    margin-bottom: 43px;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.rN6RezlbGyUgPFm-Vg71\\+Q\\=\\= {\n    padding: 7px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 49%;\n    max-width: 160px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.EPPoENHkElriRZXFWjeoMg\\=\\= {\n    font-size: 16px;\n    line-height: 18px;\n    font-weight: 400;\n    color: #000000;\n    width: 100%;\n}\n.PuFvI52TEYBFv6DVm1Uc4Q\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    color: #000000;\n}\n.EPPoENHkElriRZXFWjeoMg\\=\\= + .EPPoENHkElriRZXFWjeoMg\\=\\= {\n    margin-top: 13px;\n}\n.UuLXmeJ0J5kMmuQAxMGV1w\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n    margin-top: 23px;\n}\n\n.QfAtkGexwbQiCRqYTYYG\\+w\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.RhofkRN7CNUyq-\\+TZkZMzg\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    ._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n        flex-direction: column;\n    }\n    .AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"btn": "RhofkRN7CNUyq-+TZkZMzg==",
+	"container": "_8ADYT4uMDoh+Sh-ob+Hv9Q==",
+	"proposalContainer": "AaVL8g0Drg1sOgguybt0Lg==",
 	"buttonBack": "_877Owe3tXHIieW0yJMjf1g==",
 	"proposalBtn": "rN6RezlbGyUgPFm-Vg71+Q==",
-	"orderWrapper": "QIS4QlOSEqQx0kp3e65T3Q==",
-	"orderContainer": "oqAQBGaziavSqbuPEZsjpQ==",
-	"proposalContainer": "AaVL8g0Drg1sOgguybt0Lg==",
-	"cardContainer": "QfAtkGexwbQiCRqYTYYG+w==",
 	"proposalItem": "EPPoENHkElriRZXFWjeoMg==",
 	"proposalItemText": "PuFvI52TEYBFv6DVm1Uc4Q==",
-	"proposalBtnContainer": "UuLXmeJ0J5kMmuQAxMGV1w=="
+	"proposalBtnContainer": "UuLXmeJ0J5kMmuQAxMGV1w==",
+	"cardContainer": "QfAtkGexwbQiCRqYTYYG+w==",
+	"btn": "RhofkRN7CNUyq-+TZkZMzg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21932,7 +21961,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\={\n    padding: 30px;\n    height: 100%;\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n    align-items: start;    \n}\n\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 25px 55px;\n}\n\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\={\n    padding: 0 20px 0 0;\n    height: 100%;\n    display: flex;\n    flex-direction: column;   \n    align-items: center;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n    padding: 30px;\n    height: 100%;\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n    align-items: start;\n}\n\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    gap: 25px 55px;\n}\n\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\= {\n    padding: 0 20px 0 0;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}\n\n@media (max-width: 1024px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        grid-template-columns: 7fr 5fr;\n        gap: 50px;\n    }\n    .oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n@media (max-width: 768px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        display: flex;\n        flex-direction: column-reverse;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"freelancerOrder": "T6JrxL1p9LKxheP7bBN+mQ==",
@@ -21962,7 +21991,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".t0Nm6lRENATi0SaZmVPoPQ\\=\\={\n    padding: 9px 22px 23px 22px;\n    max-height: 100%;\n    background: #FFFFFF;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.VU3CLQsx2CrdsG4SzNe4tQ\\=\\={\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2BB739;\n    margin-bottom: 27px;\n\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    display: flex;\n    flex-direction: column;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\=+._34pDPjASIQGn2TWYYSaHfw\\=\\={\n    border-top: 1px dashed #000000;\n    padding-top: 15px;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\={\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n    color: #000000;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\=+.BXKtqW-G253XoKjcUEHcQg\\=\\={\n    margin-top: 6px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".t0Nm6lRENATi0SaZmVPoPQ\\=\\= {\n    padding: 9px 22px 23px 22px;\n    background: #ffffff;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.t0Nm6lRENATi0SaZmVPoPQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.VU3CLQsx2CrdsG4SzNe4tQ\\=\\= {\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    color: #2bb739;\n    margin-bottom: 27px;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n._34pDPjASIQGn2TWYYSaHfw\\=\\= + ._34pDPjASIQGn2TWYYSaHfw\\=\\= {\n    border-top: 1px dashed #000000;\n    padding-top: 15px;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\= {\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n    color: #000000;\n}\n.BXKtqW-G253XoKjcUEHcQg\\=\\= + .BXKtqW-G253XoKjcUEHcQg\\=\\= {\n    margin-top: 6px;\n}\n\n@media (max-width: 768px) {\n    .t0Nm6lRENATi0SaZmVPoPQ\\=\\= {\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"proposalCard": "t0Nm6lRENATi0SaZmVPoPQ==",
@@ -21992,7 +22021,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type='checkbox']:focus,\n[type='radio']:focus\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder{\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n}\n\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\={\n    position: relative;\n    background: #FFFFFF;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after{\n    position: absolute;\n    display: block;\n    content: '';\n    width: 403px;\n    height: 102%;\n    top: -2px;\n    right: -256px;\n    background-image: url('/images/bg-ellipse.png');\n    background-repeat: no-repeat;\n    background-size: cover;\n}\n.wJvUPPHb-tNRywDOBjlZLw\\=\\={\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2B2B2B;\n    z-index: 5;\n    width: 80%;\n    margin-bottom: 16px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus textarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 403px;\n    height: 102%;\n    top: -2px;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    z-index: -2;\n}\n.wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n    width: 80%;\n    margin-bottom: 16px;\n}\n\n@media (max-width: 576px) {\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n        display: none;\n    }\n    .wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"loginInput": "_1BydIX8WIFcXD+Oyoqf5FA==",
@@ -22021,16 +22050,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".PndmmlU1r3Db5R2O0wVfXw\\=\\= {\n    display: none;\n}\n\n.aFNKeJ4J33-1k75z6bIyUg\\=\\= {\n    position: relative;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 500px;\n}\n.aFNKeJ4J33-1k75z6bIyUg\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 403px;\n    height: 237px;\n    top: -2px;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n}\n\n.iAP96XzGNJXSFC-SXZixfg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.iAP96XzGNJXSFC-SXZixfg\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.mYp4ZzM8AtVcivMdwH71rg\\=\\= {\n    margin-top: 9px;\n}\n\n.k23IT3yL\\+tCVDLQL8M4\\+rA\\=\\= {\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2bb739;\n    border-radius: 2px;\n}\n\n.SZB5P6aACu\\+L76vPP4llQA\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n    margin-left: 9px;\n}\n\n.koNZ3fThtW-sJV6c0j1T5A\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus textarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".PndmmlU1r3Db5R2O0wVfXw\\=\\= {\n    display: none;\n}\n\n.v-vuJH9z9NpE76kktCgn0g\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 500px;\n}\n.v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 83%;\n    height: 100%;\n    top: 0;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n\n._4pks0GrO711NOlSopH\\+Sxw\\=\\= {\n    margin: 0 0 10px 0;\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._0FLkIzi19uyKuPIyx5MAWA\\=\\= {\n    margin: 0 0 10px 0;\n    display: flex;\n    align-items: center;\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n}\n\n.TwhBrMiQSE-lu\\+Hjq7TU7Q\\=\\= {\n    margin: 0 10px 0 0;\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2bb739;\n    border-radius: 2px;\n}\n\n.\\+bObdav\\+gR1W1QxdsnloXw\\=\\= {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.koNZ3fThtW-sJV6c0j1T5A\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n\n@media (max-width: 576px) {\n    .v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n        display: none;\n    }\n\n    .\\+bObdav\\+gR1W1QxdsnloXw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n    .\\+YqKtqgP0\\+rfm6nef9kJLQ\\=\\= {\n        align-self: flex-end;\n    }\n    .v-vuJH9z9NpE76kktCgn0g\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btn": "PndmmlU1r3Db5R2O0wVfXw==",
-	"formPage": "aFNKeJ4J33-1k75z6bIyUg==",
-	"loginInput": "iAP96XzGNJXSFC-SXZixfg==",
-	"loginFormItem": "mYp4ZzM8AtVcivMdwH71rg==",
-	"formCheckbox": "k23IT3yL+tCVDLQL8M4+rA==",
-	"formCheckboxLabel": "SZB5P6aACu+L76vPP4llQA==",
-	"formLink": "koNZ3fThtW-sJV6c0j1T5A=="
+	"form": "v-vuJH9z9NpE76kktCgn0g==",
+	"input": "_4pks0GrO711NOlSopH+Sxw==",
+	"checkboxLabel": "_0FLkIzi19uyKuPIyx5MAWA==",
+	"checkbox": "TwhBrMiQSE-lu+Hjq7TU7Q==",
+	"btnsContainer": "+bObdav+gR1W1QxdsnloXw==",
+	"formLink": "koNZ3fThtW-sJV6c0j1T5A==",
+	"btnLogin": "+YqKtqgP0+rfm6nef9kJLQ=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22054,7 +22084,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n[type=\"radio\"]:focus,\n[type=\"radio\"]:hover {\n    background-color: #fff;\n}\n[type=\"checkbox\"]:checked:hover,\n[type=\"checkbox\"]:checked:focus,\n[type=\"radio\"]:checked:hover,\n[type=\"radio\"]:checked:focus {\n    border-color: #2bb739;\n    background-color: #fff;\n}\n[type=\"radio\"]:checked {\n    border-color: #2bb739;\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n    position: relative;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 600px;\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 705px;\n    height: 103%;\n    top: -4px;\n    right: -441px;\n    background-image: url(\"/images/bg-ellipse.svg\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.GlMVyjZ89\\+6awSdYmA91xQ\\=\\= {\n    margin-top: 9px;\n}\n.GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n.\\-7j1E9ojdiJXSdq4CRvopQ\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n.qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n    display: flex;\n    align-items: center;\n    margin-top: 9px;\n    justify-content: space-between;\n}\n._5OXpGjY7EXZpt8q0xId72g\\=\\= {\n    display: flex;\n    align-items: center;\n    z-index: 5;\n}\n._6F0jPJW67mGX6n5PIk7PFw\\=\\= {\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n    width: 8px;\n    height: 8px;\n    margin-right: 5px;\n    border: 1px solid #2bb739;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\=:checked {\n    background-color: #fff;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n    display: flex;\n    align-items: center;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= ._5OXpGjY7EXZpt8q0xId72g\\=\\=:first-child {\n    margin-right: 49px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n[type=\"radio\"]:focus,\n[type=\"radio\"]:hover {\n    background-color: #fff;\n}\n[type=\"checkbox\"]:checked:hover,\n[type=\"checkbox\"]:checked:focus,\n[type=\"radio\"]:checked:hover,\n[type=\"radio\"]:checked:focus {\n    border-color: #2bb739;\n    background-color: #fff;\n}\n[type=\"radio\"]:checked {\n    border-color: #2bb739;\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 600px;\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 705px;\n    height: 103%;\n    top: -4px;\n    right: -441px;\n    background-image: url(\"/images/bg-ellipse.svg\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.GlMVyjZ89\\+6awSdYmA91xQ\\=\\= {\n    margin-top: 9px;\n}\n.GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n.\\-7j1E9ojdiJXSdq4CRvopQ\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n.qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n    display: flex;\n    align-items: center;\n    margin-top: 9px;\n    justify-content: space-between;\n}\n._5OXpGjY7EXZpt8q0xId72g\\=\\= {\n    display: flex;\n    align-items: center;\n    z-index: 5;\n}\n._6F0jPJW67mGX6n5PIk7PFw\\=\\= {\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n    width: 8px;\n    height: 8px;\n    margin-right: 5px;\n    border: 1px solid #2bb739;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\=:checked {\n    background-color: #fff;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n    display: flex;\n    align-items: center;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= ._5OXpGjY7EXZpt8q0xId72g\\=\\=:first-child {\n    margin-right: 49px;\n}\n@media (max-width: 576px) {\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n        display: none;\n    }\n}\n@media (max-width: 350px) {\n    .lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n    ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= + ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n        margin-top: 10px;\n    }\n    .qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n        flex-direction: column;\n        align-items: flex-end;\n    }\n    .GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n        align-self: start;\n        margin: 0 0 10px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formPage": "qCtlOyzbvI6KZDGHrb+nAg==",
@@ -22090,7 +22120,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-right:5%;\n    width: 40%;\n}\n\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: 'Ubuntu';\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2B2B2B;\n    z-index: 36;\n    /* padding-top: 85px; */\n    max-width: 1200px;\n    margin: 0 auto;\n}\n\n@media (max-width: 860px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n    }\n\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 28px;\n        line-height: 30px;\n        padding-bottom: 120px;\n    }\n}\n\n@media (max-width: 860px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        padding-bottom: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        overflow: hidden;\n    }\n}\n\n@media (max-width: 510px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        font-size: 26px;\n        line-height: 29px;\n    }\n}\n\n@media (max-width: 470px) {\n    .QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n        margin-bottom: 20px;\n    }\n}\n\n@media (max-width: 370px) {\n    .EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n        line-height: 27px;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-right: 5%;\n    width: 40%;\n}\n\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2b2b2b;\n    z-index: 36;\n    max-width: 1200px;\n    margin: 0 auto;\n    text-align: justify;\n}\n@media (max-width: 1024px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n        margin: 0 0px 40px 0px;\n        padding: 0;\n    }\n}\n@media (max-width: 860px) {\n}\n\n@media (max-width: 860px) {\n}\n\n@media (max-width: 767px) {\n}\n\n@media (max-width: 510px) {\n}\n\n@media (max-width: 470px) {\n}\n\n@media (max-width: 370px) {\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"about": "UT9pmnOrMXnI3OARlU3JUg==",
@@ -22148,7 +22178,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n    align-items: flex-start;\n}\n\n.CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n    position: relative;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 7%;\n    z-index: -1;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    top: 207px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n    top: 417px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\= {\n    position: relative;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\= {\n    position: relative;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 67%;\n    z-index: -1;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after,\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n@media (max-width: 1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n@media (max-width: 1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n    }\n}\n@media (max-width: 1024px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n@media (max-width: 800px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n@media (max-width: 756px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n@media (max-width: 576px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: none;\n    }\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before,\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after {\n        display: none;\n    }\n    .L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n        display: none;\n    }\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n        display: none;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    width: 100%;\n}\n\n.CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n    position: relative;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 7%;\n    z-index: -1;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    top: 207px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n    top: 417px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\= {\n    position: relative;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\= {\n    position: relative;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 67%;\n    z-index: -1;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after,\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n@media (max-width: 1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n@media (max-width: 1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n    }\n}\n@media (max-width: 1024px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        flex-direction: column;\n        padding: 0 60px 5px 60px;\n    }\n}\n@media (max-width: 800px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n@media (max-width: 756px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n@media (max-width: 576px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: none;\n    }\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before,\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after {\n        display: none;\n    }\n    .L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n        display: none;\n    }\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n        display: none;\n    }\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        padding: 0 0px 5px 0px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw==",
@@ -22223,26 +22253,28 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -17%;\n    width: 70%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._3fIHKYTm0\\+sSBoZ9ANx3OA\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n    position: relative;\n    overflow: hidden;\n    width: 245px;\n    height: 29px;\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    padding: 20px 30px;\n    color: #fff;\n    text-align: center;\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.qkxbfjJY9pk8BVlhdIt28w\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= label {\n    display: block;\n    position: absolute;\n    top: 6px;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n}\n\n._3QUPbTbky01XT4nzPM0v-g\\=\\= span {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n    margin-top: 0;\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.gvxlgbXJ659JHIyXDBzWmg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.HgRu89NQlTq0wIInziK6AA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\=:hover,\n._3QUPbTbky01XT4nzPM0v-g\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: column;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    ._2hlPGYc4F5Ju1zuL1uUqIw\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\=,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        width: 100%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label {\n        text-align: left;\n    }\n}\n\n@media (max-width: 860px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\= {\n        width: 100%;\n    }\n\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        top: 60%;\n    }\n\n    .gvxlgbXJ659JHIyXDBzWmg\\=\\= label,\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 70%;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .iSnbQ6sMvldeQwoVvgNoAg\\=\\=::after {\n        display: none;\n    }\n\n    ._1sXYDxluwsME5K9v-C096A\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .HgRu89NQlTq0wIInziK6AA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .GJyUy6ufT1hsAY00uTjwrg\\=\\= {\n        margin: 0;\n    }\n\n    ._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    ._3QUPbTbky01XT4nzPM0v-g\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .FcDWYaGFbbDT9md9qfp2ng\\=\\= {\n        width: 69%;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".btA4j3oHRhStd91D--BFnA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n.btA4j3oHRhStd91D--BFnA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -17%;\n    width: 65%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n._6BOSQr2CERfxAD5Xp5OuSg\\=\\= {\n    display: flex;\n    flex-direction: column;\n}\n\n._8yeJJ6W7hP8cdsEkBNPIKw\\=\\= {\n    margin: 0 0 35px 0;\n}\n\n._0kmEbiZdODj7B6X7wnN-kA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    display: block;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.hK2fn6qv1leiallvpkfNAw\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.hK2fn6qv1leiallvpkfNAw\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::-moz-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=:-ms-input-placeholder, .wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._1sXYDxluwsME5K9v-C096A\\=\\=::placeholder,\n.wtzIJpXjiJl\\+g2iuh0GMnw\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.RTlTT1qnorCBN6KXeUWzyg\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.qPYDGmQDfwtc-Ke9bu7cLA\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.pOps9YMvKHtOujh-jHHtjA\\=\\= {\n    display: block;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n}\n\n.GJ-6zKIzktnGPVw23lkprg\\=\\= {\n    margin: 0 10px;\n    padding: 0;\n    width: 100%;\n    background: transparent;\n    border: none;\n    border-bottom: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.jXwO\\+JlBBxrh\\+CKpRk7DsA\\=\\= {\n    margin: 0;\n}\n\n.KPwNHMjo4FwTWUs2jF6cPw\\=\\= {\n    margin: 0 0 40px 0;\n    display: flex;\n    flex-direction: column;\n}\n\n._2TzA1knR3Zt0E\\+dUuJLCeA\\=\\= {\n    margin: 0 10px 0 0;\n    padding: 3px 10px;\n    position: relative;\n    width: 245px;\n    background: linear-gradient(\n            270.76deg,\n            rgba(0, 0, 0, 0) 3.23%,\n            rgba(255, 255, 255, 0.2) 97.53%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    color: #fff;\n    text-align: center;\n}\n._2TzA1knR3Zt0E\\+dUuJLCeA\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n.YQq9idkE6h3MWEltqTT20Q\\=\\= {\n    position: absolute;\n    top: 5px;\n    left: 0;\n    opacity: 0;\n}\n\n._0K7ROec2YoXKcxKI7GzL2Q\\=\\= {\n    font-weight: 400;\n}\n\n.oDNOecre9beRWwMdYYwHlA\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 40px;\n}\n\n.dE1FS5ZzTrmGIjZPdvL9Pg\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n._4CBWQLEnlQGt9RHO9hgHMw\\=\\= {\n    align-self: flex-end;\n}\n@media (max-width: 1024px) {\n    .btA4j3oHRhStd91D--BFnA\\=\\= {\n        width: 100%;\n    }\n    .btA4j3oHRhStd91D--BFnA\\=\\=::after {\n        width: 65%;\n    }\n    ._0K7ROec2YoXKcxKI7GzL2Q\\=\\= {\n        font-size: 13px;\n    }\n    .KPwNHMjo4FwTWUs2jF6cPw\\=\\= {\n        flex-direction: column;\n    }\n}\n\n@media (max-width: 576px) {\n    .btA4j3oHRhStd91D--BFnA\\=\\=::after {\n        display: none;\n    }\n    .RTlTT1qnorCBN6KXeUWzyg\\=\\= {\n        flex-direction: column;\n    }\n    .qPYDGmQDfwtc-Ke9bu7cLA\\=\\= {\n        margin-right: 0;\n    }\n    .jXwO\\+JlBBxrh\\+CKpRk7DsA\\=\\= {\n        margin-top: 5px;\n    }\n    .oDNOecre9beRWwMdYYwHlA\\=\\= {\n        font-size: 13px;\n        line-height: 20px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formWrapper": "btA4j3oHRhStd91D--BFnA==",
-	"formLabel": "_3fIHKYTm0+sSBoZ9ANx3OA==",
-	"fileUpload": "_3QUPbTbky01XT4nzPM0v-g==",
-	"fileName": "oDNOecre9beRWwMdYYwHlA==",
-	"formFile": "qkxbfjJY9pk8BVlhdIt28w==",
-	"fileInfo": "_2hlPGYc4F5Ju1zuL1uUqIw==",
-	"formInput": "_1sXYDxluwsME5K9v-C096A==",
-	"searchInput": "wtzIJpXjiJl+g2iuh0GMnw==",
-	"formInputSecond": "FcDWYaGFbbDT9md9qfp2ng==",
+	"form": "_6BOSQr2CERfxAD5Xp5OuSg==",
+	"title": "_8yeJJ6W7hP8cdsEkBNPIKw==",
 	"searchJob": "_0kmEbiZdODj7B6X7wnN-kA==",
+	"searchInput": "wtzIJpXjiJl+g2iuh0GMnw==",
 	"inputList": "hK2fn6qv1leiallvpkfNAw==",
-	"formPrice": "gvxlgbXJ659JHIyXDBzWmg==",
-	"formPeriod": "GJyUy6ufT1hsAY00uTjwrg==",
-	"formInfo": "HgRu89NQlTq0wIInziK6AA==",
+	"formInput": "_1sXYDxluwsME5K9v-C096A==",
+	"info": "RTlTT1qnorCBN6KXeUWzyg==",
+	"price": "qPYDGmQDfwtc-Ke9bu7cLA==",
+	"label": "pOps9YMvKHtOujh-jHHtjA==",
+	"inputInfo": "GJ-6zKIzktnGPVw23lkprg==",
+	"period": "jXwO+JlBBxrh+CKpRk7DsA==",
+	"fileBlock": "KPwNHMjo4FwTWUs2jF6cPw==",
+	"fileContainer": "_2TzA1knR3Zt0E+dUuJLCeA==",
+	"fileInput": "YQq9idkE6h3MWEltqTT20Q==",
+	"fileText": "_0K7ROec2YoXKcxKI7GzL2Q==",
+	"fileName": "oDNOecre9beRWwMdYYwHlA==",
 	"btnContainer": "dE1FS5ZzTrmGIjZPdvL9Pg==",
-	"btnSubmit": "_4CBWQLEnlQGt9RHO9hgHMw==",
-	"formWrappper": "iSnbQ6sMvldeQwoVvgNoAg=="
+	"btnSubmit": "_4CBWQLEnlQGt9RHO9hgHMw=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22358,7 +22390,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n    flex-direction: row;\n}\n\n.P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n    margin: 0 55px 0 0;\n    width: 50%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._9unCwxpOaKxgtyGU736tSg\\=\\= {\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #ffffff;\n    padding: 6px 16px;\n}\n\n.\\+LN2GXMxSjFayZqRuslyTg\\=\\= {\n    width: 12px;\n    height: 12px;\n    margin-right: 8px;\n}\n\n._2qhrswuRWde3COob-C17gg\\=\\= {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n    margin-bottom: 25px;\n    margin-top: 40px;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.RAP2eYzu40shh7V4OfHMJg\\=\\= {\n    width: 50%;\n    max-width: 362px;\n}\n\n.JnlnL0Yc1gJ7Dxoq\\+OVbTA\\=\\= {\n    display: none;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n    flex-direction: row;\n}\n\n.P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n    margin: 0 55px 0 0;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._9unCwxpOaKxgtyGU736tSg\\=\\= {\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #ffffff;\n    padding: 6px 16px;\n}\n\n.\\+LN2GXMxSjFayZqRuslyTg\\=\\= {\n    width: 12px;\n    height: 12px;\n    margin-right: 8px;\n}\n\n._2qhrswuRWde3COob-C17gg\\=\\= {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    margin-bottom: 25px;\n    margin-top: 40px;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.RAP2eYzu40shh7V4OfHMJg\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.JnlnL0Yc1gJ7Dxoq\\+OVbTA\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    .lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n        flex-direction: column;\n    }\n    .P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "lIsiGOpzUhhbaAvnPF39Sg==",
@@ -22479,7 +22511,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".SGCJ9H3X2RyjGLvR0Fdz9w\\=\\={\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #FFFFFF;\n    background: linear-gradient(335.22deg, rgba(0, 0, 0, 0.2) 15.83%, rgba(255, 255, 255, 0.162) 79.46%), #2BB739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n@media(max-width:1200px) {\n\n}\n@media(max-width:1000px) {\n    .SGCJ9H3X2RyjGLvR0Fdz9w\\=\\= {\n        font-size: 13px;\n        line-height: 15px;\n        padding: 8px 15px;\n    }\n\n    .iQOoK\\+S0mTY42WKPaRVWiw\\=\\= {\n        max-width: 400px;\n    }\n    .pi7QVipIiZabJ1MAMwutRg\\=\\= {\n        margin: 50px 0 0 0;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".SGCJ9H3X2RyjGLvR0Fdz9w\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    border-radius: 40px;\n    padding: 10px 35px;\n}\n.SGCJ9H3X2RyjGLvR0Fdz9w\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1024px) {\n    .iQOoK\\+S0mTY42WKPaRVWiw\\=\\= {\n        max-width: 400px;\n    }\n    .pi7QVipIiZabJ1MAMwutRg\\=\\= {\n        margin: 50px 0 0 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formBtn": "SGCJ9H3X2RyjGLvR0Fdz9w==",
@@ -22535,7 +22567,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Ae2kGY9H-kpTqp-XyYeNRw\\=\\= {\n    display: grid;\n    grid-template-rows: 90px 1fr 110px;\n    height: 100vh;\n}\n\n.UJdz5hc7Sjb7AaV0E43kdg\\=\\= {\n    margin: 0;\n}\n\n._9WbNDaEEpbuMCFJ6SNNr8A\\=\\= {\n    padding: 25px 120px 0;\n    display: block;\n}\n\n.XYBlvS1XCoiWaMjV5m-f-g\\=\\= {\n    margin: 0;\n    display: flex;\n}\n\n.\\+mgCmXghLhbEFmib6hCqKQ\\=\\= {\n    justify-content: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Ae2kGY9H-kpTqp-XyYeNRw\\=\\= {\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column;\n    justify-content: space-between;\n    min-height: 100vh;\n    max-width: 1440px;\n    position: relative;\n}\n\n.UJdz5hc7Sjb7AaV0E43kdg\\=\\= {\n    margin: 0;\n}\n\n._9WbNDaEEpbuMCFJ6SNNr8A\\=\\= {\n    padding-top: 25px;\n    display: block;\n}\n\n.XYBlvS1XCoiWaMjV5m-f-g\\=\\= {\n    margin: 0;\n    display: flex;\n}\n\n.\\+mgCmXghLhbEFmib6hCqKQ\\=\\= {\n    justify-content: center;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"wrp": "Ae2kGY9H-kpTqp-XyYeNRw==",
@@ -22591,11 +22623,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".z0ePSDuf0xvrBEroHXgUWA\\=\\= {\n    padding: 0 120px 45px;\n    flex-direction: row;\n    justify-content: space-between;\n    position: relative;\n}\n.z0ePSDuf0xvrBEroHXgUWA\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    width: 80%;\n    bottom: 0;\n    height: 10px;\n    left: 16%;\n    background-image: url(\"/images/line.svg\");\n    background-repeat: no-repeat;\n}\n\n.U2DnupZVLMxSvZtOeMbZUg\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".z0ePSDuf0xvrBEroHXgUWA\\=\\= {\n    padding-bottom: 45px;\n    flex-direction: row;\n    justify-content: space-between;\n    position: relative;\n}\n.z0ePSDuf0xvrBEroHXgUWA\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    width: 80%;\n    bottom: 0;\n    height: 10px;\n    left: 50%;\n    background-image: url(\"/images/line.svg\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    transform: translateX(-50%);\n}\n\n.U2DnupZVLMxSvZtOeMbZUg\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n}\n\n.PE4YPqqN-iMdHCbtzcX4cg\\=\\= img {\n    width: 100%;\n    height: 100%;\n}\n@media (max-width: 1200px) {\n    .egP53p\\+8ONEJM7nGWUPYgg\\=\\= {\n        display: flex;\n        width: 140px;\n    }\n    .egP53p\\+8ONEJM7nGWUPYgg\\=\\= img {\n        height: 100%;\n    }\n}\n@media (max-width: 1000px) {\n    .egP53p\\+8ONEJM7nGWUPYgg\\=\\= {\n        width: 120px;\n    }\n}\n@media (max-width: 756px) {\n    .egP53p\\+8ONEJM7nGWUPYgg\\=\\= {\n        width: 90px;\n    }\n    .PE4YPqqN-iMdHCbtzcX4cg\\=\\= {\n        width: 27px;\n        height: 27px;\n        display: flex;\n    }\n    .z0ePSDuf0xvrBEroHXgUWA\\=\\= {\n        padding-bottom: 25px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "z0ePSDuf0xvrBEroHXgUWA==",
-	"socialList": "U2DnupZVLMxSvZtOeMbZUg=="
+	"socialList": "U2DnupZVLMxSvZtOeMbZUg==",
+	"link": "PE4YPqqN-iMdHCbtzcX4cg==",
+	"logo": "egP53p+8ONEJM7nGWUPYgg=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -22619,7 +22653,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._52UiEqeR2v7QQCX1Njf6Ew\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n}\n\n.GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n    position: absolute;\n    padding: 10px 25px;\n    background: #ffffff;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    font-weight: 500;\n    font-size: 18px;\n    line-height: 21px;\n    color: #000000;\n    cursor: pointer;\n}\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= + .VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    margin: 7px 0 0 0;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n    cursor: pointer;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\=:hover {\n    background-color: #fff;\n}\n.\\+Tzrwdj\\+HYBj6qb5LoI1Cg\\=\\= {\n    grid-column: 4/5;\n}\n@media(max-width:1200px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=, .HMf9nug\\+0-IRf7U8oaMtGg\\=\\=  {\n        width: 120px;\n        padding: 10px 30px;\n    }\n\n}\n@media(max-width:1000px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=, .HMf9nug\\+0-IRf7U8oaMtGg\\=\\=  {\n        width: 100px;\n        padding: 8px 20px;\n        line-height: 18px;\n        font-size: 16px;\n        background-size: 100%;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._52UiEqeR2v7QQCX1Njf6Ew\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n}\n\n.GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n    position: absolute;\n    right: 120px;\n    padding: 10px 25px;\n    background: #ffffff;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    font-weight: 500;\n    font-size: 18px;\n    line-height: 21px;\n    color: #000000;\n    cursor: pointer;\n}\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= + .VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    margin: 7px 0 0 0;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n    cursor: pointer;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\=:hover {\n    background-color: #fff;\n}\n.\\+Tzrwdj\\+HYBj6qb5LoI1Cg\\=\\= {\n    grid-column: 4/5;\n}\n@media (max-width: 1200px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 120px;\n        padding: 10px 30px;\n    }\n}\n@media (max-width: 1024px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 100px;\n        padding: 8px 20px;\n        line-height: 18px;\n        font-size: 16px;\n        background-size: 100%;\n    }\n\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 80px;\n    }\n}\n@media (max-width: 768px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 60px;\n    }\n}\n@media (max-width: 576px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 20px;\n    }\n}\n@media (max-width: 400px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 10px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btnMenu": "_52UiEqeR2v7QQCX1Njf6Ew==",
@@ -22650,7 +22684,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".rmjNWOV4INwBvnzdwWB2Yw\\=\\= {\n    /* margin: 0 0 75px 0; */\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n}\n\n.K036krjpex1tafGZYDlGMw\\=\\= {\n    max-width: 140px;\n}\n@media(max-width:1200px) {\n.VwdVjzhj2abTbmczMH5\\+TQ\\=\\={\n    display: flex;\n    width: 140px;\n}\n.VwdVjzhj2abTbmczMH5\\+TQ\\=\\= img{\n    height: 100%;\n}\n}\n@media(max-width:1000px) {\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\={\n\n        width: 120px;\n    }\n}\n@media(max-width:756px) {\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\={\n\n        width: 90px;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".rmjNWOV4INwBvnzdwWB2Yw\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n}\n\n.K036krjpex1tafGZYDlGMw\\=\\= {\n    max-width: 140px;\n}\n@media (max-width: 1200px) {\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\= {\n        display: flex;\n        width: 140px;\n    }\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\= img {\n        height: 100%;\n    }\n}\n@media (max-width: 1000px) {\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\= {\n        width: 120px;\n    }\n}\n@media (max-width: 756px) {\n    .VwdVjzhj2abTbmczMH5\\+TQ\\=\\= {\n        width: 90px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"header": "rmjNWOV4INwBvnzdwWB2Yw==",

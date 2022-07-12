@@ -42,51 +42,39 @@ export default function Login({ status, canResetPassword }) {
 
             <ValidationErrors errors={errors} />
 
-            <form onSubmit={submit} className={`${style.formPage} `}>
-                <div>
-                    <Input
-                        type="text"
-                        name="email"
-                        value={data.email}
-                        className={`${style.loginInput} `}
-                        placeholder="E-mail"
-                        autoComplete="username"
-                        isFocused={true}
+            <form onSubmit={submit} className={`${style.form} `}>
+                <Input
+                    type="text"
+                    name="email"
+                    value={data.email}
+                    className={`${style.input} `}
+                    placeholder="E-mail"
+                    autoComplete="username"
+                    isFocused={true}
+                    handleChange={onHandleChange}
+                />
+
+                <Input
+                    type="password"
+                    name="password"
+                    value={data.password}
+                    placeholder="Password"
+                    className={`${style.input} `}
+                    autoComplete="current-password"
+                    handleChange={onHandleChange}
+                />
+
+                <label className={`${style.checkboxLabel} `}>
+                    <Checkbox
+                        name="remember"
+                        value={data.remember}
                         handleChange={onHandleChange}
+                        className={`${style.checkbox} `}
                     />
-                </div>
+                    Remember me
+                </label>
 
-                <div className={`${style.loginFormItem} `}>
-                    <Input
-                        type="password"
-                        name="password"
-                        value={data.password}
-                        placeholder="Password"
-                        className={`${style.loginInput} `}
-                        autoComplete="current-password"
-                        handleChange={onHandleChange}
-                    />
-                </div>
-
-                <div className="block mt-4">
-                    <label className="flex items-center">
-                        <Checkbox
-                            name="remember"
-                            value={data.remember}
-                            handleChange={onHandleChange}
-                            className={`${style.formCheckbox} `}
-                        />
-
-                        <span className={`${style.formCheckboxLabel} `}>
-                            Remember me
-                        </span>
-                    </label>
-                </div>
-
-                <div
-                    style={{ justifyContent: "space-between" }}
-                    className="flex items-center justify-end"
-                >
+                <div className={style.btnsContainer}>
                     <div>
                         <Link
                             href={route("register")}
@@ -107,7 +95,12 @@ export default function Login({ status, canResetPassword }) {
                         </div>
                     )}
 
-                    <ButtonGreen processing={processing}>Log in</ButtonGreen>
+                    <ButtonGreen
+                        classes={style.btnLogin}
+                        processing={processing}
+                    >
+                        Log in
+                    </ButtonGreen>
                 </div>
             </form>
         </Container>

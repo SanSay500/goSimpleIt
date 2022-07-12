@@ -6,7 +6,8 @@ import style from "./goMenu.module.css";
 export default function GoMenu({ styleBtn }) {
     const props = usePage().props;
     const [isOpen, setIsOpen] = useState(false);
-    const toggleMenu = () => setIsOpen((isOpen) => !isOpen);
+
+    const toggleMenu = () => setIsOpen(() => !isOpen);
 
     const handleLogout = () => {
         Inertia.post("/logout");
@@ -32,25 +33,34 @@ export default function GoMenu({ styleBtn }) {
     return (
         <>
             {props.auth.user ? (
-                <div>
+                <div onBlur={toggleMenu}>
                     <button className={`${style.btnMenu}`} onClick={toggleMenu}>
                         Menu
                     </button>
                     {isOpen && (
                         <div className={style.menu}>
-                            <div className={style.item} onClick={handleProfile}>
+                            <div
+                                className={style.item}
+                                onMouseDown={handleProfile}
+                            >
                                 My profile
                             </div>
                             <div
                                 className={style.item}
-                                onClick={handleDashboard}
+                                onMouseDown={handleDashboard}
                             >
                                 Dashboard
                             </div>
-                            <div className={style.item} onClick={handleChat}>
+                            <div
+                                className={style.item}
+                                onMouseDown={handleChat}
+                            >
                                 Messenger
                             </div>
-                            <div className={style.item} onClick={handleLogout}>
+                            <div
+                                className={style.item}
+                                onMouseDown={handleLogout}
+                            >
                                 Logout
                             </div>
                         </div>

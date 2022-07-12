@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { usePage, useForm } from "@inertiajs/inertia-react";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import style from "./makeOrder.module.css";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MakeOrder = (props) => {
     const { data, setData, errors, post, processing } = useForm({
@@ -46,14 +47,23 @@ const MakeOrder = (props) => {
         );
     }
 
+    const addFile = (e) => {
+        if (e.target.files[0]) {
+            setSelectedFile(e.target.files[0].name);
+        } else {
+            setSelectedFile("");
+        }
+        setData("file", e.target.files[0]);
+    };
+
     useEffect(() => {
         setTasksList(() => tasksList);
     }, [tasksList]);
 
     return (
         <div className={style.formWrapper}>
-            <form onSubmit={handleSubmit}>
-                <label className={style.formLabel}>Make Order</label>
+            <form className={style.form} onSubmit={handleSubmit}>
+                <h2 className={`title ${style.title}`}>Make Order</h2>
 
                 <div className={style.searchJob}>
                     <input
@@ -67,7 +77,7 @@ const MakeOrder = (props) => {
                             setOpen((open) => !open);
                         }}
                         onClick={() => {
-                            setOpen(() => (open = true));
+                            setOpen(() => true);
                         }}
                     />
 
@@ -157,13 +167,13 @@ const MakeOrder = (props) => {
                     placeholder="Enter description *"
                 />
 
-                <div className={style.formInfo}>
-                    <div className={style.formPrice}>
-                        <label className={style.formLabel}>Price</label>
+                <div className={style.info}>
+                    <div className={style.price}>
+                        <label className={style.lable}>Price</label>
 
                         <input
-                            type="text"
-                            className={`${style.formInput} ${style.formInputSecond}`}
+                            type="number"
+                            className={`${style.inputInfo}`}
                             label="cost"
                             inputMode="numeric"
                             required
@@ -174,13 +184,13 @@ const MakeOrder = (props) => {
                         <span>$</span>
                     </div>
 
-                    <div className={style.formPeriod}>
-                        <label className={style.formLabel}>Term</label>
+                    <div className={`${style.price} ${style.period}`}>
+                        <label className={style.lable}>Term</label>
 
                         <input
-                            type="text"
+                            type="number"
                             required
-                            className={`${style.formInput} ${style.formInputSecond}`}
+                            className={`${style.inputInfo}`}
                             inputMode="numeric"
                             label="time"
                             name="time"
@@ -191,43 +201,30 @@ const MakeOrder = (props) => {
                     </div>
                 </div>
 
-                <div className={style.formFile}>
-                    <div className={style.fileInfo}>
-                        <div className={style.fileUpload}>
-                            <label>
-                                <input
-                                    type="file"
-                                    name="file"
-                                    onChange={(e) => {
-                                        if (e.target.files[0]) {
-                                            setSelectedFile(
-                                                e.target.files[0].name
-                                            );
-                                        } else {
-                                            setSelectedFile("");
-                                        }
-                                        setData("file", e.target.files[0]);
-                                    }}
-                                    id="uploaded-file"
-                                />
+                <div className={style.fileBlock}>
+                    <div className={style.fileContainer}>
+                        <input
+                            className={style.fileInput}
+                            id="uploaded-file"
+                            type="file"
+                            name="file"
+                            onChange={(e) => {
+                                addFile(e);
+                            }}
+                        />
 
-                                <span>+ Add file with job description</span>
-                            </label>
-                        </div>
-
-                        <div className={style.fileName}>{selectedFile}</div>
+                        <span className={style.fileText}>
+                            + Add file with job description
+                        </span>
                     </div>
+
+                    <div className={style.fileName}>{selectedFile}</div>
                 </div>
 
-                <div className={style.btnContainer}>
-                    <button
-                        type="submit"
-                        disabled={processing}
-                        className={style.btnSubmit}
-                    >
-                        Publish and find a specialist
-                    </button>
-                </div>
+                <ButtonGreen
+                    classes={style.btnSubmit}
+                    children={"Publish and find a specialist"}
+                />
 
                 {errors.file && <div>{errors.file}</div>}
 

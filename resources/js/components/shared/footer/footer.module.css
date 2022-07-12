@@ -1,5 +1,5 @@
 .container {
-    padding: 0 120px 45px;
+    padding-bottom: 45px;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
@@ -10,13 +10,47 @@
     width: 80%;
     bottom: 0;
     height: 10px;
-    left: 16%;
+    left: 50%;
     background-image: url("/images/line.svg");
     background-repeat: no-repeat;
+    background-size: 100%;
+    transform: translateX(-50%);
 }
 
 .socialList {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.link img {
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 1200px) {
+    .logo {
+        display: flex;
+        width: 140px;
+    }
+    .logo img {
+        height: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    .logo {
+        width: 120px;
+    }
+}
+@media (max-width: 756px) {
+    .logo {
+        width: 90px;
+    }
+    .link {
+        width: 27px;
+        height: 27px;
+        display: flex;
+    }
+    .container {
+        padding-bottom: 25px;
+    }
 }
