@@ -44,7 +44,7 @@ class OrderController extends Controller
         $filesSize = [];
 
         foreach ($orders as $order => $params) {
-            $tasksIDsInOrders[] = $params['id'];
+            $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));
             if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
                 $filesSize['filesize'] = round(Storage::size($params['file']) / 1024, 2) . ' Kb';
@@ -53,7 +53,6 @@ class OrderController extends Controller
             }
         }
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-
         return Inertia::render('pages/mainPage/main', ['tasks'=>$tasks, 'ordersActive'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
     }
 

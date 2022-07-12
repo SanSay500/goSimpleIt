@@ -10,3 +10,382 @@
         gap: 18px 40px;
     }
 }
+
+.formWrapper {
+    position: relative;
+    padding-bottom: 100px;
+    width: 60%;
+    z-index: 1;
+    background: transparent;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),
+    -7px 2px 9px -5px rgba(0, 0, 0, 0.25),
+    -2px 0px 7px -5px rgba(0, 0, 0, 0.25),
+    0px -5px 1px -5px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.formWrapper::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -17%;
+    width: 70%;
+    height: 100%;
+    background-image: url(/images/bgrEllipse.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.formLabel {
+    display: block;
+    margin: 0 0 27px 0;
+    text-align: left;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 32.17px;
+    color: #2bb739;
+}
+
+.fileUpload input[type="file"] {
+    display: none;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    width: 245px;
+    height: 29px;
+    background: linear-gradient(
+        270.76deg,
+        rgba(0, 0, 0, 0) 3.23%,
+        rgba(255, 255, 255, 0.2) 97.53%
+    ),
+    #2bb739;
+    border-radius: 10px;
+    padding: 20px 30px;
+    color: #fff;
+    text-align: center;
+}
+
+.fileName {
+    color: #2b2b2b;
+    font-weight: 150;
+    font-size: 16px;
+    line-height: 48px;
+}
+
+.formFile {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.fileInfo {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding-right: 40%;
+}
+
+.fileUpload label {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.fileUpload span {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.formInput,
+.searchInput {
+    width: 100%;
+    background-color: #fff;
+    border: 1px dashed #2bb739;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    resize: none;
+    margin: 0 0 9px 0;
+}
+
+.formInput::placeholder,
+.searchInput::placeholder {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+}
+
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #2bb739;
+}
+
+.formInputSecond {
+    margin-top: 0;
+    margin-left: 10px;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    height: 15px;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;
+}
+
+.searchJob {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.searchInput {
+    display: block;
+}
+
+.inputList {
+    max-height: 300px;
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    z-index: 2;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(43, 183, 57) transparent;
+}
+.inputList::-webkit-scrollbar {
+    width: 5px;
+}
+.inputList::-webkit-scrollbar-track {
+    background: transparent;
+}
+.inputList::-webkit-scrollbar-thumb {
+    background-color: rgb(43, 183, 57);
+    border-radius: 25px;
+}
+
+.inputList > div {
+    padding: 1%;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+    border-radius: 8px;
+}
+
+.inputList > div:hover {
+    background-color: #2bb739;
+    cursor: pointer;
+    color: #fff;
+}
+
+.formPrice {
+    display: flex;
+    max-width: 150px;
+    margin-right: 10%;
+}
+
+.formPeriod {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 150px;
+    margin-right: 10%;
+}
+
+.formInfo {
+    display: flex;
+    margin: 0 0 27px 0;
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+}
+
+.formInfo label {
+    display: flex;
+    font-family: "Ubuntu";
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+}
+
+.btnContainer {
+    display: flex;
+    justify-content: end;
+}
+
+.btnSubmit {
+    color: #ffffff;
+    background: linear-gradient(
+        335.22deg,
+        rgba(0, 0, 0, 0.2) 15.83%,
+        rgba(255, 255, 255, 0.162) 79.46%
+    ),
+    #2bb739;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    padding: 16px 30px;
+    border-radius: 40px;
+    align-self: flex-end;
+}
+
+.btnSubmit:hover,
+.fileUpload:hover {
+    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);
+}
+
+@media (max-width: 1200px) {
+    .formInfo {
+        flex-direction: column;
+    }
+
+    .formPrice,
+    .formPeriod {
+        width: 100%;
+    }
+
+    .formPeriod {
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+
+    .fileInfo {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .formPrice,
+    .formPeriod {
+        width: 100%;
+    }
+
+    .formPrice label {
+        text-align: left;
+    }
+}
+
+@media (max-width: 860px) {
+    .formWrappper {
+        width: 100%;
+    }
+
+    .formWrappper::after {
+        top: 54%;
+        width: 50%;
+    }
+
+    .formInfo {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+    .formPeriod {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .formWrappper::after {
+        top: 60%;
+    }
+
+    .formPrice label,
+    .formPeriod label {
+        width: 100%;
+        text-align: center;
+    }
+
+    .formInputSecond {
+        width: 70%;
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 576px) {
+    .formWrappper::after {
+        display: none;
+    }
+
+    .formInput {
+        margin-bottom: 30px;
+    }
+
+    .formInfo {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .formPeriod {
+        margin: 0;
+    }
+
+    .btnSubmit {
+        padding: 13px;
+    }
+}
+
+@media (max-width: 510px) {
+    .fileUpload {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 445px) {
+    .fileUpload {
+        width: 300px;
+    }
+}
+
+@media (max-width: 340px) {
+    .formInputSecond {
+        width: 69%;
+    }
+}

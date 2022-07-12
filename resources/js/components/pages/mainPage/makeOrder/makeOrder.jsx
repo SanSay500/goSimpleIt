@@ -14,7 +14,6 @@ const MakeOrder = (props) => {
     });
 
     const inputTask = useRef();
-    const taskIdRef = useRef();
     const [selectedFile, setSelectedFile] = useState("");
     const { tasks } = usePage().props;
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
@@ -54,7 +53,6 @@ const MakeOrder = (props) => {
         <div className={style.formWrapper}>
             <form onSubmit={handleSubmit}>
                 <label className={style.formLabel}>Make Order</label>
-
                 <div className={style.searchJob}>
                     <input
                         ref={inputTask}
