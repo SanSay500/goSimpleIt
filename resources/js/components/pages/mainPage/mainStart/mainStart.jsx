@@ -98,7 +98,7 @@ const MainStart = (props) => {
 
                     <div className={style.formInfo}>
                         <div className={style.formPrice}>
-                            <h3>Recommended prise</h3>
+                            <h3>Recommended price</h3>
 
                             <span
                                 className={`${style.formInput} ${style.formInputSecond}`}

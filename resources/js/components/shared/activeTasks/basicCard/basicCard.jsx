@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "@inertiajs/inertia-react";
+import {InertiaLink, Link} from "@inertiajs/inertia-react";
 import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
@@ -12,18 +12,16 @@ export default function BasicCard(props) {
                 {props.props["description"]}
             </div>
 
-            <a href={route("download_file", props.props["file"])}>Download</a>
-
             <div className={`${style.file}`}>
-                {props.props["file"] && (
+                {props.props["filesize"] && (
                     <span className={`${style.fileInfo}`}>
                         <a
                             className={`${style.fileInfo} ${style.green}`}
-                            href={props.props["file"]}
+                            href={'storage/' + props.props["file"]} download
                         >
                             Download{" "}
                         </a>
-                        (jpg; 43.10 Kb)
+                        ({(props.props['file']).split('.')[1]}, {props.props['filesize']})
                     </span>
                 )}
             </div>

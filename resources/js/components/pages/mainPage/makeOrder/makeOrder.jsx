@@ -15,7 +15,6 @@ const MakeOrder = (props) => {
     });
 
     const inputTask = useRef();
-    const taskIdRef = useRef();
     const [selectedFile, setSelectedFile] = useState("");
     const { tasks } = usePage().props;
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);

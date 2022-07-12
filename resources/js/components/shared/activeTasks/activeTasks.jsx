@@ -1,34 +1,49 @@
-import React, { useEffect, useState } from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import React, {useEffect, useState, useRef} from "react";
+import {usePage} from "@inertiajs/inertia-react";
 import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
 
-const ActiveTasks = ({ quantityCardsTasks, gridStyle }) => {
-    const { ordersActive, tasksWithOrders } = usePage().props;
+const ActiveTasks = ({quantityCardsTasks, gridStyle}) => {
+    const {ordersActive, tasksWithOrders} = usePage().props;
     const [showCards, setShowCards] = useState(quantityCardsTasks);
+    const inputTask = useRef();
+    const {tasks} = usePage().props;
+    const [ordersFiltered, setOrdersFiltered] = useState(ordersActive);
+    let [tasksList, setTasksList] = useState(tasks);
+    let [open, setOpen] = useState(false);
+
 
     const loadMoreTasks = (e) => {
         e.preventDefault();
         setShowCards(showCards + quantityCardsTasks);
     };
 
-    // const changeSearch = ({ target: { value } }) => {
-    //     if (value) {
-    //         let job_found = tasksWithOrders.find((e) => e.name === value).id;
-    //         if (job_found) {
-    //             filterJobs(job_found);
-    //         }
-    //     }
-    // };
+    function searchList() {
+        setTasksList(() => {
+            tasksList = [];
+            tasksList = tasks.filter((el) =>
+                el.name
+                    .toLowerCase()
+                    .includes(inputTask.current.value.toLowerCase())
+            );
+            return tasksList;
+        });
+    }
 
-    // function filterJobs(task_id) {
-    //     let newOrdersToShow = ordersActive.filter(
-    //         (el) => el.task_id === task_id
-    //     );
-    //     setOrdersToShow(newOrdersToShow);
-    //     setShowCards(5);
-    // }
+    useEffect(() => {
+        setTasksList(() => tasksList);
+    }, [tasksList]);
+
+    function filterJobs(task_id) {
+        if (task_id === 0) {
+            setOrdersFiltered(ordersActive)
+        } else {
+            setOrdersFiltered(ordersActive.filter(
+                el => el.task_id === task_id
+            ))
+        }
+    }
 
     useEffect(() => {
         setShowCards(quantityCardsTasks);
@@ -37,10 +52,49 @@ const ActiveTasks = ({ quantityCardsTasks, gridStyle }) => {
     return (
         <>
             <h2 className={`title`}>Active Tasks</h2>
+            <div className={style.searchJob}>
+                <input
 
+                    ref={inputTask}
+                    type="text"
+                    id="searchInput"
+                    className={style.searchInput}
+                    placeholder="Type the task"
+                    onChange={searchList}
+                    onBlur={() => {
+                        setOpen((open) => !open);
+                    }}
+                    onClick={() => {
+                        setOpen(() => (open = true));
+                    }}
+                />
+
+                {open && (
+                    <div id="inputList" className={style.inputList}>
+                        <div
+                            onMouseDown={() => {
+                                inputTask.current.value = 'Show all';
+                                filterJobs(0)
+                            }}
+                            key={'show-all-orders'}>Show all
+                        </div>
+                        {tasksWithOrders.map((task) => (
+                            <div
+                                onMouseDown={() => {
+                                    inputTask.current.value = task.name;
+                                    filterJobs(task.id)
+                                }}
+                                key={task.id}
+                            >
+                                {task.name}
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
             <div className={`${style.cardsContainer} ${gridStyle}`}>
-                {ordersActive.slice(0, showCards).map((order) => {
-                    return <BasicCard key={order.id} props={order} />;
+                {ordersFiltered.slice(0, showCards).map((order) => {
+                    return <BasicCard key={order.id} props={order}/>;
                 })}
             </div>
 

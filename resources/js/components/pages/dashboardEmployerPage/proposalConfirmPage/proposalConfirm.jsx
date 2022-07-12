@@ -7,6 +7,10 @@ import Container from "@/components/shared/container/container";
 export default function ProposalConfirm(props) {
     const { order, proposal, user } = usePage().props;
 
+    function Goback() {
+        window.history.back();
+    }
+
     return (
         <Container styleContainer={style.container}>
             <div className={`${style.proposalContainer}`}>

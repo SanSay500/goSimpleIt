@@ -53,9 +53,4 @@ class DashboardController extends Controller
         return route('start_chat');
     }
 
-    public function download_file(Request $request) {
-
-        return Storage::download($request->path());
-
-    }
 }
