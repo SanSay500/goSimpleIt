@@ -6939,7 +6939,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
           props: order
         }, order.id);
       })
-    }), ordersFiltered.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), ordersFiltered.length >= showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
       click: function click(e) {
         loadMoreTasks(e);
       }

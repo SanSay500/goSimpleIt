@@ -101,7 +101,7 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
                 })}
             </div>
 
-            {ordersFiltered.length > showCards && (
+            {ordersFiltered.length >= showCards && (
                 <ButtonViewMore
                     click={(e) => {
                         loadMoreTasks(e);
