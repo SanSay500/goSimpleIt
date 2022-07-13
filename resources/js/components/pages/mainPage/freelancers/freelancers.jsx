@@ -4,12 +4,13 @@ import PeopleCard from "@/components/shared/peopleCard/peopleCard";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 const Freelancers = ({ reviewsList, quantityCardsPeople }) => {
     const [showCards, setShowCards] = useState(quantityCardsPeople);
-    const freelancersList = reviewsList.slice(0, quantityCardsPeople);
-console.log(free);
+    const freelancersList = reviewsList.slice(0, showCards);
+
     const loadMoreTasks = (e) => {
         e.preventDefault();
-        setShowCards(showCards + quantityCardsPeople);
+        setShowCards(()=>showCards + quantityCardsPeople);
     };
+
     useEffect(() => {
         setShowCards(quantityCardsPeople);
     }, [quantityCardsPeople]);

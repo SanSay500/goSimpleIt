@@ -5,7 +5,7 @@ import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 const Talks = ({ reviewsList, quantityCardsPeople }) => {
     const [showCards, setShowCards] = useState(quantityCardsPeople);
-    const freelancersList = reviewsList.slice(0, quantityCardsPeople);
+    const freelancersList = reviewsList.slice(0, showCards);
 
     const loadMoreTasks = (e) => {
         e.preventDefault();
