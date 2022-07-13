@@ -37,6 +37,7 @@ export default function DashboardFreelancer(props) {
                 <div className={`${style.freelancerOrder}`}>
                     <div className={`${style.freelancerOrderWrapper}`}>
                         <ActiveTasks
+                            user={props.auth.user}
                             quantityCardsTasks={quantityCardsTasks}
                             gridStyle={style.gridStyle}
                         />
