@@ -6083,11 +6083,11 @@ var MakeOrder = function MakeOrder(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    post(route("order.store", data, {
+    post(route("order.store"), {
       preserveScroll: true,
       forceFormData: true,
       _method: "put"
-    }));
+    });
   }
 
   var addFile = function addFile(e) {
@@ -6792,7 +6792,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
           props: order
         }, order.id);
       })
-    }), ordersActive.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), ordersFiltered.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
       click: function click(e) {
         loadMoreTasks(e);
       }

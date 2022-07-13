@@ -38,11 +38,11 @@ const MakeOrder = (props) => {
     function handleSubmit(e) {
         e.preventDefault();
         post(
-            route("order.store", data, {
+            route("order.store"),{
                 preserveScroll: true,
                 forceFormData: true,
                 _method: "put",
-            })
+            }
         );
     }
 

@@ -18,15 +18,20 @@ class DashboardController extends Controller
     public function freelancer_dashboard_index()
     {
         $user = Auth::user();
-
         $proposals = Proposal::where('user_id', $user->id)->get();
+        $ordersActive = Order::where('status','Pending')->get()->toArray();
+        $tasksIDsInOrders=[];
+        $filesSize = [];
 
-        $ordersActive = Order::where('status','Pending')->get();
-
-        $tasksIDsInOrders[]='';
-        foreach ($ordersActive->toArray() as $order)
-            $tasksIDsInOrders[] = $order['task_id'];
-
+        foreach ($ordersActive as $order => $params) {
+            $tasksIDsInOrders[] = $params['task_id'];
+            $Orderfile = (Storage::path($params['file']));
+            if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
+                $filesSize['filesize'] = round(Storage::size($params['file']) / 1024, 2) . ' Kb';
+                $params +=$filesSize;
+                $ordersActive[$order] += $params;
+            }
+        }
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
 
         return Inertia::render('pages/dashboardFreelancerPage/dashboardFreelancer', ['proposals' => $proposals, 'tasksWithOrders'=>$tasksWithOrders, 'ordersActive'=>$ordersActive]);

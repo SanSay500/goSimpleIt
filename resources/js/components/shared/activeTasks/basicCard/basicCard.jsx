@@ -4,7 +4,7 @@ import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
 export default function BasicCard(props) {
-    
+
     return (
         <div className={`${style.container}`}>
             <h3 className={`${style.title}`}>{props.props["title"]}</h3>
@@ -15,6 +15,7 @@ export default function BasicCard(props) {
 
             <div className={`${style.file}`}>
                 {props.props["filesize"] && (
+
                     <span className={`${style.fileInfo}`}>
                         <a
                             className={`${style.fileInfo} ${style.green}`}

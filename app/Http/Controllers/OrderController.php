@@ -99,7 +99,13 @@ class OrderController extends Controller
     public function details($order_id)
     {
         $order=Order::where('id', $order_id)->first()->toArray();
-//        dd($order);
+
+            $Orderfile = (Storage::path($order['file']));
+
+            if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
+                $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
+                $order +=  $filesSize;
+            }
         return Inertia::render('pages/orderDetailsPage/orderDetails', ['order'=>$order]);
     }
 
