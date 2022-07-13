@@ -6838,14 +6838,13 @@ var ActiveTasks = function ActiveTasks(_ref) {
       setShowCards = _useState2[1];
 
   var inputTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ordersActive),
       _useState4 = _slicedToArray(_useState3, 2),
       ordersFiltered = _useState4[0],
       setOrdersFiltered = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(tasks),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(tasksWithOrders),
       _useState6 = _slicedToArray(_useState5, 2),
       tasksList = _useState6[0],
       setTasksList = _useState6[1];
@@ -6863,7 +6862,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
   function searchList() {
     setTasksList(function () {
       tasksList = [];
-      tasksList = tasks.filter(function (el) {
+      tasksList = tasksWithOrders.filter(function (el) {
         return el.name.toLowerCase().includes(inputTask.current.value.toLowerCase());
       });
       return tasksList;
@@ -6873,6 +6872,8 @@ var ActiveTasks = function ActiveTasks(_ref) {
   function filterJobs(task_id) {
     if (task_id === 0) {
       setOrdersFiltered(ordersActive);
+      setTasksList(tasksWithOrders);
+      inputTask.current.value = 'Type the task';
     } else {
       setOrdersFiltered(ordersActive.filter(function (el) {
         return el.task_id === task_id;
@@ -6920,7 +6921,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
             filterJobs(0);
           },
           children: "Show all"
-        }, "show-all-orders"), tasksWithOrders.map(function (task) {
+        }, "show-all-orders"), tasksList.map(function (task) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
             onMouseDown: function onMouseDown() {
               inputTask.current.value = task.name;
