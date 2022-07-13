@@ -7,6 +7,7 @@ export default function ButtonGreen({
     processing,
     children,
     click,
+    mouseDown,
 }) {
     return (
         <button
@@ -14,6 +15,7 @@ export default function ButtonGreen({
             className={`${classes} ${style.formBtn} `}
             disabled={processing}
             onClick={click}
+            onMouseDown={mouseDown}
         >
             {children}
         </button>

@@ -5626,11 +5626,13 @@ var Freelancers = function Freelancers(_ref) {
       showCards = _useState2[0],
       setShowCards = _useState2[1];
 
-  var freelancersList = reviewsList.slice(0, quantityCardsPeople);
+  var freelancersList = reviewsList.slice(0, showCards);
 
   var loadMoreTasks = function loadMoreTasks(e) {
     e.preventDefault();
-    setShowCards(showCards + quantityCardsPeople);
+    setShowCards(function () {
+      return showCards + quantityCardsPeople;
+    });
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
@@ -5773,7 +5775,6 @@ var Main = function Main(props) {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
   }, []);
-  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].headerContainer),
@@ -5810,10 +5811,11 @@ var Main = function Main(props) {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
-        ref: makeOrder,
         user: props.auth.user,
         className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].blockContainer),
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {})]
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          refMakeOrder: makeOrder
+        })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
   });
@@ -6106,6 +6108,7 @@ var MakeOrder = function MakeOrder(props) {
     });
   }, [tasksList]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    ref: props.refMakeOrder,
     className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formWrapper,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
       className: _makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form,
@@ -6465,7 +6468,7 @@ var Talks = function Talks(_ref) {
       showCards = _useState2[0],
       setShowCards = _useState2[1];
 
-  var freelancersList = reviewsList.slice(0, quantityCardsPeople);
+  var freelancersList = reviewsList.slice(0, showCards);
 
   var loadMoreTasks = function loadMoreTasks(e) {
     e.preventDefault();
@@ -6624,16 +6627,160 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/container/container */ "./resources/js/components/shared/container/container.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./userProfile.module.css */ "./resources/js/components/pages/userProfilePage/userProfile.module.css");
+/* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
 
-function UserProfile(title) {
+
+
+
+
+function UserProfile() {
   var props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: [props.auth.user.name, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), props.auth.user.role, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), props.auth.user.description, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), "Under construction..."]
+  var logo = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+  var name = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
+    name: props.auth.user.name,
+    email: props.auth.user.email,
+    description: props.auth.user.description,
+    file: ""
+  }),
+      data = _useForm.data,
+      setData = _useForm.setData,
+      errors = _useForm.errors,
+      post = _useForm.post,
+      processing = _useForm.processing;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      toggleLogo = _useState2[0],
+      setToggleLogo = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+      _useState4 = _slicedToArray(_useState3, 2),
+      readOnly = _useState4[0],
+      setReadOnly = _useState4[1];
+
+  var uploadFile = function uploadFile(e) {
+    setData("file", e.target.files[0]);
+    var reader = new FileReader();
+    reader.readAsDataURL(e.target.files[0]);
+
+    reader.onload = function (event) {
+      setToggleLogo(event.target.result); // const img = document.createElement("img");
+      // logo.appendChild(img);
+      // img.src = event.target.result;
+      // img.alt = e.target.files[0].name;
+    };
+  };
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+      className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form
+      /*onSubmit={handleSubmit}*/
+      ,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+        className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileBlock,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileContainer,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInput,
+            id: "uploaded-file",
+            type: "file",
+            name: "file",
+            onChange: function onChange(e) {
+              uploadFile(e);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+            className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoContainer,
+            ref: logo,
+            children: toggleLogo ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+              src: toggleLogo,
+              alt: ""
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+                src: "/images/downloadLogo.svg",
+                alt: "logo",
+                className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoImg
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileText,
+                children: "Download logo"
+              })]
+            })
+          })]
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputsContainer,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          ref: name,
+          type: "text",
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+          label: "Name",
+          name: "name",
+          value: data.name,
+          readOnly: readOnly,
+          onChange: function onChange(e) {
+            return setData("name", e.target.value);
+          },
+          placeholder: "Name"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          type: "email",
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+          label: "email",
+          name: "email",
+          value: data.email,
+          readOnly: readOnly,
+          onChange: function onChange(e) {
+            return setData("email", e.target.value);
+          },
+          placeholder: "Email"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+          type: "text",
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+          label: "description",
+          name: "description",
+          readOnly: readOnly // errors={errors.description}
+          ,
+          value: data.description,
+          onChange: function onChange(e) {
+            return setData("description", e.target.value);
+          },
+          placeholder: "Tell about your skills"
+        }), readOnly ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
+          children: "Edit",
+          type: "button",
+          mouseDown: function mouseDown(e) {
+            e.preventDefault();
+            setReadOnly(!readOnly);
+          }
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
+          children: "Save",
+          type: "button",
+          mouseDown: function mouseDown(e) {
+            e.preventDefault();
+            setReadOnly(!readOnly);
+          }
+        })]
+      })]
+    })
   });
 }
 
@@ -6896,12 +7043,14 @@ function ButtonGreen(_ref) {
       classes = _ref.classes,
       processing = _ref.processing,
       children = _ref.children,
-      click = _ref.click;
+      click = _ref.click,
+      mouseDown = _ref.mouseDown;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
     type: type,
     className: "".concat(classes, " ").concat(_buttonGreen_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].formBtn, " "),
     disabled: processing,
     onClick: click,
+    onMouseDown: mouseDown,
     children: children
   });
 }
@@ -8184,7 +8333,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n\n\n.fhDiH9XWowrPapFlYRtnjA\\=\\= {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #2b2b2b54;\n    z-index: 2;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\= {\n    position: relative;\n    width: 100%;\n    max-width: 530px;\n    background: white;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -60%;\n    width: 100%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n.bz0ToHr7Px10yfV3CKPhaw\\=\\= {\n    margin: 0 0 30px 0;\n}\n\n.VnaRefbL8i2OD6rJwi8OnA\\=\\= {\n    margin: 0 0 20px 0;\n    display: flex;\n    flex-direction: column;\n    z-index: 2;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\= {\n    width: 100%;\n    max-width: 300px;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    /* margin: 0 0 9px 0; */\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::-moz-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=:-ms-input-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::placeholder,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= {\n    max-height: 255px;\n    max-width: 300px;\n    position: absolute;\n    top: 126px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 2;\n}\n\n._87ZzhRuiNTrpldYWGmP9QQ\\=\\= {\n    display: flex;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5w-meDeLMlk0VKjAlYz6jA\\=\\= {\n    margin: 0 10px;\n    display: flex;\n    justify-content: center;\n    max-width: 50px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.meqKyAs5X3D7FesV8Nq9Yg\\=\\= {\n    display: none;\n}\n\n@media(max-width:1200px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        font-size: 30px;\n        line-height: 36px;\n    }\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 35px;\n    }\n}\n@media(max-width:1000px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 60px;\n         font-size: 28px;\n        line-height: 32px;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 400px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 50px 0 0 0;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 125px;\n    }\n    \n}\n@media(max-width:756px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 40px;\n        font-size: 25px;\n        line-height: 28px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 40px 0 0 0;\n    }\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 5px;\n    }\n\n}\n@media(max-width:576px) {\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        margin-bottom: 20px;\n    }\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        text-align: center;\n        font-size: 23px;\n        line-height: 26px;\n        margin-bottom: 20px;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 150px;\n    }\n    .rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after{\n        display: none;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n\n\n.fhDiH9XWowrPapFlYRtnjA\\=\\= {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #2b2b2b54;\n    z-index: 2;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\= {\n    position: relative;\n    width: 100%;\n    max-width: 530px;\n    background: white;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -60%;\n    width: 100%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n.bz0ToHr7Px10yfV3CKPhaw\\=\\= {\n    margin: 0 0 30px 0;\n}\n\n.VnaRefbL8i2OD6rJwi8OnA\\=\\= {\n    margin: 0 0 20px 0;\n    display: flex;\n    flex-direction: column;\n    z-index: 4;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\= {\n    width: 100%;\n    max-width: 300px;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    /* margin: 0 0 9px 0; */\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::-moz-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=:-ms-input-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::placeholder,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= {\n    max-height: 255px;\n    max-width: 300px;\n    position: absolute;\n    top: 126px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 2;\n}\n\n._87ZzhRuiNTrpldYWGmP9QQ\\=\\= {\n    display: flex;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5w-meDeLMlk0VKjAlYz6jA\\=\\= {\n    margin: 0 10px;\n    display: flex;\n    justify-content: center;\n    max-width: 50px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.meqKyAs5X3D7FesV8Nq9Yg\\=\\= {\n    display: none;\n}\n\n@media(max-width:1200px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        font-size: 30px;\n        line-height: 36px;\n    }\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 35px;\n    }\n}\n@media(max-width:1000px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 60px;\n         font-size: 28px;\n        line-height: 32px;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 400px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 50px 0 0 0;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 125px;\n    }\n    \n}\n@media(max-width:756px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 40px;\n        font-size: 25px;\n        line-height: 28px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 40px 0 0 0;\n    }\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 5px;\n    }\n\n}\n@media(max-width:576px) {\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        margin-bottom: 20px;\n    }\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        text-align: center;\n        font-size: 23px;\n        line-height: 26px;\n        margin-bottom: 20px;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 150px;\n    }\n    .rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after{\n        display: none;\n    }\n}", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "gDtRMDHhOVnQof3zPFEKkw==",
@@ -8396,9 +8545,21 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n    display: flex;\n    width: 100%;\n    height: 250px;\n}\n\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n    margin-right: 106px;\n    display: flex;\n    align-items: flex-end;\n    width: 40%;\n    max-width: 210px;\n    position: relative;\n}\n\n._5jplGSruQKd0WHQinB02TA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    width: 60%;\n}\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.P9JwTwIifUENCbB1AVcJaQ\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 210px;\n    background: #2bb739;\n    border-radius: 50%;\n    color: #fff;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 90px;\n    height: 176px;\n    background: #2bb739;\n    z-index: -1;\n}\n\n.Xcfu3DfU89lh\\+H\\+MO78SPg\\=\\= {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 5px;\n    left: 0;\n    opacity: 0;\n}\n.zk1zkBSOAdoFdOiYz84uDA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.uCD6JGw2sTacZbjRR0\\+XCw\\=\\= {\n    width: 66px;\n    height: 53px;\n}\n.L3CpYPqOwEWhrabhfk6haQ\\=\\= {\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    margin-top: 13px;\n    color: #ffffff;\n}\n\n.TfnVhEGkyv2U8Vxepyfv8Q\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 40px;\n}\n.ZYWTDsP6JC6t2Dfod1rfXQ\\=\\= {\n    align-self: flex-end;\n    margin-top: 15px;\n}\n@media (max-width: 1024px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        justify-content: space-between;\n    }\n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0;\n    }\n}\n@media (max-width: 768px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        justify-content: space-between;\n    }\n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0;\n    }\n}", ""]);
 // Exports
-___CSS_LOADER_EXPORT___.locals = {};
+___CSS_LOADER_EXPORT___.locals = {
+	"form": "IV6zAmDCmF-sdeplxpRVlg==",
+	"fileBlock": "_8lZdb6Gfzo-1jDjvnZOlMg==",
+	"inputsContainer": "_5jplGSruQKd0WHQinB02TA==",
+	"formInput": "_2J1a9k0-p-MhDMYlHSTNwg==",
+	"fileContainer": "P9JwTwIifUENCbB1AVcJaQ==",
+	"fileInput": "Xcfu3DfU89lh+H+MO78SPg==",
+	"logoContainer": "zk1zkBSOAdoFdOiYz84uDA==",
+	"logoImg": "uCD6JGw2sTacZbjRR0+XCw==",
+	"fileText": "L3CpYPqOwEWhrabhfk6haQ==",
+	"fileName": "TfnVhEGkyv2U8Vxepyfv8Q==",
+	"btn": "ZYWTDsP6JC6t2Dfod1rfXQ=="
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
@@ -8421,7 +8582,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.JlQn3NM7XyXwnWVc9KwBYw\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    gap: 25px 55px;\n}\n\n@media(max-width:1000px) {\n    .JlQn3NM7XyXwnWVc9KwBYw\\=\\=  {\n        gap: 18px 40px;\n    }\n}\n\n.wtuq7etRXw3Z2uf2FMmnsA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n    -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n    -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n    0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.wtuq7etRXw3Z2uf2FMmnsA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -17%;\n    width: 70%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n.IAO0UmrIpx-FTJvFOIcgiQ\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n    position: relative;\n    overflow: hidden;\n    width: 245px;\n    height: 29px;\n    background: linear-gradient(\n        270.76deg,\n        rgba(0, 0, 0, 0) 3.23%,\n        rgba(255, 255, 255, 0.2) 97.53%\n    ),\n    #2bb739;\n    border-radius: 10px;\n    padding: 20px 30px;\n    color: #fff;\n    text-align: center;\n}\n\n.ThegNOxqrcEIjO2JZzpRkg\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.vEKJMhKixc4wabvCIFkIcQ\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n.e19XnxtoshOHw0mC02GxWg\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= label {\n    display: block;\n    position: absolute;\n    top: 6px;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= span {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=,\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=::-moz-placeholder, .NpUBK-VIMzYmFnzXI-kOJQ\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=:-ms-input-placeholder, .NpUBK-VIMzYmFnzXI-kOJQ\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=::placeholder,\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.zSEb7sZnZLB1wxr49V6krA\\=\\= {\n    margin-top: 0;\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.N8AfFWGl\\+KJtuNAR4wd4qw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n}\n\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\= {\n    display: block;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n._3j1A59CCTkHfimcfRLEkPg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.FAsBJppKs\\+wORmlayllCNA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.FAsBJppKs\\+wORmlayllCNA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bobaq5PWLAOx6kImZNGJJw\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n.PuyQgTYFCPS8ZV2eVahkkg\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n        335.22deg,\n        rgba(0, 0, 0, 0.2) 15.83%,\n        rgba(255, 255, 255, 0.162) 79.46%\n    ),\n    #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n.PuyQgTYFCPS8ZV2eVahkkg\\=\\=:hover,\n.BQoJY2kFoqKepo-Ic1oxug\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: column;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\=,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        width: 100%;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    .e19XnxtoshOHw0mC02GxWg\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\=,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        width: 100%;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\= label {\n        text-align: left;\n    }\n}\n\n@media (max-width: 860px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\= {\n        width: 100%;\n    }\n\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        top: 60%;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\= label,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .zSEb7sZnZLB1wxr49V6krA\\=\\= {\n        width: 70%;\n        margin-left: 0px;\n    }\n}\n\n@media (max-width: 576px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        display: none;\n    }\n\n    .Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        margin: 0;\n    }\n\n    .PuyQgTYFCPS8ZV2eVahkkg\\=\\= {\n        padding: 13px;\n    }\n}\n\n@media (max-width: 510px) {\n    .BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    .BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .zSEb7sZnZLB1wxr49V6krA\\=\\= {\n        width: 69%;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.JlQn3NM7XyXwnWVc9KwBYw\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    gap: 25px 55px;\n}\n\n@media(max-width:1000px) {\n    .JlQn3NM7XyXwnWVc9KwBYw\\=\\=  {\n        gap: 18px 40px;\n    }\n}\n\n.wtuq7etRXw3Z2uf2FMmnsA\\=\\= {\n    position: relative;\n    padding-bottom: 100px;\n    width: 60%;\n    z-index: 1;\n    background: transparent;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n    -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n    -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n    0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.wtuq7etRXw3Z2uf2FMmnsA\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -17%;\n    width: 70%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n    z-index: -1;\n}\n\n.IAO0UmrIpx-FTJvFOIcgiQ\\=\\= {\n    display: block;\n    margin: 0 0 27px 0;\n    text-align: left;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32.17px;\n    color: #2bb739;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= input[type=\"file\"] {\n    display: none;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n    position: relative;\n    overflow: hidden;\n    width: 245px;\n    height: 29px;\n    background: linear-gradient(\n        270.76deg,\n        rgba(0, 0, 0, 0) 3.23%,\n        rgba(255, 255, 255, 0.2) 97.53%\n    ),\n    #2bb739;\n    border-radius: 10px;\n    padding: 20px 30px;\n    color: #fff;\n    text-align: center;\n}\n\n.ThegNOxqrcEIjO2JZzpRkg\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 48px;\n}\n\n.vEKJMhKixc4wabvCIFkIcQ\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    justify-content: space-between;\n    flex-wrap: wrap;\n    margin-bottom: 40px;\n}\n\n.e19XnxtoshOHw0mC02GxWg\\=\\= {\n    align-items: center;\n    display: flex;\n    flex-direction: row;\n    padding-right: 40%;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= label {\n    display: block;\n    position: absolute;\n    top: 6px;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    cursor: pointer;\n}\n\n.BQoJY2kFoqKepo-Ic1oxug\\=\\= span {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 18px;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=,\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=::-moz-placeholder, .NpUBK-VIMzYmFnzXI-kOJQ\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=:-ms-input-placeholder, .NpUBK-VIMzYmFnzXI-kOJQ\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\=::placeholder,\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n.zSEb7sZnZLB1wxr49V6krA\\=\\= {\n    margin-top: 0;\n    margin-left: 10px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    height: 15px;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.N8AfFWGl\\+KJtuNAR4wd4qw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    position: relative;\n    width: 30%;\n    margin-bottom: 50px;\n}\n\n.NpUBK-VIMzYmFnzXI-kOJQ\\=\\= {\n    display: block;\n    text-align: center;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= {\n    max-height: 300px;\n    position: absolute;\n    top: 40px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.nsS7PSWyVoA2OJykxJwCjA\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n.nsS7PSWyVoA2OJykxJwCjA\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n._3j1A59CCTkHfimcfRLEkPg\\=\\= {\n    display: flex;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n    display: flex;\n    justify-content: flex-end;\n    max-width: 150px;\n    margin-right: 10%;\n}\n\n.FAsBJppKs\\+wORmlayllCNA\\=\\= {\n    display: flex;\n    margin: 0 0 27px 0;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.FAsBJppKs\\+wORmlayllCNA\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bobaq5PWLAOx6kImZNGJJw\\=\\= {\n    display: flex;\n    justify-content: end;\n}\n\n.PuyQgTYFCPS8ZV2eVahkkg\\=\\= {\n    color: #ffffff;\n    background: linear-gradient(\n        335.22deg,\n        rgba(0, 0, 0, 0.2) 15.83%,\n        rgba(255, 255, 255, 0.162) 79.46%\n    ),\n    #2bb739;\n    font-weight: 500;\n    font-size: 20px;\n    line-height: 23px;\n    text-align: center;\n    padding: 16px 30px;\n    border-radius: 40px;\n    align-self: flex-end;\n}\n\n.PuyQgTYFCPS8ZV2eVahkkg\\=\\=:hover,\n.BQoJY2kFoqKepo-Ic1oxug\\=\\=:hover {\n    box-shadow: 8px 8px 20px rgb(0 0 0 / 50%);\n}\n\n@media (max-width: 1200px) {\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: column;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\=,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        width: 100%;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        justify-content: flex-start;\n        margin-top: 20px;\n    }\n\n    .e19XnxtoshOHw0mC02GxWg\\=\\= {\n        margin-top: 20px;\n    }\n}\n\n@media (max-width: 1024px) {\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\=,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        width: 100%;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\= label {\n        text-align: left;\n    }\n    .N8AfFWGl\\+KJtuNAR4wd4qw\\=\\={\n        width: 50%;\n    }\n}\n\n@media (max-width: 860px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\= {\n        width: 100%;\n    }\n\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        top: 54%;\n        width: 50%;\n    }\n\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n        margin-bottom: 0;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        margin-top: 0;\n    }\n}\n\n@media (max-width: 767px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        top: 60%;\n    }\n\n    ._3j1A59CCTkHfimcfRLEkPg\\=\\= label,\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= label {\n        width: 100%;\n        text-align: center;\n    }\n\n    .zSEb7sZnZLB1wxr49V6krA\\=\\= {\n        width: 70%;\n        margin-left: 0px;\n    }\n        .N8AfFWGl\\+KJtuNAR4wd4qw\\=\\={\n        width: 70%;\n    }\n}\n\n@media (max-width: 576px) {\n    .rU5WE2PNmkXEjPmppmiHqg\\=\\=::after {\n        display: none;\n    }\n\n    .Ct9eUt6i2dK7E\\+IrjDwHpg\\=\\= {\n        margin-bottom: 30px;\n    }\n\n    .FAsBJppKs\\+wORmlayllCNA\\=\\= {\n        flex-direction: row;\n        justify-content: space-between;\n    }\n\n    .fzGYl1F-RQ0ja0HU1iaUxA\\=\\= {\n        margin: 0;\n    }\n\n    .PuyQgTYFCPS8ZV2eVahkkg\\=\\= {\n        padding: 13px;\n    }\n        .N8AfFWGl\\+KJtuNAR4wd4qw\\=\\={\n        width: 100%;\n    }\n}\n\n@media (max-width: 510px) {\n    .BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n        margin-left: 0;\n    }\n}\n\n@media (max-width: 445px) {\n    .BQoJY2kFoqKepo-Ic1oxug\\=\\= {\n        width: 300px;\n    }\n}\n\n@media (max-width: 340px) {\n    .zSEb7sZnZLB1wxr49V6krA\\=\\= {\n        width: 69%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"cardsContainer": "JlQn3NM7XyXwnWVc9KwBYw==",
@@ -8642,7 +8803,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._52UiEqeR2v7QQCX1Njf6Ew\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n}\n\n.GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n    position: absolute;\n    right: 120px;\n    padding: 10px 25px;\n    background: #ffffff;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    font-weight: 500;\n    font-size: 18px;\n    line-height: 21px;\n    color: #000000;\n    cursor: pointer;\n}\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= + .VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    margin: 7px 0 0 0;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n    cursor: pointer;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\=:hover {\n    background-color: #fff;\n}\n.\\+Tzrwdj\\+HYBj6qb5LoI1Cg\\=\\= {\n    grid-column: 4/5;\n}\n@media (max-width: 1200px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 120px;\n        padding: 10px 30px;\n    }\n}\n@media (max-width: 1024px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 100px;\n        padding: 8px 20px;\n        line-height: 18px;\n        font-size: 16px;\n        background-size: 100%;\n    }\n\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 80px;\n    }\n}\n@media (max-width: 768px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 60px;\n    }\n}\n@media (max-width: 576px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 20px;\n    }\n}\n@media (max-width: 400px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 10px;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._52UiEqeR2v7QQCX1Njf6Ew\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: center;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n}\n\n.GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n    position: absolute;\n    right: 120px;\n    padding: 10px 25px;\n    background: #ffffff;\n    box-shadow: inset 3px 3px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 4px;\n}\n\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    font-weight: 500;\n    font-size: 18px;\n    line-height: 21px;\n    color: #000000;\n    cursor: pointer;\n}\n.VOxrX9rqoP\\+vtqQR3NAalA\\=\\= + .VOxrX9rqoP\\+vtqQR3NAalA\\=\\= {\n    margin: 7px 0 0 0;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n    padding: 14px 36px;\n    background-image: url(\"/images/borderButton.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2bb739;\n    width: 140px;\n    text-align: center;\n    cursor: pointer;\n}\n.HMf9nug\\+0-IRf7U8oaMtGg\\=\\=:hover {\n    background-color: transparent;\n}\n.\\+Tzrwdj\\+HYBj6qb5LoI1Cg\\=\\= {\n    grid-column: 4/5;\n}\n@media (max-width: 1200px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 120px;\n        padding: 10px 30px;\n    }\n}\n@media (max-width: 1024px) {\n    ._52UiEqeR2v7QQCX1Njf6Ew\\=\\=,\n    .HMf9nug\\+0-IRf7U8oaMtGg\\=\\= {\n        width: 100px;\n        padding: 8px 20px;\n        line-height: 18px;\n        font-size: 16px;\n        background-size: 100%;\n    }\n\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 80px;\n    }\n}\n@media (max-width: 768px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 60px;\n    }\n}\n@media (max-width: 576px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 20px;\n    }\n}\n@media (max-width: 400px) {\n    .GGb2M0eypzC0vzqtrpEMzQ\\=\\= {\n        right: 10px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btnMenu": "_52UiEqeR2v7QQCX1Njf6Ew==",

@@ -51,7 +51,6 @@ const Main = (props) => {
         resizeHandler();
     }, []);
 
-    console.log(props);
     return (
         <>
             <SectionContainer
@@ -70,6 +69,7 @@ const Main = (props) => {
                     gridStyle={style.gridStyle}
                 />
             </SectionContainer>
+
             <SectionContainer section={`${style.sectionProject}`}>
                 <Projects
                     quantityCardsProjects={quantityCardsProjects}
@@ -83,6 +83,7 @@ const Main = (props) => {
                     reviewsList={myJson.reviews}
                 />
             </SectionContainer>
+
             <SectionContainer section={`${style.sectionTalks}`}>
                 <Talks
                     quantityCardsPeople={quantityCardsPeople}
@@ -92,12 +93,11 @@ const Main = (props) => {
 
             <SectionContainer>
                 <div
-                    ref={makeOrder}
                     user={props.auth.user}
                     className={`${style.blockContainer}`}
                 >
                     <AboutUs />
-                    <MakeOrder />
+                    <MakeOrder refMakeOrder={makeOrder} />
                 </div>
             </SectionContainer>
 

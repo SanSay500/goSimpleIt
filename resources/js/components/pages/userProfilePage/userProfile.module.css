@@ -1,0 +1,123 @@
+.form {
+    display: flex;
+    width: 100%;
+    height: 250px;
+}
+
+.fileBlock {
+    margin-right: 106px;
+    display: flex;
+    align-items: flex-end;
+    width: 40%;
+    max-width: 210px;
+    position: relative;
+}
+
+.inputsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.formInput {
+    width: 100%;
+    background-color: #fff;
+    border: 1px dashed #2bb739;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    resize: none;
+    margin: 0 0 9px 0;
+}
+
+.formInput::placeholder {
+    font-family: "Ubuntu";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+}
+
+.fileContainer {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    background: #2bb739;
+    border-radius: 50%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fileBlock::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 176px;
+    background: #2bb739;
+    z-index: -1;
+}
+
+.fileInput {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 5px;
+    left: 0;
+    opacity: 0;
+}
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.logoImg {
+    width: 66px;
+    height: 53px;
+}
+.fileText {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    margin-top: 13px;
+    color: #ffffff;
+}
+
+.fileName {
+    color: #2b2b2b;
+    font-weight: 150;
+    font-size: 16px;
+    line-height: 40px;
+}
+.btn {
+    align-self: flex-end;
+    margin-top: 15px;
+}
+@media (max-width: 1024px) {
+    .form {
+        justify-content: space-between;
+    }
+    .fileBlock {
+        margin: 0;
+    }
+}
+@media (max-width: 768px) {
+    .form {
+        justify-content: space-between;
+    }
+    .fileBlock {
+        margin: 0;
+    }
+}

@@ -45,7 +45,7 @@
     cursor: pointer;
 }
 .auth:hover {
-    background-color: #fff;
+    background-color: transparent;
 }
 .menuWrapper {
     grid-column: 4/5;

@@ -60,7 +60,7 @@ const MakeOrder = (props) => {
     }, [tasksList]);
 
     return (
-        <div className={style.formWrapper}>
+        <div ref={props.refMakeOrder} className={style.formWrapper}>
             <form className={style.form} onSubmit={handleSubmit}>
                 <h2 className={`title ${style.title}`}>Make Order</h2>
 

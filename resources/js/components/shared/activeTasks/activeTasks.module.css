@@ -172,10 +172,13 @@ select:focus {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 30%;
+    margin-bottom: 50px;
 }
 
 .searchInput {
     display: block;
+    text-align: center;
 }
 
 .inputList {
@@ -309,6 +312,9 @@ select:focus {
     .formPrice label {
         text-align: left;
     }
+    .searchJob{
+        width: 50%;
+    }
 }
 
 @media (max-width: 860px) {
@@ -347,6 +353,9 @@ select:focus {
         width: 70%;
         margin-left: 0px;
     }
+        .searchJob{
+        width: 70%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -369,6 +378,9 @@ select:focus {
 
     .btnSubmit {
         padding: 13px;
+    }
+        .searchJob{
+        width: 100%;
     }
 }
 
