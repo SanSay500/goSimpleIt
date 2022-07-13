@@ -8,9 +8,8 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
     const [showCards, setShowCards] = useState(quantityCardsTasks);
     const inputTask = useRef();
-    const { tasks } = usePage().props;
     const [ordersFiltered, setOrdersFiltered] = useState(ordersActive);
-    let [tasksList, setTasksList] = useState(tasks);
+    let [tasksList, setTasksList] = useState(tasksWithOrders );
     let [open, setOpen] = useState(false);
 
     const loadMoreTasks = (e) => {
@@ -21,7 +20,7 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
     function searchList() {
         setTasksList(() => {
             tasksList = [];
-            tasksList = tasks.filter((el) =>
+            tasksList = tasksWithOrders.filter((el) =>
                 el.name
                     .toLowerCase()
                     .includes(inputTask.current.value.toLowerCase())
@@ -33,6 +32,8 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
     function filterJobs(task_id) {
         if (task_id === 0) {
             setOrdersFiltered(ordersActive);
+            setTasksList(tasksWithOrders);
+            inputTask.current.value = 'Type the task';
         } else {
             setOrdersFiltered(
                 ordersActive.filter((el) => el.task_id === task_id)
@@ -78,7 +79,7 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
                         >
                             Show all
                         </div>
-                        {tasksWithOrders.map((task) => (
+                        {tasksList.map((task) => (
                             <div
                                 onMouseDown={() => {
                                     inputTask.current.value = task.name;
