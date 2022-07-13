@@ -1,16 +1,17 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import style from "./freelancers.module.css";
 import PeopleCard from "@/components/shared/peopleCard/peopleCard";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 const Freelancers = ({ reviewsList, quantityCardsPeople }) => {
     const [showCards, setShowCards] = useState(quantityCardsPeople);
     const freelancersList = reviewsList.slice(0, quantityCardsPeople);
-
     const loadMoreTasks = (e) => {
         e.preventDefault();
         setShowCards(showCards + quantityCardsPeople);
     };
+    useEffect(() => {
+        setShowCards(quantityCardsPeople);
+    }, [quantityCardsPeople]);
 
     return (
         <>
