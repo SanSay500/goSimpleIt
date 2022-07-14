@@ -23,7 +23,6 @@ export default function Register() {
     }, []);
 
     const onHandleChange = (event) => {
-        console.log(event.target.value);
         setData(
             event.target.name,
             event.target.type === "checkbox"

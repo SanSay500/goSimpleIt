@@ -44,7 +44,6 @@ export default function UserProfile() {
                 _method: "put",
             }
         );
-
     }
 
 

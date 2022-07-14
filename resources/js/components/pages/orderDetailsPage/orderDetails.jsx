@@ -41,25 +41,31 @@ const OrderDetails = (props) => {
                     Back
                 </Link>
 
-                {props.auth.user && props.auth.user.role === "Freelancer" && (
-                    <form
-                        name="createForm"
-                        onSubmit={handleSubmit}
-                        className={`${style.formProposal} `}
-                    >
-                        <textarea
-                            required
-                            name="description"
-                            rows="4"
-                            className={`${style.loginInput} `}
-                            placeholder="Describe your proposal for this job"
-                            onChange={(e) =>
-                                setData("description", e.target.value)
-                            }
-                        />
-                        <ButtonGreen>Send proposal</ButtonGreen>
-                    </form>
-                )}
+                {props.auth.user &&
+                    props.auth.user.role === "Freelancer" &&
+                    (checkHaveProposal ? (
+                        <div className={`${style.respondedOrder}`}>
+                            You responded to the order!
+                        </div>
+                    ) : (
+                        <form
+                            name="createForm"
+                            onSubmit={handleSubmit}
+                            className={`${style.formProposal} `}
+                        >
+                            <textarea
+                                required
+                                name="description"
+                                rows="4"
+                                className={`${style.loginInput} `}
+                                placeholder="Describe your proposal for this job"
+                                onChange={(e) =>
+                                    setData("description", e.target.value)
+                                }
+                            />
+                            <ButtonGreen>Send proposal</ButtonGreen>
+                        </form>
+                    ))}
             </div>
 
             <div className={`${style.cardContainer}`}>

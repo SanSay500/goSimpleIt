@@ -5181,7 +5181,6 @@ function Register() {
   }, []);
 
   var onHandleChange = function onHandleChange(event) {
-    console.log(event.target.value);
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value, event.target.type === "radio" ? event.target.checked : event.target.value);
   };
 
@@ -6608,7 +6607,10 @@ var OrderDetails = function OrderDetails(props) {
           alt: "",
           className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].buttonBackImg)
         }), "Back"]
-      }), props.auth.user && props.auth.user.role === "Freelancer" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+      }), props.auth.user && props.auth.user.role === "Freelancer" && (checkHaveProposal ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+        className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].respondedOrder),
+        children: "You responded to the order!"
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
         name: "createForm",
         onSubmit: handleSubmit,
         className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].formProposal, " "),
@@ -6624,7 +6626,7 @@ var OrderDetails = function OrderDetails(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_3__["default"], {
           children: "Send proposal"
         })]
-      })]
+      }))]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -8554,13 +8556,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n    flex-direction: row;\n}\n\n.P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n    margin: 0 55px 0 0;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._9unCwxpOaKxgtyGU736tSg\\=\\= {\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #ffffff;\n    padding: 6px 16px;\n}\n\n.\\+LN2GXMxSjFayZqRuslyTg\\=\\= {\n    width: 12px;\n    height: 12px;\n    margin-right: 8px;\n}\n\n._2qhrswuRWde3COob-C17gg\\=\\= {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    margin-bottom: 25px;\n    margin-top: 40px;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.RAP2eYzu40shh7V4OfHMJg\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.JnlnL0Yc1gJ7Dxoq\\+OVbTA\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    .lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n        flex-direction: column;\n    }\n    .P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n    flex-direction: row;\n}\n\n.P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n    margin: 0 55px 0 0;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._9unCwxpOaKxgtyGU736tSg\\=\\= {\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    color: #ffffff;\n    padding: 6px 16px;\n}\n\n.\\+LN2GXMxSjFayZqRuslyTg\\=\\= {\n    width: 12px;\n    height: 12px;\n    margin-right: 8px;\n}\n\n.Ow6w3hK2H0j8l5OMBabceA\\=\\= {\n    margin-top: 15px;\n    width: 100%;\n    font-weight: 400;\n    font-size: 21px;\n    line-height: 24px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n\n._2qhrswuRWde3COob-C17gg\\=\\= {\n    width: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    margin-bottom: 25px;\n    margin-top: 40px;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.Nj16wr0xLebwLK\\+\\+7q7\\+NQ\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.RAP2eYzu40shh7V4OfHMJg\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.JnlnL0Yc1gJ7Dxoq\\+OVbTA\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    .lIsiGOpzUhhbaAvnPF39Sg\\=\\= {\n        flex-direction: column;\n    }\n    .P3s0vHHDwOeeiRiwlenf1g\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "lIsiGOpzUhhbaAvnPF39Sg==",
 	"proposalContainer": "P3s0vHHDwOeeiRiwlenf1g==",
 	"buttonBack": "_9unCwxpOaKxgtyGU736tSg==",
 	"buttonBackImg": "+LN2GXMxSjFayZqRuslyTg==",
+	"respondedOrder": "Ow6w3hK2H0j8l5OMBabceA==",
 	"formProposal": "_2qhrswuRWde3COob-C17gg==",
 	"loginInput": "Nj16wr0xLebwLK++7q7+NQ==",
 	"cardContainer": "RAP2eYzu40shh7V4OfHMJg==",
