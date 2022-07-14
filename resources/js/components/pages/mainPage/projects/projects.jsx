@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import style from "./projects.module.css";
 import FlipCard from "./flipCard/flipCard";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
+import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
 
 const Projects = ({ portfolioList, quantityCardsProjects }) => {
     // const projects = portfolioList.slice(stepPrev, stepNext);
     const [showCards, setShowCards] = useState(quantityCardsProjects);
 
     const projects = portfolioList.slice(0, showCards);
+
+        const loadMoreTasks = (e) => {
+            e.preventDefault();
+            setShowCards(showCards + quantityCardsProjects);
+        };
 
     useEffect(() => {
         setShowCards(quantityCardsProjects);
@@ -21,6 +26,14 @@ const Projects = ({ portfolioList, quantityCardsProjects }) => {
                     <FlipCard key={index} card={element} />
                 ))}
             </div>
+
+            {portfolioList.length > showCards && (
+                <ButtonViewMore
+                    click={(e) => {
+                        loadMoreTasks(e);
+                    }}
+                />
+            )}
         </>
     );
 };
