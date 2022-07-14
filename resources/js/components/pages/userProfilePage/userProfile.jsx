@@ -3,6 +3,7 @@ import { usePage, useForm } from "@inertiajs/inertia-react";
 import Container from "@/components/shared/container/container";
 import style from "./userProfile.module.css";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
+import FlashMessages from "@/components/shared/flashMessages/flashMessages";
 
 export default function UserProfile() {
 
@@ -35,7 +36,7 @@ export default function UserProfile() {
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(data);
+        setReadOnly('true');
         post(
             route("user_update", props.auth.user.id),{
                 preserveScroll: true,
@@ -43,11 +44,13 @@ export default function UserProfile() {
                 _method: "put",
             }
         );
+
     }
 
 
     return (
         <Container>
+            <FlashMessages/>
             <form className={style.form} onSubmit={handleSubmit}>
                 <div className={style.fileBlock}>
                     <div className={style.fileContainer}>

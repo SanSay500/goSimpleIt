@@ -6655,7 +6655,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/container/container */ "./resources/js/components/shared/container/container.jsx");
 /* harmony import */ var _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./userProfile.module.css */ "./resources/js/components/pages/userProfilePage/userProfile.module.css");
 /* harmony import */ var _components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/buttonGreen/buttonGreen */ "./resources/js/components/shared/buttonGreen/buttonGreen.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/shared/flashMessages/flashMessages */ "./resources/js/components/shared/flashMessages/flashMessages.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6667,6 +6668,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -6718,7 +6720,7 @@ function UserProfile() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(data);
+    setReadOnly('true');
     post(route("user_update", props.auth.user.id), {
       preserveScroll: true,
       forceFormData: true,
@@ -6726,15 +6728,15 @@ function UserProfile() {
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
       className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form,
       onSubmit: handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
         className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileBlock,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileContainer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             accept: "image/*",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInput,
             id: "uploaded-file",
@@ -6743,29 +6745,29 @@ function UserProfile() {
             onChange: function onChange(e) {
               uploadFile(e);
             }
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoContainer,
             ref: logo,
-            children: toggleLogo ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            children: toggleLogo ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
               src: toggleLogo,
               alt: ""
-            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
                 src: "/images/downloadLogo.svg",
                 alt: "logo",
                 className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoImg
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                 className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileText,
                 children: "Download logo"
               })]
             })
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
         className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputsContainer,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
-          children: ["Name", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          children: ["Name", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             required: true,
             ref: name,
             type: "text",
@@ -6778,9 +6780,9 @@ function UserProfile() {
               return setData("name", e.target.value);
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
-          children: ["Email", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+          children: ["Email", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             required: true,
             type: "email",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
@@ -6792,9 +6794,9 @@ function UserProfile() {
               return setData("email", e.target.value);
             }
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
-          children: ["Your skills", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+          children: ["Your skills", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("textarea", {
             type: "text",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
             label: "description",
@@ -6807,7 +6809,7 @@ function UserProfile() {
             },
             placeholder: "Tell about your skills"
           })]
-        }), readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
           classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
           children: "Edit",
           type: "button",
@@ -6815,13 +6817,13 @@ function UserProfile() {
             e.preventDefault();
             setReadOnly(!readOnly);
           }
-        }), !readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), !readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
           classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
           children: "Save",
           type: "submit"
         })]
       })]
-    })
+    })]
   });
 }
 

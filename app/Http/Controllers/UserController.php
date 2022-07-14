@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -14,15 +16,18 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $avaFile = $request->file('avatar');
 
+        $avaName = $avaFile->hashName();
+
+        $avaPath = $avaFile->storeAs('avatars', $avaName);
         $updateInfo = [
             'name' => $request->name,
             'description' =>$request->description,
             'email' => $request->email,
-            'avatar' => $request->avatar,
+            'avatar' => $avaPath,
         ];
-        dd($updateInfo);
         $user->update($updateInfo);
-        return Redirect::route('user_profile');
+        return back()->with('success', 'Your profile information changed.');
     }
 }
