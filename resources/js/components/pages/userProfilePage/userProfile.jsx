@@ -70,42 +70,55 @@ export default function UserProfile() {
                 </div>
 
                 <div className={style.inputsContainer}>
-                    <input
-                        ref={name}
-                        type="text"
-                        className={style.formInput}
-                        label="Name"
-                        name="name"
-                        value={data.name}
-                        readOnly={readOnly}
-                        onChange={(e) => setData("name", e.target.value)}
-                        placeholder="Name"
-                    />
-                    <input
-                        type="email"
-                        className={style.formInput}
-                        label="email"
-                        name="email"
-                        value={data.email}
-                        readOnly={readOnly}
-                        onChange={(e) => setData("email", e.target.value)}
-                        placeholder="Email"
-                    />
+                    <label className={style.formLabel}>
+                        Name
+                        <input
+                            ref={name}
+                            type="text"
+                            className={style.formInput}
+                            label="Name"
+                            name="name"
+                            value={data.name}
+                            readOnly={readOnly}
+                            onChange={(e) => setData("name", e.target.value)}
+                            placeholder="Name"
+                        />
+                    </label>
 
-                    <textarea
-                        type="text"
-                        className={style.formInput}
-                        label="description"
-                        name="description"
-                        readOnly={readOnly}
-                        // errors={errors.description}
-                        value={data.description}
-                        onChange={(e) => setData("description", e.target.value)}
-                        placeholder="Tell about your skills"
-                    />
+                    <label className={style.formLabel}>
+                        Email
+                        <input
+                            type="email"
+                            className={style.formInput}
+                            label="email"
+                            name="email"
+                            value={data.email}
+                            readOnly={readOnly}
+                            onChange={(e) => setData("email", e.target.value)}
+                            placeholder="Email"
+                        />
+                    </label>
+
+                    <label className={style.formLabel}>
+                        Your skills
+                        <textarea
+                            type="text"
+                            className={style.formInput}
+                            label="description"
+                            name="description"
+                            readOnly={readOnly}
+                            // errors={errors.description}
+                            value={data.description}
+                            onChange={(e) =>
+                                setData("description", e.target.value)
+                            }
+                            placeholder="Tell about your skills"
+                        />
+                    </label>
+
                     {readOnly ? (
                         <ButtonGreen
-                        classes={style.btn}
+                            classes={style.btn}
                             children={"Edit"}
                             type={"button"}
                             mouseDown={(e) => {

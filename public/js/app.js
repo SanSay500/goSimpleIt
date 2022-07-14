@@ -6727,41 +6727,50 @@ function UserProfile() {
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputsContainer,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-          ref: name,
-          type: "text",
-          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
-          label: "Name",
-          name: "name",
-          value: data.name,
-          readOnly: readOnly,
-          onChange: function onChange(e) {
-            return setData("name", e.target.value);
-          },
-          placeholder: "Name"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
-          type: "email",
-          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
-          label: "email",
-          name: "email",
-          value: data.email,
-          readOnly: readOnly,
-          onChange: function onChange(e) {
-            return setData("email", e.target.value);
-          },
-          placeholder: "Email"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
-          type: "text",
-          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
-          label: "description",
-          name: "description",
-          readOnly: readOnly // errors={errors.description}
-          ,
-          value: data.description,
-          onChange: function onChange(e) {
-            return setData("description", e.target.value);
-          },
-          placeholder: "Tell about your skills"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+          children: ["Name", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            ref: name,
+            type: "text",
+            className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+            label: "Name",
+            name: "name",
+            value: data.name,
+            readOnly: readOnly,
+            onChange: function onChange(e) {
+              return setData("name", e.target.value);
+            },
+            placeholder: "Name"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+          children: ["Email", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            type: "email",
+            className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+            label: "email",
+            name: "email",
+            value: data.email,
+            readOnly: readOnly,
+            onChange: function onChange(e) {
+              return setData("email", e.target.value);
+            },
+            placeholder: "Email"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
+          children: ["Your skills", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("textarea", {
+            type: "text",
+            className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
+            label: "description",
+            name: "description",
+            readOnly: readOnly // errors={errors.description}
+            ,
+            value: data.description,
+            onChange: function onChange(e) {
+              return setData("description", e.target.value);
+            },
+            placeholder: "Tell about your skills"
+          })]
         }), readOnly ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
           classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
           children: "Edit",
@@ -8545,12 +8554,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n    padding: 10px 0 0;\n    display: flex;\n    width: 100%;\n}\n\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n    margin-right: 106px;\n    display: flex;\n    align-items: flex-end;\n    width: 40%;\n    height: 250px;\n    max-width: 210px;\n    position: relative;\n}\n\n._5jplGSruQKd0WHQinB02TA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    width: 60%;\n}\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\= {\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    margin: 0 0 9px 0;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\ninput:-moz-read-only, textarea:-moz-read-only{\n    border-color: transparent ;\n}\ninput:read-only,\ntextarea:read-only{\n    border-color: transparent ;\n}\n\n.P9JwTwIifUENCbB1AVcJaQ\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 210px;\n    background: #2bb739;\n    border-radius: 50%;\n    color: #fff;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 90px;\n    height: 176px;\n    background: #2bb739;\n    z-index: -1;\n}\n\n.Xcfu3DfU89lh\\+H\\+MO78SPg\\=\\= {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 5px;\n    left: 0;\n    opacity: 0;\n}\n.zk1zkBSOAdoFdOiYz84uDA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.uCD6JGw2sTacZbjRR0\\+XCw\\=\\= {\n    width: 66px;\n    height: 53px;\n}\n.L3CpYPqOwEWhrabhfk6haQ\\=\\= {\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    margin-top: 13px;\n    color: #ffffff;\n}\n\n.TfnVhEGkyv2U8Vxepyfv8Q\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 40px;\n}\n.ZYWTDsP6JC6t2Dfod1rfXQ\\=\\= {\n    align-self: flex-end;\n    margin-top: 15px;\n}\n@media (max-width: 1024px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        justify-content: space-between;\n    }\n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0;\n    }\n}\n@media (max-width: 768px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        flex-direction: column;\n        align-items: center;\n    }\n    \n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0 0 30px 0;\n        width: 100%;\n    }\n\n    ._5jplGSruQKd0WHQinB02TA\\=\\= {\n        width: 90%;\n    }\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n    padding: 10px 0 30px;\n    display: flex;\n    width: 100%;\n}\n\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n    margin-right: 106px;\n    display: flex;\n    align-items: flex-end;\n    width: 40%;\n    height: 250px;\n    max-width: 210px;\n    position: relative;\n}\n\n._5jplGSruQKd0WHQinB02TA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    width: 60%;\n}\n\n.doPhcAaZwiwzmf7JL9VCgQ\\=\\= + .doPhcAaZwiwzmf7JL9VCgQ\\=\\= {\n    margin: 15px 0 0 0;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\= {\n    margin: 0;\n    padding: 4px 8px;\n    width: 100%;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 20px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._2J1a9k0-p-MhDMYlHSTNwg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\ninput:-moz-read-only, textarea:-moz-read-only{\n    padding-left: 0;\n    border-color: transparent ;\n    box-shadow: none;\n}\ninput:read-only,\ntextarea:read-only{\n    padding-left: 0;\n    border-color: transparent ;\n    box-shadow: none;\n}\n\n.P9JwTwIifUENCbB1AVcJaQ\\=\\= {\n    position: relative;\n    width: 100%;\n    height: 210px;\n    background: #2bb739;\n    border-radius: 50%;\n    color: #fff;\n    text-align: center;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n}\n._8lZdb6Gfzo-1jDjvnZOlMg\\=\\=::after {\n    content: \"\";\n    position: absolute;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    width: 90px;\n    height: 176px;\n    background: #2bb739;\n    z-index: -1;\n}\n\n.Xcfu3DfU89lh\\+H\\+MO78SPg\\=\\= {\n    position: absolute;\n    width: 100%;\n    height: 100%;\n    top: 5px;\n    left: 0;\n    opacity: 0;\n}\n.zk1zkBSOAdoFdOiYz84uDA\\=\\= {\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n    width: 100%;\n    height: 100%;\n    border-radius: 50%;\n    overflow: hidden;\n}\n.uCD6JGw2sTacZbjRR0\\+XCw\\=\\= {\n    width: 66px;\n    height: 53px;\n}\n.L3CpYPqOwEWhrabhfk6haQ\\=\\= {\n    font-weight: 400;\n    font-size: 13px;\n    line-height: 15px;\n    margin-top: 13px;\n    color: #ffffff;\n}\n\n.TfnVhEGkyv2U8Vxepyfv8Q\\=\\= {\n    color: #2b2b2b;\n    font-weight: 150;\n    font-size: 16px;\n    line-height: 40px;\n}\n.ZYWTDsP6JC6t2Dfod1rfXQ\\=\\= {\n    align-self: flex-end;\n    margin-top: 15px;\n}\n@media (max-width: 1024px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        justify-content: space-between;\n    }\n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0;\n    }\n}\n@media (max-width: 768px) {\n    .IV6zAmDCmF-sdeplxpRVlg\\=\\= {\n        flex-direction: column;\n        align-items: center;\n    }\n    \n    ._8lZdb6Gfzo-1jDjvnZOlMg\\=\\= {\n        margin: 0 0 30px 0;\n        width: 100%;\n    }\n\n    ._5jplGSruQKd0WHQinB02TA\\=\\= {\n        width: 90%;\n    }\n}\n\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"form": "IV6zAmDCmF-sdeplxpRVlg==",
 	"fileBlock": "_8lZdb6Gfzo-1jDjvnZOlMg==",
 	"inputsContainer": "_5jplGSruQKd0WHQinB02TA==",
+	"formLabel": "doPhcAaZwiwzmf7JL9VCgQ==",
 	"formInput": "_2J1a9k0-p-MhDMYlHSTNwg==",
 	"fileContainer": "P9JwTwIifUENCbB1AVcJaQ==",
 	"fileInput": "Xcfu3DfU89lh+H+MO78SPg==",
