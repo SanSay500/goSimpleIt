@@ -6689,7 +6689,7 @@ function UserProfile() {
     name: props.auth.user.name,
     email: props.auth.user.email,
     description: props.auth.user.description,
-    avatar: ""
+    avatar: props.auth.user.avatar
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -6697,7 +6697,9 @@ function UserProfile() {
       post = _useForm.post,
       processing = _useForm.processing;
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+  console.log(props.auth.user);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("../storage/" + data.avatar),
       _useState2 = _slicedToArray(_useState, 2),
       toggleLogo = _useState2[0],
       setToggleLogo = _useState2[1];
@@ -6722,7 +6724,7 @@ function UserProfile() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setReadOnly('true');
+    setReadOnly(true);
     post(route("user_update", props.auth.user.id), {
       preserveScroll: true,
       forceFormData: true,

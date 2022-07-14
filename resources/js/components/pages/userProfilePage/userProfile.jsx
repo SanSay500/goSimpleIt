@@ -15,9 +15,10 @@ export default function UserProfile() {
             name: props.auth.user.name,
             email: props.auth.user.email,
             description: props.auth.user.description,
-            avatar:"",
+            avatar: props.auth.user.avatar,
         });
-    const [toggleLogo, setToggleLogo] = useState("");
+        console.log(props.auth.user);
+    const [toggleLogo, setToggleLogo] = useState("../storage/" + data.avatar);
     const [readOnly, setReadOnly] = useState(true);
 
     const uploadFile = (e)=>{
@@ -36,7 +37,7 @@ export default function UserProfile() {
 
     function handleSubmit(e){
         e.preventDefault();
-        setReadOnly('true');
+        setReadOnly(true);
         post(
             route("user_update", props.auth.user.id),{
                 preserveScroll: true,
