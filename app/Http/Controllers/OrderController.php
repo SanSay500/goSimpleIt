@@ -28,7 +28,7 @@ class OrderController extends Controller
     public function index()
     {
         return Inertia::render('Order/Index', ['canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register')]);
+            'canRegister' => Route::has('register')]);
     }
 
     /**
@@ -39,21 +39,21 @@ class OrderController extends Controller
     public function main()
     {
         $tasks = Task::all();
-        $orders = Order::where('status','Pending')->get()->toArray();
-        $tasksIDsInOrders=[];
+        $orders = Order::where('status', 'Pending')->get()->toArray();
+        $tasksIDsInOrders = [];
         $filesSize = [];
 
         foreach ($orders as $order => $params) {
             $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));
-            if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
+            if (file_exists($Orderfile) && filetype($Orderfile) != 'dir') {
                 $filesSize['filesize'] = round(Storage::size($params['file']) / 1024, 2) . ' Kb';
-                $params +=$filesSize;
+                $params += $filesSize;
                 $orders[$order] += $params;
             }
         }
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-        return Inertia::render('pages/mainPage/main', ['tasks'=>$tasks, 'ordersActive'=>$orders, 'tasksWithOrders'=>$tasksWithOrders]);
+        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'ordersActive' => $orders, 'tasksWithOrders' => $tasksWithOrders]);
     }
 
     public function proposal_confirm_form($order_id, $proposal_id)
@@ -61,59 +61,66 @@ class OrderController extends Controller
         $order = Order::where('id', $order_id)->first();
         $proposal = Proposal::where('id', $proposal_id)->first();
         $user = User::where('id', $proposal->user_id)->first();
-        return Inertia::render('pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm', ['user'=>$user, 'order'=>$order, 'proposal'=>$proposal] );
+        return Inertia::render('pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm', ['user' => $user, 'order' => $order, 'proposal' => $proposal]);
     }
 
     public function proposal_confirm($order_id, $proposal_id)
     {
-        Order::where('id',$order_id)->update(['status'=>'In Work']);
-        Proposal::where('id',$proposal_id)->update(['status'=>'Confirmed']);
+        Order::where('id', $order_id)->update(['status' => 'In Work']);
+        Proposal::where('id', $proposal_id)->update(['status' => 'Confirmed']);
         return Redirect::route('employer_dashboard_index')->with('success', 'You confirmed performer. You will be contacted soon for details');
     }
 
     public function finish_order($order_id, $proposal_id)
     {
-        Order::where('id',$order_id)->update(['status'=>'Done']);
-        Proposal::where('id',$proposal_id)->update(['status'=>'Done']);
+        Order::where('id', $order_id)->update(['status' => 'Done']);
+        Proposal::where('id', $proposal_id)->update(['status' => 'Done']);
         return Redirect::route('employer_dashboard_index')->with('success', 'Your order has been done! You can leave review about this.');
     }
 
     public function new_proposal(Request $request)
     {
         $user_id = Auth::user()->id;
-        if (Proposal::where('user_id', $user_id)->where('order_id', $request->order_id)->exists())
-        {
+        if (Proposal::where('user_id', $user_id)->where('order_id', $request->order_id)->exists()) {
             //return Redirect::route("order.details", ['id' => $request->order_id])->withErrors(array('message' => 'Sorry, but you already have made a proposal for task number '.$request->order_id), 'errors');
-            return Redirect::route('freelancer_dashboard_index')->with('error', 'Sorry, but you already have made a proposal for the task number '.$request->order_id);
+            return Redirect::route('freelancer_dashboard_index')->with('error', 'Sorry, but you already have made a proposal for the task number ' . $request->order_id);
         } else {
-        Proposal::create([
-            'user_id'=> $user_id,
-            'order_id' => $request->order_id,
-            'description' => $request->description,
-            'status' => 'Sent',
-        ]);
-        return Redirect::route('freelancer_dashboard_index')->with('success', 'You have sent proposal for the task number '.$request->order_id);
+            Proposal::create([
+                'user_id' => $user_id,
+                'order_id' => $request->order_id,
+                'description' => $request->description,
+                'status' => 'Sent',
+            ]);
+            return Redirect::route('freelancer_dashboard_index')->with('success', 'You have sent proposal for the task number ' . $request->order_id);
         }
     }
 
     public function details($order_id)
     {
-        $order=Order::where('id', $order_id)->first()->toArray();
+        $order = Order::where('id', $order_id)->first()->toArray();
+        $proposals = Proposal::where('user_id', Auth::user()->id)->get()->toArray();
+        $checkHaveProposal = false;
 
-            $Orderfile = (Storage::path($order['file']));
-
-            if (file_exists($Orderfile) && filetype($Orderfile)!='dir') {
-                $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
-                $order +=  $filesSize;
+        foreach ($proposals as $proposal) {
+            if ( $proposal['order_id'] === $order['id']) {
+                $checkHaveProposal = true;
             }
-        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order'=>$order]);
+        }
+
+        $Orderfile = (Storage::path($order['file']));
+
+        if (file_exists($Orderfile) && filetype($Orderfile) != 'dir') {
+            $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
+            $order += $filesSize;
+        }
+        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal'=> $checkHaveProposal]);
     }
 
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOrderRequest  $request
+     * @param \App\Http\Requests\StoreOrderRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreOrderRequest $request)
@@ -126,13 +133,13 @@ class OrderController extends Controller
             'time' => 'required|numeric',
         ]);
         if (isset($request->file)) {
-            $fileName  = time() .'-'. $request->file->getClientOriginalName();
+            $fileName = time() . '-' . $request->file->getClientOriginalName();
             $request->validate([
                 'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:10048'
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
-        $task_type=Task::where('id', $request->task_id)->get()->first();
+        $task_type = Task::where('id', $request->task_id)->get()->first();
         Order::create([
             'title' => $request->title,
             'description' => $request->description,
@@ -146,9 +153,9 @@ class OrderController extends Controller
         $order = Order::get()->last();
 
         if (isset($user)) {
-           // Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+            // Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
         } else {
-           // Mail::to(Auth::user())->send(new NewOrder($order));
+            // Mail::to(Auth::user())->send(new NewOrder($order));
         }
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }
@@ -156,7 +163,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Inertia\Response
      */
     public function show(Order $order)
@@ -167,7 +174,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Inertia\Response
      */
     public function edit(Order $order)
@@ -184,8 +191,8 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOrderRequest  $request
-     * @param  \App\Models\Order  $order
+     * @param \App\Http\Requests\UpdateOrderRequest $request
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(UpdateOrderRequest $request, Order $order)
@@ -197,7 +204,7 @@ class OrderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Order  $order
+     * @param \App\Models\Order $order
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Order $order)

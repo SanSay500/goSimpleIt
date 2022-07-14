@@ -23,6 +23,7 @@ class DashboardController extends Controller
         $tasksIDsInOrders=[];
         $filesSize = [];
 
+
         foreach ($ordersActive as $order => $params) {
             $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));

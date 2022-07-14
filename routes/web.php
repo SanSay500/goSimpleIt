@@ -30,6 +30,7 @@ use App\Models\User;
 
 //USER CONTROLLER
 Route::get('/user/{user_id}',[\App\Http\Controllers\UserController::class, 'index'])->name('user_profile')->middleware('auth');
+Route::post('/user/{user}',[\App\Http\Controllers\UserController::class, 'update'])->name('user_update')->middleware('auth');
 
 //ORDER CONTROLLER
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store')->middleware('auth');

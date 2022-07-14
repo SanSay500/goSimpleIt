@@ -14,19 +14,18 @@ export default function UserProfile() {
             name: props.auth.user.name,
             email: props.auth.user.email,
             description: props.auth.user.description,
-            file:"",
+            avatar:"",
         });
     const [toggleLogo, setToggleLogo] = useState("");
     const [readOnly, setReadOnly] = useState(true);
-    
+
     const uploadFile = (e)=>{
-        setData("file", e.target.files[0]);
+        setData("avatar", e.target.files[0]);
         let reader = new FileReader();
         reader.readAsDataURL(e.target.files[0]);
         reader.onload=(event)=>{
             setToggleLogo(event.target.result);
             // const img = document.createElement("img");
-
             // logo.appendChild(img);
             // img.src = event.target.result;
             // img.alt = e.target.files[0].name;
@@ -34,17 +33,30 @@ export default function UserProfile() {
 
     }
 
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(data);
+        post(
+            route("user_update", props.auth.user.id),{
+                preserveScroll: true,
+                forceFormData: true,
+                _method: "put",
+            }
+        );
+    }
+
 
     return (
         <Container>
-            <form className={style.form} /*onSubmit={handleSubmit}*/>
+            <form className={style.form} onSubmit={handleSubmit}>
                 <div className={style.fileBlock}>
                     <div className={style.fileContainer}>
                         <input
+                            accept="image/*"
                             className={style.fileInput}
                             id="uploaded-file"
                             type="file"
-                            name="file"
+                            name="avatar"
                             onChange={(e) => {
                                 uploadFile(e);
                             }}
@@ -73,6 +85,7 @@ export default function UserProfile() {
                     <label className={style.formLabel}>
                         Name
                         <input
+                            required
                             ref={name}
                             type="text"
                             className={style.formInput}
@@ -81,13 +94,14 @@ export default function UserProfile() {
                             value={data.name}
                             readOnly={readOnly}
                             onChange={(e) => setData("name", e.target.value)}
-                            placeholder="Name"
+
                         />
                     </label>
 
                     <label className={style.formLabel}>
                         Email
                         <input
+                            required
                             type="email"
                             className={style.formInput}
                             label="email"
@@ -95,7 +109,7 @@ export default function UserProfile() {
                             value={data.email}
                             readOnly={readOnly}
                             onChange={(e) => setData("email", e.target.value)}
-                            placeholder="Email"
+
                         />
                     </label>
 
@@ -116,7 +130,7 @@ export default function UserProfile() {
                         />
                     </label>
 
-                    {readOnly ? (
+                    {readOnly && (
                         <ButtonGreen
                             classes={style.btn}
                             children={"Edit"}
@@ -126,17 +140,13 @@ export default function UserProfile() {
                                 setReadOnly(!readOnly);
                             }}
                         />
-                    ) : (
-                        <ButtonGreen
-                            classes={style.btn}
-                            children={"Save"}
-                            type={"button"}
-                            mouseDown={(e) => {
-                                e.preventDefault();
-                                setReadOnly(!readOnly);
-                            }}
-                        />
                     )}
+                    {!readOnly && (<ButtonGreen
+                        classes={style.btn}
+                        children={"Save"}
+                        type={"submit"}
+                    />
+                        )}
                 </div>
             </form>
         </Container>

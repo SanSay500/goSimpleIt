@@ -6538,7 +6538,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var OrderDetails = function OrderDetails(props) {
-  var order = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.order;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      order = _usePage$props.order,
+      checkHaveProposal = _usePage$props.checkHaveProposal;
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     description: "",
@@ -6659,7 +6661,7 @@ function UserProfile() {
     name: props.auth.user.name,
     email: props.auth.user.email,
     description: props.auth.user.description,
-    file: ""
+    avatar: ""
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -6678,7 +6680,7 @@ function UserProfile() {
       setReadOnly = _useState4[1];
 
   var uploadFile = function uploadFile(e) {
-    setData("file", e.target.files[0]);
+    setData("avatar", e.target.files[0]);
     var reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
 
@@ -6690,20 +6692,30 @@ function UserProfile() {
     };
   };
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(data);
+    post(route("user_update", props.auth.user.id), {
+      preserveScroll: true,
+      forceFormData: true,
+      _method: "put"
+    });
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("form", {
-      className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form
-      /*onSubmit={handleSubmit}*/
-      ,
+      className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].form,
+      onSubmit: handleSubmit,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileBlock,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileContainer,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            accept: "image/*",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInput,
             id: "uploaded-file",
             type: "file",
-            name: "file",
+            name: "avatar",
             onChange: function onChange(e) {
               uploadFile(e);
             }
@@ -6730,6 +6742,7 @@ function UserProfile() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
           children: ["Name", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            required: true,
             ref: name,
             type: "text",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
@@ -6739,12 +6752,12 @@ function UserProfile() {
             readOnly: readOnly,
             onChange: function onChange(e) {
               return setData("name", e.target.value);
-            },
-            placeholder: "Name"
+            }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
           children: ["Email", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
+            required: true,
             type: "email",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
             label: "email",
@@ -6753,8 +6766,7 @@ function UserProfile() {
             readOnly: readOnly,
             onChange: function onChange(e) {
               return setData("email", e.target.value);
-            },
-            placeholder: "Email"
+            }
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("label", {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
@@ -6771,7 +6783,7 @@ function UserProfile() {
             },
             placeholder: "Tell about your skills"
           })]
-        }), readOnly ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
           classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
           children: "Edit",
           type: "button",
@@ -6779,14 +6791,10 @@ function UserProfile() {
             e.preventDefault();
             setReadOnly(!readOnly);
           }
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), !readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
           classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
           children: "Save",
-          type: "button",
-          mouseDown: function mouseDown(e) {
-            e.preventDefault();
-            setReadOnly(!readOnly);
-          }
+          type: "submit"
         })]
       })]
     })

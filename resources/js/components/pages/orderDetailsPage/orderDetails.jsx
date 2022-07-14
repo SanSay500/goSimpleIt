@@ -6,7 +6,7 @@ import style from "./orderDetails.module.css";
 import Container from "@/components/shared/container/container";
 
 const OrderDetails = (props) => {
-    const { order } = usePage().props;
+    const { order, checkHaveProposal } = usePage().props;
     const { data, setData, errors, post } = useForm({
         description: "",
         order_id: order.id,
