@@ -5181,7 +5181,6 @@ function Register() {
   }, []);
 
   var onHandleChange = function onHandleChange(event) {
-    console.log(event.target.value);
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value, event.target.type === "radio" ? event.target.checked : event.target.value);
   };
 
@@ -6575,8 +6574,6 @@ var OrderDetails = function OrderDetails(props) {
       errors = _useForm.errors,
       post = _useForm.post;
 
-  console.log(checkHaveProposal);
-
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       showProposalForm = _useState2[0],
@@ -6723,7 +6720,6 @@ function UserProfile() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(data);
     post(route("user_update", props.auth.user.id), {
       preserveScroll: true,
       forceFormData: true,

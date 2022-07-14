@@ -12,7 +12,6 @@ const OrderDetails = (props) => {
         order_id: order.id,
     });
 
-    console.log(checkHaveProposal);
     const [showProposalForm, setShowProposalForm] = useState(false);
     const [hideButton, setHideButton] = useState(false);
 

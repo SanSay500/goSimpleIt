@@ -35,7 +35,6 @@ export default function UserProfile() {
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(data);
         post(
             route("user_update", props.auth.user.id),{
                 preserveScroll: true,
