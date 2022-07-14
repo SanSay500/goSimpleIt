@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import style from "./talks.module.css";
 import PeopleCard from "@/components/shared/peopleCard/peopleCard";
 import ButtonViewMore from "@/components/shared/buttonViewMore/buttonViewMore";
-import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
+
 const Talks = ({ reviewsList, quantityCardsPeople }) => {
     const [showCards, setShowCards] = useState(quantityCardsPeople);
     const freelancersList = reviewsList.slice(0, showCards);
@@ -11,6 +11,10 @@ const Talks = ({ reviewsList, quantityCardsPeople }) => {
         e.preventDefault();
         setShowCards(showCards + quantityCardsPeople);
     };
+
+    useEffect(() => {
+        setShowCards(quantityCardsPeople);
+    }, [quantityCardsPeople]);
 
     return (
         <>

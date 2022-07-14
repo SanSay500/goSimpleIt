@@ -6102,6 +6102,17 @@ var MakeOrder = function MakeOrder(props) {
     setData("file", e.target.files[0]);
   };
 
+  var inputNumbers = function inputNumbers(e, propertyData) {
+    var reg = /^[-+]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$/gm;
+
+    if (reg.test(e.target.value)) {
+      setData(propertyData, e.target.value);
+      return;
+    }
+
+    e.target.value = e.target.value.slice(0, -1);
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setTasksList(function () {
       return tasksList;
@@ -6223,13 +6234,14 @@ var MakeOrder = function MakeOrder(props) {
             children: "Price"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
             type: "number",
+            min: 0,
             className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputInfo),
             label: "cost",
             inputMode: "numeric",
             required: true,
             name: "cost",
-            onChange: function onChange(e) {
-              return setData("cost", e.target.value);
+            onInput: function onInput(e) {
+              return inputNumbers(e, "cost");
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: "$"
@@ -6241,13 +6253,14 @@ var MakeOrder = function MakeOrder(props) {
             children: "Term"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("input", {
             type: "number",
+            min: 0,
             required: true,
             className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].inputInfo),
             inputMode: "numeric",
             label: "time",
             name: "time",
-            onChange: function onChange(e) {
-              return setData("time", e.target.value);
+            onInput: function onInput(e) {
+              return inputNumbers(e, "time");
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             children: "days"
@@ -6366,7 +6379,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _projects_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./projects.module.css */ "./resources/js/components/pages/mainPage/projects/projects.module.css");
 /* harmony import */ var _flipCard_flipCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./flipCard/flipCard */ "./resources/js/components/pages/mainPage/projects/flipCard/flipCard.jsx");
-/* harmony import */ var _components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/sectionContainer/sectionContainer */ "./resources/js/components/shared/sectionContainer/sectionContainer.jsx");
+/* harmony import */ var _components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/buttonViewMore/buttonViewMore */ "./resources/js/components/shared/buttonViewMore/buttonViewMore.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
@@ -6399,6 +6412,12 @@ var Projects = function Projects(_ref) {
       setShowCards = _useState2[1];
 
   var projects = portfolioList.slice(0, showCards);
+
+  var loadMoreTasks = function loadMoreTasks(e) {
+    e.preventDefault();
+    setShowCards(showCards + quantityCardsProjects);
+  };
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setShowCards(quantityCardsProjects);
   }, [quantityCardsProjects]);
@@ -6413,6 +6432,10 @@ var Projects = function Projects(_ref) {
           card: element
         }, index);
       })
+    }), portfolioList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      click: function click(e) {
+        loadMoreTasks(e);
+      }
     })]
   });
 };
@@ -6436,8 +6459,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _talks_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./talks.module.css */ "./resources/js/components/pages/mainPage/talks/talks.module.css");
 /* harmony import */ var _components_shared_peopleCard_peopleCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/peopleCard/peopleCard */ "./resources/js/components/shared/peopleCard/peopleCard.jsx");
 /* harmony import */ var _components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/buttonViewMore/buttonViewMore */ "./resources/js/components/shared/buttonViewMore/buttonViewMore.jsx");
-/* harmony import */ var _components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/sectionContainer/sectionContainer */ "./resources/js/components/shared/sectionContainer/sectionContainer.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -6449,7 +6471,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -6475,18 +6496,21 @@ var Talks = function Talks(_ref) {
     setShowCards(showCards + quantityCardsPeople);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setShowCards(quantityCardsPeople);
+  }, [quantityCardsPeople]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       className: "title ".concat(_talks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].title),
       children: "Talks about us"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: _talks_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].cardsList,
       children: freelancersList.map(function (freelancer, i) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_peopleCard_peopleCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_peopleCard_peopleCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           freelancer: freelancer
         }, i);
       })
-    }), reviewsList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), reviewsList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
       click: function click(e) {
         loadMoreTasks(e);
       }

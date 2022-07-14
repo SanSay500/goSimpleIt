@@ -55,6 +55,16 @@ const MakeOrder = (props) => {
         setData("file", e.target.files[0]);
     };
 
+    const inputNumbers = (e, propertyData)=>{
+        const reg = /^[-+]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$/gm;
+
+        if (reg.test(e.target.value)) {
+            setData(propertyData, e.target.value);
+            return;
+        }
+        e.target.value = e.target.value.slice(0, -1);
+    }
+
     useEffect(() => {
         setTasksList(() => tasksList);
     }, [tasksList]);
@@ -172,12 +182,13 @@ const MakeOrder = (props) => {
 
                         <input
                             type="number"
+                            min={0}
                             className={`${style.inputInfo}`}
                             label="cost"
                             inputMode="numeric"
                             required
                             name="cost"
-                            onChange={(e) => setData("cost", e.target.value)}
+                            onInput={(e) => inputNumbers(e, "cost")}
                         />
 
                         <span>$</span>
@@ -188,12 +199,13 @@ const MakeOrder = (props) => {
 
                         <input
                             type="number"
+                            min={0}
                             required
                             className={`${style.inputInfo}`}
                             inputMode="numeric"
                             label="time"
                             name="time"
-                            onChange={(e) => setData("time", e.target.value)}
+                            onInput={(e) => inputNumbers(e, "time")}
                         />
 
                         <span>days</span>
