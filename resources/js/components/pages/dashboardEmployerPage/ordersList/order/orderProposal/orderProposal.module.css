@@ -1,17 +1,22 @@
-.linkView{
-  font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 18px;
-padding-bottom: 1px;
-color: #000000;
-border-bottom: 1px dashed #2BB739;
-display: block;
+.linkConatiner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
-.linkConatiner{
-  display: flex;
+
+.linkView {
+    display: block;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    border-bottom: 1px dashed #2bb739;
 }
-.textView{
-  border-color: transparent;
-  margin-right: 4px;
+
+.textView {
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 22px;
+    border-color: transparent;
 }
