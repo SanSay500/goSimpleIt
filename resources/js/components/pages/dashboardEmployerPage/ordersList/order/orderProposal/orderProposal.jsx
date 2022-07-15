@@ -8,7 +8,7 @@ export default function OrderProposal(order) {
     return (
         <div className={`${style.linkConatiner}`}>
             <span className={`${style.linkView} ${style.textView}`}>View proposal from freelancers</span>
-            
+
             {proposalsForOrder
                 .filter((proposal) => proposal.order_id === order.id)
                 .map((filteredProposal) => {
@@ -24,9 +24,9 @@ export default function OrderProposal(order) {
                                     filteredProposal.id,
                                 ])}
                                 className={`${style.linkView}`}
-                                
+
                             >
-                                {count}
+                                {filteredProposal.name}
                             </Link>
                         </div>
                     );

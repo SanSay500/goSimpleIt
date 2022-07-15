@@ -48,7 +48,8 @@ class DashboardController extends Controller
         foreach ($orders->toArray() as $order)
             $ordersIDs[] = $order['id'];
 
-        $proposalsForOrder = Proposal::wherein('order_id', $ordersIDs)->get();
+        $proposalsForOrder = Proposal::wherein('order_id', $ordersIDs)->join('users', 'proposals.user_id', '=','users.id')
+            ->select('users.name', 'proposals.*')->get();
 
         return Inertia::render('pages/dashboardEmployerPage/dashboardEmployer', ['orders' => $orders, 'proposalsForOrder' => $proposalsForOrder]);
 
