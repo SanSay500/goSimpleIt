@@ -32,7 +32,7 @@ export default function ProposalConfirm(props) {
                     <span className={`${style.proposalItemText}`}>
                         Order Freelancer:{" "}
                     </span>
-                    <Link href={route('user_profile', user.id)}> {user.name}</Link>
+                    <Link href={route("user_info", user.id)}> {user.name}</Link>
                 </div>
 
                 <div className={`${style.proposalItem}`}>

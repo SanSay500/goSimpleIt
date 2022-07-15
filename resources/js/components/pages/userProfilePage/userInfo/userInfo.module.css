@@ -1,4 +1,4 @@
-.form {
+.container {
     padding: 10px 0 30px;
     display: flex;
     width: 100%;
@@ -13,45 +13,16 @@
     max-width: 210px;
     position: relative;
 }
-
-.inputsContainer {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-}
-
-.formLabel + .formLabel {
-    margin: 15px 0 0 0;
-}
-
-.formInput {
-    margin: 0;
-    padding: 4px 8px;
-    width: 100%;
-    background-color: #fff;
-    border: 1px dashed #2bb739;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 21px;
-    color: #2b2b2b;
-    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    resize: none;
-}
-
-.formInput::placeholder {
-    font-family: "Ubuntu";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21px;
-    color: #2b2b2b;
-}
-input:read-only,
-textarea:read-only {
-    padding-left: 0;
-    border-color: transparent;
-    box-shadow: none;
+.fileBlock::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 176px;
+    background: #2bb739;
+    z-index: -1;
 }
 
 .fileContainer {
@@ -65,26 +36,6 @@ textarea:read-only {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.fileBlock::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90px;
-    height: 176px;
-    background: #2bb739;
-    z-index: -1;
-}
-
-.fileInput {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 5px;
-    left: 0;
-    opacity: 0;
 }
 
 .logoContainer {
@@ -102,29 +53,36 @@ textarea:read-only {
     height: 100%;
 }
 
-.logoImg {
-    width: 66px;
-    height: 53px;
-}
-.fileText {
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 15px;
-    margin-top: 13px;
-    color: #ffffff;
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }
 
-.fileName {
+.blockContainer + .blockContainer {
+    margin: 15px 0 0;
+}
+
+.label {
+    margin: 0 0 5px;
+}
+
+.info {
+    margin: 0;
+    padding: 4px 0;
+    width: 100%;
+    background-color: #fff;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 21px;
     color: #2b2b2b;
-    font-weight: 150;
-    font-size: 16px;
-    line-height: 40px;
+    border-radius: 8px;
 }
 
 .btnContainer {
-    margin: 15px 0 0;
+    margin: auto 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -152,7 +110,7 @@ textarea:read-only {
 }
 
 @media (max-width: 1024px) {
-    .form {
+    .container {
         justify-content: space-between;
     }
     .fileBlock {
@@ -161,7 +119,7 @@ textarea:read-only {
 }
 
 @media (max-width: 768px) {
-    .form {
+    .container {
         flex-direction: column;
         align-items: center;
     }
@@ -171,7 +129,7 @@ textarea:read-only {
         width: 100%;
     }
 
-    .inputsContainer {
+    .infoContainer {
         width: 90%;
     }
 }
