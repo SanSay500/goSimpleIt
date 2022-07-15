@@ -42,7 +42,7 @@ class DashboardController extends Controller
     public function employer_dashboard_index()
     {
         $user = Auth::user();
-        $orders = Order::where('user_id', $user->id)->get();
+        $orders = Order::where('user_id', $user->id)->latest()->get();
 
         $ordersIDs[]='';
         foreach ($orders->toArray() as $order)

@@ -97,12 +97,15 @@ class OrderController extends Controller
     public function details($order_id)
     {
         $order = Order::where('id', $order_id)->first()->toArray();
-        $proposals = Proposal::where('user_id', Auth::user()->id)->get()->toArray();
-        $checkHaveProposal = false;
+        if (Auth::user()) {
+            $proposals = Proposal::where('user_id', Auth::user()->id)->get()->toArray();
 
-        foreach ($proposals as $proposal) {
-            if ( $proposal['order_id'] === $order['id']) {
-                $checkHaveProposal = true;
+            $checkHaveProposal = false;
+
+            foreach ($proposals as $proposal) {
+                if ($proposal['order_id'] === $order['id']) {
+                    $checkHaveProposal = true;
+                }
             }
         }
 
@@ -112,7 +115,7 @@ class OrderController extends Controller
             $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
             $order += $filesSize;
         }
-        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal'=> $checkHaveProposal]);
+        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal'=> $checkHaveProposal ?? ''] );
     }
 
 
@@ -152,9 +155,9 @@ class OrderController extends Controller
         $order = Order::get()->last();
 
         if (isset($user)) {
-            // Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+             Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
         } else {
-            // Mail::to(Auth::user())->send(new NewOrder($order));
+             Mail::to(Auth::user())->send(new NewOrder($order));
         }
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }

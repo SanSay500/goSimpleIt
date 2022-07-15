@@ -15,8 +15,10 @@ export default function ProposalConfirm(props) {
         <Container styleContainer={style.container}>
             <div className={`${style.proposalContainer}`}>
                 <Link
+                    as="button"
+                    type="button"
+                    onClick={Goback}
                     className={`${style.buttonBack}`}
-                    href={route("main.page")}
                 >
                     <img
                         src="/images/arrowLeft.svg"
@@ -30,7 +32,7 @@ export default function ProposalConfirm(props) {
                     <span className={`${style.proposalItemText}`}>
                         Order Freelancer:{" "}
                     </span>
-                    {user.name}
+                    <Link href={route('user_profile', user.id)}> {user.name}</Link>
                 </div>
 
                 <div className={`${style.proposalItem}`}>
