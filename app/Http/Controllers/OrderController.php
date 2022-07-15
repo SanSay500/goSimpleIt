@@ -137,7 +137,7 @@ class OrderController extends Controller
         if (isset($request->file)) {
             $fileName = time() . '-' . $request->file->getClientOriginalName();
             $request->validate([
-                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:10048'
+                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:100048'
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
