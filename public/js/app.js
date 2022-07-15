@@ -6683,6 +6683,14 @@ function UserInfo() {
     window.history.back();
   }
 
+  var avatar = '';
+
+  if (props.user.avatar) {
+    avatar = "../storage/avatars/".concat(props.user.avatar);
+  } else {
+    avatar = '../storage/avatars/avatar.png';
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: _userInfo_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container,
@@ -6694,7 +6702,7 @@ function UserInfo() {
             className: _userInfo_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoContainer,
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
               className: _userInfo_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].img,
-              src: props.user.avatar,
+              src: avatar,
               alt: "logo"
             })
           })

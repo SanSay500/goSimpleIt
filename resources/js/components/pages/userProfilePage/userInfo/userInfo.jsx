@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { usePage, Link, useForm } from "@inertiajs/inertia-react";
+import React, {useState} from "react";
+import {usePage, Link, useForm} from "@inertiajs/inertia-react";
 import Container from "@/components/shared/container/container";
 import style from "./userInfo.module.css";
 
@@ -10,6 +10,13 @@ export default function UserInfo() {
         window.history.back();
     }
 
+    let avatar = '';
+    if (props.user.avatar) {
+        avatar = `../storage/avatars/${props.user.avatar}`
+    } else {
+        avatar = '../storage/avatars/avatar.png'
+    }
+
     return (
         <Container>
             <div className={style.container}>
@@ -18,7 +25,7 @@ export default function UserInfo() {
                         <div className={style.logoContainer}>
                             <img
                                 className={style.img}
-                                src={props.user.avatar}
+                                src={avatar}
                                 alt="logo"
                             />
                         </div>
