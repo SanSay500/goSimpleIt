@@ -7,7 +7,7 @@ import Container from "@/components/shared/container/container";
 export default function ProposalConfirm(props) {
     const { order, proposal, user } = usePage().props;
 
-    function Goback() {
+    function goBack() {
         window.history.back();
     }
 
@@ -17,7 +17,7 @@ export default function ProposalConfirm(props) {
                 <Link
                     as="button"
                     type="button"
-                    onClick={Goback}
+                    onClick={goBack}
                     className={`${style.buttonBack}`}
                 >
                     <img
@@ -32,7 +32,13 @@ export default function ProposalConfirm(props) {
                     <span className={`${style.proposalItemText}`}>
                         Order Freelancer:{" "}
                     </span>
-                    <Link href={route("user_info", user.id)}> {user.name}</Link>
+                    <Link
+                        href={route("user_info", user.id)}
+                        className={style.proposalLink}
+                    >
+                        {" "}
+                        {user.name}
+                    </Link>
                 </div>
 
                 <div className={`${style.proposalItem}`}>

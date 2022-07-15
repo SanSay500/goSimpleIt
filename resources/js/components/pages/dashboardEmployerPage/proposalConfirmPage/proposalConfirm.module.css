@@ -59,14 +59,20 @@
     color: #000000;
     width: 100%;
 }
+.proposalItem + .proposalItem {
+    margin-top: 13px;
+}
+
 .proposalItemText {
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
     color: #000000;
 }
-.proposalItem + .proposalItem {
-    margin-top: 13px;
+
+.proposalLink {
+    font-size: 19px;
+    border-bottom: 2px dashed #2bb739;
 }
 .proposalBtnContainer {
     display: flex;
