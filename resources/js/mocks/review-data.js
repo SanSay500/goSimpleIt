@@ -2,6 +2,7 @@ export const myJson = {
     reviews: [
         {
             user: {
+                id: 1,
                 name: "Jason",
                 avatar: "/images/user.png",
             },
@@ -10,6 +11,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 2,
                 name: "Jacob",
                 avatar: "/images/user.png",
             },
@@ -17,6 +19,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 3,
                 name: "Alex",
                 avatar: "/images/user.png",
             },
@@ -24,6 +27,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 4,
                 name: "Gregory",
                 avatar: "/images/user.png",
             },
@@ -31,6 +35,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 5,
                 name: "George",
                 avatar: "/images/user.png",
             },
@@ -39,6 +44,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 6,
                 name: "Denis",
                 avatar: "/images/user.png",
             },
@@ -46,6 +52,7 @@ export const myJson = {
         },
         {
             user: {
+                id: 7,
                 name: "Arty",
                 avatar: "/images/user.png",
             },

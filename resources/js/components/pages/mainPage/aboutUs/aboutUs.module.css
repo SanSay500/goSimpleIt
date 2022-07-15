@@ -2,7 +2,6 @@
     padding-right: 5%;
     width: 40%;
 }
-
 .about > div {
     padding: 0;
 }
@@ -28,27 +27,11 @@
     margin: 0 auto;
     text-align: justify;
 }
+
 @media (max-width: 1024px) {
     .about {
         width: 100%;
         margin: 0 0px 40px 0px;
         padding: 0;
     }
-}
-@media (max-width: 860px) {
-}
-
-@media (max-width: 860px) {
-}
-
-@media (max-width: 767px) {
-}
-
-@media (max-width: 510px) {
-}
-
-@media (max-width: 470px) {
-}
-
-@media (max-width: 370px) {
 }
