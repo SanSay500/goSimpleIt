@@ -4,7 +4,6 @@ import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
 export default function BasicCard(props) {
-
     return (
         <div className={`${style.container}`}>
             <h3 className={`${style.title}`}>{props.props["title"]}</h3>
@@ -15,7 +14,6 @@ export default function BasicCard(props) {
 
             <div className={`${style.file}`}>
                 {props.props["filesize"] && (
-
                     <span className={`${style.fileInfo}`}>
                         <a
                             className={`${style.fileInfo} ${style.green}`}
@@ -48,15 +46,15 @@ export default function BasicCard(props) {
             </div>
 
             <Link href={route("order.details", [props.props["id"]])}>
-                {props.user ? (
-                    props.user.role === "Freelancer" ? (
-                        <ButtonViewMore classes={props.classes} />
-                    ) : (
-                        <></>
-                    )
-                ) : (
-                    <></>
-                )}
+                {/* {props.user ? ( */}
+                {/* // props.user.role === "Freelancer" ? ( */}
+                <ButtonViewMore classes={props.classes} />
+                {/* ) : ( */}
+                {/* <></> */}
+                {/* ) */}
+                {/* ) : ( */}
+                {/* <></> */}
+                {/* )} */}
             </Link>
         </div>
     );

@@ -7020,7 +7020,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function BasicCard(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
@@ -7058,9 +7057,9 @@ function BasicCard(props) {
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: route("order.details", [props.props["id"]]),
-      children: props.user ? props.user.role === "Freelancer" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
         classes: props.classes
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {})
+      })
     })]
   });
 }
