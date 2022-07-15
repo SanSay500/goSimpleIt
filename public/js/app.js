@@ -4426,11 +4426,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-
-
-
-
-function Order(order, props) {
+function Order(order) {
   var proposalsForOrder = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposalsForOrder;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardContainer),
@@ -4450,39 +4446,7 @@ function Order(order, props) {
       props: order,
       classes: _order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn
     }, order.id), order.status != "Done" && order.status != "Cancelled" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_orderProposal_orderProposal__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, order))]
-  })
-  /* { <Container>
-      <Card variant="outlined" key={order.id}>
-          <CardContent>
-              <Typography sx={{ fontSize: 22 }} color="text.primary">
-                  Order # {order.id}
-              </Typography>
-               <Typography sx={{ fontSize: 18 }} color="text.primary">
-                  Title: {order.title}
-              </Typography>
-               <Typography
-                  sx={{ fontSize: 14 }}
-                  color="text.secondary"
-                  gutterBottom
-              >
-                  Decription: {order.description}
-              </Typography>
-               <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  Money: {order.money} $
-              </Typography>
-               <Typography variant="body2">
-                  Term: {order.hours} days
-              </Typography>
-               <Typography variant="body2">
-                  Status: {order.status}
-              </Typography>
-               {order.status != "Done" && order.status != "Cancelled" && (
-                  <OrderProposal {...order} />
-              )}
-          </CardContent>
-      </Card>
-  </Container> }  */
-  ;
+  });
 }
 
 /***/ }),
@@ -4510,24 +4474,25 @@ __webpack_require__.r(__webpack_exports__);
 
 function OrderProposal(order) {
   var proposalsForOrder = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposalsForOrder;
-  var count = 0;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+  var proposals = proposalsForOrder.filter(function (proposal) {
+    return proposal.order_id === order.id;
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
     className: "".concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].linkConatiner),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-      className: "".concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].linkView, " ").concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].textView),
-      children: "View proposal from freelancers"
-    }), proposalsForOrder.filter(function (proposal) {
-      return proposal.order_id === order.id;
-    }).map(function (filteredProposal) {
-      count++;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-          href: route("confirm.proposal", [order.id, filteredProposal.id]),
-          className: "".concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].linkView),
-          children: filteredProposal.name
-        })
-      }, filteredProposal.id);
-    })]
+    children: proposals.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {}) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+        className: "".concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].linkView, " ").concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].textView),
+        children: "Proposal:"
+      }), proposals.map(function (filteredProposal) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            href: route("confirm.proposal", [order.id, filteredProposal.id]),
+            className: "".concat(_orderProposal_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].linkView),
+            children: [filteredProposal.name, ";"]
+          })
+        }, filteredProposal.id);
+      })]
+    })
   });
 }
 
@@ -8165,11 +8130,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".kEwmip7yKTGkMApJduL1iQ\\=\\={\n  font-style: normal;\nfont-weight: 400;\nfont-size: 16px;\nline-height: 18px;\npadding-bottom: 1px;\ncolor: #000000;\nborder-bottom: 1px dashed #2BB739;\ndisplay: block;\n}\n.wAlXba26Uu0iIUTvcjn3Xg\\=\\={\n  display: flex;\n}\n.clEK6OJXjkMLp6LyHPvDrQ\\=\\={\n  border-color: transparent;\n  margin-right: 4px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".wAlXba26Uu0iIUTvcjn3Xg\\=\\= {\n    display: flex;\n    flex-wrap: wrap;\n    align-items: flex-start;\n}\n\n.kEwmip7yKTGkMApJduL1iQ\\=\\= {\n    display: block;\n    font-style: normal;\n    font-weight: 400;\n    font-size: 16px;\n    line-height: 24px;\n    color: #000000;\n    border-bottom: 1px dashed #2bb739;\n}\n\n.clEK6OJXjkMLp6LyHPvDrQ\\=\\= {\n    margin-right: 10px;\n    font-size: 20px;\n    line-height: 22px;\n    border-color: transparent;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"linkView": "kEwmip7yKTGkMApJduL1iQ==",
 	"linkConatiner": "wAlXba26Uu0iIUTvcjn3Xg==",
+	"linkView": "kEwmip7yKTGkMApJduL1iQ==",
 	"textView": "clEK6OJXjkMLp6LyHPvDrQ=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
