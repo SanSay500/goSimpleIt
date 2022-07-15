@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('file')->nullable();
             $table->string('status');
-            $table->float('money');
+            $table->bigInteger('money');
             $table->integer('hours');
             $table->foreignId('task_id')->constrained()->onDelete('cascade')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');

@@ -7128,7 +7128,7 @@ function BasicCard(props) {
         className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
           className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo, " ").concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green),
-          href: "storage/" + props.props["file"],
+          href: "../storage/" + props.props["file"],
           download: true,
           children: ["Download", " "]
         }), "(", props.props["file"].split(".")[1], ",", " ", props.props["filesize"], ")"]

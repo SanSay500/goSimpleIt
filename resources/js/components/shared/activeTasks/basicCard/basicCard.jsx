@@ -17,7 +17,7 @@ export default function BasicCard(props) {
                     <span className={`${style.fileInfo}`}>
                         <a
                             className={`${style.fileInfo} ${style.green}`}
-                            href={"storage/" + props.props["file"]}
+                            href={"../storage/" + props.props["file"]}
                             download
                         >
                             Download{" "}
