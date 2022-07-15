@@ -15,6 +15,11 @@ class UserController extends Controller
         return Inertia::render('pages/userProfilePage/userProfile');
     }
 
+    public function info(User $user)
+    {
+        return Inertia::render('pages/userProfilePage/userInfo/userInfo');
+    }
+
     public function update(Request $request, User $user)
     {
         if ($avaFile = $request->file('avatar')) {
