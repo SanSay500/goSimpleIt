@@ -23,7 +23,7 @@ export default function GoMenu({ styleBtn }) {
     };
     const handleChat = (e) => {
         e.preventDefault();
-        Inertia.visit(route("chatify"));
+        Inertia.get(route("chatify"));
     };
     const handlerLogin = (e) => {
         e.preventDefault();

@@ -6847,8 +6847,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function UserProfile() {
   var props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props;
-  var logo = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var name = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     name: props.auth.user.name,
@@ -6862,7 +6860,6 @@ function UserProfile() {
       post = _useForm.post,
       processing = _useForm.processing;
 
-  console.log(props.auth.user);
   var avatar = '';
 
   if (props.auth.user.avatar) {
@@ -6885,10 +6882,7 @@ function UserProfile() {
     reader.readAsDataURL(e.target.files[0]);
 
     reader.onload = function (event) {
-      setToggleLogo(event.target.result); // const img = document.createElement("img");
-      // logo.appendChild(img);
-      // img.src = event.target.result;
-      // img.alt = e.target.files[0].name;
+      setToggleLogo(event.target.result);
     };
   };
 
@@ -6900,6 +6894,10 @@ function UserProfile() {
       forceFormData: true,
       _method: "put"
     });
+  }
+
+  function Goback() {
+    window.history.back();
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -6921,10 +6919,10 @@ function UserProfile() {
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].logoContainer,
-            ref: logo,
             children: toggleLogo ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].img,
               src: toggleLogo,
-              alt: ""
+              alt: "logo"
             }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
                 src: "/images/downloadLogo.svg",
@@ -6943,7 +6941,6 @@ function UserProfile() {
           className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formLabel,
           children: ["Name", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("input", {
             required: true,
-            ref: name,
             type: "text",
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
             label: "Name",
@@ -6975,26 +6972,36 @@ function UserProfile() {
             className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].formInput,
             label: "description",
             name: "description",
-            readOnly: readOnly // errors={errors.description}
-            ,
+            readOnly: readOnly,
             value: data.description,
             onChange: function onChange(e) {
               return setData("description", e.target.value);
             },
             placeholder: "Tell about your skills"
           })]
-        }), readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
-          children: "Edit",
-          type: "button",
-          mouseDown: function mouseDown(e) {
-            e.preventDefault();
-            setReadOnly(!readOnly);
-          }
-        }), !readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          classes: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
-          children: "Save",
-          type: "submit"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+          className: _userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btnContainer,
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            as: "button",
+            type: "button",
+            onClick: Goback,
+            className: "".concat(_userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].buttonBack),
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+              src: "/images/arrowLeft.svg",
+              alt: "",
+              className: "".concat(_userProfile_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].buttonBackImg)
+            }), "Back"]
+          }), readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: "Edit",
+            type: "button",
+            mouseDown: function mouseDown(e) {
+              e.preventDefault();
+              setReadOnly(!readOnly);
+            }
+          }), !readOnly && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_4__["default"], {
+            children: "Save",
+            type: "submit"
+          })]
         })]
       })]
     })]
@@ -7635,7 +7642,7 @@ function GoMenu(_ref) {
 
   var handleChat = function handleChat(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.visit(route("chatify"));
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get(route("chatify"));
   };
 
   var handlerLogin = function handlerLogin(e) {

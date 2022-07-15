@@ -15,9 +15,10 @@ class UserController extends Controller
         return Inertia::render('pages/userProfilePage/userProfile');
     }
 
-    public function info(User $user)
+    public function info($id)
     {
-        return Inertia::render('pages/userProfilePage/userInfo/userInfo');
+        $user = User::where('id',$id)->first();
+        return Inertia::render('pages/userProfilePage/userInfo/userInfo', ['user'=>$user]);
     }
 
     public function update(Request $request, User $user)

@@ -29,9 +29,9 @@ use App\Models\User;
 //})->name('index');
 
 //USER CONTROLLER
-Route::get('/user/{user_id}',[\App\Http\Controllers\UserController::class, 'index'])->name('user_profile')->middleware('auth');
+Route::get('/profile/{user_id}',[\App\Http\Controllers\UserController::class, 'index'])->name('user_profile')->middleware('auth');
+Route::get('/user/{id}',[\App\Http\Controllers\UserController::class, 'info'])->name('user_info')->middleware('auth');
 Route::post('/user/{user}',[\App\Http\Controllers\UserController::class, 'update'])->name('user_update')->middleware('auth');
-Route::get('/user/{user_id}',[\App\Http\Controllers\UserController::class, 'info'])->name('user_info')->middleware('auth');
 
 //ORDER CONTROLLER
 Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store')->middleware('auth');
