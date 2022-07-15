@@ -10,22 +10,25 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-   public function index(User $user){
-    return Inertia::render('pages/userProfilePage/userProfile');
-   }
+    public function index(User $user)
+    {
+        return Inertia::render('pages/userProfilePage/userProfile');
+    }
 
     public function update(Request $request, User $user)
     {
-        $avaFile = $request->file('avatar');
+        if ($avaFile = $request->file('avatar')) {
+            $avaName = $avaFile->hashName();
+            $avaPath = 'avatars/' . $avaName;
+            $avaFile->storeAs('avatars', $avaName);
+            !$user->avatar ?? Storage::delete($user->avatar);
+        }
 
-        $avaName = $avaFile->hashName();
-
-        $avaPath = $avaFile->storeAs('avatars', $avaName);
         $updateInfo = [
             'name' => $request->name,
-            'description' =>$request->description,
+            'description' => $request->description,
             'email' => $request->email,
-            'avatar' => $avaPath,
+            'avatar' => $avaFile ? $avaPath : $user->avatar,
         ];
         $user->update($updateInfo);
         return back()->with('success', 'Your profile information changed.');
