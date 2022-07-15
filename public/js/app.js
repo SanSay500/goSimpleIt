@@ -4370,7 +4370,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _ordersList_ordersList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ordersList/ordersList */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.jsx");
 /* harmony import */ var _components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/container/container */ "./resources/js/components/shared/container/container.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/flashMessages/flashMessages */ "./resources/js/components/shared/flashMessages/flashMessages.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -4384,9 +4387,9 @@ function DashboardEmployer(props) {
       proposalsForOrder = _usePage$props.proposalsForOrder,
       tasksWithOrders = _usePage$props.tasksWithOrders,
       ordersActive = _usePage$props.ordersActive;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_ordersList_ordersList__WEBPACK_IMPORTED_MODULE_2__["default"], {})
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ordersList_ordersList__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
     })
   });
 }
@@ -6706,8 +6709,13 @@ function UserProfile() {
       processing = _useForm.processing;
 
   console.log(props.auth.user);
+  var avatar = '';
 
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("../storage/" + data.avatar),
+  if (props.auth.user.avatar) {
+    avatar = "../storage/avatars/" + props.auth.user.avatar;
+  }
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(avatar),
       _useState2 = _slicedToArray(_useState, 2),
       toggleLogo = _useState2[0],
       setToggleLogo = _useState2[1];
@@ -7474,7 +7482,7 @@ function GoMenu(_ref) {
 
   var handleChat = function handleChat(e) {
     e.preventDefault();
-    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.get(route("chatify"));
+    _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.visit(route("chatify"));
   };
 
   var handlerLogin = function handlerLogin(e) {

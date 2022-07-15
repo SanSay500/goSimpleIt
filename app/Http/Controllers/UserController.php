@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         if ($avaFile = $request->file('avatar')) {
             $avaName = $avaFile->hashName();
-            $avaPath = 'avatars/' . $avaName;
+            $avaPath = $avaName;
             $avaFile->storeAs('avatars', $avaName);
             !$user->avatar ?? Storage::delete($user->avatar);
         }
