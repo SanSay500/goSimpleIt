@@ -13,7 +13,6 @@ const Header = ({styleBtn}) => {
             <header className={`${style.header}`}>
 
                 <div>
-                    PRIVET
                     <Link href="/" className={`${style.headerLogo}`}>
                         <img src="/images/logo-upwork.svg" alt="Logo"></img>
                     </Link>

@@ -16,12 +16,6 @@ export default function Register() {
         password_confirmation: "",
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password", "password_confirmation");
-        };
-    }, []);
-
     const onHandleChange = (event) => {
         setData(
             event.target.name,
@@ -40,6 +34,12 @@ export default function Register() {
         post(route("register"));
     };
 
+    useEffect(() => {
+        return () => {
+            reset("password", "password_confirmation");
+        };
+    }, []);
+
     return (
         <Container>
             <ValidationErrors errors={errors} />
@@ -57,6 +57,7 @@ export default function Register() {
                             handleChange={onHandleChange}
                             required
                         />
+
                         <label
                             htmlFor="radio1"
                             className={`${style.radioLabel} `}
@@ -64,6 +65,7 @@ export default function Register() {
                             Freelancer
                         </label>
                     </div>
+
                     <div className={`${style.radioContainer} `}>
                         <Input
                             type="radio"
@@ -74,6 +76,7 @@ export default function Register() {
                             required
                             id="radio2"
                         />
+
                         <label
                             htmlFor="radio2"
                             className={`${style.radioLabel} `}
@@ -81,24 +84,8 @@ export default function Register() {
                             Employer
                         </label>
                     </div>
-
-                    {/* <SelectInput
-                        name="role"
-                        value={data.role}
-                        onChange={(e) => {
-                            console.log(e.target.value);
-                            setData("role", e.target.value)}}
-                        required
-                    >
-                        <option key="1" value="Freelancer">
-                            Freelancer
-                        </option>
-
-                        <option key="2" value="Employer">
-                            Employer
-                        </option>
-                    </SelectInput> */}
                 </div>
+
                 <div className={`${style.loginFormItem} `}>
                     <Input
                         type="text"

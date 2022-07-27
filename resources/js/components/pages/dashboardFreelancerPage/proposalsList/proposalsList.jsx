@@ -14,13 +14,11 @@ export default function ProposalsList(props) {
                 ? proposals.map((proposal) => {
                       return (
                           <Link
+                              key={proposal.id}
                               className={`${style.link}`}
                               href={route("order.details", proposal.order_id)}
                           >
-                              <div
-                                  key={proposal.id}
-                                  className={`${style.proposalItem}`}
-                              >
+                              <div className={`${style.proposalItem}`}>
                                   <div className={`${style.proposalItemText}`}>
                                       Proposal ID: {proposal.id}
                                   </div>

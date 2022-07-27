@@ -1,39 +1,3 @@
-[type="text"]:focus,
-[type="email"]:focus,
-[type="url"]:focus,
-[type="password"]:focus,
-[type="number"]:focus,
-[type="date"]:focus,
-[type="datetime-local"]:focus,
-[type="month"]:focus,
-[type="search"]:focus,
-[type="tel"]:focus,
-[type="time"]:focus,
-[type="week"]:focus,
-[multiple]:focus,
-[type="checkbox"]:focus,
-[type="radio"]:focus,
-textarea:focus,
-select:focus {
-    outline: none !important;
-    box-shadow: none;
-    border-color: #2bb739;
-}
-[type="radio"]:focus,
-[type="radio"]:hover {
-    background-color: #fff;
-}
-[type="checkbox"]:checked:hover,
-[type="checkbox"]:checked:focus,
-[type="radio"]:checked:hover,
-[type="radio"]:checked:focus {
-    border-color: #2bb739;
-    background-color: #fff;
-}
-[type="radio"]:checked {
-    border-color: #2bb739;
-    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
-}
 .formPage {
     position: relative;
     background: transparent;
@@ -59,6 +23,7 @@ select:focus {
     background-size: 100%;
     z-index: -1;
 }
+
 .loginInput {
     width: 100%;
     background: #ffffff;
@@ -78,9 +43,11 @@ select:focus {
     line-height: 21px;
     color: #2b2b2b;
 }
+
 .loginFormItem {
     margin-top: 9px;
 }
+
 .formLink {
     font-weight: 300;
     font-size: 14px;
@@ -88,6 +55,7 @@ select:focus {
     color: #838383;
     border-bottom: 1px dashed #2bb739;
 }
+
 .formBtn {
     font-weight: 500;
     font-size: 16px;
@@ -104,17 +72,20 @@ select:focus {
     padding: 10px 35px;
     z-index: 5;
 }
+
 .loginFormCont {
     display: flex;
     align-items: center;
     margin-top: 9px;
     justify-content: space-between;
 }
+
 .radioContainer {
     display: flex;
     align-items: center;
     z-index: 5;
 }
+
 .radioLabel {
     font-style: normal;
     font-weight: 400;
@@ -122,6 +93,7 @@ select:focus {
     line-height: 21px;
     color: #2b2b2b;
 }
+
 .registerRadio {
     width: 8px;
     height: 8px;
@@ -131,6 +103,7 @@ select:focus {
 .registerRadio:checked {
     background-color: #fff;
 }
+
 .loginFormRadio {
     display: flex;
     align-items: center;
@@ -138,6 +111,7 @@ select:focus {
 .loginFormRadio .radioContainer:first-child {
     margin-right: 49px;
 }
+
 @media (max-width: 576px) {
     .formPage {
         box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
@@ -146,18 +120,22 @@ select:focus {
         display: none;
     }
 }
+
 @media (max-width: 350px) {
     .loginFormRadio {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .registerRadio + .registerRadio {
         margin-top: 10px;
     }
+
     .loginFormCont {
         flex-direction: column;
         align-items: flex-end;
     }
+
     .formLink {
         align-self: start;
         margin: 0 0 10px 0;

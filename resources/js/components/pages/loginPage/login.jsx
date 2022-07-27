@@ -14,12 +14,6 @@ export default function Login({ status, canResetPassword }) {
         remember: "",
     });
 
-    useEffect(() => {
-        return () => {
-            reset("password");
-        };
-    }, []);
-
     const onHandleChange = (event) => {
         setData(
             event.target.name,
@@ -34,12 +28,14 @@ export default function Login({ status, canResetPassword }) {
         post(route("login"));
     };
 
+    useEffect(() => {
+        return () => {
+            reset("password");
+        };
+    }, []);
+
     return (
         <Container styleBtn={style.btn}>
-            {/* <div className="mb-4 font-medium text-sm text-green-600">
-                {status}
-            </div> */}
-
             <ValidationErrors errors={errors} />
 
             <form onSubmit={submit} className={`${style.form} `}>
@@ -74,7 +70,7 @@ export default function Login({ status, canResetPassword }) {
                     Remember me
                 </label>
 
-                <div className={style.btnsContainer}>
+                <div className={style.btnContainer}>
                     <div>
                         <Link
                             href={route("register")}

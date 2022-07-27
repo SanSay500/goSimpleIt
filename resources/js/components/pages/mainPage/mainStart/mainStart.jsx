@@ -4,10 +4,10 @@ import style from "./mainStart.module.css";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MainStart = (props) => {
+    const { tasks } = usePage().props;
+
     const inputTask = useRef();
     const wrpModal = useRef();
-
-    const { tasks } = usePage().props;
 
     const [tasksList, setTasksList] = useState(tasks);
     const [open, setOpen] = useState(false);
@@ -15,6 +15,7 @@ const MainStart = (props) => {
 
     const searchList = () => {
         setTasksList(() => []);
+
         setTasksList(() => {
             return tasks.filter((el) =>
                 el.name
@@ -31,6 +32,7 @@ const MainStart = (props) => {
     useEffect(() => {
         setTasksList(() => tasksList);
     }, [tasksList]);
+
     useEffect(() => {
         setPrice(() => price);
     }, [price]);
@@ -41,6 +43,7 @@ const MainStart = (props) => {
                 <h2 className={`${style.title}`}>
                     Find the perfect freelance services for your business
                 </h2>
+
                 <ButtonGreen click={setCloseModal}>
                     Estimate your budget
                 </ButtonGreen>

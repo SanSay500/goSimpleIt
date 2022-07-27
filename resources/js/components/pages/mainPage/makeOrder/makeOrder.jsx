@@ -14,9 +14,11 @@ const MakeOrder = (props) => {
         file: "",
     });
 
-    const inputTask = useRef();
-    const [selectedFile, setSelectedFile] = useState("");
     const { tasks } = usePage().props;
+
+    const inputTask = useRef();
+
+    const [selectedFile, setSelectedFile] = useState("");
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
     const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
     let [tasksList, setTasksList] = useState(tasks);
@@ -37,13 +39,11 @@ const MakeOrder = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        post(
-            route("order.store"),{
-                preserveScroll: true,
-                forceFormData: true,
-                _method: "put",
-            }
-        );
+        post(route("order.store"), {
+            preserveScroll: true,
+            forceFormData: true,
+            _method: "put",
+        });
     }
 
     const addFile = (e) => {
@@ -55,7 +55,7 @@ const MakeOrder = (props) => {
         setData("file", e.target.files[0]);
     };
 
-    const inputNumbers = (e, propertyData)=>{
+    const inputNumbers = (e, propertyData) => {
         const reg = /^[-+]?[0-9]*[.,]?[0-9]+(?:[eE][-+]?[0-9]+)?$/gm;
 
         if (reg.test(e.target.value)) {
@@ -63,7 +63,7 @@ const MakeOrder = (props) => {
             return;
         }
         e.target.value = e.target.value.slice(0, -1);
-    }
+    };
 
     useEffect(() => {
         setTasksList(() => tasksList);
@@ -135,6 +135,7 @@ const MakeOrder = (props) => {
                             </svg>
                             Average cost of task: {moneyTotalSearch} $
                         </span>
+
                         <span className="bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300">
                             <svg
                                 className="mr-1 w-3 h-3"

@@ -22,7 +22,7 @@ export default function ProposalConfirm(props) {
                 >
                     <img
                         src="/images/arrowLeft.svg"
-                        alt=""
+                        alt="back"
                         className={`${style.buttonBackImg}`}
                     />
                     Back
@@ -32,6 +32,7 @@ export default function ProposalConfirm(props) {
                     <span className={`${style.proposalItemText}`}>
                         Order Freelancer:{" "}
                     </span>
+
                     <Link
                         href={route("user_info", user.id)}
                         className={style.proposalLink}
@@ -45,6 +46,7 @@ export default function ProposalConfirm(props) {
                     <span className={`${style.proposalItemText}`}>
                         Order proposal description:{" "}
                     </span>
+
                     {proposal.description}
                 </div>
 

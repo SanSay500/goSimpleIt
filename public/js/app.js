@@ -4512,7 +4512,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _order_order__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order/order */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/order.jsx");
-/* harmony import */ var _orderList_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./orderList.module.css */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css");
+/* harmony import */ var _ordersList_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ordersList.module.css */ "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -4531,7 +4531,7 @@ function OrdersList(props) {
       orders = _usePage$props.orders,
       proposalsForOrder = _usePage$props.proposalsForOrder;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-    className: "".concat(_orderList_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer),
+    className: "".concat(_ordersList_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer),
     children: orders.map(function (order) {
       return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_order_order__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread(_objectSpread({}, order), {}, {
         key: order.id
@@ -4587,7 +4587,7 @@ function ProposalConfirm(props) {
         className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].buttonBack),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
           src: "/images/arrowLeft.svg",
-          alt: "",
+          alt: "back",
           className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].buttonBackImg)
         }), "Back"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -4776,8 +4776,8 @@ function ProposalsList(props) {
             className: "".concat(_proposalsList_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].proposalItemText),
             children: ["Order ID: ", proposal.order_id, " "]
           })]
-        }, proposal.id)
-      });
+        })
+      }, proposal.id);
     }) : "You sent no proposals yet"]
   });
 }
@@ -4812,93 +4812,6 @@ function Checkbox(_ref) {
     onChange: function onChange(e) {
       return handleChange(e);
     }
-  });
-}
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/loginPage/confirmPasswordPage/confirmPassword.jsx":
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/components/pages/loginPage/confirmPasswordPage/confirmPassword.jsx ***!
-  \*****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ ConfirmPassword)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _components_shared_container_container__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/shared/container/container */ "./resources/js/components/shared/container/container.jsx");
-/* harmony import */ var _components_shared_input_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/shared/input/input */ "./resources/js/components/shared/input/input.jsx");
-/* harmony import */ var _components_shared_label_label__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/shared/label/label */ "./resources/js/components/shared/label/label.jsx");
-/* harmony import */ var _components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/shared/validationErrors/validationErrors */ "./resources/js/components/shared/validationErrors/validationErrors.jsx");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-
-
-
-
-function ConfirmPassword() {
-  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.useForm)({
-    password: ""
-  }),
-      data = _useForm.data,
-      setData = _useForm.setData,
-      post = _useForm.post,
-      processing = _useForm.processing,
-      errors = _useForm.errors,
-      reset = _useForm.reset;
-
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      reset("password");
-    };
-  }, []);
-
-  var onHandleChange = function onHandleChange(event) {
-    setData(event.target.name, event.target.value);
-  };
-
-  var submit = function submit(e) {
-    e.preventDefault();
-    post(route("password.confirm"));
-  };
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-      className: "mb-4 text-sm text-gray-600",
-      children: "This is a secure area of the application. Please confirm your password before continuing."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      errors: errors
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
-      onSubmit: submit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        className: "mt-4",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_label_label__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          forInput: "password",
-          value: "Password"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_input_input__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          type: "password",
-          name: "password",
-          value: data.password,
-          className: "mt-1 block w-full",
-          isFocused: true,
-          handleChange: onHandleChange
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "flex items-center justify-end mt-4",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(ButtonGreen, {
-          className: "ml-4",
-          processing: processing,
-          children: "Confirm"
-        })
-      })]
-    })]
   });
 }
 
@@ -4976,8 +4889,7 @@ function ForgotPassword(_ref) {
           handleChange: onHandleChange
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "flex items-center justify-end mt-4",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__["default"] // className={`${style.formBtn} `}
-          , {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_buttonGreen_buttonGreen__WEBPACK_IMPORTED_MODULE_1__["default"], {
             processing: processing,
             children: "Email Password Reset Link"
           })
@@ -5035,12 +4947,6 @@ function Login(_ref) {
       errors = _useForm.errors,
       reset = _useForm.reset;
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      reset("password");
-    };
-  }, []);
-
   var onHandleChange = function onHandleChange(event) {
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value);
   };
@@ -5050,6 +4956,11 @@ function Login(_ref) {
     post(route("login"));
   };
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset("password");
+    };
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
     styleBtn: _login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].btn,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -5083,7 +4994,7 @@ function Login(_ref) {
           className: "".concat(_login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].checkbox, " ")
         }), "Remember me"]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
-        className: _login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].btnsContainer,
+        className: _login_module_css__WEBPACK_IMPORTED_MODULE_7__["default"].btnContainer,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
             href: route("register"),
@@ -5152,12 +5063,6 @@ function Register() {
       errors = _useForm.errors,
       reset = _useForm.reset;
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    return function () {
-      reset("password", "password_confirmation");
-    };
-  }, []);
-
   var onHandleChange = function onHandleChange(event) {
     setData(event.target.name, event.target.type === "checkbox" ? event.target.checked : event.target.value, event.target.type === "radio" ? event.target.checked : event.target.value);
   };
@@ -5167,6 +5072,11 @@ function Register() {
     post(route("register"));
   };
 
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    return function () {
+      reset("password", "password_confirmation");
+    };
+  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_shared_validationErrors_validationErrors__WEBPACK_IMPORTED_MODULE_4__["default"], {
       errors: errors
@@ -5284,67 +5194,6 @@ function Register() {
     })]
   });
 }
-
-/***/ }),
-
-/***/ "./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx ***!
-  \****************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-var _excluded = ["label", "name", "className", "children", "errors"];
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
-
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
-
-
-
-
-
-var RegisterDropdown = function RegisterDropdown(_ref) {
-  var label = _ref.label,
-      name = _ref.name,
-      className = _ref.className,
-      children = _ref.children,
-      _ref$errors = _ref.errors,
-      errors = _ref$errors === void 0 ? [] : _ref$errors,
-      props = _objectWithoutProperties(_ref, _excluded);
-
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: className,
-    children: [label && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("label", {
-      className: "form-label",
-      htmlFor: name,
-      children: [label, ":"]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", _objectSpread(_objectSpread({
-      id: name,
-      name: name
-    }, props), {}, {
-      className: "form-select ".concat(errors.length ? "error" : ""),
-      children: children
-    })), errors && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      className: "form-error",
-      children: errors
-    })]
-  });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RegisterDropdown);
 
 /***/ }),
 
@@ -5621,11 +5470,11 @@ var Freelancers = function Freelancers(_ref) {
       children: "Best freelancers"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].cardsList,
-      children: freelancersList.map(function (freelancer, i) {
+      children: freelancersList.map(function (freelancer) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_peopleCard_peopleCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           freelancer: freelancer,
           classes: _freelancers_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].card
-        }, i);
+        }, freelancer.user.id);
       })
     }), reviewsList.length > showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_3__["default"], {
       click: function click(e) {
@@ -5838,9 +5687,9 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var MainStart = function MainStart(props) {
+  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
   var inputTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   var wrpModal = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
-  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(tasks),
       _useState2 = _slicedToArray(_useState, 2),
@@ -6021,14 +5870,13 @@ var MakeOrder = function MakeOrder(props) {
       post = _useForm.post,
       processing = _useForm.processing;
 
+  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
   var inputTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
       _useState2 = _slicedToArray(_useState, 2),
       selectedFile = _useState2[0],
       setSelectedFile = _useState2[1];
-
-  var tasks = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.tasks;
 
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
@@ -7682,15 +7530,15 @@ var Header = function Header(_ref) {
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("header", {
       className: "".concat(_header_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].header),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        children: ["PRIVET", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
           href: "/",
           className: "".concat(_header_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].headerLogo),
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
             src: "/images/logo-upwork.svg",
             alt: "Logo"
           })
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_shared_header_goMenu_goMenu__WEBPACK_IMPORTED_MODULE_0__["default"], {
         styleBtn: styleBtn
       })]
@@ -7918,42 +7766,49 @@ __webpack_require__.r(__webpack_exports__);
 var myJson = {
   reviews: [{
     user: {
+      id: 1,
       name: "Jason",
       avatar: "/images/user.png"
     },
     commets: "Good job. I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified. I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified.I had issues with speed performance on my site, freelancer David from goSimple helped me fast and quilified."
   }, {
     user: {
+      id: 2,
       name: "Jacob",
       avatar: "/images/user.png"
     },
     commets: "I had one issue by estimate 1500 USD and found here well done job!"
   }, {
     user: {
+      id: 3,
       name: "Alex",
       avatar: "/images/user.png"
     },
     commets: "Perfect"
   }, {
     user: {
+      id: 4,
       name: "Gregory",
       avatar: "/images/user.png"
     },
     commets: "Found job fast and with no risk here"
   }, {
     user: {
+      id: 5,
       name: "George",
       avatar: "/images/user.png"
     },
     commets: "I had wordpress site down, in couple of hours found here spec to rise it up"
   }, {
     user: {
+      id: 6,
       name: "Denis",
       avatar: "/images/user.png"
     },
     commets: "A lot of freelancers here"
   }, {
     user: {
+      id: 7,
       name: "Arty",
       avatar: "/images/user.png"
     },
@@ -8152,10 +8007,10 @@ ___CSS_LOADER_EXPORT___.locals = {
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css":
-/*!*******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css":
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -8169,10 +8024,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".r83a1dfD9MJeFvpqC861HQ\\=\\= {\n    margin: 30px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n    width: 100%;\n}\n\n@media (max-width: 1024px) {\n    .r83a1dfD9MJeFvpqC861HQ\\=\\= {\n        grid-template-columns: 1fr 1fr;\n        /* gap: 50px; */\n    }\n}\n@media (max-width: 768px) {\n    .r83a1dfD9MJeFvpqC861HQ\\=\\= {\n        grid-template-columns: 1fr;\n        max-width: 420px;\n    }\n}\n@media (max-width: 576px) {\n}\n@media (max-width: 400px) {\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._7Esa3uXGYXDEaafc\\+EAh7A\\=\\= {\n    margin: 30px 0;\n    display: grid;\n    grid-template-columns: 1fr 1fr 1fr;\n    gap: 25px 55px;\n    width: 100%;\n}\n\n@media (max-width: 1024px) {\n    ._7Esa3uXGYXDEaafc\\+EAh7A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n        /* gap: 50px; */\n    }\n}\n@media (max-width: 768px) {\n    ._7Esa3uXGYXDEaafc\\+EAh7A\\=\\= {\n        grid-template-columns: 1fr;\n        max-width: 420px;\n    }\n}\n@media (max-width: 576px) {\n}\n@media (max-width: 400px) {\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"cardsContainer": "r83a1dfD9MJeFvpqC861HQ=="
+	"cardsContainer": "_7Esa3uXGYXDEaafc+EAh7A=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -8196,7 +8051,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n    flex-direction: row;\n}\n\n.AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n    margin-right: 43px;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._877Owe3tXHIieW0yJMjf1g\\=\\= {\n    padding: 6px 16px;\n    margin-bottom: 43px;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.rN6RezlbGyUgPFm-Vg71\\+Q\\=\\= {\n    padding: 7px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 49%;\n    max-width: 160px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.EPPoENHkElriRZXFWjeoMg\\=\\= {\n    font-size: 16px;\n    line-height: 18px;\n    font-weight: 400;\n    color: #000000;\n    width: 100%;\n}\n.EPPoENHkElriRZXFWjeoMg\\=\\= + .EPPoENHkElriRZXFWjeoMg\\=\\= {\n    margin-top: 13px;\n}\n\n.PuFvI52TEYBFv6DVm1Uc4Q\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    color: #000000;\n}\n\n._3F3W7dhFgwj4PLi4tNu0jg\\=\\= {\n    font-size: 19px;\n    border-bottom: 2px dashed #2bb739;\n}\n.UuLXmeJ0J5kMmuQAxMGV1w\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n    margin-top: 23px;\n}\n\n.QfAtkGexwbQiCRqYTYYG\\+w\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.RhofkRN7CNUyq-\\+TZkZMzg\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    ._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n        flex-direction: column;\n    }\n    .AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n    flex-direction: row;\n}\n\n.AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n    margin-right: 43px;\n    width: 90%;\n    max-width: 362px;\n    display: flex;\n    align-items: flex-start;\n    flex-direction: column;\n}\n\n._877Owe3tXHIieW0yJMjf1g\\=\\= {\n    padding: 6px 16px;\n    margin-bottom: 43px;\n    display: flex;\n    align-items: center;\n    justify-content: flex-start;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.rN6RezlbGyUgPFm-Vg71\\+Q\\=\\= {\n    padding: 7px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    width: 49%;\n    max-width: 160px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n    border-radius: 10px;\n    font-weight: 500;\n    font-size: 12px;\n    line-height: 14px;\n    text-align: center;\n    color: #ffffff;\n}\n\n.EPPoENHkElriRZXFWjeoMg\\=\\= {\n    font-size: 16px;\n    line-height: 18px;\n    font-weight: 400;\n    color: #000000;\n    width: 100%;\n}\n.EPPoENHkElriRZXFWjeoMg\\=\\= + .EPPoENHkElriRZXFWjeoMg\\=\\= {\n    margin-top: 13px;\n}\n\n.PuFvI52TEYBFv6DVm1Uc4Q\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    color: #000000;\n}\n\n._3F3W7dhFgwj4PLi4tNu0jg\\=\\= {\n    font-size: 19px;\n    border-bottom: 2px dashed #2bb739;\n}\n\n.UuLXmeJ0J5kMmuQAxMGV1w\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 100%;\n    margin-top: 23px;\n}\n\n.QfAtkGexwbQiCRqYTYYG\\+w\\=\\= {\n    width: 90%;\n    max-width: 362px;\n}\n\n.RhofkRN7CNUyq-\\+TZkZMzg\\=\\= {\n    display: none;\n}\n\n@media (max-width: 768px) {\n    ._8ADYT4uMDoh\\+Sh-ob\\+Hv9Q\\=\\= {\n        flex-direction: column;\n    }\n    .AaVL8g0Drg1sOgguybt0Lg\\=\\= {\n        margin: 0 0 25px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "_8ADYT4uMDoh+Sh-ob+Hv9Q==",
@@ -8232,7 +8087,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n    padding: 30px;\n    height: 100%;\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n    align-items: start;\n}\n\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    gap: 25px 55px;\n}\n\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\= {\n    padding: 0 20px 0 0;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}\n\n@media (max-width: 1024px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        grid-template-columns: 7fr 5fr;\n        gap: 50px;\n    }\n    .oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n@media (max-width: 768px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        display: flex;\n        flex-direction: column-reverse;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n    padding: 30px;\n    height: 100%;\n    display: grid;\n    grid-template-columns: 9fr 3fr;\n    gap: 100px;\n    align-items: start;\n}\n\n.QNrtobgoy0ipqYIXgeBzxQ\\=\\= {\n    margin: 0 0 25px 0;\n    display: grid;\n    gap: 25px 55px;\n}\n\n.CNq8ItzKmCPwGuzWgF15YQ\\=\\= {\n    padding: 0 20px 0 0;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n}\n\n.oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n    grid-template-columns: 1fr 1fr;\n}\n\n@media (max-width: 1024px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        grid-template-columns: 7fr 5fr;\n        gap: 50px;\n    }\n    .oSrzDE5\\+oo5VQvwvxGmosg\\=\\= {\n        grid-template-columns: 1fr;\n    }\n}\n@media (max-width: 768px) {\n    .T6JrxL1p9LKxheP7bBN\\+mQ\\=\\= {\n        display: flex;\n        flex-direction: column-reverse;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"freelancerOrder": "T6JrxL1p9LKxheP7bBN+mQ==",
@@ -8293,7 +8148,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus textarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 403px;\n    height: 102%;\n    top: -2px;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    z-index: -2;\n}\n.wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n    width: 80%;\n    margin-bottom: 16px;\n}\n\n@media (max-width: 576px) {\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n        display: none;\n    }\n    .wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n        width: 100%;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._1BydIX8WIFcXD\\+Oyoqf5FA\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n}\n.sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 403px;\n    height: 102%;\n    top: -2px;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: cover;\n    z-index: -2;\n}\n\n.wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n    width: 80%;\n    margin-bottom: 16px;\n}\n\n@media (max-width: 576px) {\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .sRalMWgdzRfAX6YGU\\+lvuw\\=\\=::after {\n        display: none;\n    }\n\n    .wJvUPPHb-tNRywDOBjlZLw\\=\\= {\n        width: 100%;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"loginInput": "_1BydIX8WIFcXD+Oyoqf5FA==",
@@ -8322,7 +8177,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".PndmmlU1r3Db5R2O0wVfXw\\=\\= {\n    display: none;\n}\n\n.v-vuJH9z9NpE76kktCgn0g\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 500px;\n}\n.v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 83%;\n    height: 100%;\n    top: 0;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n\n._4pks0GrO711NOlSopH\\+Sxw\\=\\= {\n    margin: 0 0 10px 0;\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._0FLkIzi19uyKuPIyx5MAWA\\=\\= {\n    margin: 0 0 10px 0;\n    display: flex;\n    align-items: center;\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n}\n\n.TwhBrMiQSE-lu\\+Hjq7TU7Q\\=\\= {\n    margin: 0 10px 0 0;\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2bb739;\n    border-radius: 2px;\n}\n\n.\\+bObdav\\+gR1W1QxdsnloXw\\=\\= {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n.koNZ3fThtW-sJV6c0j1T5A\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n\n@media (max-width: 576px) {\n    .v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n        display: none;\n    }\n\n    .\\+bObdav\\+gR1W1QxdsnloXw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n    .\\+YqKtqgP0\\+rfm6nef9kJLQ\\=\\= {\n        align-self: flex-end;\n    }\n    .v-vuJH9z9NpE76kktCgn0g\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".PndmmlU1r3Db5R2O0wVfXw\\=\\= {\n    display: none;\n}\n\n.v-vuJH9z9NpE76kktCgn0g\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 500px;\n}\n.v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 83%;\n    height: 100%;\n    top: 0;\n    right: -256px;\n    background-image: url(\"/images/bg-ellipse.png\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n\n._4pks0GrO711NOlSopH\\+Sxw\\=\\= {\n    margin: 0 0 10px 0;\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._4pks0GrO711NOlSopH\\+Sxw\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._0FLkIzi19uyKuPIyx5MAWA\\=\\= {\n    margin: 0 0 10px 0;\n    display: flex;\n    align-items: center;\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #000000;\n}\n\n.TwhBrMiQSE-lu\\+Hjq7TU7Q\\=\\= {\n    margin: 0 10px 0 0;\n    width: 14px;\n    height: 14px;\n    border: 1px dashed #2bb739;\n    border-radius: 2px;\n}\n\n.h5OhqTHLWO8902Ih\\+6xOBw\\=\\= {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.koNZ3fThtW-sJV6c0j1T5A\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n\n@media (max-width: 576px) {\n    .v-vuJH9z9NpE76kktCgn0g\\=\\=::after {\n        display: none;\n    }\n\n    .h5OhqTHLWO8902Ih\\+6xOBw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    .\\+YqKtqgP0\\+rfm6nef9kJLQ\\=\\= {\n        align-self: flex-end;\n    }\n\n    .v-vuJH9z9NpE76kktCgn0g\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btn": "PndmmlU1r3Db5R2O0wVfXw==",
@@ -8330,7 +8185,7 @@ ___CSS_LOADER_EXPORT___.locals = {
 	"input": "_4pks0GrO711NOlSopH+Sxw==",
 	"checkboxLabel": "_0FLkIzi19uyKuPIyx5MAWA==",
 	"checkbox": "TwhBrMiQSE-lu+Hjq7TU7Q==",
-	"btnsContainer": "+bObdav+gR1W1QxdsnloXw==",
+	"btnContainer": "h5OhqTHLWO8902Ih+6xOBw==",
 	"formLink": "koNZ3fThtW-sJV6c0j1T5A==",
 	"btnLogin": "+YqKtqgP0+rfm6nef9kJLQ=="
 };
@@ -8356,7 +8211,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "[type=\"text\"]:focus,\n[type=\"email\"]:focus,\n[type=\"url\"]:focus,\n[type=\"password\"]:focus,\n[type=\"number\"]:focus,\n[type=\"date\"]:focus,\n[type=\"datetime-local\"]:focus,\n[type=\"month\"]:focus,\n[type=\"search\"]:focus,\n[type=\"tel\"]:focus,\n[type=\"time\"]:focus,\n[type=\"week\"]:focus,\n[multiple]:focus,\n[type=\"checkbox\"]:focus,\n[type=\"radio\"]:focus,\ntextarea:focus,\nselect:focus {\n    outline: none !important;\n    box-shadow: none;\n    border-color: #2bb739;\n}\n[type=\"radio\"]:focus,\n[type=\"radio\"]:hover {\n    background-color: #fff;\n}\n[type=\"checkbox\"]:checked:hover,\n[type=\"checkbox\"]:checked:focus,\n[type=\"radio\"]:checked:hover,\n[type=\"radio\"]:checked:focus {\n    border-color: #2bb739;\n    background-color: #fff;\n}\n[type=\"radio\"]:checked {\n    border-color: #2bb739;\n    background-image: url(\"data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e\");\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 600px;\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 705px;\n    height: 103%;\n    top: -4px;\n    right: -441px;\n    background-image: url(\"/images/bg-ellipse.svg\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.GlMVyjZ89\\+6awSdYmA91xQ\\=\\= {\n    margin-top: 9px;\n}\n.GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n.\\-7j1E9ojdiJXSdq4CRvopQ\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n.qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n    display: flex;\n    align-items: center;\n    margin-top: 9px;\n    justify-content: space-between;\n}\n._5OXpGjY7EXZpt8q0xId72g\\=\\= {\n    display: flex;\n    align-items: center;\n    z-index: 5;\n}\n._6F0jPJW67mGX6n5PIk7PFw\\=\\= {\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n    width: 8px;\n    height: 8px;\n    margin-right: 5px;\n    border: 1px solid #2bb739;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\=:checked {\n    background-color: #fff;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n    display: flex;\n    align-items: center;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= ._5OXpGjY7EXZpt8q0xId72g\\=\\=:first-child {\n    margin-right: 49px;\n}\n@media (max-width: 576px) {\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n        display: none;\n    }\n}\n@media (max-width: 350px) {\n    .lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n    ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= + ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n        margin-top: 10px;\n    }\n    .qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n        flex-direction: column;\n        align-items: flex-end;\n    }\n    .GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n        align-self: start;\n        margin: 0 0 10px 0;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n    position: relative;\n    background: transparent;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n    padding: 44px 37px 30px 21px;\n    width: 100%;\n    max-width: 600px;\n}\n.qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n    position: absolute;\n    display: block;\n    content: \"\";\n    width: 705px;\n    height: 103%;\n    top: -4px;\n    right: -441px;\n    background-image: url(\"/images/bg-ellipse.svg\");\n    background-repeat: no-repeat;\n    background-size: 100%;\n    z-index: -1;\n}\n\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\= {\n    width: 100%;\n    background: #ffffff;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    border: 1px dashed #2bb739;\n    padding: 8px 18px;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 5;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::-moz-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=:-ms-input-placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.-AV3Yzb9IVxNqT6O3YDjOg\\=\\=::placeholder {\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.GlMVyjZ89\\+6awSdYmA91xQ\\=\\= {\n    margin-top: 9px;\n}\n\n.GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 16px;\n    color: #838383;\n    border-bottom: 1px dashed #2bb739;\n}\n\n.\\-7j1E9ojdiJXSdq4CRvopQ\\=\\= {\n    font-weight: 500;\n    font-size: 16px;\n    line-height: 18px;\n    text-align: center;\n    color: #ffffff;\n    background: linear-gradient(\n            335.22deg,\n            rgba(0, 0, 0, 0.2) 15.83%,\n            rgba(255, 255, 255, 0.162) 79.46%\n        ),\n        #2bb739;\n    border-radius: 40px;\n    padding: 10px 35px;\n    z-index: 5;\n}\n\n.qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n    display: flex;\n    align-items: center;\n    margin-top: 9px;\n    justify-content: space-between;\n}\n\n._5OXpGjY7EXZpt8q0xId72g\\=\\= {\n    display: flex;\n    align-items: center;\n    z-index: 5;\n}\n\n._6F0jPJW67mGX6n5PIk7PFw\\=\\= {\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n    width: 8px;\n    height: 8px;\n    margin-right: 5px;\n    border: 1px solid #2bb739;\n}\n._5ZM9csHoydWMn8yak7\\+6QA\\=\\=:checked {\n    background-color: #fff;\n}\n\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n    display: flex;\n    align-items: center;\n}\n.lyWC3cr7WoWIq2LH4027Kw\\=\\= ._5OXpGjY7EXZpt8q0xId72g\\=\\=:first-child {\n    margin-right: 49px;\n}\n\n@media (max-width: 576px) {\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\= {\n        box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    }\n    .qCtlOyzbvI6KZDGHrb\\+nAg\\=\\=::after {\n        display: none;\n    }\n}\n\n@media (max-width: 350px) {\n    .lyWC3cr7WoWIq2LH4027Kw\\=\\= {\n        flex-direction: column;\n        align-items: flex-start;\n    }\n\n    ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= + ._5ZM9csHoydWMn8yak7\\+6QA\\=\\= {\n        margin-top: 10px;\n    }\n\n    .qhSDyfmc0BzzaNja3iQyDA\\=\\= {\n        flex-direction: column;\n        align-items: flex-end;\n    }\n\n    .GfzqFl6aWcNEDoo6kJPVDQ\\=\\= {\n        align-self: start;\n        margin: 0 0 10px 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"formPage": "qCtlOyzbvI6KZDGHrb+nAg==",
@@ -8392,7 +8247,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-right: 5%;\n    width: 40%;\n}\n\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2b2b2b;\n    z-index: 36;\n    max-width: 1200px;\n    margin: 0 auto;\n    text-align: justify;\n}\n@media (max-width: 1024px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n        margin: 0 0px 40px 0px;\n        padding: 0;\n    }\n}\n@media (max-width: 860px) {\n}\n\n@media (max-width: 860px) {\n}\n\n@media (max-width: 767px) {\n}\n\n@media (max-width: 510px) {\n}\n\n@media (max-width: 470px) {\n}\n\n@media (max-width: 370px) {\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n    padding-right: 5%;\n    width: 40%;\n}\n.UT9pmnOrMXnI3OARlU3JUg\\=\\= > div {\n    padding: 0;\n}\n\n.QF4SLAmEpw\\+17d5Taf7zoQ\\=\\= {\n    margin-bottom: 26px;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 28px;\n    line-height: 32px;\n    text-align: center;\n}\n\n.EWQdHq0iPEDEkJFngKWjKg\\=\\= {\n    font-weight: 300;\n    font-size: 14px;\n    line-height: 27px;\n    text-align: left;\n    color: #2b2b2b;\n    z-index: 36;\n    max-width: 1200px;\n    margin: 0 auto;\n    text-align: justify;\n}\n\n@media (max-width: 1024px) {\n    .UT9pmnOrMXnI3OARlU3JUg\\=\\= {\n        width: 100%;\n        margin: 0 0px 40px 0px;\n        padding: 0;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"about": "UT9pmnOrMXnI3OARlU3JUg==",
@@ -8450,7 +8305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    width: 100%;\n}\n\n.CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n    position: relative;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 7%;\n    z-index: -1;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    top: 207px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n    top: 417px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\= {\n    position: relative;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\= {\n    position: relative;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 67%;\n    z-index: -1;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after,\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n@media (max-width: 1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n@media (max-width: 1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n    }\n}\n@media (max-width: 1024px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        flex-direction: column;\n        padding: 0 60px 5px 60px;\n    }\n}\n@media (max-width: 800px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n@media (max-width: 756px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n    }\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n@media (max-width: 576px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: none;\n    }\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before,\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after {\n        display: none;\n    }\n    .L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n        display: none;\n    }\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n        display: none;\n    }\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        padding: 0 0px 5px 0px;\n    }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".Obx3BcEpHpd6F4TIMX2OXw\\=\\= {\n    position: relative;\n    padding: 25px 0 0;\n}\n\n.ehM-LO7sL14Thwhic4Od0g\\=\\= {\n    position: relative;\n    align-items: stretch;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before,\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    z-index: -1;\n}\n.Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n    width: 62%;\n    min-width: 964px;\n    height: 64px;\n    top: 294px;\n    right: 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n    border-radius: 10px 0 0 10px;\n}\n.ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n    width: 696px;\n    height: 403px;\n    top: 0;\n    left: 34%;\n    background-image: url(\"/images/bgrMainHeaderContainer.png\");\n    background-repeat: no-repeat;\n    background-size: contain;\n    background-position: 100%;\n}\n\n.hCR9StqrLyuDUqkAIApghg\\=\\= {\n    display: flex;\n    align-items: flex-start;\n    width: 100%;\n}\n\n.CXFJZHWnF7qF72ESiaHMhg\\=\\= {\n    position: relative;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 7%;\n    z-index: -1;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n    top: 207px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n.CXFJZHWnF7qF72ESiaHMhg\\=\\=::after {\n    top: 417px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n.XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n    grid-template-columns: 1fr 1fr 1fr;\n}\n\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\= {\n    position: relative;\n}\n.L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n    top: 0px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\= {\n    position: relative;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 67%;\n    z-index: -1;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n    top: 0px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n.OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after {\n    top: 20px;\n    right: 0;\n    border-radius: 10px 0 0 10px;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2b2b2b;\n}\n\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\= {\n    padding: 0 40px;\n    position: relative;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after,\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    display: block;\n    content: \"\";\n    position: absolute;\n    height: 64px;\n    width: 8%;\n    z-index: -1;\n}\n.UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before {\n    top: 100px;\n    left: 0;\n    border-radius: 0 10px 10px 0;\n    background: linear-gradient(\n            180deg,\n            rgba(255, 255, 255, 0.2) 0%,\n            rgba(0, 0, 0, 0) 100%\n        ),\n        #2bb739;\n}\n\n@media (max-width: 1440px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        min-width: 0;\n        width: 65%;\n    }\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 600px;\n        left: 42%;\n    }\n}\n\n@media (max-width: 1200px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 60%;\n        height: 55px;\n        top: 280px;\n    }\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 550px;\n        top: -19px;\n    }\n}\n\n@media (max-width: 1024px) {\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        width: 57%;\n        height: 46px;\n        top: 240px;\n    }\n\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 450px;\n        top: -35px;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr 1fr;\n    }\n\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        flex-direction: column;\n        padding: 0 60px 5px 60px;\n    }\n}\n\n@media (max-width: 800px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 350px;\n        left: 45%;\n    }\n\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        top: 235px;\n    }\n}\n\n@media (max-width: 756px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        width: 40%;\n        height: 170px;\n        top: 70px;\n        left: 54%;\n    }\n\n    .Obx3BcEpHpd6F4TIMX2OXw\\=\\=::before {\n        display: none;\n    }\n}\n\n@media (max-width: 576px) {\n    .ehM-LO7sL14Thwhic4Od0g\\=\\=::after {\n        display: none;\n    }\n\n    .XQgbd9v39XQ7zPJJ3VCB2A\\=\\= {\n        grid-template-columns: 1fr;\n    }\n\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::after,\n    .CXFJZHWnF7qF72ESiaHMhg\\=\\=::before {\n        display: none;\n    }\n\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::before,\n    .UWgqZuz1rC5nfCMk8jjZLw\\=\\=::after {\n        display: none;\n    }\n\n    .L4BrH3KYKvAbsgXMmHmBRA\\=\\=::after {\n        display: none;\n    }\n\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::after,\n    .OMLdDvkt5T2uNvjFWTrzHA\\=\\=::before {\n        display: none;\n    }\n\n    .hCR9StqrLyuDUqkAIApghg\\=\\= {\n        padding: 0 0px 5px 0px;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"headerContainer": "Obx3BcEpHpd6F4TIMX2OXw==",
@@ -8484,7 +8339,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n\n\n.fhDiH9XWowrPapFlYRtnjA\\=\\= {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #2b2b2b54;\n    z-index: 2;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\= {\n    position: relative;\n    width: 100%;\n    max-width: 530px;\n    background: white;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -60%;\n    width: 100%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n.bz0ToHr7Px10yfV3CKPhaw\\=\\= {\n    margin: 0 0 30px 0;\n}\n\n.VnaRefbL8i2OD6rJwi8OnA\\=\\= {\n    margin: 0 0 20px 0;\n    display: flex;\n    flex-direction: column;\n    z-index: 4;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\= {\n    width: 100%;\n    max-width: 300px;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n    /* margin: 0 0 9px 0; */\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::-moz-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=:-ms-input-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::placeholder,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= {\n    max-height: 255px;\n    max-width: 300px;\n    position: absolute;\n    top: 126px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 2;\n}\n\n._87ZzhRuiNTrpldYWGmP9QQ\\=\\= {\n    display: flex;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5w-meDeLMlk0VKjAlYz6jA\\=\\= {\n    margin: 0 10px;\n    display: flex;\n    justify-content: center;\n    max-width: 50px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.meqKyAs5X3D7FesV8Nq9Yg\\=\\= {\n    display: none;\n}\n\n@media(max-width:1200px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        font-size: 30px;\n        line-height: 36px;\n    }\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 35px;\n    }\n}\n@media(max-width:1000px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 60px;\n         font-size: 28px;\n        line-height: 32px;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 400px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 50px 0 0 0;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 125px;\n    }\n    \n}\n@media(max-width:756px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 40px;\n        font-size: 25px;\n        line-height: 28px;\n    }\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 40px 0 0 0;\n    }\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 5px;\n    }\n\n}\n@media(max-width:576px) {\n       .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        margin-bottom: 20px;\n    }\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        text-align: center;\n        font-size: 23px;\n        line-height: 26px;\n        margin-bottom: 20px;\n    }\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\={\n        width: 150px;\n    }\n    .rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after{\n        display: none;\n    }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n    display: flex;\n    flex-direction: column;\n    margin: 75px 0 0 0;\n}\n\n.T877L35uu2g8hXDSWlqDJw\\=\\= {\n    margin: 0 0 20px 0;\n    max-width: 461px;\n}\n\n.-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n    margin: 0 0 56px 0;\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 500;\n    font-size: 38px;\n    line-height: 44px;\n    color: #2b2b2b;\n}\n\n.dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n    align-self: center;\n}\n\n.fhDiH9XWowrPapFlYRtnjA\\=\\= {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: fixed;\n    top: 0;\n    left: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #2b2b2b54;\n    z-index: 2;\n}\n\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\= {\n    position: relative;\n    width: 100%;\n    max-width: 530px;\n    background: white;\n    padding: 25px 20px;\n    display: flex;\n    flex-direction: column;\n    box-shadow: 0 -2px 5px -5px rgba(0, 0, 0, 0.25),\n        -7px 2px 9px -5px rgba(0, 0, 0, 0.25),\n        -2px 0px 7px -5px rgba(0, 0, 0, 0.25),\n        0px -5px 1px -5px rgba(0, 0, 0, 0.25);\n    border-radius: 10px;\n}\n.rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n    position: absolute;\n    content: \"\";\n    top: 0;\n    right: -60%;\n    width: 100%;\n    height: 100%;\n    background-image: url(/images/bgrEllipse.svg);\n    background-size: contain;\n    background-repeat: no-repeat;\n}\n\n.bz0ToHr7Px10yfV3CKPhaw\\=\\= {\n    margin: 0 0 30px 0;\n}\n\n.VnaRefbL8i2OD6rJwi8OnA\\=\\= {\n    margin: 0 0 20px 0;\n    display: flex;\n    flex-direction: column;\n    z-index: 4;\n}\n\n.bD5WlPjyOcph12uCo9OyRA\\=\\=,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\= {\n    width: 100%;\n    max-width: 300px;\n    background-color: #fff;\n    border: 1px dashed #2bb739;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    resize: none;\n}\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::-moz-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=::-moz-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.bD5WlPjyOcph12uCo9OyRA\\=\\=:-ms-input-placeholder, .UwUh5Izwjy4UAjI4qvXaSg\\=\\=:-ms-input-placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n.bD5WlPjyOcph12uCo9OyRA\\=\\=::placeholder,\n.UwUh5Izwjy4UAjI4qvXaSg\\=\\=::placeholder {\n    font-family: \"Ubuntu\";\n    font-style: normal;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= {\n    max-height: 255px;\n    max-width: 300px;\n    position: absolute;\n    top: 126px;\n    width: 100%;\n    background-color: #fff;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);\n    border-radius: 8px;\n    z-index: 2;\n    overflow-y: auto;\n    scrollbar-width: thin;\n    scrollbar-color: rgb(43, 183, 57) transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar {\n    width: 5px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-track {\n    background: transparent;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\=::-webkit-scrollbar-thumb {\n    background-color: rgb(43, 183, 57);\n    border-radius: 25px;\n}\n\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div {\n    padding: 1%;\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    border-radius: 8px;\n}\n.kvlWfq9Rp1oQWJbdrNQssQ\\=\\= > div:hover {\n    background-color: #2bb739;\n    cursor: pointer;\n    color: #fff;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= {\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n    z-index: 2;\n}\n\n._87ZzhRuiNTrpldYWGmP9QQ\\=\\= {\n    display: flex;\n}\n\n.ej0MNdiWaSyZiA1n7OW8kQ\\=\\= label {\n    display: flex;\n    font-family: \"Ubuntu\";\n    font-weight: 400;\n    font-size: 18px;\n    line-height: 21px;\n    color: #2b2b2b;\n}\n\n._5w-meDeLMlk0VKjAlYz6jA\\=\\= {\n    margin: 0 10px;\n    display: flex;\n    justify-content: center;\n    max-width: 50px;\n    border-left: none;\n    border-top: none;\n    border-right: none;\n    box-shadow: none;\n    border-radius: 0;\n    background: transparent;\n}\n\n.meqKyAs5X3D7FesV8Nq9Yg\\=\\= {\n    display: none;\n}\n\n@media (max-width: 1200px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        font-size: 30px;\n        line-height: 36px;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 35px;\n    }\n}\n\n@media (max-width: 1000px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 60px;\n        font-size: 28px;\n        line-height: 32px;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 400px;\n    }\n\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 50px 0 0 0;\n    }\n\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n        width: 125px;\n    }\n}\n\n@media (max-width: 756px) {\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        margin-bottom: 40px;\n        font-size: 25px;\n        line-height: 28px;\n    }\n\n    .gDtRMDHhOVnQof3zPFEKkw\\=\\= {\n        margin: 40px 0 0 0;\n    }\n\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        margin-bottom: 5px;\n    }\n}\n\n@media (max-width: 576px) {\n    .T877L35uu2g8hXDSWlqDJw\\=\\= {\n        max-width: 100%;\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n        margin-bottom: 20px;\n    }\n\n    .-yZfMlbZET5XdbPMc\\+TEZQ\\=\\= {\n        text-align: center;\n        font-size: 23px;\n        line-height: 26px;\n        margin-bottom: 20px;\n    }\n\n    .dhZ0EaaMRSFzUyiAU-2jxA\\=\\= {\n        width: 150px;\n    }\n\n    .rYC9cjUdoBDSl\\+XwFKBr9Q\\=\\=::after {\n        display: none;\n    }\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"container": "gDtRMDHhOVnQof3zPFEKkw==",
@@ -63346,10 +63201,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css ***!
-  \*********************************************************************************************/
+/***/ "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -63359,7 +63214,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_orderList_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./orderList.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ordersList_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ordersList.module.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css");
 
             
 
@@ -63368,11 +63223,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_orderList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ordersList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_orderList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ordersList_module_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -64513,9 +64368,9 @@ var map = {
 	"./pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx",
 	"./pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.jsx",
 	"./pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.module.css": "./resources/js/components/pages/dashboardEmployerPage/ordersList/order/orderProposal/orderProposal.module.css",
-	"./pages/dashboardEmployerPage/ordersList/orderList.module.css": "./resources/js/components/pages/dashboardEmployerPage/ordersList/orderList.module.css",
 	"./pages/dashboardEmployerPage/ordersList/ordersList": "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.jsx",
 	"./pages/dashboardEmployerPage/ordersList/ordersList.jsx": "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.jsx",
+	"./pages/dashboardEmployerPage/ordersList/ordersList.module.css": "./resources/js/components/pages/dashboardEmployerPage/ordersList/ordersList.module.css",
 	"./pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm": "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.jsx",
 	"./pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.jsx": "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.jsx",
 	"./pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css": "./resources/js/components/pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm.module.css",
@@ -64527,8 +64382,6 @@ var map = {
 	"./pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css": "./resources/js/components/pages/dashboardFreelancerPage/proposalsList/proposalsList.module.css",
 	"./pages/loginPage/checkbox/checkbox": "./resources/js/components/pages/loginPage/checkbox/checkbox.jsx",
 	"./pages/loginPage/checkbox/checkbox.jsx": "./resources/js/components/pages/loginPage/checkbox/checkbox.jsx",
-	"./pages/loginPage/confirmPasswordPage/confirmPassword": "./resources/js/components/pages/loginPage/confirmPasswordPage/confirmPassword.jsx",
-	"./pages/loginPage/confirmPasswordPage/confirmPassword.jsx": "./resources/js/components/pages/loginPage/confirmPasswordPage/confirmPassword.jsx",
 	"./pages/loginPage/forgotPasswordPage/forgotPassword": "./resources/js/components/pages/loginPage/forgotPasswordPage/forgotPassword.jsx",
 	"./pages/loginPage/forgotPasswordPage/forgotPassword.jsx": "./resources/js/components/pages/loginPage/forgotPasswordPage/forgotPassword.jsx",
 	"./pages/loginPage/forgotPasswordPage/forgotPassword.module.css": "./resources/js/components/pages/loginPage/forgotPasswordPage/forgotPassword.module.css",
@@ -64538,8 +64391,6 @@ var map = {
 	"./pages/loginPage/registerPage/register": "./resources/js/components/pages/loginPage/registerPage/register.jsx",
 	"./pages/loginPage/registerPage/register.jsx": "./resources/js/components/pages/loginPage/registerPage/register.jsx",
 	"./pages/loginPage/registerPage/register.module.css": "./resources/js/components/pages/loginPage/registerPage/register.module.css",
-	"./pages/loginPage/registerPage/registerDropdown/registerDropdown": "./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx",
-	"./pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx": "./resources/js/components/pages/loginPage/registerPage/registerDropdown/registerDropdown.jsx",
 	"./pages/loginPage/resetPasswordPage/resetPassword": "./resources/js/components/pages/loginPage/resetPasswordPage/resetPassword.jsx",
 	"./pages/loginPage/resetPasswordPage/resetPassword.jsx": "./resources/js/components/pages/loginPage/resetPasswordPage/resetPassword.jsx",
 	"./pages/loginPage/verifyEmailPage/verifyEmail": "./resources/js/components/pages/loginPage/verifyEmailPage/verifyEmail.jsx",

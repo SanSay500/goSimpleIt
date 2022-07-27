@@ -50,10 +50,7 @@ export default function ForgotPassword({ status }) {
                     />
 
                     <div className="flex items-center justify-end mt-4">
-                        <ButtonGreen
-                            // className={`${style.formBtn} `}
-                            processing={processing}
-                        >
+                        <ButtonGreen processing={processing}>
                             Email Password Reset Link
                         </ButtonGreen>
                     </div>
