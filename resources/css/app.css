@@ -109,6 +109,27 @@ select:focus {
     box-shadow: none;
     border-color: #2bb739;
 }
+
+[type="text"]:focus:read-only,
+[type="email"]:focus:read-only,
+[type="url"]:focus:read-only,
+[type="password"]:focus:read-only,
+[type="number"]:focus:read-only,
+[type="date"]:focus:read-only,
+[type="datetime-local"]:focus:read-only,
+[type="month"]:focus:read-only,
+[type="search"]:focus:read-only,
+[type="tel"]:focus:read-only,
+[type="time"]:focus:read-only,
+[type="week"]:focus:read-only,
+[type="checkbox"]:focus:read-only,
+[type="radio"]:focus:read-only,
+[multiple]:focus:read-only,
+textarea:focus:read-only,
+select:focus:read-only {
+    border-color: transparent;
+}
+
 [type="checkbox"]:checked,
 [type="checkbox"]:checked:hover {
     background-color: #2bb739;
@@ -126,6 +147,7 @@ select:focus {
     border-color: #2bb739;
     background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e");
 }
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

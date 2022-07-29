@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import style from "./input.module.css";
 
 export default function Input({
     type = "text",
@@ -22,15 +23,13 @@ export default function Input({
     }, []);
 
     return (
-        <div className="flex flex-col items-start">
+        <div className={style.container}>
             <input
                 type={type}
                 name={name}
                 value={value}
                 placeholder={placeholder}
-                className={
-                    className
-                }
+                className={className}
                 ref={input}
                 autoComplete={autoComplete}
                 required={required}
