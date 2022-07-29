@@ -35,6 +35,7 @@ class UserController extends Controller
             'description' => $request->description,
             'email' => $request->email,
             'avatar' => $avaFile ? $avaPath : $user->avatar,
+            'currency' => $request->currency,
         ];
         $user->update($updateInfo);
         return back()->with('success', 'Your profile information changed.');

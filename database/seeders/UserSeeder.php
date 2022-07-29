@@ -16,9 +16,10 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-                'email'=>'borodachev@gmail.com',
+            'email'=>'borodachev@gmail.com',
             'name'=>'Alex',
             'role'=>'Employer',
+            'currency'=>'USD',
             'description'=>'Best freelancer owner',
             'is_admin'=>true,
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

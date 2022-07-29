@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "amrshawky/laravel-currency": "^5.0",
         "backpack/crud": "^5.0",
         "barryvdh/laravel-debugbar": "^3.6",
         "bmatovu/laravel-xml": "^3.1",

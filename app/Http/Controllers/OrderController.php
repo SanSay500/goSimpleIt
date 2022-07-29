@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 use App\Mail\NewOrderWithReg;
 use Illuminate\Http\Request;
+use AmrShawky\LaravelCurrency\Facade\Currency;
+use Illuminate\Support\Facades\DB;
+use App\Models\CurrencyModel;
 
 
 class OrderController extends Controller
@@ -44,6 +47,16 @@ class OrderController extends Controller
         $filesSize = [];
 
         foreach ($orders as $order => $params) {
+
+            if (Auth::user() && Auth::user()->currency != 'EUR') {
+                $newCur = Currency::convert()
+                    ->from('EUR')
+                    ->to(Auth::user()->currency)
+                    ->amount($params['money'])
+                    ->round(-1)
+                    ->get();
+                $orders[$order]['money'] = $newCur;
+            }
             $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));
             if (file_exists($Orderfile) && filetype($Orderfile) != 'dir') {
@@ -115,7 +128,7 @@ class OrderController extends Controller
             $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
             $order += $filesSize;
         }
-        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal'=> $checkHaveProposal ?? ''] );
+        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal' => $checkHaveProposal ?? '']);
     }
 
 
@@ -155,9 +168,9 @@ class OrderController extends Controller
         $order = Order::get()->last();
 
         if (isset($user)) {
-             Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+            Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
         } else {
-             Mail::to(Auth::user())->send(new NewOrder($order));
+            Mail::to(Auth::user())->send(new NewOrder($order));
         }
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }
