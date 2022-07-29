@@ -45,7 +45,7 @@ class OrderController extends Controller
         $orders = Order::where('status', 'Pending')->get()->toArray();
         $tasksIDsInOrders = [];
         $filesSize = [];
-
+        $symbolCur = CurrencyModel::where('code', Auth::user()->currency)->first();
         foreach ($orders as $order => $params) {
 
             if (Auth::user() && Auth::user()->currency != 'EUR') {
@@ -66,7 +66,7 @@ class OrderController extends Controller
             }
         }
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'ordersActive' => $orders, 'tasksWithOrders' => $tasksWithOrders]);
+        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'ordersActive' => $orders, 'tasksWithOrders' => $tasksWithOrders, 'symbolCur'=>$symbolCur]);
     }
 
     public function proposal_confirm_form($order_id, $proposal_id)
