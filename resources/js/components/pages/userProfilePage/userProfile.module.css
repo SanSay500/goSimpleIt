@@ -20,6 +20,42 @@
     width: 60%;
 }
 
+.loginFormRadio {
+    margin: 0 0 9px 0;
+    display: flex;
+    align-items: center;
+}
+
+.radioContainer {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+}
+.radioContainer + .radioContainer {
+    margin: 0 0 0 50px;
+}
+
+.registerRadio {
+    width: 8px;
+    height: 8px;
+    margin-right: 5px;
+    border: 1px solid #2bb739;
+}
+.registerRadio:checked {
+    background-color: #fff;
+}
+input[type="radio"]:read-only {
+    border-color: #2bb739;
+}
+
+.radioLabel {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #2b2b2b;
+}
+
 .formLabel + .formLabel {
     margin: 15px 0 0 0;
 }

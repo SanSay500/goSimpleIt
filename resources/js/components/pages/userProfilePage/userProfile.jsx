@@ -12,15 +12,18 @@ export default function UserProfile() {
         email: props.auth.user.email,
         description: props.auth.user.description,
         avatar: props.auth.user.avatar,
+        currency: props.auth.user.currency,
+        // currency: "EUR",
     });
 
-    let avatar = '';
+    let avatar = "";
     if (props.auth.user.avatar) {
         avatar = "../storage/avatars/" + props.auth.user.avatar;
     }
 
     const [toggleLogo, setToggleLogo] = useState(avatar);
     const [readOnly, setReadOnly] = useState(true);
+    const [currencyChecked, setCurrencyChecked] = useState(data.currency);
 
     const uploadFile = (e) => {
         setData("avatar", e.target.files[0]);
@@ -43,9 +46,15 @@ export default function UserProfile() {
         });
     }
 
-    function Goback() {
+    function goBack() {
         window.history.back();
     }
+
+    const onHandleChange = (e) => {
+        setCurrencyChecked(e.target.value);
+
+        setData(e.target.name, e.target.value);
+    };
 
     return (
         <Container>
@@ -89,6 +98,77 @@ export default function UserProfile() {
                 </div>
 
                 <div className={style.inputsContainer}>
+                    <div className={`${style.loginFormRadio} `}>
+                        <div className={`${style.radioContainer} `}>
+                            <input
+                                type="radio"
+                                name="currency"
+                                value="EUR"
+                                id="currencyEUR"
+                                className={`${style.registerRadio} `}
+                                checked={
+                                    currencyChecked === "EUR" ? true : false
+                                }
+                                disabled={readOnly}
+                                onChange={onHandleChange}
+                                required
+                            />
+
+                            <label
+                                htmlFor="currencyEUR"
+                                className={`${style.radioLabel} `}
+                            >
+                                EUR
+                            </label>
+                        </div>
+
+                        <div className={`${style.radioContainer} `}>
+                            <input
+                                type="radio"
+                                name="currency"
+                                id="currencyUSD"
+                                value="USD"
+                                className={`${style.registerRadio} `}
+                                checked={
+                                    currencyChecked === "USD" ? true : false
+                                }
+                                disabled={readOnly}
+                                onChange={onHandleChange}
+                                required
+                            />
+
+                            <label
+                                htmlFor="currencyUSD"
+                                className={`${style.radioLabel} `}
+                            >
+                                USD
+                            </label>
+                        </div>
+
+                        <div className={`${style.radioContainer} `}>
+                            <input
+                                type="radio"
+                                name="currency"
+                                id="currencyGBP"
+                                value="GBP"
+                                className={`${style.registerRadio} `}
+                                checked={
+                                    currencyChecked === "GBP" ? true : false
+                                }
+                                disabled={readOnly}
+                                onChange={onHandleChange}
+                                required
+                            />
+
+                            <label
+                                htmlFor="currencyGBP"
+                                className={`${style.radioLabel} `}
+                            >
+                                GBP
+                            </label>
+                        </div>
+                    </div>
+
                     <label className={style.formLabel}>
                         Name
                         <input
@@ -137,7 +217,7 @@ export default function UserProfile() {
                         <Link
                             as="button"
                             type="button"
-                            onClick={Goback}
+                            onClick={goBack}
                             className={`${style.buttonBack}`}
                         >
                             <img

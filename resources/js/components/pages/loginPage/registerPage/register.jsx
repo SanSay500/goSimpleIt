@@ -5,6 +5,7 @@ import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { Link, useForm } from "@inertiajs/inertia-react";
 import style from "./register.module.css";
+import { useState } from "react";
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -13,19 +14,27 @@ export default function Register() {
         description: "",
         password: "",
         role: "Freelancer",
+        currency: "EUR",
         password_confirmation: "",
     });
 
-    const onHandleChange = (event) => {
-        setData(
-            event.target.name,
-            event.target.type === "checkbox"
-                ? event.target.checked
-                : event.target.value,
-            event.target.type === "radio"
-                ? event.target.checked
-                : event.target.value
-        );
+    const [roleChecked, setRoleChecked] = useState(data.role);
+    const [currencyChecked, setCurrencyChecked] = useState(data.currency);
+
+    const onHandleChange = (e) => {
+        switch (e.target.name) {
+            case "role":
+                setRoleChecked(e.target.value);
+                break;
+
+            case "currency":
+                setCurrencyChecked(e.target.value);
+                break;
+            default:
+                break;
+        }
+
+        setData(e.target.name, e.target.value);
     };
 
     const submit = (e) => {
@@ -47,19 +56,21 @@ export default function Register() {
             <form onSubmit={submit} className={`${style.formPage} `}>
                 <div className={`${style.loginFormRadio} `}>
                     <div className={`${style.radioContainer} `}>
-                        <Input
+                        <input
                             type="radio"
                             name="role"
                             value="Freelancer"
-                            id="radio1"
-                            className={`${style.registerRadio} `}
-                            checked
-                            handleChange={onHandleChange}
+                            id="roleFreelancer"
+                            className={`${style.registerRadio}`}
+                            checked={
+                                roleChecked === "Freelancer" ? true : false
+                            }
+                            onChange={onHandleChange}
                             required
                         />
 
                         <label
-                            htmlFor="radio1"
+                            htmlFor="roleFreelancer"
                             className={`${style.radioLabel} `}
                         >
                             Freelancer
@@ -67,21 +78,84 @@ export default function Register() {
                     </div>
 
                     <div className={`${style.radioContainer} `}>
-                        <Input
+                        <input
                             type="radio"
                             name="role"
                             value="Employer"
                             className={`${style.registerRadio} `}
-                            handleChange={onHandleChange}
+                            checked={roleChecked === "Employer" ? true : false}
+                            onChange={onHandleChange}
                             required
-                            id="radio2"
+                            id="roleEmployer"
                         />
 
                         <label
-                            htmlFor="radio2"
+                            htmlFor="roleEmployer"
                             className={`${style.radioLabel} `}
                         >
                             Employer
+                        </label>
+                    </div>
+                </div>
+
+                <div className={`${style.loginFormRadio} `}>
+                    <div className={`${style.radioContainer} `}>
+                        <Input
+                            type="radio"
+                            name="currency"
+                            value="EUR"
+                            id="currencyEUR"
+                            className={`${style.registerRadio} `}
+                            checked={currencyChecked === "EUR" ? true : false}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                        <label
+                            htmlFor="currencyEUR"
+                            className={`${style.radioLabel} `}
+                        >
+                            EUR
+                        </label>
+                    </div>
+
+                    <div className={`${style.radioContainer} `}>
+                        <Input
+                            type="radio"
+                            name="currency"
+                            id="currencyUSD"
+                            value="USD"
+                            className={`${style.registerRadio} `}
+                            checked={currencyChecked === "USD" ? true : false}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                        <label
+                            htmlFor="currencyUSD"
+                            className={`${style.radioLabel} `}
+                        >
+                            USD
+                        </label>
+                    </div>
+
+                    <div className={`${style.radioContainer} `}>
+                        <Input
+                            type="radio"
+                            name="currency"
+                            id="currencyGBP"
+                            value="GBP"
+                            className={`${style.registerRadio} `}
+                            checked={currencyChecked === "GBP" ? true : false}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                        <label
+                            htmlFor="currencyGBP"
+                            className={`${style.radioLabel} `}
+                        >
+                            GBP
                         </label>
                     </div>
                 </div>
@@ -94,7 +168,7 @@ export default function Register() {
                         className={`${style.loginInput} `}
                         placeholder="Name"
                         autoComplete="name"
-                        isFocused={true}
+                        // isFocused={true}
                         handleChange={onHandleChange}
                         required
                     />
