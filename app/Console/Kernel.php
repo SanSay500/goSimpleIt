@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
                 $nowCurrency->exchange_rate = $value;
                 $nowCurrency->save();
             }
-        })->daily();
+        })->everyMinute();
 
     }
 
