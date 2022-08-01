@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class Task extends Model
 {
@@ -17,7 +18,15 @@ class Task extends Model
         'time',
     ];
 
-    public function order(){
+    public function order()
+    {
         return $this->hasOne(Order::class);
+    }
+
+    protected function money_in_user_currency(): Attribute
+    {
+        return Attribute::make(
+            get: fn($value) => 3 * $value,
+        );
     }
 }

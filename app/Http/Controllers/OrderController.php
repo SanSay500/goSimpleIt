@@ -41,18 +41,24 @@ class OrderController extends Controller
      */
     public function main()
     {
-        $tasks = Task::all();
         $orders = Order::where('status', 'Pending')->get()->toArray();
         $tasksIDsInOrders = [];
         $filesSize = [];
         $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
         $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
+
+        $tasks = Task::get()->toArray();
+        foreach ($tasks as $task => $value) {
+            $tasks[$task] = $value['money'] * $exchange_rate;
+        }
+
         foreach ($orders as $order => $params) {
 
             if (Auth::user() && Auth::user()->currency != 'EUR') {
                 $newCur = $orders[$order]['money'] * $exchange_rate;
-                $orders[$order]['money'] = $newCur;
+                $orders[$order]['money'] = round($newCur);
             }
+
             $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));
             if (file_exists($Orderfile) && filetype($Orderfile) != 'dir') {
@@ -109,7 +115,7 @@ class OrderController extends Controller
         $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
         if (Auth::user() && Auth::user()->currency != 'EUR') {
             $newCur = $order['money'] * $exchange_rate;
-            $order['money'] = $newCur;
+            $order['money'] = round($newCur);
         }
         $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
         if (Auth::user()) {
