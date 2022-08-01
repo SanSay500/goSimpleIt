@@ -45,7 +45,7 @@ class OrderController extends Controller
         $orders = Order::where('status', 'Pending')->get()->toArray();
         $tasksIDsInOrders = [];
         $filesSize = [];
-        $symbolCur = CurrencyModel::where('code', Auth::user()->currency)->first();
+        $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
         foreach ($orders as $order => $params) {
 
             if (Auth::user() && Auth::user()->currency != 'EUR') {
