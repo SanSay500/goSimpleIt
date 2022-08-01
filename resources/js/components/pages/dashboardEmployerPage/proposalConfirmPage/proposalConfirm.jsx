@@ -83,7 +83,12 @@ export default function ProposalConfirm(props) {
             </div>
 
             <div className={`${style.cardContainer}`}>
-                <BasicCard key={order.id} order={order} classes={style.btn} />
+                <BasicCard
+                    key={order.id}
+                    order={order}
+                    classes={style.btn}
+                    symbolCurrency={props.symbolCur}
+                />
             </div>
         </Container>
     );

@@ -4387,9 +4387,12 @@ function DashboardEmployer(props) {
       proposalsForOrder = _usePage$props.proposalsForOrder,
       tasksWithOrders = _usePage$props.tasksWithOrders,
       ordersActive = _usePage$props.ordersActive;
+  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ordersList_ordersList__WEBPACK_IMPORTED_MODULE_2__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_flashMessages_flashMessages__WEBPACK_IMPORTED_MODULE_4__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_ordersList_ordersList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        symbolCurrency: props.symbolCur
+      })]
     })
   });
 }
@@ -4426,7 +4429,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-function Order(order) {
+function Order(props) {
   var proposalsForOrder = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.proposalsForOrder;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardContainer),
@@ -4434,18 +4437,19 @@ function Order(order) {
       className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeader),
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeaderItem),
-        children: ["Order # ", order.id]
+        children: ["Order # ", props.id]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
         className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardHeaderItem),
         children: ["Status:", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
-          className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardSatus),
-          children: [" ", order.status]
+          className: "".concat(_order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardStatus),
+          children: [" ", props.status]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      order: order,
-      classes: _order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn
-    }, order.id), order.status != "Done" && order.status != "Cancelled" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_orderProposal_orderProposal__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, order))]
+      order: props,
+      classes: _order_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].btn,
+      symbolCurrency: props.symbolCurrency
+    }, props.id), props.status != "Done" && props.status != "Cancelled" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_orderProposal_orderProposal__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread({}, props))]
   });
 }
 
@@ -4534,7 +4538,8 @@ function OrdersList(props) {
     className: "".concat(_ordersList_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].cardsContainer),
     children: orders.map(function (order) {
       return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_order_order__WEBPACK_IMPORTED_MODULE_2__["default"], _objectSpread(_objectSpread({}, order), {}, {
-        key: order.id
+        key: order.id,
+        symbolCurrency: props.symbolCurrency
       }));
     })
   });
@@ -4626,7 +4631,8 @@ function ProposalConfirm(props) {
       className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
         order: order,
-        classes: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].btn
+        classes: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].btn,
+        symbolCurrency: props.symbolCur
       }, order.id)
     })]
   });
@@ -8127,14 +8133,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".rQZsSgSRWOk8j3OTw\\+8I7w\\=\\={\n    display: none;\n}\n.fRzrzUkCJjwJU135c-\\+6Xg\\=\\={\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 35px 1fr 20px; \n    row-gap: 12px;\n}\n.nePZ\\+a\\+lLIbR\\+r6iTELxrw\\=\\={\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin-bottom: 10px;\n}\n.ByZkO6ThDHoQxRJ4DuMCbA\\=\\={\n    font-weight: 500;\nfont-size: 22px;\nline-height: 25px;\ncolor: #000000;\n}\n.NkCGA9H-RG8OfhQ3KV-mNA\\=\\={\n    color: #F3CD44;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".rQZsSgSRWOk8j3OTw\\+8I7w\\=\\= {\n    display: none;\n}\n.fRzrzUkCJjwJU135c-\\+6Xg\\=\\= {\n    display: grid;\n    grid-template-columns: 1fr;\n    grid-template-rows: 35px 1fr 20px;\n    row-gap: 12px;\n}\n.nePZ\\+a\\+lLIbR\\+r6iTELxrw\\=\\= {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    margin-bottom: 10px;\n}\n.ByZkO6ThDHoQxRJ4DuMCbA\\=\\= {\n    font-weight: 500;\n    font-size: 22px;\n    line-height: 25px;\n    color: #000000;\n}\n.qvBRbIefgR4CO0Xeytz-sQ\\=\\= {\n    color: #f3cd44;\n}\n", ""]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"btn": "rQZsSgSRWOk8j3OTw+8I7w==",
 	"cardContainer": "fRzrzUkCJjwJU135c-+6Xg==",
 	"cardHeader": "nePZ+a+lLIbR+r6iTELxrw==",
 	"cardHeaderItem": "ByZkO6ThDHoQxRJ4DuMCbA==",
-	"cardSatus": "NkCGA9H-RG8OfhQ3KV-mNA=="
+	"cardStatus": "qvBRbIefgR4CO0Xeytz-sQ=="
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -4,26 +4,31 @@ import OrderProposal from "./orderProposal/orderProposal";
 import style from "./order.module.css";
 import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
 
-export default function Order(order) {
+export default function Order(props) {
     const { proposalsForOrder } = usePage().props;
 
     return (
         <div className={`${style.cardContainer}`}>
             <div className={`${style.cardHeader}`}>
                 <div className={`${style.cardHeaderItem}`}>
-                    Order # {order.id}
+                    Order # {props.id}
                 </div>
                 <div className={`${style.cardHeaderItem}`}>
                     Status:{" "}
-                    <span className={`${style.cardSatus}`}>
+                    <span className={`${style.cardStatus}`}>
                         {" "}
-                        {order.status}
+                        {props.status}
                     </span>
                 </div>
             </div>
-            <BasicCard key={order.id} order={order} classes={style.btn} />
-            {order.status != "Done" && order.status != "Cancelled" && (
-                <OrderProposal {...order} />
+            <BasicCard
+                key={props.id}
+                order={props}
+                classes={style.btn}
+                symbolCurrency={props.symbolCurrency}
+            />
+            {props.status != "Done" && props.status != "Cancelled" && (
+                <OrderProposal {...props} />
             )}
         </div>
     );

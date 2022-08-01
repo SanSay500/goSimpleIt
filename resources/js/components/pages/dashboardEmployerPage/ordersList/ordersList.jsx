@@ -9,7 +9,13 @@ export default function OrdersList(props) {
     return (
         <div className={`${style.cardsContainer}`}>
             {orders.map((order) => {
-                return <Order {...order} key={order.id} />;
+                return (
+                    <Order
+                        {...order}
+                        key={order.id}
+                        symbolCurrency={props.symbolCurrency}
+                    />
+                );
             })}
         </div>
     );
