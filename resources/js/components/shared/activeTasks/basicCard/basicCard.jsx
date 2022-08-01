@@ -4,28 +4,26 @@ import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
 export default function BasicCard(props) {
-    // console.log(props);
-
     return (
         <div className={`${style.container}`}>
-            <h3 className={`${style.title}`}>{props.order["title"]}</h3>
+            <h3 className={`${style.title}`}>{props.orders["title"]}</h3>
 
             <div className={`${style.description}`}>
-                {props.order["description"]}
+                {props.orders["description"]}
             </div>
 
             <div className={`${style.file}`}>
-                {props.order["filesize"] && (
+                {props.orders["filesize"] && (
                     <span className={`${style.fileInfo}`}>
                         <a
                             className={`${style.fileInfo} ${style.green}`}
-                            href={"../storage/" + props.order["file"]}
+                            href={"../storage/" + props.orders["file"]}
                             download
                         >
                             Download{" "}
                         </a>
-                        ({props.order["file"].split(".")[1]},{" "}
-                        {props.order["filesize"]})
+                        ({props.orders["file"].split(".")[1]},{" "}
+                        {props.orders["filesize"]})
                     </span>
                 )}
             </div>
@@ -35,19 +33,19 @@ export default function BasicCard(props) {
                     Budget:
                     <span className={style.green}>
                         {" "}
-                        {props.order["money"]} {props.symbolCurrency}
+                        {props.orders["money"]} {props.symbolCurrency}
                     </span>
                 </div>
                 <div className={style.bottomContainerText}>
                     Term:
                     <span className={style.green}>
                         {" "}
-                        {props.order["hours"]} h
+                        {props.orders["hours"]} h
                     </span>
                 </div>
             </div>
 
-            <Link href={route("order.details", [props.order["id"]])}>
+            <Link href={route("order.details", [props.orders["id"]])}>
                 <ButtonViewMore classes={props.classes} />
             </Link>
         </div>

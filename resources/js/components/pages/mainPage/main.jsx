@@ -60,7 +60,7 @@ const Main = (props) => {
             >
                 <Header role={props.auth.user && props.auth.user.role} />
 
-                <MainStart scroll={scroll} />
+                <MainStart scroll={scroll} symbolCurrency={props.symbolCur} />
             </SectionContainer>
 
             <SectionContainer section={`${style.sectionActive}`}>
@@ -99,7 +99,10 @@ const Main = (props) => {
                     className={`${style.blockContainer}`}
                 >
                     <AboutUs />
-                    <MakeOrder refMakeOrder={makeOrder} />
+                    <MakeOrder
+                        refMakeOrder={makeOrder}
+                        symbolCurrency={props.symbolCur}
+                    />
                 </div>
             </SectionContainer>
 

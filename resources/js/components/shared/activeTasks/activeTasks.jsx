@@ -10,10 +10,10 @@ const ActiveTasks = ({
     gridStyle,
     symbolCurrency,
 }) => {
-    const { ordersActive, tasksWithOrders } = usePage().props;
+    const { orders, tasksWithOrders } = usePage().props;
     const [showCards, setShowCards] = useState(quantityCardsTasks);
     const inputTask = useRef();
-    const [ordersFiltered, setOrdersFiltered] = useState(ordersActive);
+    const [ordersFiltered, setOrdersFiltered] = useState(orders);
     let [tasksList, setTasksList] = useState(tasksWithOrders);
     let [open, setOpen] = useState(false);
 
@@ -36,13 +36,11 @@ const ActiveTasks = ({
 
     function filterJobs(task_id) {
         if (task_id === 0) {
-            setOrdersFiltered(ordersActive);
+            setOrdersFiltered(orders);
             setTasksList(tasksWithOrders);
             inputTask.current.value = "Type the task";
         } else {
-            setOrdersFiltered(
-                ordersActive.filter((el) => el.task_id === task_id)
-            );
+            setOrdersFiltered(orders.filter((el) => el.task_id === task_id));
         }
     }
 
@@ -106,7 +104,7 @@ const ActiveTasks = ({
                         <BasicCard
                             user={user}
                             key={order.id}
-                            order={order}
+                            orders={order}
                             symbolCurrency={symbolCurrency}
                         />
                     );

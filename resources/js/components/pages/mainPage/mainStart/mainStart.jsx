@@ -107,7 +107,7 @@ const MainStart = (props) => {
                             >
                                 {price}
                             </span>
-                            <span>$</span>
+                            <span>{props.symbolCurrency}</span>
                         </div>
                     </div>
                 </div>

@@ -5698,7 +5698,8 @@ var Main = function Main(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_header_header__WEBPACK_IMPORTED_MODULE_6__["default"], {
         role: props.auth.user && props.auth.user.role
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_mainStart_mainStart__WEBPACK_IMPORTED_MODULE_10__["default"], {
-        scroll: scroll
+        scroll: scroll,
+        symbolCurrency: props.symbolCur
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionActive),
@@ -5731,7 +5732,8 @@ var Main = function Main(props) {
         user: props.auth.user,
         className: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].blockContainer),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_aboutUs_aboutUs__WEBPACK_IMPORTED_MODULE_5__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_makeOrder_makeOrder__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          refMakeOrder: makeOrder
+          refMakeOrder: makeOrder,
+          symbolCurrency: props.symbolCur
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_footer_footer__WEBPACK_IMPORTED_MODULE_7__["default"], {})]
@@ -5896,7 +5898,7 @@ var MainStart = function MainStart(props) {
               className: "".concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formInput, " ").concat(_mainStart_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].formInputSecond),
               children: price
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-              children: "$"
+              children: props.symbolCurrency
             })]
           })
         })]
@@ -6103,7 +6105,7 @@ var MakeOrder = function MakeOrder(props) {
             }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("path", {
               d: "M12 17v1m0 -8v1"
             }), " "]
-          }), "Average cost of task: ", moneyTotalSearch, " $"]
+          }), "Average cost of task: ", moneyTotalSearch, props.symbolCurrency]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("span", {
           className: "bg-gray-100 text-gray-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded mr-2 dark:bg-gray-700 dark:text-gray-300",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("svg", {
@@ -6160,7 +6162,7 @@ var MakeOrder = function MakeOrder(props) {
               return inputNumbers(e, "cost");
             }
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-            children: "$"
+            children: props.symbolCurrency
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "".concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].price, " ").concat(_makeOrder_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].period),
@@ -6479,12 +6481,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var OrderDetails = function OrderDetails(props) {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
-      order = _usePage$props.order,
+      orders = _usePage$props.orders,
       checkHaveProposal = _usePage$props.checkHaveProposal;
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     description: "",
-    order_id: order.id
+    order_id: orders.id
   }),
       data = _useForm.data,
       setData = _useForm.setData,
@@ -6510,7 +6512,6 @@ var OrderDetails = function OrderDetails(props) {
     window.history.back();
   }
 
-  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
     styleContainer: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -6548,10 +6549,10 @@ var OrderDetails = function OrderDetails(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        order: order,
+        orders: orders,
         classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btn,
         symbolCurrency: props.symbolCur
-      }, order.id)
+      }, orders.id)
     })]
   });
 };
@@ -6977,7 +6978,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
       gridStyle = _ref.gridStyle,
       symbolCurrency = _ref.symbolCurrency;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
-      ordersActive = _usePage$props.ordersActive,
+      orders = _usePage$props.orders,
       tasksWithOrders = _usePage$props.tasksWithOrders;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(quantityCardsTasks),
@@ -6987,7 +6988,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
 
   var inputTask = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ordersActive),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(orders),
       _useState4 = _slicedToArray(_useState3, 2),
       ordersFiltered = _useState4[0],
       setOrdersFiltered = _useState4[1];
@@ -7019,11 +7020,11 @@ var ActiveTasks = function ActiveTasks(_ref) {
 
   function filterJobs(task_id) {
     if (task_id === 0) {
-      setOrdersFiltered(ordersActive);
+      setOrdersFiltered(orders);
       setTasksList(tasksWithOrders);
       inputTask.current.value = "Type the task";
     } else {
-      setOrdersFiltered(ordersActive.filter(function (el) {
+      setOrdersFiltered(orders.filter(function (el) {
         return el.task_id === task_id;
       }));
     }
@@ -7084,7 +7085,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
       children: ordersFiltered.slice(0, showCards).map(function (order) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           user: user,
-          order: order,
+          orders: order,
           symbolCurrency: symbolCurrency
         }, order.id);
       })
@@ -7123,25 +7124,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BasicCard(props) {
-  // console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
-      children: props.order["title"]
+      children: props.orders["title"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].description),
-      children: props.order["description"]
+      children: props.orders["description"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].file),
-      children: props.order["filesize"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+      children: props.orders["filesize"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
         className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
           className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo, " ").concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green),
-          href: "../storage/" + props.order["file"],
+          href: "../storage/" + props.orders["file"],
           download: true,
           children: ["Download", " "]
-        }), "(", props.order["file"].split(".")[1], ",", " ", props.order["filesize"], ")"]
+        }), "(", props.orders["file"].split(".")[1], ",", " ", props.orders["filesize"], ")"]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainer,
@@ -7149,17 +7149,17 @@ function BasicCard(props) {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
         children: ["Budget:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
-          children: [" ", props.order["money"], " ", props.symbolCurrency]
+          children: [" ", props.orders["money"], " ", props.symbolCurrency]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
         children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
-          children: [" ", props.order["hours"], " h"]
+          children: [" ", props.orders["hours"], " h"]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      href: route("order.details", [props.order["id"]]),
+      href: route("order.details", [props.orders["id"]]),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
         classes: props.classes
       })

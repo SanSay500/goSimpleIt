@@ -6,10 +6,10 @@ import style from "./orderDetails.module.css";
 import Container from "@/components/shared/container/container";
 
 const OrderDetails = (props) => {
-    const { order, checkHaveProposal } = usePage().props;
+    const { orders, checkHaveProposal } = usePage().props;
     const { data, setData, errors, post } = useForm({
         description: "",
-        order_id: order.id,
+        order_id: orders.id,
     });
 
     const [showProposalForm, setShowProposalForm] = useState(false);
@@ -23,7 +23,7 @@ const OrderDetails = (props) => {
     function goBack() {
         window.history.back();
     }
-    console.log(props);
+
     return (
         <Container styleContainer={style.container}>
             <div className={`${style.proposalContainer}`}>
@@ -70,8 +70,8 @@ const OrderDetails = (props) => {
 
             <div className={`${style.cardContainer}`}>
                 <BasicCard
-                    key={order.id}
-                    order={order}
+                    key={orders.id}
+                    orders={orders}
                     classes={style.btn}
                     symbolCurrency={props.symbolCur}
                 />
