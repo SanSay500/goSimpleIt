@@ -131,6 +131,7 @@ class OrderController extends Controller
             $order += $filesSize;
         }
         return Inertia::render('pages/orderDetailsPage/orderDetails', ['orders' => $order, 'checkHaveProposal' => $checkHaveProposal ?? '', 'symbolCur'=>$symbolCur]);
+
     }
 
 

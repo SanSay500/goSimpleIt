@@ -6510,6 +6510,7 @@ var OrderDetails = function OrderDetails(props) {
     window.history.back();
   }
 
+  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_components_shared_container_container__WEBPACK_IMPORTED_MODULE_5__["default"], {
     styleContainer: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].container,
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
@@ -6548,8 +6549,8 @@ var OrderDetails = function OrderDetails(props) {
       className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
         order: order,
-        classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btn // symbolCurrency={symbolCurrency}
-
+        classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btn,
+        symbolCurrency: props.symbolCur
       }, order.id)
     })]
   });
@@ -7122,7 +7123,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BasicCard(props) {
-  console.log(props);
+  // console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {

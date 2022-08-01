@@ -4,7 +4,7 @@ import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
 export default function BasicCard(props) {
-    console.log(props);
+    // console.log(props);
 
     return (
         <div className={`${style.container}`}>
