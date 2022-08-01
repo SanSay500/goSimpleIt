@@ -30,8 +30,7 @@ class DashboardController extends Controller
 
         foreach ($ordersActive->toArray() as $order => $params) {
             if (Auth::user() && Auth::user()->currency != 'EUR') {
-                $newCur = $ordersActive[$order]['money'] * $exchange_rate;
-                $ordersActive[$order]['money'] = $newCur;
+                $ordersActive[$order]['money']  = round($ordersActive[$order]['money'] * $exchange_rate);
             }
 
             $tasksIDsInOrders[] = $params['task_id'];
@@ -52,15 +51,14 @@ class DashboardController extends Controller
         $user = Auth::user();
         $orders = Order::where('user_id', $user->id)->latest()->get();
         $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
-        $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
+        $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
 
         $ordersIDs[]='';
-        foreach ($orders->toArray() as $order) {
-            if (Auth::user() && Auth::user()->currency != 'EUR') {
-                $newCur = $order['money'] * $exchange_rate;
-                $order['money'] = round($newCur);
+        foreach ($orders->toArray() as $order => $params) {
+            if (Auth::user()->currency != 'EUR') {
+                $orders[$order]['money'] = round($orders[$order]['money'] * $exchange_rate);
             }
-            $ordersIDs[] = $order['id'];
+            $ordersIDs[] = $params['id'];
           }
 
         $proposalsForOrder = Proposal::wherein('order_id', $ordersIDs)->join('users', 'proposals.user_id', '=','users.id')

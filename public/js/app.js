@@ -7125,7 +7125,7 @@ __webpack_require__.r(__webpack_exports__);
 function BasicCard(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+    children: [console.log(props), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
       children: props.order["title"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
@@ -7154,7 +7154,7 @@ function BasicCard(props) {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
         children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
-          children: [" ", props.order["hours"], " day"]
+          children: [" ", props.order["hours"], " d"]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {

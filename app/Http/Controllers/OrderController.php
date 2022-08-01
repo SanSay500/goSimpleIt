@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\CurrencyModel;
 
 
+
 class OrderController extends Controller
 {
     /**
@@ -73,10 +74,16 @@ class OrderController extends Controller
 
     public function proposal_confirm_form($order_id, $proposal_id)
     {
-        $order = Order::where('id', $order_id)->first();
+        $order = Order::where('id', $order_id)->first()->toArray();
+        $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
+        if (Auth::user()->currency != 'EUR') {
+            $order['money'] = round($order['money'] * $exchange_rate);
+        }
+        $symbolCur = CurrencyModel::where('code', Auth::user()->currency)->first()->symbol;
+
         $proposal = Proposal::where('id', $proposal_id)->first();
         $user = User::where('id', $proposal->user_id)->first();
-        return Inertia::render('pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm', ['user' => $user, 'order' => $order, 'proposal' => $proposal]);
+        return Inertia::render('pages/dashboardEmployerPage/proposalConfirmPage/proposalConfirm', ['user' => $user, 'order' => $order, 'proposal' => $proposal, 'symbolCur'=>$symbolCur]);
     }
 
     public function proposal_confirm($order_id, $proposal_id)
@@ -164,11 +171,12 @@ class OrderController extends Controller
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
         $task_type = Task::where('id', $request->task_id)->get()->first();
+        $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
         Order::create([
             'title' => $request->title,
             'description' => $request->description,
             'file' => $fileName ?? '',
-            'money' => $request->cost,
+            'money' => $request->cost / $exchange_rate,
             'task_id' => $task_type->id,
             'hours' => $request->time,
             'user_id' => Auth::user()->id,

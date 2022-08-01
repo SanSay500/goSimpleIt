@@ -3,9 +3,13 @@ import { Link } from "@inertiajs/inertia-react";
 import ButtonViewMore from "../../buttonViewMore/buttonViewMore";
 import style from "./basicCard.module.css";
 
+
 export default function BasicCard(props) {
+
     return (
+
         <div className={`${style.container}`}>
+            {console.log(props)}
             <h3 className={`${style.title}`}>{props.order["title"]}</h3>
 
             <div className={`${style.description}`}>
@@ -40,7 +44,7 @@ export default function BasicCard(props) {
                     Term:
                     <span className={style.green}>
                         {" "}
-                        {props.order["hours"]} day
+                        {props.order["hours"]} d
                     </span>
                 </div>
             </div>
