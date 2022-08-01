@@ -12,13 +12,14 @@ export default function DashboardEmployer(props) {
         tasksWithOrders,
         ordersActive,
     } = usePage().props;
+    console.log(props);
 
     return (
         <>
             <Container>
                 <FlashMessages />
 
-                <OrdersList />
+                <OrdersList symbolCurrency={props.symbolCur} />
             </Container>
         </>
     );

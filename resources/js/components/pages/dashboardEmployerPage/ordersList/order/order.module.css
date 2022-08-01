@@ -1,24 +1,24 @@
-.btn{
+.btn {
     display: none;
 }
-.cardContainer{
+.cardContainer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 35px 1fr 20px; 
+    grid-template-rows: 35px 1fr 20px;
     row-gap: 12px;
 }
-.cardHeader{
+.cardHeader {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
 }
-.cardHeaderItem{
+.cardHeaderItem {
     font-weight: 500;
-font-size: 22px;
-line-height: 25px;
-color: #000000;
+    font-size: 22px;
+    line-height: 25px;
+    color: #000000;
 }
-.cardSatus{
-    color: #F3CD44;
+.cardStatus {
+    color: #f3cd44;
 }
