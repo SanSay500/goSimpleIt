@@ -6,6 +6,7 @@ import BasicCard from "@/components/shared/activeTasks/basicCard/basicCard";
 
 export default function Order(order) {
     const { proposalsForOrder } = usePage().props;
+
     return (
         <div className={`${style.cardContainer}`}>
             <div className={`${style.cardHeader}`}>
@@ -20,7 +21,7 @@ export default function Order(order) {
                     </span>
                 </div>
             </div>
-            <BasicCard key={order.id} props={order} classes={style.btn} />
+            <BasicCard key={order.id} order={order} classes={style.btn} />
             {order.status != "Done" && order.status != "Cancelled" && (
                 <OrderProposal {...order} />
             )}

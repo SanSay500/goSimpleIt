@@ -11,8 +11,10 @@ const ActiveTasks = ({
     symbolCurrency,
 }) => {
     const { orders, tasksWithOrders } = usePage().props;
-    const [showCards, setShowCards] = useState(quantityCardsTasks);
+
     const inputTask = useRef();
+
+    const [showCards, setShowCards] = useState(quantityCardsTasks);
     const [ordersFiltered, setOrdersFiltered] = useState(orders);
     let [tasksList, setTasksList] = useState(tasksWithOrders);
     let [open, setOpen] = useState(false);
@@ -104,14 +106,14 @@ const ActiveTasks = ({
                         <BasicCard
                             user={user}
                             key={order.id}
-                            orders={order}
+                            order={order}
                             symbolCurrency={symbolCurrency}
                         />
                     );
                 })}
             </div>
 
-            {ordersFiltered.length >= showCards && (
+            {ordersFiltered.length > showCards && (
                 <ButtonViewMore
                     click={(e) => {
                         loadMoreTasks(e);

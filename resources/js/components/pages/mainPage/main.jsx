@@ -51,7 +51,6 @@ const Main = (props) => {
         resizeHandler();
     }, []);
 
-    // console.log(props);
     return (
         <>
             <SectionContainer
