@@ -49,7 +49,7 @@ class OrderController extends Controller
 
         $tasks = Task::get()->toArray();
         foreach ($tasks as $task => $value) {
-            $tasks[$task] = $value['money'] * $exchange_rate;
+            $tasks[$task]['money'] = round($value['money'] * $exchange_rate);
         }
 
         foreach ($orders as $order => $params) {

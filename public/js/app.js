@@ -4625,7 +4625,7 @@ function ProposalConfirm(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "".concat(_proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        props: order,
+        order: order,
         classes: _proposalConfirm_module_css__WEBPACK_IMPORTED_MODULE_2__["default"].btn
       }, order.id)
     })]
