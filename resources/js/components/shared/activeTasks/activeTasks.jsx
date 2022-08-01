@@ -4,12 +4,17 @@ import BasicCard from "./basicCard/basicCard";
 import style from "./activeTasks.module.css";
 import ButtonViewMore from "../buttonViewMore/buttonViewMore";
 
-const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
+const ActiveTasks = ({
+    user,
+    quantityCardsTasks,
+    gridStyle,
+    symbolCurrency,
+}) => {
     const { ordersActive, tasksWithOrders } = usePage().props;
     const [showCards, setShowCards] = useState(quantityCardsTasks);
     const inputTask = useRef();
     const [ordersFiltered, setOrdersFiltered] = useState(ordersActive);
-    let [tasksList, setTasksList] = useState(tasksWithOrders );
+    let [tasksList, setTasksList] = useState(tasksWithOrders);
     let [open, setOpen] = useState(false);
 
     const loadMoreTasks = (e) => {
@@ -33,7 +38,7 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
         if (task_id === 0) {
             setOrdersFiltered(ordersActive);
             setTasksList(tasksWithOrders);
-            inputTask.current.value = 'Type the task';
+            inputTask.current.value = "Type the task";
         } else {
             setOrdersFiltered(
                 ordersActive.filter((el) => el.task_id === task_id)
@@ -52,6 +57,7 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
     return (
         <>
             <h2 className={`title`}>Active Tasks</h2>
+
             <div className={style.searchJob}>
                 <input
                     ref={inputTask}
@@ -93,10 +99,16 @@ const ActiveTasks = ({ user, quantityCardsTasks, gridStyle }) => {
                     </div>
                 )}
             </div>
+
             <div className={`${style.cardsContainer} ${gridStyle}`}>
                 {ordersFiltered.slice(0, showCards).map((order) => {
                     return (
-                        <BasicCard user={user} key={order.id} props={order} />
+                        <BasicCard
+                            user={user}
+                            key={order.id}
+                            order={order}
+                            symbolCurrency={symbolCurrency}
+                        />
                     );
                 })}
             </div>

@@ -20,7 +20,7 @@ const OrderDetails = (props) => {
         post(route("order.proposal.store", data));
     }
 
-    function Goback() {
+    function goBack() {
         window.history.back();
     }
 
@@ -30,7 +30,7 @@ const OrderDetails = (props) => {
                 <Link
                     as="button"
                     type="button"
-                    onClick={Goback}
+                    onClick={goBack}
                     className={`${style.buttonBack}`}
                 >
                     <img
@@ -69,7 +69,12 @@ const OrderDetails = (props) => {
             </div>
 
             <div className={`${style.cardContainer}`}>
-                <BasicCard key={order.id} props={order} classes={style.btn} />
+                <BasicCard
+                    key={order.id}
+                    order={order}
+                    classes={style.btn}
+                    // symbolCurrency={symbolCurrency}
+                />
             </div>
         </Container>
     );

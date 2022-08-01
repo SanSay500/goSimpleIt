@@ -48,7 +48,6 @@ const MainStart = (props) => {
                     Estimate your budget
                 </ButtonGreen>
             </div>
-
             <button className={`${style.getStartedBtn}`} onClick={props.scroll}>
                 <img src="/images/getStarted.png" alt="Logo"></img>
             </button>
