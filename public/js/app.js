@@ -5689,7 +5689,8 @@ var Main = function Main(props) {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     window.addEventListener("resize", resizeHandler);
     resizeHandler();
-  }, []);
+  }, []); // console.log(props);
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].headerContainer),
@@ -5704,7 +5705,8 @@ var Main = function Main(props) {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_activeTasks_activeTasks__WEBPACK_IMPORTED_MODULE_8__["default"], {
         user: props.auth.user,
         quantityCardsTasks: quantityCardsTasks,
-        gridStyle: _main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].gridStyle
+        gridStyle: _main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].gridStyle,
+        symbolCurrency: props.symbolCur
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(_components_shared_sectionContainer_sectionContainer__WEBPACK_IMPORTED_MODULE_11__["default"], {
       section: "".concat(_main_module_css__WEBPACK_IMPORTED_MODULE_12__["default"].sectionProject),
@@ -6504,7 +6506,7 @@ var OrderDetails = function OrderDetails(props) {
     post(route("order.proposal.store", data));
   }
 
-  function Goback() {
+  function goBack() {
     window.history.back();
   }
 
@@ -6515,7 +6517,7 @@ var OrderDetails = function OrderDetails(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
         as: "button",
         type: "button",
-        onClick: Goback,
+        onClick: goBack,
         className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].buttonBack),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
           src: "/images/arrowLeft.svg",
@@ -6545,8 +6547,9 @@ var OrderDetails = function OrderDetails(props) {
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: "".concat(_orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].cardContainer),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_shared_activeTasks_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        props: order,
-        classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btn
+        order: order,
+        classes: _orderDetails_module_css__WEBPACK_IMPORTED_MODULE_4__["default"].btn // symbolCurrency={symbolCurrency}
+
       }, order.id)
     })]
   });
@@ -6970,7 +6973,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var ActiveTasks = function ActiveTasks(_ref) {
   var user = _ref.user,
       quantityCardsTasks = _ref.quantityCardsTasks,
-      gridStyle = _ref.gridStyle;
+      gridStyle = _ref.gridStyle,
+      symbolCurrency = _ref.symbolCurrency;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       ordersActive = _usePage$props.ordersActive,
       tasksWithOrders = _usePage$props.tasksWithOrders;
@@ -7016,7 +7020,7 @@ var ActiveTasks = function ActiveTasks(_ref) {
     if (task_id === 0) {
       setOrdersFiltered(ordersActive);
       setTasksList(tasksWithOrders);
-      inputTask.current.value = 'Type the task';
+      inputTask.current.value = "Type the task";
     } else {
       setOrdersFiltered(ordersActive.filter(function (el) {
         return el.task_id === task_id;
@@ -7079,7 +7083,8 @@ var ActiveTasks = function ActiveTasks(_ref) {
       children: ordersFiltered.slice(0, showCards).map(function (order) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_basicCard_basicCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
           user: user,
-          props: order
+          order: order,
+          symbolCurrency: symbolCurrency
         }, order.id);
       })
     }), ordersFiltered.length >= showCards && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -7117,24 +7122,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BasicCard(props) {
+  console.log(props);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].container),
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].title),
-      children: props.props["title"]
+      children: props.order["title"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].description),
-      children: props.props["description"]
+      children: props.order["description"]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].file),
-      children: props.props["filesize"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+      children: props.order["filesize"] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
         className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo),
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("a", {
           className: "".concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].fileInfo, " ").concat(_basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green),
-          href: "../storage/" + props.props["file"],
+          href: "../storage/" + props.order["file"],
           download: true,
           children: ["Download", " "]
-        }), "(", props.props["file"].split(".")[1], ",", " ", props.props["filesize"], ")"]
+        }), "(", props.order["file"].split(".")[1], ",", " ", props.order["filesize"], ")"]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainer,
@@ -7142,17 +7148,17 @@ function BasicCard(props) {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
         children: ["Budget:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
-          children: [" ", props.props["money"], "$"]
+          children: [" ", props.order["money"], " ", props.symbolCurrency]
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].bottomContainerText,
         children: ["Term:", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
           className: _basicCard_module_css__WEBPACK_IMPORTED_MODULE_3__["default"].green,
-          children: [" ", props.props["hours"], "h"]
+          children: [" ", props.order["hours"], " h"]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-      href: route("order.details", [props.props["id"]]),
+      href: route("order.details", [props.order["id"]]),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_buttonViewMore_buttonViewMore__WEBPACK_IMPORTED_MODULE_2__["default"], {
         classes: props.classes
       })
