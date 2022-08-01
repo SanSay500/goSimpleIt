@@ -52,13 +52,6 @@ class OrderController extends Controller
             if (Auth::user() && Auth::user()->currency != 'EUR') {
                 $newCur = $orders[$order]['money'] * $exchange_rate;
                 $orders[$order]['money'] = $newCur;
-//                $newCur = Currency::convert()
-//                    ->from('EUR')
-//                    ->to(Auth::user()->currency)
-//                    ->amount($params['money'])
-//                    ->round(-1)
-//                    ->get();
-//                $orders[$order]['money'] = $newCur;
             }
             $tasksIDsInOrders[] = $params['task_id'];
             $Orderfile = (Storage::path($params['file']));
@@ -113,6 +106,12 @@ class OrderController extends Controller
     public function details($order_id)
     {
         $order = Order::where('id', $order_id)->first()->toArray();
+        $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
+        if (Auth::user() && Auth::user()->currency != 'EUR') {
+            $newCur = $order['money'] * $exchange_rate;
+            $order['money'] = $newCur;
+        }
+        $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
         if (Auth::user()) {
             $proposals = Proposal::where('user_id', Auth::user()->id)->get()->toArray();
 
@@ -131,7 +130,7 @@ class OrderController extends Controller
             $filesSize['filesize'] = round(Storage::size($order['file']) / 1024, 2) . ' Kb';
             $order += $filesSize;
         }
-        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal' => $checkHaveProposal ?? '']);
+        return Inertia::render('pages/orderDetailsPage/orderDetails', ['order' => $order, 'checkHaveProposal' => $checkHaveProposal ?? '', 'symbolCur'=>$symbolCur]);
     }
 
 
