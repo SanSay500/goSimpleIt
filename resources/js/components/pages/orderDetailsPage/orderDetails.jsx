@@ -23,7 +23,7 @@ const OrderDetails = (props) => {
     function goBack() {
         window.history.back();
     }
-
+    console.log(props);
     return (
         <Container styleContainer={style.container}>
             <div className={`${style.proposalContainer}`}>
@@ -73,7 +73,7 @@ const OrderDetails = (props) => {
                     key={order.id}
                     order={order}
                     classes={style.btn}
-                    // symbolCurrency={symbolCurrency}
+                    symbolCurrency={props.symbolCur}
                 />
             </div>
         </Container>
