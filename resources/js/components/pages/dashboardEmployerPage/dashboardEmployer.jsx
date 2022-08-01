@@ -16,7 +16,8 @@ export default function DashboardEmployer(props) {
     return (
         <>
             <Container>
-                <FlashMessages/>
+                <FlashMessages />
+
                 <OrdersList />
             </Container>
         </>

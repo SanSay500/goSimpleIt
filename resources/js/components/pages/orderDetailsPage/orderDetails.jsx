@@ -6,6 +6,7 @@ import style from "./orderDetails.module.css";
 import Container from "@/components/shared/container/container";
 
 const OrderDetails = (props) => {
+
     const { orders, checkHaveProposal } = usePage().props;
     const { data, setData, errors, post } = useForm({
         description: "",
@@ -71,7 +72,7 @@ const OrderDetails = (props) => {
             <div className={`${style.cardContainer}`}>
                 <BasicCard
                     key={orders.id}
-                    orders={orders}
+                    order={orders}
                     classes={style.btn}
                     symbolCurrency={props.symbolCur}
                 />

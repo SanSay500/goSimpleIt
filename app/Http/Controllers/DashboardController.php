@@ -20,7 +20,7 @@ class DashboardController extends Controller
     {
         $user = Auth::user();
         $proposals = Proposal::where('user_id', $user->id)->get();
-        $ordersActive = Order::where('status','Pending')->get()->toArray();
+        $ordersActive = Order::where('status','Pending')->get();
         $tasksIDsInOrders=[];
         $filesSize = [];
 
@@ -28,10 +28,10 @@ class DashboardController extends Controller
         $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
 
 
-        foreach ($ordersActive as $order => $params) {
+        foreach ($ordersActive->toArray() as $order => $params) {
             if (Auth::user() && Auth::user()->currency != 'EUR') {
                 $newCur = $ordersActive[$order]['money'] * $exchange_rate;
-                $ordersActive['money'] = round($newCur);
+                $ordersActive[$order]['money'] = $newCur;
             }
 
             $tasksIDsInOrders[] = $params['task_id'];
@@ -43,7 +43,6 @@ class DashboardController extends Controller
             }
         }
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-
         return Inertia::render('pages/dashboardFreelancerPage/dashboardFreelancer', ['proposals' => $proposals, 'tasksWithOrders'=>$tasksWithOrders, 'orders'=>$ordersActive, 'symbolCur'=>$symbolCur]);
 
     }
@@ -62,7 +61,8 @@ class DashboardController extends Controller
                 $order['money'] = round($newCur);
             }
             $ordersIDs[] = $order['id'];
-        }
+          }
+
         $proposalsForOrder = Proposal::wherein('order_id', $ordersIDs)->join('users', 'proposals.user_id', '=','users.id')
             ->select('users.name', 'proposals.*')->get();
 

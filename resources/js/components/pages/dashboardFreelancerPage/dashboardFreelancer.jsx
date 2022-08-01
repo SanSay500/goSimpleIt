@@ -6,7 +6,7 @@ import style from "./dashboardFreelancer.module.css";
 import ActiveTasks from "@/components/shared/activeTasks/activeTasks";
 
 export default function DashboardFreelancer(props) {
-    const { proposals, tasksWithOrders, ordersActive } = usePage().props;
+    const { proposals, tasksWithOrders, orders } = usePage().props;
     const [quantityCardsTasks, setQuantityCards] = useState(4);
 
     const resizeHandler = () => {
@@ -40,6 +40,7 @@ export default function DashboardFreelancer(props) {
                             user={props.auth.user}
                             quantityCardsTasks={quantityCardsTasks}
                             gridStyle={style.gridStyle}
+                            symbolCurrency={props.symbolCur}
                         />
                     </div>
 
