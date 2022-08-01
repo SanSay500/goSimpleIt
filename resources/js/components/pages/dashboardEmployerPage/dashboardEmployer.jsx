@@ -12,7 +12,6 @@ export default function DashboardEmployer(props) {
         tasksWithOrders,
         ordersActive,
     } = usePage().props;
-    console.log(props);
 
     return (
         <>

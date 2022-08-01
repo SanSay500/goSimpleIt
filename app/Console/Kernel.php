@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console;
+namespace app\Console;
 
 use AmrShawky\LaravelCurrency\Facade\Currency;
 use App\Models\CurrencyModel;
@@ -28,7 +28,7 @@ class Kernel extends ConsoleKernel
                 $nowCurrency->exchange_rate = $value;
                 $nowCurrency->save();
             }
-        })->everyMinute();
+        })->cron('0 0 * * *');
 
     }
 
