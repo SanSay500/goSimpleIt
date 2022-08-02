@@ -172,6 +172,7 @@ class OrderController extends Controller
         }
         $task_type = Task::where('id', $request->task_id)->get()->first();
         $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
+
         Order::create([
             'title' => $request->title,
             'description' => $request->description,

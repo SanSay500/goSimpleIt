@@ -20,19 +20,19 @@ class CurrencySeeder extends Seeder
                 'name' => 'Pound Sterling',
                 'symbol' => '£',
                 'format' => '£1,0.00',
-                'exchange_rate' => 0.00,
+                'exchange_rate' => 1.00,
             ],
             'USD' => [
                 'name' => 'US Dollar',
                 'symbol' => '$',
                 'format' => '$1,0.00',
-                'exchange_rate' => 0.00,
+                'exchange_rate' => 1.00,
             ],
             'EUR' => [
                 'name' => 'Euro',
                 'symbol' => '€',
                 'format' => '1.0,00 €',
-                'exchange_rate' => 0.00,
+                'exchange_rate' => 1.00,
             ],
         ];
 
