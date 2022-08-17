@@ -1,18 +1,17 @@
 import GoMenu from "@/components/shared/header/goMenu/goMenu";
-import { Link } from "@inertiajs/inertia-react";
+import {Link} from "@inertiajs/inertia-react";
 import style from "./header.module.css";
-import { Helmet } from "react-helmet";
+import TagManager from 'react-gtm-module';
 
-const Header = ({ styleBtn }) => {
+const tagManagerArgs = {
+    gtmId: 'GTM-WMZS89T'
+}
+
+TagManager.initialize(tagManagerArgs)
+
+const Header = ({styleBtn}) => {
     return (
         <>
-            <Helmet>
-                <script
-                    async
-                    src="https://www.googletagmanager.com/gtag/js?id=UA-232234708-1"
-                />
-            </Helmet>
-
             <header className={`${style.header}`}>
                 <div>
                     <Link href="/" className={`${style.headerLogo}`}>
@@ -20,9 +19,9 @@ const Header = ({ styleBtn }) => {
                     </Link>
                 </div>
 
-                <GoMenu styleBtn={styleBtn} />
+                <GoMenu styleBtn={styleBtn}/>
             </header>
         </>
-    );
+);
 };
 export default Header;

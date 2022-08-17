@@ -4,14 +4,14 @@ import { createInertiaApp } from '@inertiajs/inertia-react'
 import createServer from '@inertiajs/server'
 import route from 'ziggy'
 
-const appName = 'Laravel'
+const appName = 'goSimple'
 
 createServer((page) =>
   createInertiaApp({
     page,
     render: ReactDOMServer.renderToString,
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => require(`./Pages/${name}`),
+    resolve: (name) => require(`./components/${name}`),
     setup: ({ App, props }) => {
       global.route = (name, params, absolute) =>
         route(name, params, absolute, {

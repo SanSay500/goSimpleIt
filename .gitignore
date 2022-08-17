@@ -5,7 +5,7 @@
 /vendor
 public/app.js
 .env
-#.env.real
+#.env.reals
 .env.backup
 .phpunit.result.cache
 Homestead.json
