@@ -1,17 +1,16 @@
 import GoMenu from "@/components/shared/header/goMenu/goMenu";
 import {Link} from "@inertiajs/inertia-react";
 import style from "./header.module.css";
-import TagManager from 'react-gtm-module';
-
-const tagManagerArgs = {
-    gtmId: 'GTM-WMZS89T'
-}
-
-TagManager.initialize(tagManagerArgs)
+import { Head } from '@inertiajs/inertia-react'
 
 const Header = ({styleBtn}) => {
     return (
         <>
+            <Head>
+           <script async src="https://www.googletagmanager.com/gtag/js?id=UA-232234708-1"></script>
+                <script async src="gtag.js"></script>
+
+            </Head>
             <header className={`${style.header}`}>
                 <div>
                     <Link href="/" className={`${style.headerLogo}`}>
