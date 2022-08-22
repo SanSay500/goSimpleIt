@@ -258,7 +258,7 @@ select:focus {
 
 .btnContainer {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .btnSubmit {

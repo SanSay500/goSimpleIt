@@ -44,7 +44,9 @@ const Main = (props) => {
         // setStepNext(count_project);
     };
 
-    const scroll = () => makeOrder.current.scrollIntoView();
+    const scroll = () => {
+        makeOrder.current.scrollIntoView();
+    }
 
     useEffect(() => {
         window.addEventListener("resize", resizeHandler);

@@ -7,6 +7,8 @@ const Header = ({styleBtn}) => {
     return (
         <>
             <Head>
+                <title>Freelance Service</title>
+                <meta name = "description" content="Find freelancer"/>
            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-232234708-1"></script>
                 <script async src="gtag.js"></script>
 

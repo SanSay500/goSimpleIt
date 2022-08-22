@@ -5,7 +5,7 @@ import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MainStart = (props) => {
     const { tasks } = usePage().props;
-
+    const [goToButton, setGoToButton] = useState(false);
     const inputTask = useRef();
     const wrpModal = useRef();
 
@@ -88,6 +88,7 @@ const MainStart = (props) => {
                                         onMouseDown={() => {
                                             setPrice(() => task.money);
                                             inputTask.current.value = task.name;
+                                            setGoToButton(true);
                                         }}
                                         key={task.id}
                                     >
@@ -96,6 +97,7 @@ const MainStart = (props) => {
                                 ))}
                             </div>
                         )}
+
                     </div>
 
                     <div className={style.formInfo}>
@@ -109,6 +111,16 @@ const MainStart = (props) => {
                             </span>
                             <span>{props.symbolCurrency}</span>
                         </div>
+                        {goToButton && (
+                            <div>
+                                <ButtonGreen
+                                    click={props.scroll}
+                                    classes={style.btnSubmit}
+                                    children={"Place your order now"}
+                                />
+                            </div>
+                        )}
+
                     </div>
                 </div>
             </div>
