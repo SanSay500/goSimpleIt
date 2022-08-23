@@ -19,21 +19,32 @@ const MakeOrder = (props) => {
     const inputTask = useRef();
 
     const [selectedFile, setSelectedFile] = useState("");
+
+    const [tasksList, setTasksList] = useState(tasks);
+    const [open, setOpen] = useState(false);
+
     const [moneyTotalSearch, setMoneyTotalSearch] = useState(0);
-    const [hoursTotalSearch, setHoursTotalSearch] = useState(0);
-    let [tasksList, setTasksList] = useState(tasks);
-    let [open, setOpen] = useState(false);
+    const [daysTotalSearch, setDaysTotalSearch] = useState(0);
+
+    const [typeTheTask, setTypeTheTask] = useState();
+    const [priceTask, setPriceTask] = useState();
 
     function searchList() {
-        setTasksList(() => {
-            tasksList = [];
+        setTypeTheTask(inputTask.current.value);
+        setPriceTask("");
 
-            tasksList = tasks.filter((el) =>
+        setTasksList(() => {
+            return tasks.filter((el) =>
                 el.name
                     .toLowerCase()
                     .includes(inputTask.current.value.toLowerCase())
             );
-            return tasksList;
+        });
+
+        setMoneyTotalSearch(() => {
+            let task = tasksList.find((task) => task.money);
+            if (!inputTask.current.value) return 0;
+            return task ? task.money : 0;
         });
     }
 
@@ -66,8 +77,18 @@ const MakeOrder = (props) => {
     };
 
     useEffect(() => {
-        setTasksList(() => tasksList);
+        setTasksList(tasksList);
     }, [tasksList]);
+
+    useEffect(() => {
+        setTypeTheTask(props.typeTheTask);
+        setPriceTask(props.priceTask);
+
+        let task = tasksList.find((task) => props.typeTheTask === task.name);
+        task === undefined
+            ? ""
+            : setData({ ...data, task_id: task.id, cost: props.priceTask });
+    }, [props.typeTheTask, props.priceTask]);
 
     return (
         <div ref={props.refMakeOrder} className={style.formWrapper}>
@@ -80,13 +101,14 @@ const MakeOrder = (props) => {
                         type="text"
                         id="searchInput"
                         className={style.searchInput}
+                        value={`${typeTheTask}`}
                         placeholder="Type the task"
                         onChange={searchList}
                         onBlur={() => {
-                            setOpen((open) => !open);
+                            setOpen(!open);
                         }}
                         onClick={() => {
-                            setOpen(() => true);
+                            setOpen(true);
                         }}
                     />
 
@@ -95,8 +117,11 @@ const MakeOrder = (props) => {
                             {tasksList.map((task) => (
                                 <div
                                     onMouseDown={() => {
-                                        inputTask.current.value = task.name;
+                                        setTypeTheTask(task.name);
                                         setData("task_id", task.id);
+                                        setPriceTask("");
+                                        setMoneyTotalSearch(task.money);
+                                        setDaysTotalSearch(task.time);
                                     }}
                                     key={task.id}
                                 >
@@ -150,7 +175,7 @@ const MakeOrder = (props) => {
                                     clipRule="evenodd"
                                 ></path>
                             </svg>
-                            Average time task takes: {hoursTotalSearch} day(s)
+                            Average time task takes: {daysTotalSearch} day(s)
                         </span>
                     </div>
                 )}
@@ -185,11 +210,15 @@ const MakeOrder = (props) => {
                         <input
                             type="number"
                             min={0}
-                            className={`${style.inputInfo}`}
+                            name="cost"
                             label="cost"
                             inputMode="numeric"
                             required
-                            name="cost"
+                            className={`${style.inputInfo}`}
+                            value={`${priceTask}`}
+                            onChange={(e) => {
+                                setPriceTask(e.target.value);
+                            }}
                             onInput={(e) => inputNumbers(e, "cost")}
                         />
 
