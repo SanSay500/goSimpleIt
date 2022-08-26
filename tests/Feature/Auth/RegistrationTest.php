@@ -23,6 +23,9 @@ class RegistrationTest extends TestCase
             'name' => 'SearchJob User',
             'email' => 'test@example.com',
             'password' => 'password',
+            'role' => 'Freelancer',
+            'currency' => 'GBP',
+            'description' => 'Alfa',
             'password_confirmation' => 'password',
         ]);
 

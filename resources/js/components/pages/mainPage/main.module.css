@@ -164,7 +164,7 @@
         ),
         #2bb739;
 }
-
+/**/
 @media (max-width: 1440px) {
     .headerContainer::before {
         min-width: 0;

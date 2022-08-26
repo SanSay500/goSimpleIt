@@ -42,6 +42,10 @@ class UserCrudController extends CrudController
         CRUD::column('name');
         CRUD::column('phone');
         CRUD::column('email');
+        CRUD::column('currency');
+        CRUD::column('role');
+        CRUD::column('password');
+        CRUD::column('created_at');
         CRUD::column('is_admin');
 
 
@@ -65,6 +69,10 @@ class UserCrudController extends CrudController
         CRUD::field('name');
         CRUD::field('phone');
         CRUD::field('email');
+        CRUD::field('role')->type('enum');
+        CRUD::field('currency')->type('enum');
+        CRUD::field('password');
+        CRUD::field('password_confirmation');
         CRUD::field('is_admin');
 ;
 

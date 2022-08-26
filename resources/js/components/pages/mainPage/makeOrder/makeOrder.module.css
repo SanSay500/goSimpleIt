@@ -197,8 +197,8 @@
 
 .btnContainer {
     display: flex;
-    justify-content: end;
-}
+    justify-content: flex-end;
+}s
 
 .btnSubmit {
     align-self: flex-end;

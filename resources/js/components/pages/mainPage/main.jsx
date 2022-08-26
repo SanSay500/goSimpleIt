@@ -18,6 +18,9 @@ const Main = (props) => {
     const [quantityCardsProjects, setQuantityCardsProjects] = useState(3);
     const [quantityCardsPeople, setQuantityCardsPeople] = useState(3);
 
+    const [typeTheTask, setTypeTheTask] = useState("");
+    const [priceTask, setPriceTask] = useState("");
+
     const resizeHandler = () => {
         let clientWidth = window.innerWidth;
 
@@ -44,7 +47,9 @@ const Main = (props) => {
         // setStepNext(count_project);
     };
 
-    const scroll = () => makeOrder.current.scrollIntoView();
+    const scroll = () => {
+        makeOrder.current.scrollIntoView();
+    };
 
     useEffect(() => {
         window.addEventListener("resize", resizeHandler);
@@ -59,7 +64,12 @@ const Main = (props) => {
             >
                 <Header role={props.auth.user && props.auth.user.role} />
 
-                <MainStart scroll={scroll} symbolCurrency={props.symbolCur} />
+                <MainStart
+                    scroll={scroll}
+                    symbolCurrency={props.symbolCur}
+                    setTypeTheTask={setTypeTheTask}
+                    setPriceTask={setPriceTask}
+                />
             </SectionContainer>
 
             <SectionContainer section={`${style.sectionActive}`}>
@@ -101,6 +111,8 @@ const Main = (props) => {
                     <MakeOrder
                         refMakeOrder={makeOrder}
                         symbolCurrency={props.symbolCur}
+                        typeTheTask={typeTheTask}
+                        priceTask={priceTask}
                     />
                 </div>
             </SectionContainer>

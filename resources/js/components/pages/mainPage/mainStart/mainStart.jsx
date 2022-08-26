@@ -5,7 +5,7 @@ import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MainStart = (props) => {
     const { tasks } = usePage().props;
-
+    const [goToButton, setGoToButton] = useState(false);
     const inputTask = useRef();
     const wrpModal = useRef();
 
@@ -14,7 +14,7 @@ const MainStart = (props) => {
     const [price, setPrice] = useState();
 
     const searchList = () => {
-        setTasksList(() => []);
+        setTasksList([]);
 
         setTasksList(() => {
             return tasks.filter((el) =>
@@ -30,11 +30,11 @@ const MainStart = (props) => {
     };
 
     useEffect(() => {
-        setTasksList(() => tasksList);
+        setTasksList(tasksList);
     }, [tasksList]);
 
     useEffect(() => {
-        setPrice(() => price);
+        setPrice(price);
     }, [price]);
 
     return (
@@ -48,6 +48,7 @@ const MainStart = (props) => {
                     Estimate your budget
                 </ButtonGreen>
             </div>
+
             <button className={`${style.getStartedBtn}`} onClick={props.scroll}>
                 <img src="/images/getStarted.png" alt="Logo"></img>
             </button>
@@ -74,10 +75,10 @@ const MainStart = (props) => {
                             placeholder="Type the task"
                             onChange={searchList}
                             onBlur={() => {
-                                setOpen(() => !open);
+                                setOpen(!open);
                             }}
                             onClick={() => {
-                                setOpen(() => true);
+                                setOpen(true);
                             }}
                         />
 
@@ -86,8 +87,9 @@ const MainStart = (props) => {
                                 {tasksList.map((task) => (
                                     <div
                                         onMouseDown={() => {
-                                            setPrice(() => task.money);
+                                            setPrice(task.money);
                                             inputTask.current.value = task.name;
+                                            setGoToButton(true);
                                         }}
                                         key={task.id}
                                     >
@@ -109,6 +111,23 @@ const MainStart = (props) => {
                             </span>
                             <span>{props.symbolCurrency}</span>
                         </div>
+
+                        {goToButton && (
+                            <div>
+                                <ButtonGreen
+                                    click={() => {
+                                        props.scroll();
+                                        setCloseModal();
+                                        props.setTypeTheTask(
+                                            inputTask.current.value
+                                        );
+                                        props.setPriceTask(price);
+                                    }}
+                                    classes={style.btnSubmit}
+                                    children={"Place your order now"}
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

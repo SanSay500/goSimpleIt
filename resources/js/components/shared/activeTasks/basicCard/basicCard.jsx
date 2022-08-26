@@ -9,7 +9,6 @@ export default function BasicCard(props) {
     return (
 
         <div className={`${style.container}`}>
-            {console.log(props)}
             <h3 className={`${style.title}`}>{props.order["title"]}</h3>
 
             <div className={`${style.description}`}>

@@ -25,6 +25,11 @@ mix.browserSync(
     {
     proxy: 'localhost',
     });
+mix.webpackConfig({
+    stats: {
+        children: true,
+    },
+});
 
 
 if (mix.inProduction()) {

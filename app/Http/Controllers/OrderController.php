@@ -19,6 +19,7 @@ use Illuminate\Http\Request;
 use AmrShawky\LaravelCurrency\Facade\Currency;
 use Illuminate\Support\Facades\DB;
 use App\Models\CurrencyModel;
+use Illuminate\Support\Facades\Hash;
 
 
 
@@ -179,6 +180,17 @@ class OrderController extends Controller
         }
         $task_type = Task::where('id', $request->task_id)->get()->first();
         $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
+
+//        if (!Auth::user()) {
+//            $user = User::create([
+//                'name' => 'Neo',
+//                'email' => $request->email,
+//                'role' => 'Employer',
+//                'password' => Hash::make(bin2hex(random_bytes(8))),
+//            ]);
+//            Auth::login($user);
+//        }
+
         Order::create([
             'title' => $request->title,
             'description' => $request->description,
