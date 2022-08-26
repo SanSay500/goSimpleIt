@@ -42,10 +42,17 @@ class OrderController extends Controller
      */
     public function main()
     {
+        // $orderAccesor = Order::find(3);
+        // dd($orderAccesor->money);
+        //dd(Order::with('task')->first()->toArray());
+
         $orders = Order::where('status', 'Pending')->get()->toArray();
+        // dd($orders);
         $tasksIDsInOrders = [];
         $filesSize = [];
+
         $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
+
         $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
 
         $tasks = Task::get()->toArray();

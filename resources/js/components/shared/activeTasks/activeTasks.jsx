@@ -16,7 +16,7 @@ const ActiveTasks = ({
 
     const [showCards, setShowCards] = useState(quantityCardsTasks);
     const [ordersFiltered, setOrdersFiltered] = useState(orders);
-    let [tasksList, setTasksList] = useState(tasksWithOrders);
+    let [tasksList, setTasksList] = useState();
     let [open, setOpen] = useState(false);
 
     const loadMoreTasks = (e) => {
