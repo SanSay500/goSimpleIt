@@ -26,10 +26,10 @@ class Kernel extends ConsoleKernel
             foreach ($currencies_update as $key => $value) {
                 $nowCurrency = CurrencyModel::where('code', $key)->first();
                 $nowCurrency->exchange_rate = $value;
+                $nowCurrency->updated_at = date("F j, Y, g:i a");
                 $nowCurrency->save();
             }
-        })->cron('0 0 * * *');
-
+        })->daily();
     }
 
     /**

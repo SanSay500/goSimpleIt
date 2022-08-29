@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use AmrShawky\LaravelCurrency\Facade\Currency;
+use App\Models\CurrencyModel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -35,14 +37,18 @@ class CurrencySeeder extends Seeder
                 'exchange_rate' => 1.00,
             ],
         ];
-
             foreach ($currencies as $key=>$value) {
+
                 DB::table('currencies')->insert(values: [
                 'name' =>$value['name'],
                 'code' =>$key,
                 'symbol' =>$value['symbol'],
                 'format' =>$value['format'],
-                'exchange_rate' =>$value['exchange_rate'],
+                'exchange_rate' => Currency::rates()
+                    ->latest()
+                    ->symbols([$key])
+                    ->base('EUR')
+                    ->get()[$key],
                 ]);
             };
     }

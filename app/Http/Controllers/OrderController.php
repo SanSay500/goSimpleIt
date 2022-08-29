@@ -167,7 +167,7 @@ class OrderController extends Controller
         if (isset($request->file)) {
             $fileName = time() . '-' . $request->file->getClientOriginalName();
             $request->validate([
-                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:100048'
+                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,docx,gif,svg,doc|max:100048'
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
@@ -201,6 +201,8 @@ class OrderController extends Controller
         } else {
             Mail::to(Auth::user())->send(new NewOrder($order));
         }
+        Mail::to('info@gosimple.it')->send(new NewOrder($order));
+
         return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
     }
 
