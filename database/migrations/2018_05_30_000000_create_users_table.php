@@ -24,7 +24,7 @@ return new class extends Migration
             $table->enum('currency',['EUR','USD','GBP'])->default('EUR');
             $table->string('description')->nullable();
             $table->boolean('is_admin')->nullable();
-            $table->enum('role',['Freelancer', 'Employer']);
+            $table->enum('role',['Freelancer', 'Customer']);
             $table->rememberToken();
             $table->timestamps();
         });

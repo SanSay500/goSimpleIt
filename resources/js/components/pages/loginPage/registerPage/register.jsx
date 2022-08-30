@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 import Container from "@/components/shared/container/container";
 import Input from "@/components/shared/input/input";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
-import { Link, useForm } from "@inertiajs/inertia-react";
+import {Link, useForm} from "@inertiajs/inertia-react";
 import style from "./register.module.css";
-import { useState } from "react";
+import {useState} from "react";
 
 export default function Register() {
-    const { data, setData, post, processing, errors, reset } = useForm({
+    const {data, setData, post, processing, errors, reset} = useForm({
         name: "",
         email: "",
         description: "",
         password: "",
-        role: "Freelancer",
+        role: "Customer",
         currency: "EUR",
         password_confirmation: "",
     });
@@ -51,10 +51,30 @@ export default function Register() {
 
     return (
         <Container>
-            <ValidationErrors errors={errors} />
+            <ValidationErrors errors={errors}/>
 
             <form onSubmit={submit} className={`${style.formPage} `}>
                 <div className={`${style.loginFormRadio} `}>
+                    <div className={`${style.radioContainer} `}>
+                        <input
+                            type="radio"
+                            name="role"
+                            value="Customer"
+                            className={`${style.registerRadio} `}
+                            checked={roleChecked === "Customer" ? true : false}
+                            onChange={onHandleChange}
+                            required
+                            id="roleEmployer"
+                        />
+
+                        <label
+                            htmlFor="roleEmployer"
+                            className={`${style.radioLabel} `}
+                        >
+                            Customer
+                        </label>
+                    </div>
+
                     <div className={`${style.radioContainer} `}>
                         <input
                             type="radio"
@@ -75,26 +95,8 @@ export default function Register() {
                         >
                             Freelancer
                         </label>
-                    </div>
 
-                    <div className={`${style.radioContainer} `}>
-                        <input
-                            type="radio"
-                            name="role"
-                            value="Employer"
-                            className={`${style.registerRadio} `}
-                            checked={roleChecked === "Employer" ? true : false}
-                            onChange={onHandleChange}
-                            required
-                            id="roleEmployer"
-                        />
 
-                        <label
-                            htmlFor="roleEmployer"
-                            className={`${style.radioLabel} `}
-                        >
-                            Employer
-                        </label>
                     </div>
                 </div>
 

@@ -4,6 +4,8 @@ import Input from "@/components/shared/input/input";
 import Label from "@/components/shared/label/label";
 import ValidationErrors from "@/components/shared/validationErrors/validationErrors";
 import { useForm } from "@inertiajs/inertia-react";
+import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen"
+
 
 export default function ResetPassword({ token, email }) {
     const { data, setData, post, processing, errors, reset } = useForm({

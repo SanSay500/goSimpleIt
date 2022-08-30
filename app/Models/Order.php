@@ -6,7 +6,6 @@ use App\Models\Task;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Casts\Attribute;
 
 
 class Order extends Model
@@ -33,14 +32,6 @@ class Order extends Model
     public function proposals(){
         return $this->hasMany(Proposal::class);
     }
-
-    
-    // protected function money(): Attribute
-    // {
-    //     return Attribute::make(
-    //         get: fn ($value) => 3 * $value,
-    //     );
-    // }
 
 
 }

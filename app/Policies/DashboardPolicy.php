@@ -22,6 +22,6 @@ class DashboardPolicy
         return Auth::user()->role==='Freelancer';
         }
     public function index_employer(){
-        return Auth::user()->role==='Employer';
+        return Auth::user()->role==='Customer';
         }
 }

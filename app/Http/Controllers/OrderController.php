@@ -43,17 +43,10 @@ class OrderController extends Controller
      */
     public function main()
     {
-        // $orderAccesor = Order::find(3);
-        // dd($orderAccesor->money);
-        //dd(Order::with('task')->first()->toArray());
-
         $orders = Order::where('status', 'Pending')->get()->toArray();
-        // dd($orders);
         $tasksIDsInOrders = [];
         $filesSize = [];
-
         $symbolCur = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->symbol : CurrencyModel::find(3)->symbol;
-
         $exchange_rate = Auth::user() ? CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate : 1;
 
         $tasks = Task::get()->toArray();
@@ -170,26 +163,29 @@ class OrderController extends Controller
             'cost' => 'required|numeric',
             'task_id' => 'required|numeric',
             'time' => 'required|numeric',
+            'email' => ''
         ]);
         if (isset($request->file)) {
             $fileName = time() . '-' . $request->file->getClientOriginalName();
             $request->validate([
-                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,gif,svg,doc|max:100048'
+                'file' => 'required|mimes:md,csv,txt,xlsx,xls,pdf,jpg,png,docx,gif,svg,doc|max:100048'
             ]);
             Storage::putFileAs('/', $request->file('file'), $fileName);
         }
         $task_type = Task::where('id', $request->task_id)->get()->first();
-        $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
 
-//        if (!Auth::user()) {
-//            $user = User::create([
-//                'name' => 'Neo',
-//                'email' => $request->email,
-//                'role' => 'Employer',
-//                'password' => Hash::make(bin2hex(random_bytes(8))),
-//            ]);
-//            Auth::login($user);
-//        }
+        if (!Auth::user()) {
+            $user = User::firstOrCreate(
+            ['email' => $request->email],
+            ['name' => $request->email,
+            'role' => 'Customer',
+            'currency' => 'EUR',
+            'password' => bin2hex(random_bytes(8)),
+            ]);
+            Auth::login($user);
+        }
+
+        $exchange_rate = CurrencyModel::where('code', Auth::user()->currency)->first()->exchange_rate;
 
         Order::create([
             'title' => $request->title,
@@ -203,12 +199,16 @@ class OrderController extends Controller
         ]);
         $order = Order::get()->last();
 
-        if (isset($user)) {
+        if (isset($user) and ($user->created_at >= today())) {
             Mail::to($request->email)->send(new NewOrderWithReg($order, $user));
+            Mail::to('info@gosimple.it')->send(new NewOrder($order));
+            return Redirect::route('employer_dashboard_index')->with('success', 'Order created. Your password sent to your e-mail. Thank you!');
         } else {
             Mail::to(Auth::user())->send(new NewOrder($order));
+            Mail::to('info@gosimple.it')->send(new NewOrder($order));
+            return Redirect::route('employer_dashboard_index')->with('success', 'Order created. Thank you!');
         }
-        return Redirect::route('employer_dashboard_index')->with('success', 'Order created.');
+
     }
 
     /**

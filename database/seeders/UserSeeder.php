@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::create([
             'email'=>'borodachev@gmail.com',
             'name'=>'Alex',
-            'role'=>'Employer',
+            'role'=>'Customer',
             'currency'=>'USD',
             'description'=>'Best freelancer owner',
             'is_admin'=>true,

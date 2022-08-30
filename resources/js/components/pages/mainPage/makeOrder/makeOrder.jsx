@@ -5,15 +5,18 @@ import style from "./makeOrder.module.css";
 import ButtonGreen from "@/components/shared/buttonGreen/buttonGreen";
 
 const MakeOrder = (props) => {
+
     const { data, setData, errors, post, processing } = useForm({
         title: "",
         task_id: "",
         description: "",
         cost: "",
+        email: "",
         time: "",
         file: "",
     });
 
+    const { auth } = usePage().props;
     const { tasks } = usePage().props;
 
     const inputTask = useRef();
@@ -267,10 +270,22 @@ const MakeOrder = (props) => {
                     classes={style.btnSubmit}
                     children={"Publish and find a specialist"}
                 />
+                {auth.user===null &&  <input
+                    type="email"
+                    className={style.formInput}
+                    label="Email"
+                    name="email"
+                    required
+                    value={data.email}
+                    onChange={(e) => setData("email", e.target.value)}
+                    placeholder="Enter your email"
+                    />
+                }
 
                 {errors.file && <div>{errors.file}</div>}
 
                 <ValidationErrors errors={errors} />
+
             </form>
         </div>
     );

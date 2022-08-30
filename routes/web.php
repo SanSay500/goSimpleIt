@@ -34,7 +34,7 @@ Route::get('/user/{id}',[\App\Http\Controllers\UserController::class, 'info'])->
 Route::post('/user/{user}',[\App\Http\Controllers\UserController::class, 'update'])->name('user_update')->middleware('auth');
 
 //ORDER CONTROLLER
-Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store')->middleware('auth');
+Route::post('/store', [\App\Http\Controllers\OrderController::class, 'store'])->name('order.store');
 Route::get('/', [\App\Http\Controllers\OrderController::class, 'main'])->name('main.page');
 Route::get('/order/{id}', [\App\Http\Controllers\OrderController::class, 'details'])->name('order.details');
 Route::post('/order/proposal', [\App\Http\Controllers\OrderController::class, 'new_proposal'])->name('order.proposal.store')->middleware('auth');
