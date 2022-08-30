@@ -208,7 +208,6 @@ class OrderController extends Controller
             Mail::to('info@gosimple.it')->send(new NewOrder($order));
             return Redirect::route('employer_dashboard_index')->with('success', 'Order created. Thank you!');
         }
-
     }
 
     /**
