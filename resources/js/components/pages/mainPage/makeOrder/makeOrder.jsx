@@ -269,7 +269,7 @@ const MakeOrder = (props) => {
                 <ButtonGreen
                     classes={style.btnSubmit}
                     children={"Publish and find a specialist"}
-                />
+                /><br/>
                 {auth.user===null &&  <input
                     type="email"
                     className={style.formInput}
