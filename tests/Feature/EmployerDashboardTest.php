@@ -21,7 +21,7 @@ class EmployerDashboardTest extends TestCase
     public function test_can_render_employer_dashboard_page()
     {
         $this->seed();
-        $user = User::where('role','Employer')->first();
+        $user = User::where('role','Customer')->first();
         Auth::login($user);
 
         $response = $this->withoutExceptionHandling()->get('/dashboard/emp');

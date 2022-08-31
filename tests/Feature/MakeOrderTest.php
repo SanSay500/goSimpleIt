@@ -16,7 +16,7 @@ class MakeOrderTest extends TestCase
     public function test_registered_user_can_make_order()
     {
         $this->seed();
-        $user = User::where('role','Employer')->first();
+        $user = User::where('role','Customer')->first();
         Auth::login($user);
 
         $this->assertAuthenticated();
@@ -29,6 +29,25 @@ class MakeOrderTest extends TestCase
             'time' => 5,
             'user_id' => $user->id,
             'task_id' => 1,
+        ]);
+
+        $response->assertRedirect(route('employer_dashboard_index'));
+    }
+
+    public function test_unregistered_user_can_make_order()
+    {
+        $this->seed();
+
+        $this->withoutExceptionHandling();
+
+        $response = $this->post('/store', [
+            'title' => 'Title',
+            'description' => 'Desc',
+            'cost' => 500,
+            'time' => 5,
+            'user_id' => 12,
+            'task_id' => 1,
+            'email' =>'test@krab'
         ]);
 
         $response->assertRedirect(route('employer_dashboard_index'));
