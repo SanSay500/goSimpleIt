@@ -21,6 +21,7 @@
         "laravel/tinker": "^2.7",
         "munafio/chatify": "^1.4",
         "rappasoft/laravel-livewire-tables": "^2.1",
+        "spatie/laravel-cookie-consent": "^3.2",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
