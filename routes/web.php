@@ -52,5 +52,6 @@ Route::get('/dashboard/emp', [\App\Http\Controllers\DashboardController::class, 
 
 //MAINPAGE CONTROLLERS
 Route::get('/estimate', [\App\Http\Controllers\MainPageController::class, 'estimate_issue'])->name('estimate_issue');
+Route::get('/private_policy', [\App\Http\Controllers\MainPageController::class, 'private_policy'])->name('private_policy');
 
 require __DIR__.'/auth.php';

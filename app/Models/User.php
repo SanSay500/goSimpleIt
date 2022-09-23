@@ -10,12 +10,13 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Review;
 use Laravel\Cashier\Billable;
+use Soved\Laravel\Gdpr\Portable;
+use Soved\Laravel\Gdpr\Contracts\Portable as PortableContract;
 
 class User extends Authenticatable
 {
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
-
-    use HasApiTokens, HasFactory, Notifiable, Billable;
+    use HasApiTokens, HasFactory, Notifiable, Billable, Portable;
 
     /**
      * The attributes that are mass assignable.
