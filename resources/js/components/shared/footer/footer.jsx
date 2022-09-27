@@ -10,8 +10,7 @@ const Footer = () => {
                     <img src="/images/logo-upwork.svg" alt="Logo"></img>
                 </Link>
             </div>
-            Copyright © 2022, GoSimpleIT,
-            <a href={route('private_policy')}>Private Policy</a>
+            <p>Copyright © 2022 GoSimpleIT, <a href={route('private_policy')}> Privacy Policy</a></p>
             <ul className={style.socialList}>
                 <li>
                     <a href="#" className={style.link}>

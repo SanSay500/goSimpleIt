@@ -4,3 +4,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('order') }}'><i class='nav-icon la la-question'></i> Orders</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('task') }}'><i class='nav-icon la la-question'></i> Tasks</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('export') }}'><i class='nav-icon la la-question'></i> Export Orders</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('seo-tag') }}'><i class='nav-icon la la-question'></i> Seo tags</a></li>

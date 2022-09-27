@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\SeoTag;
 use App\Models\User;
 use App\Models\Task;
 use App\Models\Proposal;
@@ -69,8 +70,9 @@ class OrderController extends Controller
                 $orders[$order] += $params;
             }
         }
+        $seo = SeoTag::find(1)->get();
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'orders' => $orders, 'tasksWithOrders' => $tasksWithOrders, 'symbolCur'=>$symbolCur]);
+        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'orders' => $orders, 'tasksWithOrders' => $tasksWithOrders, 'symbolCur'=>$symbolCur, 'seo'=>$seo]);
     }
 
     public function proposal_confirm_form($order_id, $proposal_id)

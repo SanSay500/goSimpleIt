@@ -1,0 +1,73 @@
+.main {
+    margin: 20px 60px 20px 60px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+p {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 40px;
+}
+
+li {
+    display: list-item;
+}
+
+div {
+    display: block;
+}
+b {
+    font-weight: bold;
+}
+
+a:link {
+    color: blue;
+    text-decoration: underline;
+    cursor: auto;
+}
+a:visited {
+    color: purple;
+    text-decoration: underline;
+    cursor: auto;
+}
+a:link:active {
+    color: red;
+}
+a:visited:active {
+    color: red;
+}
+a:hover {
+    color: violet;
+    cursor: pointer;
+}

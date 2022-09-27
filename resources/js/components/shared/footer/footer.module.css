@@ -54,3 +54,24 @@
         padding-bottom: 25px;
     }
 }
+
+a:link {
+    color: blue;
+    text-decoration: underline;
+    cursor: auto;
+}
+a:visited {
+    color: purple;
+    text-decoration: underline;
+    cursor: auto;
+}
+a:link:active {
+    color: red;
+}
+a:visited:active {
+    color: red;
+}
+a:hover {
+    color: violet;
+    cursor: pointer;
+}

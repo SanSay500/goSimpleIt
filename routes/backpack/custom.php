@@ -22,4 +22,5 @@ Route::group([
     Route::crud('order', 'OrderCrudController');
     Route::crud('job', 'JobCrudController');
     Route::crud('task', 'TaskCrudController');
+    Route::crud('seo-tag', 'SeoTagCrudController');
 }); // this should be the absolute last line

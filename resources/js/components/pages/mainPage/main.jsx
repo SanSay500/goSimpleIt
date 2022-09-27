@@ -11,6 +11,8 @@ import Freelancers from "./freelancers/freelancers";
 import MainStart from "./mainStart/mainStart";
 import SectionContainer from "@/components/shared/sectionContainer/sectionContainer";
 import style from "./main.module.css";
+import { SuperSEO } from "react-super-seo";
+
 
 const Main = (props) => {
     const makeOrder = useRef(null);
@@ -58,6 +60,7 @@ const Main = (props) => {
 
     return (
         <>
+
             <SectionContainer
                 section={`${style.headerContainer}`}
                 container={`${style.bgrImg}`}
