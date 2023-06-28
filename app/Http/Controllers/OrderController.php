@@ -70,9 +70,9 @@ class OrderController extends Controller
                 $orders[$order] += $params;
             }
         }
-        $seo = SeoTag::find(1)->get();
+//        $seo = SeoTag::find(1)->get();
         $tasksWithOrders = Task::wherein('id', $tasksIDsInOrders)->get();
-        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'orders' => $orders, 'tasksWithOrders' => $tasksWithOrders, 'symbolCur'=>$symbolCur, 'seo'=>$seo]);
+        return Inertia::render('pages/mainPage/main', ['tasks' => $tasks, 'orders' => $orders, 'tasksWithOrders' => $tasksWithOrders, 'symbolCur'=>$symbolCur]);
     }
 
     public function proposal_confirm_form($order_id, $proposal_id)
